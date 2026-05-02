@@ -2,7 +2,7 @@ import { kpisHero } from '@/data/indicadores';
 import type { Dictionary } from '@/i18n/dictionaries';
 import type { Locale } from '@/i18n/config';
 
-export function Hero({ t, locale = 'es' }: { t: Dictionary; locale?: Locale }) {
+export function Hero({ t, locale }: { t: Dictionary; locale: Locale }) {
   return (
     <section
       id="inicio"

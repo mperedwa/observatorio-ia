@@ -16,7 +16,7 @@ export default async function Home({
   const t = getDictionary(locale as Locale);
   return (
     <>
-      <Hero t={t} />
+      <Hero locale={locale as Locale} t={t} />
       <InstitucionesGrid locale={locale as Locale} t={t} />
       <Legislacion locale={locale as Locale} t={t} />
       <Indicadores locale={locale as Locale} t={t} />
