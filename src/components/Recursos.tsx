@@ -24,8 +24,17 @@ const recursos: Recurso[] = [
       en: 'Basic Guidelines for Generative AI use in the Judicial Branch',
     },
     fuente: 'Poder Judicial',
-    url: 'https://pj.poder-judicial.go.cr/',
+    url: 'https://transparencia.poder-judicial.go.cr/index.php/declaracion-de-uso-de-inteligencia-artificial',
     tipo: { es: 'Marco institucional', en: 'Institutional framework' },
+  },
+  {
+    titulo: {
+      es: 'Programa LIDIA — IA predictiva en salud',
+      en: 'LIDIA Program — Predictive AI in healthcare',
+    },
+    fuente: 'CCSS / Teletica',
+    url: 'https://www.teletica.com/salud/lidia-el-programa-de-inteligencia-artificial-que-crece-en-la-ccss-en-medio-de-un-dilema-etico_376322',
+    tipo: { es: 'Cobertura', en: 'Coverage' },
   },
   {
     titulo: {
