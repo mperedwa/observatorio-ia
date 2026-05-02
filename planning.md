@@ -25,6 +25,7 @@ Sitio público que mapea proyectos, legislación e indicadores de IA en el secto
 - [x] Recursos con docs oficiales
 - [x] Sección Acerca de
 - [x] Build estático limpio
+- [x] Bilingüe ES/EN con toggle en navbar (estructura `/es/` y `/en/`, root redirige a `/es/`)
 - [ ] Despliegue a Vercel/CF Pages con observatorioia.org
 - [ ] Favicon + OG image personalizado
 

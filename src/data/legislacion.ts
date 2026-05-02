@@ -1,11 +1,13 @@
+import type { Bilingual } from '@/i18n/config';
+
 export type EstadoLey = 'en-comision' | 'primer-debate' | 'segundo-debate' | 'archivado' | 'aprobada';
 
 export interface Expediente {
   numero: string;
-  titulo: string;
-  resumen: string;
+  titulo: Bilingual;
+  resumen: Bilingual;
   estado: EstadoLey;
-  comision: string;
+  comision: Bilingual;
   presentado: string;
   fuenteUrl: string;
 }
@@ -13,28 +15,55 @@ export interface Expediente {
 export const expedientes: Expediente[] = [
   {
     numero: '23.771',
-    titulo: 'Ley para Regular la Inteligencia Artificial en Costa Rica',
-    resumen: 'Marco general para regular el desarrollo, uso y aplicación de IA en CR. Crea la Autoridad Reguladora de IA (ARIA). Bloqueado por oposición de CAMTIC y otros actores del ecosistema.',
+    titulo: {
+      es: 'Ley para Regular la Inteligencia Artificial en Costa Rica',
+      en: 'Law to Regulate Artificial Intelligence in Costa Rica',
+    },
+    resumen: {
+      es: 'Marco general para regular el desarrollo, uso y aplicación de IA en CR. Crea la Autoridad Reguladora de IA (ARIA). Bloqueado por oposición de CAMTIC y otros actores del ecosistema.',
+      en: 'General framework to regulate the development, use and application of AI in Costa Rica. Creates the AI Regulatory Authority (ARIA). Blocked by opposition from CAMTIC and other ecosystem stakeholders.',
+    },
     estado: 'en-comision',
-    comision: 'Ciencia, Tecnología y Educación',
+    comision: {
+      es: 'Ciencia, Tecnología y Educación',
+      en: 'Science, Technology and Education',
+    },
     presentado: '2023',
     fuenteUrl: 'https://www.asamblea.go.cr/',
   },
   {
     numero: '23.919',
-    titulo: 'Sandbox regulatorio para IA',
-    resumen: 'Crea espacios controlados de experimentación regulatoria para tecnologías emergentes de IA. Modelo similar a sandboxes financieros del sector fintech.',
+    titulo: {
+      es: 'Sandbox regulatorio para IA',
+      en: 'Regulatory sandbox for AI',
+    },
+    resumen: {
+      es: 'Crea espacios controlados de experimentación regulatoria para tecnologías emergentes de IA. Modelo similar a sandboxes financieros del sector fintech.',
+      en: 'Creates controlled spaces for regulatory experimentation with emerging AI technologies. Modeled after financial sandboxes in the fintech sector.',
+    },
     estado: 'en-comision',
-    comision: 'Ciencia, Tecnología y Educación',
+    comision: {
+      es: 'Ciencia, Tecnología y Educación',
+      en: 'Science, Technology and Education',
+    },
     presentado: '2024',
     fuenteUrl: 'https://www.asamblea.go.cr/',
   },
   {
     numero: '24.484',
-    titulo: 'Marco regulatorio adaptativo de IA basado en riesgo',
-    resumen: 'Propone clasificación escalonada por nivel de riesgo (similar a EU AI Act). Versión más reciente y técnicamente robusta de los tres expedientes.',
+    titulo: {
+      es: 'Marco regulatorio adaptativo de IA basado en riesgo',
+      en: 'Adaptive risk-based AI regulatory framework',
+    },
+    resumen: {
+      es: 'Propone clasificación escalonada por nivel de riesgo (similar a EU AI Act). Versión más reciente y técnicamente robusta de los tres expedientes.',
+      en: 'Proposes a tiered classification by risk level (similar to the EU AI Act). The most recent and technically robust of the three bills.',
+    },
     estado: 'en-comision',
-    comision: 'Ciencia, Tecnología y Educación',
+    comision: {
+      es: 'Ciencia, Tecnología y Educación',
+      en: 'Science, Technology and Education',
+    },
     presentado: '2025',
     fuenteUrl: 'https://www.asamblea.go.cr/',
   },

@@ -1,19 +1,18 @@
-import { Hero } from '@/components/Hero';
-import { InstitucionesGrid } from '@/components/InstitucionesGrid';
-import { Legislacion } from '@/components/Legislacion';
-import { Indicadores } from '@/components/Indicadores';
-import { Recursos } from '@/components/Recursos';
-import { Acerca } from '@/components/Acerca';
+import { defaultLocale } from '@/i18n/config';
 
-export default function Home() {
+export default function Root() {
+  const target = `/${defaultLocale}/`;
   return (
     <>
-      <Hero />
-      <InstitucionesGrid />
-      <Legislacion />
-      <Indicadores />
-      <Recursos />
-      <Acerca />
+      <meta httpEquiv="refresh" content={`0; url=${target}`} />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `window.location.replace(${JSON.stringify(target)})`,
+        }}
+      />
+      <p style={{ padding: '2rem', fontFamily: 'system-ui' }}>
+        Redirecting to <a href={target}>{target}</a>
+      </p>
     </>
   );
 }

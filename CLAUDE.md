@@ -16,14 +16,16 @@ npm run start      # sirve la build (no usar para edición)
 ```
 
 ## Estructura
-- `src/app/` — layout + page.tsx (homepage es el único route por ahora)
-- `src/components/` — Hero, InstitucionesGrid, Legislacion, Indicadores, Recursos, Acerca, Nav, Footer
-- `src/data/` — fuente de verdad de datos del observatorio
-  - `instituciones.ts` — 5 instituciones con resumen y conteo de proyectos
-  - `proyectos.ts` — 11 proyectos con fuente y resultado cuando aplica
-  - `legislacion.ts` — 3 expedientes en trámite
-  - `indicadores.ts` — ILIA score 2025 + KPIs hero
-- `out/` — output del build estático (gitignored vía `.next/` patrón ya cubre, agregar `out/` explícito si se necesita)
+- `src/app/` — root layout + redirect page.tsx (`/` → `/es/`)
+- `src/app/[locale]/` — layout + page.tsx por idioma (`generateStaticParams` produce `es` y `en`)
+- `src/i18n/` — `config.ts` (locales, tipo `Bilingual`) + `dictionaries.ts` (UI strings ES/EN tipados con `Dictionary`)
+- `src/components/` — Hero, InstitucionesGrid, Legislacion, Indicadores, Recursos, Acerca, Nav, Footer, LanguageToggle. Todos reciben `locale` y/o `t: Dictionary` por props.
+- `src/data/` — fuente de verdad. **Strings de UI son `Bilingual = {es, en}`**, no strings planos. Campos no-traducibles (URLs, IDs, números, años) quedan como string/number plano.
+  - `instituciones.ts` — 5 instituciones con `nombre`, `nombreCorto`, `resumen` bilingües
+  - `proyectos.ts` — 11 proyectos con `titulo`, `descripcion`, `resultado` bilingües
+  - `legislacion.ts` — 3 expedientes con `titulo`, `resumen`, `comision` bilingües
+  - `indicadores.ts` — ILIA score 2025 + KPIs hero con `label`/`detalle` bilingües
+- `out/` — output del build estático
 
 ## Datos — fuente de verdad
 
@@ -34,11 +36,17 @@ Toda la información viene del scoping en Obsidian: `Projects/CR-IA-Gobierno/`. 
 - `observatorio-scoping.md` — scoping técnico completo
 
 ## Convenciones
-- Lenguaje: **español de Costa Rica**, sin guiones largos (ver CLAUDE.md global de Mario).
+- Lenguaje: **bilingüe ES/EN**. Default es `es`. Locale por URL: `/es/` y `/en/`. Toggle ES|EN en navbar (esquina superior derecha) vía `LanguageToggle`.
+- Strings públicos en `src/data/` son `Bilingual = {es, en}`; UI strings en `src/i18n/dictionaries.ts`.
+- Español de Costa Rica, sin guiones largos en copy ES (ver CLAUDE.md global de Mario). Inglés americano.
 - Citas: cada dato debe tener `fuenteUrl` apuntando al documento original oficial.
 - Estados: `operativo` / `piloto` / `planificado` para proyectos; estados legislativos siguen Asamblea.
 - Tipografía: Inter (Google Fonts) — sans-serif limpia, headers grandes con números prominentes.
 - Paleta: azul institucional `institucional-700/900` para acento, slate para texto, blanco/`slate-50` para fondos.
+
+## Agregar contenido nuevo
+- Cualquier string nuevo expuesto al usuario debe ir como `Bilingual` o entrar al diccionario.
+- Si solo tienes la versión ES, escríbela en ambos campos y marca el EN como TODO en el commit; nunca dejes el campo en blanco (rompe tipos).
 
 ## Despliegue (próximo)
 - Hosting: Vercel o Cloudflare Pages (gratis para static sites).

@@ -1,21 +1,24 @@
 import Link from 'next/link';
+import { LanguageToggle } from './LanguageToggle';
+import type { Locale } from '@/i18n/config';
+import type { Dictionary } from '@/i18n/dictionaries';
 
-const items = [
-  { href: '/#inicio', label: 'Inicio' },
-  { href: '/#instituciones', label: 'Instituciones' },
-  { href: '/#legislacion', label: 'Legislación' },
-  { href: '/#indicadores', label: 'Indicadores' },
-  { href: '/#recursos', label: 'Recursos' },
-  { href: '/#acerca', label: 'Acerca de' },
-];
-
-export function Nav() {
+export function Nav({ locale, t }: { locale: Locale; t: Dictionary }) {
+  const base = `/${locale}/`;
+  const items = [
+    { href: `${base}#inicio`, label: t.nav.inicio },
+    { href: `${base}#instituciones`, label: t.nav.instituciones },
+    { href: `${base}#legislacion`, label: t.nav.legislacion },
+    { href: `${base}#indicadores`, label: t.nav.indicadores },
+    { href: `${base}#recursos`, label: t.nav.recursos },
+    { href: `${base}#acerca`, label: t.nav.acerca },
+  ];
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-baseline gap-2">
-          <span className="font-bold text-lg text-institucional-900">Observatorio IA</span>
-          <span className="text-sm text-slate-500 hidden sm:inline">Costa Rica</span>
+      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
+        <Link href={base} className="flex items-baseline gap-2 flex-shrink-0">
+          <span className="font-bold text-lg text-institucional-900">{t.siteName}</span>
+          <span className="text-sm text-slate-500 hidden sm:inline">{t.siteCountry}</span>
         </Link>
         <nav className="hidden md:flex items-center gap-7 text-sm text-slate-700">
           {items.map((it) => (
@@ -24,6 +27,9 @@ export function Nav() {
             </Link>
           ))}
         </nav>
+        <div className="flex items-center gap-3">
+          <LanguageToggle current={locale} />
+        </div>
       </div>
     </header>
   );
