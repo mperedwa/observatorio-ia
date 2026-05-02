@@ -37,3 +37,6 @@ next-env.d.ts
 
 # static export output
 /out/
+
+# iCloud sync conflict parking (see CLAUDE.md "iCloud build conflicts")
+/.icloud-trash/

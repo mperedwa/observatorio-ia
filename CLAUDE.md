@@ -52,6 +52,13 @@ Toda la información viene del scoping en Obsidian: `Projects/CR-IA-Gobierno/`. 
 - Hosting: Vercel o Cloudflare Pages (gratis para static sites).
 - Custom domain: observatorioia.org (ya comprado en Namecheap).
 
+## iCloud build conflicts
+El proyecto vive en `~/Desktop/Proyectos/` (sincronizado por iCloud Drive). Cuando dos `npm run build` corren contra el mismo `out/` en cierta ventana, iCloud crea duplicados con sufijo ` 2` (`out/_next 2`, `out/en 2`, etc.) y Next aborta el paso "Finalizing page optimization" con `ENOTEMPTY`, dejando subdirectorios vacíos (típicamente `out/en/` queda en 0 bytes). Si la build estática no genera todas las páginas:
+1. `ls out/` y revisar dirs con sufijo ` 2`
+2. Moverlos a `.icloud-trash/` (no borrar — pueden ser conflictos legítimos): `mv "out/en 2" .icloud-trash/`
+3. Re-correr `npm run build`
+4. Verificar `ls out/en/ out/es/` — ambos deben tener `index.html`
+
 ## Estado
 Fase 1 MVP — homepage con datos reales (mayo 2026). Próximas fases:
 - Fase 2: scrapers automatizados + páginas detalle por proyecto
