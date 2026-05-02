@@ -1,7 +1,19 @@
+'use client';
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { locales, localeNames, localeFullNames, type Locale } from '@/i18n/config';
 
 export function LanguageToggle({ current }: { current: Locale }) {
+  const pathname = usePathname() ?? `/${current}/`;
+
+  function hrefFor(target: Locale): string {
+    const match = pathname.match(/^\/(es|en)(\/.*)?$/);
+    if (!match) return `/${target}/`;
+    const rest = match[2] ?? '/';
+    return `/${target}${rest}`;
+  }
+
   return (
     <div
       className="flex items-center gap-1 rounded-full border border-slate-200 bg-white p-0.5 text-xs"
@@ -13,7 +25,7 @@ export function LanguageToggle({ current }: { current: Locale }) {
         return (
           <Link
             key={l}
-            href={`/${l}/`}
+            href={hrefFor(l)}
             hrefLang={l}
             aria-label={localeFullNames[l]}
             aria-current={active ? 'true' : undefined}
