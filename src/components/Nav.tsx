@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { LanguageToggle } from './LanguageToggle';
+import { MobileMenu } from './MobileMenu';
 import type { Locale } from '@/i18n/config';
 import type { Dictionary } from '@/i18n/dictionaries';
 
@@ -12,12 +13,13 @@ export function Nav({ locale, t }: { locale: Locale; t: Dictionary }) {
     { href: `${base}analisis`, label: t.nav.analisis },
     { href: `${base}#recursos`, label: t.nav.recursos },
   ];
+  const menuLabel = locale === 'es' ? 'Abrir menú' : 'Open menu';
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
-        <Link href={base} className="flex items-baseline gap-2 flex-shrink-0">
+      <div className="relative max-w-7xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
+        <Link href={base} className="flex flex-col leading-tight flex-shrink-0">
           <span className="font-bold text-lg text-institucional-900">{t.siteName}</span>
-          <span className="text-sm text-slate-500 hidden sm:inline">{t.siteCountry}</span>
+          <span className="text-xs text-slate-500 -mt-0.5">{t.siteCountry}</span>
         </Link>
         <nav className="hidden md:flex items-center gap-7 text-sm text-slate-700">
           {items.map((it) => (
@@ -26,8 +28,9 @@ export function Nav({ locale, t }: { locale: Locale; t: Dictionary }) {
             </Link>
           ))}
         </nav>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
           <LanguageToggle current={locale} />
+          <MobileMenu items={items} ariaLabel={menuLabel} />
         </div>
       </div>
     </header>
