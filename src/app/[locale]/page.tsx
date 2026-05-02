@@ -21,7 +21,7 @@ export default async function Home({
       <Legislacion locale={locale as Locale} t={t} />
       <Indicadores locale={locale as Locale} t={t} />
       <Recursos locale={locale as Locale} t={t} />
-      <Acerca t={t} />
+      <Acerca locale={locale as Locale} t={t} />
     </>
   );
 }

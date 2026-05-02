@@ -11,6 +11,7 @@ export interface Proyecto {
   estado: Estado;
   descripcion: Bilingual;
   resultado?: Bilingual;
+  contexto?: Bilingual;
   desde?: string;
   fuenteUrl: string;
 }
@@ -34,7 +35,12 @@ export const proyectos: Proyecto[] = [
       es: '1,302,899 documentos procesados; reducción del circulante en materia cobratoria.',
       en: '1,302,899 documents processed; reduction of the open caseload in debt collection.',
     },
-    fuenteUrl: 'https://pj.poder-judicial.go.cr/',
+    contexto: {
+      es: 'Es el caso de uso más maduro del Estado costarricense en clasificación documental con IA. La adopción se hizo desde un juzgado regional, no desde una iniciativa central, lo que evidencia que la innovación judicial avanza sin coordinación nacional.',
+      en: 'The most mature documented case of AI document classification in the Costa Rican State. Adoption came from a regional court, not from a central initiative, showing that judicial innovation is moving without national coordination.',
+    },
+    fuenteUrl:
+      'https://pj.poder-judicial.go.cr/index.php/component/content/article/760-poder-judicial-implementa-inteligencia-artificial-para-disminuir-circulante-en-materia-cobratoria',
   },
   {
     id: 'pj-ml-presupuestal',
@@ -54,7 +60,12 @@ export const proyectos: Proyecto[] = [
       es: 'Ahorro acumulado +₡100M.',
       en: 'Cumulative savings of +₡100M.',
     },
-    fuenteUrl: 'https://pj.poder-judicial.go.cr/',
+    contexto: {
+      es: 'Operativo desde 2019, es la aplicación de IA con retorno cuantificado más antiguo del Estado costarricense. Demuestra que el Poder Judicial adoptó analítica predictiva años antes que cualquier otra institución pública del país.',
+      en: 'Operational since 2019, this is the longest-running AI application with quantified ROI in the Costa Rican State. It shows the Judicial Branch adopted predictive analytics years before any other Costa Rican public institution.',
+    },
+    fuenteUrl:
+      'https://pj.poder-judicial.go.cr/index.php/component/content/article/760-poder-judicial-implementa-inteligencia-artificial-para-disminuir-circulante-en-materia-cobratoria',
   },
   {
     id: 'pj-nymiz',
@@ -70,7 +81,12 @@ export const proyectos: Proyecto[] = [
       es: 'Anonimización automática de datos personales en documentos judiciales, alineada al Reglamento de Protección de Datos.',
       en: 'Automated anonymization of personal data in judicial documents, aligned with the Data Protection Regulation.',
     },
-    fuenteUrl: 'https://cij.poder-judicial.go.cr/',
+    contexto: {
+      es: 'El Poder Judicial es la única institución del Estado que aplica IA específicamente para cumplir con la Ley 8968 de protección de datos. Marca un piso de gobernanza que el resto del sector público todavía no replica.',
+      en: 'The Judicial Branch is the only state institution applying AI specifically to comply with Law 8968 on data protection. It sets a governance floor that the rest of the public sector has yet to replicate.',
+    },
+    fuenteUrl:
+      'https://cij.poder-judicial.go.cr/images/ProteccionDatos/REGLAMENTO_PROTECCIN_DE_DATOS-PODER_JUDICIAL.pdf',
   },
   {
     id: 'pj-sentencias-sala-iv',
@@ -90,7 +106,12 @@ export const proyectos: Proyecto[] = [
       es: '433,043 sentencias analizadas; primera aplicación documentada de ciencia de datos a investigación jurídica en CR.',
       en: '433,043 rulings analyzed; first documented application of data science to legal research in Costa Rica.',
     },
-    fuenteUrl: 'https://www.ucr.ac.cr/',
+    contexto: {
+      es: 'Alianza tripartita Poder Judicial + UCR + Programa Estado de la Nación. El modelo de cooperación con academia pública es replicable en otras instituciones, pero hasta hoy es único en su tipo en el Estado costarricense.',
+      en: 'A three-way partnership of the Judicial Branch, UCR and the State of the Nation Program. The model of cooperation with public academia is replicable elsewhere, but to date is unique in Costa Rica.',
+    },
+    fuenteUrl:
+      'https://www.ucr.ac.cr/noticias/2025/7/09/la-inteligencia-artificial-analiza-de-manera-automatico-sentencias-de-la-sala-cuarta.html',
   },
   {
     id: 'ccss-tec-formacion',
@@ -106,7 +127,12 @@ export const proyectos: Proyecto[] = [
       es: 'Curso de 8 semanas para personal médico, TI y administrativo. Proyectos: detección de anomalías en mamografías, análisis de imágenes oftálmicas neonatales.',
       en: '8-week course for medical, IT and administrative staff. Projects: anomaly detection in mammograms, analysis of neonatal eye imaging.',
     },
-    fuenteUrl: 'https://www.tec.ac.cr/',
+    contexto: {
+      es: 'Primer programa formal de formación en IA clínica en Costa Rica. La CCSS financia capacitación en lugar de adquisición de software, lo que apunta a desarrollar capacidad interna antes que dependencia de proveedores.',
+      en: 'First formal medical AI training program in Costa Rica. CCSS is funding training rather than buying software, signaling intent to build internal capacity before relying on vendors.',
+    },
+    fuenteUrl:
+      'https://www.tec.ac.cr/hoyeneltec/2025/12/15/tec-ccss-impulsan-uso-inteligencia-artificial-resolver-retos-salud-publica',
   },
   {
     id: 'ccss-edus',
@@ -121,7 +147,12 @@ export const proyectos: Proyecto[] = [
       es: 'Expediente Digital Único en Salud (operativo desde 2010, Ley 9162) con incorporación planificada de IA para medicina predictiva.',
       en: 'Single Digital Health Record (live since 2010, Law 9162) with planned AI incorporation for predictive medicine.',
     },
-    fuenteUrl: 'https://publications.iadb.org/',
+    contexto: {
+      es: 'EDUS cubre al 100% de los asegurados de la CCSS y se probó durante la pandemia. La capa de IA está planificada pero sin cronograma público; es uno de los datasets más valiosos del Estado costarricense aún sin explotar con IA a escala.',
+      en: 'EDUS covers 100% of CCSS members and was stress-tested during the pandemic. The AI layer is planned but has no public timeline; it is one of the most valuable Costa Rican state datasets still untapped at scale by AI.',
+    },
+    fuenteUrl:
+      'https://publications.iadb.org/en/costa-ricas-unified-digital-health-record-edus-system-best-practices-history-and-implementation',
   },
   {
     id: 'ccss-ebais',
@@ -137,7 +168,12 @@ export const proyectos: Proyecto[] = [
       es: 'Implementación de IA en Equipos Básicos de Atención Integral en Salud para mejorar diagnósticos y reducir referencias a hospitales.',
       en: 'AI deployment in Basic Comprehensive Health Care Teams to improve diagnoses and reduce hospital referrals.',
     },
-    fuenteUrl: 'https://observador.cr/',
+    contexto: {
+      es: 'Piloto activo en 2025. Llevar IA a la atención primaria es una decisión de cobertura territorial: implica que la institución apuesta por descongestionar hospitales antes que por modernizar especialidades.',
+      en: 'Active pilot in 2025. Taking AI to primary care is a territorial-coverage bet: the institution is prioritizing relief at the hospital level over modernizing specialty services.',
+    },
+    fuenteUrl:
+      'https://observador.cr/ccss-incorporara-inteligencia-artificial-en-ebais-para-agilizar-diagnosticos-y-reducir-referencias-a-hospitales/',
   },
   {
     id: 'hacienda-anomaly',
@@ -157,7 +193,12 @@ export const proyectos: Proyecto[] = [
       es: '₡8,000M (~USD 15.7M) recuperados en 2025; 70+ casos de facturación falsa identificados.',
       en: '₡8,000M (~USD 15.7M) recovered in 2025; 70+ fake-invoicing cases identified.',
     },
-    fuenteUrl: 'https://www.nacion.com/',
+    contexto: {
+      es: 'Único caso del Estado costarricense con retorno fiscal medible y reportado en 2025. Apoyado en infraestructura de facturación electrónica v4.4 ya consolidada; la IA agrega valor sobre datos transaccionales que el Estado ya recolectaba.',
+      en: 'The only Costa Rican state case with measurable, publicly reported fiscal returns in 2025. It rides on the consolidated v4.4 e-invoicing infrastructure; AI adds value on top of transactional data the State was already collecting.',
+    },
+    fuenteUrl:
+      'https://www.nacion.com/economia/hacienda-revela-la-tecnologia-que-le-permitio/G63WRWKZ7NHLXBSHCS6RI3T4JU/story/',
   },
   {
     id: 'hacienda-asistente',
@@ -171,6 +212,10 @@ export const proyectos: Proyecto[] = [
     descripcion: {
       es: 'Asistente integrado en Hacienda Digital para mejorar la experiencia en declaraciones, pagos e importaciones/exportaciones.',
       en: 'Assistant embedded in Hacienda Digital to improve the experience for filings, payments and imports/exports.',
+    },
+    contexto: {
+      es: 'Es el único asistente virtual ciudadano operativo en el gobierno central. No hay un chatbot nacional unificado tipo Bürokratt (Estonia) o VICA (Singapur); cada institución resuelve por su cuenta.',
+      en: 'The only operational citizen-facing virtual assistant in the central government. There is no unified national chatbot in the style of Estonia\u2019s Bürokratt or Singapore\u2019s VICA; each institution builds its own.',
     },
     fuenteUrl: 'https://www.hacienda.go.cr/',
   },
@@ -192,7 +237,12 @@ export const proyectos: Proyecto[] = [
       es: 'Primer país latinoamericano con IA como carrera técnica formal en secundaria.',
       en: 'First Latin American country with AI as a formal technical track in secondary education.',
     },
-    fuenteUrl: 'https://www.mep.go.cr/',
+    contexto: {
+      es: 'Hito regional logrado por alianza público-privada con Intel. La salida de Intel de operaciones de manufactura en CR deja una pregunta abierta: ¿quién sostiene el currículo si el socio principal pierde presencia local?',
+      en: 'Regional milestone achieved through a public-private partnership with Intel. With Intel scaling back its Costa Rica manufacturing footprint, there is an open question on who sustains the curriculum if the lead partner reduces local presence.',
+    },
+    fuenteUrl:
+      'https://www.mep.go.cr/noticias/convenio-mep-e-intel-costa-rica-habilitara-especialidad-inteligencia-artificial-colegios-te',
   },
   {
     id: 'micitt-linc',
@@ -212,6 +262,10 @@ export const proyectos: Proyecto[] = [
       es: '+4,500 personas capacitadas; 70% participación femenina.',
       en: '+4,500 people trained; 70% female participation.',
     },
-    fuenteUrl: 'https://www.micitt.go.cr/',
+    contexto: {
+      es: 'Cobertura geográfica en las 7 provincias y 70% de participación femenina marcan un piso de equidad inusual en programas tech del Estado. La meta declarada es expandir a 20+ laboratorios.',
+      en: 'Coverage across all 7 provinces and 70% female participation mark an unusual equity floor for state-led tech programs. The stated goal is to expand to 20+ labs.',
+    },
+    fuenteUrl: 'https://www.micitt.go.cr/micitt/laboratorios-de-innovacion-comunitaria',
   },
 ];

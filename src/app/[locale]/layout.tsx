@@ -72,7 +72,7 @@ export default async function LocaleLayout({
     <>
       <Nav locale={locale as Locale} t={t} />
       <main lang={locale}>{children}</main>
-      <Footer t={t} />
+      <Footer locale={locale as Locale} t={t} />
     </>
   );
 }

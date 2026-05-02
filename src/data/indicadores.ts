@@ -14,6 +14,99 @@ export const ilia2025: IndicadorRegional[] = [
   { pais: { es: 'Costa Rica', en: 'Costa Rica' }, ilia: 53.83, destacado: true },
 ];
 
+export interface ComparativaPais {
+  pais: Bilingual;
+  ilia: number;
+  inversion: Bilingual;
+  enteEjecutor: Bilingual;
+  hito: Bilingual;
+  fuenteUrl: string;
+  destacado?: boolean;
+}
+
+export const comparativaRegional: ComparativaPais[] = [
+  {
+    pais: { es: 'Chile', en: 'Chile' },
+    ilia: 73.07,
+    inversion: { es: 'USD 32M', en: 'USD 32M' },
+    enteEjecutor: {
+      es: 'CENIA (Centro Nacional de IA), operativo',
+      en: 'CENIA (National AI Center), operational',
+    },
+    hito: {
+      es: 'Latam-GPT, modelo regional de 70B parámetros desarrollado por USD 550K.',
+      en: 'Latam-GPT, regional 70B-parameter model built for USD 550K.',
+    },
+    fuenteUrl:
+      'https://ucstrategies.com/news/latam-gpt-chile-built-a-national-ai-for-550k-and-its-running-on-amazons-servers/',
+  },
+  {
+    pais: { es: 'Brasil', en: 'Brazil' },
+    ilia: 69.30,
+    inversion: { es: 'USD 4,000M (PBIA)', en: 'USD 4,000M (PBIA)' },
+    enteEjecutor: {
+      es: 'Plan Brasileiro de IA (PBIA), liderado por MCTI',
+      en: 'Brazilian AI Plan (PBIA), led by MCTI',
+    },
+    hito: {
+      es: 'Mayor inversión absoluta en IA en América Latina.',
+      en: 'Largest absolute AI investment in Latin America.',
+    },
+    fuenteUrl: 'https://www.gov.br/mcti/',
+  },
+  {
+    pais: { es: 'Uruguay', en: 'Uruguay' },
+    ilia: 64.98,
+    inversion: {
+      es: 'Agesic con presupuesto operativo desde 2007',
+      en: 'Agesic with operating budget since 2007',
+    },
+    enteEjecutor: { es: 'Agesic', en: 'Agesic' },
+    hito: {
+      es: 'Estrategia Nacional IA 2024-2030 aprobada con 40+ instituciones; programa Ceibal capacitó a 80,000 estudiantes en IA.',
+      en: 'National AI Strategy 2024-2030 approved with 40+ institutions; Ceibal program trained 80,000 students in AI.',
+    },
+    fuenteUrl:
+      'https://www.uruguayxxi.gub.uy/en/news/article/80-000-uruguayan-students-trained-in-artificial-intelligence-by-2023/',
+  },
+  {
+    pais: { es: 'Colombia', en: 'Colombia' },
+    ilia: 57.21,
+    inversion: {
+      es: 'Política Nacional de IA aprobada (CONPES)',
+      en: 'National AI Policy approved (CONPES)',
+    },
+    enteEjecutor: {
+      es: 'MinTIC + DNP',
+      en: 'MinTIC + DNP',
+    },
+    hito: {
+      es: 'CONPES de IA aprobado y agenda de transformación digital activa.',
+      en: 'AI CONPES approved and active digital transformation agenda.',
+    },
+    fuenteUrl: 'https://www.mintic.gov.co/',
+  },
+  {
+    pais: { es: 'Costa Rica', en: 'Costa Rica' },
+    ilia: 53.83,
+    inversion: {
+      es: 'Sin presupuesto IA explícito en presupuesto nacional',
+      en: 'No explicit AI budget in national budget',
+    },
+    enteEjecutor: {
+      es: 'MICITT (Centro Nacional de Excelencia IA pendiente)',
+      en: 'MICITT (National AI Center of Excellence pending)',
+    },
+    hito: {
+      es: 'ENIA 2024-2027 publicada (primera política nacional de IA de Centroamérica). Hacienda recuperó ₡8,000M con IA en 2025.',
+      en: 'ENIA 2024-2027 published (first national AI policy in Central America). Hacienda recovered ₡8,000M with AI in 2025.',
+    },
+    fuenteUrl:
+      'https://micitt.go.cr/el-sector-informa/micitt-presento-estrategia-nacional-de-inteligencia-artificial-enia',
+    destacado: true,
+  },
+];
+
 export interface KpiResumen {
   label: Bilingual;
   valor: string;

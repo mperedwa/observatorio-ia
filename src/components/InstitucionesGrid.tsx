@@ -1,5 +1,7 @@
+import Link from 'next/link';
 import { instituciones } from '@/data/instituciones';
 import { proyectos } from '@/data/proyectos';
+import { ProyectoCard } from './ProyectoCard';
 import type { Dictionary } from '@/i18n/dictionaries';
 import type { Locale } from '@/i18n/config';
 
@@ -22,14 +24,17 @@ export function InstitucionesGrid({ locale, t }: { locale: Locale; t: Dictionary
           return (
             <article
               key={inst.id}
-              className="border border-slate-200 rounded-lg p-6 bg-white hover:border-institucional-700 transition-colors"
+              className="border border-slate-200 rounded-lg p-6 bg-white hover:border-institucional-700 transition-colors flex flex-col"
             >
-              <div className="flex items-start justify-between gap-4 mb-4">
+              <Link
+                href={`/${locale}/instituciones/${inst.id}`}
+                className="flex items-start justify-between gap-4 mb-4 group"
+              >
                 <div>
                   <p className="text-xs uppercase tracking-wide text-slate-500">
                     {t.instituciones.tipoLabel[inst.tipo]}
                   </p>
-                  <h3 className="mt-1 text-xl font-semibold text-slate-900">
+                  <h3 className="mt-1 text-xl font-semibold text-slate-900 group-hover:text-institucional-700 transition-colors">
                     {inst.nombreCorto[locale]}
                   </h3>
                 </div>
@@ -39,25 +44,21 @@ export function InstitucionesGrid({ locale, t }: { locale: Locale; t: Dictionary
                   </div>
                   <div className="text-xs text-slate-500">{t.instituciones.proyectosLabel}</div>
                 </div>
-              </div>
+              </Link>
               <p className="text-sm text-slate-600 mb-5 text-pretty">{inst.resumen[locale]}</p>
-              <ul className="space-y-1.5">
+              <ul className="space-y-1.5 mb-4">
                 {proyectosInst.map((p) => (
-                  <li key={p.id} className="text-xs text-slate-700 flex gap-2">
-                    <span
-                      className={`mt-1 inline-block w-1.5 h-1.5 rounded-full flex-shrink-0 ${
-                        p.estado === 'operativo'
-                          ? 'bg-emerald-500'
-                          : p.estado === 'piloto'
-                            ? 'bg-amber-500'
-                            : 'bg-slate-300'
-                      }`}
-                      aria-hidden
-                    />
-                    <span className="leading-snug">{p.titulo[locale]}</span>
+                  <li key={p.id}>
+                    <ProyectoCard proyecto={p} locale={locale} t={t} variant="compact" />
                   </li>
                 ))}
               </ul>
+              <Link
+                href={`/${locale}/instituciones/${inst.id}`}
+                className="mt-auto text-xs text-institucional-700 hover:underline self-start"
+              >
+                {t.instituciones.verDetalle} →
+              </Link>
             </article>
           );
         })}

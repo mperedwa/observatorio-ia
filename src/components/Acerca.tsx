@@ -1,6 +1,8 @@
+import Link from 'next/link';
 import type { Dictionary } from '@/i18n/dictionaries';
+import type { Locale } from '@/i18n/config';
 
-export function Acerca({ t }: { t: Dictionary }) {
+export function Acerca({ t, locale }: { t: Dictionary; locale: Locale }) {
   return (
     <section id="acerca" className="max-w-7xl mx-auto px-6 py-20">
       <div className="max-w-3xl">
@@ -16,12 +18,20 @@ export function Acerca({ t }: { t: Dictionary }) {
         <div className="mt-8 inline-block border-l-4 border-institucional-700 pl-4 py-1">
           <p className="text-sm text-slate-600">{t.acerca.ctaPregunta}</p>
           <a
-            href="mailto:hola@observatorioia.org"
+            href="mailto:info@observatorioia.org"
             className="mt-1 inline-block text-institucional-700 font-medium hover:underline"
           >
-            hola@observatorioia.org →
+            info@observatorioia.org →
           </a>
         </div>
+        <p className="mt-8 text-sm">
+          <Link
+            href={`/${locale}/quien-mantiene`}
+            className="text-institucional-700 hover:underline"
+          >
+            {t.acerca.verMas}
+          </Link>
+        </p>
       </div>
     </section>
   );

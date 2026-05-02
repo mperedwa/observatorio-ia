@@ -6,12 +6,11 @@ import type { Dictionary } from '@/i18n/dictionaries';
 export function Nav({ locale, t }: { locale: Locale; t: Dictionary }) {
   const base = `/${locale}/`;
   const items = [
-    { href: `${base}#inicio`, label: t.nav.inicio },
     { href: `${base}#instituciones`, label: t.nav.instituciones },
     { href: `${base}#legislacion`, label: t.nav.legislacion },
     { href: `${base}#indicadores`, label: t.nav.indicadores },
+    { href: `${base}analisis`, label: t.nav.analisis },
     { href: `${base}#recursos`, label: t.nav.recursos },
-    { href: `${base}#acerca`, label: t.nav.acerca },
   ];
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">
