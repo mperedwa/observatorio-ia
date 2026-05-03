@@ -21,8 +21,8 @@ export function AssetOg({
           kicker: t.hero.kicker,
           title:
             locale === 'es'
-              ? '16 proyectos de IA activos en el gobierno de Costa Rica'
-              : '16 active AI projects in the Costa Rican government',
+              ? '18 proyectos de IA activos en el sector público costarricense'
+              : '18 active AI projects in Costa Rica\u2019s public sector',
           sub:
             locale === 'es'
               ? 'Mapa público abierto de instituciones, proyectos, leyes e indicadores.'

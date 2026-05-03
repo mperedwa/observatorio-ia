@@ -338,6 +338,54 @@
     "fuenteUrl": "https://www.micitt.go.cr/micitt/laboratorios-de-innovacion-comunitaria"
   },
   {
+    "id": "ucr-citic-ia-software",
+    "titulo": {
+      "es": "Integración de IA en ingeniería de software (CITIC)",
+      "en": "AI integration in software engineering (CITIC)"
+    },
+    "institucionId": "ucr",
+    "categoria": "educacion",
+    "estado": "operativo",
+    "desde": "2024",
+    "descripcion": {
+      "es": "Línea de investigación del Centro de Investigaciones en TIC (CITIC) que diseña e integra estrategias de IA en procesos clave del ciclo de vida del software: ingeniería de requisitos, generación automática de código, reparación automática de defectos y testing automatizado.",
+      "en": "Research line at the Research Center on TIC (CITIC) that designs and integrates AI strategies into key software lifecycle processes: requirements engineering, automatic code generation, automated defect repair, and automated testing."
+    },
+    "resultado": {
+      "es": "Línea consolidada con outputs en cursos de posgrado, publicaciones académicas y participación en el Pura Vida AI Forum 2025. Líder: Dr. Christian Quesada-López.",
+      "en": "Consolidated line with outputs in postgraduate courses, academic publications, and participation in Pura Vida AI Forum 2025. Lead: Dr. Christian Quesada-López."
+    },
+    "contexto": {
+      "es": "Es el primer proyecto académico costarricense con metodología documentada en IA aplicada a ingeniería de software. Conecta la formación de posgrado con investigación aplicada y posiciona a la UCR como referente regional en el área.",
+      "en": "The first Costa Rican academic project with documented methodology on AI applied to software engineering. It connects postgraduate training with applied research and positions UCR as a regional reference in the area."
+    },
+    "fuenteUrl": "https://citic.ucr.ac.cr/proyectos/integracion-estrategias-inteligencia-artificial-procesos-ingenieria-software"
+  },
+  {
+    "id": "ucr-ciodd-ethical-ai",
+    "titulo": {
+      "es": "Ethical AI: Educate and Innovate (Erasmus+)",
+      "en": "Ethical AI: Educate and Innovate (Erasmus+)"
+    },
+    "institucionId": "ucr",
+    "categoria": "educacion",
+    "estado": "operativo",
+    "desde": "2024",
+    "descripcion": {
+      "es": "Proyecto Erasmus+ (No. 101179117) coordinado por el Centro de Investigación Observatorio del Desarrollo (CIOdD) que desarrolla un marco transnacional de gobernanza ética de IA en educación superior, con toolkit para docentes y foro permanente de reflexión institucional.",
+      "en": "Erasmus+ project (No. 101179117) coordinated by the Development Observatory (CIOdD) that builds a transnational framework for ethical AI governance in higher education, with a toolkit for educators and a permanent reflection forum."
+    },
+    "resultado": {
+      "es": "Consorcio de 9 instituciones en 4 países. Talleres internacionales con 50+ participantes en enero 2026, toolkit publicado, e influencia documentada en políticas institucionales (incluida la política IA de la UNED aprobada el 4 de septiembre de 2025).",
+      "en": "Consortium of 9 institutions across 4 countries. International workshops with 50+ participants in January 2026, published toolkit, and documented influence on institutional policies (including UNED\u2019s AI policy approved on September 4, 2025)."
+    },
+    "contexto": {
+      "es": "Es el único proyecto Erasmus+ con liderazgo costarricense en gobernanza ética de IA en educación superior. Llena un vacío que la ENIA reconoce pero no implementa: marcos formales de uso ético en el sector público, particularmente en universidades estatales que forman a los futuros funcionarios.",
+      "en": "The only Erasmus+ project with Costa Rican leadership on ethical AI governance in higher education. It fills a gap ENIA recognizes but does not implement: formal frameworks for ethical use in the public sector, particularly in state universities that train future civil servants."
+    },
+    "fuenteUrl": "https://ciodd.ucr.ac.cr/lanzamiento-oficial-del-proyecto-ethical-ia-compromiso-con-el-uso-etico-de-la-inteligencia-artificial"
+  },
+  {
     "id": "cenat-lania",
     "titulo": {
       "es": "LaNIA — Laboratorio Nacional de IA",

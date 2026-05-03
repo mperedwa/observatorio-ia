@@ -67,8 +67,8 @@ El proyecto vive en `~/Desktop/Proyectos/` (sincronizado por iCloud Drive). Cuan
 4. Verificar `ls out/en/ out/es/` — ambos deben tener `index.html`
 
 ## Estado
-Fase A entregada (mayo 2026): assets descargables para LinkedIn. Página `/[locale]/comparte` con galería, ruta interna `/comparte/asset/[type]` que renderiza cada asset en su dimensión exacta, script `npm run generate-assets` que captura PNGs con Playwright headless en `public/comparte-assets/{es,en}/`. 16 assets × 2 locales = 32 PNGs (square 1080×1080, horizontal 1200×630, story 1080×1920). OpenGraph del sitio actualizado con assets reales (home + analisis). Plan: `docs/fases/2026-05-02-fase-a-share-assets.md`. Fase 5 entregada antes (scrapers + JSON validable). Próximas fases:
-- Fase 6: clasificación LLM + alertas + API pública
+Fase 7 entregada (mayo 2026): cobertura ampliada con UCR como nueva institución académica. **18 proyectos en 7 instituciones** (PJ, CCSS, Hacienda, MEP, MICITT, CENAT, UCR). 2 proyectos UCR nuevos: `ucr-citic-ia-software` (CITIC, Dr. Quesada-López) y `ucr-ciodd-ethical-ai` (Erasmus+ No. 101179117). Validación cruzada con 3 agentes Explore en paralelo descartó 4 candidatos débiles (UNED política redundante, TEC ICMI puntual, UNA-LAPID no operativa, Muni SJ "Josefina" descontinuada). Plan: `docs/fases/2026-05-02-fase-7-ucr.md`. Próximas fases:
+- Fase 6 (pendiente): clasificación LLM de candidatos del scraper + alertas + API pública
 
 Datos en `src/data/json/` validados por schemas en `src/data/schemas/`. Los `.ts` quedan como reexports tipados. Política editorial: scrapers nunca tocan campos curados (titulo, descripcion, contexto, lecciones, resumen).
 

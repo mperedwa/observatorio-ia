@@ -12,7 +12,7 @@
  */
 
 import { chromium, type Browser } from 'playwright';
-import { mkdirSync, existsSync, readFileSync } from 'node:fs';
+import { mkdirSync, existsSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { createServer, type Server } from 'node:http';
 import { extname } from 'node:path';
@@ -78,12 +78,17 @@ function startServer(rootDir: string, port: number): Promise<Server> {
       const url = new URL(req.url ?? '/', 'http://localhost');
       let filePath = join(rootDir, decodeURIComponent(url.pathname));
       try {
-        if (!existsSync(filePath)) {
-          // intenta agregar /index.html
+        // Si la ruta es directorio (URL termina en /), servir su index.html
+        if (existsSync(filePath) && statSync(filePath).isDirectory()) {
           const tryIndex = join(filePath, 'index.html');
           if (existsSync(tryIndex)) filePath = tryIndex;
         }
         if (!existsSync(filePath)) {
+          // último intento: agregar /index.html sin verificar dir
+          const tryIndex = join(filePath, 'index.html');
+          if (existsSync(tryIndex)) filePath = tryIndex;
+        }
+        if (!existsSync(filePath) || statSync(filePath).isDirectory()) {
           res.statusCode = 404;
           res.end('not found');
           return;

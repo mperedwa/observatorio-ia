@@ -112,6 +112,29 @@
     }
   },
   {
+    "id": "ucr",
+    "nombre": {
+      "es": "Universidad de Costa Rica",
+      "en": "University of Costa Rica"
+    },
+    "nombreCorto": { "es": "UCR", "en": "UCR" },
+    "tipo": "universidad",
+    "url": "https://www.ucr.ac.cr/",
+    "proyectosActivos": 2,
+    "resumen": {
+      "es": "Universidad pública con investigación IA propia: el CITIC integra IA en el ciclo de vida del software y el CIOdD lidera Ethical AI (Erasmus+) con consorcio de 9 instituciones en 4 países.",
+      "en": "Public university with its own AI research: CITIC integrates AI into the software lifecycle and CIOdD leads Ethical AI (Erasmus+) with a consortium of 9 institutions across 4 countries."
+    },
+    "descripcion": {
+      "es": "Es la universidad pública con la presencia más activa en investigación IA aplicada del país. Cuenta con dos líneas consolidadas: el Centro de Investigaciones en TIC (CITIC) trabaja en integración de IA al ciclo de vida del software, y el Centro de Investigación Observatorio del Desarrollo (CIOdD) coordina la participación costarricense en el proyecto Erasmus+ Ethical AI: Educate and Innovate (No. 101179117), con outputs concretos en toolkits de gobernanza ética para docencia y políticas institucionales.",
+      "en": "The public university with the most active applied AI research presence in the country. Two consolidated lines: the Research Center on TIC (CITIC) works on AI integration into the software lifecycle, and the Development Observatory (CIOdD) coordinates Costa Rican participation in Erasmus+ Ethical AI: Educate and Innovate (No. 101179117), with concrete outputs in ethics governance toolkits for teaching and institutional policies."
+    },
+    "lecciones": {
+      "es": "La UCR es la única institución académica costarricense con outputs IA verificables conectados a marcos europeos (Erasmus+) y a producción académica indexada. Es el puente natural para llenar el rol de Centro Nacional de Excelencia en IA prometido por la ENIA y aún no operativo. Su valor está en gobernanza y formación, no en sistemas operativos a escala.",
+      "en": "UCR is the only Costa Rican academic institution with verifiable AI outputs linked to European frameworks (Erasmus+) and indexed academic production. It is the natural bridge to fill the role of the National AI Center of Excellence promised by ENIA and not yet operational. Its value lies in governance and training, not at-scale operational systems."
+    }
+  },
+  {
     "id": "cenat",
     "nombre": {
       "es": "Centro Nacional de Alta Tecnología",

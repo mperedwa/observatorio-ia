@@ -11,6 +11,7 @@ const colorByInst: Record<string, { dot: string; text: string }> = {
   mep: { dot: '#e11d48', text: '#be123c' },
   micitt: { dot: '#0284c7', text: '#0369a1' },
   cenat: { dot: '#7c3aed', text: '#6d28d9' },
+  ucr: { dot: '#0d9488', text: '#0f766e' },
 };
 
 export function AssetTimeline({

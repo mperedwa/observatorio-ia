@@ -14,6 +14,7 @@ const institucionColor: Record<string, { dot: string; text: string; bg: string }
   mep: { dot: 'bg-rose-600', text: 'text-rose-700', bg: 'bg-rose-50' },
   micitt: { dot: 'bg-sky-600', text: 'text-sky-700', bg: 'bg-sky-50' },
   cenat: { dot: 'bg-violet-600', text: 'text-violet-700', bg: 'bg-violet-50' },
+  ucr: { dot: 'bg-teal-600', text: 'text-teal-700', bg: 'bg-teal-50' },
 };
 
 export function TimelineAdopcion({ locale, t }: { locale: Locale; t: Dictionary }) {
