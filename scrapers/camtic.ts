@@ -1,73 +1,81 @@
 /**
  * Scraper CAMTIC (camtic.org).
  *
- * Estrategia: lee el feed RSS de CAMTIC (más estable que parsear HTML
- * de su WordPress, que reorganiza categorías con frecuencia) y filtra
- * por menciones a IA o referencias a los expedientes legislativos.
- * CAMTIC es voz del sector privado tech y suele adelantar reacciones
- * a movimientos legislativos.
+ * Estrategia: usa la WordPress REST API en lugar del feed RSS.
+ * El feed RSS funciona desde IPs costarricenses pero devuelve XML
+ * vacío (sin <item>) desde IPs de GitHub Actions, posiblemente por
+ * cache/CDN o por algún plugin que sirve feed minimal a clientes
+ * anónimos no-CR. La REST API no tiene ese problema y devuelve JSON
+ * directo con todos los campos necesarios.
  *
  * NO modifica datos directamente; solo anota hallazgos para revisión
  * humana en el PR (similar a MICITT).
  */
 
-import { fetchStatic, fetchWithBrowser, load, mentionsAI, closeBrowser } from './lib/source';
+import { fetchStatic, mentionsAI, closeBrowser } from './lib/source';
 import { emptyReport, writeReport, summarize, type ScraperReport } from './lib/diff';
 
-const FEED_URL = 'https://www.camtic.org/feed/';
+const API_URL = 'https://www.camtic.org/wp-json/wp/v2/posts?per_page=20&_fields=id,date,link,title,excerpt';
+
+interface WpPost {
+  id: number;
+  date: string;
+  link: string;
+  title: { rendered: string };
+  excerpt?: { rendered: string };
+}
 
 interface Nota {
   titulo: string;
   url: string;
-  pubDate?: string;
+  fecha?: string;
 }
 
-function parseRssItems(xml: string): Nota[] {
-  const $ = load(xml, { xmlMode: true });
-  const notas: Nota[] = [];
-  $('item').each((_, item) => {
-    const $item = $(item);
-    const titulo = $item.find('title').first().text().trim();
-    const url = $item.find('link').first().text().trim();
-    const pubDate = $item.find('pubDate').first().text().trim();
-    if (titulo && url) notas.push({ titulo, url, pubDate });
-  });
-  return notas;
+function decodeHtmlEntities(s: string): string {
+  return s
+    .replace(/&#8211;/g, '–')
+    .replace(/&#8217;/g, '\u2019')
+    .replace(/&#8220;/g, '\u201C')
+    .replace(/&#8221;/g, '\u201D')
+    .replace(/&#038;/g, '&')
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/<[^>]+>/g, '')
+    .trim();
 }
 
-async function fetchNotas(): Promise<{ notas: Nota[]; method: string; xmlSize: number }> {
-  // Intento 1: fetch directo (rápido)
-  let xml = await fetchStatic(FEED_URL);
-  let notas = parseRssItems(xml);
-  if (notas.length > 0) return { notas, method: 'fetch', xmlSize: xml.length };
-
-  // Intento 2: Playwright headless (puede burlar bloqueos por User-Agent o JS challenge)
-  xml = await fetchWithBrowser(FEED_URL, { timeout: 30000 });
-  notas = parseRssItems(xml);
-  return { notas, method: 'browser', xmlSize: xml.length };
+async function fetchNotas(): Promise<Nota[]> {
+  const json = await fetchStatic(API_URL);
+  const posts = JSON.parse(json) as WpPost[];
+  return posts.map((p) => ({
+    titulo: decodeHtmlEntities(p.title.rendered),
+    url: p.link,
+    fecha: p.date,
+  }));
 }
 
 export async function scrapeCamtic(): Promise<ScraperReport> {
   const report = emptyReport('camtic');
 
-  let result: { notas: Nota[]; method: string; xmlSize: number };
+  let notas: Nota[] = [];
   try {
-    result = await fetchNotas();
-    report.fetched = result.notas.length;
-    report.notes.push(`Fetch via ${result.method} (XML ${result.xmlSize}B, ${result.notas.length} items).`);
+    notas = await fetchNotas();
+    report.fetched = notas.length;
+    report.notes.push(`Fetch via WordPress REST API (${notas.length} posts).`);
   } catch (err) {
-    report.notes.push(`Error fetch RSS CAMTIC: ${(err as Error).message}`);
+    report.notes.push(`Error fetch REST API CAMTIC: ${(err as Error).message}`);
     return report;
   }
 
-  const { notas } = result;
   const relevantes = notas.filter(
     (n) => mentionsAI(n.titulo) || /23\.771|23\.919|24\.484|regulaci[oó]n|ley.*ia/i.test(n.titulo),
   );
   report.matched = relevantes.length;
 
   if (relevantes.length === 0) {
-    report.notes.push(`Ninguna de las ${notas.length} notas CAMTIC menciona IA o los expedientes IA.`);
+    report.notes.push(`Ninguno de los ${notas.length} posts CAMTIC menciona IA o los expedientes IA.`);
     return report;
   }
 

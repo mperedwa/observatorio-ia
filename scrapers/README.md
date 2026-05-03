@@ -82,5 +82,5 @@ Selectores actuales (mantener al día):
 | Fuente | Función | URL/Selector |
 |---|---|---|
 | MICITT | `fetchNotas` en `micitt.ts` | URL: `/micitt-Informa/noticias`. Selector: `a[href^="/el-sector-informa/"]` (filtrando "Leer más"). |
-| CAMTIC | `fetchNotas` en `camtic.ts` | RSS feed `/feed/`, parseado en `xmlMode`. Lee `<item><title>` y `<item><link>`. |
+| CAMTIC | `fetchNotas` en `camtic.ts` | WordPress REST API: `/wp-json/wp/v2/posts?per_page=20&_fields=id,date,link,title,excerpt`. Devuelve JSON estable; el RSS feed devolvía 0 items desde IPs no-CR. |
 | Asamblea | `fetchExpedienteData` en `asamblea.ts` | URL pattern `Detalle Proyectos de Ley.aspx?Numero_Proyecto=...`, extrae texto de `<body>` y normaliza a enum de estado. |
