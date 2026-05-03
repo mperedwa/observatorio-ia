@@ -1,9 +1,9 @@
 import { ilia2025 } from '@/data/indicadores';
+import { ChartILIA } from './ChartILIA';
 import type { Dictionary } from '@/i18n/dictionaries';
 import type { Locale } from '@/i18n/config';
 
 export function Indicadores({ locale, t }: { locale: Locale; t: Dictionary }) {
-  const max = Math.max(...ilia2025.map((p) => p.ilia));
   const chile = ilia2025.find((p) => p.pais.es === 'Chile')?.ilia ?? 0;
   const cr = ilia2025.find((p) => p.destacado)?.ilia ?? 0;
   const brecha = (chile - cr).toFixed(2);
@@ -25,34 +25,7 @@ export function Indicadores({ locale, t }: { locale: Locale; t: Dictionary }) {
           <h3 className="text-lg font-semibold text-slate-900">{t.indicadores.cardTitulo}</h3>
           <span className="text-xs text-slate-500">{t.indicadores.fuente}</span>
         </div>
-        <div className="space-y-4">
-          {ilia2025.map((p) => (
-            <div key={p.pais.es}>
-              <div className="flex items-baseline justify-between mb-1.5">
-                <span
-                  className={`text-sm ${p.destacado ? 'font-bold text-institucional-900' : 'text-slate-700'}`}
-                >
-                  {p.pais[locale]}
-                </span>
-                <span
-                  className={`text-sm tabular-nums ${
-                    p.destacado ? 'font-bold text-institucional-900' : 'text-slate-700'
-                  }`}
-                >
-                  {p.ilia.toFixed(2)}
-                </span>
-              </div>
-              <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
-                <div
-                  className={`h-full rounded-full ${
-                    p.destacado ? 'bg-institucional-700' : 'bg-slate-400'
-                  }`}
-                  style={{ width: `${(p.ilia / max) * 100}%` }}
-                />
-              </div>
-            </div>
-          ))}
-        </div>
+        <ChartILIA locale={locale} t={t} />
         <p className="mt-6 text-sm text-slate-600">
           {t.indicadores.brechaPre}{' '}
           <span className="font-semibold text-slate-900">

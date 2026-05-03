@@ -74,6 +74,24 @@ export interface Dictionary {
   estado: { operativo: string; piloto: string; planificado: string };
   languageToggle: { label: string; es: string; en: string };
   breadcrumb: { inicio: string };
+  timeline: {
+    kicker: string;
+    titulo: string;
+    sub: string;
+    desdeLabel: string;
+    sinResultadoLabel: string;
+  };
+  panorama: {
+    kicker: string;
+    titulo: string;
+    sub: string;
+    proyectoLabel: string;
+  };
+  chartIlia: {
+    inversionTooltip: string;
+    enteTooltip: string;
+    drillCta: string;
+  };
   proyectoDetalle: {
     institucionLabel: string;
     categoriaLabel: string;
@@ -228,6 +246,24 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     breadcrumb: {
       inicio: 'Inicio',
+    },
+    timeline: {
+      kicker: 'Línea de tiempo',
+      titulo: 'Adopción de IA en el Estado costarricense, 2018-2026',
+      sub: 'Cada punto es un proyecto verificado en producción o piloto. La adopción se concentra en los últimos tres años, con el Poder Judicial liderando desde 2018.',
+      desdeLabel: 'desde',
+      sinResultadoLabel: 'Sin métrica pública',
+    },
+    panorama: {
+      kicker: 'Panorama',
+      titulo: 'Distribución de proyectos por institución',
+      sub: 'Vista compacta de los 16 proyectos agrupados por institución y coloreados por estado. Click en cualquiera para abrir el detalle.',
+      proyectoLabel: 'proyecto',
+    },
+    chartIlia: {
+      inversionTooltip: 'Inversión',
+      enteTooltip: 'Ente ejecutor',
+      drillCta: 'Ver análisis completo →',
     },
     proyectoDetalle: {
       institucionLabel: 'Institución',
@@ -408,6 +444,24 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     breadcrumb: {
       inicio: 'Home',
+    },
+    timeline: {
+      kicker: 'Timeline',
+      titulo: 'AI adoption in the Costa Rican State, 2018-2026',
+      sub: 'Each dot is a verified project in production or pilot. Adoption is concentrated in the past three years, with the Judicial Branch leading since 2018.',
+      desdeLabel: 'since',
+      sinResultadoLabel: 'No public metric',
+    },
+    panorama: {
+      kicker: 'Overview',
+      titulo: 'Project distribution by institution',
+      sub: 'Compact view of all 16 projects grouped by institution and colored by status. Click any to open the detail page.',
+      proyectoLabel: 'project',
+    },
+    chartIlia: {
+      inversionTooltip: 'Investment',
+      enteTooltip: 'Executing body',
+      drillCta: 'See full analysis →',
     },
     proyectoDetalle: {
       institucionLabel: 'Institution',

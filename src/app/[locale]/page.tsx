@@ -1,5 +1,7 @@
 import { Hero } from '@/components/Hero';
+import { TimelineAdopcion } from '@/components/TimelineAdopcion';
 import { InstitucionesGrid } from '@/components/InstitucionesGrid';
+import { MapaProyectos } from '@/components/MapaProyectos';
 import { Legislacion } from '@/components/Legislacion';
 import { Indicadores } from '@/components/Indicadores';
 import { Recursos } from '@/components/Recursos';
@@ -17,7 +19,9 @@ export default async function Home({
   return (
     <>
       <Hero locale={locale as Locale} t={t} />
+      <TimelineAdopcion locale={locale as Locale} t={t} />
       <InstitucionesGrid locale={locale as Locale} t={t} />
+      <MapaProyectos locale={locale as Locale} t={t} />
       <Legislacion locale={locale as Locale} t={t} />
       <Indicadores locale={locale as Locale} t={t} />
       <Recursos locale={locale as Locale} t={t} />

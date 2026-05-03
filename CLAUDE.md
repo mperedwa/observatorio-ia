@@ -23,7 +23,7 @@ npm run start      # sirve la build (no usar para edición)
   - `analisis/page.tsx` — brechas y benchmarks regionales (público parcial del plan maestro)
   - `quien-mantiene/page.tsx` — autoría, metodología y contacto
 - `src/i18n/` — `config.ts` (locales, tipo `Bilingual`) + `dictionaries.ts` (UI strings ES/EN tipados con `Dictionary`)
-- `src/components/` — Hero, InstitucionesGrid, Legislacion, Indicadores, Recursos, Acerca, Nav, Footer, LanguageToggle, Breadcrumb, ProyectoCard, BrechaCard. Todos reciben `locale` y/o `t: Dictionary` por props.
+- `src/components/` — Hero, TimelineAdopcion, InstitucionesGrid, MapaProyectos, Legislacion, Indicadores (incluye ChartILIA con Recharts), Recursos, Acerca, Nav, Footer, LanguageToggle, Breadcrumb, ProyectoCard, BrechaCard. Todos reciben `locale` y/o `t: Dictionary` por props. Las visualizaciones de Fase 4 (TimelineAdopcion, ChartILIA, MapaProyectos) son client components con tooltips en hover y drill-down al click.
 - `src/data/` — fuente de verdad. **Strings de UI son `Bilingual = {es, en}`**, no strings planos. Campos no-traducibles (URLs, IDs, números, años) quedan como string/number plano.
   - `instituciones.ts` — 6 instituciones (Poder Judicial, CCSS, Hacienda, MEP, MICITT, CENAT) con `nombre`, `nombreCorto`, `resumen`, `descripcion`, `lecciones` bilingües. Tipo `Tipo` incluye `'investigacion'` para CENAT.
   - `proyectos.ts` — 16 proyectos con `titulo`, `descripcion`, `resultado`, `contexto` bilingües
@@ -65,10 +65,11 @@ El proyecto vive en `~/Desktop/Proyectos/` (sincronizado por iCloud Drive). Cuan
 4. Verificar `ls out/en/ out/es/` — ambos deben tener `index.html`
 
 ## Estado
-Fase 3 entregada (mayo 2026): cobertura ampliada. 52 páginas estáticas: home + análisis + quien-mantiene + 16 proyectos + 6 instituciones, todo bilingüe. Repo público en GitHub conectado a Vercel: cada push a `main` redeployea. Plan archivado en `docs/fases/2026-05-02-fase-3-cobertura.md`. Próximas fases:
-- Fase 4: visualizaciones (timeline cronológico + charts con drill-down + mapa de proyectos)
+Fase 4 entregada (mayo 2026): visualizaciones. 52 páginas estáticas; home ahora incluye 3 visualizaciones interactivas (TimelineAdopcion 2018-2026, MapaProyectos por institución, ChartILIA con Recharts). Plan archivado en `docs/fases/2026-05-02-fase-4-visualizaciones.md`. Próximas fases:
 - Fase 5: scrapers automatizados (Playwright MICITT/CAMTIC + GitHub Actions cron) — reagendado desde la Fase 2 original
 - Fase 6: clasificación LLM + alertas + API pública
+
+Dependencia nueva: `recharts@3.8.1` (solo usado en `ChartILIA.tsx`; Timeline y Mapa son SVG/CSS custom para mantener el bundle bajo).
 
 ## Separación contenido público / privado
 La sección `/analisis` y los textos de `contexto`/`lecciones`/`brechas` son extractos editoriales del plan maestro privado (Obsidian `Projects/CR-IA-Gobierno/`). **Lo que SÍ va público**: diagnóstico de brechas, benchmarks regionales, evidencia verificable. **Lo que NO va público**: recomendaciones tácticas de política pública, presupuesto USD 18-32M, plan de contacto MICITT, fellowship IA, plan de fundraising, fechas de reuniones. Antes de cada commit que toque `src/data/brechas.ts`, `src/data/instituciones.ts` (campo `lecciones`), `src/data/proyectos.ts` (campo `contexto`) o `src/i18n/dictionaries.ts` (bloque `analisis`), grep contra términos sensibles del plan maestro.
