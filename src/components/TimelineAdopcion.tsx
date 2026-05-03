@@ -20,10 +20,10 @@ export function TimelineAdopcion({ locale, t }: { locale: Locale; t: Dictionary 
   const [hoverId, setHoverId] = useState<string | null>(null);
 
   const datados = proyectos.filter((p) => p.desde);
-  const years = Array.from(new Set(datados.map((p) => Number(p.desde)))).sort((a, b) => a - b);
-  const minYear = years[0];
-  const maxYear = years[years.length - 1];
+  const minYear = Math.min(...datados.map((p) => Number(p.desde)));
+  const maxYear = Math.max(...datados.map((p) => Number(p.desde)));
   const range = maxYear - minYear || 1;
+  const allYears = Array.from({ length: range + 1 }, (_, i) => minYear + i);
 
   const porInstitucion = instituciones
     .map((inst) => ({
@@ -50,24 +50,27 @@ export function TimelineAdopcion({ locale, t }: { locale: Locale; t: Dictionary 
           <p className="mt-3 text-slate-600 max-w-3xl text-pretty">{t.timeline.sub}</p>
         </header>
 
-        <div className="bg-white border border-slate-200 rounded-lg p-4 sm:p-8 overflow-x-auto">
-          <div className="min-w-[640px]">
-            {/* eje X: años */}
-            <div className="relative h-8 mb-6">
-              <div className="absolute inset-x-0 top-1/2 h-px bg-slate-200" />
-              {years.map((y) => {
-                const x = ((y - minYear) / range) * 100;
-                return (
-                  <div
-                    key={y}
-                    className="absolute top-0 -translate-x-1/2 text-xs font-medium text-slate-500 tabular-nums"
-                    style={{ left: `${x}%` }}
-                  >
-                    <div className="pb-1">{y}</div>
-                    <div className="w-px h-3 bg-slate-300 mx-auto" />
-                  </div>
-                );
-              })}
+        <div className="bg-white border border-slate-200 rounded-lg p-4 sm:p-8 overflow-x-auto overflow-y-visible">
+          <div className="min-w-[640px] pb-40">
+            {/* eje X: TODOS los años del rango, no solo los que tienen proyectos */}
+            <div className="relative h-8 mb-6 grid grid-cols-[140px_1fr] gap-4 items-end">
+              <div />
+              <div className="relative h-8">
+                <div className="absolute inset-x-0 top-1/2 h-px bg-slate-200" />
+                {allYears.map((y) => {
+                  const x = ((y - minYear) / range) * 100;
+                  return (
+                    <div
+                      key={y}
+                      className="absolute top-0 -translate-x-1/2 text-xs font-medium text-slate-500 tabular-nums"
+                      style={{ left: `${x}%` }}
+                    >
+                      <div className="pb-1">{y}</div>
+                      <div className="w-px h-3 bg-slate-300 mx-auto" />
+                    </div>
+                  );
+                })}
+              </div>
             </div>
 
             {/* filas por institución */}
@@ -86,6 +89,13 @@ export function TimelineAdopcion({ locale, t }: { locale: Locale; t: Dictionary 
                       {ps.map((p) => {
                         const x = ((Number(p.desde) - minYear) / range) * 100;
                         const isHover = hoverId === p.id;
+                        const isLeftEdge = x < 18;
+                        const isRightEdge = x > 82;
+                        const tooltipAlignClass = isLeftEdge
+                          ? 'left-0'
+                          : isRightEdge
+                            ? 'right-0'
+                            : 'left-1/2 -translate-x-1/2';
                         return (
                           <Link
                             key={p.id}
@@ -103,7 +113,7 @@ export function TimelineAdopcion({ locale, t }: { locale: Locale; t: Dictionary 
                             />
                             {isHover && (
                               <div
-                                className={`absolute z-30 bottom-full left-1/2 -translate-x-1/2 mb-3 w-64 rounded-md border border-slate-200 bg-white p-3 shadow-lg`}
+                                className={`absolute z-30 top-full mt-3 w-64 rounded-md border border-slate-200 bg-white p-3 shadow-lg ${tooltipAlignClass}`}
                               >
                                 <div
                                   className={`inline-block text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded ${color.bg} ${color.text} mb-1`}

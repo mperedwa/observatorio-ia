@@ -376,6 +376,7 @@ export const proyectos: Proyecto[] = [
     institucionId: 'cenat',
     categoria: 'infraestructura',
     estado: 'piloto',
+    desde: '2026',
     descripcion: {
       es: 'Hub público nacional de investigación, formación y desarrollo de IA aplicada a problemas de alto impacto social: movilidad urbana, biodiversidad, educación, salud y sismología. Servicios de análisis de datos, desarrollo de productos tecnológicos y spin-offs.',
       en: 'National public hub for research, training and development of AI applied to high social-impact problems: urban mobility, biodiversity, education, health and seismology. Provides data analysis, product development and spin-off services.',
