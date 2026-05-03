@@ -67,8 +67,8 @@ El proyecto vive en `~/Desktop/Proyectos/` (sincronizado por iCloud Drive). Cuan
 4. Verificar `ls out/en/ out/es/` — ambos deben tener `index.html`
 
 ## Estado
-Fase 7 entregada (mayo 2026): cobertura ampliada con UCR como nueva institución académica. **18 proyectos en 7 instituciones** (PJ, CCSS, Hacienda, MEP, MICITT, CENAT, UCR). 2 proyectos UCR nuevos: `ucr-citic-ia-software` (CITIC, Dr. Quesada-López) y `ucr-ciodd-ethical-ai` (Erasmus+ No. 101179117). Validación cruzada con 3 agentes Explore en paralelo descartó 4 candidatos débiles (UNED política redundante, TEC ICMI puntual, UNA-LAPID no operativa, Muni SJ "Josefina" descontinuada). Plan: `docs/fases/2026-05-02-fase-7-ucr.md`. Próximas fases:
-- Fase 6 (pendiente): clasificación LLM de candidatos del scraper + alertas + API pública
+Fase 6 entregada (mayo 2026): clasificador LLM opcional para candidatos del scraper. Llama 3.3 70B vía Groq (free tier) enriquece cada candidato con score (0-10), tipo (proyecto-nuevo/actualizacion/comunicado/evento/ruido), resumen y tags. PR auto agrupa candidatos por relevancia (alta/media/baja). Política editorial intacta: cero auto-add. Si `GROQ_API_KEY` no está configurado en GitHub Secrets, el workflow corre en modo fallback Fase 5 (lista plana). Plan: `docs/fases/2026-05-02-fase-6-llm-classifier.md`. Anteriormente (mayo 2026): Fase 7 (UCR como 7° institución, 18 proyectos), Fase A (assets /comparte), Fase 5 (scrapers + JSON validable). Próximas fases potenciales:
+- Fase 8: alertas Telegram/email + API pública JSON read-only
 
 Datos en `src/data/json/` validados por schemas en `src/data/schemas/`. Los `.ts` quedan como reexports tipados. Política editorial: scrapers nunca tocan campos curados (titulo, descripcion, contexto, lecciones, resumen).
 

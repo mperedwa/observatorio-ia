@@ -75,9 +75,10 @@ export async function scrapeMicitt(): Promise<ScraperReport> {
   }
 
   // Política conservadora: NO se proponen `add` automáticos para proyectos.
-  // Se anotan los hallazgos para revisión humana en el PR.
+  // Los candidatos van a `report.candidates` para clasificación posterior por LLM
+  // (Fase 6) o como notas planas (Fase 5 fallback).
   for (const n of relevantes.slice(0, 10)) {
-    report.notes.push(`Candidato MICITT: ${n.titulo} → ${n.url}`);
+    report.candidates.push({ titulo: n.titulo, url: n.url });
   }
 
   return report;

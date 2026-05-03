@@ -14,7 +14,34 @@ Los scrapers **jamás** modifican estos campos (curados editorialmente):
 
 Solo actualizan campos verificables desde la fuente: `estado`, `presentado`, `desde`, `resultado` (cuando viene cifrado de fuente oficial).
 
-Para nuevos proyectos detectados en MICITT/CAMTIC, los scrapers anotan el hallazgo en `notes` (no hacen `add` automático). Mario decide si promover el candidato a entrada formal.
+Para nuevos proyectos detectados en MICITT/CAMTIC, los scrapers anotan el hallazgo como `candidate` en el reporte (no hacen `add` automático). Mario decide si promover el candidato a entrada formal.
+
+## Clasificador LLM (opcional, Fase 6)
+
+Si `GROQ_API_KEY` está disponible en el entorno, el orquestador clasifica cada candidato con **Llama 3.3 70B vía Groq** (free tier, español nativo). Cada candidato recibe:
+
+- **score** (0-10): qué tan relevante es para el observatorio
+- **tipo**: `proyecto-nuevo`, `actualizacion`, `comunicado`, `evento`, `ruido`
+- **resumen**: 1-2 frases factuales
+- **tags**: 2-5 etiquetas
+
+El reporte del PR ordena los candidatos por score (alta → media → baja) para que Mario vea primero lo importante. **El LLM no autoriza cambios al catálogo**: la política de revisión humana se mantiene.
+
+**Setup**:
+1. Crear cuenta gratis en https://console.groq.com/
+2. Generar API key en https://console.groq.com/keys
+3. Configurar como secret de GitHub: Settings → Secrets and variables → Actions → New repository secret → nombre `GROQ_API_KEY`, valor pegar la key
+
+**Costo**: $0/mes. Free tier de Groq: 1M tokens/día, 30 req/min. Uso estimado: 100K tokens/mes (<0.5% del límite mensual).
+
+**Fallback**: si el secret no está configurado, el workflow corre igual y el reporte muestra los candidatos sin ranking (modo Fase 5).
+
+**Test local**:
+```bash
+export GROQ_API_KEY=gsk_...
+npm run scrape:all
+cat scraper-runs/last-run.md
+```
 
 ## Cómo correr local
 

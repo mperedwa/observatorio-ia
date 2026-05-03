@@ -41,6 +41,10 @@ jobs:
 
       - name: Run scrapers
         id: scrape
+        env:
+          # Opcional: si el secret está configurado, los candidatos se enriquecen con Llama 3.3 70B vía Groq.
+          # Sin el secret, el workflow funciona en modo Fase 5 (lista plana de candidatos sin score).
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         run: npm run scrape:all
 
       - name: Validate data after scrape

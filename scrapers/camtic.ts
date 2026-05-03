@@ -80,7 +80,7 @@ export async function scrapeCamtic(): Promise<ScraperReport> {
   }
 
   for (const n of relevantes.slice(0, 10)) {
-    report.notes.push(`Candidato CAMTIC: ${n.titulo} → ${n.url}`);
+    report.candidates.push({ titulo: n.titulo, url: n.url });
   }
 
   return report;

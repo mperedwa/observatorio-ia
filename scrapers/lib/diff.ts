@@ -16,12 +16,18 @@ export interface ProposedChange {
   scrapedAt: string;
 }
 
+export interface ScraperCandidate {
+  titulo: string;
+  url: string;
+}
+
 export interface ScraperReport {
   scraper: string;
   ranAt: string;
   fetched: number;
   matched: number;
   changes: ProposedChange[];
+  candidates: ScraperCandidate[];
   notes: string[];
 }
 
@@ -38,6 +44,7 @@ export function emptyReport(scraper: string): ScraperReport {
     fetched: 0,
     matched: 0,
     changes: [],
+    candidates: [],
     notes: [],
   };
 }
