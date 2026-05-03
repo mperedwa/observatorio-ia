@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Script from 'next/script';
+import { Analytics } from '@vercel/analytics/next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 
@@ -14,12 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html className={inter.variable} suppressHydrationWarning>
       <body className="font-sans antialiased bg-white text-slate-900">{children}</body>
-      <Script
-        defer
-        data-domain="observatorioia.org"
-        src="https://plausible.io/js/script.js"
-        strategy="afterInteractive"
-      />
+      <Analytics />
     </html>
   );
 }
