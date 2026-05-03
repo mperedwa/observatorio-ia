@@ -42,8 +42,10 @@ export function emptyReport(scraper: string): ScraperReport {
   };
 }
 
+export const REPORTS_DIR = 'scraper-runs';
+
 export function writeReport(report: ScraperReport): string {
-  const dir = join(ROOT, '.scrapers');
+  const dir = join(ROOT, REPORTS_DIR);
   if (!existsSync(dir)) mkdirSync(dir, { recursive: true });
   const file = join(dir, `${report.scraper}-${report.ranAt.replace(/[:.]/g, '-')}.json`);
   writeFileSync(file, JSON.stringify(report, null, 2));

@@ -42,4 +42,4 @@ next-env.d.ts
 /.icloud-trash/
 
 # scraper run reports (artifact en GHA, no versionar)
-/.scrapers/
+/scraper-runs/

@@ -14,7 +14,7 @@ import { join } from 'node:path';
 import { scrapeAsamblea } from './asamblea';
 import { scrapeMicitt } from './micitt';
 import { scrapeCamtic } from './camtic';
-import { applyChange, type ScraperReport, type ProposedChange } from './lib/diff';
+import { applyChange, REPORTS_DIR, type ScraperReport, type ProposedChange } from './lib/diff';
 import { validateAll, crossCheck } from './lib/validator';
 import { closeBrowser } from './lib/source';
 
@@ -96,7 +96,7 @@ async function main(): Promise<void> {
     validationOk: valid && crossOk,
   };
 
-  const outDir = join(ROOT, '.scrapers');
+  const outDir = join(ROOT, REPORTS_DIR);
   if (!existsSync(outDir)) mkdirSync(outDir, { recursive: true });
 
   writeFileSync(join(outDir, 'last-run.json'), JSON.stringify(consolidated, null, 2));

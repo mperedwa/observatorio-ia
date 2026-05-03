@@ -66,7 +66,7 @@ jobs:
             Cambios detectados por scrapers en fuentes oficiales.
             Revisar diff y mergear si los cambios son correctos.
           title: 'chore(data): scrape automático ${{ github.run_id }}'
-          body-path: .scrapers/last-run.md
+          body-path: scraper-runs/last-run.md
           branch: auto/scrape-${{ github.run_id }}
           labels: |
             scraper-auto
@@ -80,5 +80,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: scraper-reports-${{ github.run_id }}
-          path: .scrapers/
+          path: scraper-runs/
           retention-days: 30

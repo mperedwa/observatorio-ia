@@ -11,7 +11,7 @@
  * humana en el PR (similar a MICITT).
  */
 
-import { fetchStatic, load, mentionsAI, closeBrowser } from './lib/source';
+import { fetchStatic, fetchWithBrowser, load, mentionsAI, closeBrowser } from './lib/source';
 import { emptyReport, writeReport, summarize, type ScraperReport } from './lib/diff';
 
 const FEED_URL = 'https://www.camtic.org/feed/';
@@ -22,8 +22,7 @@ interface Nota {
   pubDate?: string;
 }
 
-async function fetchNotas(): Promise<Nota[]> {
-  const xml = await fetchStatic(FEED_URL);
+function parseRssItems(xml: string): Nota[] {
   const $ = load(xml, { xmlMode: true });
   const notas: Nota[] = [];
   $('item').each((_, item) => {
@@ -36,25 +35,39 @@ async function fetchNotas(): Promise<Nota[]> {
   return notas;
 }
 
+async function fetchNotas(): Promise<{ notas: Nota[]; method: string; xmlSize: number }> {
+  // Intento 1: fetch directo (rápido)
+  let xml = await fetchStatic(FEED_URL);
+  let notas = parseRssItems(xml);
+  if (notas.length > 0) return { notas, method: 'fetch', xmlSize: xml.length };
+
+  // Intento 2: Playwright headless (puede burlar bloqueos por User-Agent o JS challenge)
+  xml = await fetchWithBrowser(FEED_URL, { timeout: 30000 });
+  notas = parseRssItems(xml);
+  return { notas, method: 'browser', xmlSize: xml.length };
+}
+
 export async function scrapeCamtic(): Promise<ScraperReport> {
   const report = emptyReport('camtic');
 
-  let notas: Nota[] = [];
+  let result: { notas: Nota[]; method: string; xmlSize: number };
   try {
-    notas = await fetchNotas();
-    report.fetched = notas.length;
+    result = await fetchNotas();
+    report.fetched = result.notas.length;
+    report.notes.push(`Fetch via ${result.method} (XML ${result.xmlSize}B, ${result.notas.length} items).`);
   } catch (err) {
     report.notes.push(`Error fetch RSS CAMTIC: ${(err as Error).message}`);
     return report;
   }
 
+  const { notas } = result;
   const relevantes = notas.filter(
     (n) => mentionsAI(n.titulo) || /23\.771|23\.919|24\.484|regulaci[oó]n|ley.*ia/i.test(n.titulo),
   );
   report.matched = relevantes.length;
 
   if (relevantes.length === 0) {
-    report.notes.push(`Ninguna de las ${notas.length} notas recientes de CAMTIC menciona IA o los expedientes IA.`);
+    report.notes.push(`Ninguna de las ${notas.length} notas CAMTIC menciona IA o los expedientes IA.`);
     return report;
   }
 
