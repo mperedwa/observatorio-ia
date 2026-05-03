@@ -79,8 +79,8 @@ Si un sitio fuente cambia su HTML, el scraper falla y deja de detectar cambios. 
 
 Selectores actuales (mantener al día):
 
-| Fuente | Función | Selector principal |
+| Fuente | Función | URL/Selector |
 |---|---|---|
-| MICITT | `fetchNotas` en `micitt.ts` | `article a, .views-row a, .node--type-article a, h2 a, h3 a` |
-| CAMTIC | `fetchNotas` en `camtic.ts` | `article h2 a, .post-title a, h2.entry-title a` |
-| Asamblea | `fetchExpedienteData` en `asamblea.ts` | URL pattern `Detalle Proyectos de Ley.aspx?Numero_Proyecto=...` |
+| MICITT | `fetchNotas` en `micitt.ts` | URL: `/micitt-Informa/noticias`. Selector: `a[href^="/el-sector-informa/"]` (filtrando "Leer más"). |
+| CAMTIC | `fetchNotas` en `camtic.ts` | RSS feed `/feed/`, parseado en `xmlMode`. Lee `<item><title>` y `<item><link>`. |
+| Asamblea | `fetchExpedienteData` en `asamblea.ts` | URL pattern `Detalle Proyectos de Ley.aspx?Numero_Proyecto=...`, extrae texto de `<body>` y normaliza a enum de estado. |

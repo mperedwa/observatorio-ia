@@ -15,7 +15,8 @@
 import { fetchStatic, fetchWithBrowser, load, mentionsAI, closeBrowser } from './lib/source';
 import { emptyReport, writeReport, summarize, type ScraperReport } from './lib/diff';
 
-const NEWS_URL = 'https://www.micitt.go.cr/el-sector-informa';
+const NEWS_URL = 'https://www.micitt.go.cr/micitt-Informa/noticias';
+const BASE_URL = 'https://www.micitt.go.cr';
 
 interface Nota {
   titulo: string;
@@ -34,15 +35,18 @@ async function fetchNotas(): Promise<Nota[]> {
   const $ = load(html);
   const notas: Nota[] = [];
 
-  // Selector best-effort: intenta varios patrones comunes de listados Drupal/CMS
-  const candidates = $('article a, .views-row a, .node--type-article a, h2 a, h3 a').toArray();
+  // Selectores específicos del Drupal de MICITT (verificados 2026-05-03)
+  // Los enlaces a notas individuales viven en /el-sector-informa/<slug>
+  const candidates = $('a[href^="/el-sector-informa/"]').toArray();
   const seen = new Set<string>();
   for (const el of candidates) {
     const $a = $(el);
     const href = $a.attr('href');
     const titulo = $a.text().trim();
-    if (!href || !titulo || titulo.length < 10) continue;
-    const url = href.startsWith('http') ? href : new URL(href, NEWS_URL).toString();
+    if (!href || !titulo) continue;
+    // Filtra "Leer más" y enlaces sin título descriptivo
+    if (titulo.length < 10 || /^leer\s+m[aá]s$/i.test(titulo)) continue;
+    const url = new URL(href, BASE_URL).toString();
     if (seen.has(url)) continue;
     seen.add(url);
     notas.push({ titulo, url });

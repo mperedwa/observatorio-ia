@@ -1,46 +1,38 @@
 /**
  * Scraper CAMTIC (camtic.org).
  *
- * Estrategia: lee el listado de publicaciones recientes del WordPress de
- * CAMTIC y filtra por menciones a IA o referencias a los expedientes
- * legislativos en trámite. CAMTIC es voz del sector privado tech y suele
- * adelantar reacciones a movimientos legislativos.
+ * Estrategia: lee el feed RSS de CAMTIC (más estable que parsear HTML
+ * de su WordPress, que reorganiza categorías con frecuencia) y filtra
+ * por menciones a IA o referencias a los expedientes legislativos.
+ * CAMTIC es voz del sector privado tech y suele adelantar reacciones
+ * a movimientos legislativos.
  *
  * NO modifica datos directamente; solo anota hallazgos para revisión
  * humana en el PR (similar a MICITT).
  */
 
-import { fetchStatic, fetchWithBrowser, load, mentionsAI, closeBrowser } from './lib/source';
+import { fetchStatic, load, mentionsAI, closeBrowser } from './lib/source';
 import { emptyReport, writeReport, summarize, type ScraperReport } from './lib/diff';
 
-const NEWS_URL = 'https://www.camtic.org/category/noticias/';
+const FEED_URL = 'https://www.camtic.org/feed/';
 
 interface Nota {
   titulo: string;
   url: string;
+  pubDate?: string;
 }
 
 async function fetchNotas(): Promise<Nota[]> {
-  let html: string;
-  try {
-    html = await fetchStatic(NEWS_URL);
-  } catch {
-    html = await fetchWithBrowser(NEWS_URL, { waitFor: 'body', timeout: 30000 });
-  }
-  const $ = load(html);
+  const xml = await fetchStatic(FEED_URL);
+  const $ = load(xml, { xmlMode: true });
   const notas: Nota[] = [];
-  const candidates = $('article h2 a, .post-title a, h2.entry-title a').toArray();
-  const seen = new Set<string>();
-  for (const el of candidates) {
-    const $a = $(el);
-    const href = $a.attr('href');
-    const titulo = $a.text().trim();
-    if (!href || !titulo || titulo.length < 8) continue;
-    const url = href.startsWith('http') ? href : new URL(href, NEWS_URL).toString();
-    if (seen.has(url)) continue;
-    seen.add(url);
-    notas.push({ titulo, url });
-  }
+  $('item').each((_, item) => {
+    const $item = $(item);
+    const titulo = $item.find('title').first().text().trim();
+    const url = $item.find('link').first().text().trim();
+    const pubDate = $item.find('pubDate').first().text().trim();
+    if (titulo && url) notas.push({ titulo, url, pubDate });
+  });
   return notas;
 }
 
@@ -52,17 +44,17 @@ export async function scrapeCamtic(): Promise<ScraperReport> {
     notas = await fetchNotas();
     report.fetched = notas.length;
   } catch (err) {
-    report.notes.push(`Error fetch listado CAMTIC: ${(err as Error).message}`);
+    report.notes.push(`Error fetch RSS CAMTIC: ${(err as Error).message}`);
     return report;
   }
 
   const relevantes = notas.filter(
-    (n) => mentionsAI(n.titulo) || /23\.771|23\.919|24\.484|regulación|ley.*ia/i.test(n.titulo),
+    (n) => mentionsAI(n.titulo) || /23\.771|23\.919|24\.484|regulaci[oó]n|ley.*ia/i.test(n.titulo),
   );
   report.matched = relevantes.length;
 
   if (relevantes.length === 0) {
-    report.notes.push('Ninguna nota CAMTIC reciente menciona IA o los expedientes IA.');
+    report.notes.push(`Ninguna de las ${notas.length} notas recientes de CAMTIC menciona IA o los expedientes IA.`);
     return report;
   }
 

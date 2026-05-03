@@ -9,7 +9,7 @@
  * Imprime al stdout un resumen markdown que el Action usa como cuerpo del PR.
  */
 
-import { writeFileSync, readFileSync } from 'node:fs';
+import { writeFileSync, readFileSync, mkdirSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { scrapeAsamblea } from './asamblea';
 import { scrapeMicitt } from './micitt';
@@ -96,13 +96,16 @@ async function main(): Promise<void> {
     validationOk: valid && crossOk,
   };
 
-  writeFileSync(join(ROOT, '.scrapers', 'last-run.json'), JSON.stringify(consolidated, null, 2));
+  const outDir = join(ROOT, '.scrapers');
+  if (!existsSync(outDir)) mkdirSync(outDir, { recursive: true });
+
+  writeFileSync(join(outDir, 'last-run.json'), JSON.stringify(consolidated, null, 2));
 
   // Markdown summary para PR body
   const totalChanges = appliedChanges.filter((c) => c.applied).length;
   const totalNotes = reports.reduce((s, r) => s + r.notes.length, 0);
   const md = renderMarkdown(consolidated, totalChanges, totalNotes);
-  writeFileSync(join(ROOT, '.scrapers', 'last-run.md'), md);
+  writeFileSync(join(outDir, 'last-run.md'), md);
 
   console.log('\n--- resumen ---');
   console.log(`Cambios aplicados a JSON: ${totalChanges}`);
