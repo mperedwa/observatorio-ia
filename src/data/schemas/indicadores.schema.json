@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "indicadores.schema.json",
+  "type": "object",
+  "required": ["ilia2025", "comparativaRegional", "kpisHero"],
+  "additionalProperties": false,
+  "properties": {
+    "ilia2025": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["pais", "ilia"],
+        "additionalProperties": false,
+        "properties": {
+          "pais": { "$ref": "#/definitions/bilingual" },
+          "ilia": { "type": "number", "minimum": 0, "maximum": 100 },
+          "destacado": { "type": "boolean" }
+        }
+      }
+    },
+    "comparativaRegional": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["pais", "ilia", "inversion", "enteEjecutor", "hito", "fuenteUrl"],
+        "additionalProperties": false,
+        "properties": {
+          "pais": { "$ref": "#/definitions/bilingual" },
+          "ilia": { "type": "number", "minimum": 0, "maximum": 100 },
+          "inversion": { "$ref": "#/definitions/bilingual" },
+          "enteEjecutor": { "$ref": "#/definitions/bilingual" },
+          "hito": { "$ref": "#/definitions/bilingual" },
+          "fuenteUrl": { "type": "string", "format": "uri" },
+          "destacado": { "type": "boolean" }
+        }
+      }
+    },
+    "kpisHero": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["label", "valor", "detalle"],
+        "additionalProperties": false,
+        "properties": {
+          "label": { "$ref": "#/definitions/bilingual" },
+          "valor": { "type": "string", "minLength": 1 },
+          "detalle": { "$ref": "#/definitions/bilingual" }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "bilingual": {
+      "type": "object",
+      "required": ["es", "en"],
+      "additionalProperties": false,
+      "properties": {
+        "es": { "type": "string", "minLength": 1 },
+        "en": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

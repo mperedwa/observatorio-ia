@@ -1,0 +1,149 @@
+[
+  {
+    "id": "interoperabilidad-x-road",
+    "capacidad": {
+      "es": "Interoperabilidad nacional tipo X-Road",
+      "en": "National interoperability platform (X-Road style)"
+    },
+    "paisReferencia": { "es": "Estonia", "en": "Estonia" },
+    "evidenciaReferencia": {
+      "es": "X-Road conecta 450+ organizaciones, habilita 3,000+ e-servicios y procesa 2,200 millones de transacciones al año con un equipo operador de 10-15 personas.",
+      "en": "X-Road connects 450+ organizations, enables 3,000+ e-services and processes 2.2 billion transactions per year with an operating team of 10-15 people."
+    },
+    "estadoCR": {
+      "es": "No existe una capa de interoperabilidad nacional equivalente. Cada institución integra a su ritmo y bajo sus propios estándares.",
+      "en": "No equivalent national interoperability layer exists. Each institution integrates at its own pace and on its own standards."
+    },
+    "porQueImporta": {
+      "es": "Sin esta capa, escalar pilotos como EDUS o Hacienda Digital a otras instituciones requiere construir cada conexión desde cero. Es el cuello de botella estructural más grande para que la IA en gobierno deje de ser caso aislado.",
+      "en": "Without this layer, scaling pilots like EDUS or Hacienda Digital to other institutions means building each connection from scratch. It is the largest structural bottleneck preventing AI in government from moving past isolated cases."
+    },
+    "fuenteUrl": "https://e-estonia.com/solutions/interoperability-services/x-road/"
+  },
+  {
+    "id": "gobernanza-ia-formal",
+    "capacidad": {
+      "es": "Marco formal de gobernanza de IA",
+      "en": "Formal AI governance framework"
+    },
+    "paisReferencia": { "es": "Singapur", "en": "Singapore" },
+    "evidenciaReferencia": {
+      "es": "Singapur publicó en 2024 un Marco Modelo de Gobernanza de IA Generativa con 9 dimensiones (responsabilidad, datos, desarrollo confiable, reporte de incidentes, alineación de valores, evaluación de modelos, transparencia, seguridad e IA para bien público).",
+      "en": "In 2024 Singapore published a Model AI Governance Framework for GenAI with 9 dimensions (accountability, data, trusted development, incident reporting, value alignment, model evaluation, transparency, security and AI for public good)."
+    },
+    "estadoCR": {
+      "es": "Costa Rica tiene tres expedientes de ley en comisión (23.771, 23.919, 24.484) sin aprobar. El único marco operativo son los Lineamientos de IA Generativa del Poder Judicial, sectoriales no nacionales.",
+      "en": "Costa Rica has three bills in committee (23.771, 23.919, 24.484) with no approval. The only operating framework is the Judicial Branch GenAI Guidelines, sectoral and not national."
+    },
+    "porQueImporta": {
+      "es": "Sin marco formal, cada institución decide por su cuenta cómo evaluar riesgo, transparencia y rendición de cuentas. La incertidumbre frena adopción y dificulta auditoría externa.",
+      "en": "Without a formal framework, each institution decides on its own how to evaluate risk, transparency and accountability. The uncertainty slows adoption and makes external audit difficult."
+    },
+    "fuenteUrl": "https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/press-releases/2024/public-consult-model-ai-governance-framework-genai"
+  },
+  {
+    "id": "chatbot-ciudadano",
+    "capacidad": {
+      "es": "Chatbot ciudadano nacional unificado",
+      "en": "Unified national citizen chatbot"
+    },
+    "paisReferencia": { "es": "Estonia", "en": "Estonia" },
+    "evidenciaReferencia": {
+      "es": "Bürokratt es el asistente conversacional nacional, desplegado en agencias seleccionadas y operando 24/7 con voz, chat, SMS, correo y lengua de señas. Reconocido por UNESCO/IRCAI entre los Top 100 proyectos IA globales 2024.",
+      "en": "Bürokratt is Estonia\u2019s national conversational assistant, deployed across selected agencies and running 24/7 with voice, chat, SMS, email and sign language. Recognized by UNESCO/IRCAI as one of the Top 100 global AI projects in 2024."
+    },
+    "estadoCR": {
+      "es": "No hay un chatbot ciudadano nacional. El Asistente Virtual de Hacienda es el único caso operativo en el gobierno central, limitado a su propio dominio.",
+      "en": "There is no national citizen chatbot. The Hacienda Virtual Assistant is the only operational case in the central government, limited to its own domain."
+    },
+    "porQueImporta": {
+      "es": "Un asistente unificado reduce la fragmentación de canales y baja la barrera de entrada del ciudadano al Estado digital. Es una de las inversiones de mayor impacto visible por unidad de presupuesto.",
+      "en": "A unified assistant reduces channel fragmentation and lowers the citizen\u2019s entry barrier to the digital State. It is one of the highest visible-impact investments per dollar."
+    },
+    "fuenteUrl": "https://www.ria.ee/en/state-information-system/personal-services/burokratt"
+  },
+  {
+    "id": "asistente-funcionarios",
+    "capacidad": {
+      "es": "Asistente IA interno para funcionarios públicos",
+      "en": "Internal AI assistant for public servants"
+    },
+    "paisReferencia": { "es": "Singapur", "en": "Singapore" },
+    "evidenciaReferencia": {
+      "es": "Pair, el asistente IA interno de GovTech Singapur, tiene 11,000+ usuarios y 4,500+ activos por semana en la administración pública.",
+      "en": "Pair, GovTech Singapore\u2019s internal AI assistant, has 11,000+ users and 4,500+ weekly active users across the public administration."
+    },
+    "estadoCR": {
+      "es": "No se reporta ninguna iniciativa equivalente en el Estado costarricense. Cualquier uso de IA generativa por funcionarios ocurre en herramientas comerciales sin control institucional.",
+      "en": "No equivalent initiative is reported in the Costa Rican State. Any use of generative AI by public servants happens in commercial tools without institutional oversight."
+    },
+    "porQueImporta": {
+      "es": "Sin una herramienta institucional, el riesgo se traslada a cada funcionario individualmente: datos sensibles del Estado en plataformas externas, sin trazabilidad. Una herramienta interna también captura productividad medible.",
+      "en": "Without an institutional tool, risk shifts to individual public servants: sensitive state data on external platforms, with no traceability. An internal tool also captures measurable productivity."
+    },
+    "fuenteUrl": "https://www.tech.gov.sg/products-and-services/for-government-agencies/data-and-ai/"
+  },
+  {
+    "id": "testing-pre-despliegue",
+    "capacidad": {
+      "es": "Testing obligatorio de IA antes del despliegue",
+      "en": "Mandatory AI testing before deployment"
+    },
+    "paisReferencia": { "es": "Singapur", "en": "Singapore" },
+    "evidenciaReferencia": {
+      "es": "GovTech Singapur opera Litmus (test de estrés para IA generativa pre-despliegue) y Sentinel (moderación de contenido en tiempo real) como capa obligatoria sobre los sistemas IA del gobierno.",
+      "en": "GovTech Singapore runs Litmus (stress-testing for GenAI before deployment) and Sentinel (real-time content moderation) as a mandatory layer over government AI systems."
+    },
+    "estadoCR": {
+      "es": "No existe un framework nacional de testing previo. Cada institución decide qué pruebas aplica antes de pasar un sistema IA a producción.",
+      "en": "No national pre-deployment testing framework exists. Each institution decides what testing to apply before pushing an AI system to production."
+    },
+    "porQueImporta": {
+      "es": "Es la diferencia entre un fallo IA aislado y una crisis de confianza pública. Un framework estándar también reduce el costo de adopción para instituciones pequeñas que no pueden construir el suyo.",
+      "en": "It is the difference between an isolated AI failure and a public-trust crisis. A standard framework also lowers adoption cost for smaller institutions unable to build their own."
+    },
+    "fuenteUrl": "https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/press-releases/2024/public-consult-model-ai-governance-framework-genai"
+  },
+  {
+    "id": "meta-talento-presupuesto",
+    "capacidad": {
+      "es": "Meta numérica de talento IA con presupuesto",
+      "en": "Numerical AI talent target with budget"
+    },
+    "paisReferencia": { "es": "Singapur", "en": "Singapore" },
+    "evidenciaReferencia": {
+      "es": "La Estrategia Nacional de IA 2.0 de Singapur fija una meta de triplicar el pool de IA a 15,000 personas, con S$20M+ asignados a becas SG Digital y pasantías internacionales.",
+      "en": "Singapore\u2019s National AI Strategy 2.0 sets a target of tripling the AI talent pool to 15,000 people, with S$20M+ allocated to SG Digital scholarships and international internships."
+    },
+    "estadoCR": {
+      "es": "La ENIA 2024-2027 no incluye una meta numérica de talento IA con presupuesto asociado. Las +4,500 personas de LINC y las 90,000 becas docentes del MEP se contabilizan como alfabetización digital, no como meta IA específica.",
+      "en": "ENIA 2024-2027 does not set a numerical AI talent target with associated budget. The +4,500 LINC participants and the 90,000 MEP teacher scholarships count as general digital literacy, not as a specific AI target."
+    },
+    "porQueImporta": {
+      "es": "Sin meta y sin presupuesto, no hay forma de evaluar avance ni de pedir cuentas. Cualquier conversación sobre brecha de talento se queda en cualitativo.",
+      "en": "Without a target and budget, there is no way to evaluate progress or hold anyone accountable. Any conversation about the talent gap stays purely qualitative."
+    },
+    "fuenteUrl": "https://www.smartnation.gov.sg/initiatives/national-ai-strategy/"
+  },
+  {
+    "id": "datos-transfronterizos",
+    "capacidad": {
+      "es": "Acuerdos de datos transfronterizos para gobierno",
+      "en": "Cross-border government data agreements"
+    },
+    "paisReferencia": { "es": "Estonia", "en": "Estonia" },
+    "evidenciaReferencia": {
+      "es": "Estonia y Finlandia operan desde 2018 la primera federación de interoperabilidad transfronteriza basada en X-Road, con flujos de datos gubernamentales bidireccionales.",
+      "en": "Since 2018 Estonia and Finland operate the first cross-border interoperability federation based on X-Road, with bidirectional government data flows."
+    },
+    "estadoCR": {
+      "es": "No hay una federación de datos gubernamentales entre Costa Rica y otros países de la región. Las integraciones internacionales existentes (Centroamérica, OCDE) no incluyen flujo de datos operativo entre administraciones.",
+      "en": "There is no federation of government data between Costa Rica and other countries in the region. Existing international integrations (Central America, OECD) do not include operational data flow between administrations."
+    },
+    "porQueImporta": {
+      "es": "Para servicios que cruzan frontera (migración, comercio, salud regional), la falta de acuerdos formales obliga a procesos manuales. Es una brecha que impide aprovechar el liderazgo regional que CR ya tiene en diálogo IA.",
+      "en": "For services that cross borders (migration, trade, regional health), the lack of formal agreements forces manual processes. It is a gap that prevents Costa Rica from leveraging the regional leadership it already holds in AI dialogue."
+    },
+    "fuenteUrl": "https://e-estonia.com/solutions/interoperability-services/x-road/"
+  }
+]

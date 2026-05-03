@@ -1,0 +1,84 @@
+name: Scrape fuentes oficiales
+
+on:
+  schedule:
+    # Lunes, miércoles y viernes a las 12:00 UTC (06:00 CR)
+    - cron: '0 12 * * 1,3,5'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            playwright-${{ runner.os }}-
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Run scrapers
+        id: scrape
+        run: npm run scrape:all
+
+      - name: Validate data after scrape
+        run: npm run validate-data
+
+      - name: Detect changes
+        id: changes
+        run: |
+          if [ -n "$(git status --porcelain src/data/json/)" ]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create or update PR
+        if: steps.changes.outputs.has_changes == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: |
+            chore(data): scrape automático ${{ github.run_id }}
+
+            Cambios detectados por scrapers en fuentes oficiales.
+            Revisar diff y mergear si los cambios son correctos.
+          title: 'chore(data): scrape automático ${{ github.run_id }}'
+          body-path: .scrapers/last-run.md
+          branch: auto/scrape-${{ github.run_id }}
+          labels: |
+            scraper-auto
+            needs-review
+          delete-branch: true
+          add-paths: |
+            src/data/json/
+
+      - name: Upload reports artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scraper-reports-${{ github.run_id }}
+          path: .scrapers/
+          retention-days: 30
