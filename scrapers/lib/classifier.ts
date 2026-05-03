@@ -156,10 +156,11 @@ export async function classifyMany(
   candidates: Candidate[],
   concurrency = 2,
 ): Promise<Array<Classification | null>> {
-  const apiKey = process.env.GROQ_API_KEY?.trim();
-  if (!apiKey) {
+  const apiKeyRaw = process.env.GROQ_API_KEY?.trim();
+  if (!apiKeyRaw) {
     return candidates.map(() => null);
   }
+  const apiKey: string = apiKeyRaw;
 
   const results: Array<Classification | null> = new Array(candidates.length).fill(null);
   let cursor = 0;
@@ -167,7 +168,9 @@ export async function classifyMany(
   async function worker(): Promise<void> {
     while (cursor < candidates.length) {
       const idx = cursor++;
-      results[idx] = await callGroq(apiKey, candidates[idx]);
+      const candidate = candidates[idx];
+      if (!candidate) continue;
+      results[idx] = await callGroq(apiKey, candidate);
     }
   }
 
