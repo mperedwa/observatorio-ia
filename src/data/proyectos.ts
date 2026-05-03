@@ -114,6 +114,51 @@ export const proyectos: Proyecto[] = [
       'https://www.ucr.ac.cr/noticias/2025/7/09/la-inteligencia-artificial-analiza-de-manera-automatico-sentencias-de-la-sala-cuarta.html',
   },
   {
+    id: 'pj-giro-continuo',
+    titulo: {
+      es: 'Sistema de Giro Continuo',
+      en: 'Continuous Disbursement System',
+    },
+    institucionId: 'poder-judicial',
+    categoria: 'judicial',
+    estado: 'operativo',
+    desde: '2024',
+    descripcion: {
+      es: 'Automatiza el procesamiento de pagos mensuales menores a ¢100,000 en cobro judicial sin intervención manual, integrado al flujo de gestión documental con IA.',
+      en: 'Automates monthly payment processing under ¢100,000 in debt-collection cases without manual intervention, integrated with the AI-driven document management flow.',
+    },
+    resultado: {
+      es: '223,154 giros procesados en 2024 por un valor total de ¢5,245 millones (~USD 10M).',
+      en: '223,154 disbursements processed in 2024 for a total of ¢5,245M (~USD 10M).',
+    },
+    contexto: {
+      es: 'Es la única automatización de pagos a escala nacional en el Estado costarricense con impacto fiscal directo cuantificable. Funciona como capa operativa sobre el clasificador documental, no como sistema aislado.',
+      en: 'The only nationwide payment automation in the Costa Rican State with direct, quantifiable fiscal impact. It runs as an operational layer on top of the document classifier, not as a standalone system.',
+    },
+    fuenteUrl:
+      'https://observador.cr/sistema-de-inteligencia-artificial-judicial-ya-aplica-en-cobro-judicial/',
+  },
+  {
+    id: 'pj-chatbot',
+    titulo: {
+      es: 'ChatbotPJ — Asistente virtual ciudadano',
+      en: 'ChatbotPJ — Citizen virtual assistant',
+    },
+    institucionId: 'poder-judicial',
+    categoria: 'judicial',
+    estado: 'operativo',
+    desde: '2018',
+    descripcion: {
+      es: 'Chatbot de atención ciudadana 24/7 que descongestiona la línea telefónica del Poder Judicial. Acceso sin cita previa para consultas sobre trámites y servicios judiciales.',
+      en: '24/7 citizen-facing chatbot that relieves load from the Judicial Branch\u2019s phone line. No-appointment access for queries on judicial procedures and services.',
+    },
+    contexto: {
+      es: 'Operativo desde 2018, es uno de los primeros chatbots públicos de IA del Estado costarricense, desplegado años antes del boom de la IA generativa. No hay métricas de volumen publicadas.',
+      en: 'Operational since 2018, this is one of the earliest public AI chatbots in the Costa Rican State, deployed years before the generative AI boom. No public volume metrics.',
+    },
+    fuenteUrl: 'https://transparencia.poder-judicial.go.cr/index.php/declaracion-de-uso-de-inteligencia-artificial',
+  },
+  {
     id: 'ccss-tec-formacion',
     titulo: {
       es: 'Programa TEC-CCSS de formación en IA médica',
@@ -155,25 +200,54 @@ export const proyectos: Proyecto[] = [
       'https://publications.iadb.org/en/costa-ricas-unified-digital-health-record-edus-system-best-practices-history-and-implementation',
   },
   {
-    id: 'ccss-ebais',
+    id: 'ccss-aida',
     titulo: {
-      es: 'IA en EBAIS (atención primaria)',
-      en: 'AI in EBAIS clinics (primary care)',
+      es: 'AIDA — Asistente Inteligente Digital para la Atención',
+      en: 'AIDA — Intelligent Digital Assistant for Care',
     },
     institucionId: 'ccss',
     categoria: 'salud',
     estado: 'piloto',
-    desde: '2025',
+    desde: '2026',
     descripcion: {
-      es: 'Implementación de IA en Equipos Básicos de Atención Integral en Salud para mejorar diagnósticos y reducir referencias a hospitales.',
-      en: 'AI deployment in Basic Comprehensive Health Care Teams to improve diagnoses and reduce hospital referrals.',
+      es: 'Asistente IA integrado al EDUS que apoya a profesionales de salud en tiempo real durante la consulta: sugiere diagnósticos diferenciales, facilita seguimiento de enfermedades crónicas y permite teleinterconsulta asincrónica con especialistas.',
+      en: 'AI assistant embedded in EDUS that supports health professionals in real time during consultation: suggests differential diagnoses, helps with chronic-disease follow-up, and enables asynchronous tele-consultation with specialists.',
+    },
+    resultado: {
+      es: 'Piloto activo en 15 áreas de salud durante un año (2026-2027). Expansión nacional planificada en cuatro fases hasta 2031.',
+      en: 'Active pilot in 15 health areas for one year (2026-2027). National expansion planned in four phases by 2031.',
     },
     contexto: {
-      es: 'Piloto activo en 2025. Llevar IA a la atención primaria es una decisión de cobertura territorial: implica que la institución apuesta por descongestionar hospitales antes que por modernizar especialidades.',
-      en: 'Active pilot in 2025. Taking AI to primary care is a territorial-coverage bet: the institution is prioritizing relief at the hospital level over modernizing specialty services.',
+      es: 'Es el primer asistente IA en consulta médica en tiempo real del Estado costarricense. Avalado por la presidenta ejecutiva Mónica Taylor y el gerente médico Alexander León. Diferenciado de LIDIA (predictivo) por operar durante el acto clínico.',
+      en: 'The first real-time clinical AI assistant in the Costa Rican State, endorsed by CCSS executive president Mónica Taylor and medical manager Alexander León. Distinct from LIDIA (predictive) because it operates during the clinical act itself.',
     },
     fuenteUrl:
-      'https://observador.cr/ccss-incorporara-inteligencia-artificial-en-ebais-para-agilizar-diagnosticos-y-reducir-referencias-a-hospitales/',
+      'https://www.monumental.co.cr/2026/02/25/ccss-usara-inteligencia-artificial-y-ampliara-oferta-de-medicamentos-en-ebais/',
+  },
+  {
+    id: 'ccss-lidia',
+    titulo: {
+      es: 'LIDIA — Modelos predictivos en EDUS',
+      en: 'LIDIA — Predictive models in EDUS',
+    },
+    institucionId: 'ccss',
+    categoria: 'salud',
+    estado: 'piloto',
+    desde: '2023',
+    descripcion: {
+      es: 'Programa interno de cuatro modelos predictivos de salud (diabetes tipo 2, salud pulmonar, síndrome coronario agudo y cáncer de mama) sobre el EDUS. Identifica poblaciones en riesgo para que las clínicas las contacten antes del diagnóstico clínico.',
+      en: 'Internal program of four predictive health models (type 2 diabetes, lung health, acute coronary syndrome and breast cancer) running on EDUS. Identifies at-risk populations so clinics can reach out before formal diagnosis.',
+    },
+    resultado: {
+      es: 'Piloto de diabetes en la Clínica Clorito Picado: 1 millón+ pacientes analizados, 2,500 identificados en riesgo, 1,800 localizados, 130 ya con diabetes (validación del modelo, 95% de precisión). Costo por modelo: ¢130 millones (~USD 250,000).',
+      en: 'Diabetes pilot at Clorito Picado Clinic: 1M+ patients analyzed, 2,500 identified as at-risk, 1,800 reached, 130 already diagnosed (model validation, 95% accuracy). Cost per model: ¢130M (~USD 250,000).',
+    },
+    contexto: {
+      es: 'Único programa público de medicina preventiva con IA en Costa Rica. Desarrollado internamente por equipos de la CCSS (médicos, ingenieros, estadísticos) bajo el director del EDUS, Manuel Rodríguez, sin proveedor externo. Tres de los cuatro modelos siguen en fase cero por restricciones de presupuesto.',
+      en: 'Costa Rica\u2019s only public preventive-medicine AI program. Built in-house by CCSS teams (physicians, engineers, statisticians) under EDUS director Manuel Rodríguez, with no external vendor. Three of the four models remain in phase zero due to budget constraints.',
+    },
+    fuenteUrl:
+      'https://www.teletica.com/salud/lidia-el-programa-de-inteligencia-artificial-que-crece-en-la-ccss-en-medio-de-un-dilema-etico_376322',
   },
   {
     id: 'hacienda-anomaly',
@@ -218,6 +292,31 @@ export const proyectos: Proyecto[] = [
       en: 'The only operational citizen-facing virtual assistant in the central government. There is no unified national chatbot in the style of Estonia\u2019s Bürokratt or Singapore\u2019s VICA; each institution builds its own.',
     },
     fuenteUrl: 'https://www.hacienda.go.cr/',
+  },
+  {
+    id: 'hacienda-tribu-cr',
+    titulo: {
+      es: 'TRIBU-CR — Plataforma tributaria integrada',
+      en: 'TRIBU-CR — Integrated tax platform',
+    },
+    institucionId: 'hacienda',
+    categoria: 'fiscal',
+    estado: 'operativo',
+    desde: '2025',
+    descripcion: {
+      es: 'Plataforma tributaria operativa desde octubre de 2025 que reemplaza ATV y Travi. Declaraciones pre-llenadas con datos de facturas electrónicas, detección automática de créditos fiscales, procesamiento automático de devoluciones y pagos en línea con SINPE Móvil.',
+      en: 'Tax platform live since October 2025 that replaces ATV and Travi. Pre-filled returns based on e-invoice data, automatic detection of fiscal credits, automatic refund processing, and online payments via SINPE Móvil.',
+    },
+    resultado: {
+      es: 'Integra facturación electrónica v4.4 con +140 cambios técnicos obligatorios. Desde septiembre de 2025 Hacienda rastrea pagos SINPE en comercios.',
+      en: 'Integrates e-invoicing v4.4 with 140+ mandatory technical changes. Since September 2025 the Ministry tracks SINPE payments at merchants.',
+    },
+    contexto: {
+      es: 'Es la modernización tributaria más ambiciosa del Estado costarricense en la última década. Su valor no está en un modelo IA aislado sino en la integración de la infraestructura SINPE, la facturación electrónica v4.4 y la analítica de Hacienda Digital en una sola plataforma.',
+      en: 'The most ambitious tax modernization in the Costa Rican State in the past decade. Its value lies not in a standalone AI model but in the integration of SINPE infrastructure, e-invoicing v4.4 and Hacienda Digital analytics into a single platform.',
+    },
+    fuenteUrl:
+      'https://www.dfvasesores.com/post/tribucr-la-nueva-plataforma-digital-que-transformara-la-gestion-tributaria-en-costa-rica',
   },
   {
     id: 'mep-intel',
@@ -267,5 +366,28 @@ export const proyectos: Proyecto[] = [
       en: 'Coverage across all 7 provinces and 70% female participation mark an unusual equity floor for state-led tech programs. The stated goal is to expand to 20+ labs.',
     },
     fuenteUrl: 'https://www.micitt.go.cr/micitt/laboratorios-de-innovacion-comunitaria',
+  },
+  {
+    id: 'cenat-lania',
+    titulo: {
+      es: 'LaNIA — Laboratorio Nacional de IA',
+      en: 'LaNIA — National AI Laboratory',
+    },
+    institucionId: 'cenat',
+    categoria: 'infraestructura',
+    estado: 'piloto',
+    descripcion: {
+      es: 'Hub público nacional de investigación, formación y desarrollo de IA aplicada a problemas de alto impacto social: movilidad urbana, biodiversidad, educación, salud y sismología. Servicios de análisis de datos, desarrollo de productos tecnológicos y spin-offs.',
+      en: 'National public hub for research, training and development of AI applied to high social-impact problems: urban mobility, biodiversity, education, health and seismology. Provides data analysis, product development and spin-off services.',
+    },
+    resultado: {
+      es: 'Cinco laboratorios de CENAT (CENIBiot, CNCA, PRIAS, LANOTEC, LANBA) redireccionados hacia capacidades de IA. Alianza con fAIr LAC del BID para fortalecer la propuesta.',
+      en: 'Five CENAT labs (CENIBiot, CNCA, PRIAS, LANOTEC, LANBA) redirected toward AI capabilities. Partnership with IDB\u2019s fAIr LAC reinforces the proposal.',
+    },
+    contexto: {
+      es: 'Es la única propuesta pública nacional de hub I+D en IA aplicada del país. Funciona como puente entre la academia pública (CONARE) y el aparato gubernamental, llenando un rol que la ENIA encomendaba al Centro Nacional de Excelencia en IA, aún no operativo.',
+      en: 'Costa Rica\u2019s only national public proposal for an applied-AI R&D hub. It acts as a bridge between public academia (CONARE) and the State, filling a role that ENIA had assigned to the National AI Center of Excellence, still not operational.',
+    },
+    fuenteUrl: 'https://dplnews.com/costa-rica-impulsa-investigacion-y-desarrollo-en-inteligencia-artificial/',
   },
 ];

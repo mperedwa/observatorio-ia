@@ -25,6 +25,7 @@ export interface Dictionary {
       autonoma: string;
       asamblea: string;
       universidad: string;
+      investigacion: string;
       camara: string;
     };
   };
@@ -147,13 +148,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
     hero: {
       kicker: 'Observatorio público',
       headline:
-        '11 proyectos de inteligencia artificial activos en el gobierno de Costa Rica.',
+        '16 proyectos de inteligencia artificial activos en el gobierno de Costa Rica.',
       sub: 'Mapeo abierto de la adopción de IA en el sector público costarricense: instituciones, proyectos, legislación e indicadores comparados con la región.',
     },
     instituciones: {
       kicker: '01 / Instituciones',
       titulo: 'Quién está adoptando IA en el Estado',
-      sub: 'Cinco instituciones públicas tienen al menos un proyecto de IA en operación o piloto activo.',
+      sub: 'Seis instituciones públicas tienen al menos un proyecto de IA en operación o piloto activo.',
       proyectosLabel: 'proyectos',
       verDetalle: 'Ver detalle',
       tipoLabel: {
@@ -162,6 +163,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         autonoma: 'Institución autónoma',
         asamblea: 'Asamblea Legislativa',
         universidad: 'Universidad',
+        investigacion: 'Centro de investigación',
         camara: 'Cámara',
       },
     },
@@ -327,13 +329,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
     hero: {
       kicker: 'Public observatory',
       headline:
-        '11 active artificial intelligence projects in the Costa Rican government.',
+        '16 active artificial intelligence projects in the Costa Rican government.',
       sub: 'Open map of AI adoption across Costa Rica\u2019s public sector: institutions, projects, legislation and indicators benchmarked against the region.',
     },
     instituciones: {
       kicker: '01 / Institutions',
       titulo: 'Who is adopting AI inside the State',
-      sub: 'Five public institutions run at least one active AI project, in production or pilot.',
+      sub: 'Six public institutions run at least one active AI project, in production or pilot.',
       proyectosLabel: 'projects',
       verDetalle: 'View details',
       tipoLabel: {
@@ -342,6 +344,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         autonoma: 'Autonomous institution',
         asamblea: 'Legislative Assembly',
         universidad: 'University',
+        investigacion: 'Research center',
         camara: 'Chamber',
       },
     },

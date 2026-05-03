@@ -25,8 +25,8 @@ npm run start      # sirve la build (no usar para edición)
 - `src/i18n/` — `config.ts` (locales, tipo `Bilingual`) + `dictionaries.ts` (UI strings ES/EN tipados con `Dictionary`)
 - `src/components/` — Hero, InstitucionesGrid, Legislacion, Indicadores, Recursos, Acerca, Nav, Footer, LanguageToggle, Breadcrumb, ProyectoCard, BrechaCard. Todos reciben `locale` y/o `t: Dictionary` por props.
 - `src/data/` — fuente de verdad. **Strings de UI son `Bilingual = {es, en}`**, no strings planos. Campos no-traducibles (URLs, IDs, números, años) quedan como string/number plano.
-  - `instituciones.ts` — 5 instituciones con `nombre`, `nombreCorto`, `resumen`, `descripcion`, `lecciones` bilingües
-  - `proyectos.ts` — 11 proyectos con `titulo`, `descripcion`, `resultado`, `contexto` bilingües
+  - `instituciones.ts` — 6 instituciones (Poder Judicial, CCSS, Hacienda, MEP, MICITT, CENAT) con `nombre`, `nombreCorto`, `resumen`, `descripcion`, `lecciones` bilingües. Tipo `Tipo` incluye `'investigacion'` para CENAT.
+  - `proyectos.ts` — 16 proyectos con `titulo`, `descripcion`, `resultado`, `contexto` bilingües
   - `legislacion.ts` — 3 expedientes con `titulo`, `resumen`, `comision` bilingües
   - `indicadores.ts` — ILIA score 2025, comparativa regional ampliada, KPIs hero
   - `brechas.ts` — 7 capacidades faltantes vs Estonia/Singapur (extracto público parcial del plan maestro)
@@ -65,10 +65,10 @@ El proyecto vive en `~/Desktop/Proyectos/` (sincronizado por iCloud Drive). Cuan
 4. Verificar `ls out/en/ out/es/` — ambos deben tener `index.html`
 
 ## Estado
-Fase 2 entregada (mayo 2026): profundidad de contenido. 43 páginas estáticas: home + análisis + quien-mantiene + 11 proyectos + 5 instituciones, todo bilingüe. Plan archivado en `docs/fases/2026-05-02-fase-2-profundidad-contenido.md`. Próximas fases:
-- Fase 3: scrapers automatizados (Playwright MICITT/CAMTIC + GitHub Actions cron) — reagendado desde la Fase 2 original
-- Fase 4: timeline cronológico + charts con drill-down + búsqueda Fuse.js
-- Fase 5: clasificación LLM + alertas + API pública
+Fase 3 entregada (mayo 2026): cobertura ampliada. 52 páginas estáticas: home + análisis + quien-mantiene + 16 proyectos + 6 instituciones, todo bilingüe. Repo público en GitHub conectado a Vercel: cada push a `main` redeployea. Plan archivado en `docs/fases/2026-05-02-fase-3-cobertura.md`. Próximas fases:
+- Fase 4: visualizaciones (timeline cronológico + charts con drill-down + mapa de proyectos)
+- Fase 5: scrapers automatizados (Playwright MICITT/CAMTIC + GitHub Actions cron) — reagendado desde la Fase 2 original
+- Fase 6: clasificación LLM + alertas + API pública
 
 ## Separación contenido público / privado
 La sección `/analisis` y los textos de `contexto`/`lecciones`/`brechas` son extractos editoriales del plan maestro privado (Obsidian `Projects/CR-IA-Gobierno/`). **Lo que SÍ va público**: diagnóstico de brechas, benchmarks regionales, evidencia verificable. **Lo que NO va público**: recomendaciones tácticas de política pública, presupuesto USD 18-32M, plan de contacto MICITT, fellowship IA, plan de fundraising, fechas de reuniones. Antes de cada commit que toque `src/data/brechas.ts`, `src/data/instituciones.ts` (campo `lecciones`), `src/data/proyectos.ts` (campo `contexto`) o `src/i18n/dictionaries.ts` (bloque `analisis`), grep contra términos sensibles del plan maestro.

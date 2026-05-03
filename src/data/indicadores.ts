@@ -119,7 +119,7 @@ export const kpisHero: KpiResumen[] = [
       es: 'Proyectos IA activos en gobierno',
       en: 'Active AI projects in government',
     },
-    valor: '11',
+    valor: '16',
     detalle: { es: 'mapeados en mayo 2026', en: 'mapped as of May 2026' },
   },
   {
@@ -127,10 +127,10 @@ export const kpisHero: KpiResumen[] = [
       es: 'Instituciones con IA operativa',
       en: 'Institutions with AI in production',
     },
-    valor: '5',
+    valor: '6',
     detalle: {
-      es: 'Poder Judicial, CCSS, Hacienda, MEP, MICITT',
-      en: 'Judicial Branch, CCSS, Finance, MEP, MICITT',
+      es: 'Poder Judicial, CCSS, Hacienda, MEP, MICITT, CENAT',
+      en: 'Judicial Branch, CCSS, Finance, MEP, MICITT, CENAT',
     },
   },
   {

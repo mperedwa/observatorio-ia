@@ -1,6 +1,13 @@
 import type { Bilingual } from '@/i18n/config';
 
-export type Tipo = 'ministerio' | 'asamblea' | 'judicial' | 'autonoma' | 'universidad' | 'camara';
+export type Tipo =
+  | 'ministerio'
+  | 'asamblea'
+  | 'judicial'
+  | 'autonoma'
+  | 'universidad'
+  | 'investigacion'
+  | 'camara';
 
 export interface Institucion {
   id: string;
@@ -21,14 +28,14 @@ export const instituciones: Institucion[] = [
     nombreCorto: { es: 'Poder Judicial', en: 'Judicial Branch' },
     tipo: 'judicial',
     url: 'https://pj.poder-judicial.go.cr/',
-    proyectosActivos: 4,
+    proyectosActivos: 6,
     resumen: {
-      es: 'Líder en adopción institucional: clasificación documental, ML presupuestal con +₡100M ahorrados, anonimización con Nymiz, análisis de sentencias Sala Cuarta con UCR/PEN.',
-      en: 'Institutional adoption leader: document classification, budget ML model with +₡100M saved, anonymization with Nymiz, Constitutional Chamber rulings analysis with UCR/PEN.',
+      es: 'Cartera más amplia del Estado: clasificación documental, Giro Continuo (¢5,245M en 2024), ML presupuestal con +₡100M ahorrados, anonimización Nymiz, análisis Sala Cuarta con UCR/PEN, ChatbotPJ desde 2018.',
+      en: 'Broadest state portfolio: document classification, Continuous Disbursement (¢5,245M in 2024), budget ML with +₡100M saved, Nymiz anonymization, Constitutional Chamber analysis with UCR/PEN, ChatbotPJ since 2018.',
     },
     descripcion: {
-      es: 'Es la institución pública costarricense con la cartera más amplia de IA en producción: cuatro sistemas operativos en clasificación documental, predicción presupuestaria, protección de datos y análisis jurisprudencial. Publicó los Lineamientos Básicos para el uso de IA Generativa Autorizada en el Poder Judicial, que enmarcan a la IA como herramienta de apoyo, nunca sustituto del juicio legal.',
-      en: 'The Costa Rican public institution with the broadest portfolio of AI in production: four live systems covering document classification, budget forecasting, data protection and case-law analysis. It published the Basic Guidelines for Authorized Generative AI Use, which frame AI as a support tool, never a substitute for legal judgment.',
+      es: 'Es la institución pública costarricense con la cartera más amplia de IA en producción: seis sistemas operativos en clasificación documental, automatización de pagos, predicción presupuestaria, protección de datos, análisis jurisprudencial y atención ciudadana. Publicó los Lineamientos Básicos para el uso de IA Generativa Autorizada en el Poder Judicial, que enmarcan a la IA como herramienta de apoyo, nunca sustituto del juicio legal.',
+      en: 'The Costa Rican public institution with the broadest portfolio of AI in production: six live systems covering document classification, payment automation, budget forecasting, data protection, case-law analysis and citizen support. It published the Basic Guidelines for Authorized Generative AI Use, which frame AI as a support tool, never a substitute for legal judgment.',
     },
     lecciones: {
       es: 'El liderazgo del Poder Judicial no se explica por presupuesto IA dedicado, sino por especialización temprana (ML presupuestal desde 2019), alianzas con academia pública (UCR e Instituto de Investigaciones Jurídicas) y un marco propio de gobernanza publicado antes que cualquier ley nacional.',
@@ -44,14 +51,14 @@ export const instituciones: Institucion[] = [
     nombreCorto: { es: 'CCSS', en: 'CCSS' },
     tipo: 'autonoma',
     url: 'https://www.ccss.sa.cr/',
-    proyectosActivos: 3,
+    proyectosActivos: 4,
     resumen: {
-      es: 'Programa TEC-CCSS de formación en IA médica (mamografías, imágenes neonatales), expediente digital EDUS con IA predictiva planificada, IA en EBAIS para atención primaria.',
-      en: 'TEC-CCSS training program on medical AI (mammograms, neonatal imaging), digital health record (EDUS) with planned predictive AI, AI in EBAIS clinics for primary care.',
+      es: 'Programa TEC-CCSS de formación en IA médica, EDUS (cobertura 100% asegurados), AIDA (asistente IA en consulta, piloto 15 áreas) y LIDIA (modelos predictivos, piloto diabetes en Clorito Picado con 95% de precisión).',
+      en: 'TEC-CCSS medical AI training program, EDUS (100% member coverage), AIDA (in-consultation AI assistant, 15-area pilot) and LIDIA (predictive models, diabetes pilot at Clorito Picado with 95% accuracy).',
     },
     descripcion: {
-      es: 'Combina el dataset clínico más grande del país (EDUS, cobertura 100% de asegurados desde 2010) con un programa de formación en IA médica con el TEC y un piloto activo de IA en atención primaria. La pregunta abierta es cuándo se materializa la capa predictiva del EDUS, planificada pero sin cronograma público.',
-      en: 'Combines the country\u2019s largest clinical dataset (EDUS, 100% member coverage since 2010) with a medical AI training program with TEC and an active primary-care pilot. The open question is when the EDUS predictive layer, planned but without a public timeline, will actually ship.',
+      es: 'Combina el dataset clínico más grande del país (EDUS, cobertura 100% de asegurados desde 2010), un programa de formación en IA médica con el TEC, AIDA como asistente en consulta en tiempo real y LIDIA como motor predictivo de medicina preventiva. Es la única institución pública con dos sistemas IA clínicos operando en paralelo: uno asistencial (AIDA) y uno predictivo (LIDIA).',
+      en: 'Combines the country\u2019s largest clinical dataset (EDUS, 100% member coverage since 2010), a medical AI training program with TEC, AIDA as a real-time in-consultation assistant and LIDIA as a preventive-medicine predictive engine. The only public institution running two clinical AI systems in parallel: one assistive (AIDA) and one predictive (LIDIA).',
     },
     lecciones: {
       es: 'La CCSS apuesta primero a capacidad humana interna (formación con TEC) y a cobertura territorial (EBAIS), no a comprar software de proveedor. Es un patrón de adopción más lento pero menos dependiente.',
@@ -67,14 +74,14 @@ export const instituciones: Institucion[] = [
     nombreCorto: { es: 'Hacienda', en: 'Finance' },
     tipo: 'ministerio',
     url: 'https://www.hacienda.go.cr/',
-    proyectosActivos: 2,
+    proyectosActivos: 3,
     resumen: {
-      es: 'Detección de fraude fiscal con Microsoft Anomaly Detector — ₡8,000M recuperados en 2025. Asistente virtual para contribuyentes en Hacienda Digital.',
-      en: 'Tax fraud detection with Microsoft Anomaly Detector — ₡8,000M recovered in 2025. Virtual taxpayer assistant inside Hacienda Digital.',
+      es: 'Detección de fraude fiscal con Microsoft Anomaly Detector (₡8,000M recuperados en 2025), TRIBU-CR (plataforma tributaria operativa desde octubre 2025 que reemplaza ATV/Travi) y asistente virtual para contribuyentes.',
+      en: 'Tax fraud detection with Microsoft Anomaly Detector (₡8,000M recovered in 2025), TRIBU-CR (live since October 2025, replacing ATV/Travi) and virtual taxpayer assistant.',
     },
     descripcion: {
-      es: 'Es la única institución del Estado con retorno fiscal medible y publicado de IA en 2025. Su modelo se apoya en facturación electrónica v4.4 ya consolidada y en una alianza con Microsoft Azure. Maneja además el único asistente virtual ciudadano operativo del gobierno central.',
-      en: 'The only state institution with measurable, publicly reported fiscal returns from AI in 2025. Its model rides on the consolidated v4.4 e-invoicing infrastructure and a Microsoft Azure partnership. It also runs the only operational citizen-facing virtual assistant in the central government.',
+      es: 'Es la institución del Estado con la modernización tributaria más ambiciosa de la última década. Combina retorno fiscal medible con IA (₡8,000M recuperados en 2025), la plataforma integrada TRIBU-CR con facturación electrónica v4.4 e integración SINPE Móvil, y el único asistente virtual ciudadano operativo del gobierno central.',
+      en: 'The state institution with the most ambitious tax modernization of the past decade. It combines measurable fiscal returns from AI (₡8,000M recovered in 2025), the integrated TRIBU-CR platform with e-invoicing v4.4 and SINPE Móvil integration, and the only operational citizen-facing virtual assistant in the central government.',
     },
     lecciones: {
       es: 'Donde existe infraestructura digital previa (facturación electrónica), la IA produce retorno rápido. Donde no existe, no hay atajo: el caso Hacienda no se replica sin esa base.',
@@ -96,12 +103,12 @@ export const instituciones: Institucion[] = [
       en: 'Technical AI specialization with Intel in vocational high schools. First Latin American country with AI as a formal technical track in secondary education.',
     },
     descripcion: {
-      es: 'Cuenta con un currículo formal de tres años en machine learning, ética y aspectos legales de IA, iniciado en cuatro CTPs en 2023 con meta de expansión. Adicionalmente reportó 90,000 becas docentes en alfabetización digital con componente IA, gestionadas con CENECOOP.',
-      en: 'Runs a formal 3-year curriculum on machine learning, ethics and legal aspects of AI, launched in four vocational schools in 2023 with an expansion target. It also reported 90,000 teacher scholarships in digital literacy with an AI component, managed with CENECOOP.',
+      es: 'Cuenta con un currículo formal de tres años en machine learning, ética y aspectos legales de IA, iniciado en cuatro CTPs en 2023 con meta de expansión. Complementa con el programa más grande de capacitación masiva en IA del país: 90,000 becas docentes lanzadas con CENECOOP en abril 2026, con meta de formar 65,000 docentes para impactar a más de 1 millón de estudiantes. Publicó la Guía Docente de IA con ULACIT, UNESCO y el sistema ONU.',
+      en: 'Runs a formal 3-year curriculum on machine learning, ethics and legal aspects of AI, launched in four vocational schools in 2023 with an expansion target. It is complemented by the country\u2019s largest mass AI training program: 90,000 teacher scholarships launched with CENECOOP in April 2026, targeting 65,000 trained teachers to reach 1M+ students. It published the Teacher AI Guide with ULACIT, UNESCO and the UN system.',
     },
     lecciones: {
-      es: 'El programa demuestra que CR puede sostener un hito regional con muy poco presupuesto público propio, apoyado en alianzas privadas. La fragilidad es que la sostenibilidad depende del socio: si Intel reduce presencia local, el currículo necesita un nuevo anclaje.',
-      en: 'The program shows Costa Rica can sustain a regional milestone with very little dedicated public budget, leaning on private partnerships. The fragility is that sustainability depends on the partner: if Intel scales back its local presence, the curriculum needs a new anchor.',
+      es: 'El programa demuestra que CR puede sostener un hito regional con muy poco presupuesto público propio, apoyado en alianzas privadas (Intel) y multilaterales (UNESCO, ONU). La fragilidad es que la sostenibilidad depende del socio: si Intel reduce presencia local, el currículo necesita un nuevo anclaje.',
+      en: 'The program shows Costa Rica can sustain a regional milestone with very little dedicated public budget, leaning on private (Intel) and multilateral (UNESCO, UN) partnerships. The fragility is that sustainability depends on the partner: if Intel scales back its local presence, the curriculum needs a new anchor.',
     },
   },
   {
@@ -125,6 +132,29 @@ export const instituciones: Institucion[] = [
     lecciones: {
       es: 'MICITT logra resultados de capacitación con cobertura territorial y equidad de género (70% participación femenina). Pero el brazo regulador y el rol coordinador previstos en la ENIA siguen vacantes. Es la institución con la mayor distancia entre lo prometido en estrategia y lo entregado en operación.',
       en: 'MICITT delivers training results with territorial coverage and gender equity (70% female participation). But the regulatory and coordinating role envisioned in ENIA remains vacant. It is the institution with the largest gap between what its strategy promises and what its operations deliver.',
+    },
+  },
+  {
+    id: 'cenat',
+    nombre: {
+      es: 'Centro Nacional de Alta Tecnología',
+      en: 'National Center for High Technology',
+    },
+    nombreCorto: { es: 'CENAT', en: 'CENAT' },
+    tipo: 'investigacion',
+    url: 'https://cenat.ac.cr/',
+    proyectosActivos: 1,
+    resumen: {
+      es: 'Centro interuniversitario adscrito al CONARE, opera 5 laboratorios (CENIBiot, CNCA, PRIAS, LANOTEC, LANBA). Promueve LaNIA, propuesta de Laboratorio Nacional de IA con alianza fAIr LAC del BID.',
+      en: 'Interuniversity center under CONARE, operating 5 labs (CENIBiot, CNCA, PRIAS, LANOTEC, LANBA). Champions LaNIA, the proposed National AI Laboratory in partnership with IDB\u2019s fAIr LAC.',
+    },
+    descripcion: {
+      es: 'Es el único hub público de investigación en alta tecnología del país, adscrito al CONARE (red de universidades públicas) y operado desde el TEC. Participó junto al MICITT, Ministerio de Salud, UNESCO, BID y fAIr LAC en la formulación de la ENIA. LaNIA es su propuesta para llenar el vacío del Centro Nacional de Excelencia en IA prometido por la ENIA y aún no operativo.',
+      en: 'The country\u2019s only public high-tech research hub, under CONARE (public university network) and operated from TEC. It participated with MICITT, the Health Ministry, UNESCO, IDB and fAIr LAC in shaping ENIA. LaNIA is its proposal to fill the gap left by the National AI Center of Excellence promised in ENIA and still not operational.',
+    },
+    lecciones: {
+      es: 'CENAT muestra que el bridge academia-Estado es viable cuando ya existe una estructura institucional como CONARE. Sin embargo, LaNIA opera en fase piloto y depende de financiamiento multilateral, no de presupuesto público dedicado. Refuerza el patrón regional: la investigación pública en IA avanza sin línea presupuestaria nacional.',
+      en: 'CENAT shows that the academia-state bridge is viable when an institutional structure like CONARE already exists. Still, LaNIA runs in pilot phase and depends on multilateral funding rather than dedicated public budget. It reinforces the regional pattern: public AI research moves forward without a national budget line.',
     },
   },
 ];
