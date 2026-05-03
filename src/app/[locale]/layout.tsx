@@ -46,6 +46,20 @@ export async function generateMetadata({
       siteName: m.ogTitle,
       locale: m.ogLocale,
       type: 'website',
+      images: [
+        {
+          url: `https://observatorioia.org/comparte-assets/${locale}/og-home-1200x630.png`,
+          width: 1200,
+          height: 630,
+          alt: m.ogTitle,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: m.ogTitle,
+      description: m.ogDesc,
+      images: [`https://observatorioia.org/comparte-assets/${locale}/og-home-1200x630.png`],
     },
     alternates: {
       canonical: `/${locale}/`,

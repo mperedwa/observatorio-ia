@@ -92,6 +92,44 @@ export interface Dictionary {
     enteTooltip: string;
     drillCta: string;
   };
+  comparte: {
+    kicker: string;
+    titulo: string;
+    sub: string;
+    instrucciones: string;
+    descargar: string;
+    cuadradoLabel: string;
+    horizontalLabel: string;
+    storyLabel: string;
+    secciones: {
+      hero: string;
+      timeline: string;
+      ilia: string;
+      mapa: string;
+      brechas: string;
+      og: string;
+      stories: string;
+    };
+    assets: {
+      kpiHeroTitulo: string;
+      timelineTitulo: string;
+      iliaTitulo: string;
+      mapaTitulo: string;
+      brechaXroad: string;
+      brechaGobernanza: string;
+      brechaChatbot: string;
+      brechaAsistente: string;
+      brechaTesting: string;
+      brechaTalento: string;
+      brechaDatos: string;
+      ogHome: string;
+      ogAnalisis: string;
+      ogBrechas: string;
+      storyTimeline: string;
+      storyBrecha: string;
+    };
+    notaUso: string;
+  };
   proyectoDetalle: {
     institucionLabel: string;
     categoriaLabel: string;
@@ -264,6 +302,44 @@ export const dictionaries: Record<Locale, Dictionary> = {
       inversionTooltip: 'Inversión',
       enteTooltip: 'Ente ejecutor',
       drillCta: 'Ver análisis completo →',
+    },
+    comparte: {
+      kicker: 'Material para compartir',
+      titulo: 'Imágenes descargables del observatorio',
+      sub: 'Visualizaciones listas para LinkedIn, X (Twitter), Instagram y link previews. Descarga libre con atribución sugerida a observatorioia.org.',
+      instrucciones: 'Click derecho → Guardar imagen, o tap el botón Descargar. Las dimensiones están optimizadas para cada red social.',
+      descargar: 'Descargar',
+      cuadradoLabel: '1080×1080 · LinkedIn / Instagram / X cuadrado',
+      horizontalLabel: '1200×630 · Link preview (OpenGraph)',
+      storyLabel: '1080×1920 · Stories / Reels',
+      secciones: {
+        hero: 'Cifras clave',
+        timeline: 'Línea de tiempo',
+        ilia: 'Comparativa regional ILIA',
+        mapa: 'Mapa de instituciones',
+        brechas: 'Brechas vs Estonia / Singapur',
+        og: 'Link previews (OpenGraph)',
+        stories: 'Stories verticales',
+      },
+      assets: {
+        kpiHeroTitulo: '16 proyectos, 6 instituciones, 3 leyes',
+        timelineTitulo: 'Adopción de IA en el Estado, 2018-2026',
+        iliaTitulo: 'Costa Rica vs América Latina (ILIA 2025)',
+        mapaTitulo: 'Distribución de proyectos por institución',
+        brechaXroad: 'Brecha 1 — Interoperabilidad nacional',
+        brechaGobernanza: 'Brecha 2 — Marco formal de gobernanza',
+        brechaChatbot: 'Brecha 3 — Chatbot ciudadano nacional',
+        brechaAsistente: 'Brecha 4 — Asistente IA para funcionarios',
+        brechaTesting: 'Brecha 5 — Testing IA pre-despliegue',
+        brechaTalento: 'Brecha 6 — Meta talento con presupuesto',
+        brechaDatos: 'Brecha 7 — Datos transfronterizos',
+        ogHome: 'Link preview — Home',
+        ogAnalisis: 'Link preview — Análisis',
+        ogBrechas: 'Link preview — Brechas',
+        storyTimeline: 'Story — Línea de tiempo',
+        storyBrecha: 'Story — 19 puntos abajo de Chile',
+      },
+      notaUso: 'Atribución sugerida: "Observatorio IA Costa Rica · observatorioia.org". Las imágenes se pueden usar libremente en publicaciones, presentaciones y redes sociales.',
     },
     proyectoDetalle: {
       institucionLabel: 'Institución',
@@ -462,6 +538,44 @@ export const dictionaries: Record<Locale, Dictionary> = {
       inversionTooltip: 'Investment',
       enteTooltip: 'Executing body',
       drillCta: 'See full analysis →',
+    },
+    comparte: {
+      kicker: 'Shareable assets',
+      titulo: 'Downloadable images from the observatory',
+      sub: 'Visualizations ready for LinkedIn, X (Twitter), Instagram and link previews. Free use with attribution suggested to observatorioia.org.',
+      instrucciones: 'Right-click → Save image, or tap the Download button. Dimensions are optimized for each social network.',
+      descargar: 'Download',
+      cuadradoLabel: '1080×1080 · LinkedIn / Instagram / X square',
+      horizontalLabel: '1200×630 · Link preview (OpenGraph)',
+      storyLabel: '1080×1920 · Stories / Reels',
+      secciones: {
+        hero: 'Key figures',
+        timeline: 'Timeline',
+        ilia: 'Regional ILIA comparison',
+        mapa: 'Institution map',
+        brechas: 'Gaps vs Estonia / Singapore',
+        og: 'Link previews (OpenGraph)',
+        stories: 'Vertical stories',
+      },
+      assets: {
+        kpiHeroTitulo: '16 projects, 6 institutions, 3 bills',
+        timelineTitulo: 'AI adoption in the Costa Rican State, 2018-2026',
+        iliaTitulo: 'Costa Rica vs Latin America (ILIA 2025)',
+        mapaTitulo: 'Project distribution by institution',
+        brechaXroad: 'Gap 1 — National interoperability',
+        brechaGobernanza: 'Gap 2 — Formal governance framework',
+        brechaChatbot: 'Gap 3 — National citizen chatbot',
+        brechaAsistente: 'Gap 4 — AI assistant for public servants',
+        brechaTesting: 'Gap 5 — Pre-deployment AI testing',
+        brechaTalento: 'Gap 6 — Numerical talent target with budget',
+        brechaDatos: 'Gap 7 — Cross-border data agreements',
+        ogHome: 'Link preview — Home',
+        ogAnalisis: 'Link preview — Analysis',
+        ogBrechas: 'Link preview — Gaps',
+        storyTimeline: 'Story — Timeline',
+        storyBrecha: 'Story — 19 points behind Chile',
+      },
+      notaUso: 'Suggested attribution: "AI Observatory Costa Rica · observatorioia.org". Images may be freely used in publications, presentations and social media.',
     },
     proyectoDetalle: {
       institucionLabel: 'Institution',

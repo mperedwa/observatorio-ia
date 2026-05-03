@@ -31,6 +31,20 @@ export async function generateMetadata({
       siteName: t.siteName,
       locale: locale === 'es' ? 'es_CR' : 'en_US',
       type: 'article',
+      images: [
+        {
+          url: `https://observatorioia.org/comparte-assets/${locale}/og-analisis-1200x630.png`,
+          width: 1200,
+          height: 630,
+          alt: titulo,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: titulo,
+      description: t.analisis.metaDescripcion,
+      images: [`https://observatorioia.org/comparte-assets/${locale}/og-analisis-1200x630.png`],
     },
     alternates: {
       canonical: `/${locale}/analisis/`,

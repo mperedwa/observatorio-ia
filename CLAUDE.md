@@ -67,7 +67,7 @@ El proyecto vive en `~/Desktop/Proyectos/` (sincronizado por iCloud Drive). Cuan
 4. Verificar `ls out/en/ out/es/` — ambos deben tener `index.html`
 
 ## Estado
-Fase 5 entregada (mayo 2026): scrapers automatizados con PR para revisión humana. Datos migrados a JSON validable con AJV. 52 páginas estáticas (sin cambio visual). 3 scrapers (MICITT, CAMTIC, Asamblea) corren via GitHub Action lun/mié/vie 12:00 UTC. Plan archivado en `docs/fases/2026-05-02-fase-5-scrapers.md`. Próximas fases:
+Fase A entregada (mayo 2026): assets descargables para LinkedIn. Página `/[locale]/comparte` con galería, ruta interna `/comparte/asset/[type]` que renderiza cada asset en su dimensión exacta, script `npm run generate-assets` que captura PNGs con Playwright headless en `public/comparte-assets/{es,en}/`. 16 assets × 2 locales = 32 PNGs (square 1080×1080, horizontal 1200×630, story 1080×1920). OpenGraph del sitio actualizado con assets reales (home + analisis). Plan: `docs/fases/2026-05-02-fase-a-share-assets.md`. Fase 5 entregada antes (scrapers + JSON validable). Próximas fases:
 - Fase 6: clasificación LLM + alertas + API pública
 
 Datos en `src/data/json/` validados por schemas en `src/data/schemas/`. Los `.ts` quedan como reexports tipados. Política editorial: scrapers nunca tocan campos curados (titulo, descripcion, contexto, lecciones, resumen).
