@@ -107,10 +107,10 @@
         "es": "Expedientes de ley en trámite",
         "en": "Bills in progress"
       },
-      "valor": "3",
+      "valor": "5",
       "detalle": {
-        "es": "todos en comisión, sin avanzar",
-        "en": "all stuck in committee"
+        "es": "dos dictaminados, tres en comisión",
+        "en": "two with committee report, three in committee"
       }
     },
     {

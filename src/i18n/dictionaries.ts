@@ -330,7 +330,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         stories: 'Stories verticales',
       },
       assets: {
-        kpiHeroTitulo: '18 proyectos, 7 instituciones, 3 leyes',
+        kpiHeroTitulo: '18 proyectos, 7 instituciones, 5 leyes',
         timelineTitulo: 'Adopción de IA en el Estado, 2018-2026',
         iliaTitulo: 'Costa Rica vs América Latina (ILIA 2025)',
         mapaTitulo: 'Distribución de proyectos por institución',
@@ -392,9 +392,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
       referenciaLabel: 'Referencia',
       estadoCRLabel: 'Estado en Costa Rica',
       porQueImporta: 'Por qué importa',
-      legislacionTitulo: 'Tres expedientes, cero leyes aprobadas',
+      legislacionTitulo: 'Cinco expedientes, cero leyes aprobadas',
       legislacionSub:
-        'Los tres proyectos de ley sobre IA presentados entre 2023 y 2025 siguen en comisión. Costa Rica avanza sin marco regulatorio formal.',
+        'Los cinco proyectos de ley sobre IA presentados entre 2023 y 2025 siguen sin aprobarse. Dos ya cuentan con dictamen de comisión. Costa Rica avanza sin marco regulatorio formal.',
       metaDescripcion:
         'Análisis de la brecha de Costa Rica frente a líderes regionales y globales en adopción de IA en gobierno.',
       notaCierre:
@@ -570,7 +570,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         stories: 'Vertical stories',
       },
       assets: {
-        kpiHeroTitulo: '18 projects, 7 institutions, 3 bills',
+        kpiHeroTitulo: '18 projects, 7 institutions, 5 bills',
         timelineTitulo: 'AI adoption in the Costa Rican State, 2018-2026',
         iliaTitulo: 'Costa Rica vs Latin America (ILIA 2025)',
         mapaTitulo: 'Project distribution by institution',
@@ -632,9 +632,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
       referenciaLabel: 'Reference',
       estadoCRLabel: 'Status in Costa Rica',
       porQueImporta: 'Why it matters',
-      legislacionTitulo: 'Three bills, zero laws passed',
+      legislacionTitulo: 'Five bills, zero laws passed',
       legislacionSub:
-        'The three AI bills filed between 2023 and 2025 remain stuck in committee. Costa Rica is moving forward without a formal regulatory framework.',
+        'The five AI bills filed between 2023 and 2025 remain unapproved. Two already have a committee report. Costa Rica is moving forward without a formal regulatory framework.',
       metaDescripcion:
         'Analysis of Costa Rica\u2019s gap versus regional and global leaders in AI adoption inside government.',
       notaCierre:
