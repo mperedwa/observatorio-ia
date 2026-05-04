@@ -4,6 +4,7 @@ import type { Locale } from '@/i18n/config';
 
 const estadoCls: Record<string, string> = {
   'en-comision': 'bg-amber-50 text-amber-800 border-amber-200',
+  dictaminado: 'bg-sky-50 text-sky-800 border-sky-200',
   'primer-debate': 'bg-blue-50 text-blue-800 border-blue-200',
   'segundo-debate': 'bg-purple-50 text-purple-800 border-purple-200',
   archivado: 'bg-slate-100 text-slate-700 border-slate-300',
@@ -56,6 +57,16 @@ export function Legislacion({ locale, t }: { locale: Locale; t: Dictionary }) {
                     {t.legislacion.presentadoLabel}:{' '}
                     <span className="text-slate-700">{e.presentado}</span>
                   </span>
+                  {e.fuenteUrl && (
+                    <a
+                      href={e.fuenteUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-institucional-700 hover:text-institucional-900 underline underline-offset-2"
+                    >
+                      {t.legislacion.verFuente} ↗
+                    </a>
+                  )}
                 </div>
               </div>
             </article>

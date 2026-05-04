@@ -38,11 +38,13 @@ export interface Dictionary {
     presentadoLabel: string;
     estados: {
       'en-comision': string;
+      dictaminado: string;
       'primer-debate': string;
       'segundo-debate': string;
       archivado: string;
       aprobada: string;
     };
+    verFuente: string;
   };
   indicadores: {
     kicker: string;
@@ -227,17 +229,19 @@ export const dictionaries: Record<Locale, Dictionary> = {
     legislacion: {
       kicker: '02 / Legislación',
       titulo: 'Tres expedientes de ley en trámite, ninguno aprobado',
-      sub: 'Costa Rica aún no tiene un marco regulatorio formal de IA. Los tres proyectos de ley presentados desde 2023 siguen en comisión.',
+      sub: 'Costa Rica aún no tiene un marco regulatorio formal de IA. De los tres proyectos de ley presentados desde 2023, dos ya cuentan con dictamen de comisión.',
       expedienteLabel: 'Expediente',
       comisionLabel: 'Comisión',
       presentadoLabel: 'Presentado',
       estados: {
         'en-comision': 'En comisión',
+        dictaminado: 'Dictaminado',
         'primer-debate': 'Primer debate',
         'segundo-debate': 'Segundo debate',
         archivado: 'Archivado',
         aprobada: 'Aprobada',
       },
+      verFuente: 'Ver expediente',
     },
     indicadores: {
       kicker: '03 / Indicadores',
@@ -465,17 +469,19 @@ export const dictionaries: Record<Locale, Dictionary> = {
     legislacion: {
       kicker: '02 / Legislation',
       titulo: 'Three bills in progress, none passed',
-      sub: 'Costa Rica still has no formal AI regulatory framework. The three bills filed since 2023 remain stuck in committee.',
+      sub: 'Costa Rica still has no formal AI regulatory framework. Of the three bills filed since 2023, two already have a committee report.',
       expedienteLabel: 'File',
       comisionLabel: 'Committee',
       presentadoLabel: 'Filed',
       estados: {
         'en-comision': 'In committee',
+        dictaminado: 'Committee report issued',
         'primer-debate': 'First debate',
         'segundo-debate': 'Second debate',
         archivado: 'Archived',
         aprobada: 'Passed',
       },
+      verFuente: 'View bill',
     },
     indicadores: {
       kicker: '03 / Indicators',
