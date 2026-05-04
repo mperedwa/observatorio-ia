@@ -12,7 +12,8 @@
     "scrape:camtic": "tsx scrapers/camtic.ts",
     "scrape:asamblea": "tsx scrapers/asamblea.ts",
     "scrape:all": "tsx scrapers/run-all.ts",
-    "generate-assets": "tsx scripts/generate-share-assets.ts"
+    "generate-assets": "tsx scripts/generate-share-assets.ts",
+    "notify-telegram": "tsx scripts/notify-telegram.ts"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

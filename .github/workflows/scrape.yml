@@ -50,6 +50,14 @@ jobs:
       - name: Validate data after scrape
         run: npm run validate-data
 
+      - name: Notify Telegram (filtrado)
+        env:
+          # Opcional: si ambos secrets están configurados, manda mensaje al bot SOLO si
+          # hay cambios aplicados al JSON o ≥1 candidato con score ≥7. Si faltan secrets, skip silencioso.
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: npm run notify-telegram
+
       - name: Detect changes
         id: changes
         run: |
