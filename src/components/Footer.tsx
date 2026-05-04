@@ -10,13 +10,19 @@ export function Footer({ t, locale }: { t: Dictionary; locale: Locale }) {
           <p className="font-semibold text-slate-900">{t.footer.titulo}</p>
           <p className="mt-1">{t.footer.tagline}</p>
         </div>
-        <div className="sm:col-span-1">
+        <div className="sm:col-span-1 flex flex-col gap-2">
           <Link
             href={`/${locale}/quien-mantiene`}
             className="text-institucional-700 hover:underline font-medium"
           >
             {t.footer.quienMantiene} →
           </Link>
+          <a
+            href="/api/"
+            className="text-institucional-700 hover:underline font-medium"
+          >
+            {t.footer.apiPublica} →
+          </a>
         </div>
         <div className="text-xs text-slate-500 sm:text-right">
           <p>{t.footer.ultimaActualizacion}</p>

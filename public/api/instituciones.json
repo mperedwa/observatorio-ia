@@ -1,0 +1,191 @@
+{
+  "version": "0.1.0",
+  "lastUpdate": "2026-05-04T15:04:19.904Z",
+  "count": 7,
+  "source": "https://observatorioia.org",
+  "license": "CC BY 4.0",
+  "data": [
+    {
+      "id": "poder-judicial",
+      "nombre": {
+        "es": "Poder Judicial",
+        "en": "Judicial Branch"
+      },
+      "nombreCorto": {
+        "es": "Poder Judicial",
+        "en": "Judicial Branch"
+      },
+      "tipo": "judicial",
+      "url": "https://pj.poder-judicial.go.cr/",
+      "proyectosActivos": 6,
+      "resumen": {
+        "es": "Cartera más amplia del Estado: clasificación documental, Giro Continuo (¢5,245M en 2024), ML presupuestal con +₡100M ahorrados, anonimización Nymiz, análisis Sala Cuarta con UCR/PEN, ChatbotPJ desde 2018.",
+        "en": "Broadest state portfolio: document classification, Continuous Disbursement (¢5,245M in 2024), budget ML with +₡100M saved, Nymiz anonymization, Constitutional Chamber analysis with UCR/PEN, ChatbotPJ since 2018."
+      },
+      "descripcion": {
+        "es": "Es la institución pública costarricense con la cartera más amplia de IA en producción: seis sistemas operativos en clasificación documental, automatización de pagos, predicción presupuestaria, protección de datos, análisis jurisprudencial y atención ciudadana. Publicó los Lineamientos Básicos para el uso de IA Generativa Autorizada en el Poder Judicial, que enmarcan a la IA como herramienta de apoyo, nunca sustituto del juicio legal.",
+        "en": "The Costa Rican public institution with the broadest portfolio of AI in production: six live systems covering document classification, payment automation, budget forecasting, data protection, case-law analysis and citizen support. It published the Basic Guidelines for Authorized Generative AI Use, which frame AI as a support tool, never a substitute for legal judgment."
+      },
+      "lecciones": {
+        "es": "El liderazgo del Poder Judicial no se explica por presupuesto IA dedicado, sino por especialización temprana (ML presupuestal desde 2019), alianzas con academia pública (UCR e Instituto de Investigaciones Jurídicas) y un marco propio de gobernanza publicado antes que cualquier ley nacional.",
+        "en": "The Judicial Branch did not lead through a dedicated AI budget but through early specialization (budget ML since 2019), partnerships with public academia (UCR and the Institute of Legal Research) and its own governance framework published ahead of any national law."
+      }
+    },
+    {
+      "id": "ccss",
+      "nombre": {
+        "es": "Caja Costarricense de Seguro Social",
+        "en": "Costa Rican Social Security Fund"
+      },
+      "nombreCorto": {
+        "es": "CCSS",
+        "en": "CCSS"
+      },
+      "tipo": "autonoma",
+      "url": "https://www.ccss.sa.cr/",
+      "proyectosActivos": 4,
+      "resumen": {
+        "es": "Programa TEC-CCSS de formación en IA médica, EDUS (cobertura 100% asegurados), AIDA (asistente IA en consulta, piloto 15 áreas) y LIDIA (modelos predictivos, piloto diabetes en Clorito Picado con 95% de precisión).",
+        "en": "TEC-CCSS medical AI training program, EDUS (100% member coverage), AIDA (in-consultation AI assistant, 15-area pilot) and LIDIA (predictive models, diabetes pilot at Clorito Picado with 95% accuracy)."
+      },
+      "descripcion": {
+        "es": "Combina el dataset clínico más grande del país (EDUS, cobertura 100% de asegurados desde 2010), un programa de formación en IA médica con el TEC, AIDA como asistente en consulta en tiempo real y LIDIA como motor predictivo de medicina preventiva. Es la única institución pública con dos sistemas IA clínicos operando en paralelo: uno asistencial (AIDA) y uno predictivo (LIDIA).",
+        "en": "Combines the country’s largest clinical dataset (EDUS, 100% member coverage since 2010), a medical AI training program with TEC, AIDA as a real-time in-consultation assistant and LIDIA as a preventive-medicine predictive engine. The only public institution running two clinical AI systems in parallel: one assistive (AIDA) and one predictive (LIDIA)."
+      },
+      "lecciones": {
+        "es": "La CCSS apuesta primero a capacidad humana interna (formación con TEC) y a cobertura territorial (EBAIS), no a comprar software de proveedor. Es un patrón de adopción más lento pero menos dependiente.",
+        "en": "CCSS is betting first on internal human capacity (TEC training) and territorial coverage (EBAIS), rather than vendor software procurement. It is a slower but less dependency-prone adoption pattern."
+      }
+    },
+    {
+      "id": "hacienda",
+      "nombre": {
+        "es": "Ministerio de Hacienda",
+        "en": "Ministry of Finance"
+      },
+      "nombreCorto": {
+        "es": "Hacienda",
+        "en": "Finance"
+      },
+      "tipo": "ministerio",
+      "url": "https://www.hacienda.go.cr/",
+      "proyectosActivos": 3,
+      "resumen": {
+        "es": "Detección de fraude fiscal con Microsoft Anomaly Detector (₡8,000M recuperados en 2025), TRIBU-CR (plataforma tributaria operativa desde octubre 2025 que reemplaza ATV/Travi) y asistente virtual para contribuyentes.",
+        "en": "Tax fraud detection with Microsoft Anomaly Detector (₡8,000M recovered in 2025), TRIBU-CR (live since October 2025, replacing ATV/Travi) and virtual taxpayer assistant."
+      },
+      "descripcion": {
+        "es": "Es la institución del Estado con la modernización tributaria más ambiciosa de la última década. Combina retorno fiscal medible con IA (₡8,000M recuperados en 2025), la plataforma integrada TRIBU-CR con facturación electrónica v4.4 e integración SINPE Móvil, y el único asistente virtual ciudadano operativo del gobierno central.",
+        "en": "The state institution with the most ambitious tax modernization of the past decade. It combines measurable fiscal returns from AI (₡8,000M recovered in 2025), the integrated TRIBU-CR platform with e-invoicing v4.4 and SINPE Móvil integration, and the only operational citizen-facing virtual assistant in the central government."
+      },
+      "lecciones": {
+        "es": "Donde existe infraestructura digital previa (facturación electrónica), la IA produce retorno rápido. Donde no existe, no hay atajo: el caso Hacienda no se replica sin esa base.",
+        "en": "Where prior digital infrastructure exists (e-invoicing), AI yields fast returns. Where it does not, there is no shortcut: the Hacienda case is not replicable without that foundation."
+      }
+    },
+    {
+      "id": "mep",
+      "nombre": {
+        "es": "Ministerio de Educación Pública",
+        "en": "Ministry of Public Education"
+      },
+      "nombreCorto": {
+        "es": "MEP",
+        "en": "MEP"
+      },
+      "tipo": "ministerio",
+      "url": "https://www.mep.go.cr/",
+      "proyectosActivos": 1,
+      "resumen": {
+        "es": "Especialización técnica en IA con Intel en colegios técnicos profesionales. Primer país latinoamericano con IA como carrera técnica formal en secundaria.",
+        "en": "Technical AI specialization with Intel in vocational high schools. First Latin American country with AI as a formal technical track in secondary education."
+      },
+      "descripcion": {
+        "es": "Cuenta con un currículo formal de tres años en machine learning, ética y aspectos legales de IA, iniciado en cuatro CTPs en 2023 con meta de expansión. Complementa con el programa más grande de capacitación masiva en IA del país: 90,000 becas docentes lanzadas con CENECOOP en abril 2026, con meta de formar 65,000 docentes para impactar a más de 1 millón de estudiantes. Publicó la Guía Docente de IA con ULACIT, UNESCO y el sistema ONU.",
+        "en": "Runs a formal 3-year curriculum on machine learning, ethics and legal aspects of AI, launched in four vocational schools in 2023 with an expansion target. It is complemented by the country’s largest mass AI training program: 90,000 teacher scholarships launched with CENECOOP in April 2026, targeting 65,000 trained teachers to reach 1M+ students. It published the Teacher AI Guide with ULACIT, UNESCO and the UN system."
+      },
+      "lecciones": {
+        "es": "El programa demuestra que CR puede sostener un hito regional con muy poco presupuesto público propio, apoyado en alianzas privadas (Intel) y multilaterales (UNESCO, ONU). La fragilidad es que la sostenibilidad depende del socio: si Intel reduce presencia local, el currículo necesita un nuevo anclaje.",
+        "en": "The program shows Costa Rica can sustain a regional milestone with very little dedicated public budget, leaning on private (Intel) and multilateral (UNESCO, UN) partnerships. The fragility is that sustainability depends on the partner: if Intel scales back its local presence, the curriculum needs a new anchor."
+      }
+    },
+    {
+      "id": "micitt",
+      "nombre": {
+        "es": "Ministerio de Ciencia, Innovación, Tecnología y Telecomunicaciones",
+        "en": "Ministry of Science, Innovation, Technology and Telecommunications"
+      },
+      "nombreCorto": {
+        "es": "MICITT",
+        "en": "MICITT"
+      },
+      "tipo": "ministerio",
+      "url": "https://www.micitt.go.cr/",
+      "proyectosActivos": 1,
+      "resumen": {
+        "es": "Estrategia Nacional de IA (ENIA) 2024-2027 — primera política nacional de IA de Centroamérica. LINC Labs: 16 laboratorios, +4,500 personas capacitadas, 70% participación femenina.",
+        "en": "National AI Strategy (ENIA) 2024-2027 — first national AI policy in Central America. LINC Labs: 16 labs, +4,500 people trained, 70% female participation."
+      },
+      "descripcion": {
+        "es": "Es el rector formal de la política nacional de IA. Publicó la ENIA 2024-2027 (primera política de su tipo en Centroamérica) y opera la red LINC con 16 laboratorios distribuidos en las 7 provincias. La ENIA contempla un Centro Nacional de Excelencia en IA que aún no está operativo y no tiene presupuesto público asignado.",
+        "en": "Formally leads national AI policy. Published ENIA 2024-2027 (first such policy in Central America) and operates the LINC network with 16 labs across the 7 provinces. ENIA envisions a National AI Center of Excellence that is not yet operational and has no allocated public budget."
+      },
+      "lecciones": {
+        "es": "MICITT logra resultados de capacitación con cobertura territorial y equidad de género (70% participación femenina). Pero el brazo regulador y el rol coordinador previstos en la ENIA siguen vacantes. Es la institución con la mayor distancia entre lo prometido en estrategia y lo entregado en operación.",
+        "en": "MICITT delivers training results with territorial coverage and gender equity (70% female participation). But the regulatory and coordinating role envisioned in ENIA remains vacant. It is the institution with the largest gap between what its strategy promises and what its operations deliver."
+      }
+    },
+    {
+      "id": "ucr",
+      "nombre": {
+        "es": "Universidad de Costa Rica",
+        "en": "University of Costa Rica"
+      },
+      "nombreCorto": {
+        "es": "UCR",
+        "en": "UCR"
+      },
+      "tipo": "universidad",
+      "url": "https://www.ucr.ac.cr/",
+      "proyectosActivos": 2,
+      "resumen": {
+        "es": "Universidad pública con investigación IA propia: el CITIC integra IA en el ciclo de vida del software y el CIOdD lidera Ethical AI (Erasmus+) con consorcio de 9 instituciones en 4 países.",
+        "en": "Public university with its own AI research: CITIC integrates AI into the software lifecycle and CIOdD leads Ethical AI (Erasmus+) with a consortium of 9 institutions across 4 countries."
+      },
+      "descripcion": {
+        "es": "Es la universidad pública con la presencia más activa en investigación IA aplicada del país. Cuenta con dos líneas consolidadas: el Centro de Investigaciones en TIC (CITIC) trabaja en integración de IA al ciclo de vida del software, y el Centro de Investigación Observatorio del Desarrollo (CIOdD) coordina la participación costarricense en el proyecto Erasmus+ Ethical AI: Educate and Innovate (No. 101179117), con outputs concretos en toolkits de gobernanza ética para docencia y políticas institucionales.",
+        "en": "The public university with the most active applied AI research presence in the country. Two consolidated lines: the Research Center on TIC (CITIC) works on AI integration into the software lifecycle, and the Development Observatory (CIOdD) coordinates Costa Rican participation in Erasmus+ Ethical AI: Educate and Innovate (No. 101179117), with concrete outputs in ethics governance toolkits for teaching and institutional policies."
+      },
+      "lecciones": {
+        "es": "La UCR es la única institución académica costarricense con outputs IA verificables conectados a marcos europeos (Erasmus+) y a producción académica indexada. Es el puente natural para llenar el rol de Centro Nacional de Excelencia en IA prometido por la ENIA y aún no operativo. Su valor está en gobernanza y formación, no en sistemas operativos a escala.",
+        "en": "UCR is the only Costa Rican academic institution with verifiable AI outputs linked to European frameworks (Erasmus+) and indexed academic production. It is the natural bridge to fill the role of the National AI Center of Excellence promised by ENIA and not yet operational. Its value lies in governance and training, not at-scale operational systems."
+      }
+    },
+    {
+      "id": "cenat",
+      "nombre": {
+        "es": "Centro Nacional de Alta Tecnología",
+        "en": "National Center for High Technology"
+      },
+      "nombreCorto": {
+        "es": "CENAT",
+        "en": "CENAT"
+      },
+      "tipo": "investigacion",
+      "url": "https://cenat.ac.cr/",
+      "proyectosActivos": 1,
+      "resumen": {
+        "es": "Centro interuniversitario adscrito al CONARE, opera 5 laboratorios (CENIBiot, CNCA, PRIAS, LANOTEC, LANBA). Promueve LaNIA, propuesta de Laboratorio Nacional de IA con alianza fAIr LAC del BID.",
+        "en": "Interuniversity center under CONARE, operating 5 labs (CENIBiot, CNCA, PRIAS, LANOTEC, LANBA). Champions LaNIA, the proposed National AI Laboratory in partnership with IDB’s fAIr LAC."
+      },
+      "descripcion": {
+        "es": "Es el único hub público de investigación en alta tecnología del país, adscrito al CONARE (red de universidades públicas) y operado desde el TEC. Participó junto al MICITT, Ministerio de Salud, UNESCO, BID y fAIr LAC en la formulación de la ENIA. LaNIA es su propuesta para llenar el vacío del Centro Nacional de Excelencia en IA prometido por la ENIA y aún no operativo.",
+        "en": "The country’s only public high-tech research hub, under CONARE (public university network) and operated from TEC. It participated with MICITT, the Health Ministry, UNESCO, IDB and fAIr LAC in shaping ENIA. LaNIA is its proposal to fill the gap left by the National AI Center of Excellence promised in ENIA and still not operational."
+      },
+      "lecciones": {
+        "es": "CENAT muestra que el bridge academia-Estado es viable cuando ya existe una estructura institucional como CONARE. Sin embargo, LaNIA opera en fase piloto y depende de financiamiento multilateral, no de presupuesto público dedicado. Refuerza el patrón regional: la investigación pública en IA avanza sin línea presupuestaria nacional.",
+        "en": "CENAT shows that the academia-state bridge is viable when an institutional structure like CONARE already exists. Still, LaNIA runs in pilot phase and depends on multilateral funding rather than dedicated public budget. It reinforces the regional pattern: public AI research moves forward without a national budget line."
+      }
+    }
+  ]
+}

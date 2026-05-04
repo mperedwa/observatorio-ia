@@ -1,0 +1,33 @@
+{
+  "version": "0.1.0",
+  "lastUpdate": "2026-05-04T15:04:19.908Z",
+  "source": "https://observatorioia.org",
+  "license": "CC BY 4.0",
+  "endpoints": [
+    {
+      "url": "/api/proyectos.json",
+      "description": "Catálogo de proyectos de IA en el sector público costarricense. Cada entrada incluye institución, estado, fuente oficial y descripción bilingüe ES/EN.",
+      "count": 18
+    },
+    {
+      "url": "/api/instituciones.json",
+      "description": "Instituciones públicas con proyectos IA documentados (ministerios, autónomas, judicial, universidades, investigación).",
+      "count": 7
+    },
+    {
+      "url": "/api/legislacion.json",
+      "description": "Expedientes de ley relacionados con IA en la Asamblea Legislativa de Costa Rica. Estado actualizado por scraper automatizado.",
+      "count": 3
+    },
+    {
+      "url": "/api/indicadores.json",
+      "description": "Indicadores cuantitativos: ILIA 2025 (Índice Latinoamericano de IA), comparativa regional, KPIs hero del observatorio.",
+      "count": 3
+    },
+    {
+      "url": "/api/brechas.json",
+      "description": "Análisis de brechas: 7 capacidades que CR no tiene operativas vs Estonia/Singapur (gobernanza IA, X-Road, chatbot ciudadano, etc.).",
+      "count": 7
+    }
+  ]
+}

@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "build:api": "tsx scripts/build-api.ts",
+    "prebuild": "tsx scripts/build-api.ts",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",

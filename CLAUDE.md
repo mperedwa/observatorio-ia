@@ -67,14 +67,15 @@ El proyecto vive en `~/Desktop/Proyectos/` (sincronizado por iCloud Drive). Cuan
 4. Verificar `ls out/en/ out/es/` — ambos deben tener `index.html`
 
 ## Estado
-Fase 8.2 entregada (2026-05-04): **Tier C scrapers** (CGR + MIDEPLAN). **10 scrapers operativos**. Run de prueba: 253 fetched, 32 matched, **27 candidatos**. CGR aporta auditorías DFOE (evidencia oficial alta credibilidad). MIDEPLAN aporta Plan Nacional de Desarrollo + cooperación digital internacional.
+Fase 9 entregada (2026-05-04): **API pública JSON read-only**. 5 endpoints + manifest + página HTML índice bajo `/api/` (servido por Vercel desde `out/api/`). Headers CORS abiertos via `vercel.json`. Cada endpoint envuelve los datos en `{version, lastUpdate, count, source, license, data}`. Licencia CC BY 4.0. `prebuild` corre `scripts/build-api.ts` automáticamente. Footer del sitio (ES/EN) ahora linkea a `/api/`. Endpoints: proyectos, instituciones, legislación, indicadores, brechas.
 
-Antes (mismo día): Fase 8.1 (Tier B vía Google News agregador + Hacienda Playwright best-effort) y Fase 8 (Tier A: pj + delfino + citic + `mentionsAI` con word boundaries).
+Antes (mismo día): Fase 8.2 (Tier C: CGR + MIDEPLAN, **10 scrapers** totales, 27 candidatos típicos). Fase 8.1 (Tier B vía Google News + Hacienda Playwright). Fase 8 (Tier A: pj + delfino + citic + `mentionsAI` con word boundaries).
 
 Anteriormente (mayo 2026): Fase 6.1 (notificación Telegram filtrada tras scrape), Fase 6 (clasificador LLM Groq/Llama-3.3-70b), Fase 7 (UCR 7° institución, 18 proyectos), Fase A (assets /comparte), Fase 5 (scrapers MVP + JSON validable).
 
 Próximas fases potenciales:
-- Fase 9: API pública JSON read-only para periodistas/investigadores
+- Posts LinkedIn 02-05 (campaña ya iniciada con post 01)
+- Logo definitivo (Mario revisando 16 opciones Canva + Gemini)
 - Vigilancia manual anual: PROSIC reporte estado digital CR (feed vacío hoy)
 
 Datos en `src/data/json/` validados por schemas en `src/data/schemas/`. Los `.ts` quedan como reexports tipados. Política editorial: scrapers nunca tocan campos curados (titulo, descripcion, contexto, lecciones, resumen). Candidatos de Google News y Delfino son **prensa, no fuente oficial** — exigen validación contra fuente primaria. Informes CGR/DFOE son evidencia oficial.

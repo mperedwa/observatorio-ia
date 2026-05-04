@@ -70,6 +70,7 @@ export interface Dictionary {
     ultimaActualizacion: string;
     fuentes: string;
     quienMantiene: string;
+    apiPublica: string;
   };
   estado: { operativo: string; piloto: string; planificado: string };
   languageToggle: { label: string; es: string; en: string };
@@ -271,6 +272,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ultimaActualizacion: 'Última actualización: mayo 2026',
       fuentes: 'Fuentes: instituciones públicas de Costa Rica + ILIA (CEPAL).',
       quienMantiene: 'Quién mantiene el observatorio',
+      apiPublica: 'API pública JSON para periodistas/investigadores',
     },
     estado: {
       operativo: 'Operativo',
@@ -507,6 +509,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ultimaActualizacion: 'Last updated: May 2026',
       fuentes: 'Sources: Costa Rican public institutions + ILIA (CEPAL).',
       quienMantiene: 'Who maintains the observatory',
+      apiPublica: 'Public JSON API for journalists/researchers',
     },
     estado: {
       operativo: 'Live',
