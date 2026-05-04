@@ -50,7 +50,12 @@ interface Consolidated {
   validationOk: boolean;
 }
 
-const SCORE_THRESHOLD = 7;
+const DEFAULT_THRESHOLD = 7;
+const SCORE_THRESHOLD = (() => {
+  const env = process.env.NOTIFY_SCORE_THRESHOLD?.trim();
+  const parsed = env ? Number(env) : NaN;
+  return Number.isFinite(parsed) && parsed >= 0 && parsed <= 10 ? parsed : DEFAULT_THRESHOLD;
+})();
 
 function shouldNotify(report: Consolidated): { notify: boolean; reason: string } {
   const appliedCount = report.appliedChanges.filter((c) => c.applied).length;
