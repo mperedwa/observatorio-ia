@@ -14,6 +14,8 @@
     "scrape:pj": "tsx scrapers/pj.ts",
     "scrape:delfino": "tsx scrapers/delfino.ts",
     "scrape:citic": "tsx scrapers/citic.ts",
+    "scrape:google-news": "tsx scrapers/google-news.ts",
+    "scrape:hacienda": "tsx scrapers/hacienda.ts",
     "scrape:all": "tsx scrapers/run-all.ts",
     "generate-assets": "tsx scripts/generate-share-assets.ts",
     "notify-telegram": "tsx scripts/notify-telegram.ts"

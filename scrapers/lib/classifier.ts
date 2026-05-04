@@ -33,7 +33,9 @@ export type Source =
   | 'asamblea'
   | 'pj'
   | 'delfino'
-  | 'citic';
+  | 'citic'
+  | 'google-news'
+  | 'hacienda';
 
 export interface Candidate {
   titulo: string;
@@ -43,7 +45,9 @@ export interface Candidate {
 
 const SYSTEM_PROMPT = `Eres un analista del Observatorio IA Costa Rica (observatorioia.org). El observatorio cataloga proyectos de inteligencia artificial en el sector público costarricense.
 
-Tu tarea: clasificar candidatos detectados por scrapers de fuentes oficiales y editoriales (MICITT, CAMTIC, Asamblea Legislativa, Poder Judicial, CITIC-UCR, Delfino.cr) según su relevancia para el catálogo del observatorio.
+Tu tarea: clasificar candidatos detectados por scrapers de fuentes oficiales (MICITT, CAMTIC, Asamblea Legislativa, Poder Judicial, CITIC-UCR, Hacienda) y editoriales/agregadores (Delfino.cr, Google News) según su relevancia para el catálogo del observatorio.
+
+Importante: candidatos de Google News y Delfino.cr son **prensa, no fuente oficial**. Penaliza ligeramente el score si la única evidencia es prensa sin enlace a fuente primaria; favorece comunicados oficiales y feeds institucionales.
 
 Criterios de scoring (0-10):
 - 9-10: proyecto IA concreto en una institución pública costarricense, con métricas o cronograma o presupuesto explícito.

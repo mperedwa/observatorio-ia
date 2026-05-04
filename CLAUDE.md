@@ -67,15 +67,17 @@ El proyecto vive en `~/Desktop/Proyectos/` (sincronizado por iCloud Drive). Cuan
 4. Verificar `ls out/en/ out/es/` — ambos deben tener `index.html`
 
 ## Estado
-Fase 8 entregada (2026-05-04): **Tier A scrapers ampliados**. 6 scrapers operativos: asamblea + micitt + camtic + **pj** (Joomla, Sala de Prensa paginada) + **delfino** (RSS prensa editorial CR) + **citic** (RSS UCR/CITIC, IA software + ético-IA). Run de prueba 2026-05-04: 85 fetched, 11 matched, 8 candidatos. `mentionsAI` endurecido con word-boundaries (`\bIA\b`) para evitar falsos positivos. Tier B (Hacienda WAF, CCSS bloqueo geográfico, CENAT sin feed) pendiente con Playwright residencial. Plan: `docs/fases/2026-05-04-fase-8-tier-a-scrapers.md`.
+Fase 8.1 entregada (2026-05-04): **Tier B scrapers** vía agregador. **8 scrapers operativos**. Tier B nuevo: **google-news** (RSS multi-query CCSS+Hacienda+CENAT, agrega prensa CR — La Nación, El Financiero, crhoy, monumental, etc.) + **hacienda** (Playwright best-effort, pasa WAF pero noticias cargan vía AJAX). Run de prueba 2026-05-04: 192 fetched, 25 matched, 20 candidatos.
+
+Tier A entregado antes (Fase 8): asamblea + micitt + camtic + **pj** (Joomla paginado) + **delfino** (RSS prensa editorial) + **citic** (RSS UCR/CITIC). `mentionsAI` endurecido con word-boundaries (`\bIA\b`) para evitar falsos positivos.
 
 Anteriormente (mayo 2026): Fase 6.1 (notificación Telegram filtrada tras scrape), Fase 6 (clasificador LLM Groq/Llama-3.3-70b), Fase 7 (UCR 7° institución, 18 proyectos), Fase A (assets /comparte), Fase 5 (scrapers MVP + JSON validable). Próximas fases potenciales:
 - Fase 9: API pública JSON read-only para periodistas/investigadores
-- Fase 8.1 Tier B: scrapers Hacienda + CCSS + CENAT con Playwright residencial
+- Tier C: scrapers MIDEPLAN + Contraloría + PROSIC (vigilancia anual)
 
-Datos en `src/data/json/` validados por schemas en `src/data/schemas/`. Los `.ts` quedan como reexports tipados. Política editorial: scrapers nunca tocan campos curados (titulo, descripcion, contexto, lecciones, resumen).
+Datos en `src/data/json/` validados por schemas en `src/data/schemas/`. Los `.ts` quedan como reexports tipados. Política editorial: scrapers nunca tocan campos curados (titulo, descripcion, contexto, lecciones, resumen). Candidatos de Google News son **prensa, no fuente oficial** — exigen validación contra fuente primaria.
 
-Scripts npm: `validate-data`, `scrape:micitt`, `scrape:camtic`, `scrape:asamblea`, `scrape:pj`, `scrape:delfino`, `scrape:citic`, `scrape:all`. Detalle en `scrapers/README.md`.
+Scripts npm: `validate-data`, `scrape:micitt`, `scrape:camtic`, `scrape:asamblea`, `scrape:pj`, `scrape:delfino`, `scrape:citic`, `scrape:google-news`, `scrape:hacienda`, `scrape:all`. Detalle en `scrapers/README.md`.
 
 Dependencias nuevas: `recharts@3.8.1` (Fase 4), `ajv@8` + `ajv-formats@3` + `tsx@4` + `playwright@1` + `cheerio@1` (Fase 5, todas devDeps salvo recharts).
 
