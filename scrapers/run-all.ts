@@ -15,6 +15,9 @@ import { join } from 'node:path';
 import { scrapeAsamblea } from './asamblea';
 import { scrapeMicitt } from './micitt';
 import { scrapeCamtic } from './camtic';
+import { scrapePJ } from './pj';
+import { scrapeDelfino } from './delfino';
+import { scrapeCitic } from './citic';
 import {
   applyChange,
   REPORTS_DIR,
@@ -24,13 +27,13 @@ import {
 } from './lib/diff';
 import { validateAll, crossCheck } from './lib/validator';
 import { closeBrowser } from './lib/source';
-import { classifierAvailable, classifyMany, type Classification } from './lib/classifier';
+import { classifierAvailable, classifyMany, type Classification, type Source } from './lib/classifier';
 
 const ROOT = process.cwd();
 const LEGISLACION_PATH = join(ROOT, 'src', 'data', 'json', 'legislacion.json');
 
 interface ClassifiedCandidate {
-  source: 'micitt' | 'camtic' | 'asamblea';
+  source: Source;
   candidate: ScraperCandidate;
   classification: Classification | null;
 }
@@ -79,6 +82,9 @@ async function main(): Promise<void> {
     ['asamblea', scrapeAsamblea],
     ['micitt', scrapeMicitt],
     ['camtic', scrapeCamtic],
+    ['pj', scrapePJ],
+    ['delfino', scrapeDelfino],
+    ['citic', scrapeCitic],
   ] as const) {
     console.log(`--- ${name} ---`);
     try {
@@ -107,9 +113,9 @@ async function main(): Promise<void> {
   const appliedChanges = asambleaReport ? applyAsambleaChanges(asambleaReport) : [];
 
   // Clasificación LLM de candidatos (Fase 6)
-  const allCandidates: Array<{ source: 'micitt' | 'camtic' | 'asamblea'; candidate: ScraperCandidate }> =
+  const allCandidates: Array<{ source: Source; candidate: ScraperCandidate }> =
     reports.flatMap((r) =>
-      r.candidates.map((c) => ({ source: r.scraper as 'micitt' | 'camtic' | 'asamblea', candidate: c })),
+      r.candidates.map((c) => ({ source: r.scraper as Source, candidate: c })),
     );
 
   const classifierUsed = classifierAvailable();

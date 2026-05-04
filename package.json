@@ -11,6 +11,9 @@
     "scrape:micitt": "tsx scrapers/micitt.ts",
     "scrape:camtic": "tsx scrapers/camtic.ts",
     "scrape:asamblea": "tsx scrapers/asamblea.ts",
+    "scrape:pj": "tsx scrapers/pj.ts",
+    "scrape:delfino": "tsx scrapers/delfino.ts",
+    "scrape:citic": "tsx scrapers/citic.ts",
     "scrape:all": "tsx scrapers/run-all.ts",
     "generate-assets": "tsx scripts/generate-share-assets.ts",
     "notify-telegram": "tsx scripts/notify-telegram.ts"

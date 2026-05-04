@@ -67,12 +67,15 @@ El proyecto vive en `~/Desktop/Proyectos/` (sincronizado por iCloud Drive). Cuan
 4. Verificar `ls out/en/ out/es/` — ambos deben tener `index.html`
 
 ## Estado
-Fase 6 entregada (mayo 2026): clasificador LLM opcional para candidatos del scraper. Llama 3.3 70B vía Groq (free tier) enriquece cada candidato con score (0-10), tipo (proyecto-nuevo/actualizacion/comunicado/evento/ruido), resumen y tags. PR auto agrupa candidatos por relevancia (alta/media/baja). Política editorial intacta: cero auto-add. Si `GROQ_API_KEY` no está configurado en GitHub Secrets, el workflow corre en modo fallback Fase 5 (lista plana). Plan: `docs/fases/2026-05-02-fase-6-llm-classifier.md`. Anteriormente (mayo 2026): Fase 7 (UCR como 7° institución, 18 proyectos), Fase A (assets /comparte), Fase 5 (scrapers + JSON validable). Próximas fases potenciales:
-- Fase 8: alertas Telegram/email + API pública JSON read-only
+Fase 8 entregada (2026-05-04): **Tier A scrapers ampliados**. 6 scrapers operativos: asamblea + micitt + camtic + **pj** (Joomla, Sala de Prensa paginada) + **delfino** (RSS prensa editorial CR) + **citic** (RSS UCR/CITIC, IA software + ético-IA). Run de prueba 2026-05-04: 85 fetched, 11 matched, 8 candidatos. `mentionsAI` endurecido con word-boundaries (`\bIA\b`) para evitar falsos positivos. Tier B (Hacienda WAF, CCSS bloqueo geográfico, CENAT sin feed) pendiente con Playwright residencial. Plan: `docs/fases/2026-05-04-fase-8-tier-a-scrapers.md`.
+
+Anteriormente (mayo 2026): Fase 6.1 (notificación Telegram filtrada tras scrape), Fase 6 (clasificador LLM Groq/Llama-3.3-70b), Fase 7 (UCR 7° institución, 18 proyectos), Fase A (assets /comparte), Fase 5 (scrapers MVP + JSON validable). Próximas fases potenciales:
+- Fase 9: API pública JSON read-only para periodistas/investigadores
+- Fase 8.1 Tier B: scrapers Hacienda + CCSS + CENAT con Playwright residencial
 
 Datos en `src/data/json/` validados por schemas en `src/data/schemas/`. Los `.ts` quedan como reexports tipados. Política editorial: scrapers nunca tocan campos curados (titulo, descripcion, contexto, lecciones, resumen).
 
-Scripts npm: `validate-data`, `scrape:micitt`, `scrape:camtic`, `scrape:asamblea`, `scrape:all`. Detalle en `scrapers/README.md`.
+Scripts npm: `validate-data`, `scrape:micitt`, `scrape:camtic`, `scrape:asamblea`, `scrape:pj`, `scrape:delfino`, `scrape:citic`, `scrape:all`. Detalle en `scrapers/README.md`.
 
 Dependencias nuevas: `recharts@3.8.1` (Fase 4), `ajv@8` + `ajv-formats@3` + `tsx@4` + `playwright@1` + `cheerio@1` (Fase 5, todas devDeps salvo recharts).
 

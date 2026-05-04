@@ -49,12 +49,15 @@ cat scraper-runs/last-run.md
 # Validar JSONs contra schemas AJV
 npm run validate-data
 
-# Correr un scraper individual (requiere browsers de Playwright)
-npm run scrape:micitt
-npm run scrape:camtic
-npm run scrape:asamblea
+# Correr un scraper individual (requiere browsers de Playwright para fallback)
+npm run scrape:micitt    # MICITT (Drupal)
+npm run scrape:camtic    # CAMTIC (WordPress REST API)
+npm run scrape:asamblea  # Asamblea Legislativa (3 expedientes IA)
+npm run scrape:pj        # Poder Judicial Sala de Prensa (Joomla, paginado)
+npm run scrape:delfino   # Delfino.cr RSS (prensa editorial)
+npm run scrape:citic     # CITIC-UCR RSS (académico, IA software + ético-IA)
 
-# Correr los 3 + aplicar cambios + escribir reporte
+# Correr los 6 + aplicar cambios + escribir reporte
 npm run scrape:all
 ```
 
@@ -71,11 +74,15 @@ scrapers/
 ├── lib/
 │   ├── source.ts       # fetch (estático o Playwright) + helpers IA
 │   ├── diff.ts         # tipos ProposedChange, applyChange, reportes
-│   └── validator.ts    # AJV + cross-checks de integridad
+│   ├── validator.ts    # AJV + cross-checks de integridad
+│   └── classifier.ts   # cliente Groq/Llama 3.3 (Fase 6)
 ├── micitt.ts           # noticias MICITT (Drupal)
-├── camtic.ts           # noticias CAMTIC (WordPress)
+├── camtic.ts           # noticias CAMTIC (WordPress REST API)
 ├── asamblea.ts         # estado de los 3 expedientes IA
-└── run-all.ts          # orquestador, escribe .scrapers/last-run.{json,md}
+├── pj.ts               # Poder Judicial Sala de Prensa (Joomla, paginado)
+├── delfino.ts          # Delfino.cr RSS (prensa editorial CR)
+├── citic.ts            # CITIC-UCR RSS (académico, IA software + ético-IA)
+└── run-all.ts          # orquestador, escribe scraper-runs/last-run.{json,md}
 ```
 
 ## Cómo agregar un scraper nuevo
@@ -111,3 +118,11 @@ Selectores actuales (mantener al día):
 | MICITT | `fetchNotas` en `micitt.ts` | URL: `/micitt-Informa/noticias`. Selector: `a[href^="/el-sector-informa/"]` (filtrando "Leer más"). |
 | CAMTIC | `fetchNotas` en `camtic.ts` | WordPress REST API: `/wp-json/wp/v2/posts?per_page=20&_fields=id,date,link,title,excerpt`. Devuelve JSON estable; el RSS feed devolvía 0 items desde IPs no-CR. |
 | Asamblea | `fetchExpedienteData` en `asamblea.ts` | URL pattern `Detalle Proyectos de Ley.aspx?Numero_Proyecto=...`, extrae texto de `<body>` y normaliza a enum de estado. |
+| Poder Judicial | `parseListing` en `pj.ts` | Joomla, categoría 8 Sala de Prensa. URL: `/index.php/component/content/category/8-sala-de-prensa?Itemid=409&start=N`. Pagina 4 páginas (≈20 notas). Extrae IDs+slugs de URLs `/article/<id>-<slug>`; el RSS de Joomla devuelve `<title>` vacío. |
+| Delfino.cr | `parseFeed` en `delfino.ts` | RSS oficial: `https://delfino.cr/feed`. Filtra por keywords IA + nombres instituciones gov (CCSS, MICITT, Hacienda, Asamblea, ENIA, etc.). Prensa editorial — los candidatos exigen validación contra fuente primaria antes de cualquier `add`/`update`. |
+| CITIC-UCR | `parseFeed` en `citic.ts` | RSS oficial: `https://citic.ucr.ac.cr/rss.xml`. Centro académico ya catalogado (proyecto ucr-citic-ia-software + Erasmus+ CIOdD). Filtra IA, ética IA, machine learning, computación cuántica, alianzas Erasmus. |
+
+**Fuentes intentadas pero descartadas (Tier B, requieren Playwright residencial o proxy CR)**:
+- **CCSS** (`ccss.sa.cr`): timeout total desde IPs no-CR (firewall geográfico). GitHub Actions tampoco puede.
+- **Hacienda** (`hacienda.go.cr`): WAF estricto, `400 Bad Request` con curl/fetch. Requiere Playwright headless con headers específicos.
+- **CENAT** (`cenat.ac.cr`): sitio HTML estático sin sección de noticias ni feed. Los proyectos viven en subdominios (PRIAS, CNCA), pero no hay feed unificado.

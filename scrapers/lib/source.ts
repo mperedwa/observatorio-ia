@@ -68,23 +68,30 @@ export function load(html: string): cheerio.CheerioAPI {
 }
 
 /** Helpers comunes para filtrar contenido relacionado a IA. */
-const IA_KEYWORDS = [
+// Substrings: ok matchear como parte de palabra ("algoritmo" → "algoritm").
+const IA_KEYWORDS_SUBSTRING = [
   'inteligencia artificial',
-  'IA',
-  'AI',
   'machine learning',
   'aprendizaje automático',
-  'ENIA',
-  'LINC',
-  'algoritmo',
   'algoritm',
   'chatbot',
   'asistente virtual',
-  'predict',
   'modelo predictivo',
+  'predicción',
+  'aprendizaje profundo',
+  'red neuronal',
 ];
+
+// Acrónimos: solo matchean como palabra completa para evitar falsos positivos
+// ("IA" no debe matchear "judic**ia**les", "AI" no debe matchear "p**ai**s").
+const IA_KEYWORDS_WORD = ['IA', 'AI', 'ENIA', 'LINC'];
 
 export function mentionsAI(text: string): boolean {
   const lower = text.toLowerCase();
-  return IA_KEYWORDS.some((k) => lower.includes(k.toLowerCase()));
+  if (IA_KEYWORDS_SUBSTRING.some((k) => lower.includes(k.toLowerCase()))) return true;
+  for (const k of IA_KEYWORDS_WORD) {
+    const re = new RegExp(`\\b${k}\\b`, 'i');
+    if (re.test(text)) return true;
+  }
+  return false;
 }
