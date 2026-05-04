@@ -45,6 +45,7 @@ export interface Dictionary {
       aprobada: string;
     };
     verFuente: string;
+    fuenteOficial: string;
   };
   indicadores: {
     kicker: string;
@@ -228,8 +229,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     legislacion: {
       kicker: '02 / Legislación',
-      titulo: 'Tres expedientes de ley en trámite, ninguno aprobado',
-      sub: 'Costa Rica aún no tiene un marco regulatorio formal de IA. De los tres proyectos de ley presentados desde 2023, dos ya cuentan con dictamen de comisión.',
+      titulo: 'Cinco expedientes de ley en trámite, ninguno aprobado',
+      sub: 'Costa Rica aún no tiene un marco regulatorio formal de IA. De los cinco proyectos de ley presentados desde 2023, dos ya cuentan con dictamen de comisión.',
       expedienteLabel: 'Expediente',
       comisionLabel: 'Comisión',
       presentadoLabel: 'Presentado',
@@ -242,6 +243,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         aprobada: 'Aprobada',
       },
       verFuente: 'Ver expediente',
+      fuenteOficial: 'Fuente: Asamblea Legislativa vía Delfino.cr',
     },
     indicadores: {
       kicker: '03 / Indicadores',
@@ -468,8 +470,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     legislacion: {
       kicker: '02 / Legislation',
-      titulo: 'Three bills in progress, none passed',
-      sub: 'Costa Rica still has no formal AI regulatory framework. Of the three bills filed since 2023, two already have a committee report.',
+      titulo: 'Five bills in progress, none passed',
+      sub: 'Costa Rica still has no formal AI regulatory framework. Of the five bills filed since 2023, two already have a committee report.',
       expedienteLabel: 'File',
       comisionLabel: 'Committee',
       presentadoLabel: 'Filed',
@@ -482,6 +484,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         aprobada: 'Passed',
       },
       verFuente: 'View bill',
+      fuenteOficial: 'Source: Legislative Assembly via Delfino.cr',
     },
     indicadores: {
       kicker: '03 / Indicators',

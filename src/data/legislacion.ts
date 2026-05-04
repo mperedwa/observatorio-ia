@@ -1,7 +1,7 @@
 import data from './json/legislacion.json';
 import type { Bilingual } from '@/i18n/config';
 
-export type EstadoLey = 'en-comision' | 'primer-debate' | 'segundo-debate' | 'archivado' | 'aprobada';
+export type EstadoLey = 'en-comision' | 'dictaminado' | 'primer-debate' | 'segundo-debate' | 'archivado' | 'aprobada';
 
 export interface Expediente {
   numero: string;

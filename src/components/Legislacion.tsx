@@ -67,6 +67,9 @@ export function Legislacion({ locale, t }: { locale: Locale; t: Dictionary }) {
                       {t.legislacion.verFuente} ↗
                     </a>
                   )}
+                  <span className="text-slate-400">
+                    {t.legislacion.fuenteOficial}
+                  </span>
                 </div>
               </div>
             </article>

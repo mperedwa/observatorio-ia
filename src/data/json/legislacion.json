@@ -52,5 +52,41 @@
     },
     "presentado": "2024",
     "fuenteUrl": "https://delfino.cr/asamblea/proyecto/24484"
+  },
+  {
+    "numero": "24.875",
+    "titulo": {
+      "es": "Ley para Regular el Uso de Inteligencia Artificial en los Procesos Electorales",
+      "en": "Law to Regulate the Use of Artificial Intelligence in Electoral Processes"
+    },
+    "resumen": {
+      "es": "Establece obligaciones de divulgación cuando se genera contenido con IA, prohíbe deepfakes electorales, cuentas falsas automatizadas y estrategias de microtargeting diseñadas para socavar la integridad electoral. Multas de 10 a 50 salarios base. Presentado por Vanessa De Paul Castro Mora (PUSC).",
+      "en": "Establishes disclosure obligations when AI-generated content is used, prohibits electoral deepfakes, automated fake accounts, and micro-targeting strategies designed to undermine electoral integrity. Fines range from 10 to 50 base salaries. Filed by Vanessa De Paul Castro Mora (PUSC)."
+    },
+    "estado": "en-comision",
+    "comision": {
+      "es": "Reformas Electorales",
+      "en": "Electoral Reform"
+    },
+    "presentado": "2025",
+    "fuenteUrl": "https://delfino.cr/asamblea/proyecto/24875"
+  },
+  {
+    "numero": "25.171",
+    "titulo": {
+      "es": "Ley de Protección de Rasgos Personales y Creaciones Artísticas en Entornos Digitales",
+      "en": "Law for the Protection of Personal Traits and Artistic Creations in Digital Environments"
+    },
+    "resumen": {
+      "es": "Tipifica la suplantación de identidad por medios digitales, incluyendo el uso no autorizado de voz, imagen y creaciones artísticas. Orientado a combatir deepfakes y fraude de identidad digital, más que a regular la IA como tal.",
+      "en": "Criminalizes identity impersonation through digital means, including unauthorized use of voice, image, and artistic creations. Aimed at combating deepfakes and digital identity fraud, rather than regulating AI as such."
+    },
+    "estado": "en-comision",
+    "comision": {
+      "es": "Ciencia, Tecnología y Educación",
+      "en": "Science, Technology and Education"
+    },
+    "presentado": "2025",
+    "fuenteUrl": "https://delfino.cr/asamblea/proyecto/25171"
   }
 ]
