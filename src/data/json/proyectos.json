@@ -10,8 +10,8 @@
     "estado": "operativo",
     "desde": "2023",
     "descripcion": {
-      "es": "Sistema IA para clasificación automática de documentos en el Juzgado Especializado de Cobro Judicial de Pérez Zeledón.",
-      "en": "AI system for automated document classification at the Specialized Debt Collection Court of Pérez Zeledón."
+      "es": "Sistema de inteligencia artificial para clasificación automática de documentos judiciales, operativo desde 2023 en el Juzgado Especializado de Cobro Judicial de Pérez Zeledón (Poder Judicial). El sistema procesa expedientes de cobro judicial sin intervención manual, aplicando modelos de clasificación sobre los documentos que ingresan al juzgado, y actúa como capa base del ecosistema de automatización judicial que también incluye el Sistema de Giro Continuo. A 2025, acumula 1,302,899 documentos procesados, con reducción medida del circulante en materia cobratoria.",
+      "en": "AI system for automated classification of judicial documents, operational since 2023 at the Specialized Debt Collection Court of Pérez Zeledón (Judicial Branch). The system processes debt-collection case files without manual intervention, applying classification models to incoming court documents, and serves as the base layer of the judicial automation ecosystem that also includes the Continuous Disbursement System. As of 2025, it has processed 1,302,899 documents, with a measured reduction of the open caseload in debt collection."
     },
     "resultado": {
       "es": "1,302,899 documentos procesados; reducción del circulante en materia cobratoria.",
@@ -34,8 +34,8 @@
     "estado": "operativo",
     "desde": "2019",
     "descripcion": {
-      "es": "Predicción de ejecución presupuestaria con machine learning, usado por 60+ centros de gestión.",
-      "en": "Budget execution forecasting with machine learning, used by 60+ management centers."
+      "es": "Modelo de machine learning para predicción de ejecución presupuestaria del Poder Judicial, operativo desde 2019 y extendido a más de 60 centros de gestión institucional. El sistema analiza patrones históricos de gasto para proyectar la ejecución futura, permitiendo a los centros ajustar compromisos presupuestarios con antelación. Acumula un ahorro cuantificado superior a ₡100 millones y es la aplicación de IA con retorno financiero medido más antigua del sector público costarricense.",
+      "en": "Machine learning model for budget execution forecasting at the Judicial Branch, operational since 2019 and extended to over 60 institutional management centers. The system analyzes historical spending patterns to project future execution, enabling centers to adjust budget commitments in advance. It has accumulated quantified savings exceeding ₡100 million and is the oldest AI application with measured financial returns in the Costa Rican public sector."
     },
     "resultado": {
       "es": "Ahorro acumulado +₡100M.",
@@ -58,8 +58,8 @@
     "estado": "operativo",
     "desde": "2023",
     "descripcion": {
-      "es": "Anonimización automática de datos personales en documentos judiciales, alineada al Reglamento de Protección de Datos.",
-      "en": "Automated anonymization of personal data in judicial documents, aligned with the Data Protection Regulation."
+      "es": "Sistema de anonimización automatizada de datos personales en documentos judiciales, implementado por el Poder Judicial desde 2023 mediante la herramienta Nymiz. Opera sobre el corpus documental de resoluciones y expedientes para suprimir o enmascarar información identificable antes de su divulgación pública, en cumplimiento de la Ley 8968 de Protección de la Persona frente al Tratamiento de sus Datos Personales y su reglamento institucional. Es la única aplicación de IA en el sector público costarricense orientada específicamente al cumplimiento normativo de protección de datos.",
+      "en": "Automated anonymization system for personal data in judicial documents, implemented by the Judicial Branch since 2023 using the Nymiz tool. It operates on the documentary corpus of rulings and case files to suppress or mask identifiable information before public disclosure, in compliance with Law 8968 on the Protection of Individuals Regarding the Processing of Their Personal Data and its institutional regulation. It is the only AI application in the Costa Rican public sector specifically aimed at data protection regulatory compliance."
     },
     "contexto": {
       "es": "El Poder Judicial es la única institución del Estado que aplica IA específicamente para cumplir con la Ley 8968 de protección de datos. Marca un piso de gobernanza que el resto del sector público todavía no replica.",
@@ -78,8 +78,8 @@
     "estado": "operativo",
     "desde": "2025",
     "descripcion": {
-      "es": "Análisis con ML de 500,000+ sentencias del Tribunal Constitucional (1989-2018), en alianza con UCR/IIJ y Programa Estado de la Nación.",
-      "en": "ML analysis of 500,000+ Constitutional Court rulings (1989-2018), in partnership with UCR/IIJ and the State of the Nation Program."
+      "es": "Proyecto de análisis computacional mediante machine learning sobre el corpus histórico de sentencias de la Sala Constitucional (Sala IV) del período 1989-2018, desarrollado en alianza tripartita entre el Poder Judicial, el Instituto de Investigaciones Jurídicas (IIJ) de la Universidad de Costa Rica y el Programa Estado de la Nación. Publicado en 2025, procesó 433,043 resoluciones para identificar patrones temáticos, tendencias jurisprudenciales y frecuencias de materias constitucionales a lo largo de tres décadas, constituyendo la primera aplicación documentada de ciencia de datos a la investigación jurídica en Costa Rica.",
+      "en": "Computational analysis project using machine learning on the historical corpus of Constitutional Chamber (Sala IV) rulings from 1989-2018, developed through a three-way partnership between the Judicial Branch, the Legal Research Institute (IIJ) at the University of Costa Rica, and the State of the Nation Program. Published in 2025, it processed 433,043 rulings to identify thematic patterns, jurisprudential trends, and frequencies of constitutional matters over three decades, constituting the first documented application of data science to legal research in Costa Rica."
     },
     "resultado": {
       "es": "433,043 sentencias analizadas; primera aplicación documentada de ciencia de datos a investigación jurídica en CR.",
@@ -102,8 +102,8 @@
     "estado": "operativo",
     "desde": "2024",
     "descripcion": {
-      "es": "Automatiza el procesamiento de pagos mensuales menores a ¢100,000 en cobro judicial sin intervención manual, integrado al flujo de gestión documental con IA.",
-      "en": "Automates monthly payment processing under ¢100,000 in debt-collection cases without manual intervention, integrated with the AI-driven document management flow."
+      "es": "Sistema de automatización de pagos del Poder Judicial operativo desde 2024, diseñado para procesar mensualmente los giros de cobro judicial inferiores a ¢100,000 sin revisión manual por parte de funcionarios. Opera como capa transaccional sobre el clasificador documental de IA ya existente: una vez que el documento es clasificado y el expediente actualizado, el sistema ejecuta el giro de forma autónoma. En 2024 procesó 223,154 giros por un valor total de ¢5,245 millones (aproximadamente USD 10 millones), siendo la única automatización de pagos a escala nacional del sector público costarricense con impacto fiscal directo cuantificado.",
+      "en": "Judicial Branch payment automation system operational since 2024, designed to process monthly debt-collection disbursements under ¢100,000 without manual review by officials. It operates as a transactional layer on top of the existing AI document classifier: once a document is classified and the case file updated, the system executes the disbursement autonomously. In 2024 it processed 223,154 disbursements totaling ¢5,245 million (approximately USD 10 million), making it the only nationwide payment automation in the Costa Rican public sector with directly quantified fiscal impact."
     },
     "resultado": {
       "es": "223,154 giros procesados en 2024 por un valor total de ¢5,245 millones (~USD 10M).",
@@ -165,8 +165,8 @@
     "categoria": "salud",
     "estado": "planificado",
     "descripcion": {
-      "es": "Expediente Digital Único en Salud (operativo desde 2010, Ley 9162) con incorporación planificada de IA para medicina predictiva.",
-      "en": "Single Digital Health Record (live since 2010, Law 9162) with planned AI incorporation for predictive medicine."
+      "es": "El Expediente Digital Único en Salud (EDUS), creado mediante la Ley 9162 y operativo desde 2010, centraliza el historial clínico de la totalidad de los asegurados de la Caja Costarricense de Seguro Social (CCSS), que cubre aproximadamente el 90% de la población del país. El sistema fue sometido a prueba de estrés durante la pandemia de COVID-19 y demostró capacidad de escala. La incorporación de una capa de inteligencia artificial para medicina predictiva está planificada pero sin cronograma público definido; el EDUS es considerado uno de los conjuntos de datos clínicos más completos del sector público latinoamericano aún no explotados con IA a escala.",
+      "en": "The Single Digital Health Record (EDUS), created under Law 9162 and operational since 2010, centralizes the clinical history of all insured members of the Costa Rican Social Security Fund (CCSS), covering approximately 90% of the country's population. The system was stress-tested during the COVID-19 pandemic and demonstrated scalability. The incorporation of an AI layer for predictive medicine is planned but has no public timeline; EDUS is considered one of the most complete clinical datasets in the Latin American public sector still untapped by AI at scale."
     },
     "contexto": {
       "es": "EDUS cubre al 100% de los asegurados de la CCSS y se probó durante la pandemia. La capa de IA está planificada pero sin cronograma público; es uno de los datasets más valiosos del Estado costarricense aún sin explotar con IA a escala.",
@@ -233,8 +233,8 @@
     "estado": "operativo",
     "desde": "2024",
     "descripcion": {
-      "es": "Microsoft Anomaly Detector procesa millones de comprobantes electrónicos para detectar facturación falsa (EFOS) e inflación de deducciones (EDOS).",
-      "en": "Microsoft Anomaly Detector processes millions of electronic receipts to detect fake invoicing (EFOS) and inflated deductions (EDOS)."
+      "es": "Sistema de detección de anomalías fiscales implementado por el Ministerio de Hacienda desde 2024, basado en Microsoft Anomaly Detector aplicado sobre el flujo de comprobantes electrónicos del sistema de facturación v4.4. Identifica dos tipos de conductas irregulares: empresas que emiten facturas falsas sin respaldo de operaciones reales (EFOS, Empresas Facturadoras de Operaciones Simuladas) y contribuyentes que inflan artificialmente sus deducciones fiscales mediante facturas de terceros (EDOS, Empresas que Deducen Operaciones Simuladas). En 2025, el sistema permitió recuperar ₡8,000 millones (aproximadamente USD 15.7 millones) e identificar más de 70 casos de facturación falsa, constituyendo el único caso del Estado costarricense con retorno fiscal medible y reportado públicamente en ese año.",
+      "en": "Fiscal anomaly detection system implemented by the Ministry of Finance since 2024, based on Microsoft Anomaly Detector applied to the electronic receipt flow of the v4.4 invoicing system. It identifies two types of irregular behavior: companies issuing fake invoices with no real operations behind them (EFOS) and taxpayers artificially inflating their tax deductions through third-party invoices (EDOS). In 2025, the system recovered ₡8,000 million (approximately USD 15.7 million) and identified over 70 cases of fake invoicing, making it the only Costa Rican state case with measurable and publicly reported fiscal returns that year."
     },
     "resultado": {
       "es": "₡8,000M (~USD 15.7M) recuperados en 2025; 70+ casos de facturación falsa identificados.",
@@ -256,8 +256,8 @@
     "categoria": "fiscal",
     "estado": "operativo",
     "descripcion": {
-      "es": "Asistente integrado en Hacienda Digital para mejorar la experiencia en declaraciones, pagos e importaciones/exportaciones.",
-      "en": "Assistant embedded in Hacienda Digital to improve the experience for filings, payments and imports/exports."
+      "es": "Asistente virtual integrado en la plataforma Hacienda Digital del Ministerio de Hacienda, orientado a guiar a los contribuyentes en los principales trámites tributarios: presentación de declaraciones, procesamiento de pagos y gestión de operaciones de comercio exterior (importaciones y exportaciones). Disponible para cualquier contribuyente registrado en el sistema tributario costarricense, opera como canal de autoservicio para descongestionar la atención presencial y telefónica de la institución. Es el único asistente virtual ciudadano operativo en el gobierno central costarricense; no existen métricas de volumen de interacciones publicadas.",
+      "en": "Virtual assistant integrated into the Ministry of Finance's Hacienda Digital platform, designed to guide taxpayers through key tax procedures: filing returns, processing payments, and managing foreign trade operations (imports and exports). Available to any taxpayer registered in the Costa Rican tax system, it operates as a self-service channel to reduce in-person and phone support demand. It is the only operational citizen-facing virtual assistant in the Costa Rican central government; no interaction volume metrics have been published."
     },
     "contexto": {
       "es": "Es el único asistente virtual ciudadano operativo en el gobierno central. No hay un chatbot nacional unificado tipo Bürokratt (Estonia) o VICA (Singapur); cada institución resuelve por su cuenta.",
@@ -324,8 +324,8 @@
     "estado": "operativo",
     "desde": "2025",
     "descripcion": {
-      "es": "16 laboratorios distribuidos en las 7 provincias con kits de robótica, drones, impresoras 3D, cortadoras láser.",
-      "en": "16 labs distributed across the 7 provinces with robotics kits, drones, 3D printers and laser cutters."
+      "es": "Red de 16 Laboratorios de Innovación Comunitaria (LINC) operados por el MICITT desde 2025, distribuidos en las siete provincias del país con equipamiento tecnológico que incluye kits de robótica, drones, impresoras 3D y cortadoras láser. Los laboratorios ofrecen formación práctica en tecnologías digitales a la población general, con énfasis en comunidades con menor acceso histórico a capacitación técnica. A la fecha de reporte, han capacitado a más de 4,500 personas, con una participación femenina del 70%. El MICITT tiene como meta ampliar la red a más de 20 laboratorios.",
+      "en": "Network of 16 Community Innovation Labs (LINC) operated by MICITT since 2025, distributed across the country's seven provinces with technological equipment including robotics kits, drones, 3D printers, and laser cutters. The labs offer hands-on training in digital technologies to the general public, with emphasis on communities with historically limited access to technical education. As of the reporting date, they have trained over 4,500 people, with 70% female participation. MICITT aims to expand the network to over 20 labs."
     },
     "resultado": {
       "es": "+4,500 personas capacitadas; 70% participación femenina.",
