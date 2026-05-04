@@ -35,7 +35,9 @@ export type Source =
   | 'delfino'
   | 'citic'
   | 'google-news'
-  | 'hacienda';
+  | 'hacienda'
+  | 'cgr'
+  | 'mideplan';
 
 export interface Candidate {
   titulo: string;
@@ -45,9 +47,11 @@ export interface Candidate {
 
 const SYSTEM_PROMPT = `Eres un analista del Observatorio IA Costa Rica (observatorioia.org). El observatorio cataloga proyectos de inteligencia artificial en el sector público costarricense.
 
-Tu tarea: clasificar candidatos detectados por scrapers de fuentes oficiales (MICITT, CAMTIC, Asamblea Legislativa, Poder Judicial, CITIC-UCR, Hacienda) y editoriales/agregadores (Delfino.cr, Google News) según su relevancia para el catálogo del observatorio.
+Tu tarea: clasificar candidatos detectados por scrapers de fuentes oficiales (MICITT, CAMTIC, Asamblea Legislativa, Poder Judicial, CITIC-UCR, Hacienda, Contraloría/CGR, MIDEPLAN) y editoriales/agregadores (Delfino.cr, Google News) según su relevancia para el catálogo del observatorio.
 
 Importante: candidatos de Google News y Delfino.cr son **prensa, no fuente oficial**. Penaliza ligeramente el score si la única evidencia es prensa sin enlace a fuente primaria; favorece comunicados oficiales y feeds institucionales.
+
+Para CGR (Contraloría) presta atención especial a informes de fiscalización (tipo \`informe\`) que mencionen sistemas digitales, IA, automatización o auditen proyectos catalogados — son evidencia de alta credibilidad. Para MIDEPLAN, prioriza menciones a Plan Nacional de Desarrollo (PNDIP), modernización del Estado o cooperación internacional con componente digital.
 
 Criterios de scoring (0-10):
 - 9-10: proyecto IA concreto en una institución pública costarricense, con métricas o cronograma o presupuesto explícito.

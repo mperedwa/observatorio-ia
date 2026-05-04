@@ -58,8 +58,10 @@ npm run scrape:delfino      # Delfino.cr RSS (prensa editorial)
 npm run scrape:citic        # CITIC-UCR RSS (académico, IA software + ético-IA)
 npm run scrape:google-news  # Tier B: Google News RSS multi-query (CCSS, Hacienda, CENAT)
 npm run scrape:hacienda     # Tier B: Hacienda con Playwright (best-effort)
+npm run scrape:cgr          # Tier C: Contraloría General (RSS noticias + RSS informes DFOE)
+npm run scrape:mideplan     # Tier C: MIDEPLAN listado /listado-noticias (Drupal Views)
 
-# Correr los 8 + aplicar cambios + escribir reporte
+# Correr los 10 + aplicar cambios + escribir reporte
 npm run scrape:all
 ```
 
@@ -86,6 +88,8 @@ scrapers/
 ├── citic.ts            # CITIC-UCR RSS (académico, IA software + ético-IA)
 ├── google-news.ts      # Tier B: agregador Google News (CCSS, Hacienda, CENAT)
 ├── hacienda.ts         # Tier B: Hacienda con Playwright (best-effort)
+├── cgr.ts              # Tier C: Contraloría (RSS noticias + RSS informes DFOE)
+├── mideplan.ts         # Tier C: MIDEPLAN listado-noticias Drupal
 └── run-all.ts          # orquestador, escribe scraper-runs/last-run.{json,md}
 ```
 
@@ -127,7 +131,12 @@ Selectores actuales (mantener al día):
 | CITIC-UCR | `parseFeed` en `citic.ts` | RSS oficial: `https://citic.ucr.ac.cr/rss.xml`. Centro académico ya catalogado (proyecto ucr-citic-ia-software + Erasmus+ CIOdD). Filtra IA, ética IA, machine learning, computación cuántica, alianzas Erasmus. |
 | Google News (Tier B) | `parseFeed` en `google-news.ts` | RSS público `news.google.com/rss/search?q=<query>&hl=es-419&gl=CR&ceid=CR:es-419`. Multi-query: CCSS, Hacienda, CENAT. Cubre instituciones bloqueadas vía agregación de prensa CR (La Nación, El Financiero, crhoy, El Observador, Diario Extra, monumental, Semanario Universidad, etc.). Política: prensa, no fuente oficial — cada candidato exige validación contra fuente primaria antes de cualquier `add`/`update`. |
 | Hacienda (Tier B, best-effort) | `extractLinks` en `hacienda.ts` | Playwright headless contra `/noticias` y `/`. Pasa el WAF que rechaza fetch/curl, pero las noticias cargan vía AJAX no-detectable en HTML inicial. Cobertura real de Hacienda viene por `google-news.ts`. Si el sitio expone un endpoint listable en el futuro, este scraper queda listo. |
+| CGR / Contraloría (Tier C) | `parseFeed` en `cgr.ts` | 2 RSS feeds oficiales: `noticias_rss.xml` (14 items) + `informes_recientes.xml` (27 items, informes DFOE PDF). Filtra por keywords IA + sistemas digitales + ciberseguridad. Útil para detectar auditorías a proyectos catalogados (Poder Judicial, CCSS, Hacienda) — los informes DFOE son evidencia oficial de alta credibilidad. |
+| MIDEPLAN (Tier C) | `parseListing` en `mideplan.ts` | Drupal Views, parsea `<div class="item-noticias views-row">` con `<h2>` y `<a href>`. Pagina 2 vueltas (~20 notas). Filtra por Plan Nacional de Desarrollo (PNDIP), transformación digital, modernización del Estado, cooperación BID/BM. |
 
 **Fuentes Tier B descartadas como scraper directo** (cubiertas vía `google-news.ts`):
 - **CCSS** (`ccss.sa.cr`): timeout TCP total desde IPs no-CR. Subdominios `prensa.`, `transparencia.` igual bloqueados. Inviable sin proxy residencial CR.
 - **CENAT** (`cenat.ac.cr`): sitio HTML estático sin feed ni sección de noticias unificada. Subdominios (PRIAS, CNCA, etc.) tampoco exponen feeds.
+
+**Fuentes Tier C descartadas** (vigilancia manual cuando publiquen):
+- **PROSIC (UCR)** (`prosic.ucr.ac.cr`): RSS oficial existe pero está vacío (sin `<item>`). Mario revisa manualmente cuando salga el reporte anual del estado digital de CR.

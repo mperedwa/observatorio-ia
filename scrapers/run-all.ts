@@ -20,6 +20,8 @@ import { scrapeDelfino } from './delfino';
 import { scrapeCitic } from './citic';
 import { scrapeGoogleNews } from './google-news';
 import { scrapeHacienda } from './hacienda';
+import { scrapeCGR } from './cgr';
+import { scrapeMideplan } from './mideplan';
 import {
   applyChange,
   REPORTS_DIR,
@@ -89,6 +91,8 @@ async function main(): Promise<void> {
     ['citic', scrapeCitic],
     ['google-news', scrapeGoogleNews],
     ['hacienda', scrapeHacienda],
+    ['cgr', scrapeCGR],
+    ['mideplan', scrapeMideplan],
   ] as const) {
     console.log(`--- ${name} ---`);
     try {
