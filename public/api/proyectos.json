@@ -1,7 +1,7 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-05-06T15:18:27.894Z",
-  "count": 18,
+  "lastUpdate": "2026-05-06T16:05:45.145Z",
+  "count": 19,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "data": [
@@ -229,6 +229,30 @@
       "fuenteUrl": "https://www.teletica.com/salud/lidia-el-programa-de-inteligencia-artificial-que-crece-en-la-ccss-en-medio-de-un-dilema-etico_376322"
     },
     {
+      "id": "ccss-redimed",
+      "titulo": {
+        "es": "REDIMED — Red Digital Institucional de Imágenes Médicas",
+        "en": "REDIMED — Institutional Digital Network for Medical Imaging"
+      },
+      "institucionId": "ccss",
+      "categoria": "salud",
+      "estado": "piloto",
+      "desde": "2024",
+      "descripcion": {
+        "es": "Plataforma de la CCSS para digitalizar, almacenar y compartir imágenes médicas (mamografías, ultrasonidos, tomografías, resonancias y rayos X) entre centros de salud del país. Incorpora algoritmos de inteligencia artificial para priorizar pacientes según urgencia clínica, con el objetivo de acelerar diagnósticos y reducir tiempos de espera en servicios de imagenología.",
+        "en": "CCSS platform to digitize, store and share medical images (mammography, ultrasound, CT scans, MRI and X-rays) across the country's health centers. It incorporates artificial intelligence algorithms to prioritize patients by clinical urgency, aiming to accelerate diagnoses and reduce wait times in imaging services."
+      },
+      "resultado": {
+        "es": "Despliegue parcial: 13 centros de salud habilitados de un alcance original de 50 (26%). Hospitales activos incluyen San Juan de Dios, Calderón Guardia y San Vicente de Paúl. Ejecución presupuestaria reportada en ₡10,500 millones (71% del marco asignado).",
+        "en": "Partial deployment: 13 health centers enabled out of an original scope of 50 (26%). Active hospitals include San Juan de Dios, Calderón Guardia and San Vicente de Paúl. Reported budget execution at ₡10,500 million (71% of the assigned framework)."
+      },
+      "contexto": {
+        "es": "Originalmente planificado para entrar en operación plena en 2024, el proyecto presenta retrasos sustanciales y fue señalado por la Contraloría General de la República en julio de 2025 por incumplimientos: lentitud en la visualización de imágenes, inestabilidad del sistema y ausencia de planes de contingencia. La fiscalización afecta la gobernanza del componente IA y obliga a la CCSS a presentar un plan de remediación.",
+        "en": "Originally planned to be fully operational in 2024, the project shows substantial delays and was flagged by the Office of the Comptroller General (CGR) in July 2025 for non-compliance: slow image visualization, system instability and absence of contingency plans. The audit impacts the AI component's governance and requires CCSS to submit a remediation plan."
+      },
+      "fuenteUrl": "https://delfino.cr/2025/07/contraloria-detecta-incumplimientos-en-proyecto-redimed-de-la-ccss"
+    },
+    {
       "id": "hacienda-anomaly",
       "titulo": {
         "es": "Detección de fraude fiscal con IA",
@@ -330,18 +354,18 @@
       "estado": "operativo",
       "desde": "2025",
       "descripcion": {
-        "es": "Red de 16 Laboratorios de Innovación Comunitaria (LINC) operados por el MICITT desde 2025, distribuidos en las siete provincias del país con equipamiento tecnológico que incluye kits de robótica, drones, impresoras 3D y cortadoras láser. Los laboratorios ofrecen formación práctica en tecnologías digitales a la población general, con énfasis en comunidades con menor acceso histórico a capacitación técnica. A la fecha de reporte, han capacitado a más de 4,500 personas, con una participación femenina del 70%. El MICITT tiene como meta ampliar la red a más de 20 laboratorios.",
-        "en": "Network of 16 Community Innovation Labs (LINC) operated by MICITT since 2025, distributed across the country's seven provinces with technological equipment including robotics kits, drones, 3D printers, and laser cutters. The labs offer hands-on training in digital technologies to the general public, with emphasis on communities with historically limited access to technical education. As of the reporting date, they have trained over 4,500 people, with 70% female participation. MICITT aims to expand the network to over 20 labs."
+        "es": "Red de Laboratorios de Innovación Comunitaria (LINC) operados por el MICITT en alianza con el INDER, con 24 laboratorios operativos y 2 adicionales en proceso de habilitación para alcanzar la meta de 26. Distribuidos en las siete provincias con énfasis en comunidades fuera de la Gran Área Metropolitana (Puntarenas, Guanacaste, Alajuela, Heredia, entre otras). El equipamiento incluye impresoras 3D, cortadoras láser, kits de robótica, drones y herramientas para programación, ciberseguridad y ciencia de datos. Los laboratorios ofrecen formación práctica a jóvenes y emprendedores en tecnologías digitales. La iniciativa es liderada por la Ministra Paula Bogantes Zamora.",
+        "en": "Network of Community Innovation Labs (LINC) operated by MICITT in alliance with INDER, with 24 operational labs and 2 additional labs being commissioned to reach the target of 26. Distributed across the seven provinces with emphasis on communities outside the Greater Metropolitan Area (Puntarenas, Guanacaste, Alajuela, Heredia, among others). Equipment includes 3D printers, laser cutters, robotics kits, drones, and tools for programming, cybersecurity, and data science. The labs offer hands-on training for youth and entrepreneurs in digital technologies. The initiative is led by Minister Paula Bogantes Zamora."
       },
       "resultado": {
-        "es": "+4,500 personas capacitadas; 70% participación femenina.",
-        "en": "+4,500 people trained; 70% female participation."
+        "es": "+4,500 personas capacitadas; 70% participación femenina; 24 laboratorios operativos y 2 en habilitación (meta 26).",
+        "en": "+4,500 people trained; 70% female participation; 24 operational labs and 2 being commissioned (target 26)."
       },
       "contexto": {
-        "es": "Cobertura geográfica en las 7 provincias y 70% de participación femenina marcan un piso de equidad inusual en programas tech del Estado. La meta declarada es expandir a 20+ laboratorios.",
-        "en": "Coverage across all 7 provinces and 70% female participation mark an unusual equity floor for state-led tech programs. The stated goal is to expand to 20+ labs."
+        "es": "Inversión institucional reportada de más de USD 2 millones en equipamiento tecnológico, sumada a un convenio marco de ₡2,000 millones con el INDER que financia infraestructura y operación. La cobertura en las 7 provincias y el 70% de participación femenina marcan un piso de equidad inusual en programas tech del Estado, con foco explícito fuera del GAM.",
+        "en": "Institutional investment reported at over USD 2 million in technological equipment, plus a ₡2,000 million framework agreement with INDER funding infrastructure and operations. Coverage across all 7 provinces and 70% female participation mark an unusual equity floor for state-led tech programs, with explicit focus outside the Greater Metropolitan Area."
       },
-      "fuenteUrl": "https://www.micitt.go.cr/micitt/laboratorios-de-innovacion-comunitaria"
+      "fuenteUrl": "https://delfino.cr/2026/04/micitt-reporta-inversion-de-mas-de-2-millones-en-red-de-laboratorios-de-innovacion-comunitaria"
     },
     {
       "id": "ucr-citic-ia-software",

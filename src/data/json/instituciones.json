@@ -28,10 +28,10 @@
     "nombreCorto": { "es": "CCSS", "en": "CCSS" },
     "tipo": "autonoma",
     "url": "https://www.ccss.sa.cr/",
-    "proyectosActivos": 4,
+    "proyectosActivos": 5,
     "resumen": {
-      "es": "Programa TEC-CCSS de formación en IA médica, EDUS (cobertura 100% asegurados), AIDA (asistente IA en consulta, piloto 15 áreas) y LIDIA (modelos predictivos, piloto diabetes en Clorito Picado con 95% de precisión).",
-      "en": "TEC-CCSS medical AI training program, EDUS (100% member coverage), AIDA (in-consultation AI assistant, 15-area pilot) and LIDIA (predictive models, diabetes pilot at Clorito Picado with 95% accuracy)."
+      "es": "Programa TEC-CCSS de formación en IA médica, EDUS (cobertura 100% asegurados), AIDA (asistente IA en consulta, piloto 15 áreas), LIDIA (modelos predictivos, piloto diabetes en Clorito Picado con 95% de precisión) y REDIMED (red de imágenes médicas con priorización IA, en despliegue parcial).",
+      "en": "TEC-CCSS medical AI training program, EDUS (100% member coverage), AIDA (in-consultation AI assistant, 15-area pilot), LIDIA (predictive models, diabetes pilot at Clorito Picado with 95% accuracy) and REDIMED (medical imaging network with AI-based prioritization, partial deployment)."
     },
     "descripcion": {
       "es": "Combina el dataset clínico más grande del país (EDUS, cobertura 100% de asegurados desde 2010), un programa de formación en IA médica con el TEC, AIDA como asistente en consulta en tiempo real y LIDIA como motor predictivo de medicina preventiva. Es la única institución pública con dos sistemas IA clínicos operando en paralelo: uno asistencial (AIDA) y uno predictivo (LIDIA).",

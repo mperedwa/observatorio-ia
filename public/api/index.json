@@ -1,13 +1,13 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-05-06T15:18:27.896Z",
+  "lastUpdate": "2026-05-06T16:05:45.146Z",
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "endpoints": [
     {
       "url": "/api/proyectos.json",
       "description": "Catálogo de proyectos de IA en el sector público costarricense. Cada entrada incluye institución, estado, fuente oficial y descripción bilingüe ES/EN.",
-      "count": 18
+      "count": 19
     },
     {
       "url": "/api/instituciones.json",
