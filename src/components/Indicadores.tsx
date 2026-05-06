@@ -1,5 +1,5 @@
 import { ilia2025 } from '@/data/indicadores';
-import { ChartILIA } from './ChartILIA';
+import { ChartILIATabs } from './ChartILIATabs';
 import type { Dictionary } from '@/i18n/dictionaries';
 import type { Locale } from '@/i18n/config';
 
@@ -25,7 +25,7 @@ export function Indicadores({ locale, t }: { locale: Locale; t: Dictionary }) {
           <h3 className="text-lg font-semibold text-slate-900">{t.indicadores.cardTitulo}</h3>
           <span className="text-xs text-slate-500">{t.indicadores.fuente}</span>
         </div>
-        <ChartILIA locale={locale} t={t} />
+        <ChartILIATabs locale={locale} t={t} />
         <p className="mt-6 text-sm text-slate-600">
           {t.indicadores.brechaPre}{' '}
           <span className="font-semibold text-slate-900">

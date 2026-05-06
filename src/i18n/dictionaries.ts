@@ -95,6 +95,13 @@ export interface Dictionary {
     inversionTooltip: string;
     enteTooltip: string;
     drillCta: string;
+    tabGrafico: string;
+    tabTabla: string;
+    tabRanking: string;
+    colPos: string;
+    colPais: string;
+    colPuntaje: string;
+    colBarra: string;
   };
   comparte: {
     kicker: string;
@@ -310,6 +317,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
       inversionTooltip: 'Inversión',
       enteTooltip: 'Ente ejecutor',
       drillCta: 'Ver análisis completo →',
+      tabGrafico: 'Gráfico',
+      tabTabla: 'Tabla',
+      tabRanking: 'Ranking',
+      colPos: 'Pos.',
+      colPais: 'País',
+      colPuntaje: 'Puntaje',
+      colBarra: 'Visual',
     },
     comparte: {
       kicker: 'Material para compartir',
@@ -550,6 +564,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
       inversionTooltip: 'Investment',
       enteTooltip: 'Executing body',
       drillCta: 'See full analysis →',
+      tabGrafico: 'Chart',
+      tabTabla: 'Table',
+      tabRanking: 'Ranking',
+      colPos: 'Pos.',
+      colPais: 'Country',
+      colPuntaje: 'Score',
+      colBarra: 'Visual',
     },
     comparte: {
       kicker: 'Shareable assets',
