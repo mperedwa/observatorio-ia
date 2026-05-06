@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-05-04T19:19:27.935Z",
+  "lastUpdate": "2026-05-06T15:18:27.896Z",
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "endpoints": [
@@ -17,7 +17,7 @@
     {
       "url": "/api/legislacion.json",
       "description": "Expedientes de ley relacionados con IA en la Asamblea Legislativa de Costa Rica. Estado actualizado por scraper automatizado.",
-      "count": 3
+      "count": 5
     },
     {
       "url": "/api/indicadores.json",

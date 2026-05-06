@@ -1,7 +1,7 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-05-04T19:19:27.934Z",
-  "count": 3,
+  "lastUpdate": "2026-05-06T15:18:27.895Z",
+  "count": 5,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "data": [
@@ -12,8 +12,8 @@
         "en": "Law to Regulate Artificial Intelligence in Costa Rica"
       },
       "resumen": {
-        "es": "Marco general para regular el desarrollo, uso y aplicación de IA en CR. Crea la Autoridad Reguladora de IA (ARIA). Bloqueado por oposición de CAMTIC y otros actores del ecosistema.",
-        "en": "General framework to regulate the development, use and application of AI in Costa Rica. Creates the AI Regulatory Authority (ARIA). Blocked by opposition from CAMTIC and other ecosystem stakeholders."
+        "es": "Marco general para regular el desarrollo, uso y aplicación de IA en CR. Crea la Autoridad Reguladora de IA (ARIA). Cuenta con dictamen mayoritario positivo (septiembre 2024), pero enfrenta oposición de CAMTIC y otros actores del ecosistema tech.",
+        "en": "General framework to regulate the development, use and application of AI in Costa Rica. Creates the AI Regulatory Authority (ARIA). Has a positive majority committee report (September 2024), but faces opposition from CAMTIC and other tech ecosystem stakeholders."
       },
       "estado": "en-comision",
       "comision": {
@@ -21,35 +21,71 @@
         "en": "Science, Technology and Education"
       },
       "presentado": "2023",
-      "fuenteUrl": "https://www.asamblea.go.cr/"
+      "fuenteUrl": "https://delfino.cr/asamblea/proyecto/23771"
     },
     {
       "numero": "23.919",
       "titulo": {
-        "es": "Sandbox regulatorio para IA",
-        "en": "Regulatory sandbox for AI"
+        "es": "Ley para la Promoción Responsable de la Inteligencia Artificial en Costa Rica",
+        "en": "Law for the Responsible Promotion of Artificial Intelligence in Costa Rica"
       },
       "resumen": {
-        "es": "Crea espacios controlados de experimentación regulatoria para tecnologías emergentes de IA. Modelo similar a sandboxes financieros del sector fintech.",
-        "en": "Creates controlled spaces for regulatory experimentation with emerging AI technologies. Modeled after financial sandboxes in the fintech sector."
+        "es": "Crea espacios controlados de experimentación regulatoria para tecnologías emergentes de IA. Modelo similar a sandboxes financieros del sector fintech. Cuenta con texto sustitutivo aprobado en comisión (marzo 2025).",
+        "en": "Creates controlled spaces for regulatory experimentation with emerging AI technologies. Modeled after financial sandboxes in the fintech sector. Has a substitute text approved in committee (March 2025)."
       },
-      "estado": "en-comision",
+      "estado": "dictaminado",
+      "comision": {
+        "es": "Derechos Humanos",
+        "en": "Human Rights"
+      },
+      "presentado": "2023",
+      "fuenteUrl": "https://delfino.cr/asamblea/proyecto/23919"
+    },
+    {
+      "numero": "24.484",
+      "titulo": {
+        "es": "Ley para la Implementación de Sistemas de Inteligencia Artificial",
+        "en": "Law for the Implementation of Artificial Intelligence Systems"
+      },
+      "resumen": {
+        "es": "Propone clasificación escalonada por nivel de riesgo (similar a EU AI Act). Cuenta con texto sustitutivo aprobado (octubre 2025). La versión más reciente y técnicamente robusta de los cinco expedientes.",
+        "en": "Proposes a tiered classification by risk level (similar to the EU AI Act). Has an approved substitute text (October 2025). The most recent and technically robust of the five bills."
+      },
+      "estado": "dictaminado",
       "comision": {
         "es": "Ciencia, Tecnología y Educación",
         "en": "Science, Technology and Education"
       },
       "presentado": "2024",
-      "fuenteUrl": "https://www.asamblea.go.cr/"
+      "fuenteUrl": "https://delfino.cr/asamblea/proyecto/24484"
     },
     {
-      "numero": "24.484",
+      "numero": "24.875",
       "titulo": {
-        "es": "Marco regulatorio adaptativo de IA basado en riesgo",
-        "en": "Adaptive risk-based AI regulatory framework"
+        "es": "Ley para Regular el Uso de Inteligencia Artificial en los Procesos Electorales",
+        "en": "Law to Regulate the Use of Artificial Intelligence in Electoral Processes"
       },
       "resumen": {
-        "es": "Propone clasificación escalonada por nivel de riesgo (similar a EU AI Act). Versión más reciente y técnicamente robusta de los tres expedientes.",
-        "en": "Proposes a tiered classification by risk level (similar to the EU AI Act). The most recent and technically robust of the three bills."
+        "es": "Establece obligaciones de divulgación cuando se genera contenido con IA, prohíbe deepfakes electorales, cuentas falsas automatizadas y estrategias de microtargeting diseñadas para socavar la integridad electoral. Multas de 10 a 50 salarios base. Presentado por Vanessa De Paul Castro Mora (PUSC).",
+        "en": "Establishes disclosure obligations when AI-generated content is used, prohibits electoral deepfakes, automated fake accounts, and micro-targeting strategies designed to undermine electoral integrity. Fines range from 10 to 50 base salaries. Filed by Vanessa De Paul Castro Mora (PUSC)."
+      },
+      "estado": "en-comision",
+      "comision": {
+        "es": "Reformas Electorales",
+        "en": "Electoral Reform"
+      },
+      "presentado": "2025",
+      "fuenteUrl": "https://delfino.cr/asamblea/proyecto/24875"
+    },
+    {
+      "numero": "25.171",
+      "titulo": {
+        "es": "Ley de Protección de Rasgos Personales y Creaciones Artísticas en Entornos Digitales",
+        "en": "Law for the Protection of Personal Traits and Artistic Creations in Digital Environments"
+      },
+      "resumen": {
+        "es": "Tipifica la suplantación de identidad por medios digitales, incluyendo el uso no autorizado de voz, imagen y creaciones artísticas. Orientado a combatir deepfakes y fraude de identidad digital, más que a regular la IA como tal.",
+        "en": "Criminalizes identity impersonation through digital means, including unauthorized use of voice, image, and artistic creations. Aimed at combating deepfakes and digital identity fraud, rather than regulating AI as such."
       },
       "estado": "en-comision",
       "comision": {
@@ -57,7 +93,7 @@
         "en": "Science, Technology and Education"
       },
       "presentado": "2025",
-      "fuenteUrl": "https://www.asamblea.go.cr/"
+      "fuenteUrl": "https://delfino.cr/asamblea/proyecto/25171"
     }
   ]
 }
