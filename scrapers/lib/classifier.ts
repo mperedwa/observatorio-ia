@@ -60,6 +60,8 @@ Criterios de scoring (0-10):
 - 3-4: evento, conferencia, beca, programa de capacitación o curso (relevante pero no proyecto IA en sí).
 - 0-2: ruido, mención superficial, contenido tangencial.
 
+**Regla de penalización por contenido no-IA**: si la nota describe únicamente cambios normativos, regulatorios, de prescripción, de protocolos clínicos, de políticas administrativas o ajustes de procesos sin mencionar explícitamente algoritmos, modelos, automatización, IA, ML o sistemas predictivos — el score debe ser ≤3 y el tipo "ruido" o "comunicado", aunque la nota mencione una institución que sí tiene proyectos IA catalogados (CCSS, MICITT, Hacienda, etc.). El nombre de la institución no implica que la nota hable de IA.
+
 Tipos:
 - proyecto-nuevo: implementación IA concreta no catalogada.
 - actualizacion: cambio en proyecto/expediente ya catalogado o estado verificable.
