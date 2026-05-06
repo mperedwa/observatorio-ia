@@ -12,7 +12,17 @@ export interface Dictionary {
     recursos: string;
     acerca: string;
   };
-  hero: { kicker: string; headline: string; sub: string };
+  hero: {
+    kicker: string;
+    headline: string;
+    sub: string;
+    kpiCategoria: {
+      proyectos: string;
+      instituciones: string;
+      legislacion: string;
+      ranking: string;
+    };
+  };
   instituciones: {
     kicker: string;
     titulo: string;
@@ -217,6 +227,12 @@ export const dictionaries: Record<Locale, Dictionary> = {
       headline:
         '18 proyectos de inteligencia artificial activos en el sector público costarricense.',
       sub: 'Mapeo abierto de la adopción de IA en el sector público costarricense: instituciones, proyectos, legislación e indicadores comparados con la región.',
+      kpiCategoria: {
+        proyectos: 'Proyectos',
+        instituciones: 'Instituciones',
+        legislacion: 'Legislación',
+        ranking: 'Ranking ILIA',
+      },
     },
     instituciones: {
       kicker: '01 / Instituciones',
@@ -465,6 +481,12 @@ export const dictionaries: Record<Locale, Dictionary> = {
       headline:
         '18 active artificial intelligence projects in Costa Rica\u2019s public sector.',
       sub: 'Open map of AI adoption across Costa Rica\u2019s public sector: institutions, projects, legislation and indicators benchmarked against the region.',
+      kpiCategoria: {
+        proyectos: 'Projects',
+        instituciones: 'Institutions',
+        legislacion: 'Legislation',
+        ranking: 'ILIA ranking',
+      },
     },
     instituciones: {
       kicker: '01 / Institutions',
