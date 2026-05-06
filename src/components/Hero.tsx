@@ -1,6 +1,7 @@
 import { kpisHero } from '@/data/indicadores';
 import type { Dictionary } from '@/i18n/dictionaries';
 import type { Locale } from '@/i18n/config';
+import { CountUp } from './CountUp';
 
 export function Hero({ t, locale }: { t: Dictionary; locale: Locale }) {
   return (
@@ -20,7 +21,7 @@ export function Hero({ t, locale }: { t: Dictionary; locale: Locale }) {
           {kpisHero.map((k) => (
             <div key={k.valor + k.label.es} className="border-l-4 border-institucional-700 pl-4">
               <div className="text-4xl sm:text-5xl font-bold text-institucional-900 tabular-nums">
-                {k.valor}
+                <CountUp value={k.valor} />
               </div>
               <div className="mt-1 text-sm font-medium text-slate-900">{k.label[locale]}</div>
               <div className="text-xs text-slate-500 mt-0.5">{k.detalle[locale]}</div>
