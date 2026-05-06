@@ -1,6 +1,8 @@
 import { kpisHero } from '@/data/indicadores';
 import type { Dictionary } from '@/i18n/dictionaries';
 import type { Locale } from '@/i18n/config';
+import { applyCounters } from '@/i18n/applyCounters';
+import { COUNTERS } from '@/data/counters';
 import { CountUp } from './CountUp';
 
 const KPI_KEYS = ['proyectos', 'instituciones', 'legislacion', 'ranking'] as const;
@@ -50,7 +52,7 @@ export function Hero({ t, locale }: { t: Dictionary; locale: Locale }) {
           {t.hero.kicker}
         </p>
         <h1 className="mt-3 text-4xl sm:text-5xl lg:text-6xl font-bold text-balance text-slate-900 max-w-4xl leading-tight">
-          {t.hero.headline}
+          {applyCounters(t.hero.headline, COUNTERS)}
         </h1>
         <p className="mt-6 text-lg text-slate-600 max-w-2xl text-pretty">{t.hero.sub}</p>
         <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">

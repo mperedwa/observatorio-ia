@@ -5,6 +5,8 @@ import { Breadcrumb } from '@/components/Breadcrumb';
 import { brechas } from '@/data/brechas';
 import { getDictionary } from '@/i18n/dictionaries';
 import { locales, type Locale } from '@/i18n/config';
+import { applyCounters } from '@/i18n/applyCounters';
+import { COUNTERS } from '@/data/counters';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -61,7 +63,7 @@ export default async function ComartePage({
       id: 'hero',
       titulo: t.comparte.secciones.hero,
       items: [
-        { filename: 'kpi-hero-1080.png', label: t.comparte.assets.kpiHeroTitulo, size: 'square' },
+        { filename: 'kpi-hero-1080.png', label: applyCounters(t.comparte.assets.kpiHeroTitulo, COUNTERS), size: 'square' },
       ],
     },
     {

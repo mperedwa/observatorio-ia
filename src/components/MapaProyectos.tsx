@@ -7,6 +7,8 @@ import { instituciones } from '@/data/instituciones';
 import type { Dictionary } from '@/i18n/dictionaries';
 import type { Locale } from '@/i18n/config';
 import type { Estado } from '@/data/proyectos';
+import { applyCounters } from '@/i18n/applyCounters';
+import { COUNTERS } from '@/data/counters';
 
 const estadoBg: Record<Estado, string> = {
   operativo: 'bg-emerald-100 hover:bg-emerald-200 border-emerald-300 text-emerald-900',
@@ -35,7 +37,7 @@ export function MapaProyectos({ locale, t }: { locale: Locale; t: Dictionary }) 
           <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-slate-900 text-balance">
             {t.panorama.titulo}
           </h2>
-          <p className="mt-3 text-slate-600 max-w-3xl text-pretty">{t.panorama.sub}</p>
+          <p className="mt-3 text-slate-600 max-w-3xl text-pretty">{applyCounters(t.panorama.sub, COUNTERS)}</p>
         </header>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

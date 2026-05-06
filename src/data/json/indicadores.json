@@ -88,7 +88,7 @@
         "es": "Proyectos IA activos en gobierno",
         "en": "Active AI projects in government"
       },
-      "valor": "19",
+      "valor": "auto",
       "detalle": { "es": "mapeados en mayo 2026", "en": "mapped as of May 2026" }
     },
     {
@@ -96,7 +96,7 @@
         "es": "Instituciones con IA operativa",
         "en": "Institutions with AI in production"
       },
-      "valor": "7",
+      "valor": "auto",
       "detalle": {
         "es": "Poder Judicial, CCSS, Hacienda, MEP, MICITT, CENAT, UCR",
         "en": "Judicial Branch, CCSS, Finance, MEP, MICITT, CENAT, UCR"
@@ -107,7 +107,7 @@
         "es": "Expedientes de ley en trámite",
         "en": "Bills in progress"
       },
-      "valor": "5",
+      "valor": "auto",
       "detalle": {
         "es": "dos dictaminados, tres en comisión",
         "en": "two with committee report, three in committee"

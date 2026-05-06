@@ -2,6 +2,8 @@ import { kpisHero } from '@/data/indicadores';
 import { AssetFrame, type AssetSize } from './AssetFrame';
 import type { Locale } from '@/i18n/config';
 import type { Dictionary } from '@/i18n/dictionaries';
+import { applyCounters } from '@/i18n/applyCounters';
+import { COUNTERS } from '@/data/counters';
 
 export function AssetKpiHero({
   locale,
@@ -26,7 +28,7 @@ export function AssetKpiHero({
             className="mt-4 font-bold text-slate-900 leading-tight"
             style={{ fontSize: 60, maxWidth: 920 }}
           >
-            {t.comparte.assets.kpiHeroTitulo}
+            {applyCounters(t.comparte.assets.kpiHeroTitulo, COUNTERS)}
           </h1>
           <p className="mt-6 text-slate-600" style={{ fontSize: 26, maxWidth: 880 }}>
             {locale === 'es'

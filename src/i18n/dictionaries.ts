@@ -225,7 +225,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     hero: {
       kicker: 'Observatorio público',
       headline:
-        '19 proyectos de inteligencia artificial activos en el sector público costarricense.',
+        '{proyectos} proyectos de inteligencia artificial activos en el sector público costarricense.',
       sub: 'Mapeo abierto de la adopción de IA en el sector público costarricense: instituciones, proyectos, legislación e indicadores comparados con la región.',
       kpiCategoria: {
         proyectos: 'Proyectos',
@@ -326,7 +326,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     panorama: {
       kicker: 'Panorama',
       titulo: 'Distribución de proyectos por institución',
-      sub: 'Vista compacta de los 19 proyectos agrupados por institución y coloreados por estado. Click en cualquiera para abrir el detalle.',
+      sub: 'Vista compacta de los {proyectos} proyectos agrupados por institución y coloreados por estado. Click en cualquiera para abrir el detalle.',
       proyectoLabel: 'proyecto',
     },
     chartIlia: {
@@ -360,7 +360,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         stories: 'Stories verticales',
       },
       assets: {
-        kpiHeroTitulo: '19 proyectos, 7 instituciones, 5 leyes',
+        kpiHeroTitulo: '{proyectos} proyectos, {instituciones} instituciones, {legislacion} leyes',
         timelineTitulo: 'Adopción de IA en el Estado, 2018-2026',
         iliaTitulo: 'Costa Rica vs América Latina (ILIA 2025)',
         mapaTitulo: 'Distribución de proyectos por institución',
@@ -479,7 +479,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     hero: {
       kicker: 'Public observatory',
       headline:
-        '19 active artificial intelligence projects in Costa Rica\u2019s public sector.',
+        '{proyectos} active artificial intelligence projects in Costa Rica\u2019s public sector.',
       sub: 'Open map of AI adoption across Costa Rica\u2019s public sector: institutions, projects, legislation and indicators benchmarked against the region.',
       kpiCategoria: {
         proyectos: 'Projects',
@@ -579,7 +579,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     panorama: {
       kicker: 'Overview',
       titulo: 'Project distribution by institution',
-      sub: 'Compact view of all 19 projects grouped by institution and colored by status. Click any to open the detail page.',
+      sub: 'Compact view of all {proyectos} projects grouped by institution and colored by status. Click any to open the detail page.',
       proyectoLabel: 'project',
     },
     chartIlia: {
@@ -613,7 +613,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         stories: 'Vertical stories',
       },
       assets: {
-        kpiHeroTitulo: '19 projects, 7 institutions, 5 bills',
+        kpiHeroTitulo: '{proyectos} projects, {instituciones} institutions, {legislacion} bills',
         timelineTitulo: 'AI adoption in the Costa Rican State, 2018-2026',
         iliaTitulo: 'Costa Rica vs Latin America (ILIA 2025)',
         mapaTitulo: 'Project distribution by institution',

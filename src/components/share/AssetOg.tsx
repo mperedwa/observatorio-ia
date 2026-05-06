@@ -1,6 +1,7 @@
 import { AssetFrame, type AssetSize } from './AssetFrame';
 import type { Locale } from '@/i18n/config';
 import type { Dictionary } from '@/i18n/dictionaries';
+import { COUNTERS } from '@/data/counters';
 
 export type OgVariant = 'home' | 'analisis' | 'brechas';
 
@@ -21,8 +22,8 @@ export function AssetOg({
           kicker: t.hero.kicker,
           title:
             locale === 'es'
-              ? '19 proyectos de IA activos en el sector público costarricense'
-              : '19 active AI projects in Costa Rica\u2019s public sector',
+              ? `${COUNTERS.proyectos} proyectos de IA activos en el sector público costarricense`
+              : `${COUNTERS.proyectos} active AI projects in Costa Rica\u2019s public sector`,
           sub:
             locale === 'es'
               ? 'Mapa público abierto de instituciones, proyectos, leyes e indicadores.'
