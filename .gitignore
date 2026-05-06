@@ -42,4 +42,6 @@ next-env.d.ts
 /.icloud-trash/
 
 # scraper run reports (artifact en GHA, no versionar)
-/scraper-runs/
+/scraper-runs/*
+# ...salvo estado persistente entre corridas del cron mensual ILIA
+!/scraper-runs/ilia-state.json

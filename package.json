@@ -21,6 +21,7 @@
     "scrape:cgr": "tsx scrapers/cgr.ts",
     "scrape:mideplan": "tsx scrapers/mideplan.ts",
     "scrape:all": "tsx scrapers/run-all.ts",
+    "watch:ilia": "tsx scrapers/ilia-watch.ts",
     "generate-assets": "tsx scripts/generate-share-assets.ts",
     "notify-telegram": "tsx scripts/notify-telegram.ts"
   },
