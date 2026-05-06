@@ -87,7 +87,37 @@ interface GroqResponse {
   error?: { message?: string };
 }
 
-async function callGroq(apiKey: string, candidate: Candidate, timeoutMs = 15000): Promise<Classification | null> {
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+/**
+ * Extract retry delay from Groq 429 response. Tries `retry-after` header first
+ * (seconds), then `retry-after-ms`, then parses "Please try again in N.NNs"
+ * from the error message. Falls back to 8s if nothing parseable.
+ */
+function parseRetryDelay(res: Response, errMessage: string | undefined): number {
+  const headerSec = res.headers.get('retry-after');
+  if (headerSec) {
+    const n = Number(headerSec);
+    if (Number.isFinite(n) && n > 0) return Math.ceil(n * 1000);
+  }
+  const headerMs = res.headers.get('retry-after-ms');
+  if (headerMs) {
+    const n = Number(headerMs);
+    if (Number.isFinite(n) && n > 0) return Math.ceil(n);
+  }
+  if (errMessage) {
+    const m = errMessage.match(/try again in ([\d.]+)s/i);
+    if (m) {
+      const n = Number(m[1]);
+      if (Number.isFinite(n) && n > 0) return Math.ceil(n * 1000) + 250;
+    }
+  }
+  return 8000;
+}
+
+async function callGroq(apiKey: string, candidate: Candidate, timeoutMs = 15000, maxRetries = 2): Promise<Classification | null> {
   const body = {
     model: MODEL,
     messages: [
@@ -99,26 +129,41 @@ async function callGroq(apiKey: string, candidate: Candidate, timeoutMs = 15000)
     response_format: { type: 'json_object' },
   };
 
-  let res: Response;
-  try {
-    res = await fetch(ENDPOINT, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${apiKey}`,
-      },
-      body: JSON.stringify(body),
-      signal: AbortSignal.timeout(timeoutMs),
-    });
-  } catch (err) {
-    console.warn(`  classifier: fetch error: ${(err as Error).message}`);
+  let res!: Response;
+  let json!: GroqResponse;
+
+  for (let attempt = 0; attempt <= maxRetries; attempt++) {
+    try {
+      res = await fetch(ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${apiKey}`,
+        },
+        body: JSON.stringify(body),
+        signal: AbortSignal.timeout(timeoutMs),
+      });
+    } catch (err) {
+      console.warn(`  classifier: fetch error: ${(err as Error).message}`);
+      return null;
+    }
+
+    json = (await res.json()) as GroqResponse;
+
+    if (res.ok) break;
+
+    if (res.status === 429 && attempt < maxRetries) {
+      const waitMs = parseRetryDelay(res, json.error?.message);
+      console.warn(`  classifier: HTTP 429 rate limit, esperando ${Math.round(waitMs / 100) / 10}s (intento ${attempt + 1}/${maxRetries})`);
+      await sleep(waitMs);
+      continue;
+    }
+
+    console.warn(`  classifier: HTTP ${res.status} ${json.error?.message ?? 'unknown error'}`);
     return null;
   }
 
-  const json = (await res.json()) as GroqResponse;
-
   if (!res.ok) {
-    console.warn(`  classifier: HTTP ${res.status} ${json.error?.message ?? 'unknown error'}`);
     return null;
   }
 
@@ -181,12 +226,24 @@ export async function classifyMany(
   const results: Array<Classification | null> = new Array(candidates.length).fill(null);
   let cursor = 0;
 
+  // Pacing: Groq free tier llama-3.3-70b-versatile cap is 12000 TPM.
+  // Each request consumes ~1300 input tokens (system prompt) + ~400 output ≈ 1700 total.
+  // Sustainable rate ≈ 7 req/min ≈ 1 req every 8.5s per worker. With concurrency=2
+  // that's 1 req every ~4.3s globally. We pace each worker at 5s between starts
+  // to stay just under the limit; the per-call retry on 429 covers any drift.
+  const PACING_MS = 5000;
+
   async function worker(): Promise<void> {
     while (cursor < candidates.length) {
       const idx = cursor++;
       const candidate = candidates[idx];
       if (!candidate) continue;
+      const start = Date.now();
       results[idx] = await callGroq(apiKey, candidate);
+      const elapsed = Date.now() - start;
+      if (cursor < candidates.length && elapsed < PACING_MS) {
+        await sleep(PACING_MS - elapsed);
+      }
     }
   }
 

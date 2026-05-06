@@ -12,7 +12,7 @@
       "resumen": { "$ref": "#/definitions/bilingual" },
       "estado": {
         "type": "string",
-        "enum": ["en-comision", "primer-debate", "segundo-debate", "archivado", "aprobada"]
+        "enum": ["en-comision", "dictaminado", "primer-debate", "segundo-debate", "archivado", "aprobada"]
       },
       "comision": { "$ref": "#/definitions/bilingual" },
       "presentado": { "type": "string", "pattern": "^[0-9]{4}$" },
