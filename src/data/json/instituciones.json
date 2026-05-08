@@ -1,8 +1,14 @@
 [
   {
     "id": "poder-judicial",
-    "nombre": { "es": "Poder Judicial", "en": "Judicial Branch" },
-    "nombreCorto": { "es": "Poder Judicial", "en": "Judicial Branch" },
+    "nombre": {
+      "es": "Poder Judicial",
+      "en": "Judicial Branch"
+    },
+    "nombreCorto": {
+      "es": "Poder Judicial",
+      "en": "Judicial Branch"
+    },
     "tipo": "judicial",
     "url": "https://pj.poder-judicial.go.cr/",
     "proyectosActivos": 6,
@@ -25,17 +31,20 @@
       "es": "Caja Costarricense de Seguro Social",
       "en": "Costa Rican Social Security Fund"
     },
-    "nombreCorto": { "es": "CCSS", "en": "CCSS" },
+    "nombreCorto": {
+      "es": "CCSS",
+      "en": "CCSS"
+    },
     "tipo": "autonoma",
     "url": "https://www.ccss.sa.cr/",
-    "proyectosActivos": 5,
+    "proyectosActivos": 6,
     "resumen": {
-      "es": "Programa TEC-CCSS de formación en IA médica, EDUS (cobertura 100% asegurados), AIDA (asistente IA en consulta, piloto 15 áreas), LIDIA (modelos predictivos, piloto diabetes en Clorito Picado con 95% de precisión) y REDIMED (red de imágenes médicas con priorización IA, en despliegue parcial).",
-      "en": "TEC-CCSS medical AI training program, EDUS (100% member coverage), AIDA (in-consultation AI assistant, 15-area pilot), LIDIA (predictive models, diabetes pilot at Clorito Picado with 95% accuracy) and REDIMED (medical imaging network with AI-based prioritization, partial deployment)."
+      "es": "Programa TEC-CCSS de formación en IA médica, EDUS (cobertura 100% asegurados), AIDA (asistente IA en consulta, piloto 15 áreas), LIDIA (modelos predictivos, piloto diabetes en Clorito Picado con 95% de precisión), REDIMED (red de imágenes médicas con priorización IA, en despliegue parcial) y bot IA de depuración de listas de espera (operativo desde mayo 2026, 367K pacientes resueltos y 136K casos depurados 2023-Q1 2026).",
+      "en": "TEC-CCSS medical AI training program, EDUS (100% insured coverage), AIDA (AI consultation assistant, 15-area pilot), LIDIA (predictive models, diabetes pilot at Clorito Picado with 95% accuracy), REDIMED (medical imaging network with AI prioritization, partial rollout) and an AI bot for wait-list cleanup (operational since May 2026, 367K patients resolved and 136K cases cleaned 2023-Q1 2026)."
     },
     "descripcion": {
       "es": "Combina el dataset clínico más grande del país (EDUS, cobertura 100% de asegurados desde 2010), un programa de formación en IA médica con el TEC, AIDA como asistente en consulta en tiempo real y LIDIA como motor predictivo de medicina preventiva. Es la única institución pública con dos sistemas IA clínicos operando en paralelo: uno asistencial (AIDA) y uno predictivo (LIDIA).",
-      "en": "Combines the country\u2019s largest clinical dataset (EDUS, 100% member coverage since 2010), a medical AI training program with TEC, AIDA as a real-time in-consultation assistant and LIDIA as a preventive-medicine predictive engine. The only public institution running two clinical AI systems in parallel: one assistive (AIDA) and one predictive (LIDIA)."
+      "en": "Combines the country’s largest clinical dataset (EDUS, 100% member coverage since 2010), a medical AI training program with TEC, AIDA as a real-time in-consultation assistant and LIDIA as a preventive-medicine predictive engine. The only public institution running two clinical AI systems in parallel: one assistive (AIDA) and one predictive (LIDIA)."
     },
     "lecciones": {
       "es": "La CCSS apuesta primero a capacidad humana interna (formación con TEC) y a cobertura territorial (EBAIS), no a comprar software de proveedor. Es un patrón de adopción más lento pero menos dependiente.",
@@ -48,7 +57,10 @@
       "es": "Ministerio de Hacienda",
       "en": "Ministry of Finance"
     },
-    "nombreCorto": { "es": "Hacienda", "en": "Finance" },
+    "nombreCorto": {
+      "es": "Hacienda",
+      "en": "Finance"
+    },
     "tipo": "ministerio",
     "url": "https://www.hacienda.go.cr/",
     "proyectosActivos": 3,
@@ -71,7 +83,10 @@
       "es": "Ministerio de Educación Pública",
       "en": "Ministry of Public Education"
     },
-    "nombreCorto": { "es": "MEP", "en": "MEP" },
+    "nombreCorto": {
+      "es": "MEP",
+      "en": "MEP"
+    },
     "tipo": "ministerio",
     "url": "https://www.mep.go.cr/",
     "proyectosActivos": 1,
@@ -81,7 +96,7 @@
     },
     "descripcion": {
       "es": "Cuenta con un currículo formal de tres años en machine learning, ética y aspectos legales de IA, iniciado en cuatro CTPs en 2023 con meta de expansión. Complementa con el programa más grande de capacitación masiva en IA del país: 90,000 becas docentes lanzadas con CENECOOP en abril 2026, con meta de formar 65,000 docentes para impactar a más de 1 millón de estudiantes. Publicó la Guía Docente de IA con ULACIT, UNESCO y el sistema ONU.",
-      "en": "Runs a formal 3-year curriculum on machine learning, ethics and legal aspects of AI, launched in four vocational schools in 2023 with an expansion target. It is complemented by the country\u2019s largest mass AI training program: 90,000 teacher scholarships launched with CENECOOP in April 2026, targeting 65,000 trained teachers to reach 1M+ students. It published the Teacher AI Guide with ULACIT, UNESCO and the UN system."
+      "en": "Runs a formal 3-year curriculum on machine learning, ethics and legal aspects of AI, launched in four vocational schools in 2023 with an expansion target. It is complemented by the country’s largest mass AI training program: 90,000 teacher scholarships launched with CENECOOP in April 2026, targeting 65,000 trained teachers to reach 1M+ students. It published the Teacher AI Guide with ULACIT, UNESCO and the UN system."
     },
     "lecciones": {
       "es": "El programa demuestra que CR puede sostener un hito regional con muy poco presupuesto público propio, apoyado en alianzas privadas (Intel) y multilaterales (UNESCO, ONU). La fragilidad es que la sostenibilidad depende del socio: si Intel reduce presencia local, el currículo necesita un nuevo anclaje.",
@@ -94,7 +109,10 @@
       "es": "Ministerio de Ciencia, Innovación, Tecnología y Telecomunicaciones",
       "en": "Ministry of Science, Innovation, Technology and Telecommunications"
     },
-    "nombreCorto": { "es": "MICITT", "en": "MICITT" },
+    "nombreCorto": {
+      "es": "MICITT",
+      "en": "MICITT"
+    },
     "tipo": "ministerio",
     "url": "https://www.micitt.go.cr/",
     "proyectosActivos": 1,
@@ -117,7 +135,10 @@
       "es": "Universidad de Costa Rica",
       "en": "University of Costa Rica"
     },
-    "nombreCorto": { "es": "UCR", "en": "UCR" },
+    "nombreCorto": {
+      "es": "UCR",
+      "en": "UCR"
+    },
     "tipo": "universidad",
     "url": "https://www.ucr.ac.cr/",
     "proyectosActivos": 2,
@@ -140,17 +161,20 @@
       "es": "Centro Nacional de Alta Tecnología",
       "en": "National Center for High Technology"
     },
-    "nombreCorto": { "es": "CENAT", "en": "CENAT" },
+    "nombreCorto": {
+      "es": "CENAT",
+      "en": "CENAT"
+    },
     "tipo": "investigacion",
     "url": "https://cenat.ac.cr/",
     "proyectosActivos": 1,
     "resumen": {
       "es": "Centro interuniversitario adscrito al CONARE, opera 5 laboratorios (CENIBiot, CNCA, PRIAS, LANOTEC, LANBA). Promueve LaNIA, propuesta de Laboratorio Nacional de IA con alianza fAIr LAC del BID.",
-      "en": "Interuniversity center under CONARE, operating 5 labs (CENIBiot, CNCA, PRIAS, LANOTEC, LANBA). Champions LaNIA, the proposed National AI Laboratory in partnership with IDB\u2019s fAIr LAC."
+      "en": "Interuniversity center under CONARE, operating 5 labs (CENIBiot, CNCA, PRIAS, LANOTEC, LANBA). Champions LaNIA, the proposed National AI Laboratory in partnership with IDB’s fAIr LAC."
     },
     "descripcion": {
       "es": "Es el único hub público de investigación en alta tecnología del país, adscrito al CONARE (red de universidades públicas) y operado desde el TEC. Participó junto al MICITT, Ministerio de Salud, UNESCO, BID y fAIr LAC en la formulación de la ENIA. LaNIA es su propuesta para llenar el vacío del Centro Nacional de Excelencia en IA prometido por la ENIA y aún no operativo.",
-      "en": "The country\u2019s only public high-tech research hub, under CONARE (public university network) and operated from TEC. It participated with MICITT, the Health Ministry, UNESCO, IDB and fAIr LAC in shaping ENIA. LaNIA is its proposal to fill the gap left by the National AI Center of Excellence promised in ENIA and still not operational."
+      "en": "The country’s only public high-tech research hub, under CONARE (public university network) and operated from TEC. It participated with MICITT, the Health Ministry, UNESCO, IDB and fAIr LAC in shaping ENIA. LaNIA is its proposal to fill the gap left by the National AI Center of Excellence promised in ENIA and still not operational."
     },
     "lecciones": {
       "es": "CENAT muestra que el bridge academia-Estado es viable cuando ya existe una estructura institucional como CONARE. Sin embargo, LaNIA opera en fase piloto y depende de financiamiento multilateral, no de presupuesto público dedicado. Refuerza el patrón regional: la investigación pública en IA avanza sin línea presupuestaria nacional.",

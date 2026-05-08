@@ -1,7 +1,7 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-05-06T16:33:34.455Z",
-  "count": 19,
+  "lastUpdate": "2026-05-08T23:56:15.953Z",
+  "count": 20,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "data": [
@@ -253,26 +253,50 @@
       "fuenteUrl": "https://delfino.cr/2025/07/contraloria-detecta-incumplimientos-en-proyecto-redimed-de-la-ccss"
     },
     {
+      "id": "ccss-depuracion-listas",
+      "titulo": {
+        "es": "CCSS IA Depuración Listas de Espera",
+        "en": "CCSS AI Wait-list Cleanup"
+      },
+      "institucionId": "ccss",
+      "categoria": "salud",
+      "estado": "operativo",
+      "desde": "2026",
+      "descripcion": {
+        "es": "Bot de la CCSS que depura listas de espera administrativas (consulta externa, procedimientos y cirugías) cruzando datos del Expediente Digital Único en Salud (EDUS), Registro Civil, redes de servicios institucionales y registros de prestadores externos. Entrenado con patrones históricos de depuración y opera sobre 15 categorías oficiales de resolución (paciente fallecido, atendido en otro centro, contraindicación médica, ya no desea operarse, ya no requiere el procedimiento, etc.). Cada caso identificado por el sistema pasa por validación humana previa antes del retiro de la lista. Incluye contacto automatizado de pacientes para confirmar su estado. La unidad operativa es la Unidad Técnica de Listas de Espera (UTLE) de la Gerencia Médica.",
+        "en": "CCSS bot that cleans up administrative wait lists (outpatient consultations, procedures and surgeries) by cross-referencing data from the Unified Digital Health Record (EDUS), Civil Registry, institutional service networks and external provider registries. Trained on historical cleanup patterns, it operates over 15 official resolution categories (deceased, treated at another center, medical contraindication, declines surgery, no longer needs the procedure, etc.). Every case the system flags goes through prior human validation before being removed from the list. Includes automated patient outreach to confirm status. Run by the Wait-List Technical Unit (UTLE) of the Medical Management."
+      },
+      "resultado": {
+        "es": "Entre 2023 y el primer trimestre de 2026, la CCSS resolvió 367,403 pacientes provenientes de la lista de espera quirúrgica y depuró 136,774 casos. La razón pacientes operados/casos depurados mejoró de 2.21 (2023) a 4.50 (Q1 2026) y la tasa de depuración bajó de 31.2% a 18.2%, indicando listas más precisas. La meta declarada del Plan Estratégico Institucional 2026-2030 es resolver 100,125 pacientes adicionales entre mayo y octubre de 2026, con una inversión de ₡7,122 millones en jornadas extraordinarias.",
+        "en": "Between 2023 and Q1 2026, the CCSS resolved 367,403 patients from the surgical wait list and cleaned up 136,774 cases. The ratio of patients operated to cases cleaned improved from 2.21 (2023) to 4.50 (Q1 2026) and the cleanup rate dropped from 31.2% to 18.2%, indicating more accurate lists. The 2026-2030 Institutional Strategic Plan targets resolving 100,125 additional patients between May and October 2026, backed by ₡7,122 million in extraordinary work shifts."
+      },
+      "contexto": {
+        "es": "Anuncio oficial el 7-8 de mayo de 2026 por el gerente médico Alexander Sánchez Cabo, dentro del Plan Estratégico Institucional 2026-2030 para listas de espera. El sistema declara cumplir la Ley de Protección de la Persona frente al Tratamiento de sus Datos Personales y opera con mecanismos de control y auditoría. Funcionalmente distinto de los demás proyectos IA de la CCSS: AIDA es asistente clínico al médico durante consulta; LIDIA son modelos predictivos sobre 4 enfermedades; REDIMED prioriza imágenes médicas por urgencia. Esta herramienta es data-quality administrativa sobre la cola de espera misma.",
+        "en": "Official announcement May 7-8, 2026 by Medical Manager Alexander Sánchez Cabo, as part of the 2026-2030 Institutional Strategic Plan for wait lists. The system claims compliance with the Personal Data Protection Law and operates with control and audit mechanisms. Functionally distinct from CCSS's other AI projects: AIDA is a clinical assistant for physicians during consultation; LIDIA runs predictive models for 4 diseases; REDIMED prioritizes medical images by urgency. This tool is administrative data quality on the queue itself."
+      },
+      "fuenteUrl": "https://www.teletica.com/nacional/ccss-implementa-herramienta-de-inteligencia-artificial-en-intento-por-bajar-listas-de-espera_408381"
+    },
+    {
       "id": "hacienda-anomaly",
       "titulo": {
-        "es": "Detección de fraude fiscal con IA",
-        "en": "AI tax fraud detection"
+        "es": "Stack IA antifraude fiscal — Anomaly Detector + Atena",
+        "en": "Anti-fraud tax AI stack — Anomaly Detector + Atena"
       },
       "institucionId": "hacienda",
       "categoria": "fiscal",
       "estado": "operativo",
       "desde": "2024",
       "descripcion": {
-        "es": "Sistema de detección de anomalías fiscales implementado por el Ministerio de Hacienda desde 2024, basado en Microsoft Anomaly Detector aplicado sobre el flujo de comprobantes electrónicos del sistema de facturación v4.4. Identifica dos tipos de conductas irregulares: empresas que emiten facturas falsas sin respaldo de operaciones reales (EFOS, Empresas Facturadoras de Operaciones Simuladas) y contribuyentes que inflan artificialmente sus deducciones fiscales mediante facturas de terceros (EDOS, Empresas que Deducen Operaciones Simuladas). En 2025, el sistema permitió recuperar ₡8,000 millones (aproximadamente USD 15.7 millones) e identificar más de 70 casos de facturación falsa, constituyendo el único caso del Estado costarricense con retorno fiscal medible y reportado públicamente en ese año.",
-        "en": "Fiscal anomaly detection system implemented by the Ministry of Finance since 2024, based on Microsoft Anomaly Detector applied to the electronic receipt flow of the v4.4 invoicing system. It identifies two types of irregular behavior: companies issuing fake invoices with no real operations behind them (EFOS) and taxpayers artificially inflating their tax deductions through third-party invoices (EDOS). In 2025, the system recovered ₡8,000 million (approximately USD 15.7 million) and identified over 70 cases of fake invoicing, making it the only Costa Rican state case with measurable and publicly reported fiscal returns that year."
+        "es": "Stack de detección de anomalías fiscales del Ministerio de Hacienda combinando tres componentes operativos en 2026: (1) Microsoft Anomaly Detector, en producción desde 2024 sobre el flujo de comprobantes electrónicos del sistema de facturación v4.4, identificando empresas que emiten facturas falsas sin respaldo de operaciones reales (EFOS) y contribuyentes que inflan deducciones fiscales mediante facturas de terceros (EDOS); (2) integración con TRIBU-CR, plataforma tributaria operativa desde octubre de 2025 que centraliza declaraciones pre-llenadas y procesamiento automático de devoluciones; (3) Atena, módulo IA enfocado en el segmento de trabajadores autónomos para vigilar cumplimiento tributario sobre datos transaccionales ya capturados por la facturación electrónica. El conjunto cubre tanto facturación general como el segmento autónomos.",
+        "en": "Tax anomaly detection stack run by the Ministry of Finance combining three components operational in 2026: (1) Microsoft Anomaly Detector, in production since 2024 over the v4.4 e-invoicing receipt flow, identifying companies issuing fake invoices with no real operations (EFOS) and taxpayers artificially inflating deductions via third-party invoices (EDOS); (2) integration with TRIBU-CR, the tax platform operational since October 2025 that centralizes pre-filled returns and automated refund processing; (3) Atena, an AI module focused on the self-employed segment to monitor tax compliance over transactional data already captured by e-invoicing. The combined stack covers both general invoicing and the self-employed segment."
       },
       "resultado": {
-        "es": "₡8,000M (~USD 15.7M) recuperados en 2025; 70+ casos de facturación falsa identificados.",
-        "en": "₡8,000M (~USD 15.7M) recovered in 2025; 70+ fake-invoicing cases identified."
+        "es": "₡8,000M (~USD 15.7M) recuperados en 2025; 70+ casos de facturación falsa identificados. Atena extiende cobertura al segmento autónomos en 2026.",
+        "en": "₡8,000M (~USD 15.7M) recovered in 2025; 70+ fake-invoicing cases identified. Atena extends coverage to the self-employed segment in 2026."
       },
       "contexto": {
-        "es": "Único caso del Estado costarricense con retorno fiscal medible y reportado en 2025. Apoyado en infraestructura de facturación electrónica v4.4 ya consolidada; la IA agrega valor sobre datos transaccionales que el Estado ya recolectaba.",
-        "en": "The only Costa Rican state case with measurable, publicly reported fiscal returns in 2025. It rides on the consolidated v4.4 e-invoicing infrastructure; AI adds value on top of transactional data the State was already collecting."
+        "es": "Único caso del Estado costarricense con retorno fiscal medible y reportado públicamente. Stack 2026 evoluciona del componente único Anomaly Detector hacia una integración con la nueva plataforma TRIBU-CR y un módulo IA específico (Atena) para autónomos. La IA agrega valor sobre datos transaccionales que el Estado ya recolectaba vía facturación electrónica.",
+        "en": "The only Costa Rican state case with measurable, publicly reported fiscal returns. The 2026 stack evolves from a single Anomaly Detector component into integration with the new TRIBU-CR platform plus a dedicated AI module (Atena) for the self-employed segment. AI adds value on top of transactional data the State was already collecting via e-invoicing."
       },
       "fuenteUrl": "https://www.nacion.com/economia/hacienda-revela-la-tecnologia-que-le-permitio/G63WRWKZ7NHLXBSHCS6RI3T4JU/story/"
     },
