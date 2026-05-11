@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-05-09T00:13:42.682Z",
+  "lastUpdate": "2026-05-11T15:53:46.215Z",
   "count": 3,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
@@ -152,7 +152,7 @@
           "es": "Proyectos IA activos en gobierno",
           "en": "Active AI projects in government"
         },
-        "valor": "20",
+        "valor": "21",
         "detalle": {
           "es": "mapeados en mayo 2026",
           "en": "mapped as of May 2026"

@@ -386,6 +386,26 @@
     "fuenteUrl": "https://delfino.cr/2026/04/micitt-reporta-inversion-de-mas-de-2-millones-en-red-de-laboratorios-de-innovacion-comunitaria"
   },
   {
+    "id": "micitt-conecta",
+    "titulo": {
+      "es": "CONECTA — Interoperabilidad nacional basada en X-Road",
+      "en": "CONECTA — National interoperability based on X-Road"
+    },
+    "institucionId": "micitt",
+    "categoria": "infraestructura",
+    "estado": "operativo",
+    "desde": "2025",
+    "descripcion": {
+      "es": "Proyecto CRI/003 – Conecta para adoptar el modelo país de interoperabilidad gubernamental basado en X-Road, la plataforma de intercambio seguro de datos desarrollada y mantenida por Estonia, Finlandia e Islandia. Coordinado por la Agencia Nacional de Gobierno Digital (ANGD), con financiamiento del Gran Ducado de Luxemburgo ejecutado por la Agencia Luxemburguesa de Cooperación al Desarrollo (LuxDev) y asistencia técnica de la e-Governance Academy de Estonia. El alcance inicial incluye aproximadamente 30 instituciones públicas que participan en el taller diagnóstico y la posterior incorporación a la plataforma.",
+      "en": "Project CRI/003 – Conecta to adopt the country interoperability model based on X-Road, the secure data-exchange platform developed and maintained by Estonia, Finland and Iceland. Coordinated by the National Digital Government Agency (ANGD), funded by the Grand Duchy of Luxembourg through the Luxembourg Development Cooperation Agency (LuxDev), with technical assistance from Estonia's e-Governance Academy. Initial scope covers roughly 30 public institutions taking part in the diagnostic workshop and subsequent onboarding to the platform."
+    },
+    "contexto": {
+      "es": "Es la primera vez que Costa Rica adopta de manera oficial una plataforma estándar de interoperabilidad nacional, cerrando una brecha estructural de larga data (cada institución integraba a su ritmo y con sus propios estándares). El claim técnico es literal: la plataforma adoptada se llama X-Road, no es un sistema con otro nombre. Lanzado en marzo de 2025. El monto de la cooperación luxemburguesa no fue divulgado en fuentes primarias (BNAmericas, MICITT, LuxDev) al momento de esta ficha.",
+      "en": "First time Costa Rica officially adopts a standard national interoperability platform, closing a long-standing structural gap (each institution integrated at its own pace and on its own standards). The technical claim is literal: the platform adopted is X-Road, not a system under another name. Launched March 2025. The Luxembourg funding amount was not disclosed in primary sources (BNAmericas, MICITT, LuxDev) at the time of this entry."
+    },
+    "fuenteUrl": "https://www.micitt.go.cr/el-sector-informa/costa-rica-acelera-su-transformacion-digital-con-el-lanzamiento-del-proyecto"
+  },
+  {
     "id": "ucr-citic-ia-software",
     "titulo": {
       "es": "Integración de IA en ingeniería de software (CITIC)",
