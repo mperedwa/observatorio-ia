@@ -179,6 +179,10 @@ export interface Dictionary {
     kicker: string;
     titulo: string;
     sub: string;
+    articulosTitulo: string;
+    articulosSub: string;
+    articulosLeerMas: string;
+    articulosVacio: string;
     comparativaTitulo: string;
     comparativaSub: string;
     comparativaCols: {
@@ -407,6 +411,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
       kicker: 'Análisis',
       titulo: 'Costa Rica perdió 19 puntos vs Chile en el ILIA 2025',
       sub: 'Comparativa regional, brechas de capacidad estructural y estado del marco regulatorio. Datos verificados de fuentes oficiales y reportes multilaterales.',
+      articulosTitulo: 'Estado y Algoritmo',
+      articulosSub: 'Serie quincenal de análisis sobre IA en el Estado costarricense. Cada número desempaca una pieza del inventario: lo que funciona, lo que está detenido, y las preguntas abiertas.',
+      articulosLeerMas: 'Leer artículo',
+      articulosVacio: 'Próximamente.',
       comparativaTitulo: 'Comparativa regional',
       comparativaSub: 'Posición ILIA, inversión y ente ejecutor en los cinco países latinoamericanos del ranking 2025.',
       comparativaCols: {
@@ -660,6 +668,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
       kicker: 'Analysis',
       titulo: 'Costa Rica fell 19 points behind Chile in ILIA 2025',
       sub: 'Regional benchmarking, structural capability gaps and state of the regulatory framework. Verified data from official sources and multilateral reports.',
+      articulosTitulo: 'State & Algorithm',
+      articulosSub: 'Biweekly series of analyses on AI in the Costa Rican state. Each issue unpacks a piece of the inventory: what works, what is stalled, and the open questions.',
+      articulosLeerMas: 'Read article',
+      articulosVacio: 'Coming soon.',
       comparativaTitulo: 'Regional benchmark',
       comparativaSub: 'ILIA score, investment and executing body for the five Latin American countries in the 2025 ranking.',
       comparativaCols: {

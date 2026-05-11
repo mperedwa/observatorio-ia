@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { BrechaCard } from '@/components/BrechaCard';
+import { articulosOrdenados } from '@/data/articulos';
 import { brechas } from '@/data/brechas';
 import { comparativaRegional } from '@/data/indicadores';
 import { expedientes } from '@/data/legislacion';
@@ -89,6 +91,53 @@ export default async function AnalisisPage({
           </p>
         </div>
       </header>
+
+      <section className="max-w-6xl mx-auto px-6 py-16">
+        <header className="mb-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
+            {t.analisis.articulosTitulo}
+          </h2>
+          <p className="mt-2 text-slate-600 max-w-3xl text-pretty">
+            {t.analisis.articulosSub}
+          </p>
+        </header>
+        {articulosOrdenados.length === 0 ? (
+          <p className="text-sm text-slate-500 italic">{t.analisis.articulosVacio}</p>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {articulosOrdenados.map((a) => {
+              const m = a.meta(lc);
+              return (
+                <Link
+                  key={a.slug}
+                  href={`/${lc}/analisis/${a.slug}/`}
+                  className="group flex flex-col bg-white border border-slate-200 rounded-lg p-5 hover:border-institucional-700 hover:shadow-sm transition-all"
+                >
+                  <p className="text-xs font-medium uppercase tracking-wider text-institucional-700">
+                    {m.kicker}
+                  </p>
+                  <h3 className="mt-2 text-lg font-semibold text-slate-900 text-balance leading-snug group-hover:text-institucional-900">
+                    {m.titulo}
+                  </h3>
+                  <p className="mt-2 text-sm text-slate-600 text-pretty line-clamp-3">
+                    {m.descripcion}
+                  </p>
+                  <div className="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                    <span>
+                      <time dateTime={a.fecha}>{m.fechaDisplay}</time>
+                      <span aria-hidden className="mx-2">·</span>
+                      <span>{m.author}</span>
+                    </span>
+                    <span className="text-institucional-700 font-medium whitespace-nowrap group-hover:underline">
+                      {t.analisis.articulosLeerMas} →
+                    </span>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        )}
+      </section>
 
       <section className="max-w-6xl mx-auto px-6 py-16">
         <header className="mb-8">
