@@ -210,8 +210,70 @@ function writeCountersTs(counters: Counters): void {
   console.log(`  ✓ src/data/counters.ts (proyectos=${counters.proyectos}, instituciones=${counters.instituciones}, legislacion=${counters.legislacion})`);
 }
 
+/**
+ * Validates proyectos.json: every entry must have `desde` and a bilingual
+ * `resultado`. Both fields drive UI surfaces that silently break when
+ * missing (TimelineAdopcion drops dots without `desde`; tooltips fall back
+ * to generic copy without `resultado`). Failing the build at validation
+ * keeps that invariant from drifting back.
+ *
+ * Throws with a list of every offender — fixing one at a time gets
+ * tedious when several break at once.
+ */
+function validateProyectos(): void {
+  const srcPath = join(SRC_DIR, 'proyectos.json');
+  if (!existsSync(srcPath)) {
+    throw new Error(`validateProyectos: ${srcPath} no existe`);
+  }
+  const data = JSON.parse(readFileSync(srcPath, 'utf8')) as unknown;
+  if (!Array.isArray(data)) {
+    throw new Error('validateProyectos: proyectos.json no es un array');
+  }
+
+  const errors: string[] = [];
+  for (const entry of data) {
+    if (!entry || typeof entry !== 'object') {
+      errors.push('  (entrada no-objeto en proyectos.json)');
+      continue;
+    }
+    const p = entry as Record<string, unknown>;
+    const id = typeof p.id === 'string' ? p.id : '(sin id)';
+
+    const desde = p.desde;
+    if (typeof desde !== 'string' || desde.trim() === '') {
+      errors.push(`  - ${id}: falta campo "desde" (string no vacío)`);
+    }
+
+    const resultado = p.resultado as Record<string, unknown> | undefined;
+    if (!resultado || typeof resultado !== 'object') {
+      errors.push(`  - ${id}: falta campo "resultado" (objeto con es/en)`);
+    } else {
+      for (const locale of ['es', 'en'] as const) {
+        const v = resultado[locale];
+        if (typeof v !== 'string' || v.trim() === '') {
+          errors.push(`  - ${id}: "resultado.${locale}" vacío o no-string`);
+        }
+      }
+    }
+  }
+
+  if (errors.length > 0) {
+    const msg = [
+      'validateProyectos FAILED — corregí proyectos.json antes de pushear:',
+      ...errors,
+      '',
+      'Reglas: cada entrada debe tener `desde` (año o YYYY-MM) y `resultado` bilingüe.',
+      'Ver: src/data/json/proyectos.json + tooltips de TimelineAdopcion.',
+    ].join('\n');
+    throw new Error(msg);
+  }
+  console.log(`  ✓ validateProyectos: ${data.length} entradas con desde + resultado`);
+}
+
 function main(): void {
   if (!existsSync(OUT_DIR)) mkdirSync(OUT_DIR, { recursive: true });
+
+  validateProyectos();
 
   const counters = computeCounters(SRC_DIR);
   writeCountersTs(counters);

@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-05-11T15:53:46.214Z",
+  "lastUpdate": "2026-05-12T13:32:41.518Z",
   "count": 7,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
@@ -121,10 +121,10 @@
       },
       "tipo": "ministerio",
       "url": "https://www.micitt.go.cr/",
-      "proyectosActivos": 1,
+      "proyectosActivos": 2,
       "resumen": {
-        "es": "Estrategia Nacional de IA (ENIA) 2024-2027 — primera política nacional de IA de Centroamérica. LINC Labs: 24 laboratorios operativos (meta 26), +4,500 personas capacitadas, 70% participación femenina.",
-        "en": "National AI Strategy (ENIA) 2024-2027 — first national AI policy in Central America. LINC Labs: 24 operational labs (target 26), +4,500 people trained, 70% female participation."
+        "es": "Estrategia Nacional de IA (ENIA) 2024-2027 — primera política nacional de IA de Centroamérica. LINC Labs: 24 laboratorios operativos (meta 26), +4,500 personas capacitadas, 70% participación femenina. CONECTA (CRI/003): adopción del modelo país de interoperabilidad basado en X-Road con apoyo de LuxDev y la e-Governance Academy de Estonia, ~30 instituciones públicas.",
+        "en": "National AI Strategy (ENIA) 2024-2027 — first national AI policy in Central America. LINC Labs: 24 operational labs (target 26), +4,500 people trained, 70% female participation. CONECTA (CRI/003): adoption of the country interoperability model based on X-Road with support from LuxDev and Estonia's e-Governance Academy, ~30 public institutions."
       },
       "descripcion": {
         "es": "Es el rector formal de la política nacional de IA. Publicó la ENIA 2024-2027 (primera política de su tipo en Centroamérica) y opera la red LINC con 24 laboratorios operativos (meta 26) distribuidos en las 7 provincias, con foco fuera del GAM. La ENIA contempla un Centro Nacional de Excelencia en IA que aún no está operativo y no tiene presupuesto público asignado.",

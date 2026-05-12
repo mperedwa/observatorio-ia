@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-05-11T15:53:46.216Z",
+  "lastUpdate": "2026-05-12T13:32:41.520Z",
   "count": 7,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
@@ -16,8 +16,8 @@
         "en": "Estonia"
       },
       "evidenciaReferencia": {
-        "es": "X-Road conecta 450+ organizaciones, habilita 3,000+ e-servicios y procesa 2,200 millones de transacciones al año con un equipo operador de 10-15 personas.",
-        "en": "X-Road connects 450+ organizations, enables 3,000+ e-services and processes 2.2 billion transactions per year with an operating team of 10-15 people."
+        "es": "X-tee/X-Road en Estonia conecta alrededor de 1,500 instituciones y empresas (unas 600 instituciones públicas), interopera ~1,600 sistemas de información y registró cerca de 600 millones de solicitudes el año anterior.",
+        "en": "X-tee/X-Road in Estonia connects around 1,500 institutions and companies (about 600 public bodies), interoperates ~1,600 information systems and recorded close to 600 million queries last year."
       },
       "estadoCR": {
         "es": "No existe una capa de interoperabilidad nacional equivalente. Cada institución integra a su ritmo y bajo sus propios estándares.",
@@ -27,7 +27,7 @@
         "es": "Sin esta capa, escalar pilotos como EDUS o Hacienda Digital a otras instituciones requiere construir cada conexión desde cero. Es el cuello de botella estructural más grande para que la IA en gobierno deje de ser caso aislado.",
         "en": "Without this layer, scaling pilots like EDUS or Hacienda Digital to other institutions means building each connection from scratch. It is the largest structural bottleneck preventing AI in government from moving past isolated cases."
       },
-      "fuenteUrl": "https://e-estonia.com/solutions/interoperability-services/x-road/"
+      "fuenteUrl": "https://www.x-tee.ee/factsheets/EE/"
     },
     {
       "id": "gobernanza-ia-formal",
