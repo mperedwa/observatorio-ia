@@ -61,6 +61,10 @@
       "es": "Sistema de anonimización automatizada de datos personales en documentos judiciales, implementado por el Poder Judicial desde 2023 mediante la herramienta Nymiz. Opera sobre el corpus documental de resoluciones y expedientes para suprimir o enmascarar información identificable antes de su divulgación pública, en cumplimiento de la Ley 8968 de Protección de la Persona frente al Tratamiento de sus Datos Personales y su reglamento institucional. Es la única aplicación de IA en el sector público costarricense orientada específicamente al cumplimiento normativo de protección de datos.",
       "en": "Automated anonymization system for personal data in judicial documents, implemented by the Judicial Branch since 2023 using the Nymiz tool. It operates on the documentary corpus of rulings and case files to suppress or mask identifiable information before public disclosure, in compliance with Law 8968 on the Protection of Individuals Regarding the Processing of Their Personal Data and its institutional regulation. It is the only AI application in the Costa Rican public sector specifically aimed at data protection regulatory compliance."
     },
+    "resultado": {
+      "es": "80% de reducción en tiempo de anonimización: de 1-3 horas manual a 12-20 minutos con IA.",
+      "en": "80% reduction in anonymization time: from 1–3 hours manual to 12–20 minutes with AI."
+    },
     "contexto": {
       "es": "El Poder Judicial es la única institución del Estado que aplica IA específicamente para cumplir con la Ley 8968 de protección de datos. Marca un piso de gobernanza que el resto del sector público todavía no replica.",
       "en": "The Judicial Branch is the only state institution applying AI specifically to comply with Law 8968 on data protection. It sets a governance floor that the rest of the public sector has yet to replicate."
@@ -129,9 +133,13 @@
       "es": "Chatbot de atención ciudadana 24/7 que descongestiona la línea telefónica del Poder Judicial. Acceso sin cita previa para consultas sobre trámites y servicios judiciales.",
       "en": "24/7 citizen-facing chatbot that relieves load from the Judicial Branch’s phone line. No-appointment access for queries on judicial procedures and services."
     },
+    "resultado": {
+      "es": "173,916 consultas en 2022 (~5,500/mes). Ahorro estimado superior a USD 14,000. Activo 24/7 desde agosto de 2018.",
+      "en": "173,916 queries in 2022 (~5,500/month). Estimated savings over USD 14,000. Active 24/7 since August 2018."
+    },
     "contexto": {
-      "es": "Operativo desde 2018, es uno de los primeros chatbots públicos de IA del Estado costarricense, desplegado años antes del boom de la IA generativa. No hay métricas de volumen publicadas.",
-      "en": "Operational since 2018, this is one of the earliest public AI chatbots in the Costa Rican State, deployed years before the generative AI boom. No public volume metrics."
+      "es": "Operativo desde 2018, es uno de los primeros chatbots públicos de IA del Estado costarricense, desplegado años antes del boom de la IA generativa.",
+      "en": "Operational since 2018, this is one of the earliest public AI chatbots in the Costa Rican State, deployed years before the generative AI boom."
     },
     "fuenteUrl": "https://transparencia.poder-judicial.go.cr/index.php/declaracion-de-uso-de-inteligencia-artificial"
   },
@@ -148,6 +156,10 @@
     "descripcion": {
       "es": "Curso de 8 semanas para personal médico, TI y administrativo. Proyectos: detección de anomalías en mamografías, análisis de imágenes oftálmicas neonatales.",
       "en": "8-week course for medical, IT and administrative staff. Projects: anomaly detection in mammograms, analysis of neonatal eye imaging."
+    },
+    "resultado": {
+      "es": "Programa de 8 semanas (diciembre 2025): 2 prototipos funcionales en mamografía e imágenes neonatales.",
+      "en": "8-week program (December 2025): 2 working prototypes in mammography and neonatal imaging."
     },
     "contexto": {
       "es": "Primer programa formal de formación en IA clínica en Costa Rica. La CCSS financia capacitación en lugar de adquisición de software, lo que apunta a desarrollar capacidad interna antes que dependencia de proveedores.",
@@ -168,6 +180,10 @@
     "descripcion": {
       "es": "El Expediente Digital Único en Salud (EDUS), creado mediante la Ley 9162 y operativo desde 2010, centraliza el historial clínico de la totalidad de los asegurados de la Caja Costarricense de Seguro Social (CCSS), que cubre aproximadamente el 90% de la población del país. El sistema fue sometido a prueba de estrés durante la pandemia de COVID-19 y demostró capacidad de escala. La incorporación de una capa de inteligencia artificial para medicina predictiva está planificada pero sin cronograma público definido; el EDUS es considerado uno de los conjuntos de datos clínicos más completos del sector público latinoamericano aún no explotados con IA a escala.",
       "en": "The Single Digital Health Record (EDUS), created under Law 9162 and operational since 2010, centralizes the clinical history of all insured members of the Costa Rican Social Security Fund (CCSS), covering approximately 90% of the country's population. The system was stress-tested during the COVID-19 pandemic and demonstrated scalability. The incorporation of an AI layer for predictive medicine is planned but has no public timeline; EDUS is considered one of the most complete clinical datasets in the Latin American public sector still untapped by AI at scale."
+    },
+    "resultado": {
+      "es": "106.2M atenciones registradas, 561.5M recetas, 39.6M análisis de laboratorio y 5.3M descargas de la app (#1 en Costa Rica). Premio WSIS 2021.",
+      "en": "106.2M visits recorded, 561.5M prescriptions, 39.6M lab tests and 5.3M app downloads (#1 in Costa Rica). WSIS 2021 Award."
     },
     "contexto": {
       "es": "EDUS cubre al 100% de los asegurados de la CCSS y se probó durante la pandemia. La capa de IA está planificada pero sin cronograma público; es uno de los datasets más valiosos del Estado costarricense aún sin explotar con IA a escala.",
@@ -309,6 +325,10 @@
       "es": "Asistente virtual integrado en la plataforma Hacienda Digital del Ministerio de Hacienda, orientado a guiar a los contribuyentes en los principales trámites tributarios: presentación de declaraciones, procesamiento de pagos y gestión de operaciones de comercio exterior (importaciones y exportaciones). Disponible para cualquier contribuyente registrado en el sistema tributario costarricense, opera como canal de autoservicio para descongestionar la atención presencial y telefónica de la institución. Es el único asistente virtual ciudadano operativo en el gobierno central costarricense; no existen métricas de volumen de interacciones publicadas.",
       "en": "Virtual assistant integrated into the Ministry of Finance's Hacienda Digital platform, designed to guide taxpayers through key tax procedures: filing returns, processing payments, and managing foreign trade operations (imports and exports). Available to any taxpayer registered in the Costa Rican tax system, it operates as a self-service channel to reduce in-person and phone support demand. It is the only operational citizen-facing virtual assistant in the Costa Rican central government; no interaction volume metrics have been published."
     },
+    "resultado": {
+      "es": "Chatbot 24/7 en infoyasistencia.hacienda.go.cr. Contexto TRIBU-CR: 883M registros migrados y 8,900M facturas electrónicas acumuladas.",
+      "en": "24/7 chatbot at infoyasistencia.hacienda.go.cr. TRIBU-CR context: 883M records migrated and 8,900M cumulative e-invoices."
+    },
     "contexto": {
       "es": "Es el único asistente virtual ciudadano operativo en el gobierno central. No hay un chatbot nacional unificado tipo Bürokratt (Estonia) o VICA (Singapur); cada institución resuelve por su cuenta.",
       "en": "The only operational citizen-facing virtual assistant in the central government. There is no unified national chatbot in the style of Estonia’s Bürokratt or Singapore’s VICA; each institution builds its own."
@@ -400,6 +420,10 @@
     "descripcion": {
       "es": "Proyecto CRI/003 – Conecta para adoptar el modelo país de interoperabilidad gubernamental basado en X-Road, la plataforma de intercambio seguro de datos desarrollada y mantenida por Estonia, Finlandia e Islandia. Coordinado por la Agencia Nacional de Gobierno Digital (ANGD), con financiamiento del Gran Ducado de Luxemburgo ejecutado por la Agencia Luxemburguesa de Cooperación al Desarrollo (LuxDev) y asistencia técnica de la e-Governance Academy de Estonia. El alcance inicial incluye aproximadamente 30 instituciones públicas que participan en el taller diagnóstico y la posterior incorporación a la plataforma.",
       "en": "Project CRI/003 – Conecta to adopt the country interoperability model based on X-Road, the secure data-exchange platform developed and maintained by Estonia, Finland and Iceland. Coordinated by the National Digital Government Agency (ANGD), funded by the Grand Duchy of Luxembourg through the Luxembourg Development Cooperation Agency (LuxDev), with technical assistance from Estonia's e-Governance Academy. Initial scope covers roughly 30 public institutions taking part in the diagnostic workshop and subsequent onboarding to the platform."
+    },
+    "resultado": {
+      "es": "30 instituciones en planificación, 6 en el Comité Rector. Plataforma X-Road (Estonia). GovTech Index 2025: 0.77 (Grupo A). ANGD operacional desde septiembre de 2025.",
+      "en": "30 institutions in planning, 6 on the Steering Committee. X-Road platform (Estonia). GovTech Index 2025: 0.77 (Group A). ANGD operational since September 2025."
     },
     "contexto": {
       "es": "Es la primera vez que Costa Rica adopta de manera oficial una plataforma estándar de interoperabilidad nacional, cerrando una brecha estructural de larga data (cada institución integraba a su ritmo y con sus propios estándares). El claim técnico es literal: la plataforma adoptada se llama X-Road, no es un sistema con otro nombre. Lanzado en marzo de 2025. El monto de la cooperación luxemburguesa no fue divulgado en fuentes primarias (BNAmericas, MICITT, LuxDev) al momento de esta ficha.",
