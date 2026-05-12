@@ -123,6 +123,21 @@ export function TimelineAdopcion({ locale, t }: { locale: Locale; t: Dictionary 
                           : isRightEdge
                             ? 'right-0'
                             : 'left-1/2 -translate-x-1/2';
+                        // Body del tooltip: resultado si existe, fallback a un extracto
+                        // corto de descripcion. Si solo hay titulo, no se muestra
+                        // ninguna linea adicional (el titulo arriba ya basta).
+                        const tooltipBody = p.resultado
+                          ? p.resultado[locale]
+                          : (() => {
+                              const desc = p.descripcion?.[locale] ?? '';
+                              if (!desc) return null;
+                              const oneSentence = desc.split('. ')[0].trim();
+                              const clipped =
+                                oneSentence.length > 180
+                                  ? oneSentence.slice(0, 180).trimEnd() + '…'
+                                  : oneSentence + (oneSentence.endsWith('.') ? '' : '.');
+                              return clipped;
+                            })();
                         return (
                           <Link
                             key={p.id}
@@ -131,7 +146,9 @@ export function TimelineAdopcion({ locale, t }: { locale: Locale; t: Dictionary 
                             onMouseLeave={() => setHoverId(null)}
                             onFocus={() => setHoverId(p.id)}
                             onBlur={() => setHoverId(null)}
-                            className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2"
+                            className={`absolute top-1/2 -translate-x-1/2 -translate-y-1/2 ${
+                              isHover ? 'z-50' : 'z-10'
+                            }`}
                             style={{
                               left: `calc(${x}% + ${offsetPx}px)`,
                             }}
@@ -142,7 +159,11 @@ export function TimelineAdopcion({ locale, t }: { locale: Locale; t: Dictionary 
                             />
                             {isHover && (
                               <div
-                                className={`absolute z-30 top-full mt-3 w-64 rounded-md border border-slate-200 bg-white p-3 shadow-lg ${tooltipAlignClass}`}
+                                className={`absolute z-50 top-full mt-3 w-64 rounded-md border border-slate-300 bg-white p-3 shadow-xl ${tooltipAlignClass}`}
+                                style={{
+                                  backgroundColor: '#ffffff',
+                                  backdropFilter: 'none',
+                                }}
                               >
                                 <div
                                   className={`inline-block text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded ${color.bg} ${color.text} mb-1`}
@@ -152,14 +173,9 @@ export function TimelineAdopcion({ locale, t }: { locale: Locale; t: Dictionary 
                                 <div className="text-sm font-semibold text-slate-900 leading-snug">
                                   {p.titulo[locale]}
                                 </div>
-                                {p.resultado && (
+                                {tooltipBody && (
                                   <div className="mt-1 text-xs text-slate-600 leading-snug">
-                                    {p.resultado[locale]}
-                                  </div>
-                                )}
-                                {!p.resultado && (
-                                  <div className="mt-1 text-xs text-slate-400 italic">
-                                    {t.timeline.sinResultadoLabel}
+                                    {tooltipBody}
                                   </div>
                                 )}
                               </div>
