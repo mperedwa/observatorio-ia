@@ -26,13 +26,38 @@ export function TimelineAdopcion({ locale, t }: { locale: Locale; t: Dictionary 
   const range = maxYear - minYear || 1;
   const allYears = Array.from({ length: range + 1 }, (_, i) => minYear + i);
 
+  // Horizontal spacing (in px) between dots that share a year inside the same
+  // institution row. Without this offset, dots stack at the same x% and only
+  // the topmost one is clickable / countable visually.
+  const DOT_NUDGE_PX = 14;
+
   const porInstitucion = instituciones
-    .map((inst) => ({
-      inst,
-      proyectos: datados.filter((p) => p.institucionId === inst.id).sort(
-        (a, b) => Number(a.desde) - Number(b.desde),
-      ),
-    }))
+    .map((inst) => {
+      const projectsForInst = datados
+        .filter((p) => p.institucionId === inst.id)
+        .sort((a, b) => {
+          const yearDiff = Number(a.desde) - Number(b.desde);
+          if (yearDiff !== 0) return yearDiff;
+          return a.id.localeCompare(b.id);
+        });
+
+      // Group siblings sharing the same year so we can spread them around the
+      // year tick instead of stacking on top of each other.
+      const yearCounts = new Map<string, number>();
+      for (const p of projectsForInst) {
+        yearCounts.set(p.desde!, (yearCounts.get(p.desde!) ?? 0) + 1);
+      }
+      const yearSeen = new Map<string, number>();
+      const annotated = projectsForInst.map((p) => {
+        const total = yearCounts.get(p.desde!) ?? 1;
+        const idx = yearSeen.get(p.desde!) ?? 0;
+        yearSeen.set(p.desde!, idx + 1);
+        const offsetPx = (idx - (total - 1) / 2) * DOT_NUDGE_PX;
+        return { ...p, _offsetPx: offsetPx };
+      });
+
+      return { inst, proyectos: annotated };
+    })
     .filter((row) => row.proyectos.length > 0);
 
   return (
@@ -89,6 +114,7 @@ export function TimelineAdopcion({ locale, t }: { locale: Locale; t: Dictionary 
                       <div className="absolute inset-x-0 top-1/2 h-px bg-slate-100" />
                       {ps.map((p) => {
                         const x = ((Number(p.desde) - minYear) / range) * 100;
+                        const offsetPx = p._offsetPx ?? 0;
                         const isHover = hoverId === p.id;
                         const isLeftEdge = x < 18;
                         const isRightEdge = x > 82;
@@ -106,7 +132,9 @@ export function TimelineAdopcion({ locale, t }: { locale: Locale; t: Dictionary 
                             onFocus={() => setHoverId(p.id)}
                             onBlur={() => setHoverId(null)}
                             className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2"
-                            style={{ left: `${x}%` }}
+                            style={{
+                              left: `calc(${x}% + ${offsetPx}px)`,
+                            }}
                           >
                             <span
                               className={`block w-3.5 h-3.5 rounded-full ring-4 ring-white ${color.dot} hover:scale-125 transition-transform`}
