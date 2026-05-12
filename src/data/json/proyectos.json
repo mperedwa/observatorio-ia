@@ -164,6 +164,7 @@
     "institucionId": "ccss",
     "categoria": "salud",
     "estado": "planificado",
+    "desde": "2025",
     "descripcion": {
       "es": "El Expediente Digital Único en Salud (EDUS), creado mediante la Ley 9162 y operativo desde 2010, centraliza el historial clínico de la totalidad de los asegurados de la Caja Costarricense de Seguro Social (CCSS), que cubre aproximadamente el 90% de la población del país. El sistema fue sometido a prueba de estrés durante la pandemia de COVID-19 y demostró capacidad de escala. La incorporación de una capa de inteligencia artificial para medicina predictiva está planificada pero sin cronograma público definido; el EDUS es considerado uno de los conjuntos de datos clínicos más completos del sector público latinoamericano aún no explotados con IA a escala.",
       "en": "The Single Digital Health Record (EDUS), created under Law 9162 and operational since 2010, centralizes the clinical history of all insured members of the Costa Rican Social Security Fund (CCSS), covering approximately 90% of the country's population. The system was stress-tested during the COVID-19 pandemic and demonstrated scalability. The incorporation of an AI layer for predictive medicine is planned but has no public timeline; EDUS is considered one of the most complete clinical datasets in the Latin American public sector still untapped by AI at scale."
@@ -285,8 +286,8 @@
       "en": "Tax anomaly detection stack run by the Ministry of Finance combining three components operational in 2026: (1) Microsoft Anomaly Detector, in production since 2024 over the v4.4 e-invoicing receipt flow, identifying companies issuing fake invoices with no real operations (EFOS) and taxpayers artificially inflating deductions via third-party invoices (EDOS); (2) integration with TRIBU-CR, the tax platform operational since October 2025 that centralizes pre-filled returns and automated refund processing; (3) Atena, an AI module focused on the self-employed segment to monitor tax compliance over transactional data already captured by e-invoicing. The combined stack covers both general invoicing and the self-employed segment."
     },
     "resultado": {
-      "es": "₡8,000M (~USD 15.7M) recuperados en 2025; 70+ casos de facturación falsa identificados. Atena extiende cobertura al segmento autónomos en 2026.",
-      "en": "₡8,000M (~USD 15.7M) recovered in 2025; 70+ fake-invoicing cases identified. Atena extends coverage to the self-employed segment in 2026."
+      "es": "50 casos fiscalizados en 2025 con ~₡8,000M (~USD 15.7M) recuperados; más de 70 empresas/procesos bajo fiscalización en 2026 y meta de más de 200 contribuyentes bajo revisión. Atena extiende cobertura al segmento autónomos en 2026.",
+      "en": "50 audited cases in 2025 with ~₡8,000M (~USD 15.7M) recovered; over 70 companies/processes under audit in 2026 and a target of 200+ taxpayers under review. Atena extends coverage to the self-employed segment in 2026."
     },
     "contexto": {
       "es": "Único caso del Estado costarricense con retorno fiscal medible y reportado públicamente. Stack 2026 evoluciona del componente único Anomaly Detector hacia una integración con la nueva plataforma TRIBU-CR y un módulo IA específico (Atena) para autónomos. La IA agrega valor sobre datos transaccionales que el Estado ya recolectaba vía facturación electrónica.",
@@ -303,6 +304,7 @@
     "institucionId": "hacienda",
     "categoria": "fiscal",
     "estado": "operativo",
+    "desde": "2024",
     "descripcion": {
       "es": "Asistente virtual integrado en la plataforma Hacienda Digital del Ministerio de Hacienda, orientado a guiar a los contribuyentes en los principales trámites tributarios: presentación de declaraciones, procesamiento de pagos y gestión de operaciones de comercio exterior (importaciones y exportaciones). Disponible para cualquier contribuyente registrado en el sistema tributario costarricense, opera como canal de autoservicio para descongestionar la atención presencial y telefónica de la institución. Es el único asistente virtual ciudadano operativo en el gobierno central costarricense; no existen métricas de volumen de interacciones publicadas.",
       "en": "Virtual assistant integrated into the Ministry of Finance's Hacienda Digital platform, designed to guide taxpayers through key tax procedures: filing returns, processing payments, and managing foreign trade operations (imports and exports). Available to any taxpayer registered in the Costa Rican tax system, it operates as a self-service channel to reduce in-person and phone support demand. It is the only operational citizen-facing virtual assistant in the Costa Rican central government; no interaction volume metrics have been published."

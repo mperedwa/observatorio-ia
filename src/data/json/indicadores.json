@@ -1,15 +1,15 @@
 {
   "ilia2025": [
-    { "pais": { "es": "Chile", "en": "Chile" }, "ilia": 73.07 },
-    { "pais": { "es": "Brasil", "en": "Brazil" }, "ilia": 69.30 },
-    { "pais": { "es": "Uruguay", "en": "Uruguay" }, "ilia": 64.98 },
-    { "pais": { "es": "Colombia", "en": "Colombia" }, "ilia": 57.21 },
+    { "pais": { "es": "Chile", "en": "Chile" }, "ilia": 70.56 },
+    { "pais": { "es": "Brasil", "en": "Brazil" }, "ilia": 67.39 },
+    { "pais": { "es": "Uruguay", "en": "Uruguay" }, "ilia": 62.32 },
+    { "pais": { "es": "Colombia", "en": "Colombia" }, "ilia": 55.84 },
     { "pais": { "es": "Costa Rica", "en": "Costa Rica" }, "ilia": 53.83, "destacado": true }
   ],
   "comparativaRegional": [
     {
       "pais": { "es": "Chile", "en": "Chile" },
-      "ilia": 73.07,
+      "ilia": 70.56,
       "inversion": { "es": "USD 32M", "en": "USD 32M" },
       "enteEjecutor": {
         "es": "CENIA (Centro Nacional de IA), operativo",
@@ -23,7 +23,7 @@
     },
     {
       "pais": { "es": "Brasil", "en": "Brazil" },
-      "ilia": 69.30,
+      "ilia": 67.39,
       "inversion": { "es": "USD 4,000M (PBIA)", "en": "USD 4,000M (PBIA)" },
       "enteEjecutor": {
         "es": "Plan Brasileiro de IA (PBIA), liderado por MCTI",
@@ -37,7 +37,7 @@
     },
     {
       "pais": { "es": "Uruguay", "en": "Uruguay" },
-      "ilia": 64.98,
+      "ilia": 62.32,
       "inversion": {
         "es": "Agesic con presupuesto operativo desde 2007",
         "en": "Agesic with operating budget since 2007"
@@ -51,7 +51,7 @@
     },
     {
       "pais": { "es": "Colombia", "en": "Colombia" },
-      "ilia": 57.21,
+      "ilia": 55.84,
       "inversion": {
         "es": "Política Nacional de IA aprobada (CONPES)",
         "en": "National AI Policy approved (CONPES)"
@@ -120,8 +120,8 @@
       },
       "valor": "5°",
       "detalle": {
-        "es": "53.83/100, brecha de -19 vs Chile",
-        "en": "53.83/100, -19 gap vs Chile"
+        "es": "53.83/100, brecha de -17 vs Chile",
+        "en": "53.83/100, -17 gap vs Chile"
       }
     }
   ]

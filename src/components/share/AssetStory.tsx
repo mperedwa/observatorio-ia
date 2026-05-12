@@ -30,7 +30,7 @@ export function AssetStory({
             className="mt-8 font-bold text-white leading-none tabular-nums"
             style={{ fontSize: 240 }}
           >
-            -19
+            -17
           </p>
           <p className="mt-6 font-semibold text-slate-200" style={{ fontSize: 36 }}>
             {locale === 'es' ? 'puntos abajo de Chile' : 'points behind Chile'}
@@ -40,8 +40,8 @@ export function AssetStory({
             style={{ fontSize: 28, lineHeight: 1.4, maxWidth: 880 }}
           >
             {locale === 'es'
-              ? 'Costa Rica obtuvo 53.83/100 en el Índice Latinoamericano de IA 2025. Chile lidera con 73.07.'
-              : 'Costa Rica scored 53.83/100 in the 2025 Latin American AI Index. Chile leads with 73.07.'}
+              ? 'Costa Rica obtuvo 53.83/100 en el Índice Latinoamericano de IA 2025. Chile lidera con 70.56.'
+              : 'Costa Rica scored 53.83/100 in the 2025 Latin American AI Index. Chile leads with 70.56.'}
           </p>
         </div>
       </AssetFrame>

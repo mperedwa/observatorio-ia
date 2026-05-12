@@ -2,7 +2,7 @@ export const t = {
   es: {
     meta: {
       seriesLabel: 'Estado y Algoritmo · N.° 01',
-      title: 'IA en el Estado costarricense: 20 proyectos, 7 instituciones, y las preguntas que nadie ha respondido todavía',
+      title: 'IA en el Estado costarricense: 21 proyectos, 7 instituciones, y las preguntas que nadie ha respondido todavía',
       description: 'Análisis del primer inventario sistemático de proyectos de IA en el sector público costarricense: lo que existe, lo que retorna, lo que está detenido, y lo que falta coordinar.',
       date: '11 de mayo de 2026',
       author: 'Mario Pérez Edwards',
@@ -34,7 +34,7 @@ export const t = {
     summary: {
       heading: 'Resumen ejecutivo',
       bullets: [
-        '<strong>20 proyectos de IA en 7 instituciones</strong> del sector público costarricense. 14 en producción.',
+        '<strong>21 proyectos de IA en 7 instituciones</strong> del sector público costarricense. 16 en producción.',
         'Poder Judicial (₡5,245M) y Hacienda (₡8,000M) tienen <strong>retorno financiero público documentado</strong>. Ambos operan sobre infraestructura digital preexistente.',
         'Tres modelos de la CCSS para detectar cáncer, enfermedades pulmonares y síndrome coronario están <strong>detenidos por ₡390M</strong> (menos del 0.02% del presupuesto CCSS).',
         'El Centro Nacional de Excelencia en IA, prometido en la ENIA 2024-2027, <strong>lleva dos años de retraso</strong> sin presupuesto asignado.',
@@ -43,7 +43,7 @@ export const t = {
     },
 
     metrics: {
-      projects: { value: '20', label: 'Proyectos documentados', sub: '7 instituciones públicas' },
+      projects: { value: '21', label: 'Proyectos documentados', sub: '7 instituciones públicas' },
       returns: { value: '₡13.2B', label: 'Retorno documentado', sub: 'PJ + Hacienda, datos públicos' },
       patients: { value: '367K', label: 'Pacientes resueltos', sub: 'CCSS depuración 2023-2026' },
       stalled: { value: '₡390M', label: 'Modelos detenidos', sub: '< 0.02% presupuesto CCSS' },
@@ -51,7 +51,7 @@ export const t = {
 
     inventario: {
       sectionTitle: 'El inventario: qué se midió y cómo',
-      body: 'El primer inventario sistemático del Observatorio IA Costa Rica documentó <strong>veinte proyectos de inteligencia artificial en producción o con estado verificado</strong> en siete instituciones del sector público costarricense. La cifra de veinte es un piso, no un techo: el inventario sigue en construcción.',
+      body: 'El primer inventario sistemático del Observatorio IA Costa Rica documentó <strong>veintiún proyectos de inteligencia artificial en producción o con estado verificado</strong> en siete instituciones del sector público costarricense. La cifra de veintiuno es un piso, no un techo: el inventario sigue en construcción.',
       criteriaLabel: 'Criterios de inclusión',
       criteria: [
         '<strong>Fuente pública verificable</strong>: comunicado oficial, declaración institucional, o cobertura periodística con datos confirmados.',
@@ -63,7 +63,7 @@ export const t = {
 
     retorno: {
       sectionTitle: 'Retorno financiero documentado',
-      body: 'De los veinte proyectos, dos tienen el nivel más alto de evidencia: retorno económico documentado públicamente por la propia institución. Ambos comparten una condición estructural: operan sobre infraestructura de datos que <strong>ya existía antes del proyecto de IA</strong>.',
+      body: 'De los veintiún proyectos, dos tienen el nivel más alto de evidencia: retorno económico documentado públicamente por la propia institución. Ambos comparten una condición estructural: operan sobre infraestructura de datos que <strong>ya existía antes del proyecto de IA</strong>.',
       pjLabel: 'Poder Judicial: siete años sin titular',
       pjPara1: 'El chatbot de atención ciudadana lleva funcionando desde 2018, construido internamente sin proveedor externo. El modelo de predicción presupuestaria para gestión de cobros judiciales (2019) se extendió a más de 60 centros de gestión con un ahorro acumulado de más de ₡100 millones.',
       pjPara2: 'En 2024, el Poder Judicial procesó ₡5,245 millones en cobros judiciales sin revisión manual caso por caso. El sistema clasifica, prioriza por probabilidad de recuperación, y genera reportes automáticamente.',
@@ -116,7 +116,7 @@ export const t = {
           { year: 2019, lines: ['PJ: Predicción', 'presupuestaria'] },
           { year: 2023, lines: ['CCSS: Depuración', 'listas de espera'] },
           { year: 2024, lines: ['ENIA publicada', 'PJ: ₡5,245M cobros'] },
-          { year: 2025, lines: ['Hacienda:', '₡8,000M evasión'] },
+          { year: 2025, lines: ['Hacienda: ₡8,000M', 'CONECTA / X-Road'] },
           { year: 2026, lines: ['CCSS: Bot EDUS', '+ LIDIA piloto'] },
         ],
       },
@@ -147,7 +147,7 @@ export const t = {
 
     catalogo: {
       sectionTitle: 'Catálogo de proyectos identificados',
-      body: 'La tabla incluye los diez proyectos principales documentados con datos públicos verificables. El inventario completo contiene veinte proyectos en siete instituciones.',
+      body: 'La tabla incluye los diez proyectos principales documentados con datos públicos verificables. El inventario completo contiene veintiún proyectos en siete instituciones.',
       filters: { all: 'Todos', active: 'Activo', pilot: 'Piloto', stalled: 'Detenido' },
       table: {
         institution: 'Institución',
@@ -157,7 +157,7 @@ export const t = {
         impact: 'Impacto',
       },
       badges: { activo: 'Activo', piloto: 'Piloto', detenido: 'Detenido' },
-      footnote: 'Selección de proyectos con datos públicos verificados. El inventario completo del Observatorio incluye 20 proyectos.',
+      footnote: 'Selección de proyectos con datos públicos verificados. El inventario completo del Observatorio incluye 21 proyectos.',
     },
 
     projects: [
@@ -194,7 +194,7 @@ export const t = {
   en: {
     meta: {
       seriesLabel: 'State & Algorithm · No. 01',
-      title: 'AI in Costa Rica\'s Public Sector: 20 projects, 7 institutions, and the questions no one has answered yet',
+      title: 'AI in Costa Rica\'s Public Sector: 21 projects, 7 institutions, and the questions no one has answered yet',
       description: 'Analysis of the first systematic inventory of AI projects in Costa Rica\'s public sector: what exists, what returns value, what is stalled, and what lacks coordination.',
       date: 'May 11, 2026',
       author: 'Mario Pérez Edwards',
@@ -226,7 +226,7 @@ export const t = {
     summary: {
       heading: 'Executive Summary',
       bullets: [
-        '<strong>20 AI projects across 7 Costa Rican public institutions</strong>. 14 in production.',
+        '<strong>21 AI projects across 7 Costa Rican public institutions</strong>. 16 in production.',
         'Poder Judicial (₡5,245M) and Hacienda (₡8,000M) have <strong>publicly documented financial returns</strong>. Both operate on pre-existing digital infrastructure.',
         'Three CCSS models for detecting cancer, pulmonary disease, and acute coronary syndrome are <strong>stalled for ₡390M</strong> (less than 0.02% of the CCSS budget).',
         'The National AI Center of Excellence, promised in ENIA 2024-2027, is <strong>two years delayed</strong> with no assigned budget.',
@@ -235,7 +235,7 @@ export const t = {
     },
 
     metrics: {
-      projects: { value: '20', label: 'Documented projects', sub: '7 public institutions' },
+      projects: { value: '21', label: 'Documented projects', sub: '7 public institutions' },
       returns: { value: '₡13.2B', label: 'Documented return', sub: 'PJ + Hacienda, public data' },
       patients: { value: '367K', label: 'Patients resolved', sub: 'CCSS list cleanup 2023–2026' },
       stalled: { value: '₡390M', label: 'Stalled models', sub: '< 0.02% of CCSS budget' },
@@ -243,7 +243,7 @@ export const t = {
 
     inventario: {
       sectionTitle: 'The Inventory: What Was Measured and How',
-      body: 'The first systematic inventory of the Observatorio IA Costa Rica documented <strong>twenty AI projects in production or with verified status</strong> across seven Costa Rican public institutions. Twenty is a floor, not a ceiling: the inventory is ongoing.',
+      body: 'The first systematic inventory of the Observatorio IA Costa Rica documented <strong>twenty-one AI projects in production or with verified status</strong> across seven Costa Rican public institutions. Twenty-one is a floor, not a ceiling: the inventory is ongoing.',
       criteriaLabel: 'Inclusion Criteria',
       criteria: [
         '<strong>Verifiable public source</strong>: official statement, institutional declaration, or press coverage with confirmed data.',
@@ -255,7 +255,7 @@ export const t = {
 
     retorno: {
       sectionTitle: 'Documented Financial Returns',
-      body: 'Of the twenty projects, two have the highest level of evidence: financial returns publicly documented by the institution itself. Both share a structural condition: they operate on data infrastructure that <strong>already existed before the AI project</strong>.',
+      body: 'Of the twenty-one projects, two have the highest level of evidence: financial returns publicly documented by the institution itself. Both share a structural condition: they operate on data infrastructure that <strong>already existed before the AI project</strong>.',
       pjLabel: 'Poder Judicial: Seven Years Under the Radar',
       pjPara1: 'The citizen service chatbot has been running since 2018, built internally without an external vendor. The budget prediction model for judicial debt collection (2019) expanded to more than 60 management centers with accumulated savings exceeding ₡100 million.',
       pjPara2: 'In 2024, the Poder Judicial processed ₡5,245 million in judicial collections without manual case-by-case review. The system classifies, prioritizes by recovery probability, and generates reports automatically.',
@@ -308,7 +308,7 @@ export const t = {
           { year: 2019, lines: ['PJ: Budget', 'Prediction'] },
           { year: 2023, lines: ['CCSS: Waitlist', 'Cleanup'] },
           { year: 2024, lines: ['ENIA published', 'PJ: ₡5,245M collections'] },
-          { year: 2025, lines: ['Hacienda:', '₡8,000M evasion'] },
+          { year: 2025, lines: ['Hacienda: ₡8,000M', 'CONECTA / X-Road'] },
           { year: 2026, lines: ['CCSS: EDUS Bot', '+ LIDIA pilot'] },
         ],
       },
@@ -339,7 +339,7 @@ export const t = {
 
     catalogo: {
       sectionTitle: 'Catalog of Identified Projects',
-      body: 'The table includes the ten main projects documented with verifiable public data. The complete inventory contains twenty projects across seven institutions.',
+      body: 'The table includes the ten main projects documented with verifiable public data. The complete inventory contains twenty-one projects across seven institutions.',
       filters: { all: 'All', active: 'Active', pilot: 'Pilot', stalled: 'Stalled' },
       table: {
         institution: 'Institution',
@@ -349,7 +349,7 @@ export const t = {
         impact: 'Impact',
       },
       badges: { activo: 'Active', piloto: 'Pilot', detenido: 'Stalled' },
-      footnote: 'Selection of projects with verified public data. The full Observatory inventory includes 20 projects.',
+      footnote: 'Selection of projects with verified public data. The full Observatory inventory includes 21 projects.',
     },
 
     projects: [
