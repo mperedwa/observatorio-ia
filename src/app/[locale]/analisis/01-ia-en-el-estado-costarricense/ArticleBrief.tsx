@@ -414,7 +414,10 @@ function ChartDepuracion({ T }: { T: ChartDepuracionT }) {
 function GaugeLIDIA({ T }: { T: ChartLidiaT }) {
   const r = 62;
   const arc = Math.PI * r;
-  const filled = 0.95 * arc;
+  // Visual fill kept high as decorative "strong score" indicator. The specific
+  // 95% literal was removed per the fact-check (no primary source); the gauge
+  // is now framed qualitatively via T.accuracyLabel.
+  const filled = 0.85 * arc;
 
   return (
     <div className="pb-chart" style={{ textAlign: 'center' }}>
@@ -424,9 +427,8 @@ function GaugeLIDIA({ T }: { T: ChartLidiaT }) {
         <path d={`M ${100 - r} 90 A ${r} ${r} 0 0 1 ${100 + r} 90`} className="ss-border" strokeWidth={12} strokeLinecap="round" />
         <path d={`M ${100 - r} 90 A ${r} ${r} 0 0 1 ${100 + r} 90`} className="ss-ok" strokeWidth={12} strokeLinecap="round"
           strokeDasharray={`${filled} ${arc}`} />
-        <text x={100} y={76} textAnchor="middle" className="s-text" fontSize={28} fontWeight={800}>95%</text>
-        <text x={100} y={94} textAnchor="middle" className="s-muted" fontSize={10}>{T.accuracyLabel}</text>
-        <text x={100} y={112} textAnchor="middle" className="s-muted" fontSize={8.5}>{T.recordsSub}</text>
+        <text x={100} y={80} textAnchor="middle" className="s-text" fontSize={22} fontWeight={700}>{T.accuracyLabel}</text>
+        <text x={100} y={108} textAnchor="middle" className="s-muted" fontSize={9}>{T.recordsSub}</text>
       </svg>
       <div className="pb-chart-source">{T.source}</div>
     </div>

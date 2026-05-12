@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-05-12T13:32:41.518Z",
+  "lastUpdate": "2026-05-12T20:06:33.048Z",
   "count": 21,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
@@ -236,8 +236,8 @@
         "en": "Internal program of four predictive health models (type 2 diabetes, lung health, acute coronary syndrome and breast cancer) running on EDUS. Identifies at-risk populations so clinics can reach out before formal diagnosis."
       },
       "resultado": {
-        "es": "Piloto de diabetes en la Clínica Clorito Picado: 1 millón+ pacientes analizados, 2,500 identificados en riesgo, 1,800 localizados, 130 ya con diabetes (validación del modelo, 95% de precisión). Costo por modelo: ¢130 millones (~USD 250,000).",
-        "en": "Diabetes pilot at Clorito Picado Clinic: 1M+ patients analyzed, 2,500 identified as at-risk, 1,800 reached, 130 already diagnosed (model validation, 95% accuracy). Cost per model: ¢130M (~USD 250,000)."
+        "es": "Piloto de diabetes en la Clínica Clorito Picado: 1 millón+ pacientes analizados, 2,500 identificados en riesgo, 1,800 localizados, 130 ya con diabetes. Alta precisión documentada en piloto. Costo por modelo: ¢130 millones (~USD 250,000).",
+        "en": "Diabetes pilot at Clorito Picado Clinic: 1M+ patients analyzed, 2,500 identified as at-risk, 1,800 reached, 130 already diagnosed. Documented high accuracy in the pilot. Cost per model: ¢130M (~USD 250,000)."
       },
       "contexto": {
         "es": "Único programa público de medicina preventiva con IA en Costa Rica. Desarrollado internamente por equipos de la CCSS (médicos, ingenieros, estadísticos) bajo el director del EDUS, Manuel Rodríguez, sin proveedor externo. Tres de los cuatro modelos siguen en fase cero por restricciones de presupuesto.",
