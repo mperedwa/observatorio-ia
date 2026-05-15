@@ -21,6 +21,7 @@
     "fuentes": [
       {
         "url": "https://www.nacion.com/politica/laura-fernandez-fija-la-agenda-del-congreso-estos/W42PUA56JNEZFEM4LNFYGW7OLA/story/",
+        "nombre": { "es": "La Nación CR", "en": "La Nación CR" },
         "descripcion": {
           "es": "La Nación CR — agenda legislativa del gobierno Fernández para mayo 2026.",
           "en": "La Nación CR — legislative agenda of the Fernández government for May 2026."
@@ -28,6 +29,7 @@
       },
       {
         "url": "https://www.infobae.com/costa-rica/2026/05/13/gobierno-de-laura-fernandez-convoca-62-proyectos-al-congreso-y-prioriza-seguridad-energia-y-reforma-del-estado/",
+        "nombre": { "es": "Infobae CR", "en": "Infobae CR" },
         "descripcion": {
           "es": "Infobae CR — convocatoria de 62 proyectos al Congreso por el Ejecutivo (13-may-2026).",
           "en": "Infobae CR — executive call of 62 bills to Congress (May 13, 2026)."

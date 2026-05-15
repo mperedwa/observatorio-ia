@@ -11,6 +11,14 @@ export interface IndicadorRegional {
 export interface FuenteCitada {
   url: string;
   descripcion: Bilingual;
+  /**
+   * Optional short display label (e.g. "La Nación CR", "MICITT") rendered as
+   * the link text instead of the generic "ver fuente" copy. Surfacing the
+   * source name directly is the right UX when fuentes are heterogeneous
+   * (e.g. a press article + an official site in the same row) — readers
+   * can tell which link goes where before clicking.
+   */
+  nombre?: Bilingual;
 }
 
 export interface ComparativaPais {

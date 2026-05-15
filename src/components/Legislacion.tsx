@@ -65,7 +65,9 @@ export function Legislacion({ locale, t }: { locale: Locale; t: Dictionary }) {
                       aria-label={f.descripcion[locale]}
                       className="text-institucional-700 hover:text-institucional-900 underline underline-offset-2"
                     >
-                      {n.fuentes.length > 1
+                      {f.nombre
+                        ? `${f.nombre[locale]} ↗`
+                        : n.fuentes.length > 1
                         ? `${t.legislacion.verFuente} ${i + 1} ↗`
                         : `${t.legislacion.verFuente} ↗`}
                     </a>
