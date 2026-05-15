@@ -8,13 +8,25 @@ export interface IndicadorRegional {
   destacado?: boolean;
 }
 
+export interface FuenteCitada {
+  url: string;
+  descripcion: Bilingual;
+}
+
 export interface ComparativaPais {
   pais: Bilingual;
   ilia: number;
   inversion: Bilingual;
   enteEjecutor: Bilingual;
   hito: Bilingual;
-  fuenteUrl: string;
+  /**
+   * One or more cited sources backing this row. Each fuente carries its own
+   * descripcion so the table can render `(N)` numbered links with hover/aria
+   * labels in the active locale instead of opaque ↗ icons. Multi-source rows
+   * (e.g. an indicator that fuses MINTIC + CEPAL data) keep both citations
+   * visible without favoring one over the other.
+   */
+  fuentes: FuenteCitada[];
   destacado?: boolean;
 }
 
