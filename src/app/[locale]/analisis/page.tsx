@@ -176,15 +176,22 @@ export default async function AnalisisPage({
                   <td className="px-4 py-4 text-slate-700">{p.inversion[lc]}</td>
                   <td className="px-4 py-4 text-slate-700">{p.enteEjecutor[lc]}</td>
                   <td className="px-4 py-4 text-slate-700 text-pretty">
-                    {p.hito[lc]}{' '}
-                    <a
-                      href={p.fuenteUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-institucional-700 hover:underline whitespace-nowrap"
-                    >
-                      ↗
-                    </a>
+                    {p.hito[lc]}
+                    {p.fuentes.map((f, i) => (
+                      <span key={f.url} className="whitespace-nowrap">
+                        {' '}
+                        <a
+                          href={f.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title={f.descripcion[lc]}
+                          aria-label={f.descripcion[lc]}
+                          className="text-institucional-700 hover:underline"
+                        >
+                          {p.fuentes.length > 1 ? `↗${i + 1}` : '↗'}
+                        </a>
+                      </span>
+                    ))}
                   </td>
                 </tr>
               ))}
