@@ -1,4 +1,5 @@
 import { expedientes } from '@/data/legislacion';
+import { notasCoyuntura } from '@/data/coyuntura';
 import type { Dictionary } from '@/i18n/dictionaries';
 import type { Locale } from '@/i18n/config';
 
@@ -24,6 +25,56 @@ export function Legislacion({ locale, t }: { locale: Locale; t: Dictionary }) {
           </h2>
           <p className="mt-3 text-slate-600 max-w-2xl">{t.legislacion.sub}</p>
         </header>
+        {notasCoyuntura.length > 0 && (
+          <div className="mb-8 space-y-4">
+            {notasCoyuntura.map((n) => (
+              <aside
+                key={n.id}
+                className="bg-white border-l-4 border-amber-400 border-y border-r border-slate-200 rounded-r-lg p-5 sm:p-6"
+              >
+                <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                  <span className="inline-block text-xs font-medium uppercase tracking-wide text-amber-800 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded">
+                    {n.etiqueta[locale]}
+                  </span>
+                  <time
+                    dateTime={n.fecha}
+                    className="text-xs text-slate-500 tabular-nums"
+                  >
+                    {n.fecha}
+                  </time>
+                </div>
+                <h3 className="mt-3 text-lg font-semibold text-slate-900">
+                  {n.titulo[locale]}
+                </h3>
+                <p className="mt-2 text-sm text-slate-700 text-pretty">
+                  {n.texto[locale]}
+                </p>
+                {n.implicacion && (
+                  <p className="mt-3 text-sm text-slate-600 text-pretty">
+                    {n.implicacion[locale]}
+                  </p>
+                )}
+                <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-xs">
+                  {n.fuentes.map((f, i) => (
+                    <a
+                      key={f.url}
+                      href={f.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title={f.descripcion[locale]}
+                      aria-label={f.descripcion[locale]}
+                      className="text-institucional-700 hover:text-institucional-900 underline underline-offset-2"
+                    >
+                      {n.fuentes.length > 1
+                        ? `${t.legislacion.verFuente} ${i + 1} ↗`
+                        : `${t.legislacion.verFuente} ↗`}
+                    </a>
+                  ))}
+                </div>
+              </aside>
+            ))}
+          </div>
+        )}
         <div className="space-y-4">
           {expedientes.map((e) => (
             <article

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "convocatoria-fernandez-mayo-2026",
+    "fecha": "2026-05-13",
+    "etiqueta": {
+      "es": "Coyuntura · mayo 2026",
+      "en": "Current affairs · May 2026"
+    },
+    "titulo": {
+      "es": "Convocatoria Fernández: 62 proyectos, ninguno sobre IA",
+      "en": "Fernández agenda: 62 bills called, none on AI"
+    },
+    "texto": {
+      "es": "El gobierno de Laura Fernández convocó 62 proyectos de ley para sesiones extraordinarias de la Asamblea Legislativa en mayo de 2026. Las prioridades declaradas: seguridad, energía, reforma fiscal y deuda pública. Los tres expedientes de regulación de IA activos (23.771, 23.919 y 24.484) no fueron incluidos. El expediente 23.919 tiene dictamen aprobado desde marzo de 2025 y está técnicamente listo para debate en plenario. Esta decisión mantiene el patrón del período anterior: el gobierno Chaves tampoco convocó los expedientes IA durante 2022-2026, y el Ministerio de Ciencia y Tecnología se opuso formalmente a los tres proyectos argumentando riesgo de obsolescencia regulatoria.",
+      "en": "The Laura Fernández administration called 62 bills for extraordinary sessions of the Legislative Assembly in May 2026. Stated priorities: security, energy, fiscal reform and public debt. None of the three active AI regulation bills (23.771, 23.919 and 24.484) were included. Bill 23.919 has had an approved committee report since March 2025 and is technically ready for floor debate. This decision continues the previous administration's pattern: the Chaves government also did not call the AI bills during 2022-2026, and the Ministry of Science and Technology formally opposed all three projects, arguing risk of regulatory obsolescence."
+    },
+    "implicacion": {
+      "es": "Las instituciones que ya operan sistemas de IA en producción (Hacienda, CCSS, Poder Judicial) continúan sin marco legal específico. La ausencia de convocatoria no impide el avance legislativo por iniciativa propia de la Asamblea, pero sí señala que la IA no es una prioridad del Ejecutivo en este período.",
+      "en": "Public bodies that already run AI systems in production (Hacienda tax authority, CCSS social security, Judicial Branch) remain without a specific legal framework. The absence of an executive call does not prevent legislative progress on the Assembly's own initiative, but does signal that AI is not a priority for the executive in this period."
+    },
+    "fuentes": [
+      {
+        "url": "https://www.nacion.com/politica/laura-fernandez-fija-la-agenda-del-congreso-estos/W42PUA56JNEZFEM4LNFYGW7OLA/story/",
+        "descripcion": {
+          "es": "La Nación CR — agenda legislativa del gobierno Fernández para mayo 2026.",
+          "en": "La Nación CR — legislative agenda of the Fernández government for May 2026."
+        }
+      },
+      {
+        "url": "https://www.infobae.com/costa-rica/2026/05/13/gobierno-de-laura-fernandez-convoca-62-proyectos-al-congreso-y-prioriza-seguridad-energia-y-reforma-del-estado/",
+        "descripcion": {
+          "es": "Infobae CR — convocatoria de 62 proyectos al Congreso por el Ejecutivo (13-may-2026).",
+          "en": "Infobae CR — executive call of 62 bills to Congress (May 13, 2026)."
+        }
+      }
+    ]
+  }
+]
