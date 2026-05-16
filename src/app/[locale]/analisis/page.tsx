@@ -6,7 +6,7 @@ import { BrechaCard } from '@/components/BrechaCard';
 import { articulosOrdenados } from '@/data/articulos';
 import { brechas } from '@/data/brechas';
 import { comparativaRegional } from '@/data/indicadores';
-import { expedientes } from '@/data/legislacion';
+import { expedientes, estadoBadgeCls } from '@/data/legislacion';
 import { getDictionary } from '@/i18n/dictionaries';
 import { locales, type Locale } from '@/i18n/config';
 
@@ -243,7 +243,7 @@ export default async function AnalisisPage({
                 {e.titulo[lc]}
               </h3>
               <p className="mt-2 text-sm text-slate-600 text-pretty">{e.resumen[lc]}</p>
-              <div className="mt-3 inline-block text-xs px-2 py-0.5 rounded border bg-amber-50 text-amber-800 border-amber-200">
+              <div className={`mt-3 inline-block text-xs px-2 py-0.5 rounded border ${estadoBadgeCls[e.estado]}`}>
                 {t.legislacion.estados[e.estado]}
               </div>
             </article>
