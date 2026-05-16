@@ -63,6 +63,24 @@ const recursos: Recurso[] = [
     url: 'https://www.worldbank.org/en/programs/govtech/gtmi',
     tipo: { es: 'Indicador internacional', en: 'International indicator' },
   },
+  {
+    titulo: {
+      es: 'Decreto 276/025 — Sandboxes regulatorios IA (Uruguay, dic. 2025)',
+      en: 'Decree 276/025 — AI regulatory sandboxes (Uruguay, Dec. 2025)',
+    },
+    fuente: 'IMPO',
+    url: 'https://www.impo.com.uy/bases/decretos/276-2025',
+    tipo: { es: 'Gobernanza regional', en: 'Regional governance' },
+  },
+  {
+    titulo: {
+      es: 'Decreto 276/025 — Comunicado oficial Presidencia (Uruguay)',
+      en: 'Decree 276/025 — Official Presidency communication (Uruguay)',
+    },
+    fuente: 'Presidencia Uruguay',
+    url: 'https://www.gub.uy/presidencia/institucional/normativa/decreto-n-276025-se-establece-esquema-gobernanza-para-creacion-gestion',
+    tipo: { es: 'Gobernanza regional', en: 'Regional governance' },
+  },
 ];
 
 export function Recursos({ locale, t }: { locale: Locale; t: Dictionary }) {

@@ -60,12 +60,21 @@
       },
       "enteEjecutor": { "es": "Agesic", "en": "Agesic" },
       "hito": {
-        "es": "Estrategia Nacional IA 2024-2030 aprobada con 40+ instituciones; programa Ceibal capacitó a 80,000 estudiantes en IA. En abril 2026, Parlamento y Ceibal lanzaron un ciclo de formación en IA para legisladores y funcionarios.",
-        "en": "National AI Strategy 2024-2030 approved with 40+ institutions; Ceibal program trained 80,000 students in AI. In April 2026, Parliament and Ceibal launched an AI training cycle for legislators and public officials."
+        "es": "Estrategia Nacional IA 2024-2030 aprobada con 40+ instituciones; programa Ceibal capacitó a 80,000 estudiantes en IA. En diciembre 2025, el Decreto 276/025 estableció el esquema de sandboxes regulatorios para IA y espacios de datos (entornos controlados de prueba bajo supervisión pública). En abril 2026, Parlamento y Ceibal lanzaron un ciclo de formación en IA para legisladores y funcionarios.",
+        "en": "National AI Strategy 2024-2030 approved with 40+ institutions; Ceibal program trained 80,000 students in AI. In December 2025, Decree 276/025 established the regulatory sandbox framework for AI and data spaces (supervised controlled testing environments). In April 2026, Parliament and Ceibal launched an AI training cycle for legislators and public officials."
       },
       "fuentes": [
         {
+          "url": "https://www.impo.com.uy/bases/decretos/276-2025",
+          "nombre": { "es": "IMPO", "en": "IMPO" },
+          "descripcion": {
+            "es": "IMPO (Diario Oficial de Uruguay) — Decreto 276/025 que establece el esquema de gobernanza para sandboxes regulatorios de IA (dic. 2025).",
+            "en": "IMPO (Uruguay's Official Gazette) — Decree 276/025 establishing the governance framework for AI regulatory sandboxes (Dec. 2025)."
+          }
+        },
+        {
           "url": "https://www.uruguayxxi.gub.uy/en/news/article/80-000-uruguayan-students-trained-in-artificial-intelligence-by-2023/",
+          "nombre": { "es": "Uruguay XXI", "en": "Uruguay XXI" },
           "descripcion": {
             "es": "Uruguay XXI — reporte oficial sobre 80,000 estudiantes capacitados en IA por Ceibal.",
             "en": "Uruguay XXI — official report on 80,000 students trained in AI by Ceibal."
@@ -73,6 +82,7 @@
         },
         {
           "url": "https://www.sociedaduruguaya.org/2026/04/parlamento-y-ceibal-lanzan-ciclo-de-formacion-en-inteligencia-artificial-para-legisladores-y-funcionarios.html",
+          "nombre": { "es": "Sociedad Uruguaya", "en": "Sociedad Uruguaya" },
           "descripcion": {
             "es": "Sociedad Uruguaya — Ciclo de formación IA Parlamento + Ceibal para legisladores (abr. 2026).",
             "en": "Sociedad Uruguaya — Parliament + Ceibal AI training cycle for legislators (Apr. 2026)."
