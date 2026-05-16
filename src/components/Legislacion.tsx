@@ -1,16 +1,7 @@
-import { expedientes } from '@/data/legislacion';
+import { expedientes, estadoBadgeCls } from '@/data/legislacion';
 import { notasCoyuntura } from '@/data/coyuntura';
 import type { Dictionary } from '@/i18n/dictionaries';
 import type { Locale } from '@/i18n/config';
-
-const estadoCls: Record<string, string> = {
-  'en-comision': 'bg-amber-50 text-amber-800 border-amber-200',
-  dictaminado: 'bg-sky-50 text-sky-800 border-sky-200',
-  'primer-debate': 'bg-blue-50 text-blue-800 border-blue-200',
-  'segundo-debate': 'bg-purple-50 text-purple-800 border-purple-200',
-  archivado: 'bg-slate-100 text-slate-700 border-slate-300',
-  aprobada: 'bg-emerald-50 text-emerald-800 border-emerald-200',
-};
 
 export function Legislacion({ locale, t }: { locale: Locale; t: Dictionary }) {
   return (
@@ -30,10 +21,10 @@ export function Legislacion({ locale, t }: { locale: Locale; t: Dictionary }) {
             {notasCoyuntura.map((n) => (
               <aside
                 key={n.id}
-                className="bg-white border-l-4 border-amber-400 border-y border-r border-slate-200 rounded-r-lg p-5 sm:p-6"
+                className="bg-white border-l-4 border-indigo-400 border-y border-r border-slate-200 rounded-r-lg p-5 sm:p-6"
               >
                 <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                  <span className="inline-block text-xs font-medium uppercase tracking-wide text-amber-800 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded">
+                  <span className="inline-block text-xs font-medium uppercase tracking-wide text-indigo-800 bg-indigo-50 border border-indigo-200 px-2 py-0.5 rounded">
                     {n.etiqueta[locale]}
                   </span>
                   <time
@@ -92,7 +83,7 @@ export function Legislacion({ locale, t }: { locale: Locale; t: Dictionary }) {
                 </div>
                 <div className="mt-3">
                   <span
-                    className={`inline-block text-xs px-2 py-1 rounded border ${estadoCls[e.estado]}`}
+                    className={`inline-block text-xs px-2 py-1 rounded border ${estadoBadgeCls[e.estado]}`}
                   >
                     {t.legislacion.estados[e.estado]}
                   </span>
