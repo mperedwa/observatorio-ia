@@ -22,7 +22,7 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["pais", "ilia", "inversion", "enteEjecutor", "hito", "fuenteUrl"],
+        "required": ["pais", "ilia", "inversion", "enteEjecutor", "hito", "fuentes"],
         "additionalProperties": false,
         "properties": {
           "pais": { "$ref": "#/definitions/bilingual" },
@@ -30,7 +30,11 @@
           "inversion": { "$ref": "#/definitions/bilingual" },
           "enteEjecutor": { "$ref": "#/definitions/bilingual" },
           "hito": { "$ref": "#/definitions/bilingual" },
-          "fuenteUrl": { "type": "string", "format": "uri" },
+          "fuentes": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "$ref": "#/definitions/fuente" }
+          },
           "destacado": { "type": "boolean" }
         }
       }
@@ -57,6 +61,16 @@
       "properties": {
         "es": { "type": "string", "minLength": 1 },
         "en": { "type": "string", "minLength": 1 }
+      }
+    },
+    "fuente": {
+      "type": "object",
+      "required": ["url", "descripcion"],
+      "additionalProperties": false,
+      "properties": {
+        "url": { "type": "string", "format": "uri" },
+        "descripcion": { "$ref": "#/definitions/bilingual" },
+        "nombre": { "$ref": "#/definitions/bilingual" }
       }
     }
   }
