@@ -10,6 +10,7 @@
 
 import type { Locale } from '@/i18n/config';
 import { t as articulo01 } from '@/app/[locale]/analisis/01-ia-en-el-estado-costarricense/translations';
+import { t as articulo02 } from '@/app/[locale]/analisis/02-tres-leyes-ia-cr/translations';
 
 export interface ArticuloMeta {
   /** URL slug under /<locale>/analisis/ */
@@ -39,6 +40,18 @@ export const articulos: ArticuloMeta[] = [
       descripcion: articulo01[locale].meta.description,
       fechaDisplay: articulo01[locale].meta.date,
       author: articulo01[locale].meta.author,
+    }),
+  },
+  {
+    slug: '02-tres-leyes-ia-cr',
+    numero: 2,
+    fecha: '2026-05-21',
+    meta: (locale) => ({
+      kicker: articulo02[locale].meta.seriesLabel,
+      titulo: articulo02[locale].meta.title,
+      descripcion: articulo02[locale].meta.description,
+      fechaDisplay: articulo02[locale].meta.date,
+      author: articulo02[locale].meta.author,
     }),
   },
 ];

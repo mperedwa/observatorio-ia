@@ -1,6 +1,7 @@
 export const t = {
   es: {
     meta: {
+      seriesLabel: 'Estado y Algoritmo · N.° 02',
       title: 'Costa Rica tiene tres leyes de IA esperando. Ninguna fue convocada.',
       description: 'Análisis técnico comparativo de los tres expedientes de regulación de IA en la Asamblea Legislativa de Costa Rica: estado procesal, arquitecturas institucionales incompatibles, posición documentada del MICITT, y comparativa internacional.',
       date: '21 de mayo de 2026',
@@ -334,6 +335,7 @@ export const t = {
 
   en: {
     meta: {
+      seriesLabel: 'Estado y Algoritmo · No. 02',
       title: 'Costa Rica has three AI bills waiting. None was summoned.',
       description: 'Technical comparative analysis of Costa Rica\'s three active AI regulation bills in the Legislative Assembly: procedural status, incompatible institutional architectures, documented MICITT opposition, and international comparison.',
       date: 'May 21, 2026',
