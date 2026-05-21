@@ -24,7 +24,16 @@ function format(current: number, decimals: number): string {
 export function CountUp({ value, className }: { value: string; className?: string }) {
   const { num, suffix, decimals } = parseValue(value);
   const ref = useRef<HTMLSpanElement>(null);
-  const [display, setDisplay] = useState(0);
+  // SSR + non-JS crawlers (ChatGPT WebBrowse, social-preview fetchers, RSS
+  // readers, screen-reader pre-render): initial state is the FINAL value, so
+  // the rendered HTML carries the real number (e.g. "21 proyectos") instead
+  // of the previous "0" that came from `useState(0)`. The IntersectionObserver
+  // effect below resets to 0 and animates up only after hydration on the
+  // client — so JS-enabled users still see the count-up animation when the
+  // element enters the viewport. A `<noscript>` shadow holds the literal
+  // raw value (with original suffix) as a belt-and-suspenders fallback for
+  // any consumer that strips out client `<span>` interactivity.
+  const [display, setDisplay] = useState(num);
   const startedRef = useRef(false);
 
   useEffect(() => {
@@ -44,6 +53,10 @@ export function CountUp({ value, className }: { value: string; className?: strin
     const start = () => {
       if (startedRef.current) return;
       startedRef.current = true;
+      // Reset to 0 ONLY at the moment we start animating, so SSR output (and
+      // hydration's first paint) keep the final value visible until the user
+      // actually scrolls the element into view.
+      setDisplay(0);
       const t0 = performance.now();
       let raf = 0;
       const tick = (now: number) => {
@@ -81,8 +94,11 @@ export function CountUp({ value, className }: { value: string; className?: strin
 
   return (
     <span ref={ref} className={className}>
-      {format(display, decimals)}
-      {suffix}
+      <span aria-hidden="false">
+        {format(display, decimals)}
+        {suffix}
+      </span>
+      <noscript>{value}</noscript>
     </span>
   );
 }
