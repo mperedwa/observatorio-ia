@@ -1,0 +1,128 @@
+[
+  {
+    "fecha": "2026-05-19",
+    "tipo": "indicador",
+    "actualizacion": {
+      "es": "Uruguay: añade Decreto 276/025 (sandboxes regulatorios para IA y espacios de datos, diciembre 2025) como fuente oficial primaria en la fila de comparativa regional. Hito ampliado: ahora cubre ENIA 2024-2030, sandboxes 2025 y formación Parlamento+Ceibal abr 2026.",
+      "en": "Uruguay: adds Decree 276/025 (regulatory sandboxes for AI and data spaces, December 2025) as the primary official source in the regional comparison row. Milestone expanded to cover ENIA 2024-2030, 2025 sandboxes, and the Apr 2026 Parliament+Ceibal training cycle."
+    },
+    "fuente": {
+      "es": "IMPO (Diario Oficial de Uruguay) — Decreto 276/025",
+      "en": "IMPO (Uruguay's Official Gazette) — Decree 276/025"
+    },
+    "fuente_url": "https://www.impo.com.uy/bases/decretos/276-2025",
+    "commit_sha": "efbf887"
+  },
+  {
+    "fecha": "2026-05-16",
+    "tipo": "legislacion",
+    "actualizacion": {
+      "es": "Costa Rica: nueva nota de coyuntura sobre la convocatoria del Ejecutivo (Fernández, mayo 2026) — 62 proyectos llamados a sesiones extraordinarias, ninguno de los tres expedientes IA activos (23.771, 23.919, 24.484) incluido.",
+      "en": "Costa Rica: new current-affairs note on the executive call (Fernández, May 2026) — 62 bills called for extraordinary sessions, none of the three active AI bills (23.771, 23.919, 24.484) included."
+    },
+    "fuente": {
+      "es": "La Nación CR · Infobae CR",
+      "en": "La Nación CR · Infobae CR"
+    },
+    "fuente_url": "https://www.nacion.com/politica/laura-fernandez-fija-la-agenda-del-congreso-estos/W42PUA56JNEZFEM4LNFYGW7OLA/story/",
+    "commit_sha": "7ee6671"
+  },
+  {
+    "fecha": "2026-05-16",
+    "tipo": "indicador",
+    "actualizacion": {
+      "es": "Uruguay: hito ampliado con el ciclo de formación en IA del Parlamento + Plan Ceibal (abril 2026), dirigido a legisladores y funcionarios.",
+      "en": "Uruguay: milestone expanded to include the Parliament + Ceibal AI training cycle (April 2026), targeting legislators and public officials."
+    },
+    "fuente": {
+      "es": "Sociedad Uruguaya",
+      "en": "Sociedad Uruguaya"
+    },
+    "fuente_url": "https://www.sociedaduruguaya.org/2026/04/parlamento-y-ceibal-lanzan-ciclo-de-formacion-en-inteligencia-artificial-para-legisladores-y-funcionarios.html",
+    "commit_sha": "2e41dd0"
+  },
+  {
+    "fecha": "2026-05-12",
+    "tipo": "legislacion",
+    "actualizacion": {
+      "es": "Costa Rica: dos nuevos expedientes legislativos incorporados al catálogo — 24.875 y 25.171. Atribución de fuente oficial agregada a todos los expedientes existentes.",
+      "en": "Costa Rica: two new legislative bills added to the catalog — 24.875 and 25.171. Official source attribution added to all existing bills."
+    },
+    "fuente": {
+      "es": "Asamblea Legislativa de Costa Rica",
+      "en": "Costa Rica Legislative Assembly"
+    },
+    "fuente_url": "https://www.asamblea.go.cr/",
+    "commit_sha": "dae3d30"
+  },
+  {
+    "fecha": "2026-05-10",
+    "tipo": "proyecto",
+    "actualizacion": {
+      "es": "Catálogo de proyectos: agrega CONECTA — sistema de interoperabilidad nacional basado en X-Road (estonio). Plataforma para intercambio de datos entre instituciones públicas costarricenses.",
+      "en": "Project catalog: adds CONECTA — national interoperability system based on X-Road (Estonian model). Platform for data exchange between Costa Rican public institutions."
+    },
+    "fuente": {
+      "es": "MICITT · Gobierno Digital",
+      "en": "MICITT · Digital Government"
+    },
+    "fuente_url": "https://www.micitt.go.cr/",
+    "commit_sha": "defb47a"
+  },
+  {
+    "fecha": "2026-05-08",
+    "tipo": "proyecto",
+    "actualizacion": {
+      "es": "CCSS: nuevo proyecto incorporado — depuración de listas de espera con asistencia algorítmica. Adicionalmente, ampliación del stack de detección de anomalías de Hacienda con cifras 2026.",
+      "en": "CCSS (Costa Rican Social Security): new project added — waiting-list cleanup with algorithmic assistance. Additionally, expansion of Hacienda's anomaly-detection stack with 2026 figures."
+    },
+    "fuente": {
+      "es": "CCSS · Ministerio de Hacienda",
+      "en": "CCSS · Ministry of Finance"
+    },
+    "fuente_url": "https://www.ccss.sa.cr/",
+    "commit_sha": "8b3a312"
+  },
+  {
+    "fecha": "2026-05-06",
+    "tipo": "proyecto",
+    "actualizacion": {
+      "es": "Catálogo de proyectos: LINC actualizado con cifras 2026; agrega REDIMED como nuevo proyecto de la CCSS para registro digital interoperable.",
+      "en": "Project catalog: LINC updated with 2026 figures; adds REDIMED as a new CCSS project for interoperable digital records."
+    },
+    "fuente": {
+      "es": "CCSS · Semanario Universidad",
+      "en": "CCSS · Semanario Universidad"
+    },
+    "fuente_url": "https://semanariouniversidad.com/",
+    "commit_sha": "7790b6a"
+  },
+  {
+    "fecha": "2026-05-04",
+    "tipo": "indicador",
+    "actualizacion": {
+      "es": "Corrección de datos: ILIA 2025 actualizado, ajuste X-Road, conteos de instituciones revisados, datos Hacienda alineados, timeline depurado.",
+      "en": "Data corrections: ILIA 2025 updated, X-Road adjusted, institution counts revised, Hacienda data aligned, timeline cleanup."
+    },
+    "fuente": {
+      "es": "CEPAL · Índice ILIA",
+      "en": "ECLAC · ILIA Index"
+    },
+    "fuente_url": "https://www.indicelatam.cl/",
+    "commit_sha": "a564cd9"
+  },
+  {
+    "fecha": "2026-05-02",
+    "tipo": "proyecto",
+    "actualizacion": {
+      "es": "Enriquecimiento del catálogo: 9 proyectos con descripciones ampliadas y URLs oficiales de fuente agregadas a los expedientes legislativos.",
+      "en": "Catalog enrichment: 9 projects with expanded descriptions and official source URLs added to legislative bills."
+    },
+    "fuente": {
+      "es": "MICITT · Asamblea Legislativa",
+      "en": "MICITT · Legislative Assembly"
+    },
+    "fuente_url": "https://micitt.go.cr/",
+    "commit_sha": "8d3ed7f"
+  }
+]

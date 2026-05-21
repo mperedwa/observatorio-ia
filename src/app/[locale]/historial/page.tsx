@@ -1,0 +1,128 @@
+import Link from 'next/link';
+import type { Metadata } from 'next';
+import { changelog } from '@/data/changelog';
+import type { ChangelogTipo } from '@/data/changelog';
+import { getDictionary } from '@/i18n/dictionaries';
+import { type Locale, locales } from '@/i18n/config';
+
+export async function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = getDictionary(locale as Locale);
+  return {
+    title: `${t.changelog.historialPagina.titulo} — ${t.siteName} ${t.siteCountry}`,
+    description: t.changelog.historialPagina.metaDescripcion,
+  };
+}
+
+const tipoCls: Record<ChangelogTipo, string> = {
+  legislacion: 'bg-slate-100 text-slate-700 border-slate-300',
+  institucion: 'bg-stone-100 text-stone-700 border-stone-300',
+  indicador: 'bg-neutral-100 text-neutral-700 border-neutral-300',
+  proyecto: 'bg-zinc-100 text-zinc-700 border-zinc-300',
+};
+
+export default async function HistorialPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const lc = locale as Locale;
+  const t = getDictionary(lc);
+
+  return (
+    <main className="bg-white">
+      <section className="max-w-6xl mx-auto px-6 py-16">
+        <nav className="mb-6 text-sm">
+          <Link
+            href={`/${lc}`}
+            className="text-institucional-700 hover:text-institucional-900 underline underline-offset-2"
+          >
+            ← {t.changelog.historialPagina.volverHome}
+          </Link>
+        </nav>
+
+        <header className="mb-10">
+          <p className="text-sm font-medium uppercase tracking-wider text-institucional-700">
+            {t.changelog.kicker}
+          </p>
+          <h1 className="mt-2 text-3xl sm:text-4xl font-bold text-slate-900">
+            {t.changelog.historialPagina.titulo}
+          </h1>
+          <p className="mt-3 text-slate-600 max-w-3xl text-pretty">
+            {t.changelog.historialPagina.sub}
+          </p>
+          <p className="mt-3 text-slate-500 text-sm text-pretty max-w-3xl">{t.changelog.intro}</p>
+        </header>
+
+        <div className="overflow-x-auto rounded-lg border border-slate-200">
+          <table className="min-w-full divide-y divide-slate-200 text-sm">
+            <thead className="bg-slate-50 text-left text-xs uppercase tracking-wide text-slate-500">
+              <tr>
+                <th scope="col" className="px-4 py-3 font-medium w-[110px]">
+                  {t.changelog.tableCols.fecha}
+                </th>
+                <th scope="col" className="px-4 py-3 font-medium w-[130px]">
+                  {t.changelog.tableCols.tipo}
+                </th>
+                <th scope="col" className="px-4 py-3 font-medium">
+                  {t.changelog.tableCols.actualizacion}
+                </th>
+                <th scope="col" className="px-4 py-3 font-medium w-[220px]">
+                  {t.changelog.tableCols.fuente}
+                </th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-200 bg-white">
+              {changelog.map((e) => (
+                <tr key={`${e.fecha}-${e.commit_sha ?? e.actualizacion.es.slice(0, 32)}`}>
+                  <td className="px-4 py-3 align-top tabular-nums text-slate-600 whitespace-nowrap">
+                    <time dateTime={e.fecha}>{e.fecha}</time>
+                  </td>
+                  <td className="px-4 py-3 align-top whitespace-nowrap">
+                    <span
+                      className={`inline-block text-xs px-2 py-0.5 rounded border ${tipoCls[e.tipo]}`}
+                    >
+                      {t.changelog.tipos[e.tipo]}
+                    </span>
+                  </td>
+                  <td className="px-4 py-3 align-top text-slate-700 text-pretty">
+                    {e.actualizacion[lc]}
+                  </td>
+                  <td className="px-4 py-3 align-top text-slate-600 text-pretty">
+                    {e.fuente_url ? (
+                      <a
+                        href={e.fuente_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title={e.fuente[lc]}
+                        className="text-institucional-700 hover:text-institucional-900 underline underline-offset-2"
+                      >
+                        {e.fuente[lc]} ↗
+                      </a>
+                    ) : (
+                      e.fuente[lc]
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <p className="mt-6 text-xs text-slate-400">
+          {locale === 'en' ? 'Total entries: ' : 'Total de entradas: '}
+          <span className="tabular-nums">{changelog.length}</span>
+        </p>
+      </section>
+    </main>
+  );
+}

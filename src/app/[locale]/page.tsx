@@ -5,6 +5,7 @@ import { MapaProyectos } from '@/components/MapaProyectos';
 import { Legislacion } from '@/components/Legislacion';
 import { Indicadores } from '@/components/Indicadores';
 import { Recursos } from '@/components/Recursos';
+import { Changelog } from '@/components/Changelog';
 import { Acerca } from '@/components/Acerca';
 import { getDictionary } from '@/i18n/dictionaries';
 import { type Locale } from '@/i18n/config';
@@ -25,6 +26,7 @@ export default async function Home({
       <Legislacion locale={locale as Locale} t={t} />
       <Indicadores locale={locale as Locale} t={t} />
       <Recursos locale={locale as Locale} t={t} />
+      <Changelog locale={locale as Locale} t={t} />
       <Acerca locale={locale as Locale} t={t} />
     </>
   );

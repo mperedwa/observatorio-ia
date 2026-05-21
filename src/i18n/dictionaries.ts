@@ -211,6 +211,30 @@ export interface Dictionary {
     disclaimer: { titulo: string; cuerpo: string };
     metaDescripcion: string;
   };
+  changelog: {
+    kicker: string;
+    titulo: string;
+    intro: string;
+    verHistorialCompleto: string;
+    tableCols: {
+      fecha: string;
+      tipo: string;
+      actualizacion: string;
+      fuente: string;
+    };
+    tipos: {
+      legislacion: string;
+      institucion: string;
+      indicador: string;
+      proyecto: string;
+    };
+    historialPagina: {
+      titulo: string;
+      sub: string;
+      metaDescripcion: string;
+      volverHome: string;
+    };
+  };
 }
 
 export const dictionaries: Record<Locale, Dictionary> = {
@@ -471,6 +495,32 @@ export const dictionaries: Record<Locale, Dictionary> = {
       metaDescripcion:
         'Quién mantiene el Observatorio IA Costa Rica, cómo se verifican los datos y cómo contactar al equipo editorial.',
     },
+    changelog: {
+      kicker: 'Actualizaciones',
+      titulo: 'Historial de actualizaciones del catálogo',
+      intro:
+        'Este observatorio se actualiza conforme se identifican nuevas fuentes públicas, proyectos institucionales, expedientes legislativos e indicadores sobre inteligencia artificial en Costa Rica.',
+      verHistorialCompleto: 'Ver historial completo de actualizaciones',
+      tableCols: {
+        fecha: 'Fecha',
+        tipo: 'Tipo',
+        actualizacion: 'Actualización',
+        fuente: 'Fuente',
+      },
+      tipos: {
+        legislacion: 'Legislación',
+        institucion: 'Institución',
+        indicador: 'Indicador',
+        proyecto: 'Proyecto',
+      },
+      historialPagina: {
+        titulo: 'Historial completo de actualizaciones',
+        sub: 'Registro cronológico de cada cambio al catálogo verificado del observatorio. La página principal muestra las últimas diez entradas; este historial cubre todas las actualizaciones desde el inicio del observatorio.',
+        metaDescripcion:
+          'Historial completo de actualizaciones del Observatorio IA Costa Rica: cada cambio al catálogo verificado con fecha, tipo, descripción y fuente oficial.',
+        volverHome: 'Volver a la página principal',
+      },
+    },
   },
   en: {
     siteName: 'AI Observatory',
@@ -727,6 +777,32 @@ export const dictionaries: Record<Locale, Dictionary> = {
       },
       metaDescripcion:
         'Who maintains AI Observatory Costa Rica, how data is verified and how to contact the editorial team.',
+    },
+    changelog: {
+      kicker: 'Updates',
+      titulo: 'Catalog update history',
+      intro:
+        'This observatory is updated as new public sources, institutional projects, legislative bills and indicators on artificial intelligence in Costa Rica are identified.',
+      verHistorialCompleto: 'View full update history',
+      tableCols: {
+        fecha: 'Date',
+        tipo: 'Type',
+        actualizacion: 'Update',
+        fuente: 'Source',
+      },
+      tipos: {
+        legislacion: 'Legislation',
+        institucion: 'Institution',
+        indicador: 'Indicator',
+        proyecto: 'Project',
+      },
+      historialPagina: {
+        titulo: 'Full update history',
+        sub: 'Chronological record of every change to the observatory’s verified catalog. The home page shows the latest ten entries; this archive covers every update since the observatory began.',
+        metaDescripcion:
+          'Full update history for AI Observatory Costa Rica: every change to the verified catalog with date, type, description and official source.',
+        volverHome: 'Back to home',
+      },
     },
   },
 };
