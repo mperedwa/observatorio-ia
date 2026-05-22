@@ -1,0 +1,87 @@
+/* ─────────────────────────────────────────────────────────────────────
+ * Capa 3 — scaffold de página de análisis.
+ *
+ * Copiar la carpeta `_template/` con un nombre nuevo
+ * (`NN-tema-en-kebab-case`) y reemplazar las tres constantes de abajo.
+ * Next.js excluye este directorio del routing porque empieza por `_`.
+ * ───────────────────────────────────────────────────────────────────── */
+
+import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import { locales, type Locale } from '@/i18n/config';
+import ArticleBrief from './ArticleBrief';
+import { t as TRANSLATIONS } from './translations';
+
+/** Reemplazar al duplicar: usar el slug exacto de la nueva carpeta. */
+const SLUG = 'NN-tema-en-kebab-case';
+/** ISO 8601 con offset -06:00 (zona Costa Rica). */
+const PUBLISHED_AT = 'YYYY-MM-DDT12:00:00-06:00';
+/** Solo la parte de la fecha; se usa en `article:tag` y en `<time dateTime>`. */
+const FECHA = 'YYYY-MM-DD';
+
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  if (!locales.includes(locale as Locale)) return {};
+  const lc = locale as Locale;
+  const T = TRANSLATIONS[lc];
+  const titulo = `${T.meta.title} — ${T.meta.org}`;
+  const ogImage =
+    lc === 'es'
+      ? 'https://observatorioia.org/comparte-assets/es/og-analisis-1200x630.png'
+      : 'https://observatorioia.org/comparte-assets/en/og-analisis-1200x630.png';
+  return {
+    title: titulo,
+    description: T.meta.description,
+    authors: [{ name: T.meta.author }],
+    openGraph: {
+      title: T.meta.title,
+      description: T.meta.description,
+      url: `https://observatorioia.org/${lc}/analisis/${SLUG}/`,
+      siteName: T.meta.org,
+      locale: lc === 'es' ? 'es_CR' : 'en_US',
+      type: 'article',
+      publishedTime: PUBLISHED_AT,
+      authors: [T.meta.author],
+      images: [{ url: ogImage, width: 1200, height: 630, alt: T.meta.title }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: T.meta.title,
+      description: T.meta.description,
+      images: [ogImage],
+    },
+    alternates: {
+      canonical: `/${lc}/analisis/${SLUG}/`,
+      languages: {
+        es: `/es/analisis/${SLUG}/`,
+        en: `/en/analisis/${SLUG}/`,
+        'x-default': `/es/analisis/${SLUG}/`,
+      },
+    },
+    other: {
+      'article:published_time': PUBLISHED_AT,
+      'article:section': T.breadcrumb.analysis,
+      'article:tag': FECHA,
+    },
+  };
+}
+
+export default async function ArticuloPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  if (!locales.includes(locale as Locale)) notFound();
+  const lc = locale as Locale;
+
+  return <ArticleBrief locale={lc} />;
+}
