@@ -12,6 +12,7 @@ export function Nav({ locale, t }: { locale: Locale; t: Dictionary }) {
     { href: `${base}#legislacion`, label: t.nav.legislacion },
     { href: `${base}#indicadores`, label: t.nav.indicadores },
     { href: `${base}analisis`, label: t.nav.analisis },
+    { href: `${base}#actualizaciones`, label: t.nav.actualizaciones },
     { href: `${base}#recursos`, label: t.nav.recursos },
   ];
   const menuLabel = locale === 'es' ? 'Abrir menú' : 'Open menu';

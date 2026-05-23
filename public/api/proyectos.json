@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-05-23T02:41:19.415Z",
+  "lastUpdate": "2026-05-23T04:15:51.841Z",
   "count": 22,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
@@ -312,10 +312,10 @@
         "en": "Active since February 2026. Stated objective: supply continuity in the face of international-market disruptions. No public impact indicators as of end-May 2026."
       },
       "contexto": {
-        "es": "Es la primera aplicación documentada de IA en la cadena de adquisiciones del sistema público de salud costarricense. La confianza del dato en el observatorio es media: los detalles de funcionamiento provienen de cobertura periodística (Infobae, La Teja) y aún no hay confirmación oficial de fuente primaria de la CCSS sobre arquitectura, proveedores ni alcance exacto del cruce de datos.",
-        "en": "First documented AI application in the procurement chain of Costa Rica's public health system. Data confidence on the observatory is medium: operating details come from press coverage (Infobae, La Teja); no primary-source CCSS confirmation yet on architecture, vendors or exact scope of the data crossover."
+        "es": "Es la primera aplicación documentada de IA en la cadena de adquisiciones del sistema público de salud costarricense. La confianza del dato en el observatorio es media: los detalles de funcionamiento provienen de cobertura periodística (Infobae, Teletica) y aún no hay confirmación oficial de fuente primaria de la CCSS sobre arquitectura, proveedores ni alcance exacto del cruce de datos.",
+        "en": "First documented AI application in the procurement chain of Costa Rica's public health system. Data confidence on the observatory is medium: operating details come from press coverage (Infobae, Teletica); no primary-source CCSS confirmation yet on architecture, vendors or exact scope of the data crossover."
       },
-      "fuenteUrl": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOOFFocnpqeGVMdldUNW4tY3M0cmFzaXhDWmd2eWJvdTZZOENfUnQ0STM3NUYzOUM3MXRpYnZBZnJIMy1OUEhaQTEwcE53VzBZUnVFRHEyTHotdnlkaEVTNGQtNmhJUEtVRXNTalJkelgyRmU2OUw4dEJqamtwNEZRenZXeGdmTmVlQk0zVkdiNTRyWHR2Q0hoUzlCWUpaTzB0bU80UUprMGhaVE54ZlNxS3ZlWU1IXzZyTjJ1SW9DZjZKSm5lNWc?oc=5"
+      "fuenteUrl": "https://www.infobae.com/costa-rica/2026/05/08/caja-costarricense-de-seguro-social-incorpora-inteligencia-artificial-para-depuracion-de-listas-de-espera/"
     },
     {
       "id": "hacienda-anomaly",

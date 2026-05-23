@@ -9,6 +9,7 @@ export interface Dictionary {
     legislacion: string;
     indicadores: string;
     analisis: string;
+    actualizaciones: string;
     recursos: string;
     acerca: string;
   };
@@ -247,6 +248,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       legislacion: 'Legislación',
       indicadores: 'Indicadores',
       analisis: 'Análisis',
+      actualizaciones: 'Actualizaciones',
       recursos: 'Recursos',
       acerca: 'Acerca de',
     },
@@ -531,6 +533,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       legislacion: 'Legislation',
       indicadores: 'Indicators',
       analisis: 'Analysis',
+      actualizaciones: 'Updates',
       recursos: 'Resources',
       acerca: 'About',
     },
