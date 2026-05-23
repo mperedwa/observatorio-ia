@@ -1,7 +1,7 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-05-12T20:06:33.048Z",
-  "count": 21,
+  "lastUpdate": "2026-05-23T02:41:19.415Z",
+  "count": 22,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "data": [
@@ -208,16 +208,16 @@
       "estado": "piloto",
       "desde": "2026",
       "descripcion": {
-        "es": "Asistente IA integrado al EDUS que apoya a profesionales de salud en tiempo real durante la consulta: sugiere diagnósticos diferenciales, facilita seguimiento de enfermedades crónicas y permite teleinterconsulta asincrónica con especialistas.",
-        "en": "AI assistant embedded in EDUS that supports health professionals in real time during consultation: suggests differential diagnoses, helps with chronic-disease follow-up, and enables asynchronous tele-consultation with specialists."
+        "es": "Asistente IA integrado al EDUS que apoya a profesionales de salud en tiempo real durante la consulta: sugiere diagnósticos diferenciales, facilita seguimiento de enfermedades crónicas (con foco declarado en diabetes, hipertensión arterial y obesidad) y permite teleinterconsulta asincrónica con especialistas.",
+        "en": "AI assistant embedded in EDUS that supports health professionals in real time during consultation: suggests differential diagnoses, helps with chronic-disease follow-up (with stated focus on diabetes, hypertension and obesity) and enables asynchronous tele-consultation with specialists."
       },
       "resultado": {
-        "es": "Piloto activo en 15 áreas de salud durante un año (2026-2027). Expansión nacional planificada en cuatro fases hasta 2031.",
-        "en": "Active pilot in 15 health areas for one year (2026-2027). National expansion planned in four phases by 2031."
+        "es": "Piloto activo en 15 áreas de salud durante un año (2026-2027). Expansión nacional planificada en cuatro fases hasta 2031. La hoja de ruta del proyecto fue aprobada por la Junta Directiva de la CCSS, garantizando trazabilidad y cobertura institucional del despliegue.",
+        "en": "Active pilot in 15 health areas for one year (2026-2027). National expansion planned in four phases by 2031. The project roadmap was approved by the CCSS Board of Directors, giving the rollout institutional traceability and coverage."
       },
       "contexto": {
-        "es": "Es el primer asistente IA en consulta médica en tiempo real del Estado costarricense. Avalado por la presidenta ejecutiva Mónica Taylor y el gerente médico Alexander León. Diferenciado de LIDIA (predictivo) por operar durante el acto clínico.",
-        "en": "The first real-time clinical AI assistant in the Costa Rican State, endorsed by CCSS executive president Mónica Taylor and medical manager Alexander León. Distinct from LIDIA (predictive) because it operates during the clinical act itself."
+        "es": "Es el primer asistente IA en consulta médica en tiempo real del Estado costarricense. Avalado por la presidenta ejecutiva Mónica Taylor y el gerente médico Alexander León, con hoja de ruta aprobada por Junta Directiva. Diferenciado de LIDIA (predictivo) por operar durante el acto clínico. Se anuncia junto con un componente paralelo no-IA: la ampliación de la oferta de medicamentos disponibles directamente en los EBAIS para los pacientes con las enfermedades crónicas que AIDA prioriza.",
+        "en": "The first real-time clinical AI assistant in the Costa Rican State, endorsed by CCSS executive president Mónica Taylor and medical manager Alexander León, with a roadmap approved by the Board of Directors. Distinct from LIDIA (predictive) because it operates during the clinical act itself. Announced alongside a parallel non-AI component: expanding the medicines directly available at EBAIS primary-care clinics for patients with the chronic conditions AIDA prioritizes."
       },
       "fuenteUrl": "https://www.monumental.co.cr/2026/02/25/ccss-usara-inteligencia-artificial-y-ampliara-oferta-de-medicamentos-en-ebais/"
     },
@@ -292,6 +292,30 @@
         "en": "Official announcement May 7-8, 2026 by Medical Manager Alexander Sánchez Cabo, as part of the 2026-2030 Institutional Strategic Plan for wait lists. The system claims compliance with the Personal Data Protection Law and operates with control and audit mechanisms. Functionally distinct from CCSS's other AI projects: AIDA is a clinical assistant for physicians during consultation; LIDIA runs predictive models for 4 diseases; REDIMED prioritizes medical images by urgency. This tool is administrative data quality on the queue itself."
       },
       "fuenteUrl": "https://www.teletica.com/nacional/ccss-implementa-herramienta-de-inteligencia-artificial-en-intento-por-bajar-listas-de-espera_408381"
+    },
+    {
+      "id": "ccss-logistica-ia-abastecimiento",
+      "titulo": {
+        "es": "Monitoreo de abastecimiento con IA — Gerencia de Logística",
+        "en": "AI Supply Monitoring — Logistics Management"
+      },
+      "institucionId": "ccss",
+      "categoria": "salud",
+      "estado": "operativo",
+      "desde": "2026",
+      "descripcion": {
+        "es": "Sistema de monitoreo de contratos de medicamentos e insumos médicos operado por la Gerencia de Logística de la CCSS. Cruza datos internos de adquisiciones, inventarios y entregas con indicadores internacionales de riesgo de suministro (proveedores, países, escasez global) para anticipar riesgos de quiebre de abastecimiento. Los resultados se presentan en un tablero Power BI consultado por equipos de logística y dirección.",
+        "en": "Monitoring system for medicine and medical-supply contracts run by the CCSS Logistics Management. It cross-references internal procurement, inventory and delivery data with international supply-risk indicators (suppliers, countries, global shortages) to anticipate stock-out risk. Results are surfaced through a Power BI dashboard used by logistics teams and management."
+      },
+      "resultado": {
+        "es": "Activo desde febrero de 2026. Objetivo declarado: continuidad de abastecimiento ante interrupciones del mercado internacional. Sin indicadores de impacto públicos al cierre de mayo de 2026.",
+        "en": "Active since February 2026. Stated objective: supply continuity in the face of international-market disruptions. No public impact indicators as of end-May 2026."
+      },
+      "contexto": {
+        "es": "Es la primera aplicación documentada de IA en la cadena de adquisiciones del sistema público de salud costarricense. La confianza del dato en el observatorio es media: los detalles de funcionamiento provienen de cobertura periodística (Infobae, La Teja) y aún no hay confirmación oficial de fuente primaria de la CCSS sobre arquitectura, proveedores ni alcance exacto del cruce de datos.",
+        "en": "First documented AI application in the procurement chain of Costa Rica's public health system. Data confidence on the observatory is medium: operating details come from press coverage (Infobae, La Teja); no primary-source CCSS confirmation yet on architecture, vendors or exact scope of the data crossover."
+      },
+      "fuenteUrl": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOOFFocnpqeGVMdldUNW4tY3M0cmFzaXhDWmd2eWJvdTZZOENfUnQ0STM3NUYzOUM3MXRpYnZBZnJIMy1OUEhaQTEwcE53VzBZUnVFRHEyTHotdnlkaEVTNGQtNmhJUEtVRXNTalJkelgyRmU2OUw4dEJqamtwNEZRenZXeGdmTmVlQk0zVkdiNTRyWHR2Q0hoUzlCWUpaTzB0bU80UUprMGhaVE54ZlNxS3ZlWU1IXzZyTjJ1SW9DZjZKSm5lNWc?oc=5"
     },
     {
       "id": "hacienda-anomaly",
@@ -452,14 +476,14 @@
         "en": "Research line at the Research Center on TIC (CITIC) that designs and integrates AI strategies into key software lifecycle processes: requirements engineering, automatic code generation, automated defect repair, and automated testing."
       },
       "resultado": {
-        "es": "Línea consolidada con outputs en cursos de posgrado, publicaciones académicas y participación en el Pura Vida AI Forum 2025. Líder: Dr. Christian Quesada-López.",
-        "en": "Consolidated line with outputs in postgraduate courses, academic publications, and participation in Pura Vida AI Forum 2025. Lead: Dr. Christian Quesada-López."
+        "es": "Línea consolidada con outputs en cursos de posgrado, publicaciones académicas y participación en el Pura Vida AI Forum 2025. Líder: Dr. Christian Quesada-López. Publicación destacada: «Machine Learning-Based Flood Prediction: A Tertiary Study» (CITIC-UCR), un estudio terciario que sistematiza la literatura existente sobre predicción de inundaciones con machine learning.",
+        "en": "Consolidated line with outputs in postgraduate courses, academic publications, and participation in Pura Vida AI Forum 2025. Lead: Dr. Christian Quesada-López. Featured publication: \"Machine Learning-Based Flood Prediction: A Tertiary Study\" (CITIC-UCR), a tertiary study that systematizes existing literature on machine-learning-based flood prediction."
       },
       "contexto": {
-        "es": "Es el primer proyecto académico costarricense con metodología documentada en IA aplicada a ingeniería de software. Conecta la formación de posgrado con investigación aplicada y posiciona a la UCR como referente regional en el área.",
-        "en": "The first Costa Rican academic project with documented methodology on AI applied to software engineering. It connects postgraduate training with applied research and positions UCR as a regional reference in the area."
+        "es": "Es el primer proyecto académico costarricense con metodología documentada en IA aplicada a ingeniería de software. Conecta la formación de posgrado con investigación aplicada y posiciona a la UCR como referente regional en el área. El estudio terciario sobre predicción de inundaciones extiende la línea de aplicaciones más allá del ciclo de vida del software hacia dominios de impacto en gestión de riesgo climático.",
+        "en": "The first Costa Rican academic project with documented methodology on AI applied to software engineering. It connects postgraduate training with applied research and positions UCR as a regional reference in the area. The tertiary study on flood prediction extends the applications line beyond the software lifecycle into climate-risk management."
       },
-      "fuenteUrl": "https://citic.ucr.ac.cr/proyectos/integracion-estrategias-inteligencia-artificial-procesos-ingenieria-software"
+      "fuenteUrl": "https://citic.ucr.ac.cr/publicaciones/machine-learning-based-flood-prediction-tertiary-study"
     },
     {
       "id": "ucr-ciodd-ethical-ai",

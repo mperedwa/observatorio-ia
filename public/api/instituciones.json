@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-05-12T13:32:41.518Z",
+  "lastUpdate": "2026-05-23T02:41:19.416Z",
   "count": 7,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
@@ -43,7 +43,7 @@
       },
       "tipo": "autonoma",
       "url": "https://www.ccss.sa.cr/",
-      "proyectosActivos": 6,
+      "proyectosActivos": 7,
       "resumen": {
         "es": "Programa TEC-CCSS de formación en IA médica, EDUS (cobertura 100% asegurados), AIDA (asistente IA en consulta, piloto 15 áreas), LIDIA (modelos predictivos, piloto diabetes en Clorito Picado con 95% de precisión), REDIMED (red de imágenes médicas con priorización IA, en despliegue parcial) y bot IA de depuración de listas de espera (operativo desde mayo 2026, 367K pacientes resueltos y 136K casos depurados 2023-Q1 2026).",
         "en": "TEC-CCSS medical AI training program, EDUS (100% insured coverage), AIDA (AI consultation assistant, 15-area pilot), LIDIA (predictive models, diabetes pilot at Clorito Picado with 95% accuracy), REDIMED (medical imaging network with AI prioritization, partial rollout) and an AI bot for wait-list cleanup (operational since May 2026, 367K patients resolved and 136K cases cleaned 2023-Q1 2026)."

@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-05-12T13:32:41.519Z",
+  "lastUpdate": "2026-05-23T02:41:19.417Z",
   "count": 3,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
@@ -62,7 +62,15 @@
           "es": "Latam-GPT, modelo regional de 70B parámetros desarrollado por USD 550K.",
           "en": "Latam-GPT, regional 70B-parameter model built for USD 550K."
         },
-        "fuenteUrl": "https://ucstrategies.com/news/latam-gpt-chile-built-a-national-ai-for-550k-and-its-running-on-amazons-servers/"
+        "fuentes": [
+          {
+            "url": "https://ucstrategies.com/news/latam-gpt-chile-built-a-national-ai-for-550k-and-its-running-on-amazons-servers/",
+            "descripcion": {
+              "es": "UC Strategies — cobertura del lanzamiento de Latam-GPT (Chile, USD 550K).",
+              "en": "UC Strategies — Latam-GPT launch coverage (Chile, USD 550K)."
+            }
+          }
+        ]
       },
       {
         "pais": {
@@ -82,7 +90,15 @@
           "es": "Mayor inversión absoluta en IA en América Latina.",
           "en": "Largest absolute AI investment in Latin America."
         },
-        "fuenteUrl": "https://www.gov.br/mcti/"
+        "fuentes": [
+          {
+            "url": "https://www.gov.br/mcti/",
+            "descripcion": {
+              "es": "MCTI — Ministerio de Ciencia, Tecnología e Innovaciones de Brasil (sitio oficial del Plan Brasileiro de IA).",
+              "en": "MCTI — Brazilian Ministry of Science, Technology and Innovation (official site of the Brazilian AI Plan)."
+            }
+          }
+        ]
       },
       {
         "pais": {
@@ -99,10 +115,44 @@
           "en": "Agesic"
         },
         "hito": {
-          "es": "Estrategia Nacional IA 2024-2030 aprobada con 40+ instituciones; programa Ceibal capacitó a 80,000 estudiantes en IA.",
-          "en": "National AI Strategy 2024-2030 approved with 40+ institutions; Ceibal program trained 80,000 students in AI."
+          "es": "Estrategia Nacional IA 2024-2030 aprobada con 40+ instituciones; programa Ceibal capacitó a 80,000 estudiantes en IA. En diciembre 2025, el Decreto 276/025 estableció el esquema de sandboxes regulatorios para IA y espacios de datos (entornos controlados de prueba bajo supervisión pública). En abril 2026, Parlamento y Ceibal lanzaron un ciclo de formación en IA para legisladores y funcionarios.",
+          "en": "National AI Strategy 2024-2030 approved with 40+ institutions; Ceibal program trained 80,000 students in AI. In December 2025, Decree 276/025 established the regulatory sandbox framework for AI and data spaces (supervised controlled testing environments). In April 2026, Parliament and Ceibal launched an AI training cycle for legislators and public officials."
         },
-        "fuenteUrl": "https://www.uruguayxxi.gub.uy/en/news/article/80-000-uruguayan-students-trained-in-artificial-intelligence-by-2023/"
+        "fuentes": [
+          {
+            "url": "https://www.impo.com.uy/bases/decretos/276-2025",
+            "nombre": {
+              "es": "IMPO",
+              "en": "IMPO"
+            },
+            "descripcion": {
+              "es": "IMPO (Diario Oficial de Uruguay) — Decreto 276/025 que establece el esquema de gobernanza para sandboxes regulatorios de IA (dic. 2025).",
+              "en": "IMPO (Uruguay's Official Gazette) — Decree 276/025 establishing the governance framework for AI regulatory sandboxes (Dec. 2025)."
+            }
+          },
+          {
+            "url": "https://www.uruguayxxi.gub.uy/en/news/article/80-000-uruguayan-students-trained-in-artificial-intelligence-by-2023/",
+            "nombre": {
+              "es": "Uruguay XXI",
+              "en": "Uruguay XXI"
+            },
+            "descripcion": {
+              "es": "Uruguay XXI — reporte oficial sobre 80,000 estudiantes capacitados en IA por Ceibal.",
+              "en": "Uruguay XXI — official report on 80,000 students trained in AI by Ceibal."
+            }
+          },
+          {
+            "url": "https://www.sociedaduruguaya.org/2026/04/parlamento-y-ceibal-lanzan-ciclo-de-formacion-en-inteligencia-artificial-para-legisladores-y-funcionarios.html",
+            "nombre": {
+              "es": "Sociedad Uruguaya",
+              "en": "Sociedad Uruguaya"
+            },
+            "descripcion": {
+              "es": "Sociedad Uruguaya — Ciclo de formación IA Parlamento + Ceibal para legisladores (abr. 2026).",
+              "en": "Sociedad Uruguaya — Parliament + Ceibal AI training cycle for legislators (Apr. 2026)."
+            }
+          }
+        ]
       },
       {
         "pais": {
@@ -122,7 +172,15 @@
           "es": "CONPES de IA aprobado y agenda de transformación digital activa.",
           "en": "AI CONPES approved and active digital transformation agenda."
         },
-        "fuenteUrl": "https://www.mintic.gov.co/"
+        "fuentes": [
+          {
+            "url": "https://www.mintic.gov.co/",
+            "descripcion": {
+              "es": "MinTIC — Ministerio de Tecnologías de la Información y las Comunicaciones de Colombia (sitio oficial).",
+              "en": "MinTIC — Colombia's Ministry of Information and Communications Technologies (official site)."
+            }
+          }
+        ]
       },
       {
         "pais": {
@@ -142,7 +200,15 @@
           "es": "ENIA 2024-2027 publicada (primera política nacional de IA de Centroamérica). Hacienda recuperó ₡8,000M con IA en 2025.",
           "en": "ENIA 2024-2027 published (first national AI policy in Central America). Hacienda recovered ₡8,000M with AI in 2025."
         },
-        "fuenteUrl": "https://micitt.go.cr/el-sector-informa/micitt-presento-estrategia-nacional-de-inteligencia-artificial-enia",
+        "fuentes": [
+          {
+            "url": "https://micitt.go.cr/el-sector-informa/micitt-presento-estrategia-nacional-de-inteligencia-artificial-enia",
+            "descripcion": {
+              "es": "MICITT — Presentación oficial de la Estrategia Nacional de Inteligencia Artificial (ENIA) de Costa Rica.",
+              "en": "MICITT — Official launch of Costa Rica's National AI Strategy (ENIA)."
+            }
+          }
+        ],
         "destacado": true
       }
     ],
@@ -152,7 +218,7 @@
           "es": "Proyectos IA activos en gobierno",
           "en": "Active AI projects in government"
         },
-        "valor": "21",
+        "valor": "22",
         "detalle": {
           "es": "mapeados en mayo 2026",
           "en": "mapped as of May 2026"
