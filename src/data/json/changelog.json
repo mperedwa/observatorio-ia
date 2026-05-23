@@ -1,5 +1,43 @@
 [
   {
+    "fecha": "2026-05-22",
+    "tipo": "proyecto",
+    "actualizacion": {
+      "es": "CCSS: nuevo proyecto incorporado al catálogo — monitoreo de abastecimiento con IA operado por la Gerencia de Logística. Cruza datos internos de adquisiciones con indicadores internacionales de riesgo de suministro y publica resultados en un tablero Power BI. Activo desde febrero de 2026.",
+      "en": "CCSS: new project added to the catalog — AI supply monitoring run by the Logistics Management. Cross-references internal procurement data with international supply-risk indicators and surfaces results through a Power BI dashboard. Active since February 2026."
+    },
+    "fuente": {
+      "es": "Infobae · La Teja",
+      "en": "Infobae · La Teja"
+    }
+  },
+  {
+    "fecha": "2026-05-22",
+    "tipo": "proyecto",
+    "actualizacion": {
+      "es": "CCSS AIDA: enriquecimiento del registro existente. Se documenta la aprobación de la hoja de ruta por la Junta Directiva de la CCSS, el foco declarado en enfermedades crónicas (diabetes, hipertensión, obesidad) y el componente paralelo no-IA de ampliación de medicamentos disponibles en los EBAIS para esos pacientes.",
+      "en": "CCSS AIDA: enrichment of the existing record. Documents Board of Directors approval of the project roadmap, the stated focus on chronic conditions (diabetes, hypertension, obesity), and the parallel non-AI component expanding medicines available at EBAIS primary-care clinics for those patients."
+    },
+    "fuente": {
+      "es": "Monumental",
+      "en": "Monumental"
+    },
+    "fuente_url": "https://www.monumental.co.cr/2026/02/25/ccss-usara-inteligencia-artificial-y-ampliara-oferta-de-medicamentos-en-ebais/"
+  },
+  {
+    "fecha": "2026-05-22",
+    "tipo": "proyecto",
+    "actualizacion": {
+      "es": "UCR CITIC IA aplicada a software: se documenta nueva publicación académica «Machine Learning-Based Flood Prediction: A Tertiary Study», estudio terciario sobre predicción de inundaciones con machine learning. Extiende la línea hacia gestión de riesgo climático.",
+      "en": "UCR CITIC AI applied to software: documents a new academic publication, \"Machine Learning-Based Flood Prediction: A Tertiary Study\" — a tertiary study on flood prediction with machine learning. Extends the line toward climate-risk management."
+    },
+    "fuente": {
+      "es": "CITIC-UCR",
+      "en": "CITIC-UCR"
+    },
+    "fuente_url": "https://citic.ucr.ac.cr/publicaciones/machine-learning-based-flood-prediction-tertiary-study"
+  },
+  {
     "fecha": "2026-05-19",
     "tipo": "indicador",
     "actualizacion": {
