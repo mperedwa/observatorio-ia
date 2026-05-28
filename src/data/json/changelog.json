@@ -1,5 +1,31 @@
 [
   {
+    "fecha": "2026-05-27",
+    "tipo": "proyecto",
+    "actualizacion": {
+      "es": "CCSS AIDA: enriquecimiento operativo. Se documentan las 15 áreas de salud piloto por nombre (Tibás-Uruca-Merced, Alajuela Central, Mata Redonda-Hospital, Cartago, Los Chiles, Pital, Cóbano, Garabito, Limón, Talamanca, Pérez Zeledón, Buenos Aires, Coto Brus, Nicoya, Carrillo), 292 nuevas plazas para el despliegue, y la lista específica de medicamentos ampliados en EBAIS (rosuvastatina, montelukast, alendronato de calcio). Se incorporan datos epidemiológicos institucionales: HTA 36,6%, diabetes 14,8%, control insuficiente 4/10 y 6/10. Se corrige nombre del gerente médico a Dr. Alexánder León Sánchez Cabo.",
+      "en": "CCSS AIDA: operational enrichment. Documents the 15 pilot health areas by name (Tibás-Uruca-Merced, Alajuela Central, Mata Redonda-Hospital, Cartago, Los Chiles, Pital, Cóbano, Garabito, Limón, Talamanca, Pérez Zeledón, Buenos Aires, Coto Brus, Nicoya, Carrillo), 292 new positions for the deployment, and the specific list of expanded EBAIS medicines (rosuvastatin, montelukast, calcium alendronate). Adds institutional epidemiological data: hypertension 36.6%, diabetes 14.8%, insufficient control 4/10 and 6/10. Corrects medical manager's name to Dr. Alexánder León Sánchez Cabo."
+    },
+    "fuente": {
+      "es": "El Observador CR",
+      "en": "El Observador CR"
+    },
+    "fuente_url": "https://www.elobservador.cr/"
+  },
+  {
+    "fecha": "2026-05-27",
+    "tipo": "proyecto",
+    "actualizacion": {
+      "es": "CCSS depuración de listas de espera: corrección y enriquecimiento. Nombre completo verificado del gerente médico: Dr. Alexánder León Sánchez Cabo (alias en prensa Alexander Sánchez Cabo), conforme a Acta de Junta Directiva CCSS N.° 9589 del 10 de marzo de 2026. Se documenta la vocería técnica de UTLE en Enué Arrieta Espinoza y la fuente operativa de cifras en el Reporte LEQ marzo 2026. Se registra que Marvin Palma ejerce como gerente médico interino desde el 8 de mayo de 2026.",
+      "en": "CCSS wait-list cleanup: correction and enrichment. Verified full name of the medical manager: Dr. Alexánder León Sánchez Cabo (press alias Alexander Sánchez Cabo), per CCSS Board of Directors Minutes N.° 9589 of March 10, 2026. Documents UTLE technical spokesperson as Enué Arrieta Espinoza and the operational source of figures as the CCSS LEQ March 2026 Report. Records Marvin Palma as interim medical manager since May 8, 2026."
+    },
+    "fuente": {
+      "es": "Acta JD CCSS N.° 9589 · Reporte LEQ marzo 2026",
+      "en": "CCSS Board Minutes N.° 9589 · LEQ March 2026 Report"
+    },
+    "fuente_url": "https://www.ccss.sa.cr/"
+  },
+  {
     "fecha": "2026-05-22",
     "tipo": "proyecto",
     "actualizacion": {
