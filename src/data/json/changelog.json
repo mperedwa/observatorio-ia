@@ -1,17 +1,17 @@
 [
   {
     "fecha": "2026-06-02",
-    "tipo": "proyecto",
+    "tipo": "indicador",
     "actualizacion": {
-      "es": "Se agrega proyecto AILA (Evaluación del Panorama de la Inteligencia Artificial) del PNUD, liderado por MICITT con participación de 75 instituciones. Evaluación de readiness de IA iniciada en marzo 2026.",
-      "en": "Added AILA project (Artificial Intelligence Landscape Assessment) by UNDP, led by MICITT with 75 institutions. AI readiness assessment initiated March 2026."
+      "es": "Se agrega AILA (Evaluación del Panorama de la Inteligencia Artificial) como recurso del observatorio. Es la evaluación de readiness del PNUD aplicada por MICITT a 75 instituciones costarricenses; iniciada en marzo 2026. No es un proyecto de aplicación de IA, es un diagnóstico institucional.",
+      "en": "Added AILA (Artificial Intelligence Landscape Assessment) as an observatory resource. It is the UNDP readiness assessment applied by MICITT to 75 Costa Rican institutions; initiated March 2026. Not an AI application project but an institutional diagnostic."
     },
     "fuente": {
       "es": "PNUD Costa Rica",
       "en": "UNDP Costa Rica"
     },
     "fuente_url": "https://www.undp.org/es/costa-rica/comunicados-de-prensa/costa-rica-inicia-evaluacion-nacional-en-inteligencia-artificial-para-impulsar-su-transformacion-digital-0",
-    "commit_sha": "115815d"
+    "commit_sha": "8a4f6b0"
   },
   {
     "fecha": "2026-05-27",

@@ -20,6 +20,15 @@ const recursos: Recurso[] = [
   },
   {
     titulo: {
+      es: 'AILA: Evaluación del Panorama de la Inteligencia Artificial',
+      en: 'AILA: Artificial Intelligence Landscape Assessment',
+    },
+    fuente: 'PNUD / MICITT',
+    url: 'https://www.undp.org/es/costa-rica/comunicados-de-prensa/costa-rica-inicia-evaluacion-nacional-en-inteligencia-artificial-para-impulsar-su-transformacion-digital-0',
+    tipo: { es: 'Evaluación diagnóstica', en: 'Diagnostic assessment' },
+  },
+  {
+    titulo: {
       es: 'Lineamientos Básicos para el uso de IA Generativa en el Poder Judicial',
       en: 'Basic Guidelines for Generative AI use in the Judicial Branch',
     },
