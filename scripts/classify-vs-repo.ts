@@ -1,32 +1,42 @@
 /**
- * Clasifica cada candidato del último scrape contra los proyectos del repo.
+ * Clasifica cada candidato del último scrape contra TRES fuentes del repo:
+ *   - src/data/json/proyectos.json (proyectos institucionales mapeados)
+ *   - src/components/Recursos.tsx (recursos / políticas públicas / indicadores)
+ *   - src/app/[locale]/analisis/<slug>/translations.ts (artículos publicados)
  *
- * Entrada: `scraper-runs/last-run.json` (producido por scrapers/run-all.ts)
- *          `src/data/json/proyectos.json` (inventario actual)
- * Salida:  `scraper-runs/classification.json` con buckets ya_existe / ruido / nuevos
- *          `scraper-runs/stub-nuevos.json` (solo si nuevos.length > 0) con un
- *          esqueleto de proyecto listo para mergear tras revisión humana.
+ * Salida: scraper-runs/classification.json con buckets:
+ *   - nuevos    : sin match contra repo, ameritan agregarse
+ *   - ya_existe : matcheados con un proyecto / recurso / artículo, sin señal de update
+ *   - revisar   : matcheados PERO el titulo trae keywords de cambio de estado
+ *                 (aprueba, pospone, lanza, resultado, etc.). Requieren revisión
+ *                 humana porque pueden ser updates relevantes del item existente.
+ *   - ruido     : descartados (score bajo, fuente no institucional, tipo=ruido)
  *
- * El job en .github/workflows/scrape.yml corre este script después del scrape
- * principal. notify-classification-telegram.ts lee la salida y notifica.
+ * Y scraper-runs/stub-nuevos.json (sólo si nuevos > 0): esqueleto con shape de
+ * proyectos.json + placeholders TODO_* para revisión humana antes de mergear.
  *
- * Reglas de clasificación (en orden, primer match gana):
+ * Reglas en orden (primer match gana):
  *   1. classification.tipo === 'ruido'                                     -> RUIDO
- *   2. URL exacta de candidato matchea fuenteUrl de algún proyecto         -> YA_EXISTE
- *   3. institución del candidato no es institución pública mapeada
- *      (camtic, mideplan, cgr, delfino sin hint público en el título)      -> RUIDO
- *   4. institución conocida + ≥2 tokens fuertes compartidos con algún
- *      proyecto de esa institución                                          -> YA_EXISTE
- *   5. classification.score < 5                                             -> RUIDO
- *   6. de lo contrario                                                      -> NUEVO
+ *   2. score < 5                                                            -> RUIDO
+ *   3. URL exacta == proyecto/recurso/artículo                              -> match (ya_existe o revisar)
+ *   4. source sin institución mapeada y sin hint en el título               -> RUIDO
+ *   5. overlap ponderado >=4 con proyecto de la misma institución           -> match
+ *   6. overlap ponderado >=4 con recurso o artículo                          -> match
+ *   7. resto                                                                 -> NUEVO
+ *
+ * Cuando hay match (regla 3/5/6): si el título o el resumen del candidato
+ * contiene keywords de "cambio de estado" (aprueba, pospone, lanza, etc.) y
+ * todo viene de un scrape reciente -> REVISAR. Sino -> YA_EXISTE.
  */
 
-import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { readFileSync, readdirSync, writeFileSync, existsSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 
 const ROOT = process.cwd();
 const REPORT_PATH = join(ROOT, 'scraper-runs', 'last-run.json');
 const PROYECTOS_PATH = join(ROOT, 'src', 'data', 'json', 'proyectos.json');
+const RECURSOS_PATH = join(ROOT, 'src', 'components', 'Recursos.tsx');
+const ANALISIS_DIR = join(ROOT, 'src', 'app', '[locale]', 'analisis');
 const CLASSIFICATION_OUT = join(ROOT, 'scraper-runs', 'classification.json');
 const STUB_OUT = join(ROOT, 'scraper-runs', 'stub-nuevos.json');
 
@@ -137,15 +147,37 @@ const SHORT_TOKEN_WHITELIST = new Set([
   'una', 'utn', 'eut', 'rsn', 'aida', 'enia',
 ]);
 
+// Aliases conocidos: cuando el texto contiene la frase, agregamos el token
+// expandido. Soluciona el caso donde un titular menciona "Estrategia Nacional
+// de Inteligencia Artificial" pero el recurso del repo está catalogado como
+// "ENIA" (acrónimo). Sin esto, el overlap pierde la conexión semántica.
+const PHRASE_ALIASES: Array<{ phrase: RegExp; token: string }> = [
+  // Cubrimos las variantes que aparecen en prensa: "Estrategia Nacional de IA",
+  // "Estrategia de IA", "Estrategia de Inteligencia Artificial", "ENIA" suelto.
+  { phrase: /\benia\b/, token: 'enia' },
+  { phrase: /\bestrategia nacional\b/, token: 'enia' },
+  { phrase: /\bestrategia (?:nacional )?(?:de )?(?:la )?(?:ia|inteligencia artificial)\b/, token: 'enia' },
+  { phrase: /\bexpediente digital unico\b/, token: 'edus' },
+  { phrase: /\bplan nacional de desarrollo\b/, token: 'pnd' },
+  { phrase: /\bcentro nacional de alta tecnologia\b/, token: 'cenat' },
+  { phrase: /\buniversidad de costa rica\b/, token: 'ucr' },
+  { phrase: /\bcaja costarricense de seguro social\b/, token: 'ccss' },
+];
+
 function tokenize(s: string): Set<string> {
+  const norm = normalize(s);
   const out = new Set<string>();
-  for (const tok of normalize(s).split(/\s+/)) {
+  for (const tok of norm.split(/\s+/)) {
     if (STOPWORDS.has(tok)) continue;
     if (tok.length >= 4) {
       out.add(tok);
     } else if (tok.length >= 3 && SHORT_TOKEN_WHITELIST.has(tok)) {
       out.add(tok);
     }
+  }
+  // Expand frases conocidas a su acrónimo institucional.
+  for (const { phrase, token } of PHRASE_ALIASES) {
+    if (phrase.test(norm)) out.add(token);
   }
   return out;
 }
@@ -184,17 +216,118 @@ function resolveInstitucionId(c: ClassifiedCandidate): string | null {
   return null;
 }
 
-type Bucket = 'ya_existe' | 'ruido' | 'nuevo';
+type Bucket = 'ya_existe' | 'ruido' | 'nuevo' | 'revisar';
+type MatchedType = 'proyecto' | 'recurso' | 'articulo';
+
+interface RecursoItem {
+  id: string;          // slug derivado del título
+  titulo: string;      // titulo.es
+  url: string;
+  fuente: string;
+  tipo: string;        // tipo.es
+}
+
+interface ArticuloItem {
+  id: string;          // basename del directorio (01-ia-en-el-estado-costarricense)
+  titulo: string;
+  description: string;
+}
+
+interface MatchResult {
+  type: MatchedType;
+  id: string;
+  reason: string;
+}
 
 interface ClassifiedItem {
   bucket: Bucket;
   reason: string;
-  matched_proyecto_id?: string;
+  matched_type?: MatchedType;
+  matched_id?: string;
   candidate: ClassifiedCandidate;
   institucionId: string | null;
 }
 
-function classifyOne(c: ClassifiedCandidate, proyectos: Proyecto[]): ClassifiedItem {
+// Palabras que sugieren cambio de estado / update sobre un tema existente.
+// Sin tildes (post-normalize). Si una de estas aparece en el título o resumen
+// del candidato, el match contra el repo se promueve a REVISAR para que un
+// humano evalúe si el item existente del repo necesita actualizarse.
+const CAMBIO_ESTADO_KEYWORDS = new Set([
+  'aprueba', 'aprobado', 'aprobada', 'aprueban', 'aprobacion',
+  'pospone', 'pospuesto', 'pospuesta', 'posponen', 'postergan', 'postergado',
+  'lanza', 'lanzado', 'lanzada', 'lanzan', 'lanzamiento',
+  'resultado', 'resultados',
+  'evaluacion', 'evalua', 'evaluan', 'evaluado', 'evaluada',
+  'implementa', 'implementan', 'implementado', 'implementada', 'implementacion',
+  'modifica', 'modificado', 'modificacion', 'modifican',
+  'deroga', 'derogado', 'derogada', 'derogan',
+  'rechaza', 'rechazado', 'rechazada', 'rechazan',
+  'suspende', 'suspendido', 'suspendida', 'suspenden',
+  'cancela', 'cancelado', 'cancelada', 'cancelan',
+  'actualiza', 'actualizado', 'actualizacion', 'actualizan',
+  'sanciona', 'sancionado', 'sancionada',
+  'ratifica', 'ratificado', 'ratificacion',
+  'decreta', 'decretado', 'decreto',
+  'oficializa', 'oficializado',
+  'inaugura', 'inaugurado', 'inauguracion',
+  'amplia', 'ampliado', 'ampliacion', 'amplian',
+  'reduce', 'reduccion',
+  'incrementa', 'incremento',
+  'firma', 'firmado', 'firmada',
+  'expande', 'expansion', 'expanden',
+  'concluye', 'concluyen', 'concluido',
+  'publica', 'publicado', 'publicacion',
+  'reanuda', 'reanudado', 'reanudan',
+]);
+
+// Frases bigram (post-normalize, separadas por espacio) que también disparan
+// REVISAR. Las detectamos sobre la cadena normalizada completa.
+const CAMBIO_ESTADO_BIGRAMS = [
+  'primer debate', 'segundo debate', 'aprueba primer', 'aprobado primer',
+  'aprueba segundo', 'aprobado segundo', 'sin convocar',
+  'en consulta', 'entra vigencia', 'entran vigencia',
+];
+
+function hasCambioEstado(c: ClassifiedCandidate): string | null {
+  const text = `${c.candidate.titulo} ${c.classification?.resumen ?? ''}`;
+  const norm = normalize(text);
+  for (const phrase of CAMBIO_ESTADO_BIGRAMS) {
+    if (norm.includes(phrase)) return phrase;
+  }
+  for (const tok of norm.split(/\s+/)) {
+    if (CAMBIO_ESTADO_KEYWORDS.has(tok)) return tok;
+  }
+  return null;
+}
+
+function decideBucketForMatch(c: ClassifiedCandidate, match: MatchResult): ClassifiedItem {
+  const cambio = hasCambioEstado(c);
+  if (cambio) {
+    return {
+      bucket: 'revisar',
+      reason: `${match.reason}. Trigger update: '${cambio}'`,
+      matched_type: match.type,
+      matched_id: match.id,
+      candidate: c,
+      institucionId: resolveInstitucionId(c),
+    };
+  }
+  return {
+    bucket: 'ya_existe',
+    reason: match.reason,
+    matched_type: match.type,
+    matched_id: match.id,
+    candidate: c,
+    institucionId: resolveInstitucionId(c),
+  };
+}
+
+function classifyOne(
+  c: ClassifiedCandidate,
+  proyectos: Proyecto[],
+  recursos: RecursoItem[],
+  articulos: ArticuloItem[],
+): ClassifiedItem {
   const cls = c.classification;
   const institucionId = resolveInstitucionId(c);
 
@@ -203,25 +336,30 @@ function classifyOne(c: ClassifiedCandidate, proyectos: Proyecto[]): ClassifiedI
     return { bucket: 'ruido', reason: 'LLM clasificó tipo=ruido', candidate: c, institucionId };
   }
 
-  // 2. Score bajo: aunque la URL o tokens coincidan con algo del repo, el LLM
-  // ya nos dijo que no es relevante. Filtrar antes de cualquier match evita
-  // que charlas/eventos secundarios "confirmen" un proyecto existente solo
-  // por compartir institución.
+  // 2. Score bajo.
   const score = cls?.score ?? 0;
   if (score < 5) {
     return { bucket: 'ruido', reason: `score ${score} < 5`, candidate: c, institucionId };
   }
 
-  // 3. URL exacta contra fuenteUrl.
-  const exactMatch = proyectos.find((p) => p.fuenteUrl && p.fuenteUrl === c.candidate.url);
-  if (exactMatch) {
-    return {
-      bucket: 'ya_existe',
-      reason: `URL exacta matchea fuenteUrl de '${exactMatch.id}'`,
-      matched_proyecto_id: exactMatch.id,
-      candidate: c,
-      institucionId,
-    };
+  // 3. URL exacta contra proyectos.
+  const projUrlMatch = proyectos.find((p) => p.fuenteUrl && p.fuenteUrl === c.candidate.url);
+  if (projUrlMatch) {
+    return decideBucketForMatch(c, {
+      type: 'proyecto',
+      id: projUrlMatch.id,
+      reason: `URL exacta matchea fuenteUrl de proyecto '${projUrlMatch.id}'`,
+    });
+  }
+
+  // 3b. URL exacta contra recursos.
+  const recUrlMatch = recursos.find((r) => r.url === c.candidate.url);
+  if (recUrlMatch) {
+    return decideBucketForMatch(c, {
+      type: 'recurso',
+      id: recUrlMatch.id,
+      reason: `URL exacta matchea recurso '${recUrlMatch.id}'`,
+    });
   }
 
   // 4. Fuente sin institución pública mapeada y sin hint útil en el título.
@@ -234,34 +372,72 @@ function classifyOne(c: ClassifiedCandidate, proyectos: Proyecto[]): ClassifiedI
     };
   }
 
-  // 4. Token overlap contra proyectos de la misma institución.
+  // 5. Token overlap contra proyectos (filtrado por institución).
+  const candidateTokens = tokenize(
+    `${c.candidate.titulo} ${cls?.resumen ?? ''} ${cls?.tags?.join(' ') ?? ''}`,
+  );
   if (institucionId) {
-    const candidateTokens = tokenize(
-      `${c.candidate.titulo} ${cls?.resumen ?? ''} ${cls?.tags?.join(' ') ?? ''}`,
-    );
-    let bestMatch: Proyecto | null = null;
-    let bestOverlap = 0;
+    let bestProyecto: Proyecto | null = null;
+    let bestProyectoOverlap = 0;
     for (const p of proyectos) {
       if (p.institucionId !== institucionId) continue;
       const projTokens = tokenize(`${p.titulo.es} ${p.descripcion.es} ${p.contexto?.es ?? ''}`);
       const overlap = weightedOverlap(candidateTokens, projTokens);
-      if (overlap > bestOverlap) {
-        bestOverlap = overlap;
-        bestMatch = p;
+      if (overlap > bestProyectoOverlap) {
+        bestProyectoOverlap = overlap;
+        bestProyecto = p;
       }
     }
-    if (bestMatch && bestOverlap >= 4) {
-      return {
-        bucket: 'ya_existe',
-        reason: `overlap ponderado ${bestOverlap} con '${bestMatch.id}' (misma institución)`,
-        matched_proyecto_id: bestMatch.id,
-        candidate: c,
-        institucionId,
-      };
+    if (bestProyecto && bestProyectoOverlap >= 4) {
+      return decideBucketForMatch(c, {
+        type: 'proyecto',
+        id: bestProyecto.id,
+        reason: `overlap ponderado ${bestProyectoOverlap} con proyecto '${bestProyecto.id}'`,
+      });
     }
   }
 
-  // 6. Sobreviviente: candidato a NUEVO.
+  // 6. Token overlap contra recursos y artículos (sin filtrar por institución
+  // porque recursos pueden ser intersectoriales, ej. ENIA = MICITT + intersect).
+  let bestRecurso: RecursoItem | null = null;
+  let bestRecursoOverlap = 0;
+  for (const r of recursos) {
+    const rTokens = tokenize(`${r.titulo} ${r.fuente} ${r.tipo}`);
+    const overlap = weightedOverlap(candidateTokens, rTokens);
+    if (overlap > bestRecursoOverlap) {
+      bestRecursoOverlap = overlap;
+      bestRecurso = r;
+    }
+  }
+  // Threshold más bajo (3) para recursos porque son entries de pocas palabras
+  // (titulo + fuente + tipo) y un overlap de 4 sería prácticamente imposible.
+  if (bestRecurso && bestRecursoOverlap >= 3) {
+    return decideBucketForMatch(c, {
+      type: 'recurso',
+      id: bestRecurso.id,
+      reason: `overlap ponderado ${bestRecursoOverlap} con recurso '${bestRecurso.id}'`,
+    });
+  }
+
+  let bestArticulo: ArticuloItem | null = null;
+  let bestArticuloOverlap = 0;
+  for (const a of articulos) {
+    const aTokens = tokenize(`${a.titulo} ${a.description}`);
+    const overlap = weightedOverlap(candidateTokens, aTokens);
+    if (overlap > bestArticuloOverlap) {
+      bestArticuloOverlap = overlap;
+      bestArticulo = a;
+    }
+  }
+  if (bestArticulo && bestArticuloOverlap >= 4) {
+    return decideBucketForMatch(c, {
+      type: 'articulo',
+      id: bestArticulo.id,
+      reason: `overlap ponderado ${bestArticuloOverlap} con artículo '${bestArticulo.id}'`,
+    });
+  }
+
+  // 7. Sobreviviente: candidato a NUEVO.
   return {
     bucket: 'nuevo',
     reason: institucionId
@@ -306,6 +482,66 @@ function buildStub(item: ClassifiedItem): Partial<Proyecto> {
   };
 }
 
+// Parsers tolerantes para Recursos.tsx y translations.ts de artículos. Estos
+// archivos son TypeScript "casi declarativo": un array literal con objetos.
+// Usamos regex en vez de parser TS completo para evitar dependencias nuevas.
+function loadRecursos(): RecursoItem[] {
+  if (!existsSync(RECURSOS_PATH)) return [];
+  const src = readFileSync(RECURSOS_PATH, 'utf8');
+  const items: RecursoItem[] = [];
+  // Cada bloque {titulo:{es:'...',en:'...'},fuente:'...',url:'...',tipo:{es:'...',en:'...'}}.
+  // Permitimos comas trailing y saltos de línea entre campos.
+  const blockRe = /\{\s*titulo:\s*\{\s*es:\s*'([^']+)',\s*en:\s*'([^']+)',?\s*\},\s*fuente:\s*'([^']+)',\s*url:\s*'([^']+)',\s*tipo:\s*\{\s*es:\s*'([^']+)',\s*en:\s*'([^']+)',?\s*\}/g;
+  let m: RegExpExecArray | null;
+  while ((m = blockRe.exec(src)) !== null) {
+    const titulo = m[1];
+    const fuente = m[3];
+    const url = m[4];
+    const tipo = m[5];
+    items.push({
+      id: slugify(titulo).slice(0, 50),
+      titulo,
+      url,
+      fuente,
+      tipo,
+    });
+  }
+  return items;
+}
+
+function loadArticulos(): ArticuloItem[] {
+  if (!existsSync(ANALISIS_DIR)) return [];
+  const items: ArticuloItem[] = [];
+  const subdirs = readdirSync(ANALISIS_DIR).filter((name) => {
+    if (name.startsWith('_') || name.startsWith('.')) return false;
+    try {
+      return statSync(join(ANALISIS_DIR, name)).isDirectory();
+    } catch {
+      return false;
+    }
+  });
+  for (const slug of subdirs) {
+    const tPath = join(ANALISIS_DIR, slug, 'translations.ts');
+    if (!existsSync(tPath)) continue;
+    const src = readFileSync(tPath, 'utf8');
+    // Extraer meta.title y meta.description del bloque es: { meta: { ... } }.
+    // El archivo tiene `meta: { ..., title: '...', description: '...', ...}`.
+    // No es perfecto pero captura los artículos actuales.
+    const esMetaMatch = /es:\s*\{[\s\S]*?meta:\s*\{([\s\S]*?)\},/i.exec(src);
+    let titulo = slug;
+    let description = '';
+    if (esMetaMatch) {
+      const metaBlock = esMetaMatch[1];
+      const titleMatch = /title:\s*'([^']+)'/.exec(metaBlock);
+      const descMatch = /description:\s*'([^']+)'/.exec(metaBlock);
+      if (titleMatch) titulo = titleMatch[1];
+      if (descMatch) description = descMatch[1];
+    }
+    items.push({ id: slug, titulo, description });
+  }
+  return items;
+}
+
 function main(): void {
   if (!existsSync(REPORT_PATH)) {
     console.error(`classify-vs-repo: no existe ${REPORT_PATH}, skip.`);
@@ -318,9 +554,11 @@ function main(): void {
 
   const report = JSON.parse(readFileSync(REPORT_PATH, 'utf8')) as Consolidated;
   const proyectos = JSON.parse(readFileSync(PROYECTOS_PATH, 'utf8')) as Proyecto[];
+  const recursos = loadRecursos();
+  const articulos = loadArticulos();
 
   console.log(
-    `classify-vs-repo: ${report.classifiedCandidates.length} candidatos vs ${proyectos.length} proyectos del repo`,
+    `classify-vs-repo: ${report.classifiedCandidates.length} candidatos vs ${proyectos.length} proyectos + ${recursos.length} recursos + ${articulos.length} artículos`,
   );
 
   // Dedupe candidatos por URL antes de clasificar (3 fuentes de la misma
@@ -336,11 +574,22 @@ function main(): void {
   }
   const deduped = [...byUrl.values()];
 
-  const classified = deduped.map((c) => classifyOne(c, proyectos));
+  const classified = deduped.map((c) => classifyOne(c, proyectos, recursos, articulos));
 
   const ya_existe = classified.filter((x) => x.bucket === 'ya_existe');
   const ruido = classified.filter((x) => x.bucket === 'ruido');
   const nuevos = classified.filter((x) => x.bucket === 'nuevo');
+  const revisar = classified.filter((x) => x.bucket === 'revisar');
+
+  const serializeItem = (x: ClassifiedItem) => ({
+    titulo: x.candidate.candidate.titulo,
+    url: x.candidate.candidate.url,
+    source: x.candidate.source,
+    score: x.candidate.classification?.score ?? null,
+    matched_type: x.matched_type ?? null,
+    matched_id: x.matched_id ?? null,
+    reason: x.reason,
+  });
 
   const output = {
     classifiedAt: new Date().toISOString(),
@@ -351,15 +600,10 @@ function main(): void {
       ya_existe: ya_existe.length,
       ruido: ruido.length,
       nuevos: nuevos.length,
+      revisar: revisar.length,
     },
-    ya_existe: ya_existe.map((x) => ({
-      titulo: x.candidate.candidate.titulo,
-      url: x.candidate.candidate.url,
-      source: x.candidate.source,
-      score: x.candidate.classification?.score ?? null,
-      matched_proyecto_id: x.matched_proyecto_id,
-      reason: x.reason,
-    })),
+    ya_existe: ya_existe.map(serializeItem),
+    revisar: revisar.map(serializeItem),
     ruido: ruido.map((x) => ({
       titulo: x.candidate.candidate.titulo,
       url: x.candidate.candidate.url,
@@ -381,7 +625,7 @@ function main(): void {
 
   writeFileSync(CLASSIFICATION_OUT, JSON.stringify(output, null, 2) + '\n');
   console.log(
-    `classify-vs-repo: ${nuevos.length} nuevos, ${ya_existe.length} ya existen, ${ruido.length} ruido → ${CLASSIFICATION_OUT}`,
+    `classify-vs-repo: ${nuevos.length} nuevos, ${revisar.length} a revisar, ${ya_existe.length} ya existen, ${ruido.length} ruido → ${CLASSIFICATION_OUT}`,
   );
 
   if (nuevos.length > 0) {

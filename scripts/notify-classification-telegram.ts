@@ -32,17 +32,44 @@ interface NuevoEntry {
   reason: string;
 }
 
+interface RevisarEntry {
+  titulo: string;
+  url: string;
+  source: string;
+  score: number | null;
+  matched_type: 'proyecto' | 'recurso' | 'articulo' | null;
+  matched_id: string | null;
+  reason: string;
+}
+
 interface ClassificationFile {
   classifiedAt: string;
   sourceRanAt: string;
   totalDeduped: number;
   totalRaw: number;
-  counts: { ya_existe: number; ruido: number; nuevos: number };
+  counts: { ya_existe: number; ruido: number; nuevos: number; revisar: number };
   nuevos: NuevoEntry[];
+  revisar?: RevisarEntry[];
 }
 
 function escapeMd(s: string): string {
   return s.replace(/[_*[\]()~`>#+\-=|{}.!]/g, '\\$&');
+}
+
+function appendRevisarSection(c: ClassificationFile, lines: string[]): void {
+  const revisar = c.revisar ?? [];
+  if (revisar.length === 0) return;
+  lines.push('');
+  lines.push(`*🔁 Posibles updates de temas existentes \\(${revisar.length}\\) — revisar manualmente:*`);
+  for (let i = 0; i < revisar.length; i += 1) {
+    const r = revisar[i];
+    const matchedType = r.matched_type ?? 'item';
+    const matchedId = r.matched_id ?? '?';
+    const score = r.score !== null ? `\\[${r.score}\\] ` : '';
+    lines.push(`${i + 1}\\. ${score}*${escapeMd(r.titulo.slice(0, 140))}*`);
+    lines.push(`   _vs ${escapeMd(matchedType)} \`${escapeMd(matchedId)}\`_ · ${escapeMd(r.reason.split('.').pop()?.trim() ?? '')}`);
+    lines.push(`   [fuente](${r.url})`);
+  }
 }
 
 function buildZeroNuevosMessage(c: ClassificationFile): string {
@@ -52,12 +79,19 @@ function buildZeroNuevosMessage(c: ClassificationFile): string {
     timeStyle: 'short',
   });
   const dedup = c.totalRaw !== c.totalDeduped ? ` \\(${c.totalRaw}→${c.totalDeduped} dedup\\)` : '';
-  return [
+  const revisar = c.counts.revisar ?? 0;
+  const lines = [
     `🟢 *Scrape procesado — ${escapeMd(fecha)}*`,
     '',
-    `${c.totalDeduped} candidato\\(s\\)${dedup}: *0 NUEVOS*, ${c.counts.ya_existe} ya existen, ${c.counts.ruido} ruido\\.`,
-    'Cobertura al día\\. Sin acción requerida\\.',
-  ].join('\n');
+    `${c.totalDeduped} candidato\\(s\\)${dedup}: *0 NUEVOS*, ${c.counts.ya_existe} ya existen, ${revisar} a revisar, ${c.counts.ruido} ruido\\.`,
+  ];
+  if (revisar === 0) {
+    lines.push('Cobertura al día\\. Sin acción requerida\\.');
+  } else {
+    lines.push('Cobertura al día sobre items NUEVOS, pero hay updates de items existentes que vale la pena chequear\\.');
+    appendRevisarSection(c, lines);
+  }
+  return lines.join('\n');
 }
 
 function buildNuevosMessage(c: ClassificationFile): string {
@@ -102,6 +136,8 @@ function buildNuevosMessage(c: ClassificationFile): string {
   lines.push(
     `Stub disponible en el artifact \`scraper\\-reports\\-<run\\_id>/stub\\-nuevos\\.json\`\\.`,
   );
+
+  appendRevisarSection(c, lines);
 
   let msg = lines.join('\n');
   if (msg.length > TELEGRAM_MAX_LEN) {
