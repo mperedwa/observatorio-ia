@@ -473,7 +473,11 @@
       "es": "Primer diagnóstico nacional sistemático de capacidades públicas en IA en Costa Rica. Insumo clave para la formulación de la Estrategia Nacional de IA. Diferenciado de otros proyectos del MICITT (CONECTA, LINC) porque su objeto no es entregar un servicio, sino producir evidencia para diseño de política pública. Anunciado en comunicado oficial del PNUD Costa Rica en marzo 2026; resultados pendientes de publicación al cierre del primer semestre 2026.",
       "en": "Costa Rica's first systematic national diagnostic of public-sector AI capabilities. A key input for formulating the National AI Strategy. Different from MICITT's other projects (CONECTA, LINC) in that its purpose is not delivering a service but producing evidence for public policy design. Announced in an official UNDP Costa Rica press release in March 2026; results pending publication at the close of H1 2026."
     },
-    "fuenteUrl": "https://www.undp.org/es/costa-rica/comunicados-de-prensa/costa-rica-inicia-evaluacion-nacional-en-inteligencia-artificial"
+    "fuenteUrl": "https://www.undp.org/es/costa-rica/comunicados-de-prensa/costa-rica-inicia-evaluacion-nacional-en-inteligencia-artificial",
+    "resultado": {
+      "es": "Evaluación en curso a junio 2026. 75 instituciones completaron el instrumento estandarizado; los resultados consolidados serán publicados por el PNUD Costa Rica y servirán de insumo para la Estrategia Nacional de IA (ENIA) en formulación. Sin métricas operativas publicadas a la fecha.",
+      "en": "Assessment in progress as of June 2026. 75 institutions completed the standardized instrument; consolidated results will be published by UNDP Costa Rica and feed the National AI Strategy (ENIA) in formulation. No operational metrics published yet."
+    }
   },
   {
     "id": "ucr-citic-ia-software",
