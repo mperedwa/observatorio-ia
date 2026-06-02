@@ -20,6 +20,7 @@ const categoriaLabel: Record<string, { es: string; en: string }> = {
   educacion: { es: 'Educación', en: 'Education' },
   fiscal: { es: 'Fiscal', en: 'Fiscal' },
   infraestructura: { es: 'Infraestructura', en: 'Infrastructure' },
+  agricultura: { es: 'Agricultura', en: 'Agriculture' },
 };
 
 const estadoChip: Record<string, string> = {

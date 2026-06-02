@@ -1,7 +1,7 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-06-02T05:00:05.483Z",
-  "count": 22,
+  "lastUpdate": "2026-06-02T18:17:21.586Z",
+  "count": 23,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "data": [
@@ -460,6 +460,30 @@
         "en": "First time Costa Rica officially adopts a standard national interoperability platform, closing a long-standing structural gap (each institution integrated at its own pace and on its own standards). The technical claim is literal: the platform adopted is X-Road, not a system under another name. Launched March 2025. The Luxembourg funding amount was not disclosed in primary sources (BNAmericas, MICITT, LuxDev) at the time of this entry."
       },
       "fuenteUrl": "https://www.micitt.go.cr/el-sector-informa/costa-rica-acelera-su-transformacion-digital-con-el-lanzamiento-del-proyecto"
+    },
+    {
+      "id": "micitt-agroboost",
+      "titulo": {
+        "es": "AgroBoost: IA y sensores para caficultura de precisión",
+        "en": "AgroBoost: AI and sensors for precision coffee farming"
+      },
+      "institucionId": "micitt",
+      "categoria": "agricultura",
+      "estado": "operativo",
+      "desde": "2025",
+      "descripcion": {
+        "es": "Programa de caficultura de precisión que combina drones, sensores de campo (humedad, temperatura, pH, conductividad eléctrica del suelo) e inteligencia artificial para mapear cultivos y optimizar la toma de decisiones de 86 caficultores en la región de Los Santos (cantón de Dota). Los datos capturados alimentan modelos de IA que generan recomendaciones agronómicas por finca y permiten ajustar riego, fertilización y manejo de plagas. AgroBoost es la expansión del piloto Project One desarrollado originalmente por Coopedota.",
+        "en": "Precision coffee-farming program combining drones, field sensors (humidity, temperature, pH, soil electrical conductivity) and artificial intelligence to map crops and optimize decision-making for 86 coffee growers in the Los Santos region (Dota canton). The captured data feeds AI models that produce per-farm agronomic recommendations and inform irrigation, fertilization and pest management decisions. AgroBoost is the scale-up of the Project One pilot originally developed by Coopedota."
+      },
+      "contexto": {
+        "es": "Alianza intersectorial coordinada por el MICITT con la Municipalidad de Dota, el INA y cinco cooperativas cafetaleras (Coopedota, Coope San Marcos, COOPESANTOS, APACOOP, FRUTALCOOP). Modelo de adopción que demuestra cómo escalar un piloto cooperativo (Project One de Coopedota) a un programa público con base territorial y multiparticipante. Sector cafetalero costarricense ha sido un objetivo histórico de innovación tecnológica por su peso en exportaciones y el desafío del cambio climático sobre la zona de Los Santos.",
+        "en": "Inter-sectoral alliance coordinated by MICITT with the Municipality of Dota, INA and five coffee cooperatives (Coopedota, Coope San Marcos, COOPESANTOS, APACOOP, FRUTALCOOP). An adoption model that shows how to scale a cooperative pilot (Coopedota's Project One) into a public program with territorial reach and multi-stakeholder participation. Costa Rica's coffee sector has been a long-standing target for technology innovation due to its weight in exports and the climate-change pressure on the Los Santos region."
+      },
+      "resultado": {
+        "es": "MICITT reporta incremento de productividad de aproximadamente 50% en las fincas participantes a partir de la combinación de monitoreo continuo por sensores y recomendaciones agronómicas asistidas por IA. 86 caficultores integrados al programa en su primera fase. Métricas detalladas por finca (rendimiento, ahorro de insumos, agua) sin desagregación pública al cierre del primer semestre 2026.",
+        "en": "MICITT reports approximately 50% productivity gains across participating farms thanks to continuous sensor monitoring and AI-assisted agronomic recommendations. 86 coffee growers integrated in the first phase. Per-farm metrics (yield, input savings, water) not publicly disaggregated as of H1 2026."
+      },
+      "fuenteUrl": "https://www.facebook.com/micitcr/videos/en-el-d%C3%ADa-de-las-personas-agricultoras-costarricenses-reconocemos-c%C3%B3mo-la-innova/1275865677966444/"
     },
     {
       "id": "ucr-citic-ia-software",

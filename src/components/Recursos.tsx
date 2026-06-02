@@ -29,6 +29,15 @@ const recursos: Recurso[] = [
   },
   {
     titulo: {
+      es: 'DisruptIA 2026: Decisión empresarial aumentada con IA',
+      en: 'DisruptIA 2026: AI-Augmented Business Decision Making',
+    },
+    fuente: 'MICITT / INA',
+    url: 'https://www.innovar.pro',
+    tipo: { es: 'Programa de formación', en: 'Training program' },
+  },
+  {
+    titulo: {
       es: 'Lineamientos Básicos para el uso de IA Generativa en el Poder Judicial',
       en: 'Basic Guidelines for Generative AI use in the Judicial Branch',
     },

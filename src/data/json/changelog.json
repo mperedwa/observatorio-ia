@@ -1,6 +1,34 @@
 [
   {
     "fecha": "2026-06-02",
+    "tipo": "proyecto",
+    "actualizacion": {
+      "es": "Se agrega proyecto AgroBoost (caficultura de precisión con IA y sensores) del MICITT en alianza con Municipalidad de Dota, INA y cinco cooperativas cafetaleras. 86 caficultores integrados en Los Santos. Operativo desde 2025, expansión del piloto Project One de Coopedota.",
+      "en": "Added AgroBoost project (precision coffee farming with AI and sensors) by MICITT in partnership with the Municipality of Dota, INA and five coffee cooperatives. 86 growers integrated in Los Santos. Operational since 2025, scale-up of Coopedota's Project One pilot."
+    },
+    "fuente": {
+      "es": "MICITT",
+      "en": "MICITT"
+    },
+    "fuente_url": "https://www.facebook.com/micitcr/videos/en-el-d%C3%ADa-de-las-personas-agricultoras-costarricenses-reconocemos-c%C3%B3mo-la-innova/1275865677966444/",
+    "commit_sha": "20437c0"
+  },
+  {
+    "fecha": "2026-06-02",
+    "tipo": "indicador",
+    "actualizacion": {
+      "es": "Se agrega DisruptIA 2026 como recurso del observatorio: programa de formación en decisión empresarial aumentada con IA, coordinado por MICITT con el INA.",
+      "en": "Added DisruptIA 2026 as an observatory resource: a training program on AI-augmented business decision making, coordinated by MICITT with INA."
+    },
+    "fuente": {
+      "es": "MICITT / INA",
+      "en": "MICITT / INA"
+    },
+    "fuente_url": "https://www.innovar.pro",
+    "commit_sha": "20437c0"
+  },
+  {
+    "fecha": "2026-06-02",
     "tipo": "indicador",
     "actualizacion": {
       "es": "Se agrega AILA (Evaluación del Panorama de la Inteligencia Artificial) como recurso del observatorio. Es la evaluación de readiness del PNUD aplicada por MICITT a 75 instituciones costarricenses; iniciada en marzo 2026. No es un proyecto de aplicación de IA, es un diagnóstico institucional.",
