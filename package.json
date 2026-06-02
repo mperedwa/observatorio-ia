@@ -23,7 +23,9 @@
     "scrape:all": "tsx scrapers/run-all.ts",
     "watch:ilia": "tsx scrapers/ilia-watch.ts",
     "generate-assets": "tsx scripts/generate-share-assets.ts",
-    "notify-telegram": "tsx scripts/notify-telegram.ts"
+    "notify-telegram": "tsx scripts/notify-telegram.ts",
+    "classify-vs-repo": "tsx scripts/classify-vs-repo.ts",
+    "notify-classification-telegram": "tsx scripts/notify-classification-telegram.ts"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
