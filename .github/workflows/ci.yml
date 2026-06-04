@@ -1,14 +1,12 @@
 name: CI
 
-# Corre en cada push a main y en cada PR. Bloquea merges si los tests
-# del classifier rompen — así un patch al scrape pipeline no entra a
-# main sin validación mecánica.
+# Corre en cada push a main y en cada PR. Bloquea merges si:
+#   - typecheck de la app (next + páginas) rompe
+#   - typecheck de scripts/scrapers/tests rompe
+#   - tests de vitest rompen
 #
-# Nota: no incluimos `tsc --noEmit` aquí porque el repo arrastra dos
-# avisos pre-existentes de iteración de Set/Map que `next build`
-# tolera (compilador propio con downlevelIteration). Vitest hace su
-# propio typecheck por archivo via esbuild, lo que cubre el código
-# que importamos en los tests.
+# Dos tsconfigs porque next-plugin necesita estar restringido a la app y
+# scripts/scrapers tienen otro shape (sin React, target node).
 
 on:
   push:
@@ -34,6 +32,12 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Typecheck app
+        run: npx tsc --noEmit -p tsconfig.json
+
+      - name: Typecheck scripts + scrapers + tests
+        run: npx tsc --noEmit -p tsconfig.scripts.json
 
       - name: Tests
         run: npm test
