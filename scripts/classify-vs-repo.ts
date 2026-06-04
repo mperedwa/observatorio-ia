@@ -31,6 +31,7 @@
 
 import { readFileSync, readdirSync, writeFileSync, existsSync, statSync } from 'node:fs';
 import { join } from 'node:path';
+import { pathToFileURL } from 'node:url';
 
 const ROOT = process.cwd();
 const REPORT_PATH = join(ROOT, 'scraper-runs', 'last-run.json');
@@ -42,7 +43,7 @@ const STUB_OUT = join(ROOT, 'scraper-runs', 'stub-nuevos.json');
 
 type Bilingual = { es: string; en: string };
 
-interface Proyecto {
+export interface Proyecto {
   id: string;
   titulo: Bilingual;
   institucionId: string;
@@ -55,7 +56,7 @@ interface Proyecto {
   fuenteUrl: string;
 }
 
-interface Classification {
+export interface Classification {
   score: number;
   tipo: string;
   resumen: string;
@@ -63,7 +64,7 @@ interface Classification {
   modelo?: string;
 }
 
-interface ClassifiedCandidate {
+export interface ClassifiedCandidate {
   source: string;
   candidate: { titulo: string; url: string };
   classification: Classification | null;
@@ -216,10 +217,10 @@ function resolveInstitucionId(c: ClassifiedCandidate): string | null {
   return null;
 }
 
-type Bucket = 'ya_existe' | 'ruido' | 'nuevo' | 'revisar';
-type MatchedType = 'proyecto' | 'recurso' | 'articulo';
+export type Bucket = 'ya_existe' | 'ruido' | 'nuevo' | 'revisar';
+export type MatchedType = 'proyecto' | 'recurso' | 'articulo';
 
-interface RecursoItem {
+export interface RecursoItem {
   id: string;          // slug derivado del título
   titulo: string;      // titulo.es
   url: string;
@@ -227,13 +228,13 @@ interface RecursoItem {
   tipo: string;        // tipo.es
 }
 
-interface ArticuloItem {
+export interface ArticuloItem {
   id: string;          // basename del directorio (01-ia-en-el-estado-costarricense)
   titulo: string;
   description: string;
 }
 
-interface MatchResult {
+export interface MatchResult {
   type: MatchedType;
   id: string;
   reason: string;
@@ -241,7 +242,7 @@ interface MatchResult {
   byUrl?: boolean;
 }
 
-interface ClassifiedItem {
+export interface ClassifiedItem {
   bucket: Bucket;
   reason: string;
   matched_type?: MatchedType;
@@ -290,7 +291,7 @@ const CAMBIO_ESTADO_BIGRAMS = [
   'en consulta', 'entra vigencia', 'entran vigencia',
 ];
 
-function hasCambioEstado(c: ClassifiedCandidate): string | null {
+export function hasCambioEstado(c: ClassifiedCandidate): string | null {
   const text = `${c.candidate.titulo} ${c.classification?.resumen ?? ''}`;
   const norm = normalize(text);
   for (const phrase of CAMBIO_ESTADO_BIGRAMS) {
@@ -302,7 +303,7 @@ function hasCambioEstado(c: ClassifiedCandidate): string | null {
   return null;
 }
 
-function decideBucketForMatch(c: ClassifiedCandidate, match: MatchResult): ClassifiedItem {
+export function decideBucketForMatch(c: ClassifiedCandidate, match: MatchResult): ClassifiedItem {
   // Si el match fue por URL exacta, el candidato ES la misma noticia ya
   // enlazada en el repo (fuenteUrl del proyecto o url del recurso). Aunque
   // el título contenga keywords como 'publica' / 'lanza' / 'implementa',
@@ -340,7 +341,7 @@ function decideBucketForMatch(c: ClassifiedCandidate, match: MatchResult): Class
   };
 }
 
-function classifyOne(
+export function classifyOne(
   c: ClassifiedCandidate,
   proyectos: Proyecto[],
   recursos: RecursoItem[],
@@ -655,4 +656,10 @@ function main(): void {
   }
 }
 
-main();
+// Solo ejecutar main() cuando se invoca el script directamente (no al
+// importarlo desde tests).
+const isDirectInvocation =
+  process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href;
+if (isDirectInvocation) {
+  main();
+}

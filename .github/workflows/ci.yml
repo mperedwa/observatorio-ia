@@ -1,0 +1,39 @@
+name: CI
+
+# Corre en cada push a main y en cada PR. Bloquea merges si los tests
+# del classifier rompen — así un patch al scrape pipeline no entra a
+# main sin validación mecánica.
+#
+# Nota: no incluimos `tsc --noEmit` aquí porque el repo arrastra dos
+# avisos pre-existentes de iteración de Set/Map que `next build`
+# tolera (compilador propio con downlevelIteration). Vitest hace su
+# propio typecheck por archivo via esbuild, lo que cubre el código
+# que importamos en los tests.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Tests
+        run: npm test
