@@ -237,6 +237,8 @@ interface MatchResult {
   type: MatchedType;
   id: string;
   reason: string;
+  /** true si el match fue por URL idéntica a la fuenteUrl del proyecto/recurso. En ese caso el candidato ES la misma noticia ya enlazada y no debe promoverse a 'revisar' por keyword. */
+  byUrl?: boolean;
 }
 
 interface ClassifiedItem {
@@ -301,6 +303,22 @@ function hasCambioEstado(c: ClassifiedCandidate): string | null {
 }
 
 function decideBucketForMatch(c: ClassifiedCandidate, match: MatchResult): ClassifiedItem {
+  // Si el match fue por URL exacta, el candidato ES la misma noticia ya
+  // enlazada en el repo (fuenteUrl del proyecto o url del recurso). Aunque
+  // el título contenga keywords como 'publica' / 'lanza' / 'implementa',
+  // no hay update real — es la pieza original re-detectada. Lo marcamos
+  // ya_existe sin pasar por hasCambioEstado.
+  if (match.byUrl) {
+    return {
+      bucket: 'ya_existe',
+      reason: match.reason,
+      matched_type: match.type,
+      matched_id: match.id,
+      candidate: c,
+      institucionId: resolveInstitucionId(c),
+    };
+  }
+
   const cambio = hasCambioEstado(c);
   if (cambio) {
     return {
@@ -349,6 +367,7 @@ function classifyOne(
       type: 'proyecto',
       id: projUrlMatch.id,
       reason: `URL exacta matchea fuenteUrl de proyecto '${projUrlMatch.id}'`,
+      byUrl: true,
     });
   }
 
@@ -359,6 +378,7 @@ function classifyOne(
       type: 'recurso',
       id: recUrlMatch.id,
       reason: `URL exacta matchea recurso '${recUrlMatch.id}'`,
+      byUrl: true,
     });
   }
 
