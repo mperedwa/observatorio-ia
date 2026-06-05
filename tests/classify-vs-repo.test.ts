@@ -201,6 +201,61 @@ describe('classifyOne', () => {
     expect(result.reason).toMatch(/no mapea a institución pública/);
   });
 
+  it('I. URL google-news rss + publisher en prefijo del título coincide con fuenteUrl → ya_existe (no revisar por keyword)', () => {
+    // Regresión del scrape 5-jun-2026: la URL del candidato viene como
+    // news.google.com/rss/articles/CBMi... (encriptada), pero el prefijo
+    // del título trae "[ccss · tec.ac.cr]" y el proyecto tiene fuenteUrl
+    // en www.tec.ac.cr. Match por publisher debe colapsar el candidato a
+    // ya_existe aunque el título traiga 'implementa' o 'publica'.
+    const proyectos = [proyecto({
+      id: 'ccss-tec-formacion',
+      institucionId: 'ccss',
+      titulo: 'Programa TEC-CCSS de formación en IA médica',
+      descripcion: 'Curso de 8 semanas para personal médico, TI y administrativo',
+      fuenteUrl: 'https://www.tec.ac.cr/hoyeneltec/2025/12/15/tec-ccss-impulsan-uso-inteligencia-artificial-resolver-retos-salud-publica',
+    })];
+    const c = candidate({
+      source: 'google-news',
+      titulo: '[ccss · tec.ac.cr] TEC y CCSS publica investigación IA salud pública',
+      url: 'https://news.google.com/rss/articles/CBMiabc123_url_encriptada_del_rss?oc=5',
+      score: 5,
+      resumen: 'TEC CCSS IA médica',
+    });
+
+    const result = classifyOne(c, proyectos, NO_RECURSOS, NO_ARTICULOS);
+
+    expect(result.bucket).toBe('ya_existe');
+    expect(result.matched_id).toBe('ccss-tec-formacion');
+    expect(result.reason).toMatch(/publisher 'tec\.ac\.cr' coincide/);
+  });
+
+  it('J. URL google-news rss + publisher friendly (sin punto) → revisar normal (no fuerza ya_existe)', () => {
+    // Caso del scrape: "[ccss · Teletica]" donde "Teletica" es nombre
+    // friendly, no hostname. Sin punto en el publisher, no podemos
+    // garantizar el match contra teletica.com — fallback al flujo
+    // normal (revisar si hay keyword, ya_existe si no).
+    const proyectos = [proyecto({
+      id: 'ccss-depuracion-listas',
+      institucionId: 'ccss',
+      titulo: 'CCSS IA Depuración Listas',
+      descripcion: 'Bot CCSS depura listas de espera con IA y EDUS',
+      fuenteUrl: 'https://www.teletica.com/nacional/ccss-implementa-herramienta',
+    })];
+    const c = candidate({
+      source: 'google-news',
+      titulo: '[ccss · Teletica] CCSS implementa herramienta IA listas espera',
+      url: 'https://news.google.com/rss/articles/CBMixyz789_otra_url_encriptada?oc=5',
+      score: 8,
+      resumen: 'CCSS IA listas depuración',
+    });
+
+    const result = classifyOne(c, proyectos, NO_RECURSOS, NO_ARTICULOS);
+
+    // Cae a revisar por 'implementa' — no podemos colapsar publisher friendly.
+    expect(result.bucket).toBe('revisar');
+    expect(result.matched_id).toBe('ccss-depuracion-listas');
+  });
+
   it('H. tipo "ruido" del LLM siempre gana sobre todo lo demás', () => {
     const proyectos = [proyecto({
       id: 'whatever',

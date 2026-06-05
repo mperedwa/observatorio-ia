@@ -202,10 +202,46 @@ const INSTITUCION_IDS_AS_TOKENS = new Set([
 ]);
 
 const HINT_PREFIX = /^\[([a-z][a-z0-9-]*)\s*·/;
+// Captura institucionId + publisher del prefijo del título:
+// `[ccss · tec.ac.cr]`  → groups: ('ccss', 'tec.ac.cr')
+// `[ccss · Teletica]`   → groups: ('ccss', 'Teletica')
+const HINT_PREFIX_FULL = /^\[([a-z][a-z0-9-]*)\s*·\s*([^\]]+)\]/;
 
 function extractTituloHint(titulo: string): string | null {
   const m = HINT_PREFIX.exec(titulo);
   return m ? m[1] : null;
+}
+
+/**
+ * Extrae el publisher del prefijo del título (segundo grupo). Devuelve null
+ * si no hay prefijo. Útil para chequear dedup contra fuenteUrl de un
+ * proyecto cuando la url del candidato es una URL encriptada de Google News
+ * que `curl -I -L` no resuelve confiablemente al medio final.
+ */
+function extractTituloPublisher(titulo: string): string | null {
+  const m = HINT_PREFIX_FULL.exec(titulo);
+  return m ? m[2].trim() : null;
+}
+
+/**
+ * True si el publisher del prefijo del título matchea con el hostname de la
+ * fuenteUrl del proyecto/recurso. Solo confiable cuando el publisher
+ * contiene un punto (es hostname tipo `tec.ac.cr`, no nombre friendly tipo
+ * `Teletica`). Para nombres friendly devolvemos false porque el mapeo
+ * publisher→hostname es ambiguo (Teletica = teletica.com, pero "Infobae"
+ * podría ser infobae.com o infobae.es).
+ */
+function publisherMatchesFuenteUrl(publisher: string, fuenteUrl: string): boolean {
+  if (!publisher.includes('.')) return false;
+  try {
+    const url = new URL(fuenteUrl);
+    // hostname puede venir con `www.` — normalizar quitándolo.
+    const host = url.hostname.replace(/^www\./, '');
+    const pub = publisher.toLowerCase().replace(/^www\./, '');
+    return host === pub || host.endsWith('.' + pub) || pub.endsWith('.' + host);
+  } catch {
+    return false;
+  }
 }
 
 function resolveInstitucionId(c: ClassifiedCandidate): string | null {
@@ -240,6 +276,8 @@ export interface MatchResult {
   reason: string;
   /** true si el match fue por URL idéntica a la fuenteUrl del proyecto/recurso. En ese caso el candidato ES la misma noticia ya enlazada y no debe promoverse a 'revisar' por keyword. */
   byUrl?: boolean;
+  /** true si el publisher del prefijo del título (ej. [ccss · tec.ac.cr]) matchea con el hostname de fuenteUrl del proyecto/recurso. Mismo efecto que byUrl para casos de google-news rss donde la URL viene encriptada y no podemos comparar directo. */
+  bySamePublisher?: boolean;
 }
 
 export interface ClassifiedItem {
@@ -304,12 +342,14 @@ export function hasCambioEstado(c: ClassifiedCandidate): string | null {
 }
 
 export function decideBucketForMatch(c: ClassifiedCandidate, match: MatchResult): ClassifiedItem {
-  // Si el match fue por URL exacta, el candidato ES la misma noticia ya
-  // enlazada en el repo (fuenteUrl del proyecto o url del recurso). Aunque
-  // el título contenga keywords como 'publica' / 'lanza' / 'implementa',
-  // no hay update real — es la pieza original re-detectada. Lo marcamos
+  // Si el match fue por URL exacta o el publisher del título matchea con el
+  // medio de la fuenteUrl, el candidato ES la misma noticia ya enlazada en
+  // el repo (la única razón por la que llega como "candidato" es porque el
+  // scrape la re-detectó en otra fuente o vía Google News rss). Aunque el
+  // título contenga keywords como 'publica' / 'lanza' / 'implementa', no
+  // hay update real — es la pieza original re-detectada. Lo marcamos
   // ya_existe sin pasar por hasCambioEstado.
-  if (match.byUrl) {
+  if (match.byUrl || match.bySamePublisher) {
     return {
       bucket: 'ya_existe',
       reason: match.reason,
@@ -410,10 +450,22 @@ export function classifyOne(
       }
     }
     if (bestProyecto && bestProyectoOverlap >= 4) {
+      // Si la URL del candidato es google-news rss (encriptada), no podemos
+      // comparar contra fuenteUrl directo. Pero el publisher del prefijo del
+      // título (ej. `[ccss · tec.ac.cr]`) suele ser el hostname del medio
+      // que apunta el rss → comparable con el hostname de fuenteUrl.
+      const publisher = extractTituloPublisher(c.candidate.titulo);
+      const samePublisher =
+        publisher !== null &&
+        bestProyecto.fuenteUrl !== '' &&
+        publisherMatchesFuenteUrl(publisher, bestProyecto.fuenteUrl);
       return decideBucketForMatch(c, {
         type: 'proyecto',
         id: bestProyecto.id,
-        reason: `overlap ponderado ${bestProyectoOverlap} con proyecto '${bestProyecto.id}'`,
+        reason: samePublisher
+          ? `overlap ponderado ${bestProyectoOverlap} con proyecto '${bestProyecto.id}' y publisher '${publisher}' coincide con fuenteUrl`
+          : `overlap ponderado ${bestProyectoOverlap} con proyecto '${bestProyecto.id}'`,
+        bySamePublisher: samePublisher,
       });
     }
   }
