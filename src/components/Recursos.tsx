@@ -6,6 +6,8 @@ interface Recurso {
   fuente: string;
   url: string;
   tipo: Bilingual;
+  /** Narrativa breve para contexto (evolución, datos clave, comparación entre ediciones). Renderizada bajo la fuente cuando existe. */
+  nota?: Bilingual;
 }
 
 const recursos: Recurso[] = [
@@ -99,6 +101,19 @@ const recursos: Recurso[] = [
     url: 'https://www.gub.uy/presidencia/institucional/normativa/decreto-n-276025-se-establece-esquema-gobernanza-para-creacion-gestion',
     tipo: { es: 'Gobernanza regional', en: 'Regional governance' },
   },
+  {
+    titulo: {
+      es: 'Índice Latinoamericano de IA 2024 — Costa Rica',
+      en: 'Latin American AI Index 2024 — Costa Rica',
+    },
+    fuente: 'CENIA Chile · UNESCO · CEPAL',
+    url: 'https://indicelatam.cl/wp-content/uploads/2025/01/ILIA_2024_020125_compressed.pdf',
+    tipo: { es: 'Benchmark regional', en: 'Regional benchmark' },
+    nota: {
+      es: 'CR 4° lugar en infraestructura (53,09 pts), tras Chile (67,19), Uruguay (65,27) y Brasil (59,65). Cómputo: 40,02 · HPC: 2,35. En ILIA 2025 CR subió a 53,83 puntos pero bajó al 5° lugar — el score absoluto creció mientras otros países (México) aceleraron más.',
+      en: 'CR 4th in infrastructure (53.09 pts), behind Chile (67.19), Uruguay (65.27) and Brazil (59.65). Compute: 40.02 · HPC: 2.35. In ILIA 2025 CR rose to 53.83 points but dropped to 5th — absolute score grew while other countries (Mexico) accelerated faster.',
+    },
+  },
 ];
 
 export function Recursos({ locale, t }: { locale: Locale; t: Dictionary }) {
@@ -129,6 +144,11 @@ export function Recursos({ locale, t }: { locale: Locale; t: Dictionary }) {
                     </p>
                     <p className="mt-1 font-medium text-slate-900">{r.titulo[locale]}</p>
                     <p className="text-sm text-slate-500 mt-0.5">{r.fuente}</p>
+                    {r.nota && (
+                      <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                        {r.nota[locale]}
+                      </p>
+                    )}
                   </div>
                   <span className="text-institucional-700 text-sm whitespace-nowrap">
                     {t.recursos.abrir}

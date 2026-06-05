@@ -1,5 +1,18 @@
 [
   {
+    "fecha": "2026-06-05",
+    "tipo": "recurso",
+    "actualizacion": {
+      "es": "Se agrega Índice Latinoamericano de IA (ILIA) 2024 como recurso/benchmark regional. CR ocupó el 4° lugar en infraestructura con 53,09 pts. Nota incluye comparación evolutiva con ILIA 2025 (5° lugar, 53,83 pts) para mostrar que el score absoluto creció aunque el ranking bajó por aceleración de otros países (México).",
+      "en": "Added Latin American AI Index (ILIA) 2024 as regional benchmark resource. CR ranked 4th in infrastructure with 53.09 pts. Note includes evolutionary comparison vs ILIA 2025 (5th, 53.83 pts) to show that absolute score grew even as ranking dropped due to other countries (Mexico) accelerating faster."
+    },
+    "fuente": {
+      "es": "CENIA Chile (Centro Nacional de IA) · UNESCO · CEPAL",
+      "en": "CENIA Chile (National AI Center) · UNESCO · CEPAL"
+    },
+    "fuente_url": "https://indicelatam.cl/wp-content/uploads/2025/01/ILIA_2024_020125_compressed.pdf"
+  },
+  {
     "fecha": "2026-06-02",
     "tipo": "proyecto",
     "actualizacion": {
