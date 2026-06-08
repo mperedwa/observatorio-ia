@@ -8,6 +8,7 @@ import type { Dictionary } from '@/i18n/dictionaries';
 export function Nav({ locale, t }: { locale: Locale; t: Dictionary }) {
   const base = `/${locale}/`;
   const items = [
+    { href: `${base}marco-pais`, label: t.nav.marcoPais },
     { href: `${base}#instituciones`, label: t.nav.instituciones },
     { href: `${base}#legislacion`, label: t.nav.legislacion },
     { href: `${base}#indicadores`, label: t.nav.indicadores },
