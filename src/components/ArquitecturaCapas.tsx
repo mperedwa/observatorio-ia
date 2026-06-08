@@ -76,6 +76,29 @@ export function ArquitecturaCapas({
                       {capa.vacio[locale]}
                     </p>
                   </div>
+                  {capa.nota && (
+                    <div className="md:col-span-2">
+                      <p className="text-sm text-slate-600 text-pretty bg-slate-50 border border-slate-200 rounded-md px-4 py-3 italic">
+                        {capa.nota[locale]}
+                      </p>
+                    </div>
+                  )}
+                  {capa.enlaces && capa.enlaces.length > 0 && (
+                    <div className="md:col-span-2 flex flex-wrap gap-2">
+                      {capa.enlaces.map((enlace) => (
+                        <a
+                          key={enlace.url}
+                          href={enlace.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-sm font-medium text-institucional-700 hover:text-institucional-900 underline underline-offset-2"
+                        >
+                          {enlace.label[locale]}
+                          <span aria-hidden="true">↗</span>
+                        </a>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </details>
 

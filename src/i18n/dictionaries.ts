@@ -241,6 +241,7 @@ export interface Dictionary {
     kicker: string;
     titulo: string;
     sub: string;
+    tesis: string;
     ultimaActualizacion: string;
     metaTitle: string;
     metaDescripcion: string;
@@ -416,7 +417,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     footer: {
       titulo: 'Observatorio IA Costa Rica',
       tagline: 'Datos públicos. Iniciativa independiente.',
-      ultimaActualizacion: 'Última actualización: mayo 2026',
+      ultimaActualizacion: 'Última actualización: junio 2026',
       fuentes: 'Fuentes: instituciones públicas de Costa Rica + ILIA (CEPAL).',
       quienMantiene: 'Quién mantiene el observatorio',
       apiPublica: 'API pública JSON para periodistas/investigadores',
@@ -615,6 +616,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       kicker: 'Marco país',
       titulo: 'Marco país de IA en Costa Rica',
       sub: 'Arquitectura de política pública, regulación, lineamientos técnicos y adopción institucional de IA en el Estado costarricense.',
+      tesis: 'Costa Rica ya tiene principios, estrategia, lineamientos técnicos y adopción institucional. La brecha pendiente está en convertir ese marco en procedimientos comunes, verificables y aplicables por las instituciones públicas.',
       ultimaActualizacion: 'Última actualización: junio 2026',
       metaTitle: 'Marco país de inteligencia artificial en Costa Rica',
       metaDescripcion:
@@ -645,13 +647,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
           },
           instituciones: {
             numero: '{instituciones}',
-            titulo: 'Instituciones con proyectos IA verificados',
-            detalle: '18 operativos, 4 piloto, 1 planificado',
+            titulo: 'Instituciones con IA verificada',
+            detalle: 'Poder Judicial, CCSS, Hacienda, MEP, MICITT, UCR y CENAT',
           },
           proyectos: {
             numero: '{proyectos}',
             titulo: 'Proyectos mapeados',
-            detalle: 'Inventario público del sector público costarricense',
+            detalle: '18 operativos, 4 piloto, 1 planificado',
           },
         },
       },
@@ -826,7 +828,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     footer: {
       titulo: 'AI Observatory Costa Rica',
       tagline: 'Public data. Independent initiative.',
-      ultimaActualizacion: 'Last updated: May 2026',
+      ultimaActualizacion: 'Last updated: June 2026',
       fuentes: 'Sources: Costa Rican public institutions + ILIA (CEPAL).',
       quienMantiene: 'Who maintains the observatory',
       apiPublica: 'Public JSON API for journalists/researchers',
@@ -1025,6 +1027,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       kicker: 'Country framework',
       titulo: 'Costa Rica AI country framework',
       sub: 'Architecture of public policy, regulation, technical guidelines and institutional adoption of AI within the Costa Rican State.',
+      tesis: 'Costa Rica already has principles, strategy, technical guidelines and institutional adoption. The pending gap is turning that framework into shared, verifiable and actionable procedures for public institutions.',
       ultimaActualizacion: 'Last update: June 2026',
       metaTitle: 'Costa Rica artificial intelligence country framework',
       metaDescripcion:
@@ -1055,13 +1058,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
           },
           instituciones: {
             numero: '{instituciones}',
-            titulo: 'Institutions with verified AI projects',
-            detalle: '18 operational, 4 pilot, 1 planned',
+            titulo: 'Institutions with verified AI',
+            detalle: 'Judiciary, CCSS, Hacienda, MEP, MICITT, UCR and CENAT',
           },
           proyectos: {
             numero: '{proyectos}',
             titulo: 'Projects mapped',
-            detalle: 'Public inventory of the Costa Rican public sector',
+            detalle: '18 operational, 4 pilot, 1 planned',
           },
         },
       },

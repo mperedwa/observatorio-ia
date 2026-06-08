@@ -99,6 +99,9 @@ export default async function MarcoPaisPage({
           <p className="mt-4 text-lg text-slate-600 max-w-3xl text-pretty">
             {dict.sub}
           </p>
+          <p className="mt-4 text-base sm:text-lg font-medium text-institucional-800 max-w-3xl text-pretty">
+            {dict.tesis}
+          </p>
           <p className="mt-3 text-xs text-slate-500">
             {dict.ultimaActualizacion}
           </p>

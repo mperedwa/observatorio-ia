@@ -76,7 +76,17 @@
       "vacio": {
         "es": "Define lineamientos y controles, pero todavía no funciona como playbook operativo único con formularios, roles, evidencias, umbrales de riesgo y flujos de aprobación estandarizados.",
         "en": "Sets guidelines and controls, but does not yet function as a single operational playbook with standardized forms, roles, evidence, risk thresholds and approval flows."
-      }
+      },
+      "enlaces": [
+        {
+          "label": { "es": "Ver Decreto 44507-MICITT", "en": "View Decree 44507-MICITT" },
+          "url": "https://www.pgrweb.go.cr/scij/Busqueda/Normativa/Normas/nrm_texto_completo.aspx?param1=NRTC&nValor1=1&nValor2=100692"
+        },
+        {
+          "label": { "es": "Ver CNTD completo", "en": "View full CNTD" },
+          "url": "https://www.micitt.go.cr/el-sector-informa/gobierno-oficializa-codigo-nacional-de-tecnologias-digitales-para-modernizar"
+        }
+      ]
     },
     {
       "id": "legislacion-en-tramite",
@@ -112,8 +122,12 @@
         "en": "Public adoption"
       },
       "instrumentos": {
-        "es": "Proyectos de IA en instituciones como Poder Judicial, CCSS, Hacienda, MEP, MICITT, UCR y CENAT. Incluye los Lineamientos Básicos para el uso de IA Generativa Autorizada en el Poder Judicial como guía sectorial.",
-        "en": "AI projects in institutions such as the Judiciary, CCSS, Hacienda, MEP, MICITT, UCR and CENAT. Includes the Basic Guidelines for the use of Authorized Generative AI in the Judiciary as a sectoral guide."
+        "es": "23 proyectos de IA en 7 instituciones: Poder Judicial, CCSS, Hacienda, MEP, MICITT, UCR y CENAT (18 operativos, 4 piloto, 1 planificado).",
+        "en": "23 AI projects across 7 institutions: Judiciary, CCSS, Hacienda, MEP, MICITT, UCR and CENAT (18 operational, 4 pilot, 1 planned)."
+      },
+      "nota": {
+        "es": "Además de proyectos en producción, existen instrumentos sectoriales de gobernanza como los Lineamientos Básicos para el uso de IA Generativa Autorizada en el Poder Judicial. Estos son relevantes pero no equivalen a un marco nacional aplicable a todo el Estado.",
+        "en": "In addition to production projects, there are sectoral governance instruments such as the Basic Guidelines for the use of Authorized Generative AI in the Judiciary. These are relevant but do not amount to a national framework applicable to the entire State."
       },
       "funcion": {
         "es": "Muestra dónde la IA ya está siendo usada en producción, piloto o proyectos verificados dentro del sector público. El inventario actual incluye 18 proyectos operativos, 4 piloto y 1 planificado.",
@@ -167,8 +181,8 @@
     {
       "anio": "2019",
       "evento": {
-        "es": "Principios OCDE sobre IA adoptados como referencia",
-        "en": "OECD AI Principles adopted as reference"
+        "es": "Principios OCDE sobre IA: primer estándar intergubernamental de referencia para IA confiable, con Costa Rica entre los países adherentes en América Latina",
+        "en": "OECD AI Principles: first intergovernmental standard for trustworthy AI, with Costa Rica among the adherent countries in Latin America"
       },
       "pendiente": false
     },

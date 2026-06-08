@@ -19,11 +19,13 @@ export interface Capa {
   orden: number;
   nombreCorto: Bilingual;
   instrumentos: Bilingual;
+  nota?: { es: string; en: string };
   funcion: Bilingual;
   alcance: Bilingual;
   fuerza: Bilingual;
   fuerzaTipo: FuerzaTipo;
   vacio: Bilingual;
+  enlaces?: Array<{ label: { es: string; en: string }; url: string }>;
 }
 
 export interface Hito {
