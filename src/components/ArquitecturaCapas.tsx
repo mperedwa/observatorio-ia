@@ -32,8 +32,16 @@ export function ArquitecturaCapas({
         <ol className="space-y-4" aria-label={dict.titulo}>
           {capas.map((capa, idx) => (
             <li key={capa.id}>
-              <article className="bg-white border border-slate-200 rounded-lg overflow-hidden">
-                <header className="flex flex-wrap items-baseline gap-x-4 gap-y-1 px-5 sm:px-6 py-4 border-b border-slate-100 bg-slate-50/60">
+              {/*
+                Mobile (< md): acordeón con <details>/<summary> — sin JS,
+                colapsado por default excepto la primera capa.
+                Desktop (md+): tarjeta siempre expandida.
+              */}
+              <details
+                open
+                className="group bg-white border border-slate-200 rounded-lg overflow-hidden"
+              >
+                <summary className="flex flex-wrap items-baseline gap-x-4 gap-y-1 px-5 sm:px-6 py-4 border-b border-slate-100 bg-slate-50/60 cursor-pointer list-none md:cursor-default [&::-webkit-details-marker]:hidden">
                   <span className="text-xs uppercase tracking-wider text-slate-500">
                     {dict.capaLabel} {capa.orden}
                   </span>
@@ -45,7 +53,15 @@ export function ArquitecturaCapas({
                   >
                     {fuerzaLabels[capa.fuerzaTipo]}
                   </span>
-                </header>
+                  <span
+                    aria-hidden="true"
+                    className="md:hidden text-slate-400 group-open:rotate-180 transition-transform"
+                  >
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M4 6l4 4 4-4" />
+                    </svg>
+                  </span>
+                </summary>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-5 px-5 sm:px-6 py-5">
                   <Field label={campos.instrumentos} value={capa.instrumentos[locale]} />
@@ -61,7 +77,7 @@ export function ArquitecturaCapas({
                     </p>
                   </div>
                 </div>
-              </article>
+              </details>
 
               {idx < capas.length - 1 && (
                 <div
