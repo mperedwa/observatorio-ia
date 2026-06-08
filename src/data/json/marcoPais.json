@@ -1,0 +1,407 @@
+{
+  "capas": [
+    {
+      "id": "referencia-internacional",
+      "orden": 1,
+      "nombreCorto": {
+        "es": "Principios internacionales",
+        "en": "International principles"
+      },
+      "instrumentos": {
+        "es": "OCDE, recomendaciones globales y herramientas de política pública.",
+        "en": "OECD, global recommendations and public-policy tools."
+      },
+      "funcion": {
+        "es": "Orientan la conversación país sobre IA confiable, derechos, transparencia, robustez, rendición de cuentas e innovación responsable.",
+        "en": "Frame the national conversation on trustworthy AI, rights, transparency, robustness, accountability and responsible innovation."
+      },
+      "alcance": { "es": "Nivel país", "en": "Country level" },
+      "fuerza": { "es": "Referencial", "en": "Referential" },
+      "fuerzaTipo": "referencial",
+      "vacio": {
+        "es": "No traduce los principios en procedimientos institucionales concretos.",
+        "en": "Does not translate principles into concrete institutional procedures."
+      }
+    },
+    {
+      "id": "politica-publica-nacional",
+      "orden": 2,
+      "nombreCorto": {
+        "es": "Estrategia nacional",
+        "en": "National strategy"
+      },
+      "instrumentos": {
+        "es": "ENIA 2024-2027, Plan de Acción y diagnósticos asociados como AILA.",
+        "en": "ENIA 2024-2027, Action Plan and associated diagnostics such as AILA."
+      },
+      "funcion": {
+        "es": "Define prioridades, visión país, líneas de acción y compromisos interinstitucionales para el desarrollo y adopción de IA.",
+        "en": "Defines priorities, country vision, action lines and inter-institutional commitments for AI development and adoption."
+      },
+      "alcance": {
+        "es": "Nacional e interinstitucional",
+        "en": "National and inter-institutional"
+      },
+      "fuerza": {
+        "es": "Orientadora y coordinadora",
+        "en": "Guiding and coordinating"
+      },
+      "fuerzaTipo": "orientadora",
+      "vacio": {
+        "es": "No establece por sí sola el procedimiento diario que debe seguir cada institución al adoptar, contratar, evaluar o escalar sistemas de IA.",
+        "en": "Does not by itself set the daily procedure each institution must follow when adopting, procuring, evaluating or scaling AI systems."
+      }
+    },
+    {
+      "id": "lineamientos-tecnicos-obligatorios",
+      "orden": 3,
+      "nombreCorto": {
+        "es": "CNTD, capítulo IA",
+        "en": "CNTD, AI chapter"
+      },
+      "instrumentos": {
+        "es": "Código Nacional de Tecnologías Digitales, Decreto Ejecutivo 44507-MICITT, Capítulo 7 sobre Inteligencia Artificial.",
+        "en": "National Digital Technologies Code, Executive Decree 44507-MICITT, Chapter 7 on Artificial Intelligence."
+      },
+      "funcion": {
+        "es": "Establece criterios técnicos y de gobernanza para iniciativas digitales del sector público, incluyendo gestión de riesgos, seguridad, mantenimiento, estándares técnicos, sostenibilidad, monitoreo y respuesta a incidentes.",
+        "en": "Sets technical and governance criteria for public-sector digital initiatives, including risk management, security, maintenance, technical standards, sustainability, monitoring and incident response."
+      },
+      "alcance": { "es": "Sector público", "en": "Public sector" },
+      "fuerza": {
+        "es": "Obligatoria para iniciativas y proyectos digitales del Estado",
+        "en": "Mandatory for State digital initiatives and projects"
+      },
+      "fuerzaTipo": "obligatoria",
+      "vacio": {
+        "es": "Define lineamientos y controles, pero todavía no funciona como playbook operativo único con formularios, roles, evidencias, umbrales de riesgo y flujos de aprobación estandarizados.",
+        "en": "Sets guidelines and controls, but does not yet function as a single operational playbook with standardized forms, roles, evidence, risk thresholds and approval flows."
+      }
+    },
+    {
+      "id": "legislacion-en-tramite",
+      "orden": 4,
+      "nombreCorto": {
+        "es": "Proyectos de ley",
+        "en": "Bills in process"
+      },
+      "instrumentos": {
+        "es": "5 expedientes legislativos sobre regulación general de IA, sandboxes regulatorios, IA electoral, deepfakes, rasgos personales y creaciones digitales.",
+        "en": "5 legislative files on general AI regulation, regulatory sandboxes, electoral AI, deepfakes, personal traits and digital creations."
+      },
+      "funcion": {
+        "es": "Busca establecer derechos, obligaciones, límites institucionales, responsabilidades y mecanismos de control.",
+        "en": "Aims to establish rights, duties, institutional limits, responsibilities and control mechanisms."
+      },
+      "alcance": { "es": "Nacional", "en": "National" },
+      "fuerza": {
+        "es": "No vigente todavía",
+        "en": "Not yet in force"
+      },
+      "fuerzaTipo": "no-vigente",
+      "vacio": {
+        "es": "Al no existir una ley aprobada, Costa Rica opera sin marco legal específico de IA. Incluso con ley, seguirá siendo necesaria una capa operativa que traduzca obligaciones legales en procedimientos institucionales.",
+        "en": "With no approved law, Costa Rica operates without a specific AI legal framework. Even with a law, an operational layer translating legal duties into institutional procedures will still be necessary."
+      }
+    },
+    {
+      "id": "implementacion-institucional",
+      "orden": 5,
+      "nombreCorto": {
+        "es": "Adopción pública",
+        "en": "Public adoption"
+      },
+      "instrumentos": {
+        "es": "Proyectos de IA en instituciones como Poder Judicial, CCSS, Hacienda, MEP, MICITT, UCR y CENAT. Incluye los Lineamientos Básicos para el uso de IA Generativa Autorizada en el Poder Judicial como guía sectorial.",
+        "en": "AI projects in institutions such as the Judiciary, CCSS, Hacienda, MEP, MICITT, UCR and CENAT. Includes the Basic Guidelines for the use of Authorized Generative AI in the Judiciary as a sectoral guide."
+      },
+      "funcion": {
+        "es": "Muestra dónde la IA ya está siendo usada en producción, piloto o proyectos verificados dentro del sector público. El inventario actual incluye 18 proyectos operativos, 4 piloto y 1 planificado.",
+        "en": "Shows where AI is already in use in production, pilot or verified projects within the public sector. The current inventory includes 18 operational, 4 pilot and 1 planned projects."
+      },
+      "alcance": {
+        "es": "Institucional y sectorial",
+        "en": "Institutional and sectoral"
+      },
+      "fuerza": {
+        "es": "Operativa, según cada institución",
+        "en": "Operational, per institution"
+      },
+      "fuerzaTipo": "operativa",
+      "vacio": {
+        "es": "La adopción ocurre con distintos niveles de documentación, estándares y gobernanza, sin una metodología pública común para todo el Estado.",
+        "en": "Adoption happens with different levels of documentation, standards and governance, without a common public methodology across the State."
+      }
+    },
+    {
+      "id": "brecha-operativa",
+      "orden": 6,
+      "nombreCorto": {
+        "es": "Procedimiento común pendiente",
+        "en": "Common procedure pending"
+      },
+      "instrumentos": {
+        "es": "Playbook nacional de IA para el sector público (pendiente).",
+        "en": "National public-AI playbook (pending)."
+      },
+      "funcion": {
+        "es": "Convertir principios, estrategia y lineamientos en procedimientos verificables para equipos institucionales.",
+        "en": "Turn principles, strategy and guidelines into verifiable procedures for institutional teams."
+      },
+      "alcance": {
+        "es": "Sector público costarricense",
+        "en": "Costa Rican public sector"
+      },
+      "fuerza": {
+        "es": "Guía operativa común, idealmente vinculada al CNTD y al modelo de gobierno digital",
+        "en": "Shared operational guidance, ideally linked to the CNTD and the digital-government model"
+      },
+      "fuerzaTipo": "pendiente",
+      "vacio": {
+        "es": "Riesgo, contratación, supervisión humana, trazabilidad, auditoría, transición de piloto a producción, incidentes, derechos de usuarios y continuidad del servicio.",
+        "en": "Risk, procurement, human oversight, traceability, audit, pilot-to-production transition, incidents, user rights and service continuity."
+      }
+    }
+  ],
+  "hitos": [
+    {
+      "anio": "2019",
+      "evento": {
+        "es": "Principios OCDE sobre IA adoptados como referencia",
+        "en": "OECD AI Principles adopted as reference"
+      },
+      "pendiente": false
+    },
+    {
+      "anio": "2023",
+      "evento": {
+        "es": "Primeros expedientes legislativos sobre IA en la Asamblea Legislativa",
+        "en": "First legislative files on AI submitted to the Legislative Assembly"
+      },
+      "pendiente": false
+    },
+    {
+      "anio": "2024",
+      "evento": {
+        "es": "Publicación de la Estrategia Nacional de Inteligencia Artificial (ENIA 2024-2027)",
+        "en": "Publication of the National Artificial Intelligence Strategy (ENIA 2024-2027)"
+      },
+      "pendiente": false
+    },
+    {
+      "anio": "2024",
+      "evento": {
+        "es": "Incorporación del Capítulo 7 sobre IA en el CNTD (Decreto 44507-MICITT)",
+        "en": "Incorporation of Chapter 7 on AI into the CNTD (Decree 44507-MICITT)"
+      },
+      "pendiente": false
+    },
+    {
+      "anio": "2025",
+      "evento": {
+        "es": "Plan de Acción de la ENIA",
+        "en": "ENIA Action Plan"
+      },
+      "pendiente": false
+    },
+    {
+      "anio": "2025",
+      "evento": {
+        "es": "Avance de textos sustitutivos y dictámenes legislativos sobre IA",
+        "en": "Progress of substitute texts and legislative reports on AI"
+      },
+      "pendiente": false
+    },
+    {
+      "anio": "2026",
+      "evento": {
+        "es": "Consolidación del inventario público de proyectos de IA en el Estado",
+        "en": "Consolidation of the public inventory of AI projects across the State"
+      },
+      "pendiente": false
+    },
+    {
+      "anio": "",
+      "evento": {
+        "es": "Ley general o marco regulatorio de IA aprobado",
+        "en": "General AI law or regulatory framework approved"
+      },
+      "pendiente": true
+    },
+    {
+      "anio": "",
+      "evento": {
+        "es": "Playbook operativo nacional para adopción de IA pública",
+        "en": "National operational playbook for public AI adoption"
+      },
+      "pendiente": true
+    }
+  ],
+  "instrumentos": [
+    {
+      "id": "ocde",
+      "nombre": { "es": "Principios OCDE", "en": "OECD Principles" },
+      "tipo": { "es": "Referencia", "en": "Reference" },
+      "alcance": { "es": "País", "en": "Country" },
+      "fuerza": { "es": "Referencial", "en": "Referential" },
+      "fuerzaTipo": "referencial",
+      "queResuelve": {
+        "es": "Marco ético y político para IA confiable.",
+        "en": "Ethical and political framework for trustworthy AI."
+      },
+      "queNoResuelve": {
+        "es": "No da procedimientos institucionales.",
+        "en": "Provides no institutional procedures."
+      },
+      "estado": { "es": "Vigente", "en": "In force" }
+    },
+    {
+      "id": "enia",
+      "nombre": { "es": "ENIA 2024-2027", "en": "ENIA 2024-2027" },
+      "tipo": { "es": "Estrategia", "en": "Strategy" },
+      "alcance": { "es": "País", "en": "Country" },
+      "fuerza": { "es": "Orientadora", "en": "Guiding" },
+      "fuerzaTipo": "orientadora",
+      "queResuelve": {
+        "es": "Prioridades y visión país para IA.",
+        "en": "Country priorities and vision for AI."
+      },
+      "queNoResuelve": {
+        "es": "No define protocolo operativo diario.",
+        "en": "Does not define a daily operational protocol."
+      },
+      "estado": { "es": "Vigente", "en": "In force" }
+    },
+    {
+      "id": "plan-accion",
+      "nombre": { "es": "Plan de Acción ENIA", "en": "ENIA Action Plan" },
+      "tipo": {
+        "es": "Implementación estratégica",
+        "en": "Strategic implementation"
+      },
+      "alcance": { "es": "Interinstitucional", "en": "Inter-institutional" },
+      "fuerza": { "es": "Coordinadora", "en": "Coordinating" },
+      "fuerzaTipo": "orientadora",
+      "queResuelve": {
+        "es": "Compromisos y tareas interinstitucionales.",
+        "en": "Inter-institutional commitments and tasks."
+      },
+      "queNoResuelve": {
+        "es": "No estandariza ejecución diaria por institución.",
+        "en": "Does not standardize daily execution per institution."
+      },
+      "estado": { "es": "Vigente", "en": "In force" }
+    },
+    {
+      "id": "cntd-cap7",
+      "nombre": {
+        "es": "CNTD, Capítulo 7 IA",
+        "en": "CNTD, Chapter 7 AI"
+      },
+      "tipo": { "es": "Lineamiento técnico", "en": "Technical guideline" },
+      "alcance": { "es": "Sector público", "en": "Public sector" },
+      "fuerza": { "es": "Obligatorio", "en": "Mandatory" },
+      "fuerzaTipo": "obligatoria",
+      "queResuelve": {
+        "es": "Criterios técnicos y controles de gobernanza.",
+        "en": "Technical criteria and governance controls."
+      },
+      "queNoResuelve": {
+        "es": "No baja a playbook institucional detallado.",
+        "en": "Does not descend to a detailed institutional playbook."
+      },
+      "estado": { "es": "Vigente", "en": "In force" }
+    },
+    {
+      "id": "proyectos-ley",
+      "nombre": { "es": "Proyectos de ley IA", "en": "AI bills" },
+      "tipo": { "es": "Regulación", "en": "Regulation" },
+      "alcance": { "es": "País", "en": "Country" },
+      "fuerza": {
+        "es": "No vigente todavía",
+        "en": "Not yet in force"
+      },
+      "fuerzaTipo": "no-vigente",
+      "queResuelve": {
+        "es": "Eventual marco legal de derechos y obligaciones.",
+        "en": "Eventual legal framework of rights and duties."
+      },
+      "queNoResuelve": {
+        "es": "No resuelve la operación pública hoy.",
+        "en": "Does not solve current public operations."
+      },
+      "estado": { "es": "En trámite", "en": "In process" }
+    },
+    {
+      "id": "lineamientos-pj",
+      "nombre": {
+        "es": "Lineamientos Básicos para el uso de IA Generativa Autorizada en el Poder Judicial",
+        "en": "Basic Guidelines for the use of Authorized Generative AI in the Judiciary"
+      },
+      "tipo": { "es": "Sectorial", "en": "Sectoral" },
+      "alcance": { "es": "Poder Judicial", "en": "Judiciary" },
+      "fuerza": { "es": "Institucional", "en": "Institutional" },
+      "fuerzaTipo": "operativa",
+      "queResuelve": {
+        "es": "Uso interno autorizado de IA generativa en el Poder Judicial.",
+        "en": "Authorized internal use of generative AI within the Judiciary."
+      },
+      "queNoResuelve": {
+        "es": "No aplica a todo el Estado.",
+        "en": "Does not apply to the State at large."
+      },
+      "estado": { "es": "Vigente", "en": "In force" }
+    }
+  ],
+  "brechas": [
+    {
+      "id": "playbook-nacional",
+      "descripcion": {
+        "es": "No existe un playbook nacional de IA para el sector público.",
+        "en": "There is no national AI playbook for the public sector."
+      }
+    },
+    {
+      "id": "inventario-comun",
+      "descripcion": {
+        "es": "No hay un formato común de inventario de sistemas de IA.",
+        "en": "There is no common format for AI-system inventory."
+      }
+    },
+    {
+      "id": "clasificacion-riesgo",
+      "descripcion": {
+        "es": "No hay una metodología común de clasificación de riesgo de casos de uso.",
+        "en": "There is no shared methodology for classifying use-case risk."
+      }
+    },
+    {
+      "id": "contratacion-publica",
+      "descripcion": {
+        "es": "No hay criterios comunes de contratación pública para soluciones de IA.",
+        "en": "There are no common public-procurement criteria for AI solutions."
+      }
+    },
+    {
+      "id": "supervision-humana",
+      "descripcion": {
+        "es": "No hay protocolo nacional de supervisión humana y trazabilidad.",
+        "en": "There is no national human-oversight and traceability protocol."
+      }
+    },
+    {
+      "id": "incidentes",
+      "descripcion": {
+        "es": "No hay mecanismo público de reporte de incidentes de IA.",
+        "en": "There is no public AI-incident reporting mechanism."
+      }
+    },
+    {
+      "id": "tablero-cumplimiento",
+      "descripcion": {
+        "es": "No hay tablero de cumplimiento por institución.",
+        "en": "There is no institutional compliance dashboard."
+      }
+    }
+  ]
+}

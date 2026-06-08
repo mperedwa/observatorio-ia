@@ -12,6 +12,7 @@ export interface Dictionary {
     actualizaciones: string;
     recursos: string;
     acerca: string;
+    marcoPais: string;
   };
   hero: {
     kicker: string;
@@ -236,6 +237,92 @@ export interface Dictionary {
       volverHome: string;
     };
   };
+  marcoPais: {
+    kicker: string;
+    titulo: string;
+    sub: string;
+    ultimaActualizacion: string;
+    metaTitle: string;
+    metaDescripcion: string;
+    indicadores: {
+      titulo: string;
+      sub: string;
+      cards: {
+        estrategia: { numero: string; titulo: string; detalle: string };
+        planAccion: { numero: string; titulo: string; detalle: string };
+        capituloCntd: { numero: string; titulo: string; detalle: string };
+        expedientes: { numero: string; titulo: string; detalle: string };
+        instituciones: { numero: string; titulo: string; detalle: string };
+        proyectos: { numero: string; titulo: string; detalle: string };
+      };
+    };
+    arquitectura: {
+      kicker: string;
+      titulo: string;
+      sub: string;
+      tagline: string;
+      capaLabel: string;
+      campos: {
+        instrumentos: string;
+        funcion: string;
+        alcance: string;
+        fuerza: string;
+        vacio: string;
+      };
+    };
+    timeline: {
+      kicker: string;
+      titulo: string;
+      sub: string;
+      pendienteLabel: string;
+    };
+    matriz: {
+      kicker: string;
+      titulo: string;
+      sub: string;
+      cols: {
+        instrumento: string;
+        tipo: string;
+        alcance: string;
+        fuerza: string;
+        queResuelve: string;
+        queNoResuelve: string;
+        estado: string;
+      };
+    };
+    brechas: {
+      kicker: string;
+      titulo: string;
+      sub: string;
+    };
+    conexion: {
+      kicker: string;
+      titulo: string;
+      sub: string;
+      ctaProyectos: string;
+      ctaInstituciones: string;
+      ctaLegislacion: string;
+      ctaIndicadores: string;
+      ctaRecursos: string;
+    };
+    fuentes: {
+      kicker: string;
+      titulo: string;
+      sub: string;
+      fuentesLabel: string;
+      criteriosLabel: string;
+      criterios: string[];
+      tipos: string[];
+    };
+    fuerzaTipos: {
+      referencial: string;
+      orientadora: string;
+      obligatoria: string;
+      'no-vigente': string;
+      operativa: string;
+      pendiente: string;
+    };
+  };
 }
 
 export const dictionaries: Record<Locale, Dictionary> = {
@@ -251,6 +338,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       actualizaciones: 'Actualizaciones',
       recursos: 'Recursos',
       acerca: 'Acerca de',
+      marcoPais: 'Marco país',
     },
     hero: {
       kicker: 'Observatorio público',
@@ -523,6 +611,131 @@ export const dictionaries: Record<Locale, Dictionary> = {
         volverHome: 'Volver a la página principal',
       },
     },
+    marcoPais: {
+      kicker: 'Marco país',
+      titulo: 'Marco país de IA en Costa Rica',
+      sub: 'Arquitectura de política pública, regulación, lineamientos técnicos y adopción institucional de IA en el Estado costarricense.',
+      ultimaActualizacion: 'Última actualización: junio 2026',
+      metaTitle: 'Marco país de inteligencia artificial en Costa Rica',
+      metaDescripcion:
+        'Arquitectura de política pública, regulación, lineamientos técnicos y adopción institucional de IA en Costa Rica: principios OCDE, ENIA, CNTD, expedientes legislativos, implementación institucional y brechas pendientes.',
+      indicadores: {
+        titulo: 'Indicadores rápidos',
+        sub: 'Lo que ya existe del marco país, en cifras verificables.',
+        cards: {
+          estrategia: {
+            numero: '1',
+            titulo: 'Estrategia nacional',
+            detalle: 'ENIA 2024-2027',
+          },
+          planAccion: {
+            numero: '1',
+            titulo: 'Plan de Acción',
+            detalle: 'Implementación interinstitucional',
+          },
+          capituloCntd: {
+            numero: '1',
+            titulo: 'Capítulo IA en el CNTD',
+            detalle: 'Lineamientos técnicos obligatorios',
+          },
+          expedientes: {
+            numero: '{legislacion}',
+            titulo: 'Expedientes de ley',
+            detalle: 'Ninguno aprobado todavía',
+          },
+          instituciones: {
+            numero: '{instituciones}',
+            titulo: 'Instituciones con proyectos IA verificados',
+            detalle: '18 operativos, 4 piloto, 1 planificado',
+          },
+          proyectos: {
+            numero: '{proyectos}',
+            titulo: 'Proyectos mapeados',
+            detalle: 'Inventario público del sector público costarricense',
+          },
+        },
+      },
+      arquitectura: {
+        kicker: 'Arquitectura por capas',
+        titulo: 'Arquitectura del marco país',
+        sub: 'El marco de IA en Costa Rica no depende de un solo documento. Está compuesto por capas con distinta función, alcance y fuerza institucional. Algunas orientan, otras obligan, otras están en trámite y otras muestran adopción real.',
+        tagline:
+          'Costa Rica ya tiene marco. El siguiente paso es convertirlo en capacidad operativa compartida.',
+        capaLabel: 'Capa',
+        campos: {
+          instrumentos: 'Instrumentos',
+          funcion: 'Función',
+          alcance: 'Alcance',
+          fuerza: 'Fuerza',
+          vacio: 'Vacío que deja',
+        },
+      },
+      timeline: {
+        kicker: 'Hitos país',
+        titulo: 'Hitos de gobernanza IA en Costa Rica',
+        sub: 'A diferencia de la línea de tiempo de proyectos institucionales, esta vista muestra la evolución del marco país: documentos, lineamientos, regulación, participación internacional y decisiones estratégicas.',
+        pendienteLabel: 'Pendiente',
+      },
+      matriz: {
+        kicker: 'Matriz comparativa',
+        titulo: 'Qué resuelve cada instrumento',
+        sub: 'No todos los instrumentos cumplen la misma función. Algunos definen principios, otros establecen dirección estratégica, otros fijan lineamientos técnicos, y otros buscan crear obligaciones legales. Esta matriz permite ver qué existe, a quién aplica y qué vacío deja.',
+        cols: {
+          instrumento: 'Instrumento',
+          tipo: 'Tipo',
+          alcance: 'Alcance',
+          fuerza: 'Fuerza',
+          queResuelve: 'Qué resuelve',
+          queNoResuelve: 'Qué no resuelve',
+          estado: 'Estado',
+        },
+      },
+      brechas: {
+        kicker: 'Brechas pendientes',
+        titulo: 'Brechas de gobernanza operativa',
+        sub: 'Costa Rica ya cuenta con una base de política pública y lineamientos técnicos. El siguiente desafío es pasar de documentos marco a capacidad institucional instalada.',
+      },
+      conexion: {
+        kicker: 'Conexión con el resto del Observatorio',
+        titulo: 'De la política a la adopción real',
+        sub: 'El marco país muestra las reglas, estrategias y lineamientos. El inventario institucional muestra dónde la IA ya se está usando. Ambas vistas son complementarias: una explica la arquitectura de gobernanza, la otra documenta la ejecución pública.',
+        ctaProyectos: 'Ver proyectos institucionales',
+        ctaInstituciones: 'Ver instituciones',
+        ctaLegislacion: 'Ver legislación',
+        ctaIndicadores: 'Ver indicadores',
+        ctaRecursos: 'Ver recursos',
+      },
+      fuentes: {
+        kicker: 'Fuentes y metodología',
+        titulo: 'Fuentes y criterios de inclusión',
+        sub: 'Esta página incluye documentos nacionales, instrumentos internacionales adoptados como referencia, lineamientos técnicos vigentes, expedientes legislativos y proyectos institucionales verificados. No incluye anuncios sin documento público, pilotos no verificables o declaraciones políticas sin instrumento asociado.',
+        fuentesLabel: 'Fuentes',
+        criteriosLabel: 'Criterios de inclusión',
+        tipos: [
+          'Documentos oficiales de MICITT',
+          'Decreto Ejecutivo 44507-MICITT y CNTD',
+          'Asamblea Legislativa',
+          'OCDE',
+          'ILIA',
+          'Instituciones públicas',
+          'Mapeo propio del Observatorio IA Costa Rica',
+        ],
+        criterios: [
+          'Documento público verificable como evidencia primaria.',
+          'Inclusión proporcional al alcance del instrumento (país, sector público, institución).',
+          'Distinción explícita entre fuerza referencial, orientadora y obligatoria.',
+          'Exclusión de anuncios sin instrumento asociado o pilotos no verificables.',
+        ],
+      },
+      fuerzaTipos: {
+        referencial: 'Referencial',
+        orientadora: 'Orientadora',
+        obligatoria: 'Obligatoria',
+        'no-vigente': 'No vigente',
+        operativa: 'Operativa',
+        pendiente: 'Pendiente',
+      },
+    },
   },
   en: {
     siteName: 'AI Observatory',
@@ -536,6 +749,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       actualizaciones: 'Updates',
       recursos: 'Resources',
       acerca: 'About',
+      marcoPais: 'Country Framework',
     },
     hero: {
       kicker: 'Public observatory',
@@ -805,6 +1019,131 @@ export const dictionaries: Record<Locale, Dictionary> = {
         metaDescripcion:
           'Full update history for AI Observatory Costa Rica: every change to the verified catalog with date, type, description and official source.',
         volverHome: 'Back to home',
+      },
+    },
+    marcoPais: {
+      kicker: 'Country framework',
+      titulo: 'Costa Rica AI country framework',
+      sub: 'Architecture of public policy, regulation, technical guidelines and institutional adoption of AI within the Costa Rican State.',
+      ultimaActualizacion: 'Last update: June 2026',
+      metaTitle: 'Costa Rica artificial intelligence country framework',
+      metaDescripcion:
+        'Architecture of public policy, regulation, technical guidelines and institutional AI adoption in Costa Rica: OECD principles, ENIA, CNTD, legislative files, institutional implementation and pending gaps.',
+      indicadores: {
+        titulo: 'Quick indicators',
+        sub: 'What the country framework already shows, in verifiable numbers.',
+        cards: {
+          estrategia: {
+            numero: '1',
+            titulo: 'National strategy',
+            detalle: 'ENIA 2024-2027',
+          },
+          planAccion: {
+            numero: '1',
+            titulo: 'Action Plan',
+            detalle: 'Inter-institutional implementation',
+          },
+          capituloCntd: {
+            numero: '1',
+            titulo: 'AI chapter in the CNTD',
+            detalle: 'Mandatory technical guidelines',
+          },
+          expedientes: {
+            numero: '{legislacion}',
+            titulo: 'Legislative files',
+            detalle: 'None approved yet',
+          },
+          instituciones: {
+            numero: '{instituciones}',
+            titulo: 'Institutions with verified AI projects',
+            detalle: '18 operational, 4 pilot, 1 planned',
+          },
+          proyectos: {
+            numero: '{proyectos}',
+            titulo: 'Projects mapped',
+            detalle: 'Public inventory of the Costa Rican public sector',
+          },
+        },
+      },
+      arquitectura: {
+        kicker: 'Layered architecture',
+        titulo: 'Country framework architecture',
+        sub: 'The AI framework in Costa Rica does not rely on a single document. It is built from layers with different function, scope and institutional force. Some guide, some bind, some are in process and others show real adoption.',
+        tagline:
+          'Costa Rica already has a framework. The next step is turning it into shared operational capacity.',
+        capaLabel: 'Layer',
+        campos: {
+          instrumentos: 'Instruments',
+          funcion: 'Function',
+          alcance: 'Scope',
+          fuerza: 'Force',
+          vacio: 'Gap it leaves',
+        },
+      },
+      timeline: {
+        kicker: 'Country milestones',
+        titulo: 'AI governance milestones in Costa Rica',
+        sub: 'Unlike the institutional adoption timeline, this view shows the evolution of the country framework: documents, guidelines, regulation, international engagement and strategic decisions.',
+        pendienteLabel: 'Pending',
+      },
+      matriz: {
+        kicker: 'Comparative matrix',
+        titulo: 'What each instrument solves',
+        sub: 'Not all instruments play the same role. Some define principles, others set strategic direction, others fix technical guidelines, and others seek to create legal obligations. This matrix shows what exists, who it applies to and what gap it leaves.',
+        cols: {
+          instrumento: 'Instrument',
+          tipo: 'Type',
+          alcance: 'Scope',
+          fuerza: 'Force',
+          queResuelve: 'What it solves',
+          queNoResuelve: 'What it does not solve',
+          estado: 'Status',
+        },
+      },
+      brechas: {
+        kicker: 'Pending gaps',
+        titulo: 'Operational governance gaps',
+        sub: 'Costa Rica already has a base of public policy and technical guidelines. The next challenge is moving from framework documents to installed institutional capacity.',
+      },
+      conexion: {
+        kicker: 'Connection with the rest of the Observatory',
+        titulo: 'From policy to real adoption',
+        sub: 'The country framework shows the rules, strategies and guidelines. The institutional inventory shows where AI is already in use. Both views are complementary: one explains the governance architecture, the other documents public execution.',
+        ctaProyectos: 'See institutional projects',
+        ctaInstituciones: 'See institutions',
+        ctaLegislacion: 'See legislation',
+        ctaIndicadores: 'See indicators',
+        ctaRecursos: 'See resources',
+      },
+      fuentes: {
+        kicker: 'Sources and methodology',
+        titulo: 'Sources and inclusion criteria',
+        sub: 'This page includes national documents, international instruments adopted as reference, current technical guidelines, legislative files and verified institutional projects. It does not include announcements without a public document, unverifiable pilots or political statements without an associated instrument.',
+        fuentesLabel: 'Sources',
+        criteriosLabel: 'Inclusion criteria',
+        tipos: [
+          'Official MICITT documents',
+          'Executive Decree 44507-MICITT and CNTD',
+          'Legislative Assembly',
+          'OECD',
+          'ILIA',
+          'Public institutions',
+          'AI Observatory Costa Rica own mapping',
+        ],
+        criterios: [
+          'Verifiable public document as primary evidence.',
+          'Inclusion proportional to instrument scope (country, public sector, institution).',
+          'Explicit distinction between referential, guiding and mandatory force.',
+          'Exclusion of announcements without an associated instrument or unverifiable pilots.',
+        ],
+      },
+      fuerzaTipos: {
+        referencial: 'Referential',
+        orientadora: 'Guiding',
+        obligatoria: 'Mandatory',
+        'no-vigente': 'Not in force',
+        operativa: 'Operational',
+        pendiente: 'Pending',
       },
     },
   },
