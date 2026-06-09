@@ -79,12 +79,12 @@
       },
       "enlaces": [
         {
-          "label": { "es": "Ver Decreto 44507-MICITT", "en": "View Decree 44507-MICITT" },
-          "url": "https://www.pgrweb.go.cr/scij/Busqueda/Normativa/Normas/nrm_texto_completo.aspx?param1=NRTC&nValor1=1&nValor2=100692"
+          "label": { "es": "Ver Decreto 44507-MICITT en PGR", "en": "View Decree 44507-MICITT at PGR" },
+          "url": "https://pgrweb.go.cr/scij/Busqueda/Normativa/Normas/nrm_texto_completo.aspx?nValor1=1&nValor2=102229&nValor3=141218&param1=NRTC&strTipM=TC"
         },
         {
-          "label": { "es": "Ver CNTD completo", "en": "View full CNTD" },
-          "url": "https://www.micitt.go.cr/el-sector-informa/gobierno-oficializa-codigo-nacional-de-tecnologias-digitales-para-modernizar"
+          "label": { "es": "Ver CNTD vigente en MICITT", "en": "View current CNTD at MICITT" },
+          "url": "https://www.micitt.go.cr/node/625"
         }
       ]
     },

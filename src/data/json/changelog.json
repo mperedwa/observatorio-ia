@@ -1,5 +1,18 @@
 [
   {
+    "fecha": "2026-06-09",
+    "tipo": "recurso",
+    "actualizacion": {
+      "es": "Se corrigen los 2 enlaces de la capa CNTD en Marco País: Decreto 44507-MICITT ahora apunta al texto completo en PGR (SCIJ) y el CNTD vigente apunta a la página oficial del MICITT (node/625, versión 2026).",
+      "en": "Fixed 2 links in the CNTD layer on Marco País: Decree 44507-MICITT now points to the full text at PGR (SCIJ) and the current CNTD points to the official MICITT page (node/625, 2026 version)."
+    },
+    "fuente": {
+      "es": "PGR-SCIJ, MICITT",
+      "en": "PGR-SCIJ, MICITT"
+    },
+    "fuente_url": "https://www.micitt.go.cr/node/625"
+  },
+  {
     "fecha": "2026-06-05",
     "tipo": "recurso",
     "actualizacion": {
