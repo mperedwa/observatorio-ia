@@ -13,6 +13,24 @@ interface Recurso {
 const recursos: Recurso[] = [
   {
     titulo: {
+      es: 'Decreto 44507-MICITT — Código Nacional de Tecnologías Digitales',
+      en: 'Decree 44507-MICITT — National Code of Digital Technologies',
+    },
+    fuente: 'PGR-SCIJ',
+    url: 'https://pgrweb.go.cr/scij/Busqueda/Normativa/Normas/nrm_texto_completo.aspx?nValor1=1&nValor2=102229&nValor3=141218&param1=NRTC&strTipM=TC',
+    tipo: { es: 'Marco normativo', en: 'Regulatory framework' },
+  },
+  {
+    titulo: {
+      es: 'CNTD vigente — Capítulos I al XIX',
+      en: 'Current CNTD — Chapters I through XIX',
+    },
+    fuente: 'MICITT',
+    url: 'https://www.micitt.go.cr/node/625',
+    tipo: { es: 'Marco normativo', en: 'Regulatory framework' },
+  },
+  {
+    titulo: {
       es: 'Estrategia Nacional de IA (ENIA) 2024-2027',
       en: 'National AI Strategy (ENIA) 2024-2027',
     },

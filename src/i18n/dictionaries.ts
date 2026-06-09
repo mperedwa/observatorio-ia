@@ -314,8 +314,6 @@ export interface Dictionary {
       criteriosLabel: string;
       criterios: string[];
       tipos: string[];
-      enlacesLabel: string;
-      enlaces: Array<{ label: string; url: string }>;
     };
     fuerzaTipos: {
       referencial: string;
@@ -730,11 +728,6 @@ export const dictionaries: Record<Locale, Dictionary> = {
           'Distinción explícita entre fuerza referencial, orientadora y obligatoria.',
           'Exclusión de anuncios sin instrumento asociado o pilotos no verificables.',
         ],
-        enlacesLabel: 'Documentos oficiales',
-        enlaces: [
-          { label: 'Decreto 44507-MICITT (PGR)', url: 'https://pgrweb.go.cr/scij/Busqueda/Normativa/Normas/nrm_texto_completo.aspx?nValor1=1&nValor2=102229&nValor3=141218&param1=NRTC&strTipM=TC' },
-          { label: 'CNTD vigente (MICITT)', url: 'https://www.micitt.go.cr/node/625' },
-        ],
       },
       fuerzaTipos: {
         referencial: 'Referencial',
@@ -1145,11 +1138,6 @@ export const dictionaries: Record<Locale, Dictionary> = {
           'Inclusion proportional to instrument scope (country, public sector, institution).',
           'Explicit distinction between referential, guiding and mandatory force.',
           'Exclusion of announcements without an associated instrument or unverifiable pilots.',
-        ],
-        enlacesLabel: 'Official documents',
-        enlaces: [
-          { label: 'Decree 44507-MICITT (PGR)', url: 'https://pgrweb.go.cr/scij/Busqueda/Normativa/Normas/nrm_texto_completo.aspx?nValor1=1&nValor2=102229&nValor3=141218&param1=NRTC&strTipM=TC' },
-          { label: 'Current CNTD (MICITT)', url: 'https://www.micitt.go.cr/node/625' },
         ],
       },
       fuerzaTipos: {
