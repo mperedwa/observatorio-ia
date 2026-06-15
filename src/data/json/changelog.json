@@ -1,5 +1,18 @@
 [
   {
+    "fecha": "2026-06-15",
+    "tipo": "recurso",
+    "actualizacion": {
+      "es": "Se agrega Diálogo Regional AI4LAC sobre Gobernanza de IA como recurso/hito. Proceso regional convocado en mayo 2026 por MICITT, ONU Costa Rica y CEPAL; Costa Rica lidera la consolidación de prioridades AI de América Latina y el Caribe rumbo al Diálogo Global de IA en Suiza. Validado contra comunicado oficial MICITT del 29 de mayo de 2026.",
+      "en": "Added AI4LAC Regional Dialogue on AI Governance as a resource/milestone. Regional process convened in May 2026 by MICITT, UN Costa Rica and ECLAC; Costa Rica leads the consolidation of Latin American and Caribbean AI governance priorities ahead of the Global AI Dialogue in Switzerland. Verified against MICITT official press release of May 29, 2026."
+    },
+    "fuente": {
+      "es": "MICITT / ONU Costa Rica / CEPAL",
+      "en": "MICITT / UN Costa Rica / ECLAC"
+    },
+    "fuente_url": "https://www.micitt.go.cr/el-sector-informa/costa-rica-lidera-dialogo-regional-sobre-inteligencia-artificial"
+  },
+  {
     "fecha": "2026-06-09",
     "tipo": "recurso",
     "actualizacion": {

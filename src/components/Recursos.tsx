@@ -40,6 +40,19 @@ const recursos: Recurso[] = [
   },
   {
     titulo: {
+      es: 'Diálogo Regional AI4LAC sobre Gobernanza de IA',
+      en: 'AI4LAC Regional Dialogue on AI Governance',
+    },
+    fuente: 'MICITT / ONU Costa Rica / CEPAL',
+    url: 'https://www.micitt.go.cr/el-sector-informa/costa-rica-lidera-dialogo-regional-sobre-inteligencia-artificial',
+    tipo: { es: 'Hito regional / Gobernanza IA', en: 'Regional milestone / AI governance' },
+    nota: {
+      es: 'Costa Rica lidera el proceso regional AI4LAC convocado en mayo 2026 por MICITT, ONU Costa Rica y CEPAL para consolidar prioridades de gobernanza de IA de América Latina y el Caribe rumbo al Diálogo Global de IA en Suiza.',
+      en: 'Costa Rica leads the AI4LAC regional process convened in May 2026 by MICITT, UN Costa Rica and ECLAC to consolidate Latin American and Caribbean AI governance priorities ahead of the Global AI Dialogue in Switzerland.',
+    },
+  },
+  {
+    titulo: {
       es: 'AILA: Evaluación del Panorama de la Inteligencia Artificial',
       en: 'AILA: Artificial Intelligence Landscape Assessment',
     },
