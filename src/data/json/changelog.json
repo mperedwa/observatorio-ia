@@ -3,6 +3,19 @@
     "fecha": "2026-06-18",
     "tipo": "recurso",
     "actualizacion": {
+      "es": "Se enriquece el ítem de Coyuntura sobre el II Foro Nacional de IA en Salud con fuentes adicionales triangulando los datos publicados: Delfino.cr (convocatoria oficial con organizadores CCS + ULACIT + DHIT y declaración de Massimo Manzi) y Promed Costa Rica (sitio oficial del evento con ponentes y agenda). Se agrega al texto la mención del panel oficial 'La Agenda IA en Salud' con participación del Viceministro de Salud Allan Mora y de Elliott Garita (Colegio de Médicos y Cirujanos), el Connectathon HL7 FHIR R5 de resultados de laboratorio desarrollado en paralelo, y los organizadores institucionales del evento. La implicación se refuerza con la dimensión técnica de interoperabilidad clínica.",
+      "en": "Enriched the Current-Affairs item on the Second National Forum on AI in Health with additional sources triangulating the published data: Delfino.cr (official announcement listing organizers CCS + ULACIT + DHIT and a Massimo Manzi statement) and Promed Costa Rica (official event site with speakers and agenda). The text now mentions the official panel 'The AI in Health Agenda' featuring Deputy Minister of Health Allan Mora and Elliott Garita (Medical Association), the HL7 FHIR R5 Laboratory Results Connectathon held in parallel, and the event's institutional organizers. The implication is strengthened with the technical dimension of clinical-data interoperability."
+    },
+    "fuente": {
+      "es": "Delfino.cr, Promed Costa Rica",
+      "en": "Delfino.cr, Promed Costa Rica"
+    },
+    "fuente_url": "https://delfino.cr/2026/06/ii-foro-sobre-inteligencia-artificial-en-salud-impulsara-la-implementacion-responsable-de-la-ia-en-costa-rica"
+  },
+  {
+    "fecha": "2026-06-18",
+    "tipo": "recurso",
+    "actualizacion": {
       "es": "Se agrega como ítem de Coyuntura el II Foro Nacional sobre IA en Salud (17 de junio de 2026) y el anuncio de la agenda nacional de IA en salud en construcción por el Ministerio de Salud y MICITT. Incluye declaraciones del gerente médico de la CCSS, Marvin Palma (15 áreas piloto de IA en atención primaria, mamografías y riesgo cardiovascular), y del director ejecutivo de la Cámara Costarricense de la Salud, Massimo Manzi (balance regulación-innovación y necesidad de capacitación). Los proyectos CCSS mencionados ya están catalogados (AIDA, LIDIA, REDIMED, depuración de listas).",
       "en": "Added the Second National Forum on AI in Health (June 17, 2026) and the announcement of a national AI-in-health agenda under construction by the Ministry of Health and MICITT as a Current-Affairs item. Includes statements from CCSS medical manager Marvin Palma (15 primary-care AI pilot areas, mammography and cardiovascular risk) and from the executive director of the Costa Rican Chamber of Health, Massimo Manzi (balance between regulation and innovation, training need). The CCSS projects referenced are already catalogued (AIDA, LIDIA, REDIMED, waiting-list cleanup)."
     },
