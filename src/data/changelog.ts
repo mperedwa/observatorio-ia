@@ -1,7 +1,7 @@
 import data from './json/changelog.json';
 import type { Bilingual } from '@/i18n/config';
 
-export type ChangelogTipo = 'legislacion' | 'institucion' | 'indicador' | 'proyecto';
+export type ChangelogTipo = 'legislacion' | 'institucion' | 'indicador' | 'proyecto' | 'recurso';
 
 export interface ChangelogEntry {
   /** ISO date (YYYY-MM-DD) marking when the catalog change was published. */

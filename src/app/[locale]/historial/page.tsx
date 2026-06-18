@@ -27,6 +27,7 @@ const tipoCls: Record<ChangelogTipo, string> = {
   institucion: 'bg-stone-100 text-stone-700 border-stone-300',
   indicador: 'bg-neutral-100 text-neutral-700 border-neutral-300',
   proyecto: 'bg-zinc-100 text-zinc-700 border-zinc-300',
+  recurso: 'bg-gray-100 text-gray-700 border-gray-300',
 };
 
 export default async function HistorialPage({

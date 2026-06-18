@@ -229,6 +229,7 @@ export interface Dictionary {
       institucion: string;
       indicador: string;
       proyecto: string;
+      recurso: string;
     };
     historialPagina: {
       titulo: string;
@@ -603,6 +604,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         institucion: 'Institución',
         indicador: 'Indicador',
         proyecto: 'Proyecto',
+        recurso: 'Recurso',
       },
       historialPagina: {
         titulo: 'Historial completo de actualizaciones',
@@ -1014,6 +1016,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         institucion: 'Institution',
         indicador: 'Indicator',
         proyecto: 'Project',
+        recurso: 'Resource',
       },
       historialPagina: {
         titulo: 'Full update history',
