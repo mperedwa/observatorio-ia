@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-06-15T13:18:41.440Z",
+  "lastUpdate": "2026-06-18T03:34:09.719Z",
   "count": 23,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
@@ -555,7 +555,7 @@
         "es": "Es la única propuesta pública nacional de hub I+D en IA aplicada del país. Funciona como puente entre la academia pública (CONARE) y el aparato gubernamental, llenando un rol que la ENIA encomendaba al Centro Nacional de Excelencia en IA, aún no operativo.",
         "en": "Costa Rica’s only national public proposal for an applied-AI R&D hub. It acts as a bridge between public academia (CONARE) and the State, filling a role that ENIA had assigned to the National AI Center of Excellence, still not operational."
       },
-      "fuenteUrl": "https://dplnews.com/costa-rica-impulsa-investigacion-y-desarrollo-en-inteligencia-artificial/"
+      "fuenteUrl": "https://www.micitt.go.cr/el-sector-informa/micitt-inicia-formulacion-de-estrategia-de-inteligencia-artificial"
     }
   ]
 }

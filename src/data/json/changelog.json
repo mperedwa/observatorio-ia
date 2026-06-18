@@ -1,5 +1,18 @@
 [
   {
+    "fecha": "2026-06-17",
+    "tipo": "proyecto",
+    "actualizacion": {
+      "es": "Se actualiza la fuenteUrl del proyecto cenat-lania (LaNIA — Laboratorio Nacional de IA): de dplnews.com a la fuente primaria oficial MICITT que confirma la presentación del plan piloto de LANIA por parte del CENAT. La fuente institucional pesa más para auditoría que el sitio de noticias secundario; el cambio no afecta los datos sustantivos del proyecto.",
+      "en": "Updated fuenteUrl for project cenat-lania (LaNIA — National AI Laboratory): from dplnews.com to the primary MICITT institutional source confirming CENAT's presentation of the LANIA pilot plan. The institutional source carries more weight for audit purposes than the secondary news outlet; the change does not affect the project's substantive data."
+    },
+    "fuente": {
+      "es": "MICITT",
+      "en": "MICITT"
+    },
+    "fuente_url": "https://www.micitt.go.cr/el-sector-informa/micitt-inicia-formulacion-de-estrategia-de-inteligencia-artificial"
+  },
+  {
     "fecha": "2026-06-15",
     "tipo": "recurso",
     "actualizacion": {
