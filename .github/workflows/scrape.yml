@@ -79,6 +79,17 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: npm run notify-classification-telegram
 
+      - name: Open scrape-review GitHub Issue
+        # Si la clasificación marca >=1 nuevo o >=1 a revisar, abre un GH Issue
+        # con label `scrape-review` que el bot developer (SiriusOS) procesará
+        # automáticamente (cross-check + analista + consolidación + ping Mario).
+        # Skip silencioso si no hay items que requieran revisión humana.
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_RUN_ID: ${{ github.run_id }}
+        run: npm run create-scrape-review-issue
+
       - name: Detect changes
         id: changes
         run: |
