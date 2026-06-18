@@ -1,5 +1,35 @@
 [
   {
+    "id": "foro-nacional-ia-salud-junio-2026",
+    "fecha": "2026-06-17",
+    "etiqueta": {
+      "es": "Coyuntura · junio 2026",
+      "en": "Current affairs · June 2026"
+    },
+    "titulo": {
+      "es": "II Foro Nacional de IA en Salud: agenda nacional en construcción y 15 áreas piloto de la CCSS",
+      "en": "Second National Forum on AI in Health: national agenda under construction and 15 CCSS pilot areas"
+    },
+    "texto": {
+      "es": "El 17 de junio de 2026 se realizó el II Foro Nacional sobre Inteligencia Artificial en Salud. Según Observador.cr, el gerente médico de la CCSS, Marvin Palma, declaró que la institución utiliza inteligencia artificial en 15 áreas piloto de atención primaria, incluyendo evaluación de riesgo cardiovascular y de pacientes diabéticos. Palma también describió proyectos en análisis para identificar 'zonas calientes' en mamografías y otros estudios de imagen. El director ejecutivo de la Cámara Costarricense de la Salud, Massimo Manzi, indicó que el país está cerca de oficializar una agenda nacional sobre IA en salud, elaborada en conjunto con el Ministerio de Salud y el Ministerio de Ciencia, Innovación, Tecnología y Telecomunicaciones (MICITT). Manzi advirtió sobre el balance entre regulación y no frenar la innovación, y subrayó la necesidad de capacitación para profesionales del sector. La CCSS aclaró que la depuración de listas de espera con IA mantiene validación humana antes de retirar cualquier registro.",
+      "en": "The Second National Forum on AI in Health took place on June 17, 2026. According to Observador.cr, CCSS medical manager Marvin Palma stated that the institution uses artificial intelligence in 15 primary-care pilot areas, including cardiovascular and diabetic risk assessment. Palma also described projects under analysis to identify 'hot zones' in mammograms and other imaging studies. Massimo Manzi, executive director of the Costa Rican Chamber of Health, said the country is close to officializing a national agenda on AI in health, drafted jointly with the Ministry of Health and the Ministry of Science, Innovation, Technology and Telecommunications (MICITT). Manzi warned about balancing regulation and innovation, and stressed the need for sector-wide training. CCSS clarified that AI-assisted waiting-list cleanup keeps a human-validation step before removing any record."
+    },
+    "implicacion": {
+      "es": "Costa Rica avanza hacia un marco específico para IA en salud antes que un marco general de IA: los tres expedientes legislativos de regulación de IA (23.771, 23.919 y 24.484) siguen sin convocatoria del Ejecutivo, mientras el sector salud impulsa una agenda propia desde el Ejecutivo (Salud + MICITT) y la institucionalidad CCSS. Esto consolida un patrón de regulación sectorial blanda en lugar de marco transversal; abre oportunidades de incidencia para actores del sector y aumenta la importancia de la trazabilidad institucional de los pilotos catalogados (AIDA, LIDIA, REDIMED, depuración de listas).",
+      "en": "Costa Rica is moving toward a sector-specific framework for AI in health ahead of a general AI framework: the three AI regulation bills (23.771, 23.919 and 24.484) remain uncalled by the executive, while the health sector is pushing its own agenda from the executive branch (Health + MICITT) and CCSS institutional level. This consolidates a pattern of soft sectoral regulation rather than a cross-cutting framework; it opens advocacy opportunities for sector actors and increases the importance of institutional traceability of the catalogued pilots (AIDA, LIDIA, REDIMED, waiting-list cleanup)."
+    },
+    "fuentes": [
+      {
+        "url": "https://observador.cr/ccss-impulsa-uso-de-inteligencia-artificial-para-mamografias-listas-de-espera-y-atencion-medica/",
+        "nombre": { "es": "Observador.cr", "en": "Observador.cr" },
+        "descripcion": {
+          "es": "Observador.cr — cobertura del II Foro Nacional sobre IA en Salud y declaraciones de Marvin Palma (CCSS) y Massimo Manzi (Cámara Costarricense de la Salud), 17 de junio de 2026.",
+          "en": "Observador.cr — coverage of the Second National Forum on AI in Health and statements from Marvin Palma (CCSS) and Massimo Manzi (Costa Rican Chamber of Health), June 17, 2026."
+        }
+      }
+    ]
+  },
+  {
     "id": "convocatoria-fernandez-mayo-2026",
     "fecha": "2026-05-13",
     "etiqueta": {

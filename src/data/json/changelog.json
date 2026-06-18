@@ -1,5 +1,18 @@
 [
   {
+    "fecha": "2026-06-18",
+    "tipo": "recurso",
+    "actualizacion": {
+      "es": "Se agrega como ítem de Coyuntura el II Foro Nacional sobre IA en Salud (17 de junio de 2026) y el anuncio de la agenda nacional de IA en salud en construcción por el Ministerio de Salud y MICITT. Incluye declaraciones del gerente médico de la CCSS, Marvin Palma (15 áreas piloto de IA en atención primaria, mamografías y riesgo cardiovascular), y del director ejecutivo de la Cámara Costarricense de la Salud, Massimo Manzi (balance regulación-innovación y necesidad de capacitación). Los proyectos CCSS mencionados ya están catalogados (AIDA, LIDIA, REDIMED, depuración de listas).",
+      "en": "Added the Second National Forum on AI in Health (June 17, 2026) and the announcement of a national AI-in-health agenda under construction by the Ministry of Health and MICITT as a Current-Affairs item. Includes statements from CCSS medical manager Marvin Palma (15 primary-care AI pilot areas, mammography and cardiovascular risk) and from the executive director of the Costa Rican Chamber of Health, Massimo Manzi (balance between regulation and innovation, training need). The CCSS projects referenced are already catalogued (AIDA, LIDIA, REDIMED, waiting-list cleanup)."
+    },
+    "fuente": {
+      "es": "Observador.cr",
+      "en": "Observador.cr"
+    },
+    "fuente_url": "https://observador.cr/ccss-impulsa-uso-de-inteligencia-artificial-para-mamografias-listas-de-espera-y-atencion-medica/"
+  },
+  {
     "fecha": "2026-06-17",
     "tipo": "proyecto",
     "actualizacion": {
