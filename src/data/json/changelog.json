@@ -3,6 +3,19 @@
     "fecha": "2026-06-18",
     "tipo": "recurso",
     "actualizacion": {
+      "es": "Corrección factual en el ítem de Coyuntura del II Foro Nacional de IA en Salud: Marvin Palma es 'gerente médico interino' de la CCSS (nombrado a.i. el 8 de mayo de 2026 por seis meses), no titular. Se actualiza también el cargo de Massimo Manzi a 'director ejecutivo de la Cámara Costarricense de la Salud (CCS) / PROMED' para usar la forma institucional completa. Verificado contra páginas oficiales CCSS (nombramiento) y GlueUp/Promed (cargo de Manzi).",
+      "en": "Factual correction in the Current-Affairs item on the Second National Forum on AI in Health: Marvin Palma is the CCSS 'acting medical manager' (appointed a.i. on May 8, 2026 for six months), not the substantive holder. Massimo Manzi's title is also updated to 'executive director of the Costa Rican Chamber of Health (CCS) / PROMED' to use the full institutional form. Verified against official CCSS pages (appointment) and GlueUp/Promed (Manzi's title)."
+    },
+    "fuente": {
+      "es": "CCSS, Cámara Costarricense de la Salud (PROMED)",
+      "en": "CCSS, Costa Rican Chamber of Health (PROMED)"
+    },
+    "fuente_url": "https://www.ccss.sa.cr/noticias/noticia?v=012775226005"
+  },
+  {
+    "fecha": "2026-06-18",
+    "tipo": "recurso",
+    "actualizacion": {
       "es": "Se enriquece el ítem de Coyuntura sobre el II Foro Nacional de IA en Salud con fuentes adicionales triangulando los datos publicados: Delfino.cr (convocatoria oficial con organizadores CCS + ULACIT + DHIT y declaración de Massimo Manzi) y Promed Costa Rica (sitio oficial del evento con ponentes y agenda). Se agrega al texto la mención del panel oficial 'La Agenda IA en Salud' con participación del Viceministro de Salud Allan Mora y de Elliott Garita (Colegio de Médicos y Cirujanos), el Connectathon HL7 FHIR R5 de resultados de laboratorio desarrollado en paralelo, y los organizadores institucionales del evento. La implicación se refuerza con la dimensión técnica de interoperabilidad clínica.",
       "en": "Enriched the Current-Affairs item on the Second National Forum on AI in Health with additional sources triangulating the published data: Delfino.cr (official announcement listing organizers CCS + ULACIT + DHIT and a Massimo Manzi statement) and Promed Costa Rica (official event site with speakers and agenda). The text now mentions the official panel 'The AI in Health Agenda' featuring Deputy Minister of Health Allan Mora and Elliott Garita (Medical Association), the HL7 FHIR R5 Laboratory Results Connectathon held in parallel, and the event's institutional organizers. The implication is strengthened with the technical dimension of clinical-data interoperability."
     },
