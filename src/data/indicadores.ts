@@ -64,3 +64,31 @@ function resolveKpi(k: KpiResumen): KpiResumen {
 export const ilia2025: IndicadorRegional[] = data.ilia2025 as IndicadorRegional[];
 export const comparativaRegional: ComparativaPais[] = data.comparativaRegional as ComparativaPais[];
 export const kpisHero: KpiResumen[] = (data.kpisHero as KpiResumen[]).map(resolveKpi);
+
+export interface OecdRankingRow {
+  pais: Bilingual;
+  score: number;
+  destacado?: boolean;
+  esPromedio?: boolean;
+}
+
+export interface OecdSubdimension {
+  nombre: Bilingual;
+  score: number;
+}
+
+export interface OecdCrVsAnterior {
+  score2023: number;
+  score2025: number;
+  delta: number;
+}
+
+export interface OecdIndex {
+  ranking: OecdRankingRow[];
+  subdimensionesCostaRica: OecdSubdimension[];
+  crVsAnterior: OecdCrVsAnterior;
+  fuentes: FuenteCitada[];
+}
+
+export const dgi2025: OecdIndex = data.dgi2025 as OecdIndex;
+export const ourdata2025: OecdIndex = data.ourdata2025 as OecdIndex;

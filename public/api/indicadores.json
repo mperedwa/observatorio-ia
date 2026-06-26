@@ -1,7 +1,7 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-06-18T19:19:03.617Z",
-  "count": 3,
+  "lastUpdate": "2026-06-26T22:27:07.685Z",
+  "count": 5,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "data": {
@@ -257,6 +257,227 @@
           "en": "53.83/100, -17 gap vs Chile"
         }
       }
-    ]
+    ],
+    "dgi2025": {
+      "ranking": [
+        {
+          "pais": {
+            "es": "Corea del Sur",
+            "en": "South Korea"
+          },
+          "score": 0.95
+        },
+        {
+          "pais": {
+            "es": "Australia",
+            "en": "Australia"
+          },
+          "score": 0.88
+        },
+        {
+          "pais": {
+            "es": "Portugal",
+            "en": "Portugal"
+          },
+          "score": 0.86
+        },
+        {
+          "pais": {
+            "es": "Reino Unido",
+            "en": "United Kingdom"
+          },
+          "score": 0.84
+        },
+        {
+          "pais": {
+            "es": "Chile",
+            "en": "Chile"
+          },
+          "score": 0.79
+        },
+        {
+          "pais": {
+            "es": "Brasil (candidato)",
+            "en": "Brazil (candidate)"
+          },
+          "score": 0.79
+        },
+        {
+          "pais": {
+            "es": "Colombia",
+            "en": "Colombia"
+          },
+          "score": 0.71
+        },
+        {
+          "pais": {
+            "es": "Promedio OCDE",
+            "en": "OECD average"
+          },
+          "score": 0.7,
+          "esPromedio": true
+        },
+        {
+          "pais": {
+            "es": "México",
+            "en": "Mexico"
+          },
+          "score": 0.51
+        },
+        {
+          "pais": {
+            "es": "Costa Rica",
+            "en": "Costa Rica"
+          },
+          "score": 0.45,
+          "destacado": true
+        }
+      ],
+      "subdimensionesCostaRica": [
+        {
+          "nombre": {
+            "es": "Digital by Design",
+            "en": "Digital by Design"
+          },
+          "score": 0.6
+        },
+        {
+          "nombre": {
+            "es": "User-driven",
+            "en": "User-driven"
+          },
+          "score": 0.55
+        },
+        {
+          "nombre": {
+            "es": "Data-driven",
+            "en": "Data-driven"
+          },
+          "score": 0.43
+        },
+        {
+          "nombre": {
+            "es": "Proactiveness",
+            "en": "Proactiveness"
+          },
+          "score": 0.42
+        },
+        {
+          "nombre": {
+            "es": "Government as a Platform",
+            "en": "Government as a Platform"
+          },
+          "score": 0.38
+        },
+        {
+          "nombre": {
+            "es": "Open by Default",
+            "en": "Open by Default"
+          },
+          "score": 0.32
+        }
+      ],
+      "crVsAnterior": {
+        "score2023": 0.22,
+        "score2025": 0.45,
+        "delta": 0.23
+      },
+      "fuentes": [
+        {
+          "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2026/02/digital-government-index-and-open-useful-and-re-usable-data-index_dbe102ed/6347ec74-en.pdf",
+          "nombre": {
+            "es": "OCDE WP No. 90",
+            "en": "OECD WP No. 90"
+          },
+          "descripcion": {
+            "es": "OCDE — Working Paper No. 90 (feb. 2026): Digital Government Index y OURdata Index, scores 2025 por país y subdimensiones metodológicas.",
+            "en": "OECD — Working Paper No. 90 (Feb. 2026): Digital Government Index and OURdata Index, 2025 country scores and methodological subdimensions."
+          }
+        },
+        {
+          "url": "https://www.oecd.org/en/publications/digital-government-outlook-2026_d46c0555-en/costa-rica_c3064731-en.html",
+          "nombre": {
+            "es": "OCDE Country Note CR",
+            "en": "OECD Country Note CR"
+          },
+          "descripcion": {
+            "es": "OCDE — Digital Government Outlook 2026, ficha país de Costa Rica con interpretación de subdimensiones y comparativa OCDE.",
+            "en": "OECD — Digital Government Outlook 2026, Costa Rica country note with subdimension interpretation and OECD benchmark."
+          }
+        }
+      ]
+    },
+    "ourdata2025": {
+      "ranking": [
+        {
+          "pais": {
+            "es": "Promedio OCDE",
+            "en": "OECD average"
+          },
+          "score": 0.53,
+          "esPromedio": true
+        },
+        {
+          "pais": {
+            "es": "Costa Rica",
+            "en": "Costa Rica"
+          },
+          "score": 0.14,
+          "destacado": true
+        }
+      ],
+      "subdimensionesCostaRica": [
+        {
+          "nombre": {
+            "es": "Disponibilidad de datos",
+            "en": "Data availability"
+          },
+          "score": 0.07
+        },
+        {
+          "nombre": {
+            "es": "Accesibilidad de datos",
+            "en": "Data accessibility"
+          },
+          "score": 0.33
+        },
+        {
+          "nombre": {
+            "es": "Apoyo del gobierno a la reutilización",
+            "en": "Government support for data reuse"
+          },
+          "score": 0
+        }
+      ],
+      "crVsAnterior": {
+        "score2023": 0.19,
+        "score2025": 0.14,
+        "delta": -0.05
+      },
+      "fuentes": [
+        {
+          "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2026/02/digital-government-index-and-open-useful-and-re-usable-data-index_dbe102ed/6347ec74-en.pdf",
+          "nombre": {
+            "es": "OCDE WP No. 90",
+            "en": "OECD WP No. 90"
+          },
+          "descripcion": {
+            "es": "OCDE — Working Paper No. 90 (feb. 2026): OURdata Index 2025, scores y subdimensiones.",
+            "en": "OECD — Working Paper No. 90 (Feb. 2026): OURdata Index 2025, scores and subdimensions."
+          }
+        },
+        {
+          "url": "https://www.oecd.org/en/publications/digital-government-outlook-2026_d46c0555-en/costa-rica_c3064731-en.html",
+          "nombre": {
+            "es": "OCDE Country Note CR",
+            "en": "OECD Country Note CR"
+          },
+          "descripcion": {
+            "es": "OCDE — Country Note de Costa Rica con desglose de subdimensiones OURdata.",
+            "en": "OECD — Costa Rica country note with OURdata subdimension breakdown."
+          }
+        }
+      ]
+    }
   }
 }

@@ -115,6 +115,22 @@ export interface Dictionary {
     colPuntaje: string;
     colBarra: string;
   };
+  indicadorDgi: {
+    titulo: string;
+    sub: string;
+    fuenteLabel: string;
+    scoreLabel: string;
+    subdimsLabel: string;
+    crProgresoLabel: string;
+  };
+  indicadorOurdata: {
+    titulo: string;
+    sub: string;
+    fuenteLabel: string;
+    scoreLabel: string;
+    subdimsLabel: string;
+    crProgresoLabel: string;
+  };
   comparte: {
     kicker: string;
     titulo: string;
@@ -460,6 +476,22 @@ export const dictionaries: Record<Locale, Dictionary> = {
       colPais: 'País',
       colPuntaje: 'Puntaje',
       colBarra: 'Visual',
+    },
+    indicadorDgi: {
+      titulo: 'Digital Government Index (DGI) 2025',
+      sub: 'Madurez del gobierno digital según la OCDE. Costa Rica obtiene 0.45 vs un promedio OCDE de 0.70. Mejora sustancial respecto a 2023 (0.22) pero aún por debajo del promedio.',
+      fuenteLabel: 'Fuentes:',
+      scoreLabel: 'Puntaje',
+      subdimsLabel: 'Subdimensiones Costa Rica',
+      crProgresoLabel: 'Costa Rica 2023 → 2025',
+    },
+    indicadorOurdata: {
+      titulo: 'OURdata Index (Open, Useful, Reusable data) 2025',
+      sub: 'Apertura y reutilización de datos públicos. Costa Rica obtiene 0.14 vs un promedio OCDE de 0.53. Retroceso respecto a 2023 (0.19), principalmente por falta de apoyo gubernamental a la reutilización.',
+      fuenteLabel: 'Fuentes:',
+      scoreLabel: 'Puntaje',
+      subdimsLabel: 'Subdimensiones Costa Rica',
+      crProgresoLabel: 'Costa Rica 2023 → 2025',
     },
     comparte: {
       kicker: 'Material para compartir',
@@ -872,6 +904,22 @@ export const dictionaries: Record<Locale, Dictionary> = {
       colPais: 'Country',
       colPuntaje: 'Score',
       colBarra: 'Visual',
+    },
+    indicadorDgi: {
+      titulo: 'Digital Government Index (DGI) 2025',
+      sub: 'OECD measure of digital government maturity. Costa Rica scores 0.45 vs OECD average of 0.70. Substantial improvement over 2023 (0.22) but still below the average.',
+      fuenteLabel: 'Sources:',
+      scoreLabel: 'Score',
+      subdimsLabel: 'Costa Rica subdimensions',
+      crProgresoLabel: 'Costa Rica 2023 → 2025',
+    },
+    indicadorOurdata: {
+      titulo: 'OURdata Index (Open, Useful, Reusable data) 2025',
+      sub: 'Openness and reuse of public data. Costa Rica scores 0.14 vs OECD average of 0.53. Regression from 2023 (0.19), driven mainly by lack of government support for data reuse.',
+      fuenteLabel: 'Sources:',
+      scoreLabel: 'Score',
+      subdimsLabel: 'Costa Rica subdimensions',
+      crProgresoLabel: 'Costa Rica 2023 → 2025',
     },
     comparte: {
       kicker: 'Shareable assets',

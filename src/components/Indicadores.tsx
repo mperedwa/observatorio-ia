@@ -1,5 +1,6 @@
-import { ilia2025 } from '@/data/indicadores';
+import { ilia2025, dgi2025, ourdata2025 } from '@/data/indicadores';
 import { ChartILIATabs } from './ChartILIATabs';
+import { IndicadorOecd } from './IndicadorOecd';
 import type { Dictionary } from '@/i18n/dictionaries';
 import type { Locale } from '@/i18n/config';
 
@@ -20,19 +21,24 @@ export function Indicadores({ locale, t }: { locale: Locale; t: Dictionary }) {
         <p className="mt-3 text-slate-600 max-w-2xl">{t.indicadores.sub}</p>
       </header>
 
-      <div className="border border-slate-200 rounded-lg p-6 bg-white">
-        <div className="flex items-center justify-between mb-6">
-          <h3 className="text-lg font-semibold text-slate-900">{t.indicadores.cardTitulo}</h3>
-          <span className="text-xs text-slate-500">{t.indicadores.fuente}</span>
+      <div className="space-y-8">
+        <div className="border border-slate-200 rounded-lg p-6 bg-white">
+          <div className="flex items-center justify-between mb-6">
+            <h3 className="text-lg font-semibold text-slate-900">{t.indicadores.cardTitulo}</h3>
+            <span className="text-xs text-slate-500">{t.indicadores.fuente}</span>
+          </div>
+          <ChartILIATabs locale={locale} t={t} />
+          <p className="mt-6 text-sm text-slate-600">
+            {t.indicadores.brechaPre}{' '}
+            <span className="font-semibold text-slate-900">
+              {brecha} {t.indicadores.brechaPuntos}
+            </span>
+            . {t.indicadores.brechaPost}
+          </p>
         </div>
-        <ChartILIATabs locale={locale} t={t} />
-        <p className="mt-6 text-sm text-slate-600">
-          {t.indicadores.brechaPre}{' '}
-          <span className="font-semibold text-slate-900">
-            {brecha} {t.indicadores.brechaPuntos}
-          </span>
-          . {t.indicadores.brechaPost}
-        </p>
+
+        <IndicadorOecd data={dgi2025} locale={locale} copy={t.indicadorDgi} />
+        <IndicadorOecd data={ourdata2025} locale={locale} copy={t.indicadorOurdata} />
       </div>
     </section>
   );

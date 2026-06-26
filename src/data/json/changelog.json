@@ -1,5 +1,18 @@
 [
   {
+    "fecha": "2026-06-26",
+    "tipo": "indicador",
+    "actualizacion": {
+      "es": "Se agregan dos nuevos indicadores OCDE 2025 al sitio: Digital Government Index (DGI) y OURdata Index. Costa Rica obtiene DGI 0.45 (vs promedio OCDE 0.70, mejora desde 0.22 en 2023) y OURdata 0.14 (vs promedio OCDE 0.53, retroceso desde 0.19 en 2023). Cada indicador incluye gráfico de barras comparativo con países OCDE/candidatos (DGI: Corea, Australia, Portugal, UK, Chile, Brasil, Colombia, México, CR) y desglose de subdimensiones para Costa Rica (DGI: Digital by Design, User-driven, Data-driven, Proactiveness, Government as a Platform, Open by Default; OURdata: Data availability, Data accessibility, Government support for data reuse).",
+      "en": "Added two new OECD 2025 indicators to the site: Digital Government Index (DGI) and OURdata Index. Costa Rica scores DGI 0.45 (vs OECD average 0.70, improvement from 0.22 in 2023) and OURdata 0.14 (vs OECD average 0.53, regression from 0.19 in 2023). Each indicator includes a comparative bar chart with OECD/candidate countries (DGI: South Korea, Australia, Portugal, UK, Chile, Brazil, Colombia, Mexico, CR) and Costa Rica subdimension breakdown (DGI: Digital by Design, User-driven, Data-driven, Proactiveness, Government as a Platform, Open by Default; OURdata: Data availability, Data accessibility, Government support for data reuse)."
+    },
+    "fuente": {
+      "es": "OCDE — Working Paper No. 90 (feb. 2026); Digital Government Outlook 2026 Country Note Costa Rica",
+      "en": "OECD — Working Paper No. 90 (Feb. 2026); Digital Government Outlook 2026 Country Note Costa Rica"
+    },
+    "fuente_url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2026/02/digital-government-index-and-open-useful-and-re-usable-data-index_dbe102ed/6347ec74-en.pdf"
+  },
+  {
     "fecha": "2026-06-18",
     "tipo": "recurso",
     "actualizacion": {
