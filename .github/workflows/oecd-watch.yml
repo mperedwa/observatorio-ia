@@ -1,0 +1,51 @@
+name: Watch OCDE (DGI + OURdata Index)
+
+# Monitor semestral de la OCDE (https://www.oecd.org/en/topics/digital-government.html)
+# que publica DGI y OURdata Index bianualmente (ediciones 2019, 2023, 2025, próximo
+# estimado 2027). El script detecta señales de nueva edición o Working Paper nuevo y
+# avisa por Telegram. NO actualiza el catálogo automáticamente — la actualización del
+# ranking de Costa Rica en `indicadores.json` requiere lectura editorial del Working
+# Paper nuevo.
+
+on:
+  schedule:
+    # 1 enero y 1 julio a las 12:00 UTC (06:00 CR / 07:00 ET) — cadencia semestral
+    - cron: '0 12 1 1,7 *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  watch-oecd:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run OCDE watcher
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: npm run watch:oecd
+
+      - name: Commit state if changed
+        run: |
+          if [ -n "$(git status --porcelain scraper-runs/oecd-state.json)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add scraper-runs/oecd-state.json
+            git commit -m "chore(oecd-watch): actualiza estado tras chequeo semestral"
+            git push
+          fi

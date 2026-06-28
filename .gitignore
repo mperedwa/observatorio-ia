@@ -45,3 +45,5 @@ next-env.d.ts
 /scraper-runs/*
 # ...salvo estado persistente entre corridas del cron mensual ILIA
 !/scraper-runs/ilia-state.json
+# ...y del cron semestral OECD (DGI + OURdata)
+!/scraper-runs/oecd-state.json
