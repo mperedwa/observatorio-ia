@@ -357,7 +357,7 @@ async function main(): Promise<void> {
     saveState({ ...previous, wpUrl: detection.wpUrl, lastCheck: now });
   } else {
     saveState({ ...previous, lastCheck: now });
-    console.log(`[oecd-watch] sin cambios (sigue DGI ${detection.dgiYear} / OURdata ${detection.ourdataYear} / WP ${detection.lastWpNumber ?? previous.lastWpNumber})`);
+    console.log(`[oecd-watch] sin cambios (sigue DGI ${detection.dgiYear} / OURdata ${detection.ourdataYear} / WP ${detection.wpNumber || previous.lastWpNumber})`);
   }
 }
 
