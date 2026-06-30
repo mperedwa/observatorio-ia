@@ -1,5 +1,18 @@
 [
   {
+    "fecha": "2026-06-30",
+    "tipo": "recurso",
+    "actualizacion": {
+      "es": "El KPI Hero 'Posición ILIA Latinoamérica' ahora se autoresuelve desde el dataset ilia2025 en lugar de tener el valor hardcoded. Cuando se actualice editorialmente ilia2025 con la próxima edición del ILIA (estimada sept-oct 2026), la posición de Costa Rica (ej. '5°') y el detalle ('53.83/100, brecha de -17 vs Chile') quedarán al día automáticamente sin tocar el JSON del KPI. Cambio interno; sin diferencia visual en el sitio mientras el ranking sea el mismo.",
+      "en": "The 'ILIA Latin America rank' Hero KPI is now auto-resolved from the ilia2025 dataset instead of holding a hardcoded value. When ilia2025 is editorially updated with the next ILIA edition (expected Sept-Oct 2026), Costa Rica's rank (e.g. '5°') and the detail line ('53.83/100, -17 gap vs Chile') will stay current automatically with no need to touch the KPI JSON. Internal change; no visual difference on the site while the ranking stays the same."
+    },
+    "fuente": {
+      "es": "Mejora interna — observatorio-ia issue #23",
+      "en": "Internal improvement — observatorio-ia issue #23"
+    },
+    "fuente_url": "https://github.com/mperedwa/observatorio-ia/issues/23"
+  },
+  {
     "fecha": "2026-06-26",
     "tipo": "indicador",
     "actualizacion": {

@@ -25,16 +25,57 @@ const COUNTERS_TS = join(ROOT, 'src', 'data', 'counters.ts');
 const PKG = JSON.parse(readFileSync(join(ROOT, 'package.json'), 'utf8')) as { version: string };
 
 /**
- * Indicadores cuyo `valor` se calcula a partir del catálogo. El JSON
- * source guarda `"valor": "auto"` como sentinela y aquí lo reemplazamos
- * con el contador real antes de envoolver y escribir a /api/.
+ * Indicadores cuyo `valor` (y opcionalmente `detalle`) se resuelve dinámicamente
+ * a partir del catálogo o del propio JSON de indicadores. El JSON source guarda
+ * `"valor": "auto"` (y opcionalmente `"detalle": "auto"`) como sentinela; aquí
+ * lo reemplazamos con el valor real antes de envolver y escribir a /api/.
  *
- * Mapping `kpisHero[].label.es` → función que devuelve el valor.
+ * Mapping `kpisHero[].label.es` → función que devuelve `{ valor, detalle? }`.
+ * Si `detalle` no se devuelve, se mantiene el valor del JSON source.
  */
-const KPI_AUTO: Record<string, (c: Counters) => string> = {
-  'Proyectos IA activos en gobierno': (c) => String(c.proyectos),
-  'Instituciones con IA operativa': (c) => String(c.instituciones),
-  'Expedientes de ley en trámite': (c) => String(c.legislacion),
+interface KpiBilingual {
+  es: string;
+  en: string;
+}
+
+interface KpiAutoResult {
+  valor: string;
+  detalle?: KpiBilingual;
+}
+
+interface IliaRow {
+  pais: KpiBilingual;
+  ilia: number;
+  destacado?: boolean;
+}
+
+const KPI_AUTO: Record<string, (c: Counters, data: unknown) => KpiAutoResult> = {
+  'Proyectos IA activos en gobierno': (c) => ({ valor: String(c.proyectos) }),
+  'Instituciones con IA operativa': (c) => ({ valor: String(c.instituciones) }),
+  'Expedientes de ley en trámite': (c) => ({ valor: String(c.legislacion) }),
+  'Posición ILIA Latinoamérica': (_c, data) => {
+    const rows = (data as { ilia2025?: IliaRow[] } | undefined)?.ilia2025 ?? [];
+    if (rows.length === 0) return { valor: '?' };
+    const sorted = [...rows].sort((a, b) => b.ilia - a.ilia);
+    const cr = sorted.find((p) => p.destacado);
+    if (!cr) return { valor: '?' };
+    const pos = sorted.indexOf(cr) + 1;
+    const top = sorted[0];
+    const brecha = Math.round(top.ilia - cr.ilia);
+    const isTopCr = pos === 1;
+    return {
+      valor: `${pos}°`,
+      detalle: isTopCr
+        ? {
+            es: `${cr.ilia.toFixed(2)}/100, liderando la región`,
+            en: `${cr.ilia.toFixed(2)}/100, leading the region`,
+          }
+        : {
+            es: `${cr.ilia.toFixed(2)}/100, brecha de -${brecha} vs ${top.pais.es}`,
+            en: `${cr.ilia.toFixed(2)}/100, -${brecha} gap vs ${top.pais.en}`,
+          },
+    };
+  },
 };
 
 interface Dataset {
@@ -171,7 +212,13 @@ ${rows}
 
 function applyAutoKpis(data: unknown, counters: Counters): unknown {
   if (!data || typeof data !== 'object') return data;
-  const obj = data as { kpisHero?: Array<{ label?: { es?: string }; valor?: string }> };
+  const obj = data as {
+    kpisHero?: Array<{
+      label?: { es?: string };
+      valor?: string;
+      detalle?: KpiBilingual | string;
+    }>;
+  };
   const kpis = obj.kpisHero;
   if (!Array.isArray(kpis)) return data;
   for (const kpi of kpis) {
@@ -179,7 +226,11 @@ function applyAutoKpis(data: unknown, counters: Counters): unknown {
       const labelEs = kpi.label?.es ?? '';
       const fn = KPI_AUTO[labelEs];
       if (fn) {
-        kpi.valor = fn(counters);
+        const result = fn(counters, data);
+        kpi.valor = result.valor;
+        if (result.detalle) {
+          kpi.detalle = result.detalle;
+        }
       } else {
         console.warn(`  WARN: indicadores.kpisHero "${labelEs}" tiene valor:"auto" pero no hay computador definido en KPI_AUTO.`);
       }

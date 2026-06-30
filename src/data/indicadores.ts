@@ -55,8 +55,38 @@ const KPI_AUTO_BY_LABEL: Record<string, number | undefined> = {
   'Expedientes de ley en trámite': COUNTERS.legislacion,
 };
 
+function resolveIliaPosicion(): { valor: string; detalle: Bilingual } | null {
+  const rows = data.ilia2025 as IndicadorRegional[];
+  if (!Array.isArray(rows) || rows.length === 0) return null;
+  const sorted = [...rows].sort((a, b) => b.ilia - a.ilia);
+  const cr = sorted.find((p) => p.destacado);
+  if (!cr) return null;
+  const pos = sorted.indexOf(cr) + 1;
+  const top = sorted[0];
+  const brecha = Math.round(top.ilia - cr.ilia);
+  const isTopCr = pos === 1;
+  return {
+    valor: `${pos}°`,
+    detalle: isTopCr
+      ? {
+          es: `${cr.ilia.toFixed(2)}/100, liderando la región`,
+          en: `${cr.ilia.toFixed(2)}/100, leading the region`,
+        }
+      : {
+          es: `${cr.ilia.toFixed(2)}/100, brecha de -${brecha} vs ${top.pais.es}`,
+          en: `${cr.ilia.toFixed(2)}/100, -${brecha} gap vs ${top.pais.en}`,
+        },
+  };
+}
+
 function resolveKpi(k: KpiResumen): KpiResumen {
   if (k.valor !== 'auto') return k;
+  if (k.label.es === 'Posición ILIA Latinoamérica') {
+    const resolved = resolveIliaPosicion();
+    return resolved
+      ? { ...k, valor: resolved.valor, detalle: resolved.detalle }
+      : { ...k, valor: '?' };
+  }
   const n = KPI_AUTO_BY_LABEL[k.label.es];
   return { ...k, valor: n !== undefined ? String(n) : '?' };
 }

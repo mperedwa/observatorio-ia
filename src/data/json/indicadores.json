@@ -175,10 +175,10 @@
         "es": "Posición ILIA Latinoamérica",
         "en": "ILIA Latin America rank"
       },
-      "valor": "5°",
+      "valor": "auto",
       "detalle": {
-        "es": "53.83/100, brecha de -17 vs Chile",
-        "en": "53.83/100, -17 gap vs Chile"
+        "es": "auto-resuelto desde ilia2025",
+        "en": "auto-resolved from ilia2025"
       }
     }
   ],
