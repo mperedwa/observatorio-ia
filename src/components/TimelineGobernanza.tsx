@@ -2,6 +2,16 @@ import { hitos } from '@/data/marcoPais';
 import type { Dictionary } from '@/i18n/dictionaries';
 import type { Locale } from '@/i18n/config';
 
+function formatFechaCompleta(fecha: string, locale: Locale): string {
+  const d = new Date(`${fecha}T12:00:00Z`);
+  if (Number.isNaN(d.getTime())) return fecha;
+  return new Intl.DateTimeFormat(locale === 'es' ? 'es-CR' : 'en-US', {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+  }).format(d);
+}
+
 export function TimelineGobernanza({
   locale,
   t,
@@ -41,7 +51,10 @@ export function TimelineGobernanza({
                     {dict.pendienteLabel}
                   </span>
                 ) : (
-                  <span className="text-lg font-bold text-institucional-900 tabular-nums">
+                  <span
+                    className="text-lg font-bold text-institucional-900 tabular-nums"
+                    title={h.fecha ? formatFechaCompleta(h.fecha, locale) : undefined}
+                  >
                     {h.anio}
                   </span>
                 )}

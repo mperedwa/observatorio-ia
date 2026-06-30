@@ -1,0 +1,122 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "marcoPais.schema.json",
+  "type": "object",
+  "required": ["capas", "hitos", "instrumentos", "brechas"],
+  "additionalProperties": false,
+  "properties": {
+    "capas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "orden", "nombreCorto", "instrumentos", "funcion", "alcance", "fuerza", "fuerzaTipo", "vacio"],
+        "additionalProperties": true,
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "orden": { "type": "integer", "minimum": 1 },
+          "nombreCorto": { "$ref": "#/definitions/bilingual" },
+          "instrumentos": { "$ref": "#/definitions/bilingual" },
+          "nota": { "$ref": "#/definitions/bilingual" },
+          "funcion": { "$ref": "#/definitions/bilingual" },
+          "alcance": { "$ref": "#/definitions/bilingual" },
+          "fuerza": { "$ref": "#/definitions/bilingual" },
+          "fuerzaTipo": { "$ref": "#/definitions/fuerzaTipo" },
+          "vacio": { "$ref": "#/definitions/bilingual" },
+          "enlaces": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["label", "url"],
+              "additionalProperties": false,
+              "properties": {
+                "label": { "$ref": "#/definitions/bilingual" },
+                "url": { "type": "string", "format": "uri" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "hitos": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["anio", "evento", "pendiente"],
+        "additionalProperties": false,
+        "properties": {
+          "anio": {
+            "type": "string",
+            "description": "Año como string (e.g. '2019', '2024') o vacío si pendiente=true. Mantenido como fallback cuando no se conoce fecha exacta."
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date",
+            "description": "Fecha exacta YYYY-MM-DD cuando se conoce. Si solo se conoce hasta el mes, usar YYYY-MM-01. Opcional — anio sigue siendo el dato base."
+          },
+          "evento": { "$ref": "#/definitions/bilingual" },
+          "pendiente": { "type": "boolean" }
+        }
+      }
+    },
+    "instrumentos": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "nombre", "tipo", "alcance", "fuerza", "fuerzaTipo", "queResuelve", "queNoResuelve", "estado"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "nombre": { "$ref": "#/definitions/bilingual" },
+          "tipo": { "$ref": "#/definitions/bilingual" },
+          "alcance": { "$ref": "#/definitions/bilingual" },
+          "fuerza": { "$ref": "#/definitions/bilingual" },
+          "fuerzaTipo": { "$ref": "#/definitions/fuerzaTipo" },
+          "queResuelve": { "$ref": "#/definitions/bilingual" },
+          "queNoResuelve": { "$ref": "#/definitions/bilingual" },
+          "estado": { "$ref": "#/definitions/bilingual" },
+          "fechaPublicacion": {
+            "type": "string",
+            "format": "date",
+            "description": "Fecha de publicación oficial del instrumento (YYYY-MM-DD). Si solo se conoce hasta el mes, usar YYYY-MM-01. Opcional cuando no se ha verificado primaria; en ese caso documentar el motivo en _notaFechaPublicacion."
+          },
+          "ultimaRevision": {
+            "type": "string",
+            "format": "date",
+            "description": "Fecha de última revisión/modificación oficial del instrumento. Opcional. Útil cuando un decreto se modifica con un decreto posterior."
+          },
+          "_notaFechaPublicacion": {
+            "type": "string",
+            "description": "Nota libre cuando fechaPublicacion está intencionalmente omitida (ej: 'verificar Gaceta', 'rolling — sin fecha única'). Solo presente cuando fechaPublicacion no existe."
+          }
+        }
+      }
+    },
+    "brechas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "descripcion"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "descripcion": { "$ref": "#/definitions/bilingual" }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "bilingual": {
+      "type": "object",
+      "required": ["es", "en"],
+      "additionalProperties": false,
+      "properties": {
+        "es": { "type": "string", "minLength": 1 },
+        "en": { "type": "string", "minLength": 1 }
+      }
+    },
+    "fuerzaTipo": {
+      "type": "string",
+      "enum": ["referencial", "orientadora", "obligatoria", "no-vigente", "operativa", "pendiente"]
+    }
+  }
+}

@@ -2,6 +2,19 @@ import { instrumentos, fuerzaBadgeCls } from '@/data/marcoPais';
 import type { Dictionary } from '@/i18n/dictionaries';
 import type { Locale } from '@/i18n/config';
 
+function formatPublicacion(fecha: string | undefined, locale: Locale): string {
+  if (!fecha) return '—';
+  // YYYY-MM-DD -> "may 2019" / "May 2019". Si el día es 01 asumimos precisión mes.
+  const [yyyy, mm] = fecha.split('-');
+  const d = new Date(`${yyyy}-${mm}-15T12:00:00Z`);
+  if (Number.isNaN(d.getTime())) return fecha;
+  const fmt = new Intl.DateTimeFormat(locale === 'es' ? 'es-CR' : 'en-US', {
+    month: 'short',
+    year: 'numeric',
+  });
+  return fmt.format(d);
+}
+
 export function MatrizInstrumentos({
   locale,
   t,
@@ -48,8 +61,11 @@ export function MatrizInstrumentos({
                 <th className="py-3 pr-4 text-xs uppercase tracking-wide text-slate-500 font-semibold">
                   {dict.cols.queNoResuelve}
                 </th>
-                <th className="py-3 text-xs uppercase tracking-wide text-slate-500 font-semibold w-[10%]">
+                <th className="py-3 pr-4 text-xs uppercase tracking-wide text-slate-500 font-semibold w-[10%]">
                   {dict.cols.estado}
+                </th>
+                <th className="py-3 text-xs uppercase tracking-wide text-slate-500 font-semibold w-[10%]">
+                  {dict.cols.publicado}
                 </th>
               </tr>
             </thead>
@@ -80,7 +96,13 @@ export function MatrizInstrumentos({
                   <td className="py-4 pr-4 text-slate-700 text-pretty">
                     {inst.queNoResuelve[locale]}
                   </td>
-                  <td className="py-4 text-slate-700">{inst.estado[locale]}</td>
+                  <td className="py-4 pr-4 text-slate-700">{inst.estado[locale]}</td>
+                  <td
+                    className="py-4 text-slate-700 tabular-nums whitespace-nowrap"
+                    title={inst._notaFechaPublicacion ?? undefined}
+                  >
+                    {formatPublicacion(inst.fechaPublicacion, locale)}
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -108,6 +130,11 @@ export function MatrizInstrumentos({
                 <Row label={dict.cols.tipo} value={inst.tipo[locale]} />
                 <Row label={dict.cols.alcance} value={inst.alcance[locale]} />
                 <Row label={dict.cols.estado} value={inst.estado[locale]} />
+                <Row
+                  label={dict.cols.publicado}
+                  value={formatPublicacion(inst.fechaPublicacion, locale)}
+                  title={inst._notaFechaPublicacion}
+                />
                 <Row label={dict.cols.queResuelve} value={inst.queResuelve[locale]} />
                 <Row label={dict.cols.queNoResuelve} value={inst.queNoResuelve[locale]} />
               </dl>
@@ -119,13 +146,23 @@ export function MatrizInstrumentos({
   );
 }
 
-function Row({ label, value }: { label: string; value: string }) {
+function Row({
+  label,
+  value,
+  title,
+}: {
+  label: string;
+  value: string;
+  title?: string;
+}) {
   return (
     <div>
       <dt className="text-xs uppercase tracking-wide text-slate-500 mb-0.5">
         {label}
       </dt>
-      <dd className="text-slate-700 text-pretty">{value}</dd>
+      <dd className="text-slate-700 text-pretty" title={title}>
+        {value}
+      </dd>
     </div>
   );
 }

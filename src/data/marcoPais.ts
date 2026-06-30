@@ -31,6 +31,11 @@ export interface Capa {
 export interface Hito {
   /** Año como string ("2019", "2024"). Vacío cuando `pendiente=true`. */
   anio: string;
+  /**
+   * Fecha exacta YYYY-MM-DD cuando se conoce. Si solo se conoce hasta el mes,
+   * usar YYYY-MM-01. Opcional — `anio` sigue siendo el dato base (fallback).
+   */
+  fecha?: string;
   evento: Bilingual;
   pendiente: boolean;
 }
@@ -45,6 +50,16 @@ export interface Instrumento {
   queResuelve: Bilingual;
   queNoResuelve: Bilingual;
   estado: Bilingual;
+  /** Fecha de publicación oficial del instrumento (YYYY-MM-DD). Opcional. */
+  fechaPublicacion?: string;
+  /** Fecha de última revisión/modificación oficial del instrumento. Opcional. */
+  ultimaRevision?: string;
+  /**
+   * Nota libre cuando `fechaPublicacion` está intencionalmente omitida
+   * (ej: "verificar Gaceta", "rolling — sin fecha única"). Solo presente
+   * cuando `fechaPublicacion` no existe.
+   */
+  _notaFechaPublicacion?: string;
 }
 
 export interface Brecha {

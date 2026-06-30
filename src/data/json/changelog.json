@@ -3,6 +3,19 @@
     "fecha": "2026-06-30",
     "tipo": "recurso",
     "actualizacion": {
+      "es": "Se agregan fechas de publicación verificadas a los 6 instrumentos de gobernanza IA en el Marco País: Principios OCDE 2019-05-22; ENIA 2024-2027 publicada el 2024-10-24; Decreto 44507-MICITT (CNTD Capítulo 7 IA) 2024-06-19; Plan de Acción ENIA 2025-08-11; Proyectos de ley IA 2023-05-30 (primer expediente); Lineamientos Básicos IA Generativa del Poder Judicial 2026-02-26. La matriz comparativa de instrumentos muestra ahora una columna 'Publicado' con formato mes-año. El timeline de hitos muestra la fecha exacta vía tooltip cuando se conoce. Schema marcoPais.json formalizado por primera vez (antes solo TypeScript types).",
+      "en": "Verified publication dates added to the 6 AI governance instruments in the Country Framework: OECD Principles 2019-05-22; ENIA 2024-2027 published 2024-10-24; Decree 44507-MICITT (CNTD Chapter 7 AI) 2024-06-19; ENIA Action Plan 2025-08-11; AI bills 2023-05-30 (first file); Judiciary Basic Guidelines for Generative AI 2026-02-26. The instruments comparison matrix now shows a 'Published' column with month-year format. The milestones timeline shows the exact date via tooltip when known. marcoPais.json schema formalized for the first time (previously only TypeScript types)."
+    },
+    "fuente": {
+      "es": "Investigación verificada del analista — observatorio-ia issue #26",
+      "en": "Verified analyst research — observatorio-ia issue #26"
+    },
+    "fuente_url": "https://github.com/mperedwa/observatorio-ia/issues/26"
+  },
+  {
+    "fecha": "2026-06-30",
+    "tipo": "recurso",
+    "actualizacion": {
       "es": "El KPI Hero 'Posición ILIA Latinoamérica' ahora se autoresuelve desde el dataset ilia2025 en lugar de tener el valor hardcoded. Cuando se actualice editorialmente ilia2025 con la próxima edición del ILIA (estimada sept-oct 2026), la posición de Costa Rica (ej. '5°') y el detalle ('53.83/100, brecha de -17 vs Chile') quedarán al día automáticamente sin tocar el JSON del KPI. Cambio interno; sin diferencia visual en el sitio mientras el ranking sea el mismo.",
       "en": "The 'ILIA Latin America rank' Hero KPI is now auto-resolved from the ilia2025 dataset instead of holding a hardcoded value. When ilia2025 is editorially updated with the next ILIA edition (expected Sept-Oct 2026), Costa Rica's rank (e.g. '5°') and the detail line ('53.83/100, -17 gap vs Chile') will stay current automatically with no need to touch the KPI JSON. Internal change; no visual difference on the site while the ranking stays the same."
     },

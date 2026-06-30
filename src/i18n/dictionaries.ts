@@ -306,6 +306,7 @@ export interface Dictionary {
         queResuelve: string;
         queNoResuelve: string;
         estado: string;
+        publicado: string;
       };
     };
     brechas: {
@@ -724,6 +725,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           queResuelve: 'Qué resuelve',
           queNoResuelve: 'Qué no resuelve',
           estado: 'Estado',
+          publicado: 'Publicado',
         },
       },
       brechas: {
@@ -1152,6 +1154,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           queResuelve: 'What it solves',
           queNoResuelve: 'What it does not solve',
           estado: 'Status',
+          publicado: 'Published',
         },
       },
       brechas: {

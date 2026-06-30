@@ -180,6 +180,7 @@
   "hitos": [
     {
       "anio": "2019",
+      "fecha": "2019-05-22",
       "evento": {
         "es": "Principios OCDE sobre IA: primer estándar intergubernamental de referencia para IA confiable, con Costa Rica entre los países adherentes en América Latina",
         "en": "OECD AI Principles: first intergovernmental standard for trustworthy AI, with Costa Rica among the adherent countries in Latin America"
@@ -188,6 +189,7 @@
     },
     {
       "anio": "2023",
+      "fecha": "2023-05-30",
       "evento": {
         "es": "Primeros expedientes legislativos sobre IA en la Asamblea Legislativa",
         "en": "First legislative files on AI submitted to the Legislative Assembly"
@@ -196,6 +198,7 @@
     },
     {
       "anio": "2024",
+      "fecha": "2024-10-24",
       "evento": {
         "es": "Publicación de la Estrategia Nacional de Inteligencia Artificial (ENIA 2024-2027)",
         "en": "Publication of the National Artificial Intelligence Strategy (ENIA 2024-2027)"
@@ -204,6 +207,7 @@
     },
     {
       "anio": "2024",
+      "fecha": "2024-06-19",
       "evento": {
         "es": "Incorporación del Capítulo 7 sobre IA en el CNTD (Decreto 44507-MICITT)",
         "en": "Incorporation of Chapter 7 on AI into the CNTD (Decree 44507-MICITT)"
@@ -212,6 +216,7 @@
     },
     {
       "anio": "2025",
+      "fecha": "2025-08-11",
       "evento": {
         "es": "Plan de Acción de la ENIA",
         "en": "ENIA Action Plan"
@@ -267,7 +272,8 @@
         "es": "No da procedimientos institucionales.",
         "en": "Provides no institutional procedures."
       },
-      "estado": { "es": "Vigente", "en": "In force" }
+      "estado": { "es": "Vigente", "en": "In force" },
+      "fechaPublicacion": "2019-05-22"
     },
     {
       "id": "enia",
@@ -284,7 +290,8 @@
         "es": "No define protocolo operativo diario.",
         "en": "Does not define a daily operational protocol."
       },
-      "estado": { "es": "Vigente", "en": "In force" }
+      "estado": { "es": "Vigente", "en": "In force" },
+      "fechaPublicacion": "2024-10-24"
     },
     {
       "id": "plan-accion",
@@ -304,7 +311,8 @@
         "es": "No estandariza ejecución diaria por institución.",
         "en": "Does not standardize daily execution per institution."
       },
-      "estado": { "es": "Vigente", "en": "In force" }
+      "estado": { "es": "Vigente", "en": "In force" },
+      "fechaPublicacion": "2025-08-11"
     },
     {
       "id": "cntd-cap7",
@@ -324,7 +332,8 @@
         "es": "No baja a playbook institucional detallado.",
         "en": "Does not descend to a detailed institutional playbook."
       },
-      "estado": { "es": "Vigente", "en": "In force" }
+      "estado": { "es": "Vigente", "en": "In force" },
+      "fechaPublicacion": "2024-06-19"
     },
     {
       "id": "proyectos-ley",
@@ -344,7 +353,8 @@
         "es": "No resuelve la operación pública hoy.",
         "en": "Does not solve current public operations."
       },
-      "estado": { "es": "En trámite", "en": "In process" }
+      "estado": { "es": "En trámite", "en": "In process" },
+      "fechaPublicacion": "2023-05-30"
     },
     {
       "id": "lineamientos-pj",
@@ -364,7 +374,8 @@
         "es": "No aplica a todo el Estado.",
         "en": "Does not apply to the State at large."
       },
-      "estado": { "es": "Vigente", "en": "In force" }
+      "estado": { "es": "Vigente", "en": "In force" },
+      "fechaPublicacion": "2026-02-26"
     }
   ],
   "brechas": [

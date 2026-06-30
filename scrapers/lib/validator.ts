@@ -21,6 +21,7 @@ const datasets: DatasetSpec[] = [
   { name: 'indicadores', jsonPath: 'json/indicadores.json', schemaPath: 'schemas/indicadores.schema.json' },
   { name: 'brechas', jsonPath: 'json/brechas.json', schemaPath: 'schemas/brechas.schema.json' },
   { name: 'changelog', jsonPath: 'json/changelog.json', schemaPath: 'schemas/changelog.schema.json' },
+  { name: 'marcoPais', jsonPath: 'json/marcoPais.json', schemaPath: 'schemas/marcoPais.schema.json' },
 ];
 
 function loadJson(relPath: string): unknown {
