@@ -7,6 +7,7 @@
     "build:api": "tsx scripts/build-api.ts",
     "classify-vs-repo": "tsx scripts/classify-vs-repo.ts",
     "create-scrape-review-issue": "tsx scripts/create-scrape-review-issue.ts",
+    "create-legislacion-update-issue": "tsx scripts/create-legislacion-update-issue.ts",
     "dev": "next dev",
     "generate-assets": "tsx scripts/generate-share-assets.ts",
     "lint": "next lint",

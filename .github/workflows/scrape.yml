@@ -91,6 +91,18 @@ jobs:
           GITHUB_RUN_ID: ${{ github.run_id }}
         run: npm run create-scrape-review-issue
 
+      - name: Open legislacion-update GitHub Issue
+        # Si el scraper de Asamblea (vía Delfino) detectó cambios en estado o
+        # comisión de algún expediente, abre un GH Issue con label
+        # `legislacion-update`. El bot developer valida + consolida + pide GO
+        # Mario. Los cambios aceptados se aplican editorialmente a
+        # src/data/json/legislacion.json. Skip silencioso si 0 cambios.
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_RUN_ID: ${{ github.run_id }}
+        run: npm run create-legislacion-update-issue
+
       - name: Detect changes
         id: changes
         run: |
