@@ -1,16 +1,24 @@
 /**
  * Orquestador de scrapers.
  *
- * Corre los 3 scrapers en serie, aplica los cambios automáticos válidos
- * (solo updates a campos no protegidos), valida con AJV, opcionalmente
- * clasifica los candidatos con un LLM (Groq + Llama 3.3 70B), y escribe
- * un reporte consolidado. Devuelve exit code 0 incluso si hubo cambios;
- * el GitHub Action decide después si abrir PR.
+ * Corre los scrapers en serie, valida con AJV, opcionalmente clasifica los
+ * candidatos con un LLM (Groq + Llama 3.3 70B), y escribe un reporte
+ * consolidado. NO aplica cambios editorialmente al JSON: los cambios
+ * detectados por el scraper de Asamblea (Delfino) se surfacean vía GH Issue
+ * con label `legislacion-update` (ver `scripts/create-legislacion-update-issue.ts`)
+ * para revisión manual + GO de Mario antes de mergear.
  *
- * Imprime al stdout un resumen markdown que el Action usa como cuerpo del PR.
+ * Los pasos "Detect changes" y "Create or update PR" del workflow scrape.yml
+ * se retiraron el 2026-07-10 porque:
+ *   1) auto-apply de cambios sin revisión editorial fue un riesgo (podía
+ *      pegar cambios cosméticos o falsos positivos del scraper sin veto),
+ *   2) el step de auto-PR falló repetidamente por "GitHub Actions is not
+ *      permitted to create or approve pull requests" — política del repo,
+ *   3) el flujo issue-based (developer + Mario Telegram GO) reemplaza
+ *      totalmente el flujo PR-based.
  */
 
-import { writeFileSync, readFileSync, mkdirSync, existsSync } from 'node:fs';
+import { writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { scrapeAsamblea } from './asamblea';
 import { scrapeMicitt } from './micitt';
@@ -23,10 +31,8 @@ import { scrapeHacienda } from './hacienda';
 import { scrapeCGR } from './cgr';
 import { scrapeMideplan } from './mideplan';
 import {
-  applyChange,
   REPORTS_DIR,
   type ScraperReport,
-  type ProposedChange,
   type ScraperCandidate,
 } from './lib/diff';
 import { validateAll, crossCheck } from './lib/validator';
@@ -34,7 +40,6 @@ import { closeBrowser } from './lib/source';
 import { classifierAvailable, classifyMany, type Classification, type Source } from './lib/classifier';
 
 const ROOT = process.cwd();
-const LEGISLACION_PATH = join(ROOT, 'src', 'data', 'json', 'legislacion.json');
 
 interface ClassifiedCandidate {
   source: Source;
@@ -45,36 +50,9 @@ interface ClassifiedCandidate {
 interface Consolidated {
   ranAt: string;
   reports: ScraperReport[];
-  appliedChanges: Array<ProposedChange & { applied: boolean; reason?: string }>;
   validationOk: boolean;
   classifierUsed: boolean;
   classifiedCandidates: ClassifiedCandidate[];
-}
-
-function loadLegislacion(): Array<Record<string, unknown>> {
-  return JSON.parse(readFileSync(LEGISLACION_PATH, 'utf8'));
-}
-
-function saveLegislacion(data: unknown): void {
-  writeFileSync(LEGISLACION_PATH, JSON.stringify(data, null, 2) + '\n');
-}
-
-function applyAsambleaChanges(
-  report: ScraperReport,
-): Array<ProposedChange & { applied: boolean; reason?: string }> {
-  if (report.changes.length === 0) return [];
-  const records = loadLegislacion();
-  const applied: Array<ProposedChange & { applied: boolean; reason?: string }> = [];
-  for (const change of report.changes) {
-    if (change.dataset === 'legislacion') {
-      const result = applyChange(records, change, 'numero' as never);
-      applied.push({ ...change, ...result });
-    }
-  }
-  if (applied.some((c) => c.applied)) {
-    saveLegislacion(records);
-  }
-  return applied;
 }
 
 async function main(): Promise<void> {
@@ -116,9 +94,8 @@ async function main(): Promise<void> {
     }
   }
 
-  // Aplicar cambios automáticos solo de Asamblea (Micitt/Camtic son solo candidatos)
-  const asambleaReport = reports.find((r) => r.scraper === 'asamblea');
-  const appliedChanges = asambleaReport ? applyAsambleaChanges(asambleaReport) : [];
+  // No auto-apply: cambios de Asamblea (Delfino) se surfacean vía GH Issue
+  // legislacion-update para revisión manual (create-legislacion-update-issue.ts).
 
   // Clasificación LLM de candidatos (Fase 6)
   const allCandidates: Array<{ source: Source; candidate: ScraperCandidate }> =
@@ -159,7 +136,6 @@ async function main(): Promise<void> {
   const consolidated: Consolidated = {
     ranAt,
     reports,
-    appliedChanges,
     validationOk: valid && crossOk,
     classifierUsed,
     classifiedCandidates,
@@ -170,15 +146,16 @@ async function main(): Promise<void> {
 
   writeFileSync(join(outDir, 'last-run.json'), JSON.stringify(consolidated, null, 2));
 
-  // Markdown summary para PR body
-  const totalChanges = appliedChanges.filter((c) => c.applied).length;
-  const md = renderMarkdown(consolidated, totalChanges);
+  // Markdown summary (histórico: originalmente cuerpo del PR auto-generado; ahora
+  // permanece como resumen operativo en scraper-runs/last-run.md).
+  const totalDetectedChanges = reports.reduce((acc, r) => acc + r.changes.length, 0);
+  const md = renderMarkdown(consolidated, totalDetectedChanges);
   writeFileSync(join(outDir, 'last-run.md'), md);
 
   console.log('\n--- resumen ---');
-  console.log(`Cambios aplicados a JSON: ${totalChanges}`);
+  console.log(`Cambios detectados por scrapers (se surfacean vía GH Issue legislacion-update): ${totalDetectedChanges}`);
   console.log(`Candidatos detectados: ${classifiedCandidates.length}`);
-  console.log(`Validación post-aplicación: ${valid && crossOk ? 'OK' : 'FAIL'}`);
+  console.log(`Validación catálogo: ${valid && crossOk ? 'OK' : 'FAIL'}`);
 
   await closeBrowser();
 }
@@ -187,7 +164,7 @@ function renderMarkdown(c: Consolidated, totalChanges: number): string {
   const lines: string[] = [];
   lines.push(`## Scrape automático — ${c.ranAt}`);
   lines.push('');
-  lines.push(`- **Cambios aplicados a JSON**: ${totalChanges}`);
+  lines.push(`- **Cambios detectados** (via GH Issue legislacion-update): ${totalChanges}`);
   lines.push(`- **Candidatos detectados**: ${c.classifiedCandidates.length}`);
   lines.push(`- **Validación AJV**: ${c.validationOk ? '✅ OK' : '❌ FAIL'}`);
   lines.push(

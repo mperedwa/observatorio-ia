@@ -103,34 +103,14 @@ jobs:
           GITHUB_RUN_ID: ${{ github.run_id }}
         run: npm run create-legislacion-update-issue
 
-      - name: Detect changes
-        id: changes
-        run: |
-          if [ -n "$(git status --porcelain src/data/json/)" ]; then
-            echo "has_changes=true" >> $GITHUB_OUTPUT
-          else
-            echo "has_changes=false" >> $GITHUB_OUTPUT
-          fi
-
-      - name: Create or update PR
-        if: steps.changes.outputs.has_changes == 'true'
-        uses: peter-evans/create-pull-request@v6
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: |
-            chore(data): scrape automático ${{ github.run_id }}
-
-            Cambios detectados por scrapers en fuentes oficiales.
-            Revisar diff y mergear si los cambios son correctos.
-          title: 'chore(data): scrape automático ${{ github.run_id }}'
-          body-path: scraper-runs/last-run.md
-          branch: auto/scrape-${{ github.run_id }}
-          labels: |
-            scraper-auto
-            needs-review
-          delete-branch: true
-          add-paths: |
-            src/data/json/
+      # 2026-07-10: se eliminaron los steps "Detect changes" y "Create or update PR".
+      # El auto-apply de cambios de Asamblea al catálogo (run-all.ts:applyAsambleaChanges)
+      # también se retiró. Ahora los cambios detectados por scrapers sólo se surfacean
+      # como GH Issues (label `scrape-review` y `legislacion-update`) para revisión
+      # manual + GO de Mario por Telegram antes de aplicar editorialmente al JSON.
+      # Motivo: el step de PR fallaba con "GitHub Actions is not permitted to create
+      # or approve pull requests" (permiso del repo, cambio de política de GitHub);
+      # además, el flujo issue-based es más seguro que auto-PR sin revisión previa.
 
       - name: Upload reports artifact
         if: always()
