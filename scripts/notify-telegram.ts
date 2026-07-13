@@ -1,9 +1,9 @@
 /**
  * Notifica vía Telegram el resumen del último scrape run.
  *
- * Política de notificación (filtro D del plan):
- *   - Notifica si: ≥1 candidato con score ≥7  O  algún cambio aplicado al JSON
- *   - Skip silencioso si: todo es ruido/baja relevancia y sin cambios
+ * Política de notificación:
+ *   - Notifica si: ≥1 candidato con score ≥7 (no ya catalogado)
+ *   - Skip silencioso si: todo es ruido/baja relevancia
  *
  * Lee `scraper-runs/last-run.json` producido por scrapers/run-all.ts.
  *
@@ -34,20 +34,10 @@ interface ClassifiedCandidate {
   classification: Classification | null;
 }
 
-interface AppliedChange {
-  applied: boolean;
-  dataset: string;
-  id: string;
-  field?: string;
-  before?: unknown;
-  after: unknown;
-}
-
 interface Consolidated {
   ranAt: string;
   classifierUsed: boolean;
   classifiedCandidates: ClassifiedCandidate[];
-  appliedChanges: AppliedChange[];
   validationOk: boolean;
 }
 
@@ -83,10 +73,6 @@ function shouldNotify(
   report: Consolidated,
   alreadyMapped: Set<string>,
 ): { notify: boolean; reason: string } {
-  const appliedCount = report.appliedChanges.filter((c) => c.applied).length;
-  if (appliedCount > 0) {
-    return { notify: true, reason: `${appliedCount} cambio(s) aplicado(s) al JSON` };
-  }
   const high = report.classifiedCandidates.filter(
     (c) =>
       c.classification &&
@@ -98,7 +84,7 @@ function shouldNotify(
   }
   return {
     notify: false,
-    reason: 'sin cambios JSON y todos los candidatos con score <7 o ya catalogados',
+    reason: 'todos los candidatos con score <7 o ya catalogados',
   };
 }
 
@@ -113,7 +99,6 @@ function buildMessage(report: Consolidated, alreadyMapped: Set<string>): string 
     dateStyle: 'medium',
     timeStyle: 'short',
   });
-  const applied = report.appliedChanges.filter((c) => c.applied);
   const high = report.classifiedCandidates.filter(
     (c) =>
       c.classification &&
@@ -131,15 +116,6 @@ function buildMessage(report: Consolidated, alreadyMapped: Set<string>): string 
   const lines: string[] = [];
   lines.push(`🔔 *Observatorio IA — scrape ${escapeMarkdown(fechaCR)}*`);
   lines.push('');
-
-  if (applied.length > 0) {
-    lines.push(`*✅ ${applied.length} cambio\\(s\\) aplicado\\(s\\) al JSON*`);
-    for (const c of applied.slice(0, 5)) {
-      const before = c.before !== undefined ? `${escapeMarkdown(String(c.before))} → ` : '';
-      lines.push(`• \`${escapeMarkdown(c.dataset)}/${escapeMarkdown(c.id)}\`${c.field ? ` · ${escapeMarkdown(c.field)}` : ''}: ${before}${escapeMarkdown(String(c.after))}`);
-    }
-    lines.push('');
-  }
 
   if (high.length > 0) {
     lines.push(`*🔴 ${high.length} candidato\\(s\\) alta relevancia \\(score ≥${SCORE_THRESHOLD}\\)*`);
