@@ -1,5 +1,18 @@
 [
   {
+    "fecha": "2026-07-15",
+    "tipo": "proyecto",
+    "actualizacion": {
+      "es": "Se actualiza el proyecto ccss-depuracion-listas para incorporar CLEO, la implementación nombrada del componente de contacto multicanal (correo, WhatsApp y llamada automatizada). En julio de 2026 la CCSS lo puso en marcha en un piloto de un mes en el Hospital Calderón Guardia, con capacidad declarada de hasta 1.500 registros/día (capacidad, no resultado), hasta tres intentos de contacto y validación humana de la información recopilada y de toda eventual baja. Se mantiene sin atribuir a la IA las cifras históricas de la línea base institucional.",
+      "en": "The ccss-depuracion-listas project is updated to incorporate CLEO, the named implementation of the multichannel contact component (email, WhatsApp and automated call). In July 2026 the CCSS launched it in a one-month pilot at Hospital Calderón Guardia, with a declared capacity of up to 1,500 records/day (capacity, not a result), up to three contact attempts, and human validation of the collected information and any eventual removal. The historical institutional baseline figures remain not attributed to the AI."
+    },
+    "fuente": {
+      "es": "CCSS — comunicado oficial 10-jul-2026",
+      "en": "CCSS — official announcement Jul 10, 2026"
+    },
+    "fuente_url": "https://www.ccss.sa.cr/noticias/noticia?v=122105706809"
+  },
+  {
     "fecha": "2026-06-30",
     "tipo": "recurso",
     "actualizacion": {
