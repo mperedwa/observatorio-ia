@@ -63,6 +63,44 @@ export async function fetchWithBrowser(url: string, opts: FetchHtmlOpts = {}): P
   }
 }
 
+/**
+ * Resuelve un enlace ofuscado de Google News (`news.google.com/rss/articles/…`)
+ * a la URL real del medio. Google ya no permite decodificar el token ni seguir
+ * el redirect por HTTP (usa redirect por JS), así que hay que cargar la página
+ * en un navegador y esperar a que la URL salga del dominio de Google.
+ *
+ * Por qué importa: el clasificador puntúa con la URL/medio real (mejor juicio de
+ * fuente primaria vs prensa), el ledger de decisiones guarda una firma de URL
+ * ESTABLE (el link de Google cambia cada semana para la misma nota), y el
+ * analista recibe la URL real sin resolverla a mano.
+ *
+ * NUNCA rompe el scrape: cualquier fallo o no-resolución devuelve la URL
+ * original. URLs que no son de Google News se devuelven tal cual.
+ */
+export async function resolveGoogleNewsUrl(
+  url: string,
+  opts: { timeout?: number } = {},
+): Promise<string> {
+  if (!url || !url.includes('news.google.com')) return url;
+  let page: Page | null = null;
+  try {
+    const browser = await getBrowser();
+    page = await browser.newPage({ userAgent: DEFAULT_UA });
+    await page.goto(url, { waitUntil: 'domcontentloaded', timeout: opts.timeout ?? 22000 });
+    await page
+      .waitForURL((u: URL) => !u.href.includes('news.google.com'), {
+        timeout: opts.timeout ?? 12000,
+      })
+      .catch(() => {});
+    const final = page.url();
+    return final.includes('news.google.com') ? url : final;
+  } catch {
+    return url; // fallback: nunca romper el scrape por un link que no resuelve
+  } finally {
+    if (page) await page.close().catch(() => {});
+  }
+}
+
 export function load(html: string): cheerio.CheerioAPI {
   return cheerio.load(html);
 }

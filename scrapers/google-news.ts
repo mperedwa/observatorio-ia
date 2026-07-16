@@ -16,7 +16,7 @@
  * cualquier `add` o `update` al catálogo. Solo deja candidatos.
  */
 
-import { fetchStatic, mentionsAI, closeBrowser } from './lib/source';
+import { fetchStatic, mentionsAI, closeBrowser, resolveGoogleNewsUrl } from './lib/source';
 import { emptyReport, writeReport, summarize, type ScraperReport } from './lib/diff';
 
 interface NewsQuery {
@@ -126,10 +126,21 @@ export async function scrapeGoogleNews(): Promise<ScraperReport> {
     return report;
   }
 
+  // Resolver el link ofuscado de Google News a la URL real del medio ANTES de
+  // emitir el candidato: así el clasificador y el ledger trabajan con la URL
+  // estable del medio, no con el redirect de Google que cambia cada semana.
+  // En serie (no en paralelo) para no gatillar el rate-limit de Google; son
+  // pocos candidatos (ya filtrados a los relevantes) y solo 2x/semana.
+  let resueltos = 0;
   for (const c of allCandidates.slice(0, MAX_TOTAL_CANDIDATES)) {
     const prefix = c.fuente ? `[${c.institucion} · ${c.fuente}] ` : `[${c.institucion}] `;
-    report.candidates.push({ titulo: prefix + c.titulo, url: c.url });
+    const realUrl = await resolveGoogleNewsUrl(c.url);
+    if (realUrl !== c.url) resueltos++;
+    report.candidates.push({ titulo: prefix + c.titulo, url: realUrl });
   }
+  report.notes.push(
+    `Resolución Google News: ${resueltos}/${Math.min(allCandidates.length, MAX_TOTAL_CANDIDATES)} links resueltos a la URL del medio.`,
+  );
 
   return report;
 }
