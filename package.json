@@ -30,7 +30,8 @@
     "test:watch": "vitest",
     "validate-data": "tsx scrapers/lib/validator.ts",
     "watch:ilia": "tsx scrapers/ilia-watch.ts",
-    "watch:oecd": "tsx scrapers/oecd-watch.ts"
+    "watch:oecd": "tsx scrapers/oecd-watch.ts",
+    "record-decision": "tsx scripts/record-decision.ts"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

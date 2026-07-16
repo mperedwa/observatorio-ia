@@ -48,7 +48,13 @@ interface Classification {
   sourceRanAt: string;
   totalDeduped: number;
   totalRaw: number;
-  counts: { ya_existe: number; ruido: number; nuevos: number; revisar: number };
+  counts: {
+    ya_existe: number;
+    ruido: number;
+    nuevos: number;
+    revisar: number;
+    ya_decidido?: number;
+  };
   ya_existe?: ClassifiedItem[];
   ruido?: ClassifiedItem[];
   nuevos?: ClassifiedItem[];
@@ -84,7 +90,7 @@ function buildBody(c: Classification, stubs: Stub[], runId: string): string {
   lines.push(`**Scrape**: ${fmtFechaCR(c.sourceRanAt)} (run \`${runId}\`)`);
   lines.push('');
   lines.push(
-    `**Resumen**: ${c.totalDeduped} candidatos · ${c.counts.nuevos} nuevos · ${c.counts.revisar} a revisar · ${c.counts.ya_existe} ya existen · ${c.counts.ruido} ruido`,
+    `**Resumen**: ${c.totalDeduped} candidatos · ${c.counts.nuevos} nuevos · ${c.counts.revisar} a revisar · ${c.counts.ya_existe} ya existen · ${c.counts.ruido} ruido${c.counts.ya_decidido ? ` · ${c.counts.ya_decidido} ya decididos (suprimidos por memoria)` : ''}`,
   );
   lines.push('');
 

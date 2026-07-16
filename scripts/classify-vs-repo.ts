@@ -5,17 +5,21 @@
  *   - src/app/[locale]/analisis/<slug>/translations.ts (artículos publicados)
  *
  * Salida: scraper-runs/classification.json con buckets:
- *   - nuevos    : sin match contra repo, ameritan agregarse
- *   - ya_existe : matcheados con un proyecto / recurso / artículo, sin señal de update
- *   - revisar   : matcheados PERO el titulo trae keywords de cambio de estado
- *                 (aprueba, pospone, lanza, resultado, etc.). Requieren revisión
- *                 humana porque pueden ser updates relevantes del item existente.
- *   - ruido     : descartados (score bajo, fuente no institucional, tipo=ruido)
+ *   - nuevos      : sin match contra repo, ameritan agregarse
+ *   - ya_existe   : matcheados con un proyecto / recurso / artículo, sin señal de update
+ *   - revisar     : matcheados PERO el titulo trae keywords de cambio de estado
+ *                   (aprueba, pospone, lanza, resultado, etc.). Requieren revisión
+ *                   humana porque pueden ser updates relevantes del item existente.
+ *   - ruido       : descartados (score bajo, fuente no institucional, tipo=ruido)
+ *   - ya_decidido : YA se descartó (NO) en un scrape-review previo — memoria del
+ *                   ledger entre corridas. NO entra al issue ni al analista. Evita
+ *                   que un re-reporte vuelva a correr todo el ciclo cada semana.
  *
  * Y scraper-runs/stub-nuevos.json (sólo si nuevos > 0): esqueleto con shape de
  * proyectos.json + placeholders TODO_* para revisión humana antes de mergear.
  *
  * Reglas en orden (primer match gana):
+ *   0. firma (URL o título) matchea una decisión 'rejected' del ledger        -> YA_DECIDIDO
  *   1. classification.tipo === 'ruido'                                     -> RUIDO
  *   2. score < 5                                                            -> RUIDO
  *   3. URL exacta == proyecto/recurso/artículo                              -> match (ya_existe o revisar)
@@ -32,6 +36,7 @@
 import { readFileSync, readdirSync, writeFileSync, existsSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
+import { loadLedger, matchDecision, type Ledger } from './lib/decisions-ledger.js';
 
 const ROOT = process.cwd();
 const REPORT_PATH = join(ROOT, 'scraper-runs', 'last-run.json');
@@ -253,7 +258,7 @@ function resolveInstitucionId(c: ClassifiedCandidate): string | null {
   return null;
 }
 
-export type Bucket = 'ya_existe' | 'ruido' | 'nuevo' | 'revisar';
+export type Bucket = 'ya_existe' | 'ruido' | 'nuevo' | 'revisar' | 'ya_decidido';
 export type MatchedType = 'proyecto' | 'recurso' | 'articulo';
 
 export interface RecursoItem {
@@ -386,9 +391,25 @@ export function classifyOne(
   proyectos: Proyecto[],
   recursos: RecursoItem[],
   articulos: ArticuloItem[],
+  ledger: Ledger = { decisions: [] },
 ): ClassifiedItem {
   const cls = c.classification;
   const institucionId = resolveInstitucionId(c);
+
+  // 0. Memoria de decisiones ENTRE corridas: si este item ya se descartó (NO)
+  //    en un scrape-review previo, no vuelve a molestar al analista ni a Mario.
+  //    Corre PRIMERO (antes que ruido/score) para cortar el ciclo lo antes
+  //    posible. Solo suprime decisiones 'rejected'; las 'catalogued'/'updated'
+  //    ya caen en ya_existe por URL y se dejan seguir el flujo normal.
+  const decided = matchDecision(c.candidate, ledger);
+  if (decided && decided.decision === 'rejected') {
+    return {
+      bucket: 'ya_decidido',
+      reason: `ya descartado el ${decided.date}${decided.issue ? ` (issue #${decided.issue})` : ''}${decided.note ? `: ${decided.note}` : ''}`,
+      candidate: c,
+      institucionId,
+    };
+  }
 
   // 1. tipo ruido del LLM.
   if (cls?.tipo === 'ruido') {
@@ -629,9 +650,10 @@ function main(): void {
   const proyectos = JSON.parse(readFileSync(PROYECTOS_PATH, 'utf8')) as Proyecto[];
   const recursos = loadRecursos();
   const articulos = loadArticulos();
+  const ledger = loadLedger();
 
   console.log(
-    `classify-vs-repo: ${report.classifiedCandidates.length} candidatos vs ${proyectos.length} proyectos + ${recursos.length} recursos + ${articulos.length} artículos`,
+    `classify-vs-repo: ${report.classifiedCandidates.length} candidatos vs ${proyectos.length} proyectos + ${recursos.length} recursos + ${articulos.length} artículos · ${ledger.decisions.length} decisiones en memoria`,
   );
 
   // Dedupe candidatos por URL antes de clasificar (3 fuentes de la misma
@@ -647,12 +669,23 @@ function main(): void {
   }
   const deduped = [...byUrl.values()];
 
-  const classified = deduped.map((c) => classifyOne(c, proyectos, recursos, articulos));
+  const classified = deduped.map((c) => classifyOne(c, proyectos, recursos, articulos, ledger));
 
   const ya_existe = classified.filter((x) => x.bucket === 'ya_existe');
   const ruido = classified.filter((x) => x.bucket === 'ruido');
   const nuevos = classified.filter((x) => x.bucket === 'nuevo');
   const revisar = classified.filter((x) => x.bucket === 'revisar');
+  // ya_decidido: items descartados en corridas previas (memoria del ledger). NO
+  // entran al scrape-review issue ni al analista — el punto de la mejora.
+  const ya_decidido = classified.filter((x) => x.bucket === 'ya_decidido');
+  if (ya_decidido.length > 0) {
+    console.log(
+      `classify-vs-repo: ${ya_decidido.length} candidato(s) suprimido(s) por memoria de decisiones (ya descartados antes):`,
+    );
+    for (const x of ya_decidido) {
+      console.log(`  · ${x.candidate.candidate.titulo?.slice(0, 70)} — ${x.reason}`);
+    }
+  }
 
   const serializeItem = (x: ClassifiedItem) => ({
     titulo: x.candidate.candidate.titulo,
@@ -674,9 +707,11 @@ function main(): void {
       ruido: ruido.length,
       nuevos: nuevos.length,
       revisar: revisar.length,
+      ya_decidido: ya_decidido.length,
     },
     ya_existe: ya_existe.map(serializeItem),
     revisar: revisar.map(serializeItem),
+    ya_decidido: ya_decidido.map(serializeItem),
     ruido: ruido.map((x) => ({
       titulo: x.candidate.candidate.titulo,
       url: x.candidate.candidate.url,
@@ -698,7 +733,7 @@ function main(): void {
 
   writeFileSync(CLASSIFICATION_OUT, JSON.stringify(output, null, 2) + '\n');
   console.log(
-    `classify-vs-repo: ${nuevos.length} nuevos, ${revisar.length} a revisar, ${ya_existe.length} ya existen, ${ruido.length} ruido → ${CLASSIFICATION_OUT}`,
+    `classify-vs-repo: ${nuevos.length} nuevos, ${revisar.length} a revisar, ${ya_existe.length} ya existen, ${ruido.length} ruido, ${ya_decidido.length} ya decididos (suprimidos) → ${CLASSIFICATION_OUT}`,
   );
 
   if (nuevos.length > 0) {
