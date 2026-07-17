@@ -1,8 +1,42 @@
 import type { Metadata } from 'next';
+import type { ReactNode } from 'react';
 import { notFound } from 'next/navigation';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { getDictionary } from '@/i18n/dictionaries';
 import { locales, type Locale } from '@/i18n/config';
+
+// Enlaza inline la firma de autoría en el cuerpo de "Autoría". Los dos términos
+// son nombres propios idénticos en ES y EN, así que el mismo helper sirve para
+// ambos idiomas: el nombre va al LinkedIn de Mario; "UnikPrompt" a unikprompt.com.
+// Enlaces discretos, sin nada comercial ni de otros productos.
+function linkifyAutoria(cuerpo: string): ReactNode[] {
+  const re = /(Mario Pérez Edwards|UnikPrompt)/g;
+  const out: ReactNode[] = [];
+  let last = 0;
+  let key = 0;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(cuerpo)) !== null) {
+    if (m.index > last) out.push(cuerpo.slice(last, m.index));
+    const href =
+      m[1] === 'UnikPrompt'
+        ? 'https://www.unikprompt.com/'
+        : 'https://www.linkedin.com/in/mario-perez-edwards';
+    out.push(
+      <a
+        key={key++}
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-institucional-700 hover:underline"
+      >
+        {m[1]}
+      </a>,
+    );
+    last = m.index + m[1].length;
+  }
+  if (last < cuerpo.length) out.push(cuerpo.slice(last));
+  return out;
+}
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -69,7 +103,7 @@ export default async function QuienMantienePage({
 
       <section className="mb-10">
         <h2 className="text-lg font-semibold text-slate-900 mb-2">{q.autoria.titulo}</h2>
-        <p className="text-base text-slate-700 text-pretty leading-relaxed">{q.autoria.cuerpo}</p>
+        <p className="text-base text-slate-700 text-pretty leading-relaxed">{linkifyAutoria(q.autoria.cuerpo)}</p>
       </section>
 
       <section className="mb-10">
