@@ -29,6 +29,26 @@ export function Footer({ t, locale }: { t: Dictionary; locale: Locale }) {
           <p className="mt-1">{t.footer.fuentes}</p>
         </div>
       </div>
+      <div className="max-w-7xl mx-auto px-6 pb-8 -mt-4 text-xs text-slate-400">
+        {t.footer.atribucion}{' '}
+        <a
+          href="https://www.linkedin.com/in/mario-perez-edwards"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:underline"
+        >
+          Mario Pérez Edwards
+        </a>
+        {' · '}
+        <a
+          href="https://www.unikprompt.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:underline"
+        >
+          UnikPrompt
+        </a>
+      </div>
     </footer>
   );
 }
