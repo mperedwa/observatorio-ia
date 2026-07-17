@@ -1,14 +1,44 @@
 {
   "decisions": [
     {
-      "urlSignature": "guananoticias.com/nacionales/ccss-implementa-herramienta-de-inteligencia-artificial-en-intento-por-bajar-listas-de-espera",
+      "urlSignature": "teletica.com/nacional/ccss-implementa-herramienta-de-inteligencia-artificial-en-intento-por-bajar-listas-de-espera_408381",
       "titleSignature": "ccss implementa herramienta de inteligencia artificial en intento por bajar listas de espera",
-      "url": "https://guananoticias.com/nacionales/ccss-implementa-herramienta-de-inteligencia-artificial-en-intento-por-bajar-listas-de-espera/",
-      "titulo": "CCSS Implementa Herramienta De Inteligencia Artificial En Intento Por Bajar Listas De Espera",
+      "url": "https://www.teletica.com/nacional/ccss-implementa-herramienta-de-inteligencia-artificial-en-intento-por-bajar-listas-de-espera_408381",
+      "titulo": "CCSS implementa herramienta de inteligencia artificial en intento por bajar listas de espera",
       "decision": "rejected",
-      "date": "2026-07-15",
-      "issue": 35,
-      "note": "re-reporte del anuncio de mayo; ya catalogado en ccss-depuracion-listas (analista NO, Mario NO)"
+      "date": "2026-07-17",
+      "issue": 36,
+      "note": "re-reporte del anuncio de mayo ya catalogado en ccss-depuracion-listas y rechazado en #35; sin hito nuevo"
+    },
+    {
+      "urlSignature": "infobae.com/costa-rica/2026/06/18/costa-rica-refuerza-la-atencion-sanitaria-con-inteligencia-artificial-en-mamografias-y-listas-de-espera",
+      "titleSignature": "costa rica refuerza la atencion sanitaria con inteligencia artificial en mamografias y listas de espera",
+      "url": "https://www.infobae.com/costa-rica/2026/06/18/costa-rica-refuerza-la-atencion-sanitaria-con-inteligencia-artificial-en-mamografias-y-listas-de-espera/",
+      "titulo": "Costa Rica refuerza la atencion sanitaria con inteligencia artificial en mamografias y listas de espera",
+      "decision": "rejected",
+      "date": "2026-07-17",
+      "issue": 36,
+      "note": "no update; REDIMED sin paso piloto a operativo (CGR jul 2025, 13 establecimientos); amalgama de foro"
+    },
+    {
+      "urlSignature": "observador.cr/costa-rica-busca-atraer-inversion-en-inteligencia-artificial-desde-principal-cumbre-global-del-sector",
+      "titleSignature": "costa rica busca atraer inversion en inteligencia artificial desde principal cumbre global del sector",
+      "url": "https://observador.cr/costa-rica-busca-atraer-inversion-en-inteligencia-artificial-desde-principal-cumbre-global-del-sector/",
+      "titulo": "Costa Rica busca atraer inversion en inteligencia artificial desde principal cumbre global del sector",
+      "decision": "rejected",
+      "date": "2026-07-17",
+      "issue": 36,
+      "note": "atribucion erronea (PROCOMER, no Hacienda); promocion de inversion, no proyecto de IA de institucion publica"
+    },
+    {
+      "urlSignature": "tec.ac.cr/hoyeneltec/2024/04/25/salud-inteligencia-artificial-poderosa-herramienta-reducir-riesgos-tomar-mejores",
+      "titleSignature": "salud la inteligencia artificial es una poderosa herramienta para reducir riesgos y tomar mejores decisiones",
+      "url": "https://www.tec.ac.cr/hoyeneltec/2024/04/25/salud-inteligencia-artificial-poderosa-herramienta-reducir-riesgos-tomar-mejores",
+      "titulo": "Salud La Inteligencia Artificial es una poderosa herramienta para reducir riesgos y tomar mejores decisiones",
+      "decision": "catalogued",
+      "date": "2026-07-17",
+      "issue": 36,
+      "note": "catalogado como cenat-cnca-clasificacion-arritmias-ecg (proyecto real CNCA, verificado CONARE)"
     }
   ]
 }

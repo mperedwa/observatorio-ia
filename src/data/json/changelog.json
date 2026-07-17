@@ -1,5 +1,18 @@
 [
   {
+    "fecha": "2026-07-17",
+    "tipo": "proyecto",
+    "actualizacion": {
+      "es": "Se cataloga un nuevo proyecto: cenat-cnca-clasificacion-arritmias-ecg. El CNCA del CeNAT desarrolla investigación de aprendizaje automático para clasificar arritmias a partir de señales de electrocardiograma (ECG), con un dispositivo prototipo. Verificado contra el repositorio institucional de CONARE y el sitio del CNCA. Alcance de investigación y prototipo; no se afirma uso clínico operativo.",
+      "en": "A new project is catalogued: cenat-cnca-clasificacion-arritmias-ecg. CeNAT's CNCA conducts machine-learning research to classify arrhythmias from electrocardiogram (ECG) signals, with a prototype device. Verified against CONARE's institutional repository and the CNCA site. Research and prototype scope; no operational clinical use is claimed."
+    },
+    "fuente": {
+      "es": "Repositorio institucional de CONARE + sitio del CNCA (CeNAT)",
+      "en": "CONARE institutional repository + CNCA site (CeNAT)"
+    },
+    "fuente_url": "https://repositorio.conare.ac.cr/items/b8bb3b55-cc3c-402a-9df4-6fe66159230d"
+  },
+  {
     "fecha": "2026-07-15",
     "tipo": "proyecto",
     "actualizacion": {

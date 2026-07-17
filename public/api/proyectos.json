@@ -1,7 +1,7 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-07-15T17:45:24.130Z",
-  "count": 23,
+  "lastUpdate": "2026-07-17T17:51:52.445Z",
+  "count": 24,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "data": [
@@ -556,6 +556,30 @@
         "en": "Costa Rica’s only national public proposal for an applied-AI R&D hub. It acts as a bridge between public academia (CONARE) and the State, filling a role that ENIA had assigned to the National AI Center of Excellence, still not operational."
       },
       "fuenteUrl": "https://www.micitt.go.cr/el-sector-informa/micitt-inicia-formulacion-de-estrategia-de-inteligencia-artificial"
+    },
+    {
+      "id": "cenat-cnca-clasificacion-arritmias-ecg",
+      "titulo": {
+        "es": "Clasificación de arritmias en ECG con aprendizaje automático (CNCA)",
+        "en": "ECG arrhythmia classification with machine learning (CNCA)"
+      },
+      "institucionId": "cenat",
+      "categoria": "salud",
+      "estado": "piloto",
+      "desde": "2024",
+      "descripcion": {
+        "es": "Proyecto de investigación del Colaboratorio Nacional de Computación Avanzada (CNCA), unidad del CeNAT, que aplica aprendizaje automático al procesamiento de señales de electrocardiograma (ECG) para detectar y clasificar patrones cardiovasculares. Incluye el desarrollo de un dispositivo prototipo para la clasificación multiclase de arritmias. Se mantiene en etapa de investigación y prototipo.",
+        "en": "Research project of the National Advanced Computing Collaboratory (CNCA), a unit of CeNAT, applying machine learning to electrocardiogram (ECG) signal processing to detect and classify cardiovascular patterns. It includes the development of a prototype device for multiclass arrhythmia classification. It remains at the research and prototype stage."
+      },
+      "resultado": {
+        "es": "Investigación con publicación registrada en el repositorio institucional de CONARE sobre clasificación multiclase de arritmias a partir de señales de ECG, respaldada por un dispositivo prototipo. El trabajo se mantiene en el nivel de investigación y prototipo; no existe evidencia de despliegue clínico ni de uso operativo en la atención de pacientes.",
+        "en": "Research with a publication registered in CONARE's institutional repository on multiclass arrhythmia classification from ECG signals, supported by a prototype device. The work remains at the research and prototype level; there is no evidence of clinical deployment or operational use in patient care."
+      },
+      "contexto": {
+        "es": "Línea de trabajo del CNCA (Colaboratorio Nacional de Computación Avanzada), unidad del CeNAT adscrito a CONARE. La verificación partió de una nota general del TEC (25 de abril de 2024) sobre el potencial de la IA en salud; la evidencia concreta del proyecto está en el repositorio oficial de CONARE y en el sitio del CNCA. El alcance catalogado es estrictamente de investigación y prototipo: no se afirma uso clínico ni despliegue en la atención.",
+        "en": "Work line of CNCA (National Advanced Computing Collaboratory), a unit of CeNAT under CONARE. Verification started from a general TEC article (April 25, 2024) on the potential of AI in health; the concrete evidence for the project is in CONARE's official repository and on the CNCA site. The catalogued scope is strictly research and prototype: no clinical use or care deployment is claimed."
+      },
+      "fuenteUrl": "https://repositorio.conare.ac.cr/items/b8bb3b55-cc3c-402a-9df4-6fe66159230d"
     }
   ]
 }
