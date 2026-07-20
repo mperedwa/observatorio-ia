@@ -1,6 +1,46 @@
 {
   "decisions": [
     {
+      "urlSignature": "observador.cr/50-de-las-pymes-en-costa-rica-usan-inteligencia-artificial-cuales-usos-le-dan",
+      "titleSignature": "50 de las pymes en costa rica usan inteligencia artificial cuales usos le dan",
+      "url": "https://observador.cr/50-de-las-pymes-en-costa-rica-usan-inteligencia-artificial-cuales-usos-le-dan/",
+      "titulo": "50% de las pymes en Costa Rica usan Inteligencia Artificial cuales usos le dan",
+      "decision": "rejected",
+      "date": "2026-07-20",
+      "issue": 37,
+      "note": "encuesta PRIVADA de Microsoft/Edelman (may-2025), no proyecto de institucion publica; atribucion a Hacienda falsa"
+    },
+    {
+      "urlSignature": "infobae.com/costa-rica/2026/07/13/asi-funciona-cleo-el-asistente-virtual-de-la-caja-costarricense-de-seguro-social-para-verificar-pacientes-pendientes",
+      "titleSignature": "asi funciona cleo el asistente virtual de la caja costarricense de seguro social para verificar pacientes pendientes",
+      "url": "https://www.infobae.com/costa-rica/2026/07/13/asi-funciona-cleo-el-asistente-virtual-de-la-caja-costarricense-de-seguro-social-para-verificar-pacientes-pendientes/",
+      "titulo": "Asi funciona CLEO el asistente virtual de la Caja Costarricense de Seguro Social para verificar pacientes pendientes",
+      "decision": "rejected",
+      "date": "2026-07-20",
+      "issue": 37,
+      "note": "re-reporte; CLEO ya catalogado en ccss-depuracion-listas; sin cifras, resultados ni fase nueva"
+    },
+    {
+      "urlSignature": "delfino.cr/2025/12/tec-y-ccss-impulsan-el-uso-de-inteligencia-artificial-para-resolver-retos-de-la-salud-publica",
+      "titleSignature": "tec y ccss impulsan el uso de inteligencia artificial para resolver retos de la salud publica",
+      "url": "https://delfino.cr/2025/12/tec-y-ccss-impulsan-el-uso-de-inteligencia-artificial-para-resolver-retos-de-la-salud-publica",
+      "titulo": "TEC y CCSS impulsan el uso de Inteligencia Artificial para resolver retos de la salud publica",
+      "decision": "rejected",
+      "date": "2026-07-20",
+      "issue": 37,
+      "note": "misma fuente TEC dic-2025 ya usada por ccss-tec-formacion; sin hito posterior"
+    },
+    {
+      "urlSignature": "observador.cr/inteligencia-artificial-aplicara-en-sala-i",
+      "titleSignature": "inteligencia artificial avanza en el poder judicial ahora llega a la sala i para acelerar toma de decisiones",
+      "url": "https://observador.cr/inteligencia-artificial-aplicara-en-sala-i/",
+      "titulo": "Inteligencia Artificial avanza en el Poder Judicial ahora llega a la Sala I para acelerar toma de decisiones",
+      "decision": "catalogued",
+      "date": "2026-07-20",
+      "issue": 37,
+      "note": "catalogado como pj-sala-primera-induccion-ia (planificado, fuente primaria del PJ, sin claims de despliegue)"
+    },
+    {
       "urlSignature": "teletica.com/nacional/ccss-implementa-herramienta-de-inteligencia-artificial-en-intento-por-bajar-listas-de-espera_408381",
       "titleSignature": "ccss implementa herramienta de inteligencia artificial en intento por bajar listas de espera",
       "url": "https://www.teletica.com/nacional/ccss-implementa-herramienta-de-inteligencia-artificial-en-intento-por-bajar-listas-de-espera_408381",

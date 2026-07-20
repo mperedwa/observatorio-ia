@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-07-17T17:51:52.445Z",
+  "lastUpdate": "2026-07-20T19:08:47.653Z",
   "count": 7,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
@@ -17,7 +17,7 @@
       },
       "tipo": "judicial",
       "url": "https://pj.poder-judicial.go.cr/",
-      "proyectosActivos": 6,
+      "proyectosActivos": 7,
       "resumen": {
         "es": "Cartera más amplia del Estado: clasificación documental, Giro Continuo (¢5,245M en 2024), ML presupuestal con +₡100M ahorrados, anonimización Nymiz, análisis Sala Cuarta con UCR/PEN, ChatbotPJ desde 2018.",
         "en": "Broadest state portfolio: document classification, Continuous Disbursement (¢5,245M in 2024), budget ML with +₡100M saved, Nymiz anonymization, Constitutional Chamber analysis with UCR/PEN, ChatbotPJ since 2018."

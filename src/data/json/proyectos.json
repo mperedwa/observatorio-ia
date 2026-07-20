@@ -574,5 +574,29 @@
       "en": "Work line of CNCA (National Advanced Computing Collaboratory), a unit of CeNAT under CONARE. Verification started from a general TEC article (April 25, 2024) on the potential of AI in health; the concrete evidence for the project is in CONARE's official repository and on the CNCA site. The catalogued scope is strictly research and prototype: no clinical use or care deployment is claimed."
     },
     "fuenteUrl": "https://repositorio.conare.ac.cr/items/b8bb3b55-cc3c-402a-9df4-6fe66159230d"
+  },
+  {
+    "id": "pj-sala-primera-induccion-ia",
+    "titulo": {
+      "es": "Inducción de Sala Primera para uso asistido de IA",
+      "en": "First Chamber induction on the use of AI to support decision-making"
+    },
+    "institucionId": "poder-judicial",
+    "categoria": "judicial",
+    "estado": "planificado",
+    "desde": "2026",
+    "descripcion": {
+      "es": "La Sala Primera de la Corte Suprema de Justicia declara estar en un proceso de inducción sobre el uso de prompts para que herramientas de inteligencia artificial apoyen la toma de decisiones con mayor rapidez y certeza, tomando como referencia experiencias internacionales. Es una etapa de preparación y capacitación: no se ha anunciado un sistema, un proveedor ni un despliegue.",
+      "en": "The First Chamber of the Supreme Court states that it is in an induction process on the use of prompts so that artificial intelligence tools can support decision-making with greater speed and certainty, drawing on international experience. This is a preparation and training stage: no system, vendor or deployment has been announced."
+    },
+    "resultado": {
+      "es": "Sin resultados. La fuente oficial documenta una declaración de intención y un proceso de inducción en la Sala Primera; no reporta sistema en operación, piloto, cronograma ni métricas de desempeño.",
+      "en": "No results. The official source documents a statement of intent and an induction process within the First Chamber; it reports no system in operation, pilot, timeline or performance metrics."
+    },
+    "contexto": {
+      "es": "La declaración proviene del magistrado Luis Guillermo Rivas, presidente de la Sala Primera, citado en un comunicado oficial del Poder Judicial del 17 de julio de 2026 cuyo tema principal es la reducción del 60% en los casos pendientes de la Sala entre 2019 y 2024; la mención de inteligencia artificial aparece como declaración dentro de esa nota, no como anuncio de un proyecto. Se distingue de pj-sentencias-sala-iv, que corresponde a la Sala Constitucional (Cuarta), con otro corpus y otro propósito.",
+      "en": "The statement comes from Justice Luis Guillermo Rivas, president of the First Chamber, quoted in an official Judiciary release of July 17, 2026 whose main subject is the 60% reduction in the Chamber's pending caseload between 2019 and 2024; the artificial intelligence mention appears as a statement within that release, not as a project announcement. It is distinct from pj-sentencias-sala-iv, which corresponds to the Constitutional Chamber (Fourth), with a different corpus and purpose."
+    },
+    "fuenteUrl": "https://pj.poder-judicial.go.cr/index.php/component/content/article/2137-sala-primera-reduce-en-60-casos-pendientes-y-alcanza-cifra-record-de-resoluciones-de-fondo"
   }
 ]

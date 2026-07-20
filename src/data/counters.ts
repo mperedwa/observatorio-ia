@@ -8,7 +8,7 @@ export interface Counters {
 }
 
 export const COUNTERS: Counters = {
-  proyectos: 24,
+  proyectos: 25,
   instituciones: 7,
   legislacion: 5,
 };

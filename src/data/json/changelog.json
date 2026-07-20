@@ -1,5 +1,18 @@
 [
   {
+    "fecha": "2026-07-20",
+    "tipo": "proyecto",
+    "actualizacion": {
+      "es": "Se cataloga un nuevo proyecto: pj-sala-primera-induccion-ia. La Sala Primera de la Corte Suprema declara estar en un proceso de inducción sobre el uso de prompts para que herramientas de IA apoyen la toma de decisiones. Se registra como planificado: la fuente oficial no anuncia sistema, proveedor, cronograma ni resultados. Se distingue del proyecto de la Sala Constitucional ya catalogado.",
+      "en": "A new project is catalogued: pj-sala-primera-induccion-ia. The Supreme Court's First Chamber states it is in an induction process on the use of prompts so that AI tools can support decision-making. It is recorded as planned: the official source announces no system, vendor, timeline or results. It is distinct from the already catalogued Constitutional Chamber project."
+    },
+    "fuente": {
+      "es": "Poder Judicial — comunicado oficial 17-jul-2026",
+      "en": "Judiciary of Costa Rica — official release Jul 17, 2026"
+    },
+    "fuente_url": "https://pj.poder-judicial.go.cr/index.php/component/content/article/2137-sala-primera-reduce-en-60-casos-pendientes-y-alcanza-cifra-record-de-resoluciones-de-fondo"
+  },
+  {
     "fecha": "2026-07-17",
     "tipo": "proyecto",
     "actualizacion": {
