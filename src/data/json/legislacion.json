@@ -6,10 +6,10 @@
       "en": "Law to Regulate Artificial Intelligence in Costa Rica"
     },
     "resumen": {
-      "es": "Marco general para regular el desarrollo, uso y aplicación de IA en CR. Crea la Autoridad Reguladora de IA (ARIA). Cuenta con dictamen mayoritario positivo (septiembre 2024), pero enfrenta oposición de CAMTIC y otros actores del ecosistema tech.",
-      "en": "General framework to regulate the development, use and application of AI in Costa Rica. Creates the AI Regulatory Authority (ARIA). Has a positive majority committee report (September 2024), but faces opposition from CAMTIC and other tech ecosystem stakeholders."
+      "es": "Marco general para el desarrollo, uso y aplicación de la IA en Costa Rica. El texto sustitutivo vigente (septiembre 2024) designa al MICITT como órgano rector, con apoyo técnico de la SUTEL, a cargo del registro, la supervisión y la auditoría; define cuatro niveles de riesgo y exige que los chatbots informen que la interacción es con un sistema de IA y que los deepfakes divulguen que el contenido fue generado o alterado artificialmente. Cuenta con dictamen afirmativo de mayoría en la Comisión de Ciencia, Tecnología y Educación y está en el orden del día del Plenario desde octubre de 2024, sin votación. Proponente: Vanessa Castro Mora (PUSC). El expediente vence el 30 de mayo de 2027 si no se aprueba antes.",
+      "en": "General framework for the development, use and application of AI in Costa Rica. The current substitute text (September 2024) designates MICITT as the governing authority, with technical support from SUTEL, responsible for registration, oversight and auditing; it sets four risk levels and requires chatbots to disclose that the interaction is with an AI system and deepfakes to disclose that the content was artificially generated or altered. It has a majority affirmative committee report from the Science, Technology and Education Committee and has been on the Plenary agenda since October 2024, without a vote. Filed by Vanessa Castro Mora (PUSC). The bill expires on May 30, 2027 if it is not approved before then."
     },
-    "estado": "en-comision",
+    "estado": "dictaminado",
     "comision": {
       "es": "Ciencia, Tecnología y Educación",
       "en": "Science, Technology and Education"
@@ -24,8 +24,8 @@
       "en": "Law for the Responsible Promotion of Artificial Intelligence in Costa Rica"
     },
     "resumen": {
-      "es": "Crea espacios controlados de experimentación regulatoria para tecnologías emergentes de IA. Modelo similar a sandboxes financieros del sector fintech. Cuenta con texto sustitutivo aprobado en comisión (marzo 2025).",
-      "en": "Creates controlled spaces for regulatory experimentation with emerging AI technologies. Modeled after financial sandboxes in the fintech sector. Has a substitute text approved in committee (March 2025)."
+      "es": "Marco para la promoción responsable de la IA con énfasis en los derechos fundamentales. El texto sustitutivo vigente (marzo 2025) crea la Comisión Interinstitucional para el Desarrollo de la IA (CIDIA), adscrita al MICITT, y un comité asesor ético, técnico y científico; define la categoría de sistemas de alto riesgo y sanciona el uso de IA para desinformar mediante contenido lingüístico y para generar archivos de video, imagen o voz que aparenten ser auténticos con el fin de engañar. Cuenta con dictamen afirmativo de mayoría en la Comisión de Derechos Humanos y está en el orden del día del Plenario desde abril de 2025, sin votación. Proponente: Óscar Izquierdo Sandí (PLN). El expediente vence el 6 de septiembre de 2027 si no se aprueba antes.",
+      "en": "Framework for the responsible promotion of AI with an emphasis on fundamental rights. The current substitute text (March 2025) creates the Inter-Institutional Commission for the Development of AI (CIDIA), attached to MICITT, and an ethical, technical and scientific advisory committee; it defines the high-risk systems category and penalizes the use of AI to spread disinformation through linguistic content and to create video, image or voice files made to appear authentic in order to deceive. It has a majority affirmative committee report from the Human Rights Committee and has been on the Plenary agenda since April 2025, without a vote. Filed by Óscar Izquierdo Sandí (PLN). The bill expires on September 6, 2027 if it is not approved before then."
     },
     "estado": "dictaminado",
     "comision": {
@@ -42,8 +42,8 @@
       "en": "Law for the Implementation of Artificial Intelligence Systems"
     },
     "resumen": {
-      "es": "Propone clasificación escalonada por nivel de riesgo (similar a EU AI Act). Cuenta con texto sustitutivo aprobado (octubre 2025). La versión más reciente y técnicamente robusta de los cinco expedientes.",
-      "en": "Proposes a tiered classification by risk level (similar to the EU AI Act). Has an approved substitute text (October 2025). The most recent and technically robust of the five bills."
+      "es": "Marco general basado en el nivel de riesgo. El texto sustitutivo vigente (octubre 2025) asigna al MICITT la rectoría y la coordinación con otras siete instituciones, y alcanza a personas físicas y jurídicas extranjeras cuyos sistemas surtan efectos en el país. Es el único de los tres que define expresamente la inteligencia artificial generativa como categoría funcional general, además de la falsificación profunda (deepfakes). Cuenta con dictamen afirmativo unánime en la Comisión de Ciencia, Tecnología y Educación (octubre 2025) y está en el orden del día del Plenario desde febrero de 2026, sin votación. Proponentes: Johana Obando Bonilla y tres diputaciones más. El expediente vence el 6 de agosto de 2028 si no se aprueba antes.",
+      "en": "Risk-based general framework. The current substitute text (October 2025) assigns MICITT the governing role and coordination with seven other institutions, and reaches foreign individuals and legal entities whose systems have effects in the country. It is the only one of the three that expressly defines generative artificial intelligence as a general functional category, in addition to deep fakes. It has a unanimous affirmative committee report from the Science, Technology and Education Committee (October 2025) and has been on the Plenary agenda since February 2026, without a vote. Filed by Johana Obando Bonilla and three other legislators. The bill expires on August 6, 2028 if it is not approved before then."
     },
     "estado": "dictaminado",
     "comision": {

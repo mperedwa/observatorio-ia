@@ -1,5 +1,18 @@
 [
   {
+    "fecha": "2026-07-23",
+    "tipo": "legislacion",
+    "actualizacion": {
+      "es": "Se actualizan los tres expedientes generales de regulación de IA (23.771, 23.919 y 24.484) contra los textos sustitutivos vigentes verificados en el SIL. 23.771: se corrige el estado a dictaminado y se elimina la referencia a una ARIA inexistente (el texto pone al MICITT como órgano rector, con apoyo de la SUTEL). 23.919: se sustituye la caracterización de sandboxes por la creación de la CIDIA, el comité asesor y la definición de alto riesgo. 24.484: se completa con las definiciones de IA generativa y falsificación profunda, la rectoría del MICITT coordinando siete instituciones, el alcance a actores extranjeros y el dictamen unánime.",
+      "en": "The three general AI-regulation bills (23.771, 23.919 and 24.484) are updated against the current substitute texts verified in the SIL. 23.771: status corrected to dictaminado and the reference to a non-existent ARIA removed (the text makes MICITT the governing authority, supported by SUTEL). 23.919: the sandbox characterization is replaced with the creation of CIDIA, the advisory committee and the high-risk definition. 24.484: completed with the definitions of generative AI and deep fakes, MICITT's governing role coordinating seven institutions, the reach over foreign actors, and the unanimous committee report."
+    },
+    "fuente": {
+      "es": "Sistema de Información Legislativa (SIL) + textos sustitutivos vigentes (verificación independiente)",
+      "en": "Legislative Information System (SIL) + current substitute texts (independent verification)"
+    },
+    "fuente_url": "https://www.asamblea.go.cr/Centro_de_informacion/Consultas_SIL/SitePages/ConsultaProyectos.aspx"
+  },
+  {
     "fecha": "2026-07-20",
     "tipo": "proyecto",
     "actualizacion": {
