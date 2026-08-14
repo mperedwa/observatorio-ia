@@ -1,5 +1,18 @@
 [
   {
+    "fecha": "2026-08-14",
+    "tipo": "proyecto",
+    "actualizacion": {
+      "es": "Se cataloga un nuevo proyecto: pj-conamaj-chat-facilitadores. CONAMAJ impulsa un chat de IA tipo modelo de lenguaje para las personas facilitadoras judiciales, orientado a consultas jurídicas y orientación legal, distinto del ChatbotPJ de atención ciudadana. Se registra como piloto: la fuente oficial no reporta sistema, proveedor, cronograma ni resultados medidos. No se atribuye a Naciones Unidas desarrollo ni coejecución (solo apoyo técnico al encuentro).",
+      "en": "New project cataloged: pj-conamaj-chat-facilitadores. CONAMAJ drives a language-model AI chat for judicial facilitators, focused on legal consultations and guidance, distinct from the citizen-facing ChatbotPJ. Recorded as a pilot: the official source does not report a system, vendor, timeline, or measured results. The United Nations is not credited with development or co-execution (only technical support to the event)."
+    },
+    "fuente": {
+      "es": "Poder Judicial, artículo sobre CONAMAJ y Naciones Unidas (2026)",
+      "en": "Judiciary of Costa Rica, article on CONAMAJ and the United Nations (2026)"
+    },
+    "fuente_url": "https://pj.poder-judicial.go.cr/index.php/component/content/article/2550-instituciones-conamaj-y-naciones-unidas-fortalecen-sector-justicia-de-cara-a-la-inteligencia-artificial?catid=8&Itemid=409"
+  },
+  {
     "fecha": "2026-07-23",
     "tipo": "legislacion",
     "actualizacion": {
