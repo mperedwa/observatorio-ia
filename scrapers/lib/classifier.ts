@@ -1,5 +1,5 @@
 /**
- * Classifier LLM via Groq (Llama 3.3 70B Versatile, free tier).
+ * Classifier LLM via Groq (Llama 3.1 8B Instant, free tier).
  *
  * Política editorial: enriquece candidatos con score y tipo, NO autoriza
  * cambios al catálogo. Mario sigue revisando manualmente cada PR.
@@ -10,7 +10,7 @@
  */
 
 const ENDPOINT = 'https://api.groq.com/openai/v1/chat/completions';
-const MODEL = 'llama-3.3-70b-versatile';
+const MODEL = 'llama-3.1-8b-instant';
 
 export type Tipo =
   | 'proyecto-nuevo'
@@ -119,7 +119,7 @@ function parseRetryDelay(res: Response, errMessage: string | undefined): number 
   return 8000;
 }
 
-async function callGroq(apiKey: string, candidate: Candidate, timeoutMs = 15000, maxRetries = 2): Promise<Classification | null> {
+async function callGroq(apiKey: string, candidate: Candidate, timeoutMs = 15000, maxRetries = 3): Promise<Classification | null> {
   const body = {
     model: MODEL,
     messages: [
@@ -228,12 +228,13 @@ export async function classifyMany(
   const results: Array<Classification | null> = new Array(candidates.length).fill(null);
   let cursor = 0;
 
-  // Pacing: Groq free tier llama-3.3-70b-versatile cap is 12000 TPM.
-  // Each request consumes ~1300 input tokens (system prompt) + ~400 output ≈ 1700 total.
+  // Pacing conservador para el free tier de Groq (los caps de TPM varían por modelo).
+  // Cada request consume ~1300 input tokens (system prompt) + ~400 output ≈ 1700 total;
+  // el manejo de 429 (parseRetryDelay) es la red de seguridad si el cap del modelo es menor.
   // Sustainable rate ≈ 7 req/min ≈ 1 req every 8.5s per worker. With concurrency=2
   // that's 1 req every ~4.3s globally. We pace each worker at 5s between starts
   // to stay just under the limit; the per-call retry on 429 covers any drift.
-  const PACING_MS = 5000;
+  const PACING_MS = 15000; // TPM cap del free tier de llama-3.1-8b-instant es 6000; ~1100 tok/req -> pace conservador para no gatillar 429
 
   async function worker(): Promise<void> {
     while (cursor < candidates.length) {
