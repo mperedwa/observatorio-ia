@@ -14,6 +14,7 @@ import {
 import { comparativaRegional } from '@/data/indicadores';
 import type { Dictionary } from '@/i18n/dictionaries';
 import type { Locale } from '@/i18n/config';
+import { trackEvent } from '@/lib/analytics';
 
 interface TooltipRow {
   pais: string;
@@ -65,6 +66,13 @@ export function ChartILIA({ locale, t }: { locale: Locale; t: Dictionary }) {
     }));
 
   function handleClick() {
+    trackEvent('visualization_interaction', {
+      locale,
+      section: 'indicadores',
+      content_type: 'ilia',
+      content_id: 'comparativa-regional',
+      interaction: 'drill_down',
+    });
     router.push(`/${locale}/analisis`);
   }
 

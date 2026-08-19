@@ -5,6 +5,7 @@ import { ChartILIA } from './ChartILIA';
 import { comparativaRegional } from '@/data/indicadores';
 import type { Dictionary } from '@/i18n/dictionaries';
 import type { Locale } from '@/i18n/config';
+import { trackEvent } from '@/lib/analytics';
 
 type View = 'grafico' | 'tabla' | 'ranking';
 
@@ -118,7 +119,16 @@ export function ChartILIATabs({ locale, t }: { locale: Locale; t: Dictionary }) 
       <button
         key={key}
         type="button"
-        onClick={() => setView(key)}
+        onClick={() => {
+          setView(key);
+          trackEvent('visualization_interaction', {
+            locale,
+            section: 'indicadores',
+            content_type: 'ilia',
+            content_id: 'comparativa-regional',
+            interaction: `view_${key}`,
+          });
+        }}
         aria-pressed={active}
         className={`px-4 py-1.5 text-sm font-medium rounded-md border transition-colors ${
           active

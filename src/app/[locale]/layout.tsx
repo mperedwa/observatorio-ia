@@ -42,13 +42,13 @@ export async function generateMetadata({
     openGraph: {
       title: m.ogTitle,
       description: m.ogDesc,
-      url: `https://observatorioia.org/${locale}/`,
+      url: `https://www.observatorioia.org/${locale}/`,
       siteName: m.ogTitle,
       locale: m.ogLocale,
       type: 'website',
       images: [
         {
-          url: `https://observatorioia.org/comparte-assets/${locale}/og-home-1200x630.png`,
+          url: `https://www.observatorioia.org/comparte-assets/${locale}/og-home-1200x630.png`,
           width: 1200,
           height: 630,
           alt: m.ogTitle,
@@ -59,7 +59,7 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title: m.ogTitle,
       description: m.ogDesc,
-      images: [`https://observatorioia.org/comparte-assets/${locale}/og-home-1200x630.png`],
+      images: [`https://www.observatorioia.org/comparte-assets/${locale}/og-home-1200x630.png`],
     },
     alternates: {
       canonical: `/${locale}/`,

@@ -3,6 +3,7 @@
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { t as TRANSLATIONS, type Locale } from './translations';
+import { trackEvent } from '@/lib/analytics';
 
 /* ═══════════════════════════════════════════════════════════════════
    DATA — language-neutral fields only; localized strings come from translations
@@ -516,6 +517,13 @@ export default function ArticleBrief({ locale }: { locale: Locale }) {
   }, [allProjects, filter, sortKey, sortAsc]);
 
   const doSort = (k: typeof sortKey) => {
+    trackEvent('visualization_interaction', {
+      locale,
+      section: 'analisis',
+      content_type: 'article_table',
+      content_id: '01-ia-en-el-estado-costarricense',
+      interaction: `sort_${k}`,
+    });
     if (sortKey === k) setSortAsc(!sortAsc);
     else { setSortKey(k); setSortAsc(true); }
   };
@@ -802,7 +810,16 @@ export default function ArticleBrief({ locale }: { locale: Locale }) {
                       key={f.key}
                       type="button"
                       className={`pb-fbtn ${isOn ? 'pb-fbtn-on' : ''}`}
-                      onClick={() => setFilter(f.key)}
+                      onClick={() => {
+                        setFilter(f.key);
+                        trackEvent('visualization_interaction', {
+                          locale,
+                          section: 'analisis',
+                          content_type: 'article_filter',
+                          content_id: '01-ia-en-el-estado-costarricense',
+                          interaction: `filter_${f.key}`,
+                        });
+                      }}
                     >
                       {baseLabel}
                       {count !== null && ` (${count})`}

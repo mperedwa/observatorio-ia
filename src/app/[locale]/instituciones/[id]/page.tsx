@@ -30,7 +30,7 @@ export async function generateMetadata({
     openGraph: {
       title: titulo,
       description: descripcion,
-      url: `https://observatorioia.org/${locale}/instituciones/${id}/`,
+      url: `https://www.observatorioia.org/${locale}/instituciones/${id}/`,
       siteName: t.siteName,
       locale: locale === 'es' ? 'es_CR' : 'en_US',
       type: 'article',

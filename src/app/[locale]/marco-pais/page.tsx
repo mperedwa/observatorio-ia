@@ -30,7 +30,7 @@ export async function generateMetadata({
     openGraph: {
       title: titulo,
       description: t.marcoPais.metaDescripcion,
-      url: `https://observatorioia.org/${locale}/marco-pais/`,
+      url: `https://www.observatorioia.org/${locale}/marco-pais/`,
       siteName: t.siteName,
       locale: locale === 'es' ? 'es_CR' : 'en_US',
       type: 'article',
@@ -222,7 +222,7 @@ export default async function MarcoPaisPage({
           </header>
           <div className="flex flex-wrap gap-3">
             <CtaLink href={`/${lc}/#instituciones`} label={dict.conexion.ctaInstituciones} />
-            <CtaLink href={`/${lc}/proyectos`} label={dict.conexion.ctaProyectos} />
+            <CtaLink href={`/${lc}/#panorama`} label={dict.conexion.ctaProyectos} />
             <CtaLink href={`/${lc}/#legislacion`} label={dict.conexion.ctaLegislacion} />
             <CtaLink href={`/${lc}/#indicadores`} label={dict.conexion.ctaIndicadores} />
             <CtaLink href={`/${lc}/#recursos`} label={dict.conexion.ctaRecursos} />

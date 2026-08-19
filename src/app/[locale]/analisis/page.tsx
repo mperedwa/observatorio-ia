@@ -29,13 +29,13 @@ export async function generateMetadata({
     openGraph: {
       title: titulo,
       description: t.analisis.metaDescripcion,
-      url: `https://observatorioia.org/${locale}/analisis/`,
+      url: `https://www.observatorioia.org/${locale}/analisis/`,
       siteName: t.siteName,
       locale: locale === 'es' ? 'es_CR' : 'en_US',
       type: 'article',
       images: [
         {
-          url: `https://observatorioia.org/comparte-assets/${locale}/og-analisis-1200x630.png`,
+          url: `https://www.observatorioia.org/comparte-assets/${locale}/og-analisis-1200x630.png`,
           width: 1200,
           height: 630,
           alt: titulo,
@@ -46,7 +46,7 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title: titulo,
       description: t.analisis.metaDescripcion,
-      images: [`https://observatorioia.org/comparte-assets/${locale}/og-analisis-1200x630.png`],
+      images: [`https://www.observatorioia.org/comparte-assets/${locale}/og-analisis-1200x630.png`],
     },
     alternates: {
       canonical: `/${locale}/analisis/`,

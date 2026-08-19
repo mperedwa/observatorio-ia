@@ -23,6 +23,12 @@ export function Footer({ t, locale }: { t: Dictionary; locale: Locale }) {
           >
             {t.footer.apiPublica} →
           </a>
+          <Link
+            href={`/${locale}/privacidad`}
+            className="text-institucional-700 hover:underline font-medium"
+          >
+            {locale === 'es' ? 'Privacidad y analítica' : 'Privacy and analytics'} →
+          </Link>
         </div>
         <div className="text-xs text-slate-500 sm:text-right">
           <p>{t.footer.ultimaActualizacion}</p>

@@ -3,6 +3,7 @@
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { t as TRANSLATIONS, type Locale } from './translations';
+import { trackEvent } from '@/lib/analytics';
 
 /* ═══════════════════════════════════════════════════════════════════
    SECTIONS
@@ -576,7 +577,16 @@ export default function ArticleBrief({ locale }: { locale: Locale }) {
                       key={f.key}
                       type="button"
                       className={`pb-fbtn ${filter === f.key ? 'pb-fbtn-on' : ''}`}
-                      onClick={() => setFilter(f.key)}
+                      onClick={() => {
+                        setFilter(f.key);
+                        trackEvent('visualization_interaction', {
+                          locale,
+                          section: 'analisis',
+                          content_type: 'article_filter',
+                          content_id: '02-tres-leyes-ia-cr',
+                          interaction: `filter_${f.key}`,
+                        });
+                      }}
                     >
                       {f.key === 'all' ? (locale === 'es' ? 'Todos' : 'All') : label}
                     </button>

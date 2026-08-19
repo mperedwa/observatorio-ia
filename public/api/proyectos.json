@@ -1,7 +1,7 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-07-20T19:08:47.652Z",
-  "count": 25,
+  "lastUpdate": "2026-08-19T17:56:15.252Z",
+  "count": 26,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "data": [
@@ -604,6 +604,30 @@
         "en": "The statement comes from Justice Luis Guillermo Rivas, president of the First Chamber, quoted in an official Judiciary release of July 17, 2026 whose main subject is the 60% reduction in the Chamber's pending caseload between 2019 and 2024; the artificial intelligence mention appears as a statement within that release, not as a project announcement. It is distinct from pj-sentencias-sala-iv, which corresponds to the Constitutional Chamber (Fourth), with a different corpus and purpose."
       },
       "fuenteUrl": "https://pj.poder-judicial.go.cr/index.php/component/content/article/2137-sala-primera-reduce-en-60-casos-pendientes-y-alcanza-cifra-record-de-resoluciones-de-fondo"
+    },
+    {
+      "id": "pj-conamaj-chat-facilitadores",
+      "titulo": {
+        "es": "Chat de IA de CONAMAJ para personas facilitadoras judiciales",
+        "en": "CONAMAJ AI chat for judicial facilitators"
+      },
+      "institucionId": "poder-judicial",
+      "categoria": "judicial",
+      "estado": "piloto",
+      "desde": "2026",
+      "descripcion": {
+        "es": "Chat de inteligencia artificial tipo modelo de lenguaje impulsado por CONAMAJ para las personas facilitadoras judiciales, orientado a consultas jurídicas y orientación legal. Es distinto del ChatbotPJ de atención ciudadana: este apoya específicamente a las personas facilitadoras en su labor de orientación.",
+        "en": "Language-model AI chat driven by CONAMAJ for judicial facilitators, focused on legal consultations and guidance. It is distinct from the citizen-facing ChatbotPJ: this one specifically supports facilitators in their guidance work."
+      },
+      "resultado": {
+        "es": "Sin métricas públicas a la fecha. La fuente oficial no reporta volumen de consultas, cobertura ni resultados medidos.",
+        "en": "No public metrics to date. The official source does not report query volume, coverage, or measured results."
+      },
+      "contexto": {
+        "es": "Presentado en el marco de la agenda de CONAMAJ 2026 sobre aplicaciones de IA en el sector justicia. Naciones Unidas brindó apoyo técnico al encuentro; no se le atribuye desarrollo ni coejecución del chat. Se registra como piloto conservador ante la ausencia de un sistema, proveedor, cronograma o resultados públicos.",
+        "en": "Presented within the CONAMAJ 2026 agenda on AI applications in the justice sector. The United Nations provided technical support to the event; it is not credited with developing or co-executing the chat. Recorded conservatively as a pilot given the absence of a public system, vendor, timeline, or results."
+      },
+      "fuenteUrl": "https://pj.poder-judicial.go.cr/index.php/component/content/article/2550-instituciones-conamaj-y-naciones-unidas-fortalecen-sector-justicia-de-cara-a-la-inteligencia-artificial?catid=8&Itemid=409"
     }
   ]
 }

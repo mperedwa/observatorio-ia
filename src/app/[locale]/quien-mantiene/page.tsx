@@ -57,7 +57,7 @@ export async function generateMetadata({
     openGraph: {
       title: titulo,
       description: t.quienMantiene.metaDescripcion,
-      url: `https://observatorioia.org/${locale}/quien-mantiene/`,
+      url: `https://www.observatorioia.org/${locale}/quien-mantiene/`,
       siteName: t.siteName,
       locale: locale === 'es' ? 'es_CR' : 'en_US',
       type: 'article',

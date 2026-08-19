@@ -35,8 +35,8 @@ export async function generateMetadata({
   const titulo = `${T.meta.title} — ${T.meta.org}`;
   const ogImage =
     lc === 'es'
-      ? 'https://observatorioia.org/comparte-assets/es/og-analisis-1200x630.png'
-      : 'https://observatorioia.org/comparte-assets/en/og-analisis-1200x630.png';
+      ? 'https://www.observatorioia.org/comparte-assets/es/og-analisis-1200x630.png'
+      : 'https://www.observatorioia.org/comparte-assets/en/og-analisis-1200x630.png';
   return {
     title: titulo,
     description: T.meta.description,
@@ -44,7 +44,7 @@ export async function generateMetadata({
     openGraph: {
       title: T.meta.title,
       description: T.meta.description,
-      url: `https://observatorioia.org/${lc}/analisis/${SLUG}/`,
+      url: `https://www.observatorioia.org/${lc}/analisis/${SLUG}/`,
       siteName: T.meta.org,
       locale: lc === 'es' ? 'es_CR' : 'en_US',
       type: 'article',
