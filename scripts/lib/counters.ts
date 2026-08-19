@@ -12,20 +12,36 @@
  */
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
+import {
+  resumirCatalogo,
+  type CamposModeloEvidencia,
+} from '../../src/data/modelo-evidencia';
 
 export interface Counters {
+  /** Alias temporal usado por placeholders y componentes existentes. */
   proyectos: number;
+  iniciativasDocumentadas: number;
+  adopcionVerificada: number;
+  verificadasCatalogo: number;
+  seguimiento: number;
+  ecosistema: number;
+  descartadas: number;
+  pendientesMigracion: number;
   instituciones: number;
   legislacion: number;
 }
 
 export function computeCounters(srcDir: string): Counters {
-  const proyectos = JSON.parse(readFileSync(join(srcDir, 'proyectos.json'), 'utf8')) as unknown[];
+  const proyectos = JSON.parse(
+    readFileSync(join(srcDir, 'proyectos.json'), 'utf8'),
+  ) as CamposModeloEvidencia[];
   const instituciones = JSON.parse(readFileSync(join(srcDir, 'instituciones.json'), 'utf8')) as unknown[];
   const legislacion = JSON.parse(readFileSync(join(srcDir, 'legislacion.json'), 'utf8')) as unknown[];
+  const resumen = resumirCatalogo(proyectos);
 
   return {
-    proyectos: proyectos.length,
+    proyectos: resumen.iniciativasDocumentadas,
+    ...resumen,
     instituciones: instituciones.length,
     legislacion: legislacion.length,
   };

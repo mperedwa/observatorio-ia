@@ -2,6 +2,11 @@ import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
+import {
+  encontrarErroresTrazabilidad,
+  type CamposModeloEvidencia,
+  type RelacionIniciativa,
+} from '../../src/data/modelo-evidencia';
 
 const ROOT = join(process.cwd(), 'src', 'data');
 
@@ -50,14 +55,38 @@ export function validateAll(): boolean {
 }
 
 export function crossCheck(): boolean {
-  const proyectos = loadJson('json/proyectos.json') as Array<{ id: string; institucionId: string }>;
+  const proyectos = loadJson('json/proyectos.json') as Array<
+    CamposModeloEvidencia & {
+      id: string;
+      institucionId: string;
+      relaciones?: RelacionIniciativa[];
+    }
+  >;
   const instituciones = loadJson('json/instituciones.json') as Array<{ id: string; proyectosActivos: number }>;
   const institucionIds = new Set(instituciones.map((i) => i.id));
+  const proyectoIds = new Set(proyectos.map((p) => p.id));
   let ok = true;
   for (const p of proyectos) {
     if (!institucionIds.has(p.institucionId)) {
       console.log(`  FAIL proyecto "${p.id}" referencia institucionId desconocida "${p.institucionId}"`);
       ok = false;
+    }
+
+    for (const error of encontrarErroresTrazabilidad(p)) {
+      console.log(`  FAIL proyecto "${p.id}" tiene trazabilidad inválida: ${error}`);
+      ok = false;
+    }
+
+    for (const relacion of p.relaciones ?? []) {
+      if (relacion.iniciativaId === p.id) {
+        console.log(`  FAIL proyecto "${p.id}" contiene una relación consigo mismo`);
+        ok = false;
+      } else if (!proyectoIds.has(relacion.iniciativaId)) {
+        console.log(
+          `  FAIL proyecto "${p.id}" relaciona iniciativa desconocida "${relacion.iniciativaId}"`,
+        );
+        ok = false;
+      }
     }
   }
   // Conteo proyectosActivos: debe ser >= proyectos por institución (puede haber más, ya que proyectosActivos puede contar pilotos no listados)

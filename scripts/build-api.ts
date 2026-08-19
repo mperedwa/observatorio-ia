@@ -246,19 +246,38 @@ function writeCountersTs(counters: Counters): void {
     '',
     'export interface Counters {',
     '  proyectos: number;',
+    '  iniciativasDocumentadas: number;',
+    '  adopcionVerificada: number;',
+    '  verificadasCatalogo: number;',
+    '  seguimiento: number;',
+    '  ecosistema: number;',
+    '  descartadas: number;',
+    '  pendientesMigracion: number;',
     '  instituciones: number;',
     '  legislacion: number;',
     '}',
     '',
     'export const COUNTERS: Counters = {',
     `  proyectos: ${counters.proyectos},`,
+    `  iniciativasDocumentadas: ${counters.iniciativasDocumentadas},`,
+    `  adopcionVerificada: ${counters.adopcionVerificada},`,
+    `  verificadasCatalogo: ${counters.verificadasCatalogo},`,
+    `  seguimiento: ${counters.seguimiento},`,
+    `  ecosistema: ${counters.ecosistema},`,
+    `  descartadas: ${counters.descartadas},`,
+    `  pendientesMigracion: ${counters.pendientesMigracion},`,
     `  instituciones: ${counters.instituciones},`,
     `  legislacion: ${counters.legislacion},`,
     '};',
     '',
   ];
   writeFileSync(COUNTERS_TS, lines.join('\n'));
-  console.log(`  ✓ src/data/counters.ts (proyectos=${counters.proyectos}, instituciones=${counters.instituciones}, legislacion=${counters.legislacion})`);
+  console.log(
+    '  ✓ src/data/counters.ts ' +
+      `(documentadas=${counters.iniciativasDocumentadas}, ` +
+      `adopción verificada=${counters.adopcionVerificada}, ` +
+      `pendientes migración=${counters.pendientesMigracion})`,
+  );
 }
 
 /**

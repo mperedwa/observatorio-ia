@@ -253,6 +253,8 @@ Esto permite expresar formalmente que SUPERCOP y la acción del ICE son sistemas
 Una entrada cuenta como adopción verificada únicamente si cumple todos estos criterios:
 
 ```text
+modeloVersion = 2
+AND
 estadoCatalogo = verificado
 AND tipoIniciativa IN (sistema-ia, componente-ia)
 AND faseImplementacion IN (piloto, operativo)
@@ -263,6 +265,8 @@ AND evaluacion.ejecucion.estado = confirmado
 La regla debe vivir en una función compartida y tener pruebas. No se debe almacenar un booleano manual ni usar `proyectos.length`.
 
 Hasta completar la reclasificación de las 26 entradas actuales, no conviene publicar una nueva cifra de sistemas verificados.
+
+El requisito técnico `modeloVersion = 2` evita que una ficha parcialmente migrada alimente el contador. No añade una condición editorial nueva; garantiza que el núcleo de clasificación, fuentes y fechas pasó la validación completa del schema.
 
 ## Ejemplo: proyecto ICE sobre homicidios
 
@@ -461,10 +465,14 @@ No es una reclasificación definitiva, sino una cola de auditoría:
 
 ### Fase 1 — Schema v2 y reglas
 
-- Añadir enums y campos nuevos.
-- Crear funciones derivadas de inclusión y conteo.
-- Añadir pruebas unitarias de las reglas.
-- Mantener compatibilidad con los datos actuales durante la migración.
+- [x] Añadir enums y campos nuevos.
+- [x] Crear funciones derivadas de inclusión y conteo.
+- [x] Añadir pruebas unitarias de las reglas.
+- [x] Mantener compatibilidad con los datos actuales durante la migración.
+
+Implementado en `src/data/modelo-evidencia.ts` y `src/data/schemas/proyectos.schema.json`. Las fichas legacy continúan validando; una ficha que declare `modeloVersion: 2` debe incluir clasificación, evaluación, fuentes y fechas principales. El validador también comprueba IDs de fuente, referencias de resultados y relaciones entre iniciativas.
+
+Estado técnico al cerrar la fase: 26 iniciativas documentadas, 26 pendientes de migración y 0 entradas elegibles todavía para el contador v2. Ese cero es un estado de migración, no una conclusión pública sobre la adopción actual; el sitio conserva el titular provisional de 26 iniciativas documentadas hasta completar la Fase 2.
 
 ### Fase 2 — Reclasificar las 26 entradas
 

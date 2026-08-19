@@ -1,5 +1,9 @@
 import data from './json/proyectos.json';
 import type { Bilingual } from '@/i18n/config';
+import type {
+  CamposModeloEvidencia,
+  EstadoProyectoLegacy,
+} from './modelo-evidencia';
 
 export type Categoria =
   | 'judicial'
@@ -8,9 +12,9 @@ export type Categoria =
   | 'fiscal'
   | 'infraestructura'
   | 'agricultura';
-export type Estado = 'operativo' | 'piloto' | 'planificado';
+export type Estado = EstadoProyectoLegacy;
 
-export interface Proyecto {
+export interface Proyecto extends CamposModeloEvidencia {
   id: string;
   titulo: Bilingual;
   institucionId: string;
