@@ -142,16 +142,19 @@
   "kpisHero": [
     {
       "label": {
-        "es": "Proyectos IA activos en gobierno",
-        "en": "Active AI projects in government"
+        "es": "Iniciativas relacionadas con IA documentadas",
+        "en": "Documented AI-related initiatives"
       },
       "valor": "auto",
-      "detalle": { "es": "mapeados en mayo 2026", "en": "mapped as of May 2026" }
+      "detalle": {
+        "es": "incluye sistemas, pilotos, planes y capacidades",
+        "en": "includes systems, pilots, plans and capabilities"
+      }
     },
     {
       "label": {
-        "es": "Instituciones con IA operativa",
-        "en": "Institutions with AI in production"
+        "es": "Instituciones con iniciativas documentadas",
+        "en": "Institutions with documented initiatives"
       },
       "valor": "auto",
       "detalle": {

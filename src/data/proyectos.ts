@@ -1,7 +1,13 @@
 import data from './json/proyectos.json';
 import type { Bilingual } from '@/i18n/config';
 
-export type Categoria = 'judicial' | 'salud' | 'educacion' | 'fiscal' | 'infraestructura';
+export type Categoria =
+  | 'judicial'
+  | 'salud'
+  | 'educacion'
+  | 'fiscal'
+  | 'infraestructura'
+  | 'agricultura';
 export type Estado = 'operativo' | 'piloto' | 'planificado';
 
 export interface Proyecto {

@@ -174,9 +174,9 @@ export interface Dictionary {
     institucionLabel: string;
     categoriaLabel: string;
     estadoLabel: string;
-    desdeLabel: string;
+    desdeLabel: { operativo: string; piloto: string; planificado: string };
     queEsLabel: string;
-    resultadoLabel: string;
+    resultadoLabel: { operativo: string; piloto: string; planificado: string };
     contextoLabel: string;
     fuenteLabel: string;
     relacionadosLabel: string;
@@ -363,10 +363,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
     hero: {
       kicker: 'Observatorio público',
       headline:
-        '{proyectos} proyectos de inteligencia artificial activos en el sector público costarricense.',
-      sub: 'Mapeo abierto de la adopción de IA en el sector público costarricense: instituciones, proyectos, legislación e indicadores comparados con la región.',
+        '{proyectos} iniciativas relacionadas con inteligencia artificial documentadas en el sector público costarricense.',
+      sub: 'Mapeo abierto de sistemas, pilotos, planes y capacidades relacionadas con IA en el sector público costarricense, junto con legislación e indicadores regionales.',
       kpiCategoria: {
-        proyectos: 'Proyectos',
+        proyectos: 'Iniciativas',
         instituciones: 'Instituciones',
         legislacion: 'Legislación',
         ranking: 'Ranking ILIA',
@@ -374,9 +374,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     instituciones: {
       kicker: '01 / Instituciones',
-      titulo: 'Quién está adoptando IA en el Estado',
-      sub: 'Siete instituciones públicas tienen al menos un proyecto de IA en operación o piloto activo.',
-      proyectosLabel: 'proyectos',
+      titulo: 'Dónde aparecen iniciativas de IA en el Estado',
+      sub: 'Siete instituciones públicas tienen iniciativas documentadas relacionadas con IA. El catálogo incluye sistemas, pilotos, planes y capacidades.',
+      proyectosLabel: 'iniciativas',
       verDetalle: 'Ver detalle',
       tipoLabel: {
         ministerio: 'Ministerio',
@@ -427,7 +427,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       titulo:
         'Una iniciativa independiente para mapear la adopción de IA en el Estado',
       p1: 'El Observatorio IA Costa Rica nace para llenar un vacío: no existe una fuente pública, actualizada y verificable sobre dónde, cómo y con qué resultados se está adoptando inteligencia artificial en el sector público costarricense.',
-      p2: 'Este sitio recopila proyectos en operación, expedientes de ley en trámite e indicadores comparados con la región. Toda la información proviene de fuentes oficiales y se cita con enlace al documento original.',
+      p2: 'Este sitio recopila sistemas, pilotos, planes y otras iniciativas documentadas, además de expedientes de ley e indicadores comparados con la región. Cada registro enlaza la fuente pública consultada.',
       p3: 'La meta es construir una herramienta útil para tomadores de decisión, prensa, academia, sector privado y ciudadanía interesada en cómo se usa la IA con fondos públicos.',
       ctaPregunta:
         '¿Conoce un proyecto de IA en una institución pública que no aparece aquí?',
@@ -436,8 +436,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
     footer: {
       titulo: 'Observatorio IA Costa Rica',
       tagline: 'Datos públicos. Iniciativa independiente.',
-      ultimaActualizacion: 'Última actualización: junio 2026',
-      fuentes: 'Fuentes: instituciones públicas de Costa Rica + ILIA (CEPAL).',
+      ultimaActualizacion: 'Última actualización: agosto 2026',
+      fuentes: 'Fuentes públicas: instituciones de Costa Rica, organismos multilaterales, academia y prensa.',
       quienMantiene: 'Quién mantiene el observatorio',
       apiPublica: 'API pública JSON para periodistas/investigadores',
       atribucion: 'Un proyecto de',
@@ -457,16 +457,16 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     timeline: {
       kicker: 'Línea de tiempo',
-      titulo: 'Adopción de IA en el Estado costarricense, 2018-2026',
-      sub: 'Cada punto es un proyecto verificado en producción o piloto. La adopción se concentra en los últimos tres años, con el Poder Judicial liderando desde 2018.',
+      titulo: 'Iniciativas de IA documentadas en el Estado costarricense, 2018-2026',
+      sub: 'Cada punto es una iniciativa documentada en el catálogo. La línea reúne sistemas operativos, pilotos, planes y capacidades; cada ficha indica la evidencia disponible.',
       desdeLabel: 'desde',
       sinResultadoLabel: 'Sin métrica pública',
     },
     panorama: {
       kicker: 'Panorama',
-      titulo: 'Distribución de proyectos por institución',
-      sub: 'Vista compacta de los {proyectos} proyectos agrupados por institución y coloreados por estado. Click en cualquiera para abrir el detalle.',
-      proyectoLabel: 'proyecto',
+      titulo: 'Distribución de iniciativas por institución',
+      sub: 'Vista compacta de las {proyectos} iniciativas agrupadas por institución y coloreadas según el estado actual del catálogo. Haga clic en cualquiera para abrir el detalle.',
+      proyectoLabel: 'iniciativa',
     },
     chartIlia: {
       inversionTooltip: 'Inversión',
@@ -515,10 +515,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
         stories: 'Stories verticales',
       },
       assets: {
-        kpiHeroTitulo: '{proyectos} proyectos, {instituciones} instituciones, {legislacion} leyes',
-        timelineTitulo: 'Adopción de IA en el Estado, 2018-2026',
+        kpiHeroTitulo: '{proyectos} iniciativas, {instituciones} instituciones, {legislacion} leyes',
+        timelineTitulo: 'Iniciativas de IA documentadas, 2018-2026',
         iliaTitulo: 'Costa Rica vs América Latina (ILIA 2025)',
-        mapaTitulo: 'Distribución de proyectos por institución',
+        mapaTitulo: 'Distribución de iniciativas por institución',
         brechaXroad: 'Brecha 1 — Interoperabilidad nacional',
         brechaGobernanza: 'Brecha 2 — Marco formal de gobernanza',
         brechaChatbot: 'Brecha 3 — Chatbot ciudadano nacional',
@@ -538,11 +538,19 @@ export const dictionaries: Record<Locale, Dictionary> = {
       institucionLabel: 'Institución',
       categoriaLabel: 'Categoría',
       estadoLabel: 'Estado',
-      desdeLabel: 'Operativo desde',
+      desdeLabel: {
+        operativo: 'Operativo desde',
+        piloto: 'Piloto desde',
+        planificado: 'Primera evidencia',
+      },
       queEsLabel: 'Qué es',
-      resultadoLabel: 'Resultados verificados',
+      resultadoLabel: {
+        operativo: 'Resultados verificados',
+        piloto: 'Evidencia del piloto',
+        planificado: 'Evidencia disponible',
+      },
       contextoLabel: 'Contexto',
-      fuenteLabel: 'Fuente oficial',
+      fuenteLabel: 'Fuente consultada',
       relacionadosLabel: 'Proyectos relacionados',
       volverLabel: '← Volver a la institución',
       metaDescripcion: 'Proyecto de IA en el sector público de Costa Rica.',
@@ -591,7 +599,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     quienMantiene: {
       kicker: 'Quién mantiene el observatorio',
-      titulo: 'Iniciativa independiente, datos verificables, fuentes oficiales',
+      titulo: 'Iniciativa independiente, datos verificables, fuentes públicas',
       autoria: {
         titulo: 'Autoría',
         cuerpo:
@@ -601,8 +609,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
         titulo: 'Metodología',
         cuerpo: 'Cada dato publicado cumple con los siguientes criterios:',
         bullets: [
-          'Proviene de una fuente oficial pública (institución del Estado costarricense, organismo multilateral o medio reconocido).',
-          'Lleva enlace al documento original en el campo "Fuente oficial".',
+          'Proviene de una fuente pública verificable: institución estatal, organismo multilateral, academia o medio reconocido. El tipo de fuente debe distinguirse.',
+          'Lleva enlace al documento o publicación en el campo "Fuente consultada".',
           'Si una cifra no está confirmada en fuente verificable, no se publica.',
           'Las traducciones al inglés son revisadas; las cifras y nombres propios se mantienen idénticos en ambos idiomas.',
           'Los textos de "Contexto" y "Lecciones" son interpretación editorial sobre datos verificados, claramente separados del dato bruto.',
@@ -645,7 +653,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         titulo: 'Historial completo de actualizaciones',
         sub: 'Registro cronológico de cada cambio al catálogo verificado del observatorio. La página principal muestra las últimas diez entradas; este historial cubre todas las actualizaciones desde el inicio del observatorio.',
         metaDescripcion:
-          'Historial completo de actualizaciones del Observatorio IA Costa Rica: cada cambio al catálogo verificado con fecha, tipo, descripción y fuente oficial.',
+          'Historial completo de actualizaciones del Observatorio IA Costa Rica: cada cambio al catálogo con fecha, tipo, descripción y fuente pública.',
         volverHome: 'Volver a la página principal',
       },
     },
@@ -654,7 +662,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       titulo: 'Marco país de IA en Costa Rica',
       sub: 'Arquitectura de política pública, regulación, lineamientos técnicos y adopción institucional de IA en el Estado costarricense.',
       tesis: 'Costa Rica ya tiene principios, estrategia, lineamientos técnicos y adopción institucional. La brecha pendiente está en convertir ese marco en procedimientos comunes, verificables y aplicables por las instituciones públicas.',
-      ultimaActualizacion: 'Última actualización: junio 2026',
+      ultimaActualizacion: 'Última actualización: agosto 2026',
       metaTitle: 'Marco país de inteligencia artificial en Costa Rica',
       metaDescripcion:
         'Arquitectura de política pública, regulación, lineamientos técnicos y adopción institucional de IA en Costa Rica: principios OCDE, ENIA, CNTD, expedientes legislativos, implementación institucional y brechas pendientes.',
@@ -684,13 +692,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
           },
           instituciones: {
             numero: '{instituciones}',
-            titulo: 'Instituciones con IA verificada',
+            titulo: 'Instituciones con iniciativas documentadas',
             detalle: 'Poder Judicial, CCSS, Hacienda, MEP, MICITT, UCR y CENAT',
           },
           proyectos: {
             numero: '{proyectos}',
-            titulo: 'Proyectos mapeados',
-            detalle: '18 operativos, 4 piloto, 1 planificado',
+            titulo: 'Iniciativas mapeadas',
+            detalle: '18 marcadas operativas, 6 piloto, 2 planificadas',
           },
         },
       },
@@ -737,9 +745,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
       },
       conexion: {
         kicker: 'Conexión con el resto del Observatorio',
-        titulo: 'De la política a la adopción real',
-        sub: 'El marco país muestra las reglas, estrategias y lineamientos. El inventario institucional muestra dónde la IA ya se está usando. Ambas vistas son complementarias: una explica la arquitectura de gobernanza, la otra documenta la ejecución pública.',
-        ctaProyectos: 'Ver proyectos institucionales',
+        titulo: 'De la política a la implementación documentada',
+        sub: 'El marco país muestra reglas, estrategias y lineamientos. El inventario institucional reúne sistemas, pilotos, planes y capacidades con distintos niveles de evidencia. Ambas vistas son complementarias: una explica la arquitectura de gobernanza y la otra permite seguir su implementación.',
+        ctaProyectos: 'Ver iniciativas institucionales',
         ctaInstituciones: 'Ver instituciones',
         ctaLegislacion: 'Ver legislación',
         ctaIndicadores: 'Ver indicadores',
@@ -748,7 +756,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       fuentes: {
         kicker: 'Fuentes y metodología',
         titulo: 'Fuentes y criterios de inclusión',
-        sub: 'Esta página incluye documentos nacionales, instrumentos internacionales adoptados como referencia, lineamientos técnicos vigentes, expedientes legislativos y proyectos institucionales verificados. No incluye anuncios sin documento público, pilotos no verificables o declaraciones políticas sin instrumento asociado.',
+        sub: 'Esta página incluye documentos nacionales, instrumentos internacionales, lineamientos técnicos, expedientes legislativos e iniciativas institucionales documentadas. Los anuncios o pilotos sin evidencia de ejecución deben mostrarse como tales y no como adopción verificada.',
         fuentesLabel: 'Fuentes',
         criteriosLabel: 'Criterios de inclusión',
         tipos: [
@@ -764,7 +772,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           'Documento público verificable como evidencia primaria.',
           'Inclusión proporcional al alcance del instrumento (país, sector público, institución).',
           'Distinción explícita entre fuerza referencial, orientadora y obligatoria.',
-          'Exclusión de anuncios sin instrumento asociado o pilotos no verificables.',
+          'Distinción explícita entre sistemas operativos, pilotos, planes y capacidades; una mención oficial no equivale a ejecución.',
         ],
       },
       fuerzaTipos: {
@@ -794,10 +802,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
     hero: {
       kicker: 'Public observatory',
       headline:
-        '{proyectos} active artificial intelligence projects in Costa Rica\u2019s public sector.',
-      sub: 'Open map of AI adoption across Costa Rica\u2019s public sector: institutions, projects, legislation and indicators benchmarked against the region.',
+        '{proyectos} documented artificial intelligence initiatives across Costa Rica\u2019s public sector.',
+      sub: 'Open map of AI-related systems, pilots, plans and capabilities across Costa Rica\u2019s public sector, together with legislation and regional indicators.',
       kpiCategoria: {
-        proyectos: 'Projects',
+        proyectos: 'Initiatives',
         instituciones: 'Institutions',
         legislacion: 'Legislation',
         ranking: 'ILIA ranking',
@@ -805,9 +813,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     instituciones: {
       kicker: '01 / Institutions',
-      titulo: 'Who is adopting AI inside the State',
-      sub: 'Seven public institutions run at least one active AI project, in production or pilot.',
-      proyectosLabel: 'projects',
+      titulo: 'Where AI initiatives appear across the State',
+      sub: 'Seven public institutions have documented AI-related initiatives. The catalog includes systems, pilots, plans and capabilities.',
+      proyectosLabel: 'initiatives',
       verDetalle: 'View details',
       tipoLabel: {
         ministerio: 'Ministry',
@@ -857,7 +865,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       kicker: '05 / About',
       titulo: 'An independent initiative to map AI adoption inside the State',
       p1: 'AI Observatory Costa Rica fills a gap: there is no public, up-to-date and verifiable source on where, how and with what results artificial intelligence is being adopted across Costa Rica\u2019s public sector.',
-      p2: 'This site gathers active projects, pending bills and indicators benchmarked against the region. Every data point comes from official sources and links back to the original document.',
+      p2: 'This site gathers documented systems, pilots, plans and other initiatives, along with pending bills and indicators benchmarked against the region. Each record links to the public source consulted.',
       p3: 'The goal is to build a useful tool for decision makers, journalists, academia, the private sector and citizens interested in how AI is being used with public funds.',
       ctaPregunta:
         'Do you know of an AI project in a public institution that is not listed here?',
@@ -866,8 +874,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
     footer: {
       titulo: 'AI Observatory Costa Rica',
       tagline: 'Public data. Independent initiative.',
-      ultimaActualizacion: 'Last updated: June 2026',
-      fuentes: 'Sources: Costa Rican public institutions + ILIA (CEPAL).',
+      ultimaActualizacion: 'Last updated: August 2026',
+      fuentes: 'Public sources: Costa Rican institutions, multilateral organizations, academia and the press.',
       quienMantiene: 'Who maintains the observatory',
       apiPublica: 'Public JSON API for journalists/researchers',
       atribucion: 'A project by',
@@ -887,16 +895,16 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     timeline: {
       kicker: 'Timeline',
-      titulo: 'AI adoption in the Costa Rican State, 2018-2026',
-      sub: 'Each dot is a verified project in production or pilot. Adoption is concentrated in the past three years, with the Judicial Branch leading since 2018.',
+      titulo: 'Documented AI initiatives in the Costa Rican State, 2018-2026',
+      sub: 'Each dot is an initiative documented in the catalog. The timeline combines operational systems, pilots, plans and capabilities; each record states the available evidence.',
       desdeLabel: 'since',
       sinResultadoLabel: 'No public metric',
     },
     panorama: {
       kicker: 'Overview',
-      titulo: 'Project distribution by institution',
-      sub: 'Compact view of all {proyectos} projects grouped by institution and colored by status. Click any to open the detail page.',
-      proyectoLabel: 'project',
+      titulo: 'Initiative distribution by institution',
+      sub: 'Compact view of all {proyectos} initiatives grouped by institution and colored by their current catalog status. Click any to open the detail page.',
+      proyectoLabel: 'initiative',
     },
     chartIlia: {
       inversionTooltip: 'Investment',
@@ -945,10 +953,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
         stories: 'Vertical stories',
       },
       assets: {
-        kpiHeroTitulo: '{proyectos} projects, {instituciones} institutions, {legislacion} bills',
-        timelineTitulo: 'AI adoption in the Costa Rican State, 2018-2026',
+        kpiHeroTitulo: '{proyectos} initiatives, {instituciones} institutions, {legislacion} bills',
+        timelineTitulo: 'Documented AI initiatives, 2018-2026',
         iliaTitulo: 'Costa Rica vs Latin America (ILIA 2025)',
-        mapaTitulo: 'Project distribution by institution',
+        mapaTitulo: 'Initiative distribution by institution',
         brechaXroad: 'Gap 1 — National interoperability',
         brechaGobernanza: 'Gap 2 — Formal governance framework',
         brechaChatbot: 'Gap 3 — National citizen chatbot',
@@ -968,11 +976,19 @@ export const dictionaries: Record<Locale, Dictionary> = {
       institucionLabel: 'Institution',
       categoriaLabel: 'Category',
       estadoLabel: 'Status',
-      desdeLabel: 'Live since',
+      desdeLabel: {
+        operativo: 'Live since',
+        piloto: 'Pilot since',
+        planificado: 'First documented',
+      },
       queEsLabel: 'What it is',
-      resultadoLabel: 'Verified results',
+      resultadoLabel: {
+        operativo: 'Verified results',
+        piloto: 'Pilot evidence',
+        planificado: 'Available evidence',
+      },
       contextoLabel: 'Context',
-      fuenteLabel: 'Official source',
+      fuenteLabel: 'Source consulted',
       relacionadosLabel: 'Related projects',
       volverLabel: '← Back to institution',
       metaDescripcion: 'AI project inside Costa Rica\u2019s public sector.',
@@ -1021,7 +1037,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     quienMantiene: {
       kicker: 'Who maintains the observatory',
-      titulo: 'Independent initiative, verifiable data, official sources',
+      titulo: 'Independent initiative, verifiable data, public sources',
       autoria: {
         titulo: 'Authorship',
         cuerpo:
@@ -1031,8 +1047,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
         titulo: 'Methodology',
         cuerpo: 'Every published data point meets the following criteria:',
         bullets: [
-          'It comes from a public official source (Costa Rican State institution, multilateral body or recognized media outlet).',
-          'It carries a link to the original document in the "Official source" field.',
+          'It comes from a verifiable public source: a State institution, multilateral body, academic institution or recognized media outlet. Source type should be distinguished.',
+          'It links to the document or publication in the "Source consulted" field.',
           'If a number is not confirmed by a verifiable source, it is not published.',
           'English translations are reviewed; figures and proper names remain identical in both languages.',
           'The "Context" and "Lessons" sections are editorial interpretation built on verified data, clearly separated from the raw data.',
@@ -1075,7 +1091,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         titulo: 'Full update history',
         sub: 'Chronological record of every change to the observatory’s verified catalog. The home page shows the latest ten entries; this archive covers every update since the observatory began.',
         metaDescripcion:
-          'Full update history for AI Observatory Costa Rica: every change to the verified catalog with date, type, description and official source.',
+          'Full update history for AI Observatory Costa Rica: every catalog change with date, type, description and public source.',
         volverHome: 'Back to home',
       },
     },
@@ -1084,7 +1100,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       titulo: 'Costa Rica AI country framework',
       sub: 'Architecture of public policy, regulation, technical guidelines and institutional adoption of AI within the Costa Rican State.',
       tesis: 'Costa Rica already has principles, strategy, technical guidelines and institutional adoption. The pending gap is turning that framework into shared, verifiable and actionable procedures for public institutions.',
-      ultimaActualizacion: 'Last update: June 2026',
+      ultimaActualizacion: 'Last update: August 2026',
       metaTitle: 'Costa Rica artificial intelligence country framework',
       metaDescripcion:
         'Architecture of public policy, regulation, technical guidelines and institutional AI adoption in Costa Rica: OECD principles, ENIA, CNTD, legislative files, institutional implementation and pending gaps.',
@@ -1114,13 +1130,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
           },
           instituciones: {
             numero: '{instituciones}',
-            titulo: 'Institutions with verified AI',
+            titulo: 'Institutions with documented initiatives',
             detalle: 'Judiciary, CCSS, Hacienda, MEP, MICITT, UCR and CENAT',
           },
           proyectos: {
             numero: '{proyectos}',
-            titulo: 'Projects mapped',
-            detalle: '18 operational, 4 pilot, 1 planned',
+            titulo: 'Initiatives mapped',
+            detalle: '18 marked operational, 6 pilot, 2 planned',
           },
         },
       },
@@ -1167,9 +1183,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
       },
       conexion: {
         kicker: 'Connection with the rest of the Observatory',
-        titulo: 'From policy to real adoption',
-        sub: 'The country framework shows the rules, strategies and guidelines. The institutional inventory shows where AI is already in use. Both views are complementary: one explains the governance architecture, the other documents public execution.',
-        ctaProyectos: 'See institutional projects',
+        titulo: 'From policy to documented implementation',
+        sub: 'The country framework shows rules, strategies and guidelines. The institutional inventory brings together systems, pilots, plans and capabilities with different levels of evidence. One explains the governance architecture; the other supports implementation tracking.',
+        ctaProyectos: 'See institutional initiatives',
         ctaInstituciones: 'See institutions',
         ctaLegislacion: 'See legislation',
         ctaIndicadores: 'See indicators',
@@ -1178,7 +1194,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       fuentes: {
         kicker: 'Sources and methodology',
         titulo: 'Sources and inclusion criteria',
-        sub: 'This page includes national documents, international instruments adopted as reference, current technical guidelines, legislative files and verified institutional projects. It does not include announcements without a public document, unverifiable pilots or political statements without an associated instrument.',
+        sub: 'This page includes national documents, international instruments, technical guidelines, legislative files and documented institutional initiatives. Announcements or pilots without evidence of execution should be shown as such, not as verified adoption.',
         fuentesLabel: 'Sources',
         criteriosLabel: 'Inclusion criteria',
         tipos: [
@@ -1194,7 +1210,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           'Verifiable public document as primary evidence.',
           'Inclusion proportional to instrument scope (country, public sector, institution).',
           'Explicit distinction between referential, guiding and mandatory force.',
-          'Exclusion of announcements without an associated instrument or unverifiable pilots.',
+          'Explicit distinction among operational systems, pilots, plans and capabilities; an official mention does not equal execution.',
         ],
       },
       fuerzaTipos: {

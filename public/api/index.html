@@ -5,7 +5,7 @@
   <title>API pública — Observatorio IA Costa Rica</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="index, follow">
-  <meta name="description" content="API JSON read-only del Observatorio IA Costa Rica. Catálogo de proyectos IA en el sector público costarricense, abierto a periodistas e investigadores.">
+  <meta name="description" content="API JSON read-only del Observatorio IA Costa Rica. Catálogo de iniciativas relacionadas con IA en el sector público costarricense, abierto a periodistas e investigadores.">
   <style>
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 960px; margin: 2rem auto; padding: 0 1.5rem; color: #0f172a; line-height: 1.6; }
     h1 { font-size: 1.875rem; color: #1e3a8a; margin-bottom: .25rem; }
@@ -30,12 +30,12 @@
       <tr>
         <td><code><a href="/api/proyectos.json">/api/proyectos.json</a></code></td>
         <td>26</td>
-        <td>Catálogo de proyectos de IA en el sector público costarricense. Cada entrada incluye institución, estado, fuente oficial y descripción bilingüe ES/EN.</td>
+        <td>Catálogo de iniciativas relacionadas con IA en el sector público costarricense. Incluye sistemas, pilotos, planes y capacidades con descripción bilingüe ES/EN y una fuente pública consultada.</td>
       </tr>
       <tr>
         <td><code><a href="/api/instituciones.json">/api/instituciones.json</a></code></td>
         <td>7</td>
-        <td>Instituciones públicas con proyectos IA documentados (ministerios, autónomas, judicial, universidades, investigación).</td>
+        <td>Instituciones públicas con iniciativas relacionadas con IA documentadas (ministerios, autónomas, judicial, universidades e investigación).</td>
       </tr>
       <tr>
         <td><code><a href="/api/legislacion.json">/api/legislacion.json</a></code></td>
@@ -75,7 +75,7 @@
   <p>Datos disponibles bajo <strong>CC BY 4.0</strong>. Si los usás, atribuir <strong>"Observatorio IA Costa Rica" (observatorioia.org)</strong> con enlace.</p>
 
   <h2>Política editorial</h2>
-  <p>Este observatorio es independiente, sin afiliación gubernamental. Cada dato del catálogo tiene <code>fuenteUrl</code> apuntando al documento oficial original. Las actualizaciones se procesan via revisión humana — los scrapers nunca tocan campos editoriales (titulo, descripcion, contexto, lecciones, resumen).</p>
+  <p>Este observatorio es independiente, sin afiliación gubernamental. Cada registro del catálogo incluye en <code>fuenteUrl</code> una fuente pública consultada, que puede ser primaria o secundaria. Las actualizaciones se procesan mediante revisión humana; los scrapers nunca tocan campos editoriales (titulo, descripcion, contexto, lecciones, resumen).</p>
 
   <h2>Mantenimiento</h2>
   <p>Mario Pérez Edwards · UnikPrompt · <a href="mailto:info@observatorioia.org">info@observatorioia.org</a></p>

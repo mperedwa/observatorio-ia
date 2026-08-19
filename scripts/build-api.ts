@@ -50,8 +50,8 @@ interface IliaRow {
 }
 
 const KPI_AUTO: Record<string, (c: Counters, data: unknown) => KpiAutoResult> = {
-  'Proyectos IA activos en gobierno': (c) => ({ valor: String(c.proyectos) }),
-  'Instituciones con IA operativa': (c) => ({ valor: String(c.instituciones) }),
+  'Iniciativas relacionadas con IA documentadas': (c) => ({ valor: String(c.proyectos) }),
+  'Instituciones con iniciativas documentadas': (c) => ({ valor: String(c.instituciones) }),
   'Expedientes de ley en trámite': (c) => ({ valor: String(c.legislacion) }),
   'Posición ILIA Latinoamérica': (_c, data) => {
     const rows = (data as { ilia2025?: IliaRow[] } | undefined)?.ilia2025 ?? [];
@@ -89,13 +89,13 @@ const DATASETS: Dataset[] = [
     filename: 'proyectos.json',
     endpoint: '/api/proyectos.json',
     description:
-      'Catálogo de proyectos de IA en el sector público costarricense. Cada entrada incluye institución, estado, fuente oficial y descripción bilingüe ES/EN.',
+      'Catálogo de iniciativas relacionadas con IA en el sector público costarricense. Incluye sistemas, pilotos, planes y capacidades con descripción bilingüe ES/EN y una fuente pública consultada.',
   },
   {
     filename: 'instituciones.json',
     endpoint: '/api/instituciones.json',
     description:
-      'Instituciones públicas con proyectos IA documentados (ministerios, autónomas, judicial, universidades, investigación).',
+      'Instituciones públicas con iniciativas relacionadas con IA documentadas (ministerios, autónomas, judicial, universidades e investigación).',
   },
   {
     filename: 'legislacion.json',
@@ -155,7 +155,7 @@ function buildIndexHtml(endpoints: Array<{ endpoint: string; description: string
   <title>API pública — Observatorio IA Costa Rica</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="index, follow">
-  <meta name="description" content="API JSON read-only del Observatorio IA Costa Rica. Catálogo de proyectos IA en el sector público costarricense, abierto a periodistas e investigadores.">
+  <meta name="description" content="API JSON read-only del Observatorio IA Costa Rica. Catálogo de iniciativas relacionadas con IA en el sector público costarricense, abierto a periodistas e investigadores.">
   <style>
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 960px; margin: 2rem auto; padding: 0 1.5rem; color: #0f172a; line-height: 1.6; }
     h1 { font-size: 1.875rem; color: #1e3a8a; margin-bottom: .25rem; }
@@ -201,7 +201,7 @@ ${rows}
   <p>Datos disponibles bajo <strong>CC BY 4.0</strong>. Si los usás, atribuir <strong>"Observatorio IA Costa Rica" (observatorioia.org)</strong> con enlace.</p>
 
   <h2>Política editorial</h2>
-  <p>Este observatorio es independiente, sin afiliación gubernamental. Cada dato del catálogo tiene <code>fuenteUrl</code> apuntando al documento oficial original. Las actualizaciones se procesan via revisión humana — los scrapers nunca tocan campos editoriales (titulo, descripcion, contexto, lecciones, resumen).</p>
+  <p>Este observatorio es independiente, sin afiliación gubernamental. Cada registro del catálogo incluye en <code>fuenteUrl</code> una fuente pública consultada, que puede ser primaria o secundaria. Las actualizaciones se procesan mediante revisión humana; los scrapers nunca tocan campos editoriales (titulo, descripcion, contexto, lecciones, resumen).</p>
 
   <h2>Mantenimiento</h2>
   <p>Mario Pérez Edwards · UnikPrompt · <a href="mailto:info@observatorioia.org">info@observatorioia.org</a></p>

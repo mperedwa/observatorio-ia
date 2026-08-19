@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-08-19T17:56:15.253Z",
+  "lastUpdate": "2026-08-19T23:24:11.558Z",
   "count": 5,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
@@ -215,19 +215,19 @@
     "kpisHero": [
       {
         "label": {
-          "es": "Proyectos IA activos en gobierno",
-          "en": "Active AI projects in government"
+          "es": "Iniciativas relacionadas con IA documentadas",
+          "en": "Documented AI-related initiatives"
         },
         "valor": "26",
         "detalle": {
-          "es": "mapeados en mayo 2026",
-          "en": "mapped as of May 2026"
+          "es": "incluye sistemas, pilotos, planes y capacidades",
+          "en": "includes systems, pilots, plans and capabilities"
         }
       },
       {
         "label": {
-          "es": "Instituciones con IA operativa",
-          "en": "Institutions with AI in production"
+          "es": "Instituciones con iniciativas documentadas",
+          "en": "Institutions with documented initiatives"
         },
         "valor": "7",
         "detalle": {

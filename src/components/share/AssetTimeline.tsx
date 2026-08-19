@@ -121,8 +121,8 @@ export function AssetTimeline({
 
         <p className="mt-12 text-slate-600" style={{ fontSize: 20, maxWidth: 880 }}>
           {locale === 'es'
-            ? `${datados.length} proyectos verificados en producción o piloto. Adopción concentrada en los últimos tres años, con el Poder Judicial liderando desde 2018.`
-            : `${datados.length} verified projects in production or pilot. Adoption concentrated in the last three years, led by the Judicial Branch since 2018.`}
+            ? `${datados.length} iniciativas documentadas. La línea reúne sistemas operativos, pilotos, planes y capacidades con distintos niveles de evidencia.`
+            : `${datados.length} documented initiatives. The timeline combines operational systems, pilots, plans and capabilities with different levels of evidence.`}
         </p>
       </div>
     </AssetFrame>

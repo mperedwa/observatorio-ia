@@ -61,7 +61,7 @@ export function ProyectoCard({
       <p className="text-sm text-slate-600 text-pretty">{proyecto.descripcion[locale]}</p>
       {proyecto.desde && (
         <p className="mt-3 text-xs text-slate-500">
-          {t.proyectoDetalle.desdeLabel}: {proyecto.desde}
+          {t.proyectoDetalle.desdeLabel[proyecto.estado]}: {proyecto.desde}
         </p>
       )}
     </Link>

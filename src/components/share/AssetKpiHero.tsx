@@ -32,8 +32,8 @@ export function AssetKpiHero({
           </h1>
           <p className="mt-6 text-slate-600" style={{ fontSize: 26, maxWidth: 880 }}>
             {locale === 'es'
-              ? 'Mapeo abierto de la adopción de IA en el sector público costarricense.'
-              : 'Open map of AI adoption across Costa Rica\u2019s public sector.'}
+              ? 'Mapeo abierto de sistemas, pilotos, planes y capacidades relacionadas con IA.'
+              : 'Open map of AI-related systems, pilots, plans and capabilities.'}
           </p>
         </div>
 

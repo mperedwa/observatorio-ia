@@ -1,5 +1,18 @@
 [
   {
+    "fecha": "2026-08-19",
+    "tipo": "proyecto",
+    "actualizacion": {
+      "es": "Se corrige la fuente de ccss-logistica-ia-abastecimiento. La URL anterior correspondía al proyecto de depuración de listas de espera; se sustituye por la cobertura que documenta el monitoreo de contratos e insumos, el uso de IA y el tablero Power BI de la Gerencia de Logística. La ficha mantiene confianza media mientras no exista una fuente primaria de la CCSS.",
+      "en": "The source for ccss-logistica-ia-abastecimiento is corrected. The previous URL covered the wait-list cleanup project; it is replaced with reporting that documents contract and supply monitoring, the use of AI, and the Logistics Management Power BI dashboard. The entry remains medium-confidence until a primary CCSS source is available."
+    },
+    "fuente": {
+      "es": "CRHoy — medidas de abastecimiento de la CCSS (8-abr-2026)",
+      "en": "CRHoy — CCSS supply-continuity measures (Apr 8, 2026)"
+    },
+    "fuente_url": "https://crhoy.com/nacionales/ccss-activa-medidas-por-conflicto-en-medio-oriente-pakistan-y-afganistan-son-clave-para-insumos/"
+  },
+  {
     "fecha": "2026-08-14",
     "tipo": "proyecto",
     "actualizacion": {

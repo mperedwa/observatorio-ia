@@ -13,17 +13,17 @@ const meta = {
   es: {
     title: 'Observatorio IA Costa Rica',
     description:
-      'Mapeo público y abierto de los proyectos, leyes e indicadores de inteligencia artificial en el sector público costarricense.',
+      'Mapeo público y abierto de iniciativas, leyes e indicadores de inteligencia artificial en el sector público costarricense.',
     ogTitle: 'Observatorio IA Costa Rica',
-    ogDesc: 'Proyectos, legislación e indicadores de IA en el gobierno de Costa Rica.',
+    ogDesc: 'Iniciativas documentadas, legislación e indicadores de IA en el sector público de Costa Rica.',
     ogLocale: 'es_CR',
   },
   en: {
     title: 'AI Observatory Costa Rica',
     description:
-      'Open public map of AI projects, laws and indicators across the Costa Rican public sector.',
+      'Open public map of artificial intelligence initiatives, laws and indicators across the Costa Rican public sector.',
     ogTitle: 'AI Observatory Costa Rica',
-    ogDesc: 'AI projects, legislation and indicators in the government of Costa Rica.',
+    ogDesc: 'Documented AI initiatives, legislation and indicators across Costa Rica\u2019s public sector.',
     ogLocale: 'en_US',
   },
 } as const;

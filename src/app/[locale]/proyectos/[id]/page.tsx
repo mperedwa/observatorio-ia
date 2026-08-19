@@ -29,6 +29,24 @@ const estadoChip: Record<string, string> = {
   planificado: 'bg-slate-100 text-slate-700 border-slate-300',
 };
 
+const resultadoBox: Record<
+  'operativo' | 'piloto' | 'planificado',
+  { container: string; heading: string }
+> = {
+  operativo: {
+    container: 'bg-emerald-50 border-emerald-200',
+    heading: 'text-emerald-800',
+  },
+  piloto: {
+    container: 'bg-amber-50 border-amber-200',
+    heading: 'text-amber-800',
+  },
+  planificado: {
+    container: 'bg-slate-50 border-slate-200',
+    heading: 'text-slate-700',
+  },
+};
+
 export async function generateMetadata({
   params,
 }: {
@@ -115,7 +133,7 @@ export default async function ProyectoPage({
           </span>
           {proyecto.desde && (
             <span className="text-xs text-slate-500">
-              {t.proyectoDetalle.desdeLabel}: {proyecto.desde}
+              {t.proyectoDetalle.desdeLabel[proyecto.estado]}: {proyecto.desde}
             </span>
           )}
         </div>
@@ -145,9 +163,13 @@ export default async function ProyectoPage({
       </section>
 
       {proyecto.resultado && (
-        <section className="mb-10 bg-emerald-50 border border-emerald-200 rounded-lg p-6">
-          <h2 className="text-xs uppercase tracking-wider text-emerald-800 font-medium mb-2">
-            {t.proyectoDetalle.resultadoLabel}
+        <section
+          className={`mb-10 border rounded-lg p-6 ${resultadoBox[proyecto.estado].container}`}
+        >
+          <h2
+            className={`text-xs uppercase tracking-wider font-medium mb-2 ${resultadoBox[proyecto.estado].heading}`}
+          >
+            {t.proyectoDetalle.resultadoLabel[proyecto.estado]}
           </h2>
           <p className="text-base text-slate-800 text-pretty leading-relaxed">
             {proyecto.resultado[lc]}

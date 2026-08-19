@@ -50,8 +50,8 @@ export interface KpiResumen {
 // scripts SSG) reciba el número materializado, no el literal "auto" que
 // CountUp intenta parsear como `0` + suffix `"auto"`.
 const KPI_AUTO_BY_LABEL: Record<string, number | undefined> = {
-  'Proyectos IA activos en gobierno': COUNTERS.proyectos,
-  'Instituciones con IA operativa': COUNTERS.instituciones,
+  'Iniciativas relacionadas con IA documentadas': COUNTERS.proyectos,
+  'Instituciones con iniciativas documentadas': COUNTERS.instituciones,
   'Expedientes de ley en trámite': COUNTERS.legislacion,
 };
 

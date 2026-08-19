@@ -63,7 +63,11 @@ export function ChartOecdIndex({
 
   return (
     <div className="h-[280px] sm:h-[320px] -ml-4">
-      <ResponsiveContainer width="100%" height="100%">
+      <ResponsiveContainer
+        width="100%"
+        height="100%"
+        initialDimension={{ width: 640, height: 320 }}
+      >
         <BarChart
           data={rows}
           layout="vertical"

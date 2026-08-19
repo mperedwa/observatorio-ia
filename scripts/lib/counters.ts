@@ -7,7 +7,7 @@
  *
  * Consumidores:
  *   - scripts/build-api.ts: inyecta el valor real en `indicadores.json`
- *     (KPI hero "Proyectos IA activos") y emite `src/data/counters.ts`
+ *     (KPI hero "Iniciativas relacionadas con IA documentadas") y emite `src/data/counters.ts`
  *     para que componentes Next puedan importar los counts en build/SSG.
  */
 import { readFileSync } from 'node:fs';

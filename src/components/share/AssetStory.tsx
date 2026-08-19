@@ -67,16 +67,16 @@ export function AssetStory({
         </p>
         <p className="mt-6 font-bold text-slate-900" style={{ fontSize: 44, lineHeight: 1.2 }}>
           {locale === 'es'
-            ? 'proyectos de IA en el Estado costarricense'
-            : 'AI projects in the Costa Rican State'}
+            ? 'iniciativas relacionadas con IA documentadas'
+            : 'documented AI-related initiatives'}
         </p>
         <p
           className="mt-10 text-slate-600"
           style={{ fontSize: 28, lineHeight: 1.4, maxWidth: 880 }}
         >
           {locale === 'es'
-            ? 'Desde 2018 (ChatbotPJ) hasta 2026 (AIDA). 8 años de adopción documentada en una sola línea de tiempo.'
-            : 'From 2018 (ChatbotPJ) to 2026 (AIDA). 8 years of documented adoption in a single timeline.'}
+            ? 'Desde 2018 hasta 2026. El catálogo reúne sistemas, pilotos, planes y capacidades en una sola línea de tiempo.'
+            : 'From 2018 to 2026. The catalog brings systems, pilots, plans and capabilities into one timeline.'}
         </p>
       </div>
     </AssetFrame>

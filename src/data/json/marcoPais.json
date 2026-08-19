@@ -118,33 +118,33 @@
       "id": "implementacion-institucional",
       "orden": 5,
       "nombreCorto": {
-        "es": "Adopción pública",
-        "en": "Public adoption"
+        "es": "Iniciativas institucionales",
+        "en": "Institutional initiatives"
       },
       "instrumentos": {
-        "es": "23 proyectos de IA en 7 instituciones: Poder Judicial, CCSS, Hacienda, MEP, MICITT, UCR y CENAT (18 operativos, 4 piloto, 1 planificado).",
-        "en": "23 AI projects across 7 institutions: Judiciary, CCSS, Hacienda, MEP, MICITT, UCR and CENAT (18 operational, 4 pilot, 1 planned)."
+        "es": "26 iniciativas relacionadas con IA en 7 instituciones: Poder Judicial, CCSS, Hacienda, MEP, MICITT, UCR y CENAT (18 marcadas operativas, 6 piloto y 2 planificadas).",
+        "en": "26 AI-related initiatives across 7 institutions: Judiciary, CCSS, Hacienda, MEP, MICITT, UCR and CENAT (18 marked operational, 6 pilot and 2 planned)."
       },
       "nota": {
         "es": "Además de proyectos en producción, existen instrumentos sectoriales de gobernanza como los Lineamientos Básicos para el uso de IA Generativa Autorizada en el Poder Judicial. Estos son relevantes pero no equivalen a un marco nacional aplicable a todo el Estado.",
         "en": "In addition to production projects, there are sectoral governance instruments such as the Basic Guidelines for the use of Authorized Generative AI in the Judiciary. These are relevant but do not amount to a national framework applicable to the entire State."
       },
       "funcion": {
-        "es": "Muestra dónde la IA ya está siendo usada en producción, piloto o proyectos verificados dentro del sector público. El inventario actual incluye 18 proyectos operativos, 4 piloto y 1 planificado.",
-        "en": "Shows where AI is already in use in production, pilot or verified projects within the public sector. The current inventory includes 18 operational, 4 pilot and 1 planned projects."
+        "es": "Documenta sistemas, pilotos, planes y capacidades relacionadas con IA dentro del sector público. El inventario actual reúne 26 iniciativas con distinta naturaleza y madurez; no todas equivalen a sistemas de IA desplegados.",
+        "en": "Documents AI-related systems, pilots, plans and capabilities in the public sector. The current inventory includes 26 initiatives of different types and maturity; not all are deployed AI systems."
       },
       "alcance": {
         "es": "Institucional y sectorial",
         "en": "Institutional and sectoral"
       },
       "fuerza": {
-        "es": "Operativa, según cada institución",
-        "en": "Operational, per institution"
+        "es": "Variable, según cada iniciativa",
+        "en": "Varies by initiative"
       },
       "fuerzaTipo": "operativa",
       "vacio": {
-        "es": "La adopción ocurre con distintos niveles de documentación, estándares y gobernanza, sin una metodología pública común para todo el Estado.",
-        "en": "Adoption happens with different levels of documentation, standards and governance, without a common public methodology across the State."
+        "es": "Las iniciativas tienen distintos niveles de evidencia, estándares y gobernanza, sin una metodología pública común para todo el Estado.",
+        "en": "Initiatives have different levels of evidence, standards and governance, without a common public methodology across the State."
       }
     },
     {
