@@ -3,6 +3,18 @@
     "fecha": "2026-08-19",
     "tipo": "proyecto",
     "actualizacion": {
+      "es": "Se reclasifican las 26 iniciativas con el modelo de evidencia v2. El corte editorial queda en 5 sistemas o componentes de IA con piloto u operación verificados, 6 iniciativas en seguimiento y 15 registros de ecosistema y capacidades. Cada ficha distingue tipo, fase, confirmación de IA, evidencia por dimensión, fuentes y campos no determinados. También se corrigen afirmaciones sin respaldo en clasificación de cobros, Nymiz, EDUS, AIDA, detección fiscal de anomalías, CONECTA, AgroBoost y la investigación del CITIC.",
+      "en": "All 26 initiatives are reclassified under evidence model v2. The editorial cutoff is now 5 AI systems or components with verified pilot or operational execution, 6 initiatives under review, and 15 ecosystem and capacity records. Every entry distinguishes type, phase, AI confirmation, evidence by dimension, sources, and undetermined fields. Unsupported claims are also corrected in debt-collection classification, Nymiz, EDUS, AIDA, tax anomaly detection, CONECTA, AgroBoost, and CITIC research."
+    },
+    "fuente": {
+      "es": "Auditoría editorial del catálogo con fuentes trazables por ficha, corte 19-ago-2026",
+      "en": "Catalog editorial audit with traceable sources per entry, cutoff Aug 19, 2026"
+    }
+  },
+  {
+    "fecha": "2026-08-19",
+    "tipo": "proyecto",
+    "actualizacion": {
       "es": "Se corrige la fuente de ccss-logistica-ia-abastecimiento. La URL anterior correspondía al proyecto de depuración de listas de espera; se sustituye por la cobertura que documenta el monitoreo de contratos e insumos, el uso de IA y el tablero Power BI de la Gerencia de Logística. La ficha mantiene confianza media mientras no exista una fuente primaria de la CCSS.",
       "en": "The source for ccss-logistica-ia-abastecimiento is corrected. The previous URL covered the wait-list cleanup project; it is replaced with reporting that documents contract and supply monitoring, the use of AI, and the Logistics Management Power BI dashboard. The entry remains medium-confidence until a primary CCSS source is available."
     },

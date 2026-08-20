@@ -1,6 +1,7 @@
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 import { describe, expect, it } from 'vitest';
+import { proyectos } from '../src/data/proyectos';
 import proyectosSchema from '../src/data/schemas/proyectos.schema.json';
 import {
   DIMENSIONES_EVIDENCIA,
@@ -143,6 +144,47 @@ describe('schema de proyectos v2', () => {
 
   it('acepta una ficha v2 completa', () => {
     expect(validate([proyectoJsonV2()]), JSON.stringify(validate.errors)).toBe(true);
+  });
+
+  it('valida las 26 fichas reales ya migradas', () => {
+    expect(validate(proyectos), JSON.stringify(validate.errors)).toBe(true);
+  });
+});
+
+describe('catálogo real migrado', () => {
+  it('mantiene cobertura v2 completa y trazabilidad limpia', () => {
+    expect(proyectos).toHaveLength(26);
+
+    for (const proyecto of proyectos) {
+      expect(proyecto.modeloVersion, proyecto.id).toBe(MODELO_EVIDENCIA_VERSION);
+      expect(encontrarErroresTrazabilidad(proyecto), proyecto.id).toEqual([]);
+      expect(
+        proyecto.fuentes?.some((fuente) => fuente.url === proyecto.fuenteUrl),
+        proyecto.id,
+      ).toBe(true);
+    }
+  });
+
+  it('fija el corte editorial derivado del 19 de agosto de 2026', () => {
+    expect(resumirCatalogo(proyectos)).toEqual({
+      iniciativasDocumentadas: 26,
+      adopcionVerificada: 5,
+      verificadasCatalogo: 5,
+      seguimiento: 6,
+      ecosistema: 15,
+      descartadas: 0,
+      pendientesMigracion: 0,
+    });
+
+    expect(
+      proyectos.filter(esAdopcionVerificada).map((proyecto) => proyecto.id),
+    ).toEqual([
+      'pj-clasificacion-cobros',
+      'pj-ml-presupuestal',
+      'pj-nymiz',
+      'ccss-lidia',
+      'hacienda-anomaly',
+    ]);
   });
 });
 

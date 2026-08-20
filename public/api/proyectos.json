@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-08-19T23:41:03.314Z",
+  "lastUpdate": "2026-08-20T01:02:40.312Z",
   "count": 26,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
@@ -13,21 +13,118 @@
       },
       "institucionId": "poder-judicial",
       "categoria": "judicial",
-      "estado": "operativo",
+      "estado": "piloto",
       "desde": "2023",
       "descripcion": {
-        "es": "Sistema de inteligencia artificial para clasificación automática de documentos judiciales, operativo desde 2023 en el Juzgado Especializado de Cobro Judicial de Pérez Zeledón (Poder Judicial). El sistema procesa expedientes de cobro judicial sin intervención manual, aplicando modelos de clasificación sobre los documentos que ingresan al juzgado, y actúa como capa base del ecosistema de automatización judicial que también incluye el Sistema de Giro Continuo. A 2025, acumula 1,302,899 documentos procesados, con reducción medida del circulante en materia cobratoria.",
-        "en": "AI system for automated classification of judicial documents, operational since 2023 at the Specialized Debt Collection Court of Pérez Zeledón (Judicial Branch). The system processes debt-collection case files without manual intervention, applying classification models to incoming court documents, and serves as the base layer of the judicial automation ecosystem that also includes the Continuous Disbursement System. As of 2025, it has processed 1,302,899 documents, with a measured reduction of the open caseload in debt collection."
+        "es": "Plan piloto del Poder Judicial para clasificar automáticamente los documentos que ingresan al Juzgado Especializado de Cobro Judicial de Pérez Zeledón. La fuente oficial confirma el uso de inteligencia artificial y reporta mejoras en la agilidad de la tramitación.",
+        "en": "Judicial Branch pilot plan to automatically classify documents received by the Specialized Debt Collection Court of Pérez Zeledón. The official source confirms the use of artificial intelligence and reports faster case processing."
       },
       "resultado": {
-        "es": "1,302,899 documentos procesados; reducción del circulante en materia cobratoria.",
-        "en": "1,302,899 documents processed; reduction of the open caseload in debt collection."
+        "es": "El Poder Judicial reporta mayor agilidad de procesamiento y una reducción del circulante tras dos años del piloto; no publica un volumen atribuible de documentos procesados.",
+        "en": "The Judicial Branch reports faster processing and a lower caseload after two years of the pilot; it does not publish an attributable document volume."
       },
       "contexto": {
-        "es": "Es el caso de uso más maduro del Estado costarricense en clasificación documental con IA. La adopción se hizo desde un juzgado regional, no desde una iniciativa central, lo que evidencia que la innovación judicial avanza sin coordinación nacional.",
-        "en": "The most mature documented case of AI document classification in the Costa Rican State. Adoption came from a regional court, not from a central initiative, showing that judicial innovation is moving without national coordination."
+        "es": "Se cataloga como piloto porque así lo denomina la fuente institucional. La cifra anterior de 1,302,899 documentos se retiró al no encontrarse respaldo atribuible a este sistema.",
+        "en": "It is catalogued as a pilot because that is how the institutional source describes it. The previous figure of 1,302,899 documents was removed because no source attributable to this system was found."
       },
-      "fuenteUrl": "https://pj.poder-judicial.go.cr/index.php/component/content/article/760-poder-judicial-implementa-inteligencia-artificial-para-disminuir-circulante-en-materia-cobratoria"
+      "fuenteUrl": "https://pj.poder-judicial.go.cr/index.php/component/content/article/760-poder-judicial-implementa-inteligencia-artificial-para-disminuir-circulante-en-materia-cobratoria",
+      "modeloVersion": 2,
+      "tipoIniciativa": "sistema-ia",
+      "estadoCatalogo": "verificado",
+      "faseImplementacion": "piloto",
+      "estadoIA": "confirmada",
+      "evaluacion": {
+        "existencia": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "pj-clasificador-oficial"
+          ]
+        },
+        "ejecucion": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "pj-clasificador-oficial"
+          ]
+        },
+        "tecnicaIA": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "pj-clasificador-oficial"
+          ]
+        },
+        "usoOperativo": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "pj-clasificador-oficial"
+          ]
+        },
+        "resultados": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "pj-clasificador-oficial"
+          ]
+        },
+        "gobernanza": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        }
+      },
+      "fuentes": [
+        {
+          "id": "pj-clasificador-oficial",
+          "url": "https://pj.poder-judicial.go.cr/index.php/component/content/article/760-poder-judicial-implementa-inteligencia-artificial-para-disminuir-circulante-en-materia-cobratoria",
+          "publicador": "Poder Judicial de Costa Rica",
+          "tipoFuente": "primaria-oficial",
+          "respalda": [
+            "existencia",
+            "objetivo-declarado",
+            "ejecucion",
+            "tecnica-ia",
+            "uso-operativo",
+            "resultado-reportado"
+          ],
+          "naturalezaAfirmacion": [
+            "hecho",
+            "resultado-reportado"
+          ],
+          "titulo": {
+            "es": "Poder Judicial implementa inteligencia artificial para disminuir circulante en materia cobratoria",
+            "en": "Judicial Branch implements artificial intelligence to reduce the debt-collection caseload"
+          },
+          "fechaConsulta": "2026-08-19"
+        }
+      ],
+      "fechaPrimeraEvidencia": "2023",
+      "fechaInicioPiloto": "2023",
+      "fechaUltimaVerificacion": "2026-08-19",
+      "objetivoDeclarado": {
+        "es": "Clasificar documentos que ingresan al Juzgado Especializado de Cobro Judicial de Pérez Zeledón para agilizar su tramitación.",
+        "en": "Classify documents received by the Specialized Debt Collection Court of Pérez Zeledón to speed up processing."
+      },
+      "resultadosVerificados": [
+        {
+          "id": "mejora-tramitacion-reportada",
+          "texto": {
+            "es": "El Poder Judicial reporta mayor agilidad de procesamiento y una reducción del circulante tras dos años del piloto.",
+            "en": "The Judicial Branch reports faster processing and a lower caseload after two years of the pilot."
+          },
+          "fuenteIds": [
+            "pj-clasificador-oficial"
+          ]
+        }
+      ],
+      "datosConocidos": [
+        {
+          "es": "La fuente institucional denomina la iniciativa como plan piloto y confirma el uso de inteligencia artificial.",
+          "en": "The institutional source calls the initiative a pilot plan and confirms the use of artificial intelligence."
+        }
+      ],
+      "datosNoDeterminados": [
+        {
+          "es": "No se localizaron métricas públicas del volumen de documentos procesados atribuibles a este clasificador.",
+          "en": "No public metrics were found for the volume of documents processed by this classifier."
+        }
+      ]
     },
     {
       "id": "pj-ml-presupuestal",
@@ -40,18 +137,110 @@
       "estado": "operativo",
       "desde": "2019",
       "descripcion": {
-        "es": "Modelo de machine learning para predicción de ejecución presupuestaria del Poder Judicial, operativo desde 2019 y extendido a más de 60 centros de gestión institucional. El sistema analiza patrones históricos de gasto para proyectar la ejecución futura, permitiendo a los centros ajustar compromisos presupuestarios con antelación. Acumula un ahorro cuantificado superior a ₡100 millones y es la aplicación de IA con retorno financiero medido más antigua del sector público costarricense.",
-        "en": "Machine learning model for budget execution forecasting at the Judicial Branch, operational since 2019 and extended to over 60 institutional management centers. The system analyzes historical spending patterns to project future execution, enabling centers to adjust budget commitments in advance. It has accumulated quantified savings exceeding ₡100 million and is the oldest AI application with measured financial returns in the Costa Rican public sector."
+        "es": "Modelo de aprendizaje automático utilizado por el Poder Judicial para predecir la ejecución presupuestaria según su comportamiento histórico. La rendición de cuentas institucional de 2019 documenta su uso y el ahorro asociado.",
+        "en": "Machine-learning model used by the Judicial Branch to predict budget execution from its historical behavior. The institution’s 2019 accountability report documents its use and associated savings."
       },
       "resultado": {
-        "es": "Ahorro acumulado +₡100M.",
-        "en": "Cumulative savings of +₡100M."
+        "es": "Ahorro reportado superior a USD 379,965 en la rendición de cuentas de 2019.",
+        "en": "Reported savings above USD 379,965 in the 2019 accountability report."
       },
       "contexto": {
-        "es": "Operativo desde 2019, es la aplicación de IA con retorno cuantificado más antiguo del Estado costarricense. Demuestra que el Poder Judicial adoptó analítica predictiva años antes que cualquier otra institución pública del país.",
-        "en": "Operational since 2019, this is the longest-running AI application with quantified ROI in the Costa Rican State. It shows the Judicial Branch adopted predictive analytics years before any other Costa Rican public institution."
+        "es": "La fuente primaria confirma la técnica, el uso y un resultado financiero reportado. No se extrapola ese monto a años posteriores.",
+        "en": "The primary source confirms the technique, use and a reported financial result. That amount is not extrapolated to later years."
       },
-      "fuenteUrl": "https://pj.poder-judicial.go.cr/index.php/component/content/article/760-poder-judicial-implementa-inteligencia-artificial-para-disminuir-circulante-en-materia-cobratoria"
+      "fuenteUrl": "https://actualidadjudicial.poder-judicial.go.cr/vol251/discursos/dis3.html",
+      "modeloVersion": 2,
+      "tipoIniciativa": "sistema-ia",
+      "estadoCatalogo": "verificado",
+      "faseImplementacion": "operativo",
+      "estadoIA": "confirmada",
+      "evaluacion": {
+        "existencia": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "pj-presupuesto-rendicion-2019"
+          ]
+        },
+        "ejecucion": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "pj-presupuesto-rendicion-2019"
+          ]
+        },
+        "tecnicaIA": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "pj-presupuesto-rendicion-2019"
+          ]
+        },
+        "usoOperativo": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "pj-presupuesto-rendicion-2019"
+          ]
+        },
+        "resultados": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "pj-presupuesto-rendicion-2019"
+          ]
+        },
+        "gobernanza": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        }
+      },
+      "fuentes": [
+        {
+          "id": "pj-presupuesto-rendicion-2019",
+          "url": "https://actualidadjudicial.poder-judicial.go.cr/vol251/discursos/dis3.html",
+          "publicador": "Poder Judicial de Costa Rica",
+          "tipoFuente": "primaria-oficial",
+          "fechaPublicacion": "2020",
+          "respalda": [
+            "existencia",
+            "ejecucion",
+            "tecnica-ia",
+            "uso-operativo",
+            "resultado-reportado"
+          ],
+          "naturalezaAfirmacion": [
+            "hecho",
+            "resultado-reportado"
+          ],
+          "titulo": {
+            "es": "Rendición de cuentas del Poder Judicial 2019",
+            "en": "Judicial Branch 2019 accountability report"
+          },
+          "fechaConsulta": "2026-08-19"
+        }
+      ],
+      "fechaPrimeraEvidencia": "2019",
+      "fechaInicioOperacion": "2019",
+      "fechaUltimaVerificacion": "2026-08-19",
+      "objetivoDeclarado": {
+        "es": "Predecir el porcentaje de ejecución presupuestaria a partir de su comportamiento histórico.",
+        "en": "Predict the percentage of budget execution from its historical behavior."
+      },
+      "resultadosVerificados": [
+        {
+          "id": "ahorro-reportado-2019",
+          "texto": {
+            "es": "La rendición de cuentas institucional reportó un ahorro superior a USD 379,965 asociado al modelo.",
+            "en": "The institutional accountability report stated savings above USD 379,965 associated with the model."
+          },
+          "fuenteIds": [
+            "pj-presupuesto-rendicion-2019"
+          ],
+          "fecha": "2019"
+        }
+      ],
+      "datosNoDeterminados": [
+        {
+          "es": "No se localizaron métricas públicas posteriores que actualicen el ahorro acumulado.",
+          "en": "No later public metrics updating cumulative savings were found."
+        }
+      ]
     },
     {
       "id": "pj-nymiz",
@@ -62,20 +251,122 @@
       "institucionId": "poder-judicial",
       "categoria": "judicial",
       "estado": "operativo",
-      "desde": "2023",
+      "desde": "2024",
       "descripcion": {
-        "es": "Sistema de anonimización automatizada de datos personales en documentos judiciales, implementado por el Poder Judicial desde 2023 mediante la herramienta Nymiz. Opera sobre el corpus documental de resoluciones y expedientes para suprimir o enmascarar información identificable antes de su divulgación pública, en cumplimiento de la Ley 8968 de Protección de la Persona frente al Tratamiento de sus Datos Personales y su reglamento institucional. Es la única aplicación de IA en el sector público costarricense orientada específicamente al cumplimiento normativo de protección de datos.",
-        "en": "Automated anonymization system for personal data in judicial documents, implemented by the Judicial Branch since 2023 using the Nymiz tool. It operates on the documentary corpus of rulings and case files to suppress or mask identifiable information before public disclosure, in compliance with Law 8968 on the Protection of Individuals Regarding the Processing of Their Personal Data and its institutional regulation. It is the only AI application in the Costa Rican public sector specifically aimed at data protection regulatory compliance."
-      },
-      "resultado": {
-        "es": "80% de reducción en tiempo de anonimización: de 1-3 horas manual a 12-20 minutos con IA.",
-        "en": "80% reduction in anonymization time: from 1–3 hours manual to 12–20 minutes with AI."
+        "es": "Herramienta de inteligencia artificial implementada por el Poder Judicial para despersonalizar sentencias y proteger datos sensibles. La institución identifica a Nymiz como la plataforma utilizada y documenta su aplicación en el proceso.",
+        "en": "Artificial-intelligence tool implemented by the Judicial Branch to depersonalize rulings and protect sensitive data. The institution identifies Nymiz as the platform used and documents its application in the process."
       },
       "contexto": {
-        "es": "El Poder Judicial es la única institución del Estado que aplica IA específicamente para cumplir con la Ley 8968 de protección de datos. Marca un piso de gobernanza que el resto del sector público todavía no replica.",
-        "en": "The Judicial Branch is the only state institution applying AI specifically to comply with Law 8968 on data protection. It sets a governance floor that the rest of the public sector has yet to replicate."
+        "es": "El caso cuenta con respaldo institucional de implementación, técnica y finalidad de protección de datos. No se encontraron métricas públicas del Poder Judicial que sustenten la reducción de tiempo publicada anteriormente.",
+        "en": "The case has institutional evidence for implementation, technique and its data-protection purpose. No Judicial Branch public metrics were found to support the time reduction previously published."
       },
-      "fuenteUrl": "https://cij.poder-judicial.go.cr/images/ProteccionDatos/REGLAMENTO_PROTECCIN_DE_DATOS-PODER_JUDICIAL.pdf"
+      "fuenteUrl": "https://pj.poder-judicial.go.cr/index.php/component/content/article/1186-novedosa-herramienta-de-inteligencia-artificial-se-aplica-en-mejora-de-la-proteccion-de-datos?Itemid=409&catid=8",
+      "modeloVersion": 2,
+      "tipoIniciativa": "componente-ia",
+      "estadoCatalogo": "verificado",
+      "faseImplementacion": "operativo",
+      "estadoIA": "confirmada",
+      "evaluacion": {
+        "existencia": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "pj-nymiz-implementacion"
+          ]
+        },
+        "ejecucion": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "pj-nymiz-implementacion"
+          ]
+        },
+        "tecnicaIA": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "pj-nymiz-implementacion"
+          ]
+        },
+        "usoOperativo": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "pj-nymiz-adopcion-2025"
+          ]
+        },
+        "resultados": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "gobernanza": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "pj-nymiz-implementacion"
+          ]
+        }
+      },
+      "fuentes": [
+        {
+          "id": "pj-nymiz-implementacion",
+          "url": "https://pj.poder-judicial.go.cr/index.php/component/content/article/1186-novedosa-herramienta-de-inteligencia-artificial-se-aplica-en-mejora-de-la-proteccion-de-datos?Itemid=409&catid=8",
+          "publicador": "Poder Judicial de Costa Rica",
+          "tipoFuente": "primaria-oficial",
+          "fechaPublicacion": "2024-03-20",
+          "respalda": [
+            "existencia",
+            "objetivo-declarado",
+            "ejecucion",
+            "tecnica-ia",
+            "gobernanza"
+          ],
+          "naturalezaAfirmacion": [
+            "hecho",
+            "objetivo-declarado"
+          ],
+          "titulo": {
+            "es": "Novedosa herramienta de inteligencia artificial se aplica en mejora de la protección de datos",
+            "en": "New artificial-intelligence tool is applied to improve data protection"
+          },
+          "fechaConsulta": "2026-08-19"
+        },
+        {
+          "id": "pj-nymiz-adopcion-2025",
+          "url": "https://pj.poder-judicial.go.cr/index.php/component/content/article/2076-encuentro-expone-sobre-los-beneficios-y-desafios-de-la-implementacion-de-la-inteligencia-artificial-en-la-labor-judicial?Itemid=409&catid=8",
+          "publicador": "Poder Judicial de Costa Rica",
+          "tipoFuente": "primaria-oficial",
+          "fechaPublicacion": "2025-03-27",
+          "respalda": [
+            "existencia",
+            "ejecucion",
+            "tecnica-ia",
+            "uso-operativo"
+          ],
+          "naturalezaAfirmacion": [
+            "hecho"
+          ],
+          "titulo": {
+            "es": "Encuentro sobre beneficios y desafíos de la inteligencia artificial en la labor judicial",
+            "en": "Forum on the benefits and challenges of artificial intelligence in judicial work"
+          },
+          "fechaConsulta": "2026-08-19"
+        }
+      ],
+      "fechaPrimeraEvidencia": "2024-03-20",
+      "fechaInicioOperacion": "2024",
+      "fechaUltimaVerificacion": "2026-08-19",
+      "objetivoDeclarado": {
+        "es": "Despersonalizar sentencias judiciales para proteger datos sensibles antes de su consulta o publicación.",
+        "en": "Depersonalize judicial rulings to protect sensitive data before consultation or publication."
+      },
+      "datosConocidos": [
+        {
+          "es": "El Poder Judicial confirma la implementación y el uso de Nymiz en procesos de despersonalización de sentencias.",
+          "en": "The Judicial Branch confirms the implementation and use of Nymiz in ruling-depersonalization processes."
+        }
+      ],
+      "datosNoDeterminados": [
+        {
+          "es": "No se localizaron métricas institucionales públicas sobre ahorro de tiempo o volumen procesado.",
+          "en": "No public institutional metrics on time savings or processing volume were found."
+        }
+      ]
     },
     {
       "id": "pj-sentencias-sala-iv",
@@ -86,20 +377,111 @@
       "institucionId": "poder-judicial",
       "categoria": "judicial",
       "estado": "operativo",
-      "desde": "2025",
+      "desde": "2020",
       "descripcion": {
-        "es": "Proyecto de análisis computacional mediante machine learning sobre el corpus histórico de sentencias de la Sala Constitucional (Sala IV) del período 1989-2018, desarrollado en alianza tripartita entre el Poder Judicial, el Instituto de Investigaciones Jurídicas (IIJ) de la Universidad de Costa Rica y el Programa Estado de la Nación. Publicado en 2025, procesó 433,043 resoluciones para identificar patrones temáticos, tendencias jurisprudenciales y frecuencias de materias constitucionales a lo largo de tres décadas, constituyendo la primera aplicación documentada de ciencia de datos a la investigación jurídica en Costa Rica.",
-        "en": "Computational analysis project using machine learning on the historical corpus of Constitutional Chamber (Sala IV) rulings from 1989-2018, developed through a three-way partnership between the Judicial Branch, the Legal Research Institute (IIJ) at the University of Costa Rica, and the State of the Nation Program. Published in 2025, it processed 433,043 rulings to identify thematic patterns, jurisprudential trends, and frequencies of constitutional matters over three decades, constituting the first documented application of data science to legal research in Costa Rica."
+        "es": "Proyecto de investigación del Instituto de Investigaciones Jurídicas de la UCR y el Programa Estado de la Nación. Desde 2020 desarrolla una base estandarizada, clasificación temática y análisis automatizado de sentencias de la Sala Constitucional para investigación académica.",
+        "en": "Research project by UCR’s Legal Research Institute and the State of the Nation Program. Since 2020 it has developed a standardized database, thematic classification and automated analysis of Constitutional Chamber rulings for academic research."
       },
       "resultado": {
-        "es": "433,043 sentencias analizadas; primera aplicación documentada de ciencia de datos a investigación jurídica en CR.",
-        "en": "433,043 rulings analyzed; first documented application of data science to legal research in Costa Rica."
+        "es": "La herramienta tiene acceso a más de 500,000 sentencias emitidas entre 1989 y 2018; no cuenta con una interfaz pública de consulta.",
+        "en": "The tool has access to more than 500,000 rulings issued between 1989 and 2018; it does not have a public search interface."
       },
       "contexto": {
-        "es": "Alianza tripartita Poder Judicial + UCR + Programa Estado de la Nación. El modelo de cooperación con academia pública es replicable en otras instituciones, pero hasta hoy es único en su tipo en el Estado costarricense.",
-        "en": "A three-way partnership of the Judicial Branch, UCR and the State of the Nation Program. The model of cooperation with public academia is replicable elsewhere, but to date is unique in Costa Rica."
+        "es": "Se clasifica como investigación y no como adopción operativa del Poder Judicial: su uso documentado corresponde al análisis académico de jurisprudencia.",
+        "en": "It is classified as research rather than operational adoption by the Judicial Branch: its documented use is academic analysis of case law."
       },
-      "fuenteUrl": "https://www.ucr.ac.cr/noticias/2025/07/09/la-inteligencia-artificial-analiza-de-manera-automatica-sentencias-de-la-sala-cuarta.html"
+      "fuenteUrl": "https://www.ucr.ac.cr/noticias/2025/07/09/la-inteligencia-artificial-analiza-de-manera-automatica-sentencias-de-la-sala-cuarta.html",
+      "modeloVersion": 2,
+      "tipoIniciativa": "investigacion",
+      "estadoCatalogo": "ecosistema",
+      "faseImplementacion": "operativo",
+      "estadoIA": "confirmada",
+      "evaluacion": {
+        "existencia": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "ucr-sala-iv-2025"
+          ]
+        },
+        "ejecucion": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "ucr-sala-iv-2025"
+          ]
+        },
+        "tecnicaIA": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "ucr-sala-iv-2025"
+          ]
+        },
+        "usoOperativo": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "ucr-sala-iv-2025"
+          ]
+        },
+        "resultados": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "ucr-sala-iv-2025"
+          ]
+        },
+        "gobernanza": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        }
+      },
+      "fuentes": [
+        {
+          "id": "ucr-sala-iv-2025",
+          "url": "https://www.ucr.ac.cr/noticias/2025/07/09/la-inteligencia-artificial-analiza-de-manera-automatica-sentencias-de-la-sala-cuarta.html",
+          "publicador": "Universidad de Costa Rica",
+          "tipoFuente": "primaria-oficial",
+          "fechaPublicacion": "2025-07-09",
+          "respalda": [
+            "existencia",
+            "ejecucion",
+            "tecnica-ia",
+            "uso-operativo",
+            "resultado-reportado"
+          ],
+          "naturalezaAfirmacion": [
+            "hecho",
+            "resultado-reportado"
+          ],
+          "titulo": {
+            "es": "La inteligencia artificial analiza de manera automática sentencias de la Sala Cuarta",
+            "en": "Artificial intelligence automatically analyzes Constitutional Chamber rulings"
+          },
+          "fechaConsulta": "2026-08-19"
+        }
+      ],
+      "fechaPrimeraEvidencia": "2020",
+      "fechaUltimaVerificacion": "2026-08-19",
+      "objetivoDeclarado": {
+        "es": "Facilitar investigaciones jurídicas mediante clasificación temática y análisis automatizado de sentencias de la Sala Constitucional.",
+        "en": "Support legal research through thematic classification and automated analysis of Constitutional Chamber rulings."
+      },
+      "resultadosVerificados": [
+        {
+          "id": "corpus-sala-iv",
+          "texto": {
+            "es": "La herramienta de investigación tiene acceso a más de 500,000 sentencias emitidas entre 1989 y 2018.",
+            "en": "The research tool has access to more than 500,000 rulings issued between 1989 and 2018."
+          },
+          "fuenteIds": [
+            "ucr-sala-iv-2025"
+          ],
+          "fecha": "2025-07-09"
+        }
+      ],
+      "datosNoDeterminados": [
+        {
+          "es": "La herramienta no dispone de una interfaz pública de consulta.",
+          "en": "The tool does not have a public search interface."
+        }
+      ]
     },
     {
       "id": "pj-giro-continuo",
@@ -112,42 +494,231 @@
       "estado": "operativo",
       "desde": "2024",
       "descripcion": {
-        "es": "Sistema de automatización de pagos del Poder Judicial operativo desde 2024, diseñado para procesar mensualmente los giros de cobro judicial inferiores a ¢100,000 sin revisión manual por parte de funcionarios. Opera como capa transaccional sobre el clasificador documental de IA ya existente: una vez que el documento es clasificado y el expediente actualizado, el sistema ejecuta el giro de forma autónoma. En 2024 procesó 223,154 giros por un valor total de ¢5,245 millones (aproximadamente USD 10 millones), siendo la única automatización de pagos a escala nacional del sector público costarricense con impacto fiscal directo cuantificado.",
-        "en": "Judicial Branch payment automation system operational since 2024, designed to process monthly debt-collection disbursements under ¢100,000 without manual review by officials. It operates as a transactional layer on top of the existing AI document classifier: once a document is classified and the case file updated, the system executes the disbursement autonomously. In 2024 it processed 223,154 disbursements totaling ¢5,245 million (approximately USD 10 million), making it the only nationwide payment automation in the Costa Rican public sector with directly quantified fiscal impact."
+        "es": "Sistema del Poder Judicial que automatiza giros de depósitos judiciales de menor cuantía. La fuente institucional confirma su operación y resultados, pero no identifica una técnica de inteligencia artificial.",
+        "en": "Judicial Branch system that automates lower-value judicial deposit disbursements. The institutional source confirms its operation and results but does not identify an artificial-intelligence technique."
       },
       "resultado": {
         "es": "223,154 giros procesados en 2024 por un valor total de ¢5,245 millones (~USD 10M).",
         "en": "223,154 disbursements processed in 2024 for a total of ¢5,245M (~USD 10M)."
       },
       "contexto": {
-        "es": "Es la única automatización de pagos a escala nacional en el Estado costarricense con impacto fiscal directo cuantificable. Funciona como capa operativa sobre el clasificador documental, no como sistema aislado.",
-        "en": "The only nationwide payment automation in the Costa Rican State with direct, quantifiable fiscal impact. It runs as an operational layer on top of the document classifier, not as a standalone system."
+        "es": "Se conserva por su relevancia para la automatización judicial, pero se clasifica como digitalización sin IA demostrada. No se encontró respaldo para presentarlo como una capa del clasificador documental.",
+        "en": "It remains in the catalog because of its relevance to judicial automation, but it is classified as digitalization without demonstrated AI. No evidence was found to present it as a layer of the document classifier."
       },
-      "fuenteUrl": "https://observador.cr/sistema-de-inteligencia-artificial-judicial-ya-aplica-en-cobro-judicial/"
+      "fuenteUrl": "https://actualidadjudicial.poder-judicial.go.cr/vol294/noticias_judiciales/nj4-294.html",
+      "modeloVersion": 2,
+      "tipoIniciativa": "digitalizacion-no-ia",
+      "estadoCatalogo": "ecosistema",
+      "faseImplementacion": "operativo",
+      "estadoIA": "no-determinada",
+      "evaluacion": {
+        "existencia": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "pj-giro-continuo-2024"
+          ]
+        },
+        "ejecucion": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "pj-giro-continuo-2024"
+          ]
+        },
+        "tecnicaIA": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "usoOperativo": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "pj-giro-continuo-2024"
+          ]
+        },
+        "resultados": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "pj-giro-continuo-2024"
+          ]
+        },
+        "gobernanza": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        }
+      },
+      "fuentes": [
+        {
+          "id": "pj-giro-continuo-2024",
+          "url": "https://actualidadjudicial.poder-judicial.go.cr/vol294/noticias_judiciales/nj4-294.html",
+          "publicador": "Poder Judicial de Costa Rica",
+          "tipoFuente": "primaria-oficial",
+          "fechaPublicacion": "2025",
+          "respalda": [
+            "existencia",
+            "ejecucion",
+            "uso-operativo",
+            "resultado-reportado"
+          ],
+          "naturalezaAfirmacion": [
+            "hecho",
+            "resultado-reportado"
+          ],
+          "titulo": {
+            "es": "Sistema de Giro Continuo automatiza depósitos judiciales",
+            "en": "Continuous Disbursement System automates judicial deposits"
+          },
+          "fechaConsulta": "2026-08-19"
+        }
+      ],
+      "fechaPrimeraEvidencia": "2024",
+      "fechaInicioOperacion": "2024",
+      "fechaUltimaVerificacion": "2026-08-19",
+      "objetivoDeclarado": {
+        "es": "Automatizar giros de depósitos judiciales de menor cuantía.",
+        "en": "Automate lower-value judicial deposit disbursements."
+      },
+      "resultadosVerificados": [
+        {
+          "id": "giros-2024",
+          "texto": {
+            "es": "El Poder Judicial reportó 223,154 giros por ₡5,245 millones durante 2024.",
+            "en": "The Judicial Branch reported 223,154 disbursements totaling ₡5.245 billion during 2024."
+          },
+          "fuenteIds": [
+            "pj-giro-continuo-2024"
+          ],
+          "fecha": "2024"
+        }
+      ],
+      "datosNoDeterminados": [
+        {
+          "es": "La fuente oficial describe automatización, pero no identifica una técnica de inteligencia artificial.",
+          "en": "The official source describes automation but does not identify an artificial-intelligence technique."
+        }
+      ],
+      "relaciones": [
+        {
+          "iniciativaId": "pj-clasificacion-cobros",
+          "tipo": "relacion-no-acreditada",
+          "nota": {
+            "es": "No se encontró evidencia primaria que confirme que Giro Continuo dependa del clasificador documental.",
+            "en": "No primary evidence was found confirming that Continuous Disbursement depends on the document classifier."
+          }
+        }
+      ]
     },
     {
       "id": "pj-chatbot",
       "titulo": {
-        "es": "ChatbotPJ — Asistente virtual ciudadano",
-        "en": "ChatbotPJ — Citizen virtual assistant"
+        "es": "ChatbotPJ: asistente virtual ciudadano",
+        "en": "ChatbotPJ: citizen virtual assistant"
       },
       "institucionId": "poder-judicial",
       "categoria": "judicial",
       "estado": "operativo",
       "desde": "2018",
       "descripcion": {
-        "es": "Chatbot de atención ciudadana 24/7 que descongestiona la línea telefónica del Poder Judicial. Acceso sin cita previa para consultas sobre trámites y servicios judiciales.",
-        "en": "24/7 citizen-facing chatbot that relieves load from the Judicial Branch’s phone line. No-appointment access for queries on judicial procedures and services."
+        "es": "Asistente virtual del Poder Judicial para responder preguntas frecuentes sobre trámites y servicios. Su operación y volumen de uso están documentados, pero las fuentes públicas no identifican la técnica utilizada.",
+        "en": "Judicial Branch virtual assistant for frequently asked questions about procedures and services. Its operation and usage volume are documented, but public sources do not identify the technique used."
       },
       "resultado": {
-        "es": "173,916 consultas en 2022 (~5,500/mes). Ahorro estimado superior a USD 14,000. Activo 24/7 desde agosto de 2018.",
-        "en": "173,916 queries in 2022 (~5,500/month). Estimated savings over USD 14,000. Active 24/7 since August 2018."
+        "es": "La rendición de cuentas de 2019 reportó más de 5,000 consultas mensuales y un ahorro de USD 13,000.",
+        "en": "The 2019 accountability report stated more than 5,000 monthly queries and USD 13,000 in savings."
       },
       "contexto": {
-        "es": "Operativo desde 2018, es uno de los primeros chatbots públicos de IA del Estado costarricense, desplegado años antes del boom de la IA generativa.",
-        "en": "Operational since 2018, this is one of the earliest public AI chatbots in the Costa Rican State, deployed years before the generative AI boom."
+        "es": "Permanece en seguimiento hasta que una fuente pública permita confirmar su técnica de IA. No se asume que todo chatbot utiliza aprendizaje automático.",
+        "en": "It remains under review until a public source confirms its AI technique. The catalog does not assume that every chatbot uses machine learning."
       },
-      "fuenteUrl": "https://transparencia.poder-judicial.go.cr/index.php/declaracion-de-uso-de-inteligencia-artificial"
+      "fuenteUrl": "https://actualidadjudicial.poder-judicial.go.cr/vol251/discursos/dis3.html",
+      "modeloVersion": 2,
+      "tipoIniciativa": "sistema-ia",
+      "estadoCatalogo": "seguimiento",
+      "faseImplementacion": "operativo",
+      "estadoIA": "declarada-sin-tecnica",
+      "evaluacion": {
+        "existencia": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "pj-chatbot-rendicion-2019"
+          ]
+        },
+        "ejecucion": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "pj-chatbot-rendicion-2019"
+          ]
+        },
+        "tecnicaIA": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "usoOperativo": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "pj-chatbot-rendicion-2019"
+          ]
+        },
+        "resultados": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "pj-chatbot-rendicion-2019"
+          ]
+        },
+        "gobernanza": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        }
+      },
+      "fuentes": [
+        {
+          "id": "pj-chatbot-rendicion-2019",
+          "url": "https://actualidadjudicial.poder-judicial.go.cr/vol251/discursos/dis3.html",
+          "publicador": "Poder Judicial de Costa Rica",
+          "tipoFuente": "primaria-oficial",
+          "fechaPublicacion": "2020",
+          "respalda": [
+            "existencia",
+            "ejecucion",
+            "uso-operativo",
+            "resultado-reportado"
+          ],
+          "naturalezaAfirmacion": [
+            "hecho",
+            "resultado-reportado"
+          ],
+          "titulo": {
+            "es": "Rendición de cuentas del Poder Judicial 2019",
+            "en": "Judicial Branch 2019 accountability report"
+          },
+          "fechaConsulta": "2026-08-19"
+        }
+      ],
+      "fechaPrimeraEvidencia": "2018",
+      "fechaInicioOperacion": "2018",
+      "fechaUltimaVerificacion": "2026-08-19",
+      "fechaProximaRevision": "2026-11-19",
+      "objetivoDeclarado": {
+        "es": "Responder consultas frecuentes sobre trámites y reducir la carga de la central telefónica.",
+        "en": "Answer frequently asked questions about procedures and reduce pressure on the call center."
+      },
+      "resultadosVerificados": [
+        {
+          "id": "consultas-ahorro-2019",
+          "texto": {
+            "es": "La rendición de cuentas reportó más de 5,000 consultas mensuales y un ahorro de USD 13,000.",
+            "en": "The accountability report stated more than 5,000 monthly queries and USD 13,000 in savings."
+          },
+          "fuenteIds": [
+            "pj-chatbot-rendicion-2019"
+          ],
+          "fecha": "2019"
+        }
+      ],
+      "datosNoDeterminados": [
+        {
+          "es": "Las fuentes consultadas no publican la arquitectura, el proveedor ni la técnica utilizada.",
+          "en": "The sources reviewed do not publish the architecture, vendor or technique used."
+        }
+      ]
     },
     {
       "id": "ccss-tec-formacion",
@@ -168,64 +739,349 @@
         "en": "8-week program (December 2025): 2 working prototypes in mammography and neonatal imaging."
       },
       "contexto": {
-        "es": "Primer programa formal de formación en IA clínica en Costa Rica. La CCSS financia capacitación en lugar de adquisición de software, lo que apunta a desarrollar capacidad interna antes que dependencia de proveedores.",
-        "en": "First formal medical AI training program in Costa Rica. CCSS is funding training rather than buying software, signaling intent to build internal capacity before relying on vendors."
+        "es": "Se clasifica como programa de capacidades. Los prototipos son productos de formación y no equivalen a sistemas clínicos desplegados.",
+        "en": "It is classified as a capacity-building program. The prototypes are training outputs and do not amount to deployed clinical systems."
       },
-      "fuenteUrl": "https://www.tec.ac.cr/hoyeneltec/2025/12/15/tec-ccss-impulsan-uso-inteligencia-artificial-resolver-retos-salud-publica"
+      "fuenteUrl": "https://www.tec.ac.cr/hoyeneltec/2025/12/15/tec-ccss-impulsan-uso-inteligencia-artificial-resolver-retos-salud-publica",
+      "modeloVersion": 2,
+      "tipoIniciativa": "programa-capacidades",
+      "estadoCatalogo": "ecosistema",
+      "faseImplementacion": "finalizado",
+      "estadoIA": "confirmada",
+      "evaluacion": {
+        "existencia": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "tec-ccss-formacion-2025"
+          ]
+        },
+        "ejecucion": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "tec-ccss-formacion-2025"
+          ]
+        },
+        "tecnicaIA": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "tec-ccss-formacion-2025"
+          ]
+        },
+        "usoOperativo": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "resultados": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "tec-ccss-formacion-2025"
+          ]
+        },
+        "gobernanza": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        }
+      },
+      "fuentes": [
+        {
+          "id": "tec-ccss-formacion-2025",
+          "url": "https://www.tec.ac.cr/hoyeneltec/2025/12/15/tec-ccss-impulsan-uso-inteligencia-artificial-resolver-retos-salud-publica",
+          "publicador": "Tecnológico de Costa Rica",
+          "tipoFuente": "primaria-oficial",
+          "fechaPublicacion": "2025-12-15",
+          "respalda": [
+            "existencia",
+            "ejecucion",
+            "tecnica-ia",
+            "resultado-reportado"
+          ],
+          "naturalezaAfirmacion": [
+            "hecho",
+            "resultado-reportado"
+          ],
+          "titulo": {
+            "es": "TEC y CCSS impulsan uso de inteligencia artificial para resolver retos de salud pública",
+            "en": "TEC and CCSS advance the use of artificial intelligence for public-health challenges"
+          },
+          "fechaConsulta": "2026-08-19"
+        }
+      ],
+      "fechaPrimeraEvidencia": "2025",
+      "fechaUltimaVerificacion": "2026-08-19",
+      "objetivoDeclarado": {
+        "es": "Formar personal de la CCSS y desarrollar prototipos para retos de salud pública.",
+        "en": "Train CCSS staff and develop prototypes for public-health challenges."
+      },
+      "resultadosVerificados": [
+        {
+          "id": "prototipos-formacion",
+          "texto": {
+            "es": "La fuente institucional reporta dos prototipos desarrollados durante el programa de ocho semanas.",
+            "en": "The institutional source reports two prototypes developed during the eight-week program."
+          },
+          "fuenteIds": [
+            "tec-ccss-formacion-2025"
+          ],
+          "fecha": "2025"
+        }
+      ],
+      "datosNoDeterminados": [
+        {
+          "es": "No se encontró evidencia de que los prototipos hayan sido desplegados en atención clínica.",
+          "en": "No evidence was found that the prototypes were deployed in clinical care."
+        }
+      ]
     },
     {
       "id": "ccss-edus",
       "titulo": {
-        "es": "EDUS con IA predictiva",
-        "en": "EDUS with predictive AI"
+        "es": "EDUS: Expediente Digital Único en Salud",
+        "en": "EDUS: Unified Digital Health Record"
       },
       "institucionId": "ccss",
       "categoria": "salud",
       "estado": "planificado",
       "desde": "2025",
       "descripcion": {
-        "es": "El Expediente Digital Único en Salud (EDUS), creado mediante la Ley 9162 y operativo desde 2010, centraliza el historial clínico de la totalidad de los asegurados de la Caja Costarricense de Seguro Social (CCSS), que cubre aproximadamente el 90% de la población del país. El sistema fue sometido a prueba de estrés durante la pandemia de COVID-19 y demostró capacidad de escala. La incorporación de una capa de inteligencia artificial para medicina predictiva está planificada pero sin cronograma público definido; el EDUS es considerado uno de los conjuntos de datos clínicos más completos del sector público latinoamericano aún no explotados con IA a escala.",
-        "en": "The Single Digital Health Record (EDUS), created under Law 9162 and operational since 2010, centralizes the clinical history of all insured members of the Costa Rican Social Security Fund (CCSS), covering approximately 90% of the country's population. The system was stress-tested during the COVID-19 pandemic and demonstrated scalability. The incorporation of an AI layer for predictive medicine is planned but has no public timeline; EDUS is considered one of the most complete clinical datasets in the Latin American public sector still untapped by AI at scale."
+        "es": "Infraestructura digital de la CCSS que centraliza expedientes clínicos y habilita el intercambio de información entre establecimientos. EDUS es la base de datos utilizada por iniciativas separadas como LIDIA y la integración anunciada de AIDA.",
+        "en": "CCSS digital infrastructure that centralizes clinical records and enables information exchange across facilities. EDUS is the data foundation used by separate initiatives such as LIDIA and the announced AIDA integration."
       },
       "resultado": {
-        "es": "106.2M atenciones registradas, 561.5M recetas, 39.6M análisis de laboratorio y 5.3M descargas de la app (#1 en Costa Rica). Premio WSIS 2021.",
-        "en": "106.2M visits recorded, 561.5M prescriptions, 39.6M lab tests and 5.3M app downloads (#1 in Costa Rica). WSIS 2021 Award."
+        "es": "El BID documenta la implementación nacional de EDUS como expediente digital integrado de la CCSS.",
+        "en": "The IDB documents the nationwide implementation of EDUS as CCSS integrated digital health record."
       },
       "contexto": {
-        "es": "EDUS cubre al 100% de los asegurados de la CCSS y se probó durante la pandemia. La capa de IA está planificada pero sin cronograma público; es uno de los datasets más valiosos del Estado costarricense aún sin explotar con IA a escala.",
-        "en": "EDUS covers 100% of CCSS members and was stress-tested during the pandemic. The AI layer is planned but has no public timeline; it is one of the most valuable Costa Rican state datasets still untapped at scale by AI."
+        "es": "Se separa la plataforma base de sus posibles componentes de IA. La operación de EDUS no demuestra por sí sola que exista una capa predictiva general en producción.",
+        "en": "The base platform is separated from its possible AI components. EDUS operation does not by itself demonstrate that a general predictive layer is in production."
       },
-      "fuenteUrl": "https://publications.iadb.org/en/costa-ricas-unified-digital-health-record-edus-system-best-practices-history-and-implementation"
+      "fuenteUrl": "https://publications.iadb.org/en/costa-ricas-unified-digital-health-record-edus-system-best-practices-history-and-implementation",
+      "modeloVersion": 2,
+      "tipoIniciativa": "infraestructura-digital",
+      "estadoCatalogo": "ecosistema",
+      "faseImplementacion": "operativo",
+      "estadoIA": "no-determinada",
+      "evaluacion": {
+        "existencia": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "bid-edus"
+          ]
+        },
+        "ejecucion": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "bid-edus"
+          ]
+        },
+        "tecnicaIA": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "usoOperativo": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "bid-edus"
+          ]
+        },
+        "resultados": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "bid-edus"
+          ]
+        },
+        "gobernanza": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        }
+      },
+      "fuentes": [
+        {
+          "id": "bid-edus",
+          "url": "https://publications.iadb.org/en/costa-ricas-unified-digital-health-record-edus-system-best-practices-history-and-implementation",
+          "publicador": "Banco Interamericano de Desarrollo",
+          "tipoFuente": "multilateral",
+          "respalda": [
+            "existencia",
+            "ejecucion",
+            "uso-operativo",
+            "resultado-reportado"
+          ],
+          "naturalezaAfirmacion": [
+            "hecho",
+            "resultado-reportado"
+          ],
+          "titulo": {
+            "es": "Expediente Digital Único en Salud de Costa Rica: historia, implementación y buenas prácticas",
+            "en": "Costa Rica's Unified Digital Health Record: history, implementation and best practices"
+          },
+          "fechaConsulta": "2026-08-19"
+        }
+      ],
+      "fechaPrimeraEvidencia": "2010",
+      "fechaInicioOperacion": "2010",
+      "fechaUltimaVerificacion": "2026-08-19",
+      "objetivoDeclarado": {
+        "es": "Centralizar el expediente clínico digital y habilitar el intercambio de información dentro de la CCSS.",
+        "en": "Centralize the digital clinical record and enable information exchange within CCSS."
+      },
+      "resultadosVerificados": [
+        {
+          "id": "infraestructura-edus",
+          "texto": {
+            "es": "El BID documenta la implementación nacional de EDUS como expediente digital integrado de la CCSS.",
+            "en": "The IDB documents the nationwide implementation of EDUS as CCSS integrated digital health record."
+          },
+          "fuenteIds": [
+            "bid-edus"
+          ]
+        }
+      ],
+      "datosNoDeterminados": [
+        {
+          "es": "La fuente consultada no demuestra una capa predictiva general de IA operando dentro de EDUS.",
+          "en": "The source reviewed does not demonstrate a general predictive AI layer operating within EDUS."
+        }
+      ],
+      "relaciones": [
+        {
+          "iniciativaId": "ccss-lidia",
+          "tipo": "alimenta-a",
+          "nota": {
+            "es": "LIDIA utiliza datos del EDUS para sus modelos predictivos.",
+            "en": "LIDIA uses EDUS data for its predictive models."
+          }
+        },
+        {
+          "iniciativaId": "ccss-aida",
+          "tipo": "alimenta-a",
+          "nota": {
+            "es": "La CCSS anuncia que AIDA se integrará al EDUS.",
+            "en": "CCSS states that AIDA will be integrated with EDUS."
+          }
+        }
+      ]
     },
     {
       "id": "ccss-aida",
       "titulo": {
-        "es": "AIDA — Asistente Inteligente Digital para la Atención",
-        "en": "AIDA — Intelligent Digital Assistant for Care"
+        "es": "AIDA: Asistente Inteligente Digital para la Atención",
+        "en": "AIDA: Intelligent Digital Assistant for Care"
       },
       "institucionId": "ccss",
       "categoria": "salud",
-      "estado": "piloto",
-      "desde": "2026",
+      "estado": "planificado",
+      "desde": "2025",
       "descripcion": {
-        "es": "Asistente IA integrado al EDUS que apoya a profesionales de salud en tiempo real durante la consulta: sugiere diagnósticos diferenciales, facilita seguimiento de enfermedades crónicas (con foco declarado en diabetes, hipertensión arterial y obesidad) y permite teleinterconsulta asincrónica con especialistas.",
-        "en": "AI assistant embedded in EDUS that supports health professionals in real time during consultation: suggests differential diagnoses, helps with chronic-disease follow-up (with stated focus on diabetes, hypertension and obesity) and enables asynchronous tele-consultation with specialists."
-      },
-      "resultado": {
-        "es": "Piloto activo en 15 áreas de salud durante un año (2026-2027): Tibás-Uruca-Merced, Alajuela Central, Mata Redonda-Hospital, Cartago, Los Chiles, Pital, Cóbano, Garabito, Limón, Talamanca, Pérez Zeledón, Buenos Aires, Coto Brus, Nicoya y Carrillo. Se anuncian 292 nuevas plazas para acompañar el despliegue. Expansión nacional planificada en cuatro fases hasta 2031. La hoja de ruta del proyecto fue aprobada por la Junta Directiva de la CCSS, garantizando trazabilidad y cobertura institucional del despliegue.",
-        "en": "Active pilot in 15 health areas for one year (2026-2027): Tibás-Uruca-Merced, Alajuela Central, Mata Redonda-Hospital, Cartago, Los Chiles, Pital, Cóbano, Garabito, Limón, Talamanca, Pérez Zeledón, Buenos Aires, Coto Brus, Nicoya and Carrillo. 292 new positions are announced to support the deployment. National expansion planned in four phases by 2031. The project roadmap was approved by the CCSS Board of Directors, giving the rollout institutional traceability and coverage."
+        "es": "Asistente Inteligente Digital para la Atención anunciado por la CCSS para apoyar decisiones clínicas en tiempo real e integrarse con EDUS dentro de la estrategia de fortalecimiento del primer nivel.",
+        "en": "Intelligent Digital Assistant for Care announced by CCSS to support real-time clinical decisions and integrate with EDUS as part of its primary-care strengthening strategy."
       },
       "contexto": {
-        "es": "Es el primer asistente IA en consulta médica en tiempo real del Estado costarricense. Avalado por la presidenta ejecutiva Mónica Taylor y el gerente médico Dr. Alexánder León Sánchez Cabo, con hoja de ruta aprobada por Junta Directiva. Diferenciado de LIDIA (predictivo) por operar durante el acto clínico. Se anuncia junto con un componente paralelo no-IA: la ampliación de la oferta de medicamentos disponibles directamente en los EBAIS para los pacientes con las enfermedades crónicas que AIDA prioriza. Los medicamentos ampliados incluyen específicamente rosuvastatina, montelukast y alendronato de calcio. Datos epidemiológicos institucionales que justifican el foco: hipertensión arterial en 36,6% de la población, diabetes en 14,8%, con control insuficiente en 4 de cada 10 pacientes hipertensos y 6 de cada 10 diabéticos. Fuente complementaria: El Observador CR (12 de noviembre de 2025).",
-        "en": "The first real-time clinical AI assistant in the Costa Rican State, endorsed by CCSS executive president Mónica Taylor and medical manager Dr. Alexánder León Sánchez Cabo, with a roadmap approved by the Board of Directors. Distinct from LIDIA (predictive) because it operates during the clinical act itself. Announced alongside a parallel non-AI component: expanding the medicines directly available at EBAIS primary-care clinics for patients with the chronic conditions AIDA prioritizes. The expanded EBAIS medicines specifically include rosuvastatin, montelukast and calcium alendronate. Institutional epidemiological data justifying the focus: hypertension in 36.6% of the population, diabetes in 14.8%, with insufficient control in 4 of every 10 hypertensive patients and 6 of every 10 diabetics. Additional source: El Observador CR (Nov 12, 2025)."
+        "es": "La fuente oficial usa tiempo futuro: indica que AIDA se desplegará. La estrategia contempla una fase piloto en 2026-2027, pero no se encontró evidencia pública posterior que confirme que AIDA ya entró en uso.",
+        "en": "The official source uses future tense: it states that AIDA will be deployed. The strategy includes a 2026-2027 pilot phase, but no later public evidence was found confirming that AIDA entered use."
       },
-      "fuenteUrl": "https://www.monumental.co.cr/2026/02/25/ccss-usara-inteligencia-artificial-y-ampliara-oferta-de-medicamentos-en-ebais/"
+      "fuenteUrl": "https://aissfa.ccss.sa.cr/noticias/noticia?v=101282054203",
+      "modeloVersion": 2,
+      "tipoIniciativa": "componente-ia",
+      "estadoCatalogo": "seguimiento",
+      "faseImplementacion": "planificado",
+      "estadoIA": "declarada-sin-tecnica",
+      "evaluacion": {
+        "existencia": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "ccss-aida-anuncio"
+          ]
+        },
+        "ejecucion": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "tecnicaIA": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "usoOperativo": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "resultados": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "gobernanza": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "ccss-aida-anuncio"
+          ]
+        }
+      },
+      "fuentes": [
+        {
+          "id": "ccss-aida-anuncio",
+          "url": "https://aissfa.ccss.sa.cr/noticias/noticia?v=101282054203",
+          "publicador": "Caja Costarricense de Seguro Social",
+          "tipoFuente": "primaria-oficial",
+          "fechaPublicacion": "2025-11-11",
+          "respalda": [
+            "existencia",
+            "objetivo-declarado",
+            "meta",
+            "gobernanza"
+          ],
+          "naturalezaAfirmacion": [
+            "hecho",
+            "objetivo-declarado",
+            "meta"
+          ],
+          "titulo": {
+            "es": "CCSS implementa nueva estrategia para fortalecer el primer nivel de atención",
+            "en": "CCSS introduces a new strategy to strengthen primary care"
+          },
+          "fechaConsulta": "2026-08-19"
+        }
+      ],
+      "fechaPrimeraEvidencia": "2025-11-11",
+      "fechaAnuncio": "2025-11-11",
+      "fechaUltimaVerificacion": "2026-08-19",
+      "fechaProximaRevision": "2026-11-19",
+      "objetivoDeclarado": {
+        "es": "Apoyar decisiones clínicas en tiempo real desde el primer nivel de atención mediante una integración con EDUS.",
+        "en": "Support real-time clinical decisions in primary care through an integration with EDUS."
+      },
+      "datosConocidos": [
+        {
+          "es": "La Junta Directiva aprobó la estrategia general y la fuente oficial anuncia que AIDA se desplegará dentro de ella.",
+          "en": "The Board approved the broader strategy, and the official source states that AIDA will be deployed within it."
+        }
+      ],
+      "datosNoDeterminados": [
+        {
+          "es": "No se localizó evidencia posterior que confirme el inicio del despliegue de AIDA, su proveedor o su arquitectura técnica.",
+          "en": "No later evidence was found confirming the start of AIDA deployment, its vendor or its technical architecture."
+        }
+      ],
+      "preguntasAbiertas": [
+        {
+          "es": "¿Comenzó AIDA a utilizarse en alguna de las 15 áreas demostrativas durante 2026?",
+          "en": "Did AIDA begin being used in any of the 15 demonstration areas during 2026?"
+        }
+      ],
+      "relaciones": [
+        {
+          "iniciativaId": "ccss-edus",
+          "tipo": "depende-de",
+          "nota": {
+            "es": "La integración con EDUS es parte del objetivo anunciado.",
+            "en": "Integration with EDUS is part of the stated objective."
+          }
+        }
+      ]
     },
     {
       "id": "ccss-lidia",
       "titulo": {
-        "es": "LIDIA — Modelos predictivos en EDUS",
-        "en": "LIDIA — Predictive models in EDUS"
+        "es": "LIDIA: modelos predictivos en EDUS",
+        "en": "LIDIA: predictive models in EDUS"
       },
       "institucionId": "ccss",
       "categoria": "salud",
@@ -236,38 +1092,300 @@
         "en": "Internal program of four predictive health models (type 2 diabetes, lung health, acute coronary syndrome and breast cancer) running on EDUS. Identifies at-risk populations so clinics can reach out before formal diagnosis."
       },
       "resultado": {
-        "es": "Piloto de diabetes en la Clínica Clorito Picado: 1 millón+ pacientes analizados, 2,500 identificados en riesgo, 1,800 localizados, 130 ya con diabetes. Alta precisión documentada en piloto. Costo por modelo: ¢130 millones (~USD 250,000).",
-        "en": "Diabetes pilot at Clorito Picado Clinic: 1M+ patients analyzed, 2,500 identified as at-risk, 1,800 reached, 130 already diagnosed. Documented high accuracy in the pilot. Cost per model: ¢130M (~USD 250,000)."
+        "es": "El acta de Junta Directiva confirma el alcance inicial del modelo de diabetes y una propuesta de escalamiento. Teletica reportó más de un millón de registros analizados, 2,500 personas en riesgo, 1,800 contactadas y 130 ya diagnosticadas.",
+        "en": "Board minutes confirm the initial scope of the diabetes model and a scaling proposal. Teletica reported more than one million records analyzed, 2,500 people at risk, 1,800 contacted and 130 already diagnosed."
       },
       "contexto": {
-        "es": "Único programa público de medicina preventiva con IA en Costa Rica. Desarrollado internamente por equipos de la CCSS (médicos, ingenieros, estadísticos) bajo el director del EDUS, Manuel Rodríguez, sin proveedor externo. Tres de los cuatro modelos siguen en fase cero por restricciones de presupuesto.",
-        "en": "Costa Rica’s only public preventive-medicine AI program. Built in-house by CCSS teams (physicians, engineers, statisticians) under EDUS director Manuel Rodríguez, with no external vendor. Three of the four models remain in phase zero due to budget constraints."
+        "es": "Se cuenta como piloto verificado porque un acta institucional confirma la ejecución, la técnica y el uso del modelo. Las cifras detalladas provienen de prensa y se presentan como resultados reportados, no como evaluación independiente.",
+        "en": "It counts as a verified pilot because institutional minutes confirm execution, technique and use of the model. Detailed figures come from the press and are presented as reported results, not an independent evaluation."
       },
-      "fuenteUrl": "https://www.teletica.com/salud/lidia-el-programa-de-inteligencia-artificial-que-crece-en-la-ccss-en-medio-de-un-dilema-etico_376322"
+      "fuenteUrl": "https://www.teletica.com/salud/lidia-el-programa-de-inteligencia-artificial-que-crece-en-la-ccss-en-medio-de-un-dilema-etico_376322",
+      "modeloVersion": 2,
+      "tipoIniciativa": "componente-ia",
+      "estadoCatalogo": "verificado",
+      "faseImplementacion": "piloto",
+      "estadoIA": "confirmada",
+      "evaluacion": {
+        "existencia": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "ccss-lidia-acta-9504"
+          ]
+        },
+        "ejecucion": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "ccss-lidia-acta-9504"
+          ]
+        },
+        "tecnicaIA": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "ccss-lidia-acta-9504"
+          ]
+        },
+        "usoOperativo": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "ccss-lidia-acta-9504"
+          ]
+        },
+        "resultados": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "ccss-lidia-acta-9504",
+            "teletica-lidia-2025"
+          ]
+        },
+        "gobernanza": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        }
+      },
+      "fuentes": [
+        {
+          "id": "ccss-lidia-acta-9504",
+          "url": "https://aissfa.ccss.sa.cr/arc/actas/2025/03/9504.pdf",
+          "publicador": "Caja Costarricense de Seguro Social",
+          "tipoFuente": "primaria-oficial",
+          "fechaPublicacion": "2025-03-18",
+          "respalda": [
+            "existencia",
+            "ejecucion",
+            "tecnica-ia",
+            "uso-operativo",
+            "resultado-reportado"
+          ],
+          "naturalezaAfirmacion": [
+            "hecho",
+            "resultado-reportado"
+          ],
+          "titulo": {
+            "es": "Acta de Junta Directiva de la CCSS, sesión 9504",
+            "en": "CCSS Board minutes, session 9504"
+          },
+          "fechaConsulta": "2026-08-19"
+        },
+        {
+          "id": "teletica-lidia-2025",
+          "url": "https://www.teletica.com/salud/lidia-el-programa-de-inteligencia-artificial-que-crece-en-la-ccss-en-medio-de-un-dilema-etico_376322",
+          "publicador": "Teletica",
+          "tipoFuente": "prensa",
+          "fechaPublicacion": "2025",
+          "respalda": [
+            "existencia",
+            "ejecucion",
+            "tecnica-ia",
+            "uso-operativo",
+            "resultado-reportado"
+          ],
+          "naturalezaAfirmacion": [
+            "hecho",
+            "resultado-reportado"
+          ],
+          "titulo": {
+            "es": "LIDIA, el programa de inteligencia artificial que crece en la CCSS",
+            "en": "LIDIA, the artificial-intelligence program growing within CCSS"
+          },
+          "fechaConsulta": "2026-08-19"
+        }
+      ],
+      "fechaPrimeraEvidencia": "2023",
+      "fechaInicioPiloto": "2023",
+      "fechaUltimaVerificacion": "2026-08-19",
+      "objetivoDeclarado": {
+        "es": "Identificar personas con riesgo elevado de enfermedades mediante modelos predictivos sobre información del EDUS.",
+        "en": "Identify people at elevated disease risk through predictive models using EDUS information."
+      },
+      "resultadosVerificados": [
+        {
+          "id": "modelo-diabetes-alcance-inicial",
+          "texto": {
+            "es": "El acta institucional identifica el modelo de diabetes tipo 2 como el primer modelo de IA en salud de la CCSS, reporta finalizado su alcance inicial y registra una propuesta de escalamiento.",
+            "en": "Institutional minutes identify the type-2 diabetes model as CCSS first health AI model, report its initial scope as complete and record a scaling proposal."
+          },
+          "fuenteIds": [
+            "ccss-lidia-acta-9504"
+          ],
+          "fecha": "2025-03-18"
+        },
+        {
+          "id": "resultados-piloto-reportados-prensa",
+          "texto": {
+            "es": "Teletica reportó más de un millón de registros analizados, 2,500 personas identificadas en riesgo, 1,800 contactadas y 130 casos ya diagnosticados.",
+            "en": "Teletica reported more than one million records analyzed, 2,500 people identified as at risk, 1,800 contacted and 130 already diagnosed."
+          },
+          "fuenteIds": [
+            "teletica-lidia-2025"
+          ],
+          "fecha": "2025"
+        }
+      ],
+      "datosNoDeterminados": [
+        {
+          "es": "No se localizaron métricas públicas de precisión, sensibilidad o falsos positivos auditadas independientemente.",
+          "en": "No independently audited public metrics for accuracy, sensitivity or false positives were found."
+        }
+      ],
+      "relaciones": [
+        {
+          "iniciativaId": "ccss-edus",
+          "tipo": "depende-de",
+          "nota": {
+            "es": "Los modelos se construyen sobre información contenida en EDUS.",
+            "en": "The models are built using information held in EDUS."
+          }
+        }
+      ]
     },
     {
       "id": "ccss-redimed",
       "titulo": {
-        "es": "REDIMED — Red Digital Institucional de Imágenes Médicas",
-        "en": "REDIMED — Institutional Digital Network for Medical Imaging"
+        "es": "REDIMED: Red Digital Institucional de Imágenes Médicas",
+        "en": "REDIMED: Institutional Digital Network for Medical Imaging"
       },
       "institucionId": "ccss",
       "categoria": "salud",
       "estado": "piloto",
       "desde": "2024",
       "descripcion": {
-        "es": "Plataforma de la CCSS para digitalizar, almacenar y compartir imágenes médicas (mamografías, ultrasonidos, tomografías, resonancias y rayos X) entre centros de salud del país. Incorpora algoritmos de inteligencia artificial para priorizar pacientes según urgencia clínica, con el objetivo de acelerar diagnósticos y reducir tiempos de espera en servicios de imagenología.",
-        "en": "CCSS platform to digitize, store and share medical images (mammography, ultrasound, CT scans, MRI and X-rays) across the country's health centers. It incorporates artificial intelligence algorithms to prioritize patients by clinical urgency, aiming to accelerate diagnoses and reduce wait times in imaging services."
+        "es": "Red de la CCSS para almacenar y compartir imágenes médicas entre establecimientos. La fuente institucional también documenta un componente de IA para analizar y priorizar mamografías, entonces en estudio de validación.",
+        "en": "CCSS network for storing and sharing medical images across facilities. The institutional source also documents an AI component to analyze and prioritize mammograms, then under validation study."
       },
       "resultado": {
         "es": "Despliegue parcial: 13 centros de salud habilitados de un alcance original de 50 (26%). Hospitales activos incluyen San Juan de Dios, Calderón Guardia y San Vicente de Paúl. Ejecución presupuestaria reportada en ₡10,500 millones (71% del marco asignado).",
         "en": "Partial deployment: 13 health centers enabled out of an original scope of 50 (26%). Active hospitals include San Juan de Dios, Calderón Guardia and San Vicente de Paúl. Reported budget execution at ₡10,500 million (71% of the assigned framework)."
       },
       "contexto": {
-        "es": "Originalmente planificado para entrar en operación plena en 2024, el proyecto presenta retrasos sustanciales y fue señalado por la Contraloría General de la República en julio de 2025 por incumplimientos: lentitud en la visualización de imágenes, inestabilidad del sistema y ausencia de planes de contingencia. La fiscalización afecta la gobernanza del componente IA y obliga a la CCSS a presentar un plan de remediación.",
-        "en": "Originally planned to be fully operational in 2024, the project shows substantial delays and was flagged by the Office of the Comptroller General (CGR) in July 2025 for non-compliance: slow image visualization, system instability and absence of contingency plans. The audit impacts the AI component's governance and requires CCSS to submit a remediation plan."
+        "es": "La ficha reúne una infraestructura digital parcialmente desplegada y un componente de IA cuya fase no está claramente actualizada. Por eso se ubica en ecosistema y no en el contador de adopción verificada.",
+        "en": "The entry combines partially deployed digital infrastructure and an AI component whose phase has not been clearly updated. It is therefore placed in the ecosystem layer and not in the verified-adoption count."
       },
-      "fuenteUrl": "https://semanariouniversidad.com/pais/cgr-advierte-a-la-ccss-por-incumplimientos-en-sistema-de-imagenes-medicas-y-ordena-medidas-correctivas/"
+      "fuenteUrl": "https://semanariouniversidad.com/pais/cgr-advierte-a-la-ccss-por-incumplimientos-en-sistema-de-imagenes-medicas-y-ordena-medidas-correctivas/",
+      "modeloVersion": 2,
+      "tipoIniciativa": "infraestructura-digital",
+      "estadoCatalogo": "ecosistema",
+      "faseImplementacion": "desarrollo",
+      "estadoIA": "confirmada",
+      "evaluacion": {
+        "existencia": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "ccss-redimed-oficial"
+          ]
+        },
+        "ejecucion": {
+          "estado": "parcialmente-confirmado",
+          "fuenteIds": [
+            "ccss-redimed-oficial",
+            "redimed-cgr-prensa"
+          ]
+        },
+        "tecnicaIA": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "ccss-redimed-oficial"
+          ]
+        },
+        "usoOperativo": {
+          "estado": "parcialmente-confirmado",
+          "fuenteIds": [
+            "ccss-redimed-oficial"
+          ]
+        },
+        "resultados": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "redimed-cgr-prensa"
+          ]
+        },
+        "gobernanza": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "redimed-cgr-prensa"
+          ]
+        }
+      },
+      "fuentes": [
+        {
+          "id": "ccss-redimed-oficial",
+          "url": "https://aissfa.ccss.sa.cr/noticias/noticia?v=caja-logra-gran-avance-en-transformacion-digital-de-sus-estudios-radiologicos",
+          "publicador": "Caja Costarricense de Seguro Social",
+          "tipoFuente": "primaria-oficial",
+          "fechaPublicacion": "2023",
+          "respalda": [
+            "existencia",
+            "objetivo-declarado",
+            "ejecucion",
+            "tecnica-ia",
+            "uso-operativo",
+            "meta"
+          ],
+          "naturalezaAfirmacion": [
+            "hecho",
+            "objetivo-declarado",
+            "meta"
+          ],
+          "titulo": {
+            "es": "CCSS logra gran avance en transformación digital de sus estudios radiológicos",
+            "en": "CCSS reports progress in the digital transformation of radiology studies"
+          },
+          "fechaConsulta": "2026-08-19"
+        },
+        {
+          "id": "redimed-cgr-prensa",
+          "url": "https://semanariouniversidad.com/pais/cgr-advierte-a-la-ccss-por-incumplimientos-en-sistema-de-imagenes-medicas-y-ordena-medidas-correctivas/",
+          "publicador": "Semanario Universidad",
+          "tipoFuente": "prensa",
+          "fechaPublicacion": "2025-07",
+          "respalda": [
+            "existencia",
+            "ejecucion",
+            "resultado-reportado",
+            "gobernanza"
+          ],
+          "naturalezaAfirmacion": [
+            "hecho",
+            "resultado-reportado"
+          ],
+          "titulo": {
+            "es": "CGR advierte a la CCSS por incumplimientos en sistema de imágenes médicas",
+            "en": "Comptroller flags CCSS shortcomings in the medical-imaging system"
+          },
+          "fechaConsulta": "2026-08-19"
+        }
+      ],
+      "fechaPrimeraEvidencia": "2023",
+      "fechaInicioPiloto": "2023",
+      "fechaUltimaVerificacion": "2026-08-19",
+      "objetivoDeclarado": {
+        "es": "Compartir imágenes médicas entre establecimientos y evaluar apoyo de IA para priorizar mamografías.",
+        "en": "Share medical images across facilities and evaluate AI support for mammography prioritization."
+      },
+      "resultadosVerificados": [
+        {
+          "id": "despliegue-parcial-redimed",
+          "texto": {
+            "es": "La cobertura de fiscalización reportó 13 centros habilitados de un alcance original de 50.",
+            "en": "Audit coverage reported 13 enabled facilities out of an original scope of 50."
+          },
+          "fuenteIds": [
+            "redimed-cgr-prensa"
+          ],
+          "fecha": "2025"
+        }
+      ],
+      "datosNoDeterminados": [
+        {
+          "es": "La evidencia disponible no permite separar con precisión la fase de REDIMED y la fase del componente de IA para mamografías.",
+          "en": "Available evidence does not allow the phase of REDIMED to be cleanly separated from the phase of the mammography AI component."
+        }
+      ],
+      "preguntasAbiertas": [
+        {
+          "es": "¿El componente de priorización con IA superó el estudio de validación y se usa en atención?",
+          "en": "Did the AI prioritization component complete validation and enter care use?"
+        }
+      ]
     },
     {
       "id": "ccss-depuracion-listas",
@@ -277,69 +1395,353 @@
       },
       "institucionId": "ccss",
       "categoria": "salud",
-      "estado": "operativo",
+      "estado": "piloto",
       "desde": "2026",
       "descripcion": {
-        "es": "Bot de la CCSS que depura listas de espera administrativas (consulta externa, procedimientos y cirugías) cruzando datos del Expediente Digital Único en Salud (EDUS), Registro Civil, redes de servicios institucionales y registros de prestadores externos. Entrenado con patrones históricos de depuración y opera sobre 15 categorías oficiales de resolución (paciente fallecido, atendido en otro centro, contraindicación médica, ya no desea operarse, ya no requiere el procedimiento, etc.). Cada caso identificado por el sistema pasa por validación humana previa antes del retiro de la lista. Incluye contacto automatizado de pacientes para confirmar su estado. El componente de contacto automatizado se implementó bajo el nombre CLEO, un asistente multicanal (correo, WhatsApp y llamada automatizada). La unidad operativa es la Unidad Técnica de Listas de Espera (UTLE) de la Gerencia Médica.",
-        "en": "CCSS bot that cleans up administrative wait lists (outpatient consultations, procedures and surgeries) by cross-referencing data from the Unified Digital Health Record (EDUS), Civil Registry, institutional service networks and external provider registries. Trained on historical cleanup patterns, it operates over 15 official resolution categories (deceased, treated at another center, medical contraindication, declines surgery, no longer needs the procedure, etc.). Every case the system flags goes through prior human validation before being removed from the list. Includes automated patient outreach to confirm status. The automated outreach component was deployed under the name CLEO, a multichannel assistant (email, WhatsApp and automated call). Run by the Wait-List Technical Unit (UTLE) of the Medical Management."
-      },
-      "resultado": {
-        "es": "Sin resultados publicados del piloto CLEO al 15 de julio de 2026. Como línea base institucional previa al despliegue de la herramienta, entre 2023 y el primer trimestre de 2026, la CCSS resolvió 367,403 pacientes provenientes de la lista de espera quirúrgica y depuró 136,774 casos. La razón pacientes operados/casos depurados mejoró de 2.21 (2023) a 4.50 (Q1 2026) y la tasa de depuración bajó de 31.2% a 18.2%, indicando listas más precisas. La meta declarada del Plan Estratégico Institucional 2026-2030 es resolver 100,125 pacientes adicionales entre mayo y octubre de 2026, con una inversión de ₡7,122 millones en jornadas extraordinarias. Estas cifras no son resultados atribuibles a la IA.",
-        "en": "No published results from the CLEO pilot as of July 15, 2026. As the institutional baseline prior to the tool's deployment, between 2023 and Q1 2026, the CCSS resolved 367,403 patients from the surgical wait list and cleaned up 136,774 cases. The ratio of patients operated to cases cleaned improved from 2.21 (2023) to 4.50 (Q1 2026) and the cleanup rate dropped from 31.2% to 18.2%, indicating more accurate lists. The 2026-2030 Institutional Strategic Plan targets resolving 100,125 additional patients between May and October 2026, backed by ₡7,122 million in extraordinary work shifts. These figures are not results attributable to the AI."
+        "es": "Herramienta de la CCSS para contactar personas y apoyar la depuración de listas de espera. El piloto usa canales automatizados, pero toda modificación de un registro requiere validación del personal institucional.",
+        "en": "CCSS tool for contacting people and supporting waiting-list cleanup. The pilot uses automated channels, but every record change requires validation by institutional staff."
       },
       "contexto": {
-        "es": "Anuncio oficial el 7-8 de mayo de 2026 por el gerente médico Dr. Alexánder León Sánchez Cabo (alias en prensa: Alexander Sánchez Cabo; nombre completo verificado en Acta de Junta Directiva CCSS N.° 9589 del 10 de marzo de 2026), dentro del Plan Estratégico Institucional 2026-2030 para listas de espera. La vocería técnica de la Unidad Técnica de Listas de Espera (UTLE) corresponde a Enué Arrieta Espinoza, y las cifras institucionales de línea base sobre resolución y depuración se sustentan en el Reporte LEQ marzo 2026 de la CCSS. Desde el 8 de mayo de 2026, Marvin Palma ejerce como gerente médico interino. El sistema declara cumplir la Ley de Protección de la Persona frente al Tratamiento de sus Datos Personales y opera con mecanismos de control y auditoría. Funcionalmente distinto de los demás proyectos IA de la CCSS: AIDA es asistente clínico al médico durante consulta; LIDIA son modelos predictivos sobre 4 enfermedades; REDIMED prioriza imágenes médicas por urgencia. Esta herramienta es data-quality administrativa sobre la cola de espera misma. En julio de 2026 la CCSS puso en marcha CLEO, la implementación nombrada del componente de contacto, en un piloto de un mes en el Hospital Dr. Rafael Ángel Calderón Guardia (elegido por su alto volumen de casos pendientes). CLEO contacta a personas en lista de espera en los tres ejes (cirugía, procedimientos diagnósticos y consulta externa especializada) con hasta tres intentos en distintos días y horarios mediante canales de correo, WhatsApp o llamada automatizada, y una capacidad declarada de hasta 1.500 registros por día (capacidad, no resultado observado). No asigna citas, no elimina personas de la lista ni toma decisiones clínicas: toda la información recopilada la valida personal de la CCSS. La expansión a otros centros queda condicionada a la evaluación del piloto. La CCSS no ha identificado CLEO como sigla, no ha publicado un desarrollo del nombre y tampoco ha identificado al proveedor ni el modelo técnico; por ello, no se atribuye ninguno.",
-        "en": "Official announcement May 7-8, 2026 by Medical Manager Dr. Alexánder León Sánchez Cabo (press alias: Alexander Sánchez Cabo; full name verified in CCSS Board of Directors Minutes N.° 9589 of March 10, 2026), as part of the 2026-2030 Institutional Strategic Plan for wait lists. The technical spokesperson for the Wait-List Technical Unit (UTLE) is Enué Arrieta Espinoza, and the institutional baseline figures for wait-list resolution and cleanup are backed by the CCSS LEQ March 2026 Report. Since May 8, 2026, Marvin Palma serves as interim Medical Manager. The system claims compliance with the Personal Data Protection Law and operates with control and audit mechanisms. Functionally distinct from CCSS's other AI projects: AIDA is a clinical assistant for physicians during consultation; LIDIA runs predictive models for 4 diseases; REDIMED prioritizes medical images by urgency. This tool is administrative data quality on the queue itself. In July 2026 the CCSS launched CLEO, the named implementation of the contact component, in a one-month pilot at Hospital Dr. Rafael Ángel Calderón Guardia (chosen for its high volume of pending cases). CLEO contacts people on the wait list across the three tracks (surgery, diagnostic procedures and specialized outpatient consultations) with up to three attempts on different days and times through email, WhatsApp or automated-call channels, and a declared capacity of up to 1,500 records per day (capacity, not an observed result). It does not schedule appointments, remove anyone from the list, or make clinical decisions: all collected information is validated by CCSS staff. Expansion to other centers is conditional on the pilot evaluation. The CCSS has not identified CLEO as an acronym, published an expansion of the name, or disclosed the technical provider or model; therefore, none is attributed."
+        "es": "Se mantiene en seguimiento porque la institución documenta el piloto y la supervisión humana, pero no publica el proveedor, la arquitectura ni una técnica de IA verificable. Las cifras generales de listas de espera no se atribuyen a la herramienta.",
+        "en": "It remains under review because the institution documents the pilot and human oversight but does not publish the vendor, architecture or a verifiable AI technique. General waiting-list figures are not attributed to the tool."
       },
-      "fuenteUrl": "https://www.ccss.sa.cr/noticias/noticia?v=752326066172"
+      "fuenteUrl": "https://www.ccss.sa.cr/noticias/noticia?v=752326066172",
+      "modeloVersion": 2,
+      "tipoIniciativa": "componente-ia",
+      "estadoCatalogo": "seguimiento",
+      "faseImplementacion": "piloto",
+      "estadoIA": "declarada-sin-tecnica",
+      "evaluacion": {
+        "existencia": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "ccss-cleo-oficial"
+          ]
+        },
+        "ejecucion": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "ccss-cleo-oficial"
+          ]
+        },
+        "tecnicaIA": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "usoOperativo": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "ccss-cleo-oficial"
+          ]
+        },
+        "resultados": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "gobernanza": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "ccss-cleo-oficial"
+          ]
+        }
+      },
+      "fuentes": [
+        {
+          "id": "ccss-cleo-oficial",
+          "url": "https://www.ccss.sa.cr/noticias/noticia?v=752326066172",
+          "publicador": "Caja Costarricense de Seguro Social",
+          "tipoFuente": "primaria-oficial",
+          "fechaPublicacion": "2026",
+          "respalda": [
+            "existencia",
+            "objetivo-declarado",
+            "ejecucion",
+            "uso-operativo",
+            "gobernanza"
+          ],
+          "naturalezaAfirmacion": [
+            "hecho",
+            "objetivo-declarado"
+          ],
+          "titulo": {
+            "es": "CCSS implementa herramienta para depurar listas de espera",
+            "en": "CCSS introduces a tool to clean up waiting lists"
+          },
+          "fechaConsulta": "2026-08-19"
+        }
+      ],
+      "fechaPrimeraEvidencia": "2026-05",
+      "fechaInicioPiloto": "2026-07",
+      "fechaUltimaVerificacion": "2026-08-19",
+      "fechaProximaRevision": "2026-11-19",
+      "objetivoDeclarado": {
+        "es": "Contactar personas en lista de espera y ayudar a depurar registros con validación humana previa a cualquier cambio.",
+        "en": "Contact people on waiting lists and help clean records with human validation before any change."
+      },
+      "datosConocidos": [
+        {
+          "es": "La herramienta no asigna citas ni elimina personas automáticamente; el personal de la CCSS valida la información.",
+          "en": "The tool does not assign appointments or remove people automatically; CCSS staff validate the information."
+        }
+      ],
+      "datosNoDeterminados": [
+        {
+          "es": "No se publicaron el proveedor, el modelo técnico ni resultados del piloto atribuibles a la herramienta.",
+          "en": "The vendor, technical model and pilot results attributable to the tool were not published."
+        }
+      ]
     },
     {
       "id": "ccss-logistica-ia-abastecimiento",
       "titulo": {
-        "es": "Monitoreo de abastecimiento con IA — Gerencia de Logística",
-        "en": "AI Supply Monitoring — Logistics Management"
+        "es": "Monitoreo de abastecimiento con IA: Gerencia de Logística",
+        "en": "AI supply monitoring: Logistics Management"
       },
       "institucionId": "ccss",
       "categoria": "salud",
       "estado": "operativo",
       "desde": "2026",
       "descripcion": {
-        "es": "Sistema de monitoreo de contratos de medicamentos e insumos médicos operado por la Gerencia de Logística de la CCSS. Cruza datos internos de adquisiciones, inventarios y entregas con indicadores internacionales de riesgo de suministro (proveedores, países, escasez global) para anticipar riesgos de quiebre de abastecimiento. Los resultados se presentan en un tablero Power BI consultado por equipos de logística y dirección.",
-        "en": "Monitoring system for medicine and medical-supply contracts run by the CCSS Logistics Management. It cross-references internal procurement, inventory and delivery data with international supply-risk indicators (suppliers, countries, global shortages) to anticipate stock-out risk. Results are surfaced through a Power BI dashboard used by logistics teams and management."
-      },
-      "resultado": {
-        "es": "Activo desde febrero de 2026. Objetivo declarado: continuidad de abastecimiento ante interrupciones del mercado internacional. Sin indicadores de impacto públicos al cierre de mayo de 2026.",
-        "en": "Active since February 2026. Stated objective: supply continuity in the face of international-market disruptions. No public impact indicators as of end-May 2026."
+        "es": "Herramienta de monitoreo de abastecimiento atribuida por cobertura periodística a la Gerencia de Logística de la CCSS. Combina información institucional y señales de riesgo internacional para anticipar posibles faltantes.",
+        "en": "Supply-monitoring tool attributed by press coverage to CCSS Logistics Management. It combines institutional information and international-risk signals to anticipate possible shortages."
       },
       "contexto": {
-        "es": "Es la primera aplicación documentada de IA en la cadena de adquisiciones del sistema público de salud costarricense. La confianza del dato en el observatorio es media: los detalles de funcionamiento provienen de cobertura periodística (CRHoy y Teletica) y aún no hay confirmación oficial de fuente primaria de la CCSS sobre arquitectura, proveedores ni alcance exacto del cruce de datos.",
-        "en": "First documented AI application in the procurement chain of Costa Rica's public health system. Data confidence on the observatory is medium: operating details come from press coverage (CRHoy and Teletica); no primary-source CCSS confirmation yet on architecture, vendors or exact scope of the data crossover."
+        "es": "La existencia y el uso se consideran parcialmente confirmados porque la evidencia disponible es periodística. Falta una fuente primaria que describa la técnica, el proveedor y el alcance exacto.",
+        "en": "Existence and use are considered partially confirmed because the available evidence is press reporting. A primary source describing the technique, vendor and exact scope is still needed."
       },
-      "fuenteUrl": "https://crhoy.com/nacionales/ccss-activa-medidas-por-conflicto-en-medio-oriente-pakistan-y-afganistan-son-clave-para-insumos/"
+      "fuenteUrl": "https://crhoy.com/nacionales/ccss-activa-medidas-por-conflicto-en-medio-oriente-pakistan-y-afganistan-son-clave-para-insumos/",
+      "modeloVersion": 2,
+      "tipoIniciativa": "componente-ia",
+      "estadoCatalogo": "seguimiento",
+      "faseImplementacion": "operativo",
+      "estadoIA": "declarada-sin-tecnica",
+      "evaluacion": {
+        "existencia": {
+          "estado": "parcialmente-confirmado",
+          "fuenteIds": [
+            "crhoy-logistica-ccss"
+          ]
+        },
+        "ejecucion": {
+          "estado": "parcialmente-confirmado",
+          "fuenteIds": [
+            "crhoy-logistica-ccss"
+          ]
+        },
+        "tecnicaIA": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "usoOperativo": {
+          "estado": "parcialmente-confirmado",
+          "fuenteIds": [
+            "crhoy-logistica-ccss"
+          ]
+        },
+        "resultados": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "gobernanza": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        }
+      },
+      "fuentes": [
+        {
+          "id": "crhoy-logistica-ccss",
+          "url": "https://crhoy.com/nacionales/ccss-activa-medidas-por-conflicto-en-medio-oriente-pakistan-y-afganistan-son-clave-para-insumos/",
+          "publicador": "CRHoy",
+          "tipoFuente": "prensa",
+          "fechaPublicacion": "2026",
+          "respalda": [
+            "existencia",
+            "ejecucion",
+            "uso-operativo"
+          ],
+          "naturalezaAfirmacion": [
+            "hecho"
+          ],
+          "titulo": {
+            "es": "CCSS activa medidas para anticipar riesgos internacionales de abastecimiento",
+            "en": "CCSS activates measures to anticipate international supply risks"
+          },
+          "fechaConsulta": "2026-08-19"
+        }
+      ],
+      "fechaPrimeraEvidencia": "2026-02",
+      "fechaInicioOperacion": "2026-02",
+      "fechaUltimaVerificacion": "2026-08-19",
+      "fechaProximaRevision": "2026-11-19",
+      "objetivoDeclarado": {
+        "es": "Anticipar riesgos de desabastecimiento mediante el cruce de inventario y señales del mercado internacional.",
+        "en": "Anticipate shortage risks by combining inventory data with international-market signals."
+      },
+      "datosNoDeterminados": [
+        {
+          "es": "No se localizó una fuente primaria de la CCSS que confirme la arquitectura, el proveedor, la técnica de IA o métricas de impacto.",
+          "en": "No primary CCSS source was found confirming the architecture, vendor, AI technique or impact metrics."
+        }
+      ]
     },
     {
       "id": "hacienda-anomaly",
       "titulo": {
-        "es": "Stack IA antifraude fiscal — Anomaly Detector + Atena",
-        "en": "Anti-fraud tax AI stack — Anomaly Detector + Atena"
+        "es": "Detección de anomalías en facturación electrónica",
+        "en": "Electronic-invoicing anomaly detection"
       },
       "institucionId": "hacienda",
       "categoria": "fiscal",
       "estado": "operativo",
       "desde": "2024",
       "descripcion": {
-        "es": "Stack de detección de anomalías fiscales del Ministerio de Hacienda combinando tres componentes operativos en 2026: (1) Microsoft Anomaly Detector, en producción desde 2024 sobre el flujo de comprobantes electrónicos del sistema de facturación v4.4, identificando empresas que emiten facturas falsas sin respaldo de operaciones reales (EFOS) y contribuyentes que inflan deducciones fiscales mediante facturas de terceros (EDOS); (2) integración con TRIBU-CR, plataforma tributaria operativa desde octubre de 2025 que centraliza declaraciones pre-llenadas y procesamiento automático de devoluciones; (3) Atena, módulo IA enfocado en el segmento de trabajadores autónomos para vigilar cumplimiento tributario sobre datos transaccionales ya capturados por la facturación electrónica. El conjunto cubre tanto facturación general como el segmento autónomos.",
-        "en": "Tax anomaly detection stack run by the Ministry of Finance combining three components operational in 2026: (1) Microsoft Anomaly Detector, in production since 2024 over the v4.4 e-invoicing receipt flow, identifying companies issuing fake invoices with no real operations (EFOS) and taxpayers artificially inflating deductions via third-party invoices (EDOS); (2) integration with TRIBU-CR, the tax platform operational since October 2025 that centralizes pre-filled returns and automated refund processing; (3) Atena, an AI module focused on the self-employed segment to monitor tax compliance over transactional data already captured by e-invoicing. The combined stack covers both general invoicing and the self-employed segment."
+        "es": "Solución del Ministerio de Hacienda para detectar patrones anómalos en comprobantes electrónicos y priorizar fiscalizaciones. El proyecto inició en 2022, realizó pruebas en 2023 y tuvo implementación integral durante 2024-2025, con revisión técnica humana antes de cualquier actuación.",
+        "en": "Finance Ministry solution for detecting anomalous patterns in electronic invoices and prioritizing audits. The project began in 2022, was tested in 2023 and was fully implemented during 2024-2025, with human technical review before any action."
       },
       "resultado": {
-        "es": "50 casos fiscalizados en 2025 con ~₡8,000M (~USD 15.7M) recuperados; más de 70 empresas/procesos bajo fiscalización en 2026 y meta de más de 200 contribuyentes bajo revisión. Atena extiende cobertura al segmento autónomos en 2026.",
-        "en": "50 audited cases in 2025 with ~₡8,000M (~USD 15.7M) recovered; over 70 companies/processes under audit in 2026 and a target of 200+ taxpayers under review. Atena extends coverage to the self-employed segment in 2026."
+        "es": "Hacienda reportó 50 casos fiscalizados y cerca de ₡8,000 millones recuperados durante 2025.",
+        "en": "The Finance Ministry reported 50 audited cases and approximately ₡8 billion recovered during 2025."
       },
       "contexto": {
-        "es": "Único caso del Estado costarricense con retorno fiscal medible y reportado públicamente. Stack 2026 evoluciona del componente único Anomaly Detector hacia una integración con la nueva plataforma TRIBU-CR y un módulo IA específico (Atena) para autónomos. La IA agrega valor sobre datos transaccionales que el Estado ya recolectaba vía facturación electrónica.",
-        "en": "The only Costa Rican state case with measurable, publicly reported fiscal returns. The 2026 stack evolves from a single Anomaly Detector component into integration with the new TRIBU-CR platform plus a dedicated AI module (Atena) for the self-employed segment. AI adds value on top of transactional data the State was already collecting via e-invoicing."
+        "es": "La ficha corresponde a la solución de detección de anomalías en facturación electrónica. TRIBU-CR y ATENA son sistemas distintos y ya no se presentan como un solo stack.",
+        "en": "This entry covers the electronic-invoicing anomaly-detection solution. TRIBU-CR and ATENA are distinct systems and are no longer presented as a single stack."
       },
-      "fuenteUrl": "https://www.nacion.com/economia/hacienda-revela-la-tecnologia-que-le-permitio/G63WRWKZ7NHLXBSHCS6RI3T4JU/story/"
+      "fuenteUrl": "https://www.nacion.com/economia/hacienda-revela-la-tecnologia-que-le-permitio/G63WRWKZ7NHLXBSHCS6RI3T4JU/story/",
+      "modeloVersion": 2,
+      "tipoIniciativa": "sistema-ia",
+      "estadoCatalogo": "verificado",
+      "faseImplementacion": "operativo",
+      "estadoIA": "confirmada",
+      "evaluacion": {
+        "existencia": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "microsoft-eiad-costa-rica"
+          ]
+        },
+        "ejecucion": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "microsoft-eiad-costa-rica",
+            "nacion-anomaly-2026"
+          ]
+        },
+        "tecnicaIA": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "microsoft-eiad-costa-rica"
+          ]
+        },
+        "usoOperativo": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "microsoft-eiad-costa-rica",
+            "nacion-anomaly-2026"
+          ]
+        },
+        "resultados": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "nacion-anomaly-2026"
+          ]
+        },
+        "gobernanza": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "nacion-anomaly-2026"
+          ]
+        }
+      },
+      "fuentes": [
+        {
+          "id": "microsoft-eiad-costa-rica",
+          "url": "https://www.microsoft.com/en/customers/story/1653565125024864159-inter-american-center-of-tax-administrations-costa-rica-financial-services-e-invoicing-anomaly-detection-solution-accelerator",
+          "publicador": "Microsoft",
+          "tipoFuente": "otra-secundaria",
+          "fechaPublicacion": "2023-06-30",
+          "respalda": [
+            "existencia",
+            "ejecucion",
+            "tecnica-ia",
+            "uso-operativo"
+          ],
+          "naturalezaAfirmacion": [
+            "hecho"
+          ],
+          "titulo": {
+            "es": "Costa Rica y CIAT despliegan una solución de detección de anomalías en facturación electrónica",
+            "en": "Costa Rica and CIAT deploy an e-invoicing anomaly-detection solution"
+          },
+          "fechaConsulta": "2026-08-19"
+        },
+        {
+          "id": "nacion-anomaly-2026",
+          "url": "https://www.nacion.com/economia/hacienda-revela-la-tecnologia-que-le-permitio/G63WRWKZ7NHLXBSHCS6RI3T4JU/story/",
+          "publicador": "La Nación",
+          "tipoFuente": "prensa",
+          "fechaPublicacion": "2026-03-19",
+          "respalda": [
+            "existencia",
+            "ejecucion",
+            "tecnica-ia",
+            "uso-operativo",
+            "resultado-reportado",
+            "gobernanza"
+          ],
+          "naturalezaAfirmacion": [
+            "hecho",
+            "resultado-reportado"
+          ],
+          "titulo": {
+            "es": "Hacienda revela la tecnología que le permitió recuperar ₡8,000 millones",
+            "en": "Finance Ministry explains the technology behind ₡8 billion in recoveries"
+          },
+          "fechaConsulta": "2026-08-19"
+        }
+      ],
+      "fechaPrimeraEvidencia": "2022",
+      "fechaInicioPiloto": "2023",
+      "fechaInicioOperacion": "2024",
+      "fechaUltimaVerificacion": "2026-08-19",
+      "objetivoDeclarado": {
+        "es": "Detectar patrones anómalos en comprobantes electrónicos para priorizar casos de fiscalización tributaria.",
+        "en": "Detect anomalous patterns in electronic invoices to prioritize tax-audit cases."
+      },
+      "resultadosVerificados": [
+        {
+          "id": "recuperacion-fiscal-2025",
+          "texto": {
+            "es": "Hacienda reportó 50 casos fiscalizados y cerca de ₡8,000 millones recuperados durante 2025.",
+            "en": "The Finance Ministry reported 50 audited cases and approximately ₡8 billion recovered during 2025."
+          },
+          "fuenteIds": [
+            "nacion-anomaly-2026"
+          ],
+          "fecha": "2025"
+        }
+      ],
+      "datosConocidos": [
+        {
+          "es": "La revisión técnica humana ocurre antes de iniciar actuaciones de fiscalización.",
+          "en": "Human technical review takes place before audit actions begin."
+        }
+      ],
+      "datosNoDeterminados": [
+        {
+          "es": "No se localizó una evaluación independiente de precisión o falsos positivos.",
+          "en": "No independent evaluation of accuracy or false positives was found."
+        }
+      ],
+      "relaciones": [
+        {
+          "iniciativaId": "hacienda-tribu-cr",
+          "tipo": "distinto-de",
+          "nota": {
+            "es": "La detección de anomalías es una solución analítica distinta de la plataforma transaccional TRIBU-CR.",
+            "en": "Anomaly detection is an analytical solution distinct from the TRIBU-CR transaction platform."
+          }
+        }
+      ]
     },
     {
       "id": "hacienda-asistente",
@@ -350,44 +1752,217 @@
       "institucionId": "hacienda",
       "categoria": "fiscal",
       "estado": "operativo",
-      "desde": "2024",
+      "desde": "2022",
       "descripcion": {
-        "es": "Asistente virtual integrado en la plataforma Hacienda Digital del Ministerio de Hacienda, orientado a guiar a los contribuyentes en los principales trámites tributarios: presentación de declaraciones, procesamiento de pagos y gestión de operaciones de comercio exterior (importaciones y exportaciones). Disponible para cualquier contribuyente registrado en el sistema tributario costarricense, opera como canal de autoservicio para descongestionar la atención presencial y telefónica de la institución. Es el único asistente virtual ciudadano operativo en el gobierno central costarricense; no existen métricas de volumen de interacciones publicadas.",
-        "en": "Virtual assistant integrated into the Ministry of Finance's Hacienda Digital platform, designed to guide taxpayers through key tax procedures: filing returns, processing payments, and managing foreign trade operations (imports and exports). Available to any taxpayer registered in the Costa Rican tax system, it operates as a self-service channel to reduce in-person and phone support demand. It is the only operational citizen-facing virtual assistant in the Costa Rican central government; no interaction volume metrics have been published."
-      },
-      "resultado": {
-        "es": "Chatbot 24/7 en infoyasistencia.hacienda.go.cr. Contexto TRIBU-CR: 883M registros migrados y 8,900M facturas electrónicas acumuladas.",
-        "en": "24/7 chatbot at infoyasistencia.hacienda.go.cr. TRIBU-CR context: 883M records migrated and 8,900M cumulative e-invoices."
+        "es": "Canal de asistencia tributaria del Ministerio de Hacienda disponible en Infoyasistencia. Permite consultar temas tributarios y derivar la atención a personal institucional, pero la documentación pública no identifica la técnica del asistente.",
+        "en": "Finance Ministry tax-assistance channel available through Infoyasistencia. It supports tax queries and escalation to institutional staff, but public documentation does not identify the assistant technique."
       },
       "contexto": {
-        "es": "Es el único asistente virtual ciudadano operativo en el gobierno central. No hay un chatbot nacional unificado tipo Bürokratt (Estonia) o VICA (Singapur); cada institución resuelve por su cuenta.",
-        "en": "The only operational citizen-facing virtual assistant in the central government. There is no unified national chatbot in the style of Estonia’s Bürokratt or Singapore’s VICA; each institution builds its own."
+        "es": "Se confirma la operación del canal, no una arquitectura concreta de IA. Permanece en seguimiento hasta obtener documentación técnica o métricas públicas.",
+        "en": "Operation of the channel is confirmed, but no specific AI architecture is. It remains under review pending technical documentation or public metrics."
       },
-      "fuenteUrl": "https://www.hacienda.go.cr/"
+      "fuenteUrl": "https://infoyasistencia.hacienda.go.cr/",
+      "modeloVersion": 2,
+      "tipoIniciativa": "sistema-ia",
+      "estadoCatalogo": "seguimiento",
+      "faseImplementacion": "operativo",
+      "estadoIA": "declarada-sin-tecnica",
+      "evaluacion": {
+        "existencia": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "hacienda-infoyasistencia"
+          ]
+        },
+        "ejecucion": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "hacienda-infoyasistencia"
+          ]
+        },
+        "tecnicaIA": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "usoOperativo": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "hacienda-infoyasistencia"
+          ]
+        },
+        "resultados": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "gobernanza": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        }
+      },
+      "fuentes": [
+        {
+          "id": "hacienda-infoyasistencia",
+          "url": "https://infoyasistencia.hacienda.go.cr/",
+          "publicador": "Ministerio de Hacienda",
+          "tipoFuente": "primaria-oficial",
+          "respalda": [
+            "existencia",
+            "ejecucion",
+            "uso-operativo"
+          ],
+          "naturalezaAfirmacion": [
+            "hecho"
+          ],
+          "titulo": {
+            "es": "Plataforma Infoyasistencia",
+            "en": "Infoyasistencia platform"
+          },
+          "fechaConsulta": "2026-08-19"
+        },
+        {
+          "id": "hacienda-infoyasistencia-resolucion",
+          "url": "https://www.hacienda.go.cr/docs/DGTRXX2022PLATAFORMAINFOYASISTENCIAV10.pdf",
+          "publicador": "Ministerio de Hacienda",
+          "tipoFuente": "primaria-oficial",
+          "fechaPublicacion": "2022",
+          "respalda": [
+            "existencia",
+            "objetivo-declarado",
+            "meta"
+          ],
+          "naturalezaAfirmacion": [
+            "objetivo-declarado",
+            "meta"
+          ],
+          "titulo": {
+            "es": "Propuesta de resolución para la plataforma Infoyasistencia",
+            "en": "Draft resolution for the Infoyasistencia platform"
+          },
+          "fechaConsulta": "2026-08-19"
+        }
+      ],
+      "fechaPrimeraEvidencia": "2022",
+      "fechaInicioOperacion": "2022",
+      "fechaUltimaVerificacion": "2026-08-19",
+      "fechaProximaRevision": "2026-11-19",
+      "objetivoDeclarado": {
+        "es": "Brindar información tributaria mediante autoservicio y transferir consultas a personal cuando sea necesario.",
+        "en": "Provide tax information through self-service and transfer queries to staff when necessary."
+      },
+      "datosNoDeterminados": [
+        {
+          "es": "No se publican la técnica del asistente, el proveedor ni métricas de interacciones o resolución.",
+          "en": "The assistant technique, vendor and interaction or resolution metrics are not published."
+        }
+      ]
     },
     {
       "id": "hacienda-tribu-cr",
       "titulo": {
-        "es": "TRIBU-CR — Plataforma tributaria integrada",
-        "en": "TRIBU-CR — Integrated tax platform"
+        "es": "TRIBU-CR: plataforma tributaria integrada",
+        "en": "TRIBU-CR: integrated tax platform"
       },
       "institucionId": "hacienda",
       "categoria": "fiscal",
       "estado": "operativo",
       "desde": "2025",
       "descripcion": {
-        "es": "Plataforma tributaria operativa desde octubre de 2025 que reemplaza ATV y Travi. Declaraciones pre-llenadas con datos de facturas electrónicas, detección automática de créditos fiscales, procesamiento automático de devoluciones y pagos en línea con SINPE Móvil.",
-        "en": "Tax platform live since October 2025 that replaces ATV and Travi. Pre-filled returns based on e-invoice data, automatic detection of fiscal credits, automatic refund processing, and online payments via SINPE Móvil."
-      },
-      "resultado": {
-        "es": "Integra facturación electrónica v4.4 con +140 cambios técnicos obligatorios. Desde septiembre de 2025 Hacienda rastrea pagos SINPE en comercios.",
-        "en": "Integrates e-invoicing v4.4 with 140+ mandatory technical changes. Since September 2025 the Ministry tracks SINPE payments at merchants."
+        "es": "Plataforma integrada de gestión tributaria del Ministerio de Hacienda, operativa desde el 6 de octubre de 2025 y sustituta de módulos de sistemas anteriores como ATV. La evidencia consultada confirma digitalización e integración, no un componente específico de IA.",
+        "en": "Integrated tax-management platform operated by the Finance Ministry since October 6, 2025, replacing modules from earlier systems such as ATV. The evidence confirms digitalization and integration, not a specific AI component."
       },
       "contexto": {
-        "es": "Es la modernización tributaria más ambiciosa del Estado costarricense en la última década. Su valor no está en un modelo IA aislado sino en la integración de la infraestructura SINPE, la facturación electrónica v4.4 y la analítica de Hacienda Digital en una sola plataforma.",
-        "en": "The most ambitious tax modernization in the Costa Rican State in the past decade. Its value lies not in a standalone AI model but in the integration of SINPE infrastructure, e-invoicing v4.4 and Hacienda Digital analytics into a single platform."
+        "es": "Se clasifica como infraestructura digital. Su relevancia para Hacienda Digital no convierte automáticamente todos sus módulos en inteligencia artificial.",
+        "en": "It is classified as digital infrastructure. Its importance to Hacienda Digital does not automatically make every module artificial intelligence."
       },
-      "fuenteUrl": "https://www.dfvasesores.com/post/tribucr-la-nueva-plataforma-digital-que-transformara-la-gestion-tributaria-en-costa-rica"
+      "fuenteUrl": "https://www.hacienda.go.cr/docs/ResolucionMH-DGT-RES-0043-2025.pdf",
+      "modeloVersion": 2,
+      "tipoIniciativa": "infraestructura-digital",
+      "estadoCatalogo": "ecosistema",
+      "faseImplementacion": "operativo",
+      "estadoIA": "no-determinada",
+      "evaluacion": {
+        "existencia": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "hacienda-tribu-resolucion"
+          ]
+        },
+        "ejecucion": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "hacienda-tribu-resolucion"
+          ]
+        },
+        "tecnicaIA": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "usoOperativo": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "hacienda-tribu-resolucion"
+          ]
+        },
+        "resultados": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "gobernanza": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        }
+      },
+      "fuentes": [
+        {
+          "id": "hacienda-tribu-resolucion",
+          "url": "https://www.hacienda.go.cr/docs/ResolucionMH-DGT-RES-0043-2025.pdf",
+          "publicador": "Ministerio de Hacienda",
+          "tipoFuente": "primaria-oficial",
+          "fechaPublicacion": "2025",
+          "respalda": [
+            "existencia",
+            "ejecucion",
+            "uso-operativo"
+          ],
+          "naturalezaAfirmacion": [
+            "hecho"
+          ],
+          "titulo": {
+            "es": "Resolución MH-DGT-RES-0043-2025 sobre TRIBU-CR",
+            "en": "Resolution MH-DGT-RES-0043-2025 on TRIBU-CR"
+          },
+          "fechaConsulta": "2026-08-19"
+        }
+      ],
+      "fechaPrimeraEvidencia": "2025",
+      "fechaInicioOperacion": "2025-10-06",
+      "fechaUltimaVerificacion": "2026-08-19",
+      "objetivoDeclarado": {
+        "es": "Integrar en una plataforma los principales módulos de gestión tributaria y sustituir sistemas anteriores.",
+        "en": "Integrate the main tax-management modules into one platform and replace previous systems."
+      },
+      "datosConocidos": [
+        {
+          "es": "La resolución oficial fija el inicio de operación para el 6 de octubre de 2025.",
+          "en": "The official resolution sets the start of operation for October 6, 2025."
+        }
+      ],
+      "datosNoDeterminados": [
+        {
+          "es": "La fuente no identifica un componente concreto de inteligencia artificial dentro de TRIBU-CR.",
+          "en": "The source does not identify a specific artificial-intelligence component within TRIBU-CR."
+        }
+      ],
+      "relaciones": [
+        {
+          "iniciativaId": "hacienda-anomaly",
+          "tipo": "distinto-de",
+          "nota": {
+            "es": "TRIBU-CR es una plataforma tributaria; la detección de anomalías se documenta como una iniciativa analítica separada.",
+            "en": "TRIBU-CR is a tax platform; anomaly detection is documented as a separate analytical initiative."
+          }
+        }
+      ]
     },
     {
       "id": "mep-intel",
@@ -404,86 +1979,428 @@
         "en": "3-year curriculum on machine learning, ethics and legal aspects of AI. Started in 4 vocational schools (Santa Ana, Puriscal, Coronado, Calle Blancos)."
       },
       "resultado": {
-        "es": "Primer país latinoamericano con IA como carrera técnica formal en secundaria.",
-        "en": "First Latin American country with AI as a formal technical track in secondary education."
+        "es": "La especialidad comenzó en cuatro colegios técnicos profesionales.",
+        "en": "The specialization started in four technical vocational schools."
       },
       "contexto": {
-        "es": "Hito regional logrado por alianza público-privada con Intel. La salida de Intel de operaciones de manufactura en CR deja una pregunta abierta: ¿quién sostiene el currículo si el socio principal pierde presencia local?",
-        "en": "Regional milestone achieved through a public-private partnership with Intel. With Intel scaling back its Costa Rica manufacturing footprint, there is an open question on who sustains the curriculum if the lead partner reduces local presence."
+        "es": "Es una iniciativa educativa para formar talento y no un sistema de IA utilizado por el MEP para prestar servicios públicos.",
+        "en": "This is an education initiative for developing talent, not an AI system used by MEP to deliver public services."
       },
-      "fuenteUrl": "https://www.mep.go.cr/noticias/convenio-mep-e-intel-costa-rica-habilitara-especialidad-inteligencia-artificial-colegios-te"
+      "fuenteUrl": "https://www.mep.go.cr/noticias/convenio-mep-e-intel-costa-rica-habilitara-especialidad-inteligencia-artificial-colegios-te",
+      "modeloVersion": 2,
+      "tipoIniciativa": "programa-capacidades",
+      "estadoCatalogo": "ecosistema",
+      "faseImplementacion": "operativo",
+      "estadoIA": "confirmada",
+      "evaluacion": {
+        "existencia": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "mep-intel-especialidad"
+          ]
+        },
+        "ejecucion": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "mep-intel-especialidad"
+          ]
+        },
+        "tecnicaIA": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "usoOperativo": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "resultados": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "mep-intel-especialidad"
+          ]
+        },
+        "gobernanza": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        }
+      },
+      "fuentes": [
+        {
+          "id": "mep-intel-especialidad",
+          "url": "https://www.mep.go.cr/noticias/convenio-mep-e-intel-costa-rica-habilitara-especialidad-inteligencia-artificial-colegios-te",
+          "publicador": "Ministerio de Educación Pública",
+          "tipoFuente": "primaria-oficial",
+          "fechaPublicacion": "2023",
+          "respalda": [
+            "existencia",
+            "objetivo-declarado",
+            "ejecucion",
+            "resultado-reportado"
+          ],
+          "naturalezaAfirmacion": [
+            "hecho",
+            "objetivo-declarado",
+            "resultado-reportado"
+          ],
+          "titulo": {
+            "es": "Convenio MEP e Intel habilita especialidad de inteligencia artificial en colegios técnicos",
+            "en": "MEP and Intel agreement introduces an artificial-intelligence specialization in technical schools"
+          },
+          "fechaConsulta": "2026-08-19"
+        }
+      ],
+      "fechaPrimeraEvidencia": "2023",
+      "fechaInicioOperacion": "2023",
+      "fechaUltimaVerificacion": "2026-08-19",
+      "objetivoDeclarado": {
+        "es": "Formar estudiantes de colegios técnicos en inteligencia artificial, aprendizaje automático, ética y aspectos legales.",
+        "en": "Train technical-school students in artificial intelligence, machine learning, ethics and legal issues."
+      },
+      "resultadosVerificados": [
+        {
+          "id": "inicio-cuatro-ctp",
+          "texto": {
+            "es": "La especialidad inició en cuatro colegios técnicos profesionales.",
+            "en": "The specialization started in four technical vocational schools."
+          },
+          "fuenteIds": [
+            "mep-intel-especialidad"
+          ],
+          "fecha": "2023"
+        }
+      ]
     },
     {
       "id": "micitt-linc",
       "titulo": {
-        "es": "LINC — Laboratorios de Innovación Comunitaria",
-        "en": "LINC — Community Innovation Labs"
+        "es": "LINC: Laboratorios de Innovación Comunitaria",
+        "en": "LINC: Community Innovation Labs"
       },
       "institucionId": "micitt",
       "categoria": "infraestructura",
       "estado": "operativo",
-      "desde": "2025",
+      "desde": "2023",
       "descripcion": {
-        "es": "Red de Laboratorios de Innovación Comunitaria (LINC) operados por el MICITT en alianza con el INDER, con 24 laboratorios operativos y 2 adicionales en proceso de habilitación para alcanzar la meta de 26. Distribuidos en las siete provincias con énfasis en comunidades fuera de la Gran Área Metropolitana (Puntarenas, Guanacaste, Alajuela, Heredia, entre otras). El equipamiento incluye impresoras 3D, cortadoras láser, kits de robótica, drones y herramientas para programación, ciberseguridad y ciencia de datos. Los laboratorios ofrecen formación práctica a jóvenes y emprendedores en tecnologías digitales. La iniciativa es liderada por la Ministra Paula Bogantes Zamora.",
-        "en": "Network of Community Innovation Labs (LINC) operated by MICITT in alliance with INDER, with 24 operational labs and 2 additional labs being commissioned to reach the target of 26. Distributed across the seven provinces with emphasis on communities outside the Greater Metropolitan Area (Puntarenas, Guanacaste, Alajuela, Heredia, among others). Equipment includes 3D printers, laser cutters, robotics kits, drones, and tools for programming, cybersecurity, and data science. The labs offer hands-on training for youth and entrepreneurs in digital technologies. The initiative is led by Minister Paula Bogantes Zamora."
+        "es": "Red de Laboratorios de Innovación Comunitaria del MICITT para formación, cocreación y desarrollo de soluciones locales. Su oferta incluye programación, fabricación digital, robótica, ciberseguridad, inteligencia artificial y otras tecnologías emergentes.",
+        "en": "MICITT network of Community Innovation Labs for training, co-creation and local solution development. Its offering includes programming, digital fabrication, robotics, cybersecurity, artificial intelligence and other emerging technologies."
       },
       "resultado": {
-        "es": "+4,500 personas capacitadas; 70% participación femenina; 24 laboratorios operativos y 2 en habilitación (meta 26).",
-        "en": "+4,500 people trained; 70% female participation; 24 operational labs and 2 being commissioned (target 26)."
+        "es": "MICITT reporta 3,223 personas capacitadas entre 2023 y 2024, incluidas 1,522 durante 2024.",
+        "en": "MICITT reports 3,223 people trained during 2023-2024, including 1,522 in 2024."
       },
       "contexto": {
-        "es": "Inversión institucional reportada de más de USD 2 millones en equipamiento tecnológico, sumada a un convenio marco de ₡2,000 millones con el INDER que financia infraestructura y operación. La cobertura en las 7 provincias y el 70% de participación femenina marcan un piso de equidad inusual en programas tech del Estado, con foco explícito fuera del GAM.",
-        "en": "Institutional investment reported at over USD 2 million in technological equipment, plus a ₡2,000 million framework agreement with INDER funding infrastructure and operations. Coverage across all 7 provinces and 70% female participation mark an unusual equity floor for state-led tech programs, with explicit focus outside the Greater Metropolitan Area."
+        "es": "Se clasifica como programa de capacidades. Ofrecer cursos sobre IA no equivale a operar un sistema de IA para un servicio público.",
+        "en": "It is classified as a capacity-building program. Offering AI courses is not equivalent to operating an AI system for a public service."
       },
-      "fuenteUrl": "https://delfino.cr/2026/04/micitt-reporta-inversion-de-mas-de-2-millones-en-red-de-laboratorios-de-innovacion-comunitaria"
+      "fuenteUrl": "https://www.micitt.go.cr/micitt/innovacion",
+      "modeloVersion": 2,
+      "tipoIniciativa": "programa-capacidades",
+      "estadoCatalogo": "ecosistema",
+      "faseImplementacion": "operativo",
+      "estadoIA": "no-determinada",
+      "evaluacion": {
+        "existencia": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "micitt-linc-oficial"
+          ]
+        },
+        "ejecucion": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "micitt-linc-oficial"
+          ]
+        },
+        "tecnicaIA": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "usoOperativo": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "micitt-linc-oficial"
+          ]
+        },
+        "resultados": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "micitt-linc-oficial"
+          ]
+        },
+        "gobernanza": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        }
+      },
+      "fuentes": [
+        {
+          "id": "micitt-linc-oficial",
+          "url": "https://www.micitt.go.cr/micitt/innovacion",
+          "publicador": "MICITT",
+          "tipoFuente": "primaria-oficial",
+          "respalda": [
+            "existencia",
+            "objetivo-declarado",
+            "ejecucion",
+            "uso-operativo",
+            "resultado-reportado"
+          ],
+          "naturalezaAfirmacion": [
+            "hecho",
+            "objetivo-declarado",
+            "resultado-reportado"
+          ],
+          "titulo": {
+            "es": "Programas y proyectos de innovación del MICITT",
+            "en": "MICITT innovation programs and projects"
+          },
+          "fechaConsulta": "2026-08-19"
+        }
+      ],
+      "fechaPrimeraEvidencia": "2023",
+      "fechaInicioOperacion": "2023",
+      "fechaUltimaVerificacion": "2026-08-19",
+      "objetivoDeclarado": {
+        "es": "Fomentar innovación comunitaria mediante espacios de cocreación, investigación, formación y desarrollo de soluciones locales.",
+        "en": "Promote community innovation through spaces for co-creation, research, training and local solution development."
+      },
+      "resultadosVerificados": [
+        {
+          "id": "personas-capacitadas-linc",
+          "texto": {
+            "es": "MICITT reporta 3,223 personas capacitadas entre 2023 y 2024, de ellas 1,522 durante 2024.",
+            "en": "MICITT reports 3,223 people trained during 2023-2024, including 1,522 in 2024."
+          },
+          "fuenteIds": [
+            "micitt-linc-oficial"
+          ],
+          "fecha": "2024"
+        }
+      ],
+      "datosNoDeterminados": [
+        {
+          "es": "Los cursos de IA forman parte de una oferta amplia; no demuestran el despliegue de un sistema de IA en los laboratorios.",
+          "en": "AI courses are part of a broad offering; they do not demonstrate deployment of an AI system in the labs."
+        }
+      ]
     },
     {
       "id": "micitt-conecta",
       "titulo": {
-        "es": "CONECTA — Interoperabilidad nacional basada en X-Road",
-        "en": "CONECTA — National interoperability based on X-Road"
+        "es": "CONECTA: interoperabilidad nacional basada en X-Road",
+        "en": "CONECTA: national interoperability based on X-Road"
       },
       "institucionId": "micitt",
       "categoria": "infraestructura",
-      "estado": "operativo",
-      "desde": "2025",
+      "estado": "planificado",
+      "desde": "2026",
       "descripcion": {
-        "es": "Proyecto CRI/003 – Conecta para adoptar el modelo país de interoperabilidad gubernamental basado en X-Road, la plataforma de intercambio seguro de datos desarrollada y mantenida por Estonia, Finlandia e Islandia. Coordinado por la Agencia Nacional de Gobierno Digital (ANGD), con financiamiento del Gran Ducado de Luxemburgo ejecutado por la Agencia Luxemburguesa de Cooperación al Desarrollo (LuxDev) y asistencia técnica de la e-Governance Academy de Estonia. El alcance inicial incluye aproximadamente 30 instituciones públicas que participan en el taller diagnóstico y la posterior incorporación a la plataforma.",
-        "en": "Project CRI/003 – Conecta to adopt the country interoperability model based on X-Road, the secure data-exchange platform developed and maintained by Estonia, Finland and Iceland. Coordinated by the National Digital Government Agency (ANGD), funded by the Grand Duchy of Luxembourg through the Luxembourg Development Cooperation Agency (LuxDev), with technical assistance from Estonia's e-Governance Academy. Initial scope covers roughly 30 public institutions taking part in the diagnostic workshop and subsequent onboarding to the platform."
-      },
-      "resultado": {
-        "es": "30 instituciones en planificación, 6 en el Comité Rector. Plataforma X-Road (Estonia). GovTech Index 2025: 0.77 (Grupo A). ANGD operacional desde septiembre de 2025.",
-        "en": "30 institutions in planning, 6 on the Steering Committee. X-Road platform (Estonia). GovTech Index 2025: 0.77 (Group A). ANGD operational since September 2025."
+        "es": "Proyecto de la Agencia Nacional de Gobierno Digital para construir una hoja de ruta y adoptar un modelo nacional de interoperabilidad basado en X-Road. Treinta instituciones participaron en el diagnóstico inicial.",
+        "en": "National Digital Government Agency project to build a roadmap and adopt a national interoperability model based on X-Road. Thirty institutions participated in the initial diagnostic exercise."
       },
       "contexto": {
-        "es": "Es la primera vez que Costa Rica adopta de manera oficial una plataforma estándar de interoperabilidad nacional, cerrando una brecha estructural de larga data (cada institución integraba a su ritmo y con sus propios estándares). El claim técnico es literal: la plataforma adoptada se llama X-Road, no es un sistema con otro nombre. Lanzado en marzo de 2025. El monto de la cooperación luxemburguesa no fue divulgado en fuentes primarias (BNAmericas, MICITT, LuxDev) al momento de esta ficha.",
-        "en": "First time Costa Rica officially adopts a standard national interoperability platform, closing a long-standing structural gap (each institution integrated at its own pace and on its own standards). The technical claim is literal: the platform adopted is X-Road, not a system under another name. Launched March 2025. The Luxembourg funding amount was not disclosed in primary sources (BNAmericas, MICITT, LuxDev) at the time of this entry."
+        "es": "El lanzamiento ocurrió en marzo de 2026, no en 2025. CONECTA es infraestructura de gobierno digital, no un sistema de IA, y la participación de 30 instituciones corresponde al diagnóstico y la hoja de ruta, no a integraciones operativas.",
+        "en": "The launch took place in March 2026, not in 2025. CONECTA is digital-government infrastructure, not an AI system, and the involvement of 30 institutions refers to diagnosis and roadmap work, not operational integrations."
       },
-      "fuenteUrl": "https://www.micitt.go.cr/el-sector-informa/costa-rica-acelera-su-transformacion-digital-con-el-lanzamiento-del-proyecto"
+      "fuenteUrl": "https://www.micitt.go.cr/el-sector-informa/costa-rica-acelera-su-transformacion-digital-con-el-lanzamiento-del-proyecto",
+      "modeloVersion": 2,
+      "tipoIniciativa": "infraestructura-digital",
+      "estadoCatalogo": "ecosistema",
+      "faseImplementacion": "desarrollo",
+      "estadoIA": "descartada",
+      "evaluacion": {
+        "existencia": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "micitt-conecta-lanzamiento"
+          ]
+        },
+        "ejecucion": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "micitt-conecta-lanzamiento"
+          ]
+        },
+        "tecnicaIA": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "usoOperativo": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "resultados": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "gobernanza": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "micitt-conecta-lanzamiento"
+          ]
+        }
+      },
+      "fuentes": [
+        {
+          "id": "micitt-conecta-lanzamiento",
+          "url": "https://www.micitt.go.cr/el-sector-informa/costa-rica-acelera-su-transformacion-digital-con-el-lanzamiento-del-proyecto",
+          "publicador": "MICITT",
+          "tipoFuente": "primaria-oficial",
+          "fechaPublicacion": "2026-03",
+          "respalda": [
+            "existencia",
+            "objetivo-declarado",
+            "meta",
+            "ejecucion",
+            "gobernanza"
+          ],
+          "naturalezaAfirmacion": [
+            "hecho",
+            "objetivo-declarado",
+            "meta"
+          ],
+          "titulo": {
+            "es": "Costa Rica lanza el proyecto CRI/003 Conecta para avanzar hacia la interoperabilidad",
+            "en": "Costa Rica launches CRI/003 Conecta to advance interoperability"
+          },
+          "fechaConsulta": "2026-08-19"
+        }
+      ],
+      "fechaPrimeraEvidencia": "2026-03",
+      "fechaAnuncio": "2026-03",
+      "fechaUltimaVerificacion": "2026-08-19",
+      "objetivoDeclarado": {
+        "es": "Definir y adoptar un modelo nacional de interoperabilidad gubernamental basado en X-Road.",
+        "en": "Define and adopt a national government-interoperability model based on X-Road."
+      },
+      "datosConocidos": [
+        {
+          "es": "Treinta instituciones participaron en un diagnóstico para construir la hoja de ruta de adopción.",
+          "en": "Thirty institutions participated in a diagnostic exercise to build the adoption roadmap."
+        }
+      ],
+      "datosNoDeterminados": [
+        {
+          "es": "La participación en el taller no demuestra que X-Road ya esté integrado u operativo en las 30 instituciones.",
+          "en": "Participation in the workshop does not demonstrate that X-Road is already integrated or operational in all 30 institutions."
+        }
+      ]
     },
     {
       "id": "micitt-agroboost",
       "titulo": {
-        "es": "AgroBoost: IA y sensores para caficultura de precisión",
-        "en": "AgroBoost: AI and sensors for precision coffee farming"
+        "es": "AgroBoost: tecnologías para unidades productivas agrícolas",
+        "en": "AgroBoost: technologies for agricultural production units"
       },
       "institucionId": "micitt",
       "categoria": "agricultura",
       "estado": "operativo",
       "desde": "2025",
       "descripcion": {
-        "es": "Programa de caficultura de precisión que combina drones, sensores de campo (humedad, temperatura, pH, conductividad eléctrica del suelo) e inteligencia artificial para mapear cultivos y optimizar la toma de decisiones de 86 caficultores en la región de Los Santos (cantón de Dota). Los datos capturados alimentan modelos de IA que generan recomendaciones agronómicas por finca y permiten ajustar riego, fertilización y manejo de plagas. AgroBoost es la expansión del piloto Project One desarrollado originalmente por Coopedota.",
-        "en": "Precision coffee-farming program combining drones, field sensors (humidity, temperature, pH, soil electrical conductivity) and artificial intelligence to map crops and optimize decision-making for 86 coffee growers in the Los Santos region (Dota canton). The captured data feeds AI models that produce per-farm agronomic recommendations and inform irrigation, fertilization and pest management decisions. AgroBoost is the scale-up of the Project One pilot originally developed by Coopedota."
+        "es": "Programa intensivo del MICITT para fortalecer unidades productivas agrícolas mediante tecnologías de frontera, asistencia técnica y transferencia de conocimiento. La información pública consultada no permite identificar un sistema de IA específico desplegado por el Estado.",
+        "en": "Intensive MICITT program to strengthen agricultural production units through frontier technologies, technical assistance and knowledge transfer. The public information reviewed does not identify a specific AI system deployed by the State."
       },
       "contexto": {
-        "es": "Alianza intersectorial coordinada por el MICITT con la Municipalidad de Dota, el INA y cinco cooperativas cafetaleras (Coopedota, Coope San Marcos, COOPESANTOS, APACOOP, FRUTALCOOP). Modelo de adopción que demuestra cómo escalar un piloto cooperativo (Project One de Coopedota) a un programa público con base territorial y multiparticipante. Sector cafetalero costarricense ha sido un objetivo histórico de innovación tecnológica por su peso en exportaciones y el desafío del cambio climático sobre la zona de Los Santos.",
-        "en": "Inter-sectoral alliance coordinated by MICITT with the Municipality of Dota, INA and five coffee cooperatives (Coopedota, Coope San Marcos, COOPESANTOS, APACOOP, FRUTALCOOP). An adoption model that shows how to scale a cooperative pilot (Coopedota's Project One) into a public program with territorial reach and multi-stakeholder participation. Costa Rica's coffee sector has been a long-standing target for technology innovation due to its weight in exports and the climate-change pressure on the Los Santos region."
+        "es": "Se clasifica como programa de capacidades. Se retiraron las cifras de 86 productores y 50% de productividad porque no se localizaron documentos primarios reproducibles que permitan atribuirlas y verificar su metodología.",
+        "en": "It is classified as a capacity-building program. Figures of 86 producers and a 50% productivity increase were removed because no reproducible primary documents were found to attribute them and verify their methodology."
       },
-      "resultado": {
-        "es": "MICITT reporta incremento de productividad de aproximadamente 50% en las fincas participantes a partir de la combinación de monitoreo continuo por sensores y recomendaciones agronómicas asistidas por IA. 86 caficultores integrados al programa en su primera fase. Métricas detalladas por finca (rendimiento, ahorro de insumos, agua) sin desagregación pública al cierre del primer semestre 2026.",
-        "en": "MICITT reports approximately 50% productivity gains across participating farms thanks to continuous sensor monitoring and AI-assisted agronomic recommendations. 86 coffee growers integrated in the first phase. Per-farm metrics (yield, input savings, water) not publicly disaggregated as of H1 2026."
+      "fuenteUrl": "https://www.micitt.go.cr/micitt/innovacion",
+      "modeloVersion": 2,
+      "tipoIniciativa": "programa-capacidades",
+      "estadoCatalogo": "ecosistema",
+      "faseImplementacion": "operativo",
+      "estadoIA": "declarada-sin-tecnica",
+      "evaluacion": {
+        "existencia": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "micitt-agroboost-programa"
+          ]
+        },
+        "ejecucion": {
+          "estado": "parcialmente-confirmado",
+          "fuenteIds": [
+            "micitt-agroboost-social"
+          ]
+        },
+        "tecnicaIA": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "usoOperativo": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "resultados": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "gobernanza": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        }
       },
-      "fuenteUrl": "https://www.facebook.com/micitcr/videos/en-el-d%C3%ADa-de-las-personas-agricultoras-costarricenses-reconocemos-c%C3%B3mo-la-innova/1275865677966444/"
+      "fuentes": [
+        {
+          "id": "micitt-agroboost-programa",
+          "url": "https://www.micitt.go.cr/micitt/innovacion",
+          "publicador": "MICITT",
+          "tipoFuente": "primaria-oficial",
+          "respalda": [
+            "existencia",
+            "objetivo-declarado",
+            "meta"
+          ],
+          "naturalezaAfirmacion": [
+            "hecho",
+            "objetivo-declarado",
+            "meta"
+          ],
+          "titulo": {
+            "es": "Programas de formación empresarial del MICITT",
+            "en": "MICITT business-training programs"
+          },
+          "fechaConsulta": "2026-08-19"
+        },
+        {
+          "id": "micitt-agroboost-social",
+          "url": "https://www.facebook.com/micitcr/videos/en-el-d%C3%ADa-de-las-personas-agricultoras-costarricenses-reconocemos-c%C3%B3mo-la-innova/1275865677966444/",
+          "publicador": "MICITT",
+          "tipoFuente": "primaria-oficial",
+          "fechaPublicacion": "2026",
+          "respalda": [
+            "existencia",
+            "ejecucion"
+          ],
+          "naturalezaAfirmacion": [
+            "hecho"
+          ],
+          "titulo": {
+            "es": "MICITT presenta AgroBoost en el Día de las Personas Agricultoras",
+            "en": "MICITT presents AgroBoost on Farmers' Day"
+          },
+          "fechaConsulta": "2026-08-19"
+        }
+      ],
+      "fechaPrimeraEvidencia": "2025",
+      "fechaInicioOperacion": "2025",
+      "fechaUltimaVerificacion": "2026-08-19",
+      "objetivoDeclarado": {
+        "es": "Fortalecer competitividad, sostenibilidad y resiliencia de unidades productivas agrícolas mediante tecnologías de frontera.",
+        "en": "Strengthen the competitiveness, sustainability and resilience of agricultural production units through frontier technologies."
+      },
+      "datosNoDeterminados": [
+        {
+          "es": "No se localizaron documentos primarios reproducibles que describan el modelo de IA, la cifra de 86 productores o el aumento de productividad de 50%.",
+          "en": "No reproducible primary documents were found describing the AI model, the figure of 86 producers or a 50% productivity increase."
+        }
+      ],
+      "preguntasAbiertas": [
+        {
+          "es": "¿Qué soluciones concretas implementaron las unidades participantes y qué métricas fueron medidas?",
+          "en": "What specific solutions did participating units implement, and what metrics were measured?"
+        }
+      ]
     },
     {
       "id": "ucr-citic-ia-software",
@@ -494,20 +2411,110 @@
       "institucionId": "ucr",
       "categoria": "educacion",
       "estado": "operativo",
-      "desde": "2024",
+      "desde": "2025",
       "descripcion": {
-        "es": "Línea de investigación del Centro de Investigaciones en TIC (CITIC) que diseña e integra estrategias de IA en procesos clave del ciclo de vida del software: ingeniería de requisitos, generación automática de código, reparación automática de defectos y testing automatizado.",
-        "en": "Research line at the Research Center on TIC (CITIC) that designs and integrates AI strategies into key software lifecycle processes: requirements engineering, automatic code generation, automated defect repair, and automated testing."
+        "es": "Proyecto activo del CITIC-UCR, con vigencia de marzo de 2025 a febrero de 2028, para diseñar y evaluar estrategias de IA aplicadas a requisitos, generación y reparación de código, calidad y pruebas de software.",
+        "en": "Active CITIC-UCR project running from March 2025 to February 2028 to design and evaluate AI strategies for requirements, code generation and repair, quality and software testing."
       },
       "resultado": {
-        "es": "Línea consolidada con outputs en cursos de posgrado, publicaciones académicas y participación en el Pura Vida AI Forum 2025. Líder: Dr. Christian Quesada-López. Publicación destacada: «Machine Learning-Based Flood Prediction: A Tertiary Study» (CITIC-UCR), un estudio terciario que sistematiza la literatura existente sobre predicción de inundaciones con machine learning.",
-        "en": "Consolidated line with outputs in postgraduate courses, academic publications, and participation in Pura Vida AI Forum 2025. Lead: Dr. Christian Quesada-López. Featured publication: \"Machine Learning-Based Flood Prediction: A Tertiary Study\" (CITIC-UCR), a tertiary study that systematizes existing literature on machine-learning-based flood prediction."
+        "es": "La ficha oficial asocia al proyecto una publicación de 2025 sobre generación automática de pruebas unitarias con modelos de lenguaje.",
+        "en": "The official project page links a 2025 publication on automatic unit-test generation with language models."
       },
       "contexto": {
-        "es": "Es el primer proyecto académico costarricense con metodología documentada en IA aplicada a ingeniería de software. Conecta la formación de posgrado con investigación aplicada y posiciona a la UCR como referente regional en el área. El estudio terciario sobre predicción de inundaciones extiende la línea de aplicaciones más allá del ciclo de vida del software hacia dominios de impacto en gestión de riesgo climático.",
-        "en": "The first Costa Rican academic project with documented methodology on AI applied to software engineering. It connects postgraduate training with applied research and positions UCR as a regional reference in the area. The tertiary study on flood prediction extends the applications line beyond the software lifecycle into climate-risk management."
+        "es": "Se corrigió la fuente: el estudio terciario sobre inundaciones no respaldaba esta descripción. La iniciativa es investigación académica activa, no adopción operativa en una institución pública.",
+        "en": "The source was corrected: the tertiary flood study did not support this description. The initiative is active academic research, not operational adoption in a public institution."
       },
-      "fuenteUrl": "https://citic.ucr.ac.cr/publicaciones/machine-learning-based-flood-prediction-tertiary-study"
+      "fuenteUrl": "https://citic.ucr.ac.cr/proyectos/integracion-estrategias-inteligencia-artificial-procesos-ingenieria-software",
+      "modeloVersion": 2,
+      "tipoIniciativa": "investigacion",
+      "estadoCatalogo": "ecosistema",
+      "faseImplementacion": "desarrollo",
+      "estadoIA": "confirmada",
+      "evaluacion": {
+        "existencia": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "citic-ia-software-proyecto"
+          ]
+        },
+        "ejecucion": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "citic-ia-software-proyecto"
+          ]
+        },
+        "tecnicaIA": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "citic-ia-software-proyecto"
+          ]
+        },
+        "usoOperativo": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "resultados": {
+          "estado": "parcialmente-confirmado",
+          "fuenteIds": [
+            "citic-ia-software-proyecto"
+          ]
+        },
+        "gobernanza": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        }
+      },
+      "fuentes": [
+        {
+          "id": "citic-ia-software-proyecto",
+          "url": "https://citic.ucr.ac.cr/proyectos/integracion-estrategias-inteligencia-artificial-procesos-ingenieria-software",
+          "publicador": "CITIC, Universidad de Costa Rica",
+          "tipoFuente": "primaria-oficial",
+          "fechaPublicacion": "2025",
+          "respalda": [
+            "existencia",
+            "objetivo-declarado",
+            "ejecucion",
+            "tecnica-ia",
+            "resultado-reportado"
+          ],
+          "naturalezaAfirmacion": [
+            "hecho",
+            "objetivo-declarado",
+            "resultado-reportado"
+          ],
+          "titulo": {
+            "es": "Integración de estrategias de inteligencia artificial en procesos de ingeniería de software",
+            "en": "Integration of artificial-intelligence strategies into software-engineering processes"
+          },
+          "fechaConsulta": "2026-08-19"
+        }
+      ],
+      "fechaPrimeraEvidencia": "2025-03-01",
+      "fechaUltimaVerificacion": "2026-08-19",
+      "objetivoDeclarado": {
+        "es": "Diseñar y evaluar estrategias de IA para requisitos, generación y reparación de código, calidad y pruebas de software.",
+        "en": "Design and evaluate AI strategies for requirements, code generation and repair, quality and software testing."
+      },
+      "resultadosVerificados": [
+        {
+          "id": "publicacion-pruebas-llm",
+          "texto": {
+            "es": "La ficha oficial asocia al proyecto una publicación de 2025 sobre generación automática de pruebas unitarias con modelos de lenguaje.",
+            "en": "The official project page links a 2025 publication on automatic unit-test generation with language models."
+          },
+          "fuenteIds": [
+            "citic-ia-software-proyecto"
+          ],
+          "fecha": "2025"
+        }
+      ],
+      "datosNoDeterminados": [
+        {
+          "es": "No se documenta un sistema de IA desplegado para prestar un servicio público.",
+          "en": "No AI system deployed to deliver a public service is documented."
+        }
+      ]
     },
     {
       "id": "ucr-ciodd-ethical-ai",
@@ -518,44 +2525,191 @@
       "institucionId": "ucr",
       "categoria": "educacion",
       "estado": "operativo",
-      "desde": "2024",
+      "desde": "2025",
       "descripcion": {
         "es": "Proyecto Erasmus+ (No. 101179117) coordinado por el Centro de Investigación Observatorio del Desarrollo (CIOdD) que desarrolla un marco transnacional de gobernanza ética de IA en educación superior, con toolkit para docentes y foro permanente de reflexión institucional.",
         "en": "Erasmus+ project (No. 101179117) coordinated by the Development Observatory (CIOdD) that builds a transnational framework for ethical AI governance in higher education, with a toolkit for educators and a permanent reflection forum."
       },
       "resultado": {
-        "es": "Consorcio de 9 instituciones en 4 países. Talleres internacionales con 50+ participantes en enero 2026, toolkit publicado, e influencia documentada en políticas institucionales (incluida la política IA de la UNED aprobada el 4 de septiembre de 2025).",
-        "en": "Consortium of 9 institutions across 4 countries. International workshops with 50+ participants in January 2026, published toolkit, and documented influence on institutional policies (including UNED’s AI policy approved on September 4, 2025)."
+        "es": "El lanzamiento oficial reunió a más de 70 personas de universidades, equipos de investigación y autoridades académicas.",
+        "en": "The official launch brought together more than 70 participants from universities, research teams and academic authorities."
       },
       "contexto": {
-        "es": "Es el único proyecto Erasmus+ con liderazgo costarricense en gobernanza ética de IA en educación superior. Llena un vacío que la ENIA reconoce pero no implementa: marcos formales de uso ético en el sector público, particularmente en universidades estatales que forman a los futuros funcionarios.",
-        "en": "The only Erasmus+ project with Costa Rican leadership on ethical AI governance in higher education. It fills a gap ENIA recognizes but does not implement: formal frameworks for ethical use in the public sector, particularly in state universities that train future civil servants."
+        "es": "Se clasifica como iniciativa de política y gobernanza en educación superior. No corresponde a un sistema de IA desplegado para prestar un servicio público.",
+        "en": "It is classified as a policy and governance initiative in higher education. It is not an AI system deployed to deliver a public service."
       },
-      "fuenteUrl": "https://ciodd.ucr.ac.cr/lanzamiento-oficial-del-proyecto-ethical-ia-compromiso-con-el-uso-etico-de-la-inteligencia-artificial"
+      "fuenteUrl": "https://ciodd.ucr.ac.cr/lanzamiento-oficial-del-proyecto-ethical-ia-compromiso-con-el-uso-etico-de-la-inteligencia-artificial",
+      "modeloVersion": 2,
+      "tipoIniciativa": "politica-gobernanza",
+      "estadoCatalogo": "ecosistema",
+      "faseImplementacion": "desarrollo",
+      "estadoIA": "confirmada",
+      "evaluacion": {
+        "existencia": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "ucr-ethical-ai"
+          ]
+        },
+        "ejecucion": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "ucr-ethical-ai"
+          ]
+        },
+        "tecnicaIA": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "usoOperativo": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "resultados": {
+          "estado": "parcialmente-confirmado",
+          "fuenteIds": [
+            "ucr-ethical-ai"
+          ]
+        },
+        "gobernanza": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        }
+      },
+      "fuentes": [
+        {
+          "id": "ucr-ethical-ai",
+          "url": "https://ciodd.ucr.ac.cr/lanzamiento-oficial-del-proyecto-ethical-ia-compromiso-con-el-uso-etico-de-la-inteligencia-artificial",
+          "publicador": "CIOdD, Universidad de Costa Rica",
+          "tipoFuente": "primaria-oficial",
+          "fechaPublicacion": "2025-08-25",
+          "respalda": [
+            "existencia",
+            "objetivo-declarado",
+            "ejecucion",
+            "resultado-reportado",
+            "gobernanza"
+          ],
+          "naturalezaAfirmacion": [
+            "hecho",
+            "objetivo-declarado",
+            "resultado-reportado"
+          ],
+          "titulo": {
+            "es": "Lanzamiento oficial del proyecto Ethical AI",
+            "en": "Official launch of the Ethical AI project"
+          },
+          "fechaConsulta": "2026-08-19"
+        }
+      ],
+      "fechaPrimeraEvidencia": "2025-08-25",
+      "fechaUltimaVerificacion": "2026-08-19",
+      "objetivoDeclarado": {
+        "es": "Desarrollar capacidades y herramientas para el uso ético de IA en educación superior.",
+        "en": "Develop capabilities and tools for the ethical use of AI in higher education."
+      },
+      "datosNoDeterminados": [
+        {
+          "es": "Los resultados e impactos institucionales requieren fuentes adicionales para verificarse individualmente.",
+          "en": "Institutional results and impacts require additional sources for individual verification."
+        }
+      ]
     },
     {
       "id": "cenat-lania",
       "titulo": {
-        "es": "LaNIA — Laboratorio Nacional de IA",
-        "en": "LaNIA — National AI Laboratory"
+        "es": "LaNIA: Laboratorio Nacional de IA",
+        "en": "LaNIA: National AI Laboratory"
       },
       "institucionId": "cenat",
       "categoria": "infraestructura",
-      "estado": "piloto",
-      "desde": "2026",
+      "estado": "planificado",
+      "desde": "2023",
       "descripcion": {
-        "es": "Hub público nacional de investigación, formación y desarrollo de IA aplicada a problemas de alto impacto social: movilidad urbana, biodiversidad, educación, salud y sismología. Servicios de análisis de datos, desarrollo de productos tecnológicos y spin-offs.",
-        "en": "National public hub for research, training and development of AI applied to high social-impact problems: urban mobility, biodiversity, education, health and seismology. Provides data analysis, product development and spin-off services."
-      },
-      "resultado": {
-        "es": "Cinco laboratorios de CENAT (CENIBiot, CNCA, PRIAS, LANOTEC, LANBA) redireccionados hacia capacidades de IA. Alianza con fAIr LAC del BID para fortalecer la propuesta.",
-        "en": "Five CENAT labs (CENIBiot, CNCA, PRIAS, LANOTEC, LANBA) redirected toward AI capabilities. Partnership with IDB’s fAIr LAC reinforces the proposal."
+        "es": "Propuesta de Laboratorio Nacional de Inteligencia Artificial presentada por CeNAT durante el inicio de la formulación de la estrategia nacional en febrero de 2023. Su objetivo declarado incluye formación, sensibilización y desarrollo de iniciativas de alto impacto.",
+        "en": "National Artificial Intelligence Laboratory proposal presented by CeNAT at the start of national-strategy formulation in February 2023. Its stated objectives include training, awareness and development of high-impact initiatives."
       },
       "contexto": {
-        "es": "Es la única propuesta pública nacional de hub I+D en IA aplicada del país. Funciona como puente entre la academia pública (CONARE) y el aparato gubernamental, llenando un rol que la ENIA encomendaba al Centro Nacional de Excelencia en IA, aún no operativo.",
-        "en": "Costa Rica’s only national public proposal for an applied-AI R&D hub. It acts as a bridge between public academia (CONARE) and the State, filling a role that ENIA had assigned to the National AI Center of Excellence, still not operational."
+        "es": "La fuente documenta la presentación de un plan piloto y una propuesta, no la operación del laboratorio. No se encontró una actualización pública que confirme su puesta en marcha.",
+        "en": "The source documents presentation of a pilot plan and proposal, not operation of the laboratory. No public update confirming its launch was found."
       },
-      "fuenteUrl": "https://www.micitt.go.cr/el-sector-informa/micitt-inicia-formulacion-de-estrategia-de-inteligencia-artificial"
+      "fuenteUrl": "https://www.micitt.go.cr/el-sector-informa/micitt-inicia-formulacion-de-estrategia-de-inteligencia-artificial",
+      "modeloVersion": 2,
+      "tipoIniciativa": "programa-capacidades",
+      "estadoCatalogo": "ecosistema",
+      "faseImplementacion": "planificado",
+      "estadoIA": "confirmada",
+      "evaluacion": {
+        "existencia": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "micitt-lania-propuesta"
+          ]
+        },
+        "ejecucion": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "tecnicaIA": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "usoOperativo": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "resultados": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "gobernanza": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        }
+      },
+      "fuentes": [
+        {
+          "id": "micitt-lania-propuesta",
+          "url": "https://www.micitt.go.cr/el-sector-informa/micitt-inicia-formulacion-de-estrategia-de-inteligencia-artificial",
+          "publicador": "MICITT",
+          "tipoFuente": "primaria-oficial",
+          "fechaPublicacion": "2023-02-27",
+          "respalda": [
+            "existencia",
+            "objetivo-declarado",
+            "meta"
+          ],
+          "naturalezaAfirmacion": [
+            "hecho",
+            "objetivo-declarado",
+            "meta"
+          ],
+          "titulo": {
+            "es": "MICITT inicia formulación de estrategia de inteligencia artificial",
+            "en": "MICITT begins formulating an artificial-intelligence strategy"
+          },
+          "fechaConsulta": "2026-08-19"
+        }
+      ],
+      "fechaPrimeraEvidencia": "2023-02-27",
+      "fechaAnuncio": "2023-02-27",
+      "fechaUltimaVerificacion": "2026-08-19",
+      "objetivoDeclarado": {
+        "es": "Realizar capacitación, sensibilización, promoción y desarrollo de iniciativas de IA de alto impacto social.",
+        "en": "Conduct training, awareness, promotion and development of AI initiatives with high social impact."
+      },
+      "datosNoDeterminados": [
+        {
+          "es": "No se localizó evidencia posterior que confirme la puesta en operación de LaNIA como laboratorio nacional.",
+          "en": "No later evidence was found confirming that LaNIA entered operation as a national laboratory."
+        }
+      ],
+      "preguntasAbiertas": [
+        {
+          "es": "¿La propuesta de LaNIA continuó después de su presentación en 2023 y cuenta con estructura, presupuesto o actividades propias?",
+          "en": "Did the LaNIA proposal continue after its 2023 presentation, and does it have its own structure, budget or activities?"
+        }
+      ]
     },
     {
       "id": "cenat-cnca-clasificacion-arritmias-ecg",
@@ -576,10 +2730,100 @@
         "en": "Research with a publication registered in CONARE's institutional repository on multiclass arrhythmia classification from ECG signals, supported by a prototype device. The work remains at the research and prototype level; there is no evidence of clinical deployment or operational use in patient care."
       },
       "contexto": {
-        "es": "Línea de trabajo del CNCA (Colaboratorio Nacional de Computación Avanzada), unidad del CeNAT adscrito a CONARE. La verificación partió de una nota general del TEC (25 de abril de 2024) sobre el potencial de la IA en salud; la evidencia concreta del proyecto está en el repositorio oficial de CONARE y en el sitio del CNCA. El alcance catalogado es estrictamente de investigación y prototipo: no se afirma uso clínico ni despliegue en la atención.",
-        "en": "Work line of CNCA (National Advanced Computing Collaboratory), a unit of CeNAT under CONARE. Verification started from a general TEC article (April 25, 2024) on the potential of AI in health; the concrete evidence for the project is in CONARE's official repository and on the CNCA site. The catalogued scope is strictly research and prototype: no clinical use or care deployment is claimed."
+        "es": "Se mantiene estrictamente como investigación y prueba de concepto. La publicación y el prototipo no equivalen a despliegue clínico.",
+        "en": "It remains strictly classified as research and proof of concept. The publication and prototype do not amount to clinical deployment."
       },
-      "fuenteUrl": "https://repositorio.conare.ac.cr/items/b8bb3b55-cc3c-402a-9df4-6fe66159230d"
+      "fuenteUrl": "https://repositorio.conare.ac.cr/items/b8bb3b55-cc3c-402a-9df4-6fe66159230d",
+      "modeloVersion": 2,
+      "tipoIniciativa": "investigacion",
+      "estadoCatalogo": "ecosistema",
+      "faseImplementacion": "prueba-concepto",
+      "estadoIA": "confirmada",
+      "evaluacion": {
+        "existencia": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "conare-cnca-ecg"
+          ]
+        },
+        "ejecucion": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "conare-cnca-ecg"
+          ]
+        },
+        "tecnicaIA": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "conare-cnca-ecg"
+          ]
+        },
+        "usoOperativo": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "resultados": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "conare-cnca-ecg"
+          ]
+        },
+        "gobernanza": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        }
+      },
+      "fuentes": [
+        {
+          "id": "conare-cnca-ecg",
+          "url": "https://repositorio.conare.ac.cr/items/b8bb3b55-cc3c-402a-9df4-6fe66159230d",
+          "publicador": "Repositorio CONARE",
+          "tipoFuente": "academica",
+          "fechaPublicacion": "2024",
+          "respalda": [
+            "existencia",
+            "objetivo-declarado",
+            "ejecucion",
+            "tecnica-ia",
+            "resultado-reportado"
+          ],
+          "naturalezaAfirmacion": [
+            "hecho",
+            "resultado-reportado"
+          ],
+          "titulo": {
+            "es": "Clasificación multiclase de arritmias a partir de señales ECG",
+            "en": "Multiclass arrhythmia classification from ECG signals"
+          },
+          "fechaConsulta": "2026-08-19"
+        }
+      ],
+      "fechaPrimeraEvidencia": "2024",
+      "fechaInicioPiloto": "2024",
+      "fechaUltimaVerificacion": "2026-08-19",
+      "objetivoDeclarado": {
+        "es": "Evaluar aprendizaje automático para clasificar arritmias a partir de señales de electrocardiograma.",
+        "en": "Evaluate machine learning for classifying arrhythmias from electrocardiogram signals."
+      },
+      "resultadosVerificados": [
+        {
+          "id": "prototipo-ecg-publicacion",
+          "texto": {
+            "es": "El repositorio académico documenta una publicación y un dispositivo prototipo para clasificación multiclase.",
+            "en": "The academic repository documents a publication and a prototype device for multiclass classification."
+          },
+          "fuenteIds": [
+            "conare-cnca-ecg"
+          ],
+          "fecha": "2024"
+        }
+      ],
+      "datosNoDeterminados": [
+        {
+          "es": "No existe evidencia de validación clínica o uso en atención de pacientes.",
+          "en": "There is no evidence of clinical validation or use in patient care."
+        }
+      ]
     },
     {
       "id": "pj-sala-primera-induccion-ia",
@@ -595,15 +2839,81 @@
         "es": "La Sala Primera de la Corte Suprema de Justicia declara estar en un proceso de inducción sobre el uso de prompts para que herramientas de inteligencia artificial apoyen la toma de decisiones con mayor rapidez y certeza, tomando como referencia experiencias internacionales. Es una etapa de preparación y capacitación: no se ha anunciado un sistema, un proveedor ni un despliegue.",
         "en": "The First Chamber of the Supreme Court states that it is in an induction process on the use of prompts so that artificial intelligence tools can support decision-making with greater speed and certainty, drawing on international experience. This is a preparation and training stage: no system, vendor or deployment has been announced."
       },
-      "resultado": {
-        "es": "Sin resultados. La fuente oficial documenta una declaración de intención y un proceso de inducción en la Sala Primera; no reporta sistema en operación, piloto, cronograma ni métricas de desempeño.",
-        "en": "No results. The official source documents a statement of intent and an induction process within the First Chamber; it reports no system in operation, pilot, timeline or performance metrics."
-      },
       "contexto": {
-        "es": "La declaración proviene del magistrado Luis Guillermo Rivas, presidente de la Sala Primera, citado en un comunicado oficial del Poder Judicial del 17 de julio de 2026 cuyo tema principal es la reducción del 60% en los casos pendientes de la Sala entre 2019 y 2024; la mención de inteligencia artificial aparece como declaración dentro de esa nota, no como anuncio de un proyecto. Se distingue de pj-sentencias-sala-iv, que corresponde a la Sala Constitucional (Cuarta), con otro corpus y otro propósito.",
-        "en": "The statement comes from Justice Luis Guillermo Rivas, president of the First Chamber, quoted in an official Judiciary release of July 17, 2026 whose main subject is the 60% reduction in the Chamber's pending caseload between 2019 and 2024; the artificial intelligence mention appears as a statement within that release, not as a project announcement. It is distinct from pj-sentencias-sala-iv, which corresponds to the Constitutional Chamber (Fourth), with a different corpus and purpose."
+        "es": "La fuente documenta un proceso de inducción, no un sistema de IA. La reducción de casos que da título al comunicado ocurrió antes y no se atribuye a esta capacitación.",
+        "en": "The source documents an induction process, not an AI system. The case reduction in the release title predates the training and is not attributed to it."
       },
-      "fuenteUrl": "https://pj.poder-judicial.go.cr/index.php/component/content/article/2137-sala-primera-reduce-en-60-casos-pendientes-y-alcanza-cifra-record-de-resoluciones-de-fondo"
+      "fuenteUrl": "https://pj.poder-judicial.go.cr/index.php/component/content/article/2137-sala-primera-reduce-en-60-casos-pendientes-y-alcanza-cifra-record-de-resoluciones-de-fondo",
+      "modeloVersion": 2,
+      "tipoIniciativa": "programa-capacidades",
+      "estadoCatalogo": "ecosistema",
+      "faseImplementacion": "desarrollo",
+      "estadoIA": "declarada-sin-tecnica",
+      "evaluacion": {
+        "existencia": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "pj-sala-primera-induccion"
+          ]
+        },
+        "ejecucion": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "pj-sala-primera-induccion"
+          ]
+        },
+        "tecnicaIA": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "usoOperativo": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "resultados": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "gobernanza": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        }
+      },
+      "fuentes": [
+        {
+          "id": "pj-sala-primera-induccion",
+          "url": "https://pj.poder-judicial.go.cr/index.php/component/content/article/2137-sala-primera-reduce-en-60-casos-pendientes-y-alcanza-cifra-record-de-resoluciones-de-fondo",
+          "publicador": "Poder Judicial de Costa Rica",
+          "tipoFuente": "primaria-oficial",
+          "fechaPublicacion": "2026-07-17",
+          "respalda": [
+            "existencia",
+            "objetivo-declarado",
+            "ejecucion"
+          ],
+          "naturalezaAfirmacion": [
+            "hecho",
+            "objetivo-declarado"
+          ],
+          "titulo": {
+            "es": "Sala Primera reduce casos pendientes y menciona proceso de inducción en IA",
+            "en": "First Chamber reduces pending cases and mentions an AI induction process"
+          },
+          "fechaConsulta": "2026-08-19"
+        }
+      ],
+      "fechaPrimeraEvidencia": "2026-07-17",
+      "fechaUltimaVerificacion": "2026-08-19",
+      "objetivoDeclarado": {
+        "es": "Formar al personal de la Sala Primera en uso de indicaciones para herramientas de IA como apoyo.",
+        "en": "Train First Chamber staff in prompting AI tools for support."
+      },
+      "datosNoDeterminados": [
+        {
+          "es": "No se anunció sistema, proveedor, cronograma de despliegue ni métricas.",
+          "en": "No system, vendor, deployment schedule or metrics were announced."
+        }
+      ]
     },
     {
       "id": "pj-conamaj-chat-facilitadores",
@@ -616,18 +2926,106 @@
       "estado": "piloto",
       "desde": "2026",
       "descripcion": {
-        "es": "Chat de inteligencia artificial tipo modelo de lenguaje impulsado por CONAMAJ para las personas facilitadoras judiciales, orientado a consultas jurídicas y orientación legal. Es distinto del ChatbotPJ de atención ciudadana: este apoya específicamente a las personas facilitadoras en su labor de orientación.",
-        "en": "Language-model AI chat driven by CONAMAJ for judicial facilitators, focused on legal consultations and guidance. It is distinct from the citizen-facing ChatbotPJ: this one specifically supports facilitators in their guidance work."
-      },
-      "resultado": {
-        "es": "Sin métricas públicas a la fecha. La fuente oficial no reporta volumen de consultas, cobertura ni resultados medidos.",
-        "en": "No public metrics to date. The official source does not report query volume, coverage, or measured results."
+        "es": "Chat tipo modelo de lenguaje presentado por CONAMAJ para apoyar a personas facilitadoras judiciales en consultas y orientación jurídica. La fuente confirma su existencia y demostración, pero no un despliegue operativo con usuarios medidos.",
+        "en": "Language-model chat presented by CONAMAJ to support judicial facilitators with queries and legal guidance. The source confirms its existence and demonstration, but not an operational deployment with measured users."
       },
       "contexto": {
-        "es": "Presentado en el marco de la agenda de CONAMAJ 2026 sobre aplicaciones de IA en el sector justicia. Naciones Unidas brindó apoyo técnico al encuentro; no se le atribuye desarrollo ni coejecución del chat. Se registra como piloto conservador ante la ausencia de un sistema, proveedor, cronograma o resultados públicos.",
-        "en": "Presented within the CONAMAJ 2026 agenda on AI applications in the justice sector. The United Nations provided technical support to the event; it is not credited with developing or co-executing the chat. Recorded conservatively as a pilot given the absence of a public system, vendor, timeline, or results."
+        "es": "Se registra como prueba de concepto en seguimiento. La presentación en una feria institucional no basta para afirmar que existe un piloto operativo o resultados de uso.",
+        "en": "It is recorded as a proof of concept under review. Presentation at an institutional fair is not enough to claim an operational pilot or usage results."
       },
-      "fuenteUrl": "https://pj.poder-judicial.go.cr/index.php/component/content/article/2550-instituciones-conamaj-y-naciones-unidas-fortalecen-sector-justicia-de-cara-a-la-inteligencia-artificial?catid=8&Itemid=409"
+      "fuenteUrl": "https://pj.poder-judicial.go.cr/index.php/component/content/article/2317-agenda-conamaj-2026-vitrina-de-aplicaciones-de-inteligencia-artificial-en-sector-justicia",
+      "modeloVersion": 2,
+      "tipoIniciativa": "sistema-ia",
+      "estadoCatalogo": "seguimiento",
+      "faseImplementacion": "prueba-concepto",
+      "estadoIA": "confirmada",
+      "evaluacion": {
+        "existencia": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "pj-conamaj-chat-2026"
+          ]
+        },
+        "ejecucion": {
+          "estado": "parcialmente-confirmado",
+          "fuenteIds": [
+            "pj-conamaj-chat-2026"
+          ]
+        },
+        "tecnicaIA": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "pj-conamaj-chat-2026"
+          ]
+        },
+        "usoOperativo": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "resultados": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "gobernanza": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        }
+      },
+      "fuentes": [
+        {
+          "id": "pj-conamaj-chat-2026",
+          "url": "https://pj.poder-judicial.go.cr/index.php/component/content/article/2317-agenda-conamaj-2026-vitrina-de-aplicaciones-de-inteligencia-artificial-en-sector-justicia",
+          "publicador": "Poder Judicial de Costa Rica",
+          "tipoFuente": "primaria-oficial",
+          "fechaPublicacion": "2026-08",
+          "respalda": [
+            "existencia",
+            "objetivo-declarado",
+            "ejecucion",
+            "tecnica-ia"
+          ],
+          "naturalezaAfirmacion": [
+            "hecho",
+            "objetivo-declarado"
+          ],
+          "titulo": {
+            "es": "Agenda Conamaj 2026: vitrina de aplicaciones de inteligencia artificial en el sector justicia",
+            "en": "CONAMAJ 2026 agenda: a showcase of artificial-intelligence applications in the justice sector"
+          },
+          "fechaConsulta": "2026-08-19"
+        }
+      ],
+      "fechaPrimeraEvidencia": "2026-08",
+      "fechaInicioPiloto": "2026-08",
+      "fechaUltimaVerificacion": "2026-08-19",
+      "fechaProximaRevision": "2026-11-19",
+      "objetivoDeclarado": {
+        "es": "Apoyar a personas facilitadoras judiciales en consultas y orientación jurídica mediante un chat basado en un modelo de lenguaje.",
+        "en": "Support judicial facilitators with queries and legal guidance through a language-model chat."
+      },
+      "datosConocidos": [
+        {
+          "es": "La fuente oficial confirma la existencia de un chat tipo LLM y su presentación en una feria de aplicaciones.",
+          "en": "The official source confirms the existence of an LLM-based chat and its presentation at an applications fair."
+        }
+      ],
+      "datosNoDeterminados": [
+        {
+          "es": "No se publican proveedor, usuarios activos, cobertura, salvaguardas ni resultados medidos.",
+          "en": "The vendor, active users, coverage, safeguards and measured results are not published."
+        }
+      ],
+      "relaciones": [
+        {
+          "iniciativaId": "pj-chatbot",
+          "tipo": "distinto-de",
+          "nota": {
+            "es": "Este chat está dirigido a personas facilitadoras judiciales; ChatbotPJ atiende consultas generales de la ciudadanía.",
+            "en": "This chat targets judicial facilitators; ChatbotPJ handles general public queries."
+          }
+        }
+      ],
+      "fechaAnuncio": "2026-08"
     }
   ]
 }

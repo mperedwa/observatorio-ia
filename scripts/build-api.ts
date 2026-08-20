@@ -281,11 +281,11 @@ function writeCountersTs(counters: Counters): void {
 }
 
 /**
- * Validates proyectos.json: every entry must have `desde` and a bilingual
- * `resultado`. Both fields drive UI surfaces that silently break when
- * missing (TimelineAdopcion drops dots without `desde`; tooltips fall back
- * to generic copy without `resultado`). Failing the build at validation
- * keeps that invariant from drifting back.
+ * Validates compatibility fields used by the current UI. Every entry still
+ * needs `desde` while TimelineAdopcion depends on the legacy year. Legacy
+ * entries also need a bilingual `resultado`; model v2 deliberately allows it
+ * to be absent when no verified result exists, and the timeline already falls
+ * back to the description in that case.
  *
  * Throws with a list of every offender — fixing one at a time gets
  * tedious when several break at once.
@@ -314,9 +314,12 @@ function validateProyectos(): void {
       errors.push(`  - ${id}: falta campo "desde" (string no vacío)`);
     }
 
+    const esModeloV2 = p.modeloVersion === 2;
     const resultado = p.resultado as Record<string, unknown> | undefined;
     if (!resultado || typeof resultado !== 'object') {
-      errors.push(`  - ${id}: falta campo "resultado" (objeto con es/en)`);
+      if (!esModeloV2) {
+        errors.push(`  - ${id}: ficha legacy sin "resultado" bilingüe`);
+      }
     } else {
       for (const locale of ['es', 'en'] as const) {
         const v = resultado[locale];
@@ -332,12 +335,15 @@ function validateProyectos(): void {
       'validateProyectos FAILED — corregí proyectos.json antes de pushear:',
       ...errors,
       '',
-      'Reglas: cada entrada debe tener `desde` (año o YYYY-MM) y `resultado` bilingüe.',
+      'Reglas: cada entrada debe tener `desde`; las fichas legacy también requieren `resultado` bilingüe.',
+      'En modelo v2, `resultado` se omite cuando no hay resultados públicos verificados.',
       'Ver: src/data/json/proyectos.json + tooltips de TimelineAdopcion.',
     ].join('\n');
     throw new Error(msg);
   }
-  console.log(`  ✓ validateProyectos: ${data.length} entradas con desde + resultado`);
+  console.log(
+    `  ✓ validateProyectos: ${data.length} entradas con fecha base y resultados v2 opcionales`,
+  );
 }
 
 function main(): void {

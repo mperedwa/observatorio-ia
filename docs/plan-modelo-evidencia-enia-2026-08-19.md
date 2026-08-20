@@ -476,10 +476,16 @@ Estado técnico al cerrar la fase: 26 iniciativas documentadas, 26 pendientes de
 
 ### Fase 2 — Reclasificar las 26 entradas
 
-- Revisar tipo de iniciativa, fase, estado IA y evidencia.
-- Auditar que cada fuente respalde las afirmaciones indicadas.
-- Separar sistemas base de capas de IA.
-- No publicar una nueva cifra principal hasta terminar esta fase.
+- [x] Revisar tipo de iniciativa, fase, estado IA y evidencia.
+- [x] Auditar que cada fuente respalde las afirmaciones indicadas.
+- [x] Separar sistemas base de capas de IA.
+- [x] No publicar una nueva cifra principal hasta terminar esta fase.
+
+Implementado en `src/data/json/proyectos.json`, con migración reproducible en `scripts/migrate-proyectos-evidencia-v2.ts` y matriz de decisiones en `docs/auditoria-reclasificacion-proyectos-2026-08-19.md`. Las 26 fichas tienen núcleo v2 completo y trazabilidad sin errores.
+
+Estado derivado al cerrar la fase: 26 iniciativas documentadas, 5 adopciones verificadas, 6 iniciativas en seguimiento, 15 registros de ecosistema y capacidades, 0 descartadas y 0 pendientes de migración. Las cinco adopciones verificadas son `pj-clasificacion-cobros`, `pj-ml-presupuestal`, `pj-nymiz`, `ccss-lidia` y `hacienda-anomaly`.
+
+El sitio conserva por ahora el titular amplio de iniciativas documentadas. La nueva cifra y la separación editorial se expondrán de forma coherente en la Fase 3, después de revisar localmente la interfaz completa.
 
 ### Fase 3 — Nueva interfaz del catálogo
 
