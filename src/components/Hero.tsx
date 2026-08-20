@@ -1,9 +1,12 @@
+import Link from 'next/link';
 import { kpisHero } from '@/data/indicadores';
 import type { Dictionary } from '@/i18n/dictionaries';
 import type { Locale } from '@/i18n/config';
 import { applyCounters } from '@/i18n/applyCounters';
 import { COUNTERS } from '@/data/counters';
 import { CountUp } from './CountUp';
+import { capaCard, capaChip } from './catalogoStyles';
+import { CAPAS_CATALOGO } from '@/data/presentacion-catalogo';
 
 const KPI_KEYS = ['proyectos', 'instituciones', 'legislacion', 'ranking'] as const;
 
@@ -42,26 +45,81 @@ const KPI_ICONS: Record<(typeof KPI_KEYS)[number], JSX.Element> = {
 };
 
 export function Hero({ t, locale }: { t: Dictionary; locale: Locale }) {
+  const layerCounts = {
+    verificado: COUNTERS.adopcionVerificada,
+    seguimiento: COUNTERS.seguimiento,
+    ecosistema: COUNTERS.ecosistema,
+  } as const;
+
   return (
     <section
       id="inicio"
       className="bg-gradient-to-b from-institucional-50 to-white border-b border-slate-200"
     >
-      <div className="max-w-7xl mx-auto px-6 py-20 sm:py-28">
+      <div className="max-w-7xl mx-auto px-6 py-16 sm:py-24">
         <p className="text-sm font-medium uppercase tracking-wider text-institucional-700">
           {t.hero.kicker}
         </p>
         <h1 className="mt-3 text-4xl sm:text-5xl lg:text-6xl font-bold text-balance text-slate-900 max-w-4xl leading-tight">
           {applyCounters(t.hero.headline, COUNTERS)}
         </h1>
-        <p className="mt-6 text-lg text-slate-600 max-w-2xl text-pretty">{t.hero.sub}</p>
-        <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <p className="mt-6 text-lg text-slate-600 max-w-3xl text-pretty">
+          {applyCounters(t.hero.sub, COUNTERS)}
+        </p>
+
+        <div className="mt-8 flex flex-wrap gap-3">
+          <Link
+            href={`/${locale}/proyectos`}
+            className="inline-flex items-center justify-center rounded-lg bg-institucional-700 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-institucional-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-institucional-500 focus-visible:ring-offset-2"
+          >
+            {t.hero.ctaCatalogo} <span aria-hidden className="ml-2">→</span>
+          </Link>
+          <Link
+            href={`/${locale}/quien-mantiene`}
+            className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition-colors hover:border-institucional-200 hover:text-institucional-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-institucional-500 focus-visible:ring-offset-2"
+          >
+            {t.hero.ctaMetodologia}
+          </Link>
+        </div>
+
+        <p className="mt-12 text-xs font-semibold uppercase tracking-wider text-slate-500">
+          {t.hero.capasIntro}
+        </p>
+        <div className="mt-4 grid gap-4 lg:grid-cols-3">
+          {CAPAS_CATALOGO.map((capa) => (
+            <Link
+              key={capa}
+              href={`/${locale}/proyectos`}
+              className={`group rounded-xl border p-5 transition-all hover:-translate-y-0.5 hover:shadow-md ${capaCard[capa]}`}
+            >
+              <div className="flex items-center justify-between gap-4">
+                <span className={`rounded-full border px-2.5 py-1 text-[11px] font-semibold ${capaChip[capa]}`}>
+                  {t.catalogo.capas[capa].corto}
+                </span>
+                <span className="text-3xl font-bold tabular-nums text-slate-900">
+                  <CountUp value={String(layerCounts[capa])} />
+                </span>
+              </div>
+              <h2 className="mt-4 text-base font-semibold text-slate-900 group-hover:text-institucional-700">
+                {t.catalogo.capas[capa].titulo}
+              </h2>
+              <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                {t.catalogo.capas[capa].descripcion}
+              </p>
+            </Link>
+          ))}
+        </div>
+
+        <p className="mt-10 text-xs font-semibold uppercase tracking-wider text-slate-500">
+          {t.hero.contextoIntro}
+        </p>
+        <div className="mt-4 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           {kpisHero.map((k, i) => {
             const key = KPI_KEYS[i];
             return (
               <div
                 key={k.valor + k.label.es}
-                className="group relative overflow-hidden rounded-lg border border-slate-200 bg-white pl-5 pr-4 py-5 transition-all duration-200 hover:border-institucional-200 hover:bg-institucional-50/60 hover:shadow-sm"
+                className="group relative overflow-hidden rounded-lg border border-slate-200 bg-white pl-5 pr-4 py-4 transition-all duration-200 hover:border-institucional-200 hover:bg-institucional-50/60 hover:shadow-sm"
               >
                 <span
                   aria-hidden="true"
@@ -73,7 +131,7 @@ export function Hero({ t, locale }: { t: Dictionary; locale: Locale }) {
                     {t.hero.kpiCategoria[key]}
                   </span>
                 </div>
-                <div className="mt-3 text-4xl sm:text-5xl font-bold text-institucional-900 tabular-nums leading-none">
+                <div className="mt-3 text-3xl sm:text-4xl font-bold text-institucional-900 tabular-nums leading-none">
                   <CountUp value={k.valor} />
                 </div>
                 <div className="mt-3 text-sm font-medium text-slate-900 leading-snug">

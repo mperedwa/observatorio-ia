@@ -4,6 +4,7 @@ import { Breadcrumb } from '@/components/Breadcrumb';
 import { ProyectoCard } from '@/components/ProyectoCard';
 import { instituciones } from '@/data/instituciones';
 import { proyectos } from '@/data/proyectos';
+import { resumirInstitucionCatalogo } from '@/data/presentacion-catalogo';
 import { getDictionary } from '@/i18n/dictionaries';
 import { locales, type Locale } from '@/i18n/config';
 
@@ -58,9 +59,7 @@ export default async function InstitucionPage({
   const lc = locale as Locale;
   const t = getDictionary(lc);
   const proyectosInst = proyectos.filter((p) => p.institucionId === inst.id);
-  const operativos = proyectosInst.filter((p) => p.estado === 'operativo').length;
-  const pilotos = proyectosInst.filter((p) => p.estado === 'piloto').length;
-  const planificados = proyectosInst.filter((p) => p.estado === 'planificado').length;
+  const resumenCatalogo = resumirInstitucionCatalogo(proyectosInst);
 
   return (
     <article className="max-w-5xl mx-auto px-6 py-12 sm:py-16">
@@ -88,20 +87,35 @@ export default async function InstitucionPage({
           ↗ {t.institucionDetalle.sitioOficialLabel}
         </a>
 
-        <div className="mt-6 grid grid-cols-3 gap-4 max-w-md">
+        <div className="mt-6 grid max-w-xl grid-cols-3 gap-4">
           <div>
-            <div className="text-2xl font-bold text-emerald-700 tabular-nums">{operativos}</div>
-            <div className="text-xs text-slate-500">{t.institucionDetalle.operativosLabel}</div>
+            <div className="text-2xl font-bold text-emerald-700 tabular-nums">
+              {resumenCatalogo.verificado}
+            </div>
+            <div className="text-xs text-slate-500">
+              {t.institucionDetalle.verificadosLabel}
+            </div>
           </div>
           <div>
-            <div className="text-2xl font-bold text-amber-700 tabular-nums">{pilotos}</div>
-            <div className="text-xs text-slate-500">{t.institucionDetalle.pilotosLabel}</div>
+            <div className="text-2xl font-bold text-amber-700 tabular-nums">
+              {resumenCatalogo.seguimiento}
+            </div>
+            <div className="text-xs text-slate-500">
+              {t.institucionDetalle.seguimientoLabel}
+            </div>
           </div>
           <div>
-            <div className="text-2xl font-bold text-slate-500 tabular-nums">{planificados}</div>
-            <div className="text-xs text-slate-500">{t.institucionDetalle.planificadosLabel}</div>
+            <div className="text-2xl font-bold text-sky-700 tabular-nums">
+              {resumenCatalogo.ecosistema}
+            </div>
+            <div className="text-xs text-slate-500">
+              {t.institucionDetalle.ecosistemaLabel}
+            </div>
           </div>
         </div>
+        <p className="mt-4 max-w-2xl text-xs leading-relaxed text-slate-500">
+          {t.institucionDetalle.conteoNota}
+        </p>
       </header>
 
       <section className="mb-12">
@@ -115,7 +129,7 @@ export default async function InstitucionPage({
 
       <section className="mb-12">
         <h2 className="text-xs uppercase tracking-wider text-institucional-700 font-medium mb-4">
-          {t.institucionDetalle.proyectosLabel} ({proyectosInst.length})
+          {t.institucionDetalle.proyectosLabel} ({resumenCatalogo.total})
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {proyectosInst.map((p) => (

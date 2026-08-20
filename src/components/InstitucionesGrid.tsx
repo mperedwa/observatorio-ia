@@ -2,6 +2,9 @@ import Link from 'next/link';
 import { instituciones } from '@/data/instituciones';
 import { proyectos } from '@/data/proyectos';
 import { ProyectoCard } from './ProyectoCard';
+import { resumirInstitucionCatalogo } from '@/data/presentacion-catalogo';
+import { applyCounters } from '@/i18n/applyCounters';
+import { COUNTERS } from '@/data/counters';
 import type { Dictionary } from '@/i18n/dictionaries';
 import type { Locale } from '@/i18n/config';
 
@@ -15,12 +18,15 @@ export function InstitucionesGrid({ locale, t }: { locale: Locale; t: Dictionary
         <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-slate-900">
           {t.instituciones.titulo}
         </h2>
-        <p className="mt-3 text-slate-600 max-w-2xl">{t.instituciones.sub}</p>
+        <p className="mt-3 text-slate-600 max-w-2xl">
+          {applyCounters(t.instituciones.sub, COUNTERS)}
+        </p>
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {instituciones.map((inst) => {
           const proyectosInst = proyectos.filter((p) => p.institucionId === inst.id);
+          const resumen = resumirInstitucionCatalogo(proyectosInst);
           return (
             <article
               key={inst.id}
@@ -40,12 +46,40 @@ export function InstitucionesGrid({ locale, t }: { locale: Locale; t: Dictionary
                 </div>
                 <div className="text-right">
                   <div className="text-3xl font-bold text-institucional-900 tabular-nums">
-                    {inst.proyectosActivos}
+                    {resumen.total}
                   </div>
-                  <div className="text-xs text-slate-500">{t.instituciones.proyectosLabel}</div>
+                  <div className="text-xs text-slate-500">
+                    {t.instituciones.proyectosLabel}
+                  </div>
                 </div>
               </Link>
               <p className="text-sm text-slate-600 mb-5 text-pretty">{inst.resumen[locale]}</p>
+              <div className="mb-5 grid grid-cols-3 gap-2 border-y border-slate-100 py-3">
+                <div>
+                  <div className="text-lg font-bold tabular-nums text-emerald-700">
+                    {resumen.verificado}
+                  </div>
+                  <div className="text-[10px] leading-tight text-slate-500">
+                    {t.catalogo.capas.verificado.corto}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-lg font-bold tabular-nums text-amber-700">
+                    {resumen.seguimiento}
+                  </div>
+                  <div className="text-[10px] leading-tight text-slate-500">
+                    {t.catalogo.capas.seguimiento.corto}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-lg font-bold tabular-nums text-sky-700">
+                    {resumen.ecosistema}
+                  </div>
+                  <div className="text-[10px] leading-tight text-slate-500">
+                    {t.catalogo.capas.ecosistema.corto}
+                  </div>
+                </div>
+              </div>
               <ul className="space-y-1.5 mb-4">
                 {proyectosInst.map((p) => (
                   <li key={p.id}>

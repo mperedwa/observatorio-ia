@@ -1,15 +1,15 @@
 import type { Counters } from '../data/counters';
 
 /**
- * Reemplaza los placeholders `{proyectos}`, `{instituciones}`, `{legislacion}`
+ * Reemplaza cualquier placeholder que coincida con una clave de `Counters`
  * en una cadena con los contadores reales del catálogo. Los strings del
  * diccionario que mencionan cantidades se escriben con placeholders en vez
  * de números fijos para que el contador siempre quede sincronizado con
  * `src/data/json/*` sin tocar i18n manualmente.
  */
 export function applyCounters(template: string, counters: Counters): string {
-  return template
-    .replace(/\{proyectos\}/g, String(counters.proyectos))
-    .replace(/\{instituciones\}/g, String(counters.instituciones))
-    .replace(/\{legislacion\}/g, String(counters.legislacion));
+  return (Object.entries(counters) as Array<[keyof Counters, number]>).reduce(
+    (texto, [clave, valor]) => texto.replaceAll(`{${clave}}`, String(valor)),
+    template,
+  );
 }

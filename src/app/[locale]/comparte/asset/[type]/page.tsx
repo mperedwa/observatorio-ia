@@ -65,8 +65,12 @@ export default async function AssetPage({
   return (
     <div
       style={{
+        position: 'fixed',
+        inset: 0,
+        zIndex: 100,
         background: '#f8fafc',
-        minHeight: '100vh',
+        width: size.width,
+        height: size.height,
         display: 'flex',
         alignItems: 'flex-start',
         justifyContent: 'flex-start',

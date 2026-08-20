@@ -1,5 +1,5 @@
 import { AssetFrame, type AssetSize } from './AssetFrame';
-import { kpisHero } from '@/data/indicadores';
+import { COUNTERS } from '@/data/counters';
 import type { Locale } from '@/i18n/config';
 import type { Dictionary } from '@/i18n/dictionaries';
 
@@ -49,7 +49,6 @@ export function AssetStory({
   }
 
   // timeline story
-  const kpi = kpisHero[0];
   return (
     <AssetFrame size={size} locale={locale} variant="gradient">
       <div className="flex-1 flex flex-col justify-center px-16 py-24">
@@ -63,20 +62,20 @@ export function AssetStory({
           className="mt-8 font-bold text-institucional-900 leading-none tabular-nums"
           style={{ fontSize: 280 }}
         >
-          {kpi.valor}
+          {COUNTERS.adopcionVerificada}
         </p>
         <p className="mt-6 font-bold text-slate-900" style={{ fontSize: 44, lineHeight: 1.2 }}>
           {locale === 'es'
-            ? 'iniciativas relacionadas con IA documentadas'
-            : 'documented AI-related initiatives'}
+            ? 'adopciones de IA verificadas'
+            : 'verified AI adoptions'}
         </p>
         <p
           className="mt-10 text-slate-600"
           style={{ fontSize: 28, lineHeight: 1.4, maxWidth: 880 }}
         >
           {locale === 'es'
-            ? 'Desde 2018 hasta 2026. El catálogo reúne sistemas, pilotos, planes y capacidades en una sola línea de tiempo.'
-            : 'From 2018 to 2026. The catalog brings systems, pilots, plans and capabilities into one timeline.'}
+            ? `${COUNTERS.iniciativasDocumentadas} iniciativas siguen visibles: ${COUNTERS.seguimiento} en seguimiento y ${COUNTERS.ecosistema} de ecosistema y capacidades.`
+            : `${COUNTERS.iniciativasDocumentadas} initiatives remain visible: ${COUNTERS.seguimiento} under review and ${COUNTERS.ecosistema} in ecosystem and capabilities.`}
         </p>
       </div>
     </AssetFrame>

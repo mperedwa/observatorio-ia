@@ -6,14 +6,15 @@ import { proyectos } from '@/data/proyectos';
 import { instituciones } from '@/data/instituciones';
 import type { Dictionary } from '@/i18n/dictionaries';
 import type { Locale } from '@/i18n/config';
-import type { Estado } from '@/data/proyectos';
 import { applyCounters } from '@/i18n/applyCounters';
 import { COUNTERS } from '@/data/counters';
+import { CAPAS_CATALOGO, obtenerCapaCatalogo, type CapaCatalogo } from '@/data/presentacion-catalogo';
+import { capaDot } from './catalogoStyles';
 
-const estadoBg: Record<Estado, string> = {
-  operativo: 'bg-emerald-100 hover:bg-emerald-200 border-emerald-300 text-emerald-900',
-  piloto: 'bg-amber-100 hover:bg-amber-200 border-amber-300 text-amber-900',
-  planificado: 'bg-slate-100 hover:bg-slate-200 border-slate-300 text-slate-700',
+const capaBg: Record<CapaCatalogo, string> = {
+  verificado: 'bg-emerald-100 hover:bg-emerald-200 border-emerald-300 text-emerald-900',
+  seguimiento: 'bg-amber-100 hover:bg-amber-200 border-amber-300 text-amber-900',
+  ecosistema: 'bg-sky-100 hover:bg-sky-200 border-sky-300 text-sky-900',
 };
 
 export function MapaProyectos({ locale, t }: { locale: Locale; t: Dictionary }) {
@@ -38,6 +39,15 @@ export function MapaProyectos({ locale, t }: { locale: Locale; t: Dictionary }) 
             {t.panorama.titulo}
           </h2>
           <p className="mt-3 text-slate-600 max-w-3xl text-pretty">{applyCounters(t.panorama.sub, COUNTERS)}</p>
+          <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-slate-600">
+            <span className="font-semibold text-slate-700">{t.panorama.leyendaLabel}:</span>
+            {CAPAS_CATALOGO.map((capa) => (
+              <span key={capa} className="inline-flex items-center gap-2">
+                <span className={`h-2 w-2 rounded-full ${capaDot[capa]}`} aria-hidden />
+                {t.catalogo.capas[capa].corto}
+              </span>
+            ))}
+          </div>
         </header>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -66,7 +76,7 @@ export function MapaProyectos({ locale, t }: { locale: Locale; t: Dictionary }) 
                     onMouseLeave={() => setHoverId(null)}
                     onFocus={() => setHoverId(p.id)}
                     onBlur={() => setHoverId(null)}
-                    className={`relative block border rounded p-2 text-[11px] leading-tight font-medium transition-colors ${estadoBg[p.estado]}`}
+                    className={`relative block border rounded p-2 text-[11px] leading-tight font-medium transition-colors ${capaBg[obtenerCapaCatalogo(p)]}`}
                   >
                     <span className="line-clamp-2">{p.titulo[locale]}</span>
                     {hoverId === p.id && (

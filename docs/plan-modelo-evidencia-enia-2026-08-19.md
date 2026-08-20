@@ -489,9 +489,15 @@ El sitio conserva por ahora el titular amplio de iniciativas documentadas. La nu
 
 ### Fase 3 — Nueva interfaz del catálogo
 
-- Crear el índice `/proyectos/`.
-- Actualizar cards, fichas, instituciones, timeline, hero y metodología.
-- Mostrar campos no determinados de forma explícita.
+- [x] Crear el índice `/proyectos/`.
+- [x] Actualizar cards, fichas, instituciones, timeline, hero y metodología.
+- [x] Mostrar campos no determinados de forma explícita.
+- [x] Actualizar mapa y assets de `/comparte` para usar las tres capas.
+- [x] Corregir resúmenes institucionales que conservaban afirmaciones del modelo legado.
+
+Implementado con una vista inicial de 5 adopciones verificadas y navegación hacia 6 iniciativas en seguimiento y 15 registros de ecosistema y capacidades. El catálogo incluye búsqueda y filtro institucional; las fichas presentan objetivo declarado, datos confirmados, campos no determinados, resultados, matriz de seis dimensiones, metadatos de fuentes, preguntas y relaciones. La línea de tiempo inicia con las cinco adopciones verificadas y permite ampliar a las 26 iniciativas con fecha documental explícita.
+
+Los conteos institucionales ya no usan `proyectosActivos` para la presentación pública: se derivan de las fichas. También se revisaron los siete resúmenes institucionales para retirar afirmaciones que trataban AIDA, CONECTA, EDUS, Giro Continuo, TRIBU-CR, LaNIA u otras capacidades como sistemas de IA operativos sin la evidencia correspondiente.
 
 ### Fase 4 — Inventario y crosswalk ENIA
 

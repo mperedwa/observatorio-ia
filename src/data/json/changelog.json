@@ -3,6 +3,18 @@
     "fecha": "2026-08-19",
     "tipo": "proyecto",
     "actualizacion": {
+      "es": "Se estrena la interfaz del catálogo basado en evidencia. La portada y el índice de iniciativas separan adopción verificada, seguimiento, y ecosistema y capacidades; las fichas publican tipo, fase, confirmación de IA, matriz por dimensión, campos no determinados, preguntas abiertas y metadatos de cada fuente. Los conteos institucionales ahora se derivan del catálogo y se corrigen resúmenes legados que confundían anuncios, infraestructura o automatización con sistemas de IA operativos.",
+      "en": "The evidence-based catalog interface is released. The home page and initiative index separate verified adoption, under review, and ecosystem and capabilities; records publish type, phase, AI confirmation, a dimension-level matrix, undetermined fields, open questions and source metadata. Institution counts are now derived from the catalog, and legacy summaries that conflated announcements, infrastructure or automation with operational AI systems are corrected."
+    },
+    "fuente": {
+      "es": "Modelo de evidencia v2 y auditoría editorial del catálogo, corte 19-ago-2026",
+      "en": "Evidence model v2 and catalog editorial audit, cutoff Aug 19, 2026"
+    }
+  },
+  {
+    "fecha": "2026-08-19",
+    "tipo": "proyecto",
+    "actualizacion": {
       "es": "Se reclasifican las 26 iniciativas con el modelo de evidencia v2. El corte editorial queda en 5 sistemas o componentes de IA con piloto u operación verificados, 6 iniciativas en seguimiento y 15 registros de ecosistema y capacidades. Cada ficha distingue tipo, fase, confirmación de IA, evidencia por dimensión, fuentes y campos no determinados. También se corrigen afirmaciones sin respaldo en clasificación de cobros, Nymiz, EDUS, AIDA, detección fiscal de anomalías, CONECTA, AgroBoost y la investigación del CITIC.",
       "en": "All 26 initiatives are reclassified under evidence model v2. The editorial cutoff is now 5 AI systems or components with verified pilot or operational execution, 6 initiatives under review, and 15 ecosystem and capacity records. Every entry distinguishes type, phase, AI confirmation, evidence by dimension, sources, and undetermined fields. Unsupported claims are also corrected in debt-collection classification, Nymiz, EDUS, AIDA, tax anomaly detection, CONECTA, AgroBoost, and CITIC research."
     },

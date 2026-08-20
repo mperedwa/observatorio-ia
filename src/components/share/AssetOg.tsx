@@ -22,12 +22,12 @@ export function AssetOg({
           kicker: t.hero.kicker,
           title:
             locale === 'es'
-              ? `${COUNTERS.proyectos} iniciativas relacionadas con IA documentadas en el sector público costarricense`
-              : `${COUNTERS.proyectos} documented AI-related initiatives in Costa Rica\u2019s public sector`,
+              ? `${COUNTERS.adopcionVerificada} sistemas o componentes de IA con adopción verificada en el sector público costarricense`
+              : `${COUNTERS.adopcionVerificada} AI systems or components with verified adoption across Costa Rica\u2019s public sector`,
           sub:
             locale === 'es'
-              ? 'Mapa público abierto de instituciones, iniciativas, leyes e indicadores.'
-              : 'Open public map of institutions, initiatives, laws and indicators.',
+              ? `${COUNTERS.iniciativasDocumentadas} iniciativas documentadas en tres capas de evidencia.`
+              : `${COUNTERS.iniciativasDocumentadas} initiatives documented across three evidence layers.`,
         }
       : variant === 'analisis'
         ? {

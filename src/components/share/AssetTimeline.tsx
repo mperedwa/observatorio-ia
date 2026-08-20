@@ -1,8 +1,10 @@
-import { proyectos } from '@/data/proyectos';
+import { proyectos, type Proyecto } from '@/data/proyectos';
 import { instituciones } from '@/data/instituciones';
 import { AssetFrame, type AssetSize } from './AssetFrame';
 import type { Locale } from '@/i18n/config';
 import type { Dictionary } from '@/i18n/dictionaries';
+import { esAdopcionVerificada } from '@/data/modelo-evidencia';
+import { obtenerAnioReferencia } from '@/data/presentacion-catalogo';
 
 const colorByInst: Record<string, { dot: string; text: string }> = {
   'poder-judicial': { dot: '#4f46e5', text: '#4338ca' },
@@ -23,22 +25,28 @@ export function AssetTimeline({
   t: Dictionary;
   size: AssetSize;
 }) {
-  const datados = proyectos.filter((p) => p.desde);
-  const minYear = Math.min(...datados.map((p) => Number(p.desde)));
-  const maxYear = Math.max(...datados.map((p) => Number(p.desde)));
+  const datados: Array<{ proyecto: Proyecto; year: number }> = proyectos.flatMap((proyecto) => {
+    if (!esAdopcionVerificada(proyecto)) return [];
+    const year = obtenerAnioReferencia(proyecto);
+    return year === null ? [] : [{ proyecto, year }];
+  });
+  const minYear = Math.min(...datados.map((item) => item.year));
+  const maxYear = Math.max(...datados.map((item) => item.year));
   const range = maxYear - minYear || 1;
   const allYears = Array.from({ length: range + 1 }, (_, i) => minYear + i);
 
   const porInstitucion = instituciones
     .map((inst) => ({
       inst,
-      proyectos: datados.filter((p) => p.institucionId === inst.id).sort((a, b) => Number(a.desde) - Number(b.desde)),
+      proyectos: datados
+        .filter((item) => item.proyecto.institucionId === inst.id)
+        .sort((a, b) => a.year - b.year),
     }))
     .filter((row) => row.proyectos.length > 0);
 
   return (
     <AssetFrame size={size} locale={locale} variant="light">
-      <div className="flex-1 flex flex-col p-16">
+      <div className="flex-1 flex flex-col p-16 pb-20">
         <p
           className="font-semibold uppercase tracking-widest text-institucional-700"
           style={{ fontSize: 22 }}
@@ -52,7 +60,7 @@ export function AssetTimeline({
           {t.comparte.assets.timelineTitulo}
         </h1>
 
-        <div className="mt-12 flex-1 flex flex-col">
+        <div className="mt-12 flex flex-col">
           {/* eje X */}
           <div className="grid items-end" style={{ gridTemplateColumns: '180px 1fr', gap: 24, height: 56 }}>
             <div />
@@ -92,11 +100,11 @@ export function AssetTimeline({
                   </div>
                   <div className="relative" style={{ height: 32 }}>
                     <div className="absolute inset-x-0 top-1/2 h-px bg-slate-100" />
-                    {ps.map((p) => {
-                      const x = ((Number(p.desde) - minYear) / range) * 100;
+                    {ps.map(({ proyecto, year }) => {
+                      const x = ((year - minYear) / range) * 100;
                       return (
                         <div
-                          key={p.id}
+                          key={proyecto.id}
                           className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2"
                           style={{ left: `${x}%` }}
                         >
@@ -121,8 +129,8 @@ export function AssetTimeline({
 
         <p className="mt-12 text-slate-600" style={{ fontSize: 20, maxWidth: 880 }}>
           {locale === 'es'
-            ? `${datados.length} iniciativas documentadas. La línea reúne sistemas operativos, pilotos, planes y capacidades con distintos niveles de evidencia.`
-            : `${datados.length} documented initiatives. The timeline combines operational systems, pilots, plans and capabilities with different levels of evidence.`}
+            ? `${datados.length} sistemas o componentes de IA con ejecución verificada en piloto u operación.`
+            : `${datados.length} AI systems or components with verified pilot or operational execution.`}
         </p>
       </div>
     </AssetFrame>

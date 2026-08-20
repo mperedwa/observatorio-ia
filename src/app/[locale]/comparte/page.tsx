@@ -63,7 +63,7 @@ export default async function ComartePage({
       id: 'hero',
       titulo: t.comparte.secciones.hero,
       items: [
-        { filename: 'kpi-hero-1080.png', label: applyCounters(t.comparte.assets.kpiHeroTitulo, COUNTERS), size: 'square' },
+        { filename: 'kpi-hero-1080.png', label: t.comparte.assets.kpiHeroTitulo, size: 'square' },
       ],
     },
     {
@@ -138,6 +138,8 @@ export default async function ComartePage({
     story: 'aspect-[1080/1920]',
   };
 
+  const resolveLabel = (label: string) => applyCounters(label, COUNTERS);
+
   return (
     <article className="max-w-6xl mx-auto px-6 py-12 sm:py-16">
       <Breadcrumb
@@ -177,7 +179,7 @@ export default async function ComartePage({
                 <div className={`bg-slate-50 ${aspectClass[item.size]}`}>
                   <img
                     src={`/comparte-assets/${lc}/${item.filename}`}
-                    alt={item.label}
+                    alt={resolveLabel(item.label)}
                     width={1080}
                     height={item.size === 'square' ? 1080 : item.size === 'horizontal' ? 630 : 1920}
                     className="w-full h-full object-cover"
@@ -185,7 +187,9 @@ export default async function ComartePage({
                   />
                 </div>
                 <div className="p-4 flex-1 flex flex-col">
-                  <p className="text-sm font-semibold text-slate-900 mb-1">{item.label}</p>
+                  <p className="text-sm font-semibold text-slate-900 mb-1">
+                    {resolveLabel(item.label)}
+                  </p>
                   <p className="text-xs text-slate-500 mb-3">{sizeLabel[item.size]}</p>
                   <a
                     href={`/comparte-assets/${lc}/${item.filename}`}

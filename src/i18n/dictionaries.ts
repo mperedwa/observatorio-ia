@@ -1,10 +1,23 @@
 import type { Locale } from './config';
+import type {
+  DimensionEvidencia,
+  EstadoCatalogo,
+  EstadoEvaluacion,
+  EstadoIA,
+  FaseImplementacion,
+  RespaldoFuente,
+  TipoFuente,
+  TipoIniciativa,
+  TipoRelacion,
+} from '@/data/modelo-evidencia';
+import type { CapaCatalogo, TipoFechaReferencia } from '@/data/presentacion-catalogo';
 
 export interface Dictionary {
   siteName: string;
   siteCountry: string;
   nav: {
     inicio: string;
+    proyectos: string;
     instituciones: string;
     legislacion: string;
     indicadores: string;
@@ -18,6 +31,10 @@ export interface Dictionary {
     kicker: string;
     headline: string;
     sub: string;
+    capasIntro: string;
+    contextoIntro: string;
+    ctaCatalogo: string;
+    ctaMetodologia: string;
     kpiCategoria: {
       proyectos: string;
       instituciones: string;
@@ -30,6 +47,7 @@ export interface Dictionary {
     titulo: string;
     sub: string;
     proyectosLabel: string;
+    conteoDerivadoLabel: string;
     verDetalle: string;
     tipoLabel: {
       ministerio: string;
@@ -97,12 +115,53 @@ export interface Dictionary {
     sub: string;
     desdeLabel: string;
     sinResultadoLabel: string;
+    vistaVerificada: string;
+    vistaCompleta: string;
+    vistaVerificadaAyuda: string;
+    vistaCompletaAyuda: string;
+    scrollHint: string;
+    fechaLabel: Record<TipoFechaReferencia, string>;
   };
   panorama: {
     kicker: string;
     titulo: string;
     sub: string;
     proyectoLabel: string;
+    leyendaLabel: string;
+  };
+  catalogo: {
+    kicker: string;
+    titulo: string;
+    sub: string;
+    metaDescripcion: string;
+    totalDocumentadas: string;
+    capas: Record<
+      CapaCatalogo,
+      { titulo: string; corto: string; descripcion: string; criterio: string }
+    >;
+    verTodas: string;
+    buscarLabel: string;
+    buscarPlaceholder: string;
+    institucionFiltroLabel: string;
+    todasInstituciones: string;
+    resultadosLabel: string;
+    sinResultados: string;
+    limpiarFiltros: string;
+    fichaCta: string;
+    ultimaVerificacionLabel: string;
+    proximaRevisionLabel: string;
+    metodologiaTitulo: string;
+    metodologiaCuerpo: string;
+    metodologiaCta: string;
+    tipos: Record<TipoIniciativa, string>;
+    estados: Record<EstadoCatalogo, string>;
+    fases: Record<FaseImplementacion, string>;
+    estadosIA: Record<EstadoIA, string>;
+    evaluacionEstados: Record<EstadoEvaluacion, string>;
+    dimensiones: Record<DimensionEvidencia, string>;
+    tiposFuente: Record<TipoFuente, string>;
+    respaldosFuente: Record<RespaldoFuente, string>;
+    relaciones: Record<TipoRelacion, string>;
   };
   chartIlia: {
     inversionTooltip: string;
@@ -182,6 +241,33 @@ export interface Dictionary {
     relacionadosLabel: string;
     volverLabel: string;
     metaDescripcion: string;
+    fichaEvidenciaLabel: string;
+    tipoIniciativaLabel: string;
+    faseLabel: string;
+    estadoIALabel: string;
+    evidenciaEjecucionLabel: string;
+    primeraEvidenciaLabel: string;
+    ultimaVerificacionLabel: string;
+    proximaRevisionLabel: string;
+    objetivoDeclaradoLabel: string;
+    confirmadoLabel: string;
+    noDeterminadoLabel: string;
+    preguntasAbiertasLabel: string;
+    resultadosDocumentadosLabel: string;
+    evidenciaTitulo: string;
+    evidenciaSub: string;
+    fuentesTitulo: string;
+    fuentesSub: string;
+    publicadorLabel: string;
+    tipoFuenteLabel: string;
+    fechaPublicacionLabel: string;
+    fechaConsultaLabel: string;
+    respaldaLabel: string;
+    relacionesTitulo: string;
+    verIniciativaLabel: string;
+    sinDatosConfirmados: string;
+    sinNoDeterminados: string;
+    sinPreguntasAbiertas: string;
   };
   institucionDetalle: {
     tipoLabel: string;
@@ -193,6 +279,10 @@ export interface Dictionary {
     pilotosLabel: string;
     planificadosLabel: string;
     metaDescripcion: string;
+    verificadosLabel: string;
+    seguimientoLabel: string;
+    ecosistemaLabel: string;
+    conteoNota: string;
   };
   analisis: {
     kicker: string;
@@ -351,6 +441,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     siteCountry: 'Costa Rica',
     nav: {
       inicio: 'Inicio',
+      proyectos: 'Catálogo',
       instituciones: 'Instituciones',
       legislacion: 'Legislación',
       indicadores: 'Indicadores',
@@ -363,8 +454,12 @@ export const dictionaries: Record<Locale, Dictionary> = {
     hero: {
       kicker: 'Observatorio público',
       headline:
-        '{proyectos} iniciativas relacionadas con inteligencia artificial documentadas en el sector público costarricense.',
-      sub: 'Mapeo abierto de sistemas, pilotos, planes y capacidades relacionadas con IA en el sector público costarricense, junto con legislación e indicadores regionales.',
+        '{adopcionVerificada} sistemas o componentes de IA con piloto u operación verificados en el sector público costarricense.',
+      sub: 'El catálogo documenta {iniciativasDocumentadas} iniciativas y separa la adopción comprobada de los anuncios en seguimiento y de las capacidades del ecosistema.',
+      capasIntro: 'Qué cuenta la evidencia',
+      contextoIntro: 'Contexto del observatorio',
+      ctaCatalogo: 'Explorar el catálogo',
+      ctaMetodologia: 'Cómo verificamos',
       kpiCategoria: {
         proyectos: 'Iniciativas',
         instituciones: 'Instituciones',
@@ -375,8 +470,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
     instituciones: {
       kicker: '01 / Instituciones',
       titulo: 'Dónde aparecen iniciativas de IA en el Estado',
-      sub: 'Siete instituciones públicas tienen iniciativas documentadas relacionadas con IA. El catálogo incluye sistemas, pilotos, planes y capacidades.',
+      sub: '{instituciones} instituciones públicas tienen iniciativas documentadas relacionadas con IA. El catálogo incluye sistemas, pilotos, planes y capacidades.',
       proyectosLabel: 'iniciativas',
+      conteoDerivadoLabel: 'clasificadas en el catálogo',
       verDetalle: 'Ver detalle',
       tipoLabel: {
         ministerio: 'Ministerio',
@@ -425,9 +521,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
     acerca: {
       kicker: '05 / Acerca de',
       titulo:
-        'Una iniciativa independiente para mapear la adopción de IA en el Estado',
-      p1: 'El Observatorio IA Costa Rica nace para llenar un vacío: no existe una fuente pública, actualizada y verificable sobre dónde, cómo y con qué resultados se está adoptando inteligencia artificial en el sector público costarricense.',
-      p2: 'Este sitio recopila sistemas, pilotos, planes y otras iniciativas documentadas, además de expedientes de ley e indicadores comparados con la región. Cada registro enlaza la fuente pública consultada.',
+        'Una iniciativa independiente para distinguir evidencia, anuncios y capacidades',
+      p1: 'El Observatorio IA Costa Rica nace para llenar un vacío: no existe una fuente pública y actualizada que distinga con criterios verificables dónde hay adopción de inteligencia artificial y dónde solo hay planes, menciones o capacidades relacionadas.',
+      p2: 'Este sitio organiza las iniciativas en tres capas: adopción verificada, seguimiento, y ecosistema y capacidades. También documenta expedientes de ley e indicadores comparados con la región. Cada registro enlaza sus fuentes y publica los vacíos de información.',
       p3: 'La meta es construir una herramienta útil para tomadores de decisión, prensa, academia, sector privado y ciudadanía interesada en cómo se usa la IA con fondos públicos.',
       ctaPregunta:
         '¿Conoce un proyecto de IA en una institución pública que no aparece aquí?',
@@ -457,16 +553,148 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     timeline: {
       kicker: 'Línea de tiempo',
-      titulo: 'Iniciativas de IA documentadas en el Estado costarricense, 2018-2026',
-      sub: 'Cada punto es una iniciativa documentada en el catálogo. La línea reúne sistemas operativos, pilotos, planes y capacidades; cada ficha indica la evidencia disponible.',
+      titulo: 'Cuándo aparece evidencia de adopción, planes y capacidades',
+      sub: 'La vista principal muestra únicamente sistemas o componentes de IA con ejecución verificada en piloto u operación. La vista completa incorpora anuncios, investigación, infraestructura y capacidades con una fecha documental explícita.',
       desdeLabel: 'desde',
       sinResultadoLabel: 'Sin métrica pública',
+      vistaVerificada: 'Adopción verificada',
+      vistaCompleta: 'Todo lo documentado',
+      vistaVerificadaAyuda: '{adopcionVerificada} sistemas o componentes con piloto u operación comprobados',
+      vistaCompletaAyuda: '{iniciativasDocumentadas} iniciativas, incluidos planes y capacidades del ecosistema',
+      scrollHint: 'Deslice horizontalmente para recorrer los años.',
+      fechaLabel: {
+        'inicio-operacion': 'Inicio de operación',
+        'inicio-piloto': 'Inicio de piloto',
+        anuncio: 'Anuncio',
+        'primera-evidencia': 'Primera evidencia',
+      },
     },
     panorama: {
       kicker: 'Panorama',
       titulo: 'Distribución de iniciativas por institución',
       sub: 'Vista compacta de las {proyectos} iniciativas agrupadas por institución y coloreadas según el estado actual del catálogo. Haga clic en cualquiera para abrir el detalle.',
       proyectoLabel: 'iniciativa',
+      leyendaLabel: 'Clasificación editorial',
+    },
+    catalogo: {
+      kicker: 'Catálogo basado en evidencia',
+      titulo: 'Tres capas para no confundir anuncios con adopción',
+      sub: 'Cada iniciativa se clasifica según lo que permiten afirmar sus fuentes. Solo la primera capa entra en el contador de adopción verificada; las demás siguen siendo visibles porque documentan compromisos, infraestructura, investigación y capacidades relevantes.',
+      metaDescripcion: 'Catálogo verificable de sistemas, pilotos, planes y capacidades relacionadas con inteligencia artificial en el sector público costarricense.',
+      totalDocumentadas: '{iniciativasDocumentadas} iniciativas documentadas en total',
+      capas: {
+        verificado: {
+          titulo: 'Adopción verificada',
+          corto: 'Verificada',
+          descripcion: 'Sistemas o componentes de IA con evidencia de ejecución en piloto u operación.',
+          criterio: 'Cuenta como adopción solo si la técnica de IA y la ejecución están confirmadas por fuentes trazables.',
+        },
+        seguimiento: {
+          titulo: 'Iniciativas en seguimiento',
+          corto: 'Seguimiento',
+          descripcion: 'Anuncios, pilotos o sistemas reportados cuya técnica, ejecución o situación actual todavía requiere confirmación.',
+          criterio: 'Se conservan las preguntas abiertas y una próxima fecha de revisión cuando corresponde.',
+        },
+        ecosistema: {
+          titulo: 'Ecosistema y capacidades',
+          corto: 'Ecosistema',
+          descripcion: 'Infraestructura digital, investigación, formación, gobernanza y digitalización relacionadas con IA.',
+          criterio: 'Aportan contexto, pero no se suman como sistemas de IA adoptados por el Estado.',
+        },
+      },
+      verTodas: 'Ver las {iniciativasDocumentadas} iniciativas',
+      buscarLabel: 'Buscar en el catálogo',
+      buscarPlaceholder: 'Nombre, institución o descripción',
+      institucionFiltroLabel: 'Filtrar por institución',
+      todasInstituciones: 'Todas las instituciones',
+      resultadosLabel: 'fichas visibles',
+      sinResultados: 'No hay fichas que coincidan con estos filtros.',
+      limpiarFiltros: 'Limpiar filtros',
+      fichaCta: 'Abrir ficha de evidencia',
+      ultimaVerificacionLabel: 'Verificada',
+      proximaRevisionLabel: 'Próxima revisión',
+      metodologiaTitulo: 'Una clasificación reproducible',
+      metodologiaCuerpo: 'El estado visible no se decide por el nombre del proyecto ni por una mención de IA. Se evalúan por separado existencia, ejecución, técnica de IA, uso operativo, resultados y gobernanza, y cada conclusión conserva sus fuentes.',
+      metodologiaCta: 'Leer la metodología completa',
+      tipos: {
+        'sistema-ia': 'Sistema de IA',
+        'componente-ia': 'Componente de IA',
+        'infraestructura-digital': 'Infraestructura digital',
+        'programa-capacidades': 'Programa de capacidades',
+        investigacion: 'Investigación',
+        'politica-gobernanza': 'Política o gobernanza',
+        'digitalizacion-no-ia': 'Digitalización sin IA confirmada',
+        'por-determinar': 'Tipo por determinar',
+      },
+      estados: {
+        verificado: 'Adopción verificada',
+        seguimiento: 'En seguimiento',
+        ecosistema: 'Ecosistema y capacidades',
+        descartado: 'Descartada',
+      },
+      fases: {
+        anunciado: 'Anunciado',
+        planificado: 'Planificado',
+        desarrollo: 'En desarrollo',
+        'prueba-concepto': 'Prueba de concepto',
+        piloto: 'Piloto',
+        operativo: 'Operativo',
+        pausado: 'Pausado',
+        suspendido: 'Suspendido',
+        finalizado: 'Finalizado',
+        cancelado: 'Cancelado',
+        'no-determinado': 'No determinado',
+      },
+      estadosIA: {
+        confirmada: 'IA confirmada',
+        'declarada-sin-tecnica': 'IA declarada, técnica no publicada',
+        'no-determinada': 'IA no determinada',
+        descartada: 'IA descartada',
+      },
+      evaluacionEstados: {
+        confirmado: 'Confirmado',
+        'parcialmente-confirmado': 'Parcialmente confirmado',
+        inferido: 'Inferido',
+        'no-determinado': 'No determinado',
+        contradicho: 'Contradicho',
+      },
+      dimensiones: {
+        existencia: 'Existencia',
+        ejecucion: 'Ejecución',
+        tecnicaIA: 'Técnica de IA',
+        usoOperativo: 'Uso operativo',
+        resultados: 'Resultados',
+        gobernanza: 'Gobernanza',
+      },
+      tiposFuente: {
+        'primaria-oficial': 'Primaria oficial',
+        'acceso-informacion': 'Acceso a información',
+        multilateral: 'Organismo multilateral',
+        academica: 'Académica',
+        prensa: 'Prensa',
+        'otra-secundaria': 'Otra fuente secundaria',
+      },
+      respaldosFuente: {
+        existencia: 'existencia',
+        'objetivo-declarado': 'objetivo declarado',
+        meta: 'meta',
+        ejecucion: 'ejecución',
+        'tecnica-ia': 'técnica de IA',
+        'uso-operativo': 'uso operativo',
+        'resultado-reportado': 'resultado reportado',
+        'resultado-independiente': 'resultado independiente',
+        gobernanza: 'gobernanza',
+        'inferencia-editorial': 'inferencia editorial',
+      },
+      relaciones: {
+        'mismo-que': 'Misma iniciativa',
+        'posible-duplicado': 'Posible duplicado',
+        'componente-de': 'Componente de',
+        'depende-de': 'Depende de',
+        'alimenta-a': 'Alimenta a',
+        'distinto-de': 'Distinta de',
+        'relacion-no-acreditada': 'Relación no acreditada',
+      },
     },
     chartIlia: {
       inversionTooltip: 'Inversión',
@@ -515,10 +743,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
         stories: 'Stories verticales',
       },
       assets: {
-        kpiHeroTitulo: '{proyectos} iniciativas, {instituciones} instituciones, {legislacion} leyes',
-        timelineTitulo: 'Iniciativas de IA documentadas, 2018-2026',
+        kpiHeroTitulo: '{adopcionVerificada} verificadas · {seguimiento} en seguimiento · {ecosistema} de ecosistema',
+        timelineTitulo: 'Adopción de IA verificada, 2019-2024',
         iliaTitulo: 'Costa Rica vs América Latina (ILIA 2025)',
-        mapaTitulo: 'Distribución de iniciativas por institución',
+        mapaTitulo: '{iniciativasDocumentadas} iniciativas en tres capas de evidencia',
         brechaXroad: 'Brecha 1 — Interoperabilidad nacional',
         brechaGobernanza: 'Brecha 2 — Marco formal de gobernanza',
         brechaChatbot: 'Brecha 3 — Chatbot ciudadano nacional',
@@ -554,17 +782,48 @@ export const dictionaries: Record<Locale, Dictionary> = {
       relacionadosLabel: 'Proyectos relacionados',
       volverLabel: '← Volver a la institución',
       metaDescripcion: 'Proyecto de IA en el sector público de Costa Rica.',
+      fichaEvidenciaLabel: 'Ficha de evidencia',
+      tipoIniciativaLabel: 'Tipo de iniciativa',
+      faseLabel: 'Fase documentada',
+      estadoIALabel: 'Confirmación de IA',
+      evidenciaEjecucionLabel: 'Evidencia de ejecución',
+      primeraEvidenciaLabel: 'Primera evidencia',
+      ultimaVerificacionLabel: 'Última verificación',
+      proximaRevisionLabel: 'Próxima revisión',
+      objetivoDeclaradoLabel: 'Objetivo declarado por la institución',
+      confirmadoLabel: 'Qué está confirmado',
+      noDeterminadoLabel: 'Qué no se pudo determinar',
+      preguntasAbiertasLabel: 'Preguntas abiertas',
+      resultadosDocumentadosLabel: 'Resultados documentados',
+      evidenciaTitulo: 'Matriz de evidencia',
+      evidenciaSub: 'Cada dimensión se evalúa por separado. Un estado no determinado se publica como tal y no se completa por inferencia.',
+      fuentesTitulo: 'Fuentes y trazabilidad',
+      fuentesSub: 'Las fuentes indican qué afirmaciones respaldan, su origen y la fecha en que fueron consultadas.',
+      publicadorLabel: 'Publicador',
+      tipoFuenteLabel: 'Tipo de fuente',
+      fechaPublicacionLabel: 'Publicación',
+      fechaConsultaLabel: 'Consulta',
+      respaldaLabel: 'Respalda',
+      relacionesTitulo: 'Relaciones documentadas',
+      verIniciativaLabel: 'Ver iniciativa relacionada',
+      sinDatosConfirmados: 'La evidencia confirmada se detalla en la matriz y en los resultados documentados; no hay notas adicionales en este campo.',
+      sinNoDeterminados: 'No se registraron campos no determinados en el corte actual.',
+      sinPreguntasAbiertas: 'No se registraron preguntas abiertas adicionales en el corte actual.',
     },
     institucionDetalle: {
       tipoLabel: 'Tipo',
       sitioOficialLabel: 'Sitio oficial',
       resumenLabel: 'Resumen ejecutivo',
       proyectosLabel: 'Proyectos de IA',
-      leccionesLabel: 'Lecciones de adopción',
+      leccionesLabel: 'Lectura de la evidencia',
       operativosLabel: 'operativos',
       pilotosLabel: 'pilotos',
       planificadosLabel: 'planificados',
       metaDescripcion: 'Institución pública de Costa Rica con proyectos de IA.',
+      verificadosLabel: 'adopciones verificadas',
+      seguimientoLabel: 'en seguimiento',
+      ecosistemaLabel: 'de ecosistema',
+      conteoNota: 'Los conteos se calculan desde las fichas actuales del catálogo y no desde una cifra declarada por la institución.',
     },
     analisis: {
       kicker: 'Análisis',
@@ -607,12 +866,14 @@ export const dictionaries: Record<Locale, Dictionary> = {
       },
       metodologia: {
         titulo: 'Metodología',
-        cuerpo: 'Cada dato publicado cumple con los siguientes criterios:',
+        cuerpo: 'El catálogo conserva iniciativas verificables aunque no todas representen adopción de IA. Cada ficha se revisa con los siguientes criterios:',
         bullets: [
-          'Proviene de una fuente pública verificable: institución estatal, organismo multilateral, academia o medio reconocido. El tipo de fuente debe distinguirse.',
-          'Lleva enlace al documento o publicación en el campo "Fuente consultada".',
-          'Si una cifra no está confirmada en fuente verificable, no se publica.',
-          'Las traducciones al inglés son revisadas; las cifras y nombres propios se mantienen idénticos en ambos idiomas.',
+          'La existencia, la ejecución, la técnica de IA, el uso operativo, los resultados y la gobernanza se evalúan como dimensiones separadas.',
+          'Solo un sistema o componente de IA con técnica confirmada y ejecución confirmada en piloto u operación cuenta como adopción verificada.',
+          'Un anuncio oficial demuestra que una iniciativa fue anunciada, no que comenzó a ejecutarse. Permanece en seguimiento hasta localizar evidencia posterior.',
+          'Infraestructura, investigación, formación, gobernanza y digitalización se preservan como ecosistema y capacidades, sin sumarlas al contador de adopción.',
+          'Cada afirmación enlaza fuentes trazables e indica qué respalda cada una. La prensa puede orientar la búsqueda, pero no sustituye una fuente primaria cuando se afirma ejecución.',
+          'Los campos sin evidencia suficiente se publican como no determinados y las fichas con vacíos relevantes conservan preguntas abiertas o una fecha de próxima revisión.',
           'Los textos de "Contexto" y "Lecciones" son interpretación editorial sobre datos verificados, claramente separados del dato bruto.',
         ],
       },
@@ -790,6 +1051,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     siteCountry: 'Costa Rica',
     nav: {
       inicio: 'Home',
+      proyectos: 'Catalog',
       instituciones: 'Institutions',
       legislacion: 'Legislation',
       indicadores: 'Indicators',
@@ -802,8 +1064,12 @@ export const dictionaries: Record<Locale, Dictionary> = {
     hero: {
       kicker: 'Public observatory',
       headline:
-        '{proyectos} documented artificial intelligence initiatives across Costa Rica\u2019s public sector.',
-      sub: 'Open map of AI-related systems, pilots, plans and capabilities across Costa Rica\u2019s public sector, together with legislation and regional indicators.',
+        '{adopcionVerificada} AI systems or components with verified pilot or operational execution across Costa Rica\u2019s public sector.',
+      sub: 'The catalog documents {iniciativasDocumentadas} initiatives and separates verified adoption from announcements under review and ecosystem capabilities.',
+      capasIntro: 'What the evidence shows',
+      contextoIntro: 'Observatory context',
+      ctaCatalogo: 'Explore the catalog',
+      ctaMetodologia: 'How we verify',
       kpiCategoria: {
         proyectos: 'Initiatives',
         instituciones: 'Institutions',
@@ -814,8 +1080,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
     instituciones: {
       kicker: '01 / Institutions',
       titulo: 'Where AI initiatives appear across the State',
-      sub: 'Seven public institutions have documented AI-related initiatives. The catalog includes systems, pilots, plans and capabilities.',
+      sub: '{instituciones} public institutions have documented AI-related initiatives. The catalog includes systems, pilots, plans and capabilities.',
       proyectosLabel: 'initiatives',
+      conteoDerivadoLabel: 'classified in the catalog',
       verDetalle: 'View details',
       tipoLabel: {
         ministerio: 'Ministry',
@@ -863,9 +1130,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     acerca: {
       kicker: '05 / About',
-      titulo: 'An independent initiative to map AI adoption inside the State',
-      p1: 'AI Observatory Costa Rica fills a gap: there is no public, up-to-date and verifiable source on where, how and with what results artificial intelligence is being adopted across Costa Rica\u2019s public sector.',
-      p2: 'This site gathers documented systems, pilots, plans and other initiatives, along with pending bills and indicators benchmarked against the region. Each record links to the public source consulted.',
+      titulo: 'An independent initiative that separates evidence, announcements and capabilities',
+      p1: 'AI Observatory Costa Rica fills a gap: there is no public, up-to-date source applying verifiable criteria to distinguish where artificial intelligence is being adopted from where only plans, mentions or related capabilities exist.',
+      p2: 'This site organizes initiatives into three layers: verified adoption, under review, and ecosystem and capabilities. It also documents pending bills and indicators benchmarked against the region. Every record links its sources and publishes information gaps.',
       p3: 'The goal is to build a useful tool for decision makers, journalists, academia, the private sector and citizens interested in how AI is being used with public funds.',
       ctaPregunta:
         'Do you know of an AI project in a public institution that is not listed here?',
@@ -895,16 +1162,148 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     timeline: {
       kicker: 'Timeline',
-      titulo: 'Documented AI initiatives in the Costa Rican State, 2018-2026',
-      sub: 'Each dot is an initiative documented in the catalog. The timeline combines operational systems, pilots, plans and capabilities; each record states the available evidence.',
+      titulo: 'When evidence of adoption, plans and capabilities appears',
+      sub: 'The primary view shows only AI systems or components with verified pilot or operational execution. The complete view adds announcements, research, infrastructure and capabilities with an explicit documentary date.',
       desdeLabel: 'since',
       sinResultadoLabel: 'No public metric',
+      vistaVerificada: 'Verified adoption',
+      vistaCompleta: 'All documented',
+      vistaVerificadaAyuda: '{adopcionVerificada} systems or components with verified pilot or operational execution',
+      vistaCompletaAyuda: '{iniciativasDocumentadas} initiatives, including plans and ecosystem capabilities',
+      scrollHint: 'Swipe horizontally to move across the years.',
+      fechaLabel: {
+        'inicio-operacion': 'Operational start',
+        'inicio-piloto': 'Pilot start',
+        anuncio: 'Announcement',
+        'primera-evidencia': 'First evidence',
+      },
     },
     panorama: {
       kicker: 'Overview',
       titulo: 'Initiative distribution by institution',
       sub: 'Compact view of all {proyectos} initiatives grouped by institution and colored by their current catalog status. Click any to open the detail page.',
       proyectoLabel: 'initiative',
+      leyendaLabel: 'Editorial classification',
+    },
+    catalogo: {
+      kicker: 'Evidence-based catalog',
+      titulo: 'Three layers to keep announcements separate from adoption',
+      sub: 'Each initiative is classified according to what its sources support. Only the first layer enters the verified-adoption count; the others remain visible because they document relevant commitments, infrastructure, research and capabilities.',
+      metaDescripcion: 'Verifiable catalog of AI-related systems, pilots, plans and capabilities across Costa Rica\u2019s public sector.',
+      totalDocumentadas: '{iniciativasDocumentadas} documented initiatives in total',
+      capas: {
+        verificado: {
+          titulo: 'Verified adoption',
+          corto: 'Verified',
+          descripcion: 'AI systems or components with evidence of pilot or operational execution.',
+          criterio: 'Counts as adoption only when both the AI technique and execution are confirmed by traceable sources.',
+        },
+        seguimiento: {
+          titulo: 'Initiatives under review',
+          corto: 'Under review',
+          descripcion: 'Announcements, pilots or reported systems whose technique, execution or current status still needs confirmation.',
+          criterio: 'Open questions and a next review date are retained when applicable.',
+        },
+        ecosistema: {
+          titulo: 'Ecosystem and capabilities',
+          corto: 'Ecosystem',
+          descripcion: 'Digital infrastructure, research, training, governance and digitization related to AI.',
+          criterio: 'These provide context but are not added to the count of AI systems adopted by the State.',
+        },
+      },
+      verTodas: 'View all {iniciativasDocumentadas} initiatives',
+      buscarLabel: 'Search the catalog',
+      buscarPlaceholder: 'Name, institution or description',
+      institucionFiltroLabel: 'Filter by institution',
+      todasInstituciones: 'All institutions',
+      resultadosLabel: 'visible records',
+      sinResultados: 'No records match these filters.',
+      limpiarFiltros: 'Clear filters',
+      fichaCta: 'Open evidence record',
+      ultimaVerificacionLabel: 'Verified',
+      proximaRevisionLabel: 'Next review',
+      metodologiaTitulo: 'A reproducible classification',
+      metodologiaCuerpo: 'The visible status is not determined by a project name or an AI mention. Existence, execution, AI technique, operational use, results and governance are assessed separately, and every conclusion retains its sources.',
+      metodologiaCta: 'Read the full methodology',
+      tipos: {
+        'sistema-ia': 'AI system',
+        'componente-ia': 'AI component',
+        'infraestructura-digital': 'Digital infrastructure',
+        'programa-capacidades': 'Capacity-building program',
+        investigacion: 'Research',
+        'politica-gobernanza': 'Policy or governance',
+        'digitalizacion-no-ia': 'Digitization without confirmed AI',
+        'por-determinar': 'Type undetermined',
+      },
+      estados: {
+        verificado: 'Verified adoption',
+        seguimiento: 'Under review',
+        ecosistema: 'Ecosystem and capabilities',
+        descartado: 'Excluded',
+      },
+      fases: {
+        anunciado: 'Announced',
+        planificado: 'Planned',
+        desarrollo: 'In development',
+        'prueba-concepto': 'Proof of concept',
+        piloto: 'Pilot',
+        operativo: 'Operational',
+        pausado: 'Paused',
+        suspendido: 'Suspended',
+        finalizado: 'Completed',
+        cancelado: 'Canceled',
+        'no-determinado': 'Undetermined',
+      },
+      estadosIA: {
+        confirmada: 'AI confirmed',
+        'declarada-sin-tecnica': 'AI declared, technique not published',
+        'no-determinada': 'AI undetermined',
+        descartada: 'AI excluded',
+      },
+      evaluacionEstados: {
+        confirmado: 'Confirmed',
+        'parcialmente-confirmado': 'Partially confirmed',
+        inferido: 'Inferred',
+        'no-determinado': 'Undetermined',
+        contradicho: 'Contradicted',
+      },
+      dimensiones: {
+        existencia: 'Existence',
+        ejecucion: 'Execution',
+        tecnicaIA: 'AI technique',
+        usoOperativo: 'Operational use',
+        resultados: 'Results',
+        gobernanza: 'Governance',
+      },
+      tiposFuente: {
+        'primaria-oficial': 'Official primary source',
+        'acceso-informacion': 'Access-to-information response',
+        multilateral: 'Multilateral organization',
+        academica: 'Academic',
+        prensa: 'News media',
+        'otra-secundaria': 'Other secondary source',
+      },
+      respaldosFuente: {
+        existencia: 'existence',
+        'objetivo-declarado': 'stated objective',
+        meta: 'target',
+        ejecucion: 'execution',
+        'tecnica-ia': 'AI technique',
+        'uso-operativo': 'operational use',
+        'resultado-reportado': 'reported result',
+        'resultado-independiente': 'independent result',
+        gobernanza: 'governance',
+        'inferencia-editorial': 'editorial inference',
+      },
+      relaciones: {
+        'mismo-que': 'Same initiative',
+        'posible-duplicado': 'Possible duplicate',
+        'componente-de': 'Component of',
+        'depende-de': 'Depends on',
+        'alimenta-a': 'Feeds into',
+        'distinto-de': 'Distinct from',
+        'relacion-no-acreditada': 'Unverified relationship',
+      },
     },
     chartIlia: {
       inversionTooltip: 'Investment',
@@ -953,10 +1352,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
         stories: 'Vertical stories',
       },
       assets: {
-        kpiHeroTitulo: '{proyectos} initiatives, {instituciones} institutions, {legislacion} bills',
-        timelineTitulo: 'Documented AI initiatives, 2018-2026',
+        kpiHeroTitulo: '{adopcionVerificada} verified · {seguimiento} under review · {ecosistema} ecosystem',
+        timelineTitulo: 'Verified AI adoption, 2019-2024',
         iliaTitulo: 'Costa Rica vs Latin America (ILIA 2025)',
-        mapaTitulo: 'Initiative distribution by institution',
+        mapaTitulo: '{iniciativasDocumentadas} initiatives across three evidence layers',
         brechaXroad: 'Gap 1 — National interoperability',
         brechaGobernanza: 'Gap 2 — Formal governance framework',
         brechaChatbot: 'Gap 3 — National citizen chatbot',
@@ -992,17 +1391,48 @@ export const dictionaries: Record<Locale, Dictionary> = {
       relacionadosLabel: 'Related projects',
       volverLabel: '← Back to institution',
       metaDescripcion: 'AI project inside Costa Rica\u2019s public sector.',
+      fichaEvidenciaLabel: 'Evidence record',
+      tipoIniciativaLabel: 'Initiative type',
+      faseLabel: 'Documented phase',
+      estadoIALabel: 'AI confirmation',
+      evidenciaEjecucionLabel: 'Execution evidence',
+      primeraEvidenciaLabel: 'First evidence',
+      ultimaVerificacionLabel: 'Last verified',
+      proximaRevisionLabel: 'Next review',
+      objetivoDeclaradoLabel: 'Objective stated by the institution',
+      confirmadoLabel: 'What is confirmed',
+      noDeterminadoLabel: 'What could not be determined',
+      preguntasAbiertasLabel: 'Open questions',
+      resultadosDocumentadosLabel: 'Documented results',
+      evidenciaTitulo: 'Evidence matrix',
+      evidenciaSub: 'Each dimension is assessed separately. An undetermined state is published as such and is not filled in by inference.',
+      fuentesTitulo: 'Sources and traceability',
+      fuentesSub: 'Sources state which claims they support, their origin and the date on which they were consulted.',
+      publicadorLabel: 'Publisher',
+      tipoFuenteLabel: 'Source type',
+      fechaPublicacionLabel: 'Published',
+      fechaConsultaLabel: 'Consulted',
+      respaldaLabel: 'Supports',
+      relacionesTitulo: 'Documented relationships',
+      verIniciativaLabel: 'View related initiative',
+      sinDatosConfirmados: 'Confirmed evidence is detailed in the matrix and documented results; there are no additional notes in this field.',
+      sinNoDeterminados: 'No undetermined fields were recorded in the current review.',
+      sinPreguntasAbiertas: 'No additional open questions were recorded in the current review.',
     },
     institucionDetalle: {
       tipoLabel: 'Type',
       sitioOficialLabel: 'Official website',
       resumenLabel: 'Executive summary',
       proyectosLabel: 'AI projects',
-      leccionesLabel: 'Adoption lessons',
+      leccionesLabel: 'Evidence reading',
       operativosLabel: 'live',
       pilotosLabel: 'pilots',
       planificadosLabel: 'planned',
       metaDescripcion: 'Costa Rican public institution with AI projects.',
+      verificadosLabel: 'verified adoptions',
+      seguimientoLabel: 'under review',
+      ecosistemaLabel: 'ecosystem records',
+      conteoNota: 'Counts are derived from the current catalog records, not from a figure declared by the institution.',
     },
     analisis: {
       kicker: 'Analysis',
@@ -1045,12 +1475,14 @@ export const dictionaries: Record<Locale, Dictionary> = {
       },
       metodologia: {
         titulo: 'Methodology',
-        cuerpo: 'Every published data point meets the following criteria:',
+        cuerpo: 'The catalog retains verifiable initiatives even when they do not all represent AI adoption. Every record is reviewed under these criteria:',
         bullets: [
-          'It comes from a verifiable public source: a State institution, multilateral body, academic institution or recognized media outlet. Source type should be distinguished.',
-          'It links to the document or publication in the "Source consulted" field.',
-          'If a number is not confirmed by a verifiable source, it is not published.',
-          'English translations are reviewed; figures and proper names remain identical in both languages.',
+          'Existence, execution, AI technique, operational use, results and governance are assessed as separate dimensions.',
+          'Only an AI system or component with a confirmed technique and confirmed pilot or operational execution counts as verified adoption.',
+          'An official announcement proves that an initiative was announced, not that execution began. It remains under review until later evidence is found.',
+          'Infrastructure, research, training, governance and digitization are retained as ecosystem and capabilities without adding them to the adoption count.',
+          'Every claim links to traceable sources and states what each source supports. News reporting may guide research but does not replace a primary source when execution is asserted.',
+          'Fields without sufficient evidence are published as undetermined, and records with material gaps retain open questions or a next review date.',
           'The "Context" and "Lessons" sections are editorial interpretation built on verified data, clearly separated from the raw data.',
         ],
       },

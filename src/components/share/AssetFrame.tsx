@@ -54,7 +54,7 @@ export function AssetFrame({
       >
         <span className="font-semibold tracking-tight">observatorioia.org</span>
         <span className="opacity-60">·</span>
-        <span>{locale === 'es' ? 'Mayo 2026' : 'May 2026'}</span>
+        <span>{locale === 'es' ? 'Agosto 2026' : 'August 2026'}</span>
       </footer>
     </div>
   );

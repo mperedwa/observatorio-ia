@@ -4,6 +4,10 @@ import { notFound } from 'next/navigation';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { getDictionary } from '@/i18n/dictionaries';
 import { locales, type Locale } from '@/i18n/config';
+import { CAPAS_CATALOGO } from '@/data/presentacion-catalogo';
+import { DIMENSIONES_EVIDENCIA } from '@/data/modelo-evidencia';
+import { capaChip } from '@/components/catalogoStyles';
+import Link from 'next/link';
 
 // Enlaza inline la firma de autoría en el cuerpo de "Autoría". Los dos términos
 // son nombres propios idénticos en ES y EN, así que el mismo helper sirve para
@@ -85,7 +89,7 @@ export default async function QuienMantienePage({
   const q = t.quienMantiene;
 
   return (
-    <article className="max-w-3xl mx-auto px-6 py-12 sm:py-16">
+    <article className="max-w-4xl mx-auto px-6 py-12 sm:py-16">
       <Breadcrumb
         locale={lc}
         items={[
@@ -119,6 +123,48 @@ export default async function QuienMantienePage({
             </li>
           ))}
         </ul>
+      </section>
+
+      <section className="mb-10 border-t border-slate-200 pt-10">
+        <h2 className="text-lg font-semibold text-slate-900 mb-2">
+          {t.catalogo.metodologiaTitulo}
+        </h2>
+        <p className="text-base text-slate-700 text-pretty leading-relaxed">
+          {t.catalogo.metodologiaCuerpo}
+        </p>
+        <div className="mt-6 grid gap-4 md:grid-cols-3">
+          {CAPAS_CATALOGO.map((capa) => (
+            <article key={capa} className="rounded-xl border border-slate-200 bg-slate-50 p-5">
+              <span className={`rounded-full border px-2.5 py-1 text-xs font-semibold ${capaChip[capa]}`}>
+                {t.catalogo.capas[capa].corto}
+              </span>
+              <h3 className="mt-4 text-sm font-semibold text-slate-900">
+                {t.catalogo.capas[capa].titulo}
+              </h3>
+              <p className="mt-2 text-xs leading-relaxed text-slate-600">
+                {t.catalogo.capas[capa].criterio}
+              </p>
+            </article>
+          ))}
+        </div>
+        <div className="mt-6 rounded-xl border border-institucional-200 bg-institucional-50 p-5">
+          <h3 className="text-sm font-semibold text-slate-900">
+            {t.proyectoDetalle.evidenciaTitulo}
+          </h3>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {DIMENSIONES_EVIDENCIA.map((dimension) => (
+              <span key={dimension} className="rounded-full border border-institucional-200 bg-white px-3 py-1 text-xs text-institucional-800">
+                {t.catalogo.dimensiones[dimension]}
+              </span>
+            ))}
+          </div>
+        </div>
+        <Link
+          href={`/${lc}/proyectos`}
+          className="mt-5 inline-flex text-sm font-semibold text-institucional-700 hover:underline"
+        >
+          {t.hero.ctaCatalogo} →
+        </Link>
       </section>
 
       <section className="mb-10 bg-institucional-50 border border-institucional-200 rounded-lg p-6">
