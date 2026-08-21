@@ -52,6 +52,10 @@ export interface IndicadorEnia {
 export interface CruceCatalogoEnia {
   estado: EstadoCruceEnia;
   proyectoIds: string[];
+  /** Fila fuente anterior que conserva la decisión canónica cuando hay repetición semántica. */
+  intervencionCanonicaId?: string;
+  /** Justificación editorial del cruce; no altera el texto transcrito del Plan. */
+  fundamento: Bilingual;
 }
 
 export interface EvidenciaExternaEnia {
@@ -108,7 +112,7 @@ export interface ResultadoEnia {
 }
 
 export interface InventarioEnia {
-  schemaVersion: 1;
+  schemaVersion: 2;
   fechaCorte: string;
   fuente: {
     titulo: Bilingual;
@@ -146,4 +150,26 @@ export function contarIntervencionesEniaPorTipo(): Record<TipoIntervencionEnia, 
   }
 
   return conteos;
+}
+
+export function contarIntervencionesEniaPorCruce(): Record<EstadoCruceEnia, number> {
+  const conteos = Object.fromEntries(
+    ESTADOS_CRUCE_ENIA.map((estado) => [estado, 0]),
+  ) as Record<EstadoCruceEnia, number>;
+
+  for (const intervencion of intervencionesEnia) {
+    conteos[intervencion.cruceCatalogo.estado] += 1;
+  }
+
+  return conteos;
+}
+
+export function obtenerProyectoIdsMapeadosEnEnia(): string[] {
+  return [
+    ...new Set(
+      intervencionesEnia.flatMap(
+        (intervencion) => intervencion.cruceCatalogo.proyectoIds,
+      ),
+    ),
+  ].sort();
 }

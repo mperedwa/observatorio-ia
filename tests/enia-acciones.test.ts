@@ -2,14 +2,17 @@ import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 import { describe, expect, it } from 'vitest';
 import schema from '../src/data/schemas/eniaAcciones.schema.json';
+import { proyectos } from '../src/data/proyectos';
 import {
   ESTADOS_CRUCE_ENIA,
   ESTADOS_EJECUCION_ENIA,
   RECOMENDACIONES_EDITORIALES_ENIA,
   TIPOS_INTERVENCION_ENIA,
+  contarIntervencionesEniaPorCruce,
   contarIntervencionesEniaPorTipo,
   inventarioEnia,
   intervencionesEnia,
+  obtenerProyectoIdsMapeadosEnEnia,
   resultadosEnia,
 } from '../src/data/eniaAcciones';
 
@@ -69,28 +72,142 @@ describe('inventario del Plan de Acción ENIA', () => {
     ).toBe('2.1.1');
   });
 
-  it('no convierte metas oficiales en evidencia de ejecución', () => {
-    expect(
-      intervencionesEnia.every(
-        (intervencion) =>
-          intervencion.estadoEjecucion === 'no-verificado' &&
-          intervencion.cruceCatalogo.estado === 'no-determinado' &&
-          intervencion.cruceCatalogo.proyectoIds.length === 0,
-      ),
-    ).toBe(true);
+  it('completa el crosswalk sin convertir una meta en evidencia', () => {
+    expect(inventarioEnia.schemaVersion).toBe(2);
+    expect(contarIntervencionesEniaPorCruce()).toEqual({
+      'mapeado-exacto': 4,
+      'coincidencia-parcial': 9,
+      'posible-duplicado': 9,
+      'nuevo-con-evidencia': 2,
+      'enia-solamente': 22,
+      'no-es-sistema-ia': 83,
+      'no-determinado': 0,
+    });
+
+    for (const intervencion of intervencionesEnia) {
+      expect(intervencion.cruceCatalogo.fundamento.es.length).toBeGreaterThan(0);
+      expect(intervencion.cruceCatalogo.fundamento.en.length).toBeGreaterThan(0);
+
+      if (
+        intervencion.cruceCatalogo.estado === 'mapeado-exacto' ||
+        intervencion.cruceCatalogo.estado === 'coincidencia-parcial'
+      ) {
+        expect(intervencion.cruceCatalogo.proyectoIds.length).toBeGreaterThan(0);
+      }
+
+      if (
+        intervencion.cruceCatalogo.estado === 'enia-solamente' ||
+        intervencion.cruceCatalogo.estado === 'no-es-sistema-ia'
+      ) {
+        expect(intervencion.cruceCatalogo.proyectoIds).toEqual([]);
+        expect(intervencion.estadoEjecucion).toBe('no-verificado');
+      }
+
+      if (intervencion.cruceCatalogo.estado === 'nuevo-con-evidencia') {
+        expect(intervencion.cruceCatalogo.proyectoIds).toEqual([]);
+        expect(intervencion.evidenciasExternas?.length).toBeGreaterThan(0);
+      }
+    }
   });
 
   it('clasifica las 129 intervenciones por naturaleza, no como 129 sistemas', () => {
     expect(contarIntervencionesEniaPorTipo()).toEqual({
       'politica-gobernanza': 24,
-      'capacitacion-formacion': 48,
+      'capacitacion-formacion': 47,
       'investigacion-diagnostico': 9,
       'articulacion-financiamiento': 8,
       'infraestructura-habilitante': 11,
-      'solucion-ia-declarada': 28,
+      'solucion-ia-declarada': 29,
       'automatizacion-digital': 1,
       'por-determinar': 0,
     });
+  });
+
+  it('solo referencia IDs existentes del catálogo', () => {
+    const idsCatalogo = new Set(proyectos.map((proyecto) => proyecto.id));
+    const idsMapeados = obtenerProyectoIdsMapeadosEnEnia();
+
+    expect(idsMapeados).toEqual([
+      'ccss-aida',
+      'ccss-depuracion-listas',
+      'ccss-lidia',
+      'ccss-logistica-ia-abastecimiento',
+      'ccss-redimed',
+      'ccss-tec-formacion',
+      'cenat-lania',
+      'hacienda-anomaly',
+      'hacienda-asistente',
+      'mep-intel',
+      'micitt-agroboost',
+      'micitt-linc',
+    ]);
+    expect(idsMapeados.every((id) => idsCatalogo.has(id))).toBe(true);
+  });
+
+  it('conserva nueve repeticiones con una fila canónica válida', () => {
+    const porId = new Map(
+      intervencionesEnia.map((intervencion) => [intervencion.id, intervencion]),
+    );
+    const duplicados = intervencionesEnia.filter(
+      (intervencion) => intervencion.cruceCatalogo.estado === 'posible-duplicado',
+    );
+
+    expect(duplicados.map((intervencion) => intervencion.id)).toEqual([
+      'enia-3-1-1-04',
+      'enia-3-2-1-01',
+      'enia-4-1-2-01',
+      'enia-4-1-3-14',
+      'enia-4-1-3-21',
+      'enia-4-1-3-22',
+      'enia-4-1-3-23',
+      'enia-4-1-3-30',
+      'enia-5-1-3-04',
+    ]);
+
+    for (const duplicado of duplicados) {
+      const canonicaId = duplicado.cruceCatalogo.intervencionCanonicaId;
+      expect(canonicaId).toBeDefined();
+      expect(canonicaId).not.toBe(duplicado.id);
+      expect(porId.has(canonicaId!)).toBe(true);
+      expect(porId.get(canonicaId!)?.cruceCatalogo.estado).not.toBe(
+        'posible-duplicado',
+      );
+    }
+  });
+
+  it('mantiene separados los casos sensibles y exige evidencia para el hallazgo nuevo', () => {
+    const porId = new Map(
+      intervencionesEnia.map((intervencion) => [intervencion.id, intervencion]),
+    );
+    const ins = porId.get('enia-4-1-3-24');
+    const inamu = porId.get('enia-4-1-3-05');
+    const ice = porId.get('enia-4-1-3-25');
+    const ayaCompras = porId.get('enia-4-1-3-27');
+    const rpa = porId.get('enia-4-1-3-29');
+
+    expect(ins?.cruceCatalogo.estado).toBe('nuevo-con-evidencia');
+    expect(ins?.estadoEjecucion).toBe('verificado');
+    expect(ins?.faseRealVerificada).toBe('operativo');
+    expect(ins?.evidenciasExternas?.[0]?.publicador).toBe(
+      'Instituto Nacional de Seguros',
+    );
+
+    expect(inamu?.cruceCatalogo.estado).toBe('nuevo-con-evidencia');
+    expect(inamu?.estadoEjecucion).toBe('verificado');
+    expect(inamu?.faseRealVerificada).toBe('operativo');
+    expect(inamu?.evidenciasExternas?.map((fuente) => fuente.id)).toEqual([
+      'inamu-ela-ia-oficial',
+      'inamu-ela-terminos-privacidad',
+    ]);
+
+    expect(ice?.cruceCatalogo.estado).toBe('enia-solamente');
+    expect(ice?.cruceCatalogo.proyectoIds).toEqual([]);
+    expect(ice?.notasEditoriales?.es).toContain('OIJ-TEC');
+    expect(ice?.notasEditoriales?.es).toContain('SUPERCOP');
+
+    expect(ayaCompras?.cruceCatalogo.estado).toBe('enia-solamente');
+    expect(ayaCompras?.notasEditoriales?.es).toContain('no delega');
+    expect(rpa?.cruceCatalogo.estado).toBe('no-es-sistema-ia');
   });
 
   it('mantiene IDs únicos y trazabilidad a la página fuente', () => {

@@ -13,7 +13,7 @@
   ],
   "additionalProperties": false,
   "properties": {
-    "schemaVersion": { "const": 1 },
+    "schemaVersion": { "const": 2 },
     "fechaCorte": { "type": "string", "format": "date" },
     "fuente": { "$ref": "#/definitions/fuente" },
     "resumen": { "$ref": "#/definitions/resumen" },
@@ -125,7 +125,7 @@
     },
     "cruceCatalogo": {
       "type": "object",
-      "required": ["estado", "proyectoIds"],
+      "required": ["estado", "proyectoIds", "fundamento"],
       "additionalProperties": false,
       "properties": {
         "estado": {
@@ -144,7 +144,12 @@
           "type": "array",
           "uniqueItems": true,
           "items": { "type": "string", "minLength": 1 }
-        }
+        },
+        "intervencionCanonicaId": {
+          "type": "string",
+          "pattern": "^enia-[1-7]-[0-9]+-[0-9]+-[0-9]{2}$"
+        },
+        "fundamento": { "$ref": "#/definitions/bilingual" }
       }
     },
     "evidenciaExterna": {

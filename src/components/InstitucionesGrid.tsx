@@ -49,7 +49,9 @@ export function InstitucionesGrid({ locale, t }: { locale: Locale; t: Dictionary
                     {resumen.total}
                   </div>
                   <div className="text-xs text-slate-500">
-                    {t.instituciones.proyectosLabel}
+                    {resumen.total === 1
+                      ? t.panorama.proyectoLabel
+                      : t.instituciones.proyectosLabel}
                   </div>
                 </div>
               </Link>

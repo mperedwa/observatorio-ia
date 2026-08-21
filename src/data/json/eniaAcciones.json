@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "fechaCorte": "2026-08-21",
   "fuente": {
     "titulo": {
@@ -87,8 +87,12 @@
           "tipoIntervencion": "politica-gobernanza",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -135,8 +139,12 @@
           "tipoIntervencion": "politica-gobernanza",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -159,8 +167,12 @@
           "tipoIntervencion": "politica-gobernanza",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -183,8 +195,12 @@
           "tipoIntervencion": "politica-gobernanza",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -207,8 +223,12 @@
           "tipoIntervencion": "politica-gobernanza",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -231,8 +251,12 @@
           "tipoIntervencion": "politica-gobernanza",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -255,8 +279,12 @@
           "tipoIntervencion": "politica-gobernanza",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -279,8 +307,12 @@
           "tipoIntervencion": "politica-gobernanza",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -303,8 +335,12 @@
           "tipoIntervencion": "politica-gobernanza",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -327,8 +363,12 @@
           "tipoIntervencion": "politica-gobernanza",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -380,8 +420,12 @@
           "tipoIntervencion": "politica-gobernanza",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -428,8 +472,12 @@
           "tipoIntervencion": "politica-gobernanza",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -452,8 +500,12 @@
           "tipoIntervencion": "politica-gobernanza",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -500,8 +552,12 @@
           "tipoIntervencion": "politica-gobernanza",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -524,8 +580,12 @@
           "tipoIntervencion": "politica-gobernanza",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -572,8 +632,12 @@
           "tipoIntervencion": "articulacion-financiamiento",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a articulación o financiamiento; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns coordination or funding; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -596,8 +660,12 @@
           "tipoIntervencion": "articulacion-financiamiento",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a articulación o financiamiento; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns coordination or funding; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -620,8 +688,12 @@
           "tipoIntervencion": "articulacion-financiamiento",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a articulación o financiamiento; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns coordination or funding; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -673,8 +745,12 @@
           "tipoIntervencion": "politica-gobernanza",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -697,8 +773,12 @@
           "tipoIntervencion": "politica-gobernanza",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -721,8 +801,12 @@
           "tipoIntervencion": "politica-gobernanza",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -745,8 +829,12 @@
           "tipoIntervencion": "politica-gobernanza",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -798,8 +886,12 @@
           "tipoIntervencion": "capacitacion-formacion",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -822,8 +914,12 @@
           "tipoIntervencion": "capacitacion-formacion",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -844,13 +940,20 @@
           "responsableEnFormalizacion": false,
           "aliadosOficiales": null,
           "tipoIntervencion": "capacitacion-formacion",
-          "estadoEjecucion": "no-verificado",
+          "estadoEjecucion": "parcialmente-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "coincidencia-parcial",
+            "proyectoIds": [
+              "micitt-agroboost"
+            ],
+            "fundamento": {
+              "es": "AgroBoost coincide en institución, público meta y transferencia de tecnologías de frontera al sector agrícola, pero el Plan no lo identifica por nombre ni permite demostrar que sea toda la intervención.",
+              "en": "AgroBoost matches the institution, target population and transfer of frontier technologies to agriculture, but the Plan does not name it or establish that it represents the entire intervention."
+            }
           },
           "recomendacionEditorial": "ecosistema",
-          "fechaUltimaRevision": "2026-08-21"
+          "fechaUltimaRevision": "2026-08-21",
+          "faseRealVerificada": "operativo"
         },
         {
           "id": "enia-2-1-1-04",
@@ -870,8 +973,12 @@
           "tipoIntervencion": "capacitacion-formacion",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -894,8 +1001,12 @@
           "tipoIntervencion": "solucion-ia-declarada",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "enia-solamente",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+              "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+            }
           },
           "recomendacionEditorial": "investigar-como-seguimiento",
           "fechaUltimaRevision": "2026-08-21"
@@ -918,8 +1029,12 @@
           "tipoIntervencion": "solucion-ia-declarada",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "enia-solamente",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+              "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+            }
           },
           "recomendacionEditorial": "investigar-como-seguimiento",
           "fechaUltimaRevision": "2026-08-21"
@@ -966,8 +1081,12 @@
           "tipoIntervencion": "articulacion-financiamiento",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a articulación o financiamiento; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns coordination or funding; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -988,13 +1107,20 @@
           "responsableEnFormalizacion": false,
           "aliadosOficiales": "IFAM",
           "tipoIntervencion": "articulacion-financiamiento",
-          "estadoEjecucion": "no-verificado",
+          "estadoEjecucion": "parcialmente-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "mapeado-exacto",
+            "proyectoIds": [
+              "micitt-linc"
+            ],
+            "fundamento": {
+              "es": "La fila nombra expresamente a LINC y el catálogo contiene la misma red de Laboratorios de Innovación Comunitaria. La operación general está verificada; no lo está el cumplimiento íntegro de la meta municipal de esta fila.",
+              "en": "The row expressly names LINC, and the catalogue contains the same Community Innovation Labs network. General operation is verified; full delivery of this row’s municipal target is not."
+            }
           },
           "recomendacionEditorial": "ecosistema",
-          "fechaUltimaRevision": "2026-08-21"
+          "fechaUltimaRevision": "2026-08-21",
+          "faseRealVerificada": "operativo"
         }
       ]
     },
@@ -1038,8 +1164,12 @@
           "tipoIntervencion": "investigacion-diagnostico",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a investigación o diagnóstico; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns research or diagnostic work; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -1062,8 +1192,12 @@
           "tipoIntervencion": "investigacion-diagnostico",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a investigación o diagnóstico; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns research or diagnostic work; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -1108,13 +1242,20 @@
           "responsableEnFormalizacion": false,
           "aliadosOficiales": "INA PROMOTORA FONAFIFO",
           "tipoIntervencion": "capacitacion-formacion",
-          "estadoEjecucion": "no-verificado",
+          "estadoEjecucion": "parcialmente-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "coincidencia-parcial",
+            "proyectoIds": [
+              "micitt-agroboost"
+            ],
+            "fundamento": {
+              "es": "AgroBoost aporta evidencia de asistencia y transferencia tecnológica a unidades productivas agrícolas, una parte del alcance amplio para emprendimientos, PYMES y PYMPAS. No hay identidad documental con toda la fila.",
+              "en": "AgroBoost provides evidence of assistance and technology transfer to agricultural production units, part of the broader scope for ventures, SMEs and small agricultural producers. Documentary identity with the full row is not established."
+            }
           },
           "recomendacionEditorial": "ecosistema",
-          "fechaUltimaRevision": "2026-08-21"
+          "fechaUltimaRevision": "2026-08-21",
+          "faseRealVerificada": "operativo"
         },
         {
           "id": "enia-2-2-2-02",
@@ -1134,8 +1275,12 @@
           "tipoIntervencion": "capacitacion-formacion",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -1158,8 +1303,12 @@
           "tipoIntervencion": "capacitacion-formacion",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -1187,8 +1336,12 @@
           "tipoIntervencion": "capacitacion-formacion",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -1235,8 +1388,12 @@
           "tipoIntervencion": "articulacion-financiamiento",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a articulación o financiamiento; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns coordination or funding; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -1286,13 +1443,20 @@
           "responsableEnFormalizacion": false,
           "aliadosOficiales": "Gobiernos locales",
           "tipoIntervencion": "infraestructura-habilitante",
-          "estadoEjecucion": "no-verificado",
+          "estadoEjecucion": "parcialmente-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "mapeado-exacto",
+            "proyectoIds": [
+              "micitt-linc"
+            ],
+            "fundamento": {
+              "es": "La intervención se refiere por nombre a los LINC y el catálogo documenta esa misma red. La fuente externa verifica operación y formación, aunque no cada transferencia tecnológica prevista por la meta.",
+              "en": "The intervention names LINC, and the catalogue documents that same network. External evidence verifies operation and training, although not every technology transfer anticipated by the target."
+            }
           },
           "recomendacionEditorial": "ecosistema",
-          "fechaUltimaRevision": "2026-08-21"
+          "fechaUltimaRevision": "2026-08-21",
+          "faseRealVerificada": "operativo"
         }
       ]
     },
@@ -1336,8 +1500,12 @@
           "tipoIntervencion": "investigacion-diagnostico",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a investigación o diagnóstico; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns research or diagnostic work; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -1360,8 +1528,12 @@
           "tipoIntervencion": "investigacion-diagnostico",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a investigación o diagnóstico; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns research or diagnostic work; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -1384,8 +1556,12 @@
           "tipoIntervencion": "investigacion-diagnostico",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a investigación o diagnóstico; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns research or diagnostic work; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -1408,8 +1584,13 @@
           "tipoIntervencion": "investigacion-diagnostico",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "posible-duplicado",
+            "proyectoIds": [],
+            "intervencionCanonicaId": "enia-2-2-1-02",
+            "fundamento": {
+              "es": "La redacción, institución, indicador o metas reproducen sustancialmente la fila enia-2-2-1-02. Se conserva como registro fuente y se remite a esa fila como decisión canónica.",
+              "en": "The wording, institution, indicator or targets substantially reproduce row enia-2-2-1-02. It is retained as a source record and points to that row as the canonical decision."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -1456,8 +1637,12 @@
           "tipoIntervencion": "articulacion-financiamiento",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a articulación o financiamiento; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns coordination or funding; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -1502,13 +1687,21 @@
           "responsableEnFormalizacion": false,
           "aliadosOficiales": "INA",
           "tipoIntervencion": "capacitacion-formacion",
-          "estadoEjecucion": "no-verificado",
+          "estadoEjecucion": "parcialmente-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "posible-duplicado",
+            "proyectoIds": [
+              "micitt-agroboost"
+            ],
+            "intervencionCanonicaId": "enia-2-1-1-03",
+            "fundamento": {
+              "es": "La redacción, institución, indicador o metas reproducen sustancialmente la fila enia-2-1-1-03. Se conserva como registro fuente y se remite a esa fila como decisión canónica.",
+              "en": "The wording, institution, indicator or targets substantially reproduce row enia-2-1-1-03. It is retained as a source record and points to that row as the canonical decision."
+            }
           },
           "recomendacionEditorial": "ecosistema",
-          "fechaUltimaRevision": "2026-08-21"
+          "fechaUltimaRevision": "2026-08-21",
+          "faseRealVerificada": "operativo"
         }
       ]
     },
@@ -1552,8 +1745,12 @@
           "tipoIntervencion": "capacitacion-formacion",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -1576,8 +1773,12 @@
           "tipoIntervencion": "capacitacion-formacion",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -1624,8 +1825,12 @@
           "tipoIntervencion": "politica-gobernanza",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -1648,8 +1853,12 @@
           "tipoIntervencion": "politica-gobernanza",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -1696,8 +1905,13 @@
           "tipoIntervencion": "capacitacion-formacion",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "posible-duplicado",
+            "proyectoIds": [],
+            "intervencionCanonicaId": "enia-2-1-1-01",
+            "fundamento": {
+              "es": "La redacción, institución, indicador o metas reproducen sustancialmente la fila enia-2-1-1-01. Se conserva como registro fuente y se remite a esa fila como decisión canónica.",
+              "en": "The wording, institution, indicator or targets substantially reproduce row enia-2-1-1-01. It is retained as a source record and points to that row as the canonical decision."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -1720,8 +1934,12 @@
           "tipoIntervencion": "capacitacion-formacion",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -1744,8 +1962,12 @@
           "tipoIntervencion": "capacitacion-formacion",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -1768,8 +1990,12 @@
           "tipoIntervencion": "capacitacion-formacion",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -1792,8 +2018,12 @@
           "tipoIntervencion": "capacitacion-formacion",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -1816,8 +2046,12 @@
           "tipoIntervencion": "capacitacion-formacion",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -1840,8 +2074,12 @@
           "tipoIntervencion": "capacitacion-formacion",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -1864,8 +2102,12 @@
           "tipoIntervencion": "capacitacion-formacion",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -1888,8 +2130,12 @@
           "tipoIntervencion": "capacitacion-formacion",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -1912,8 +2158,12 @@
           "tipoIntervencion": "capacitacion-formacion",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -1936,8 +2186,12 @@
           "tipoIntervencion": "capacitacion-formacion",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -1960,8 +2214,12 @@
           "tipoIntervencion": "capacitacion-formacion",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -1982,13 +2240,20 @@
           "responsableEnFormalizacion": false,
           "aliadosOficiales": null,
           "tipoIntervencion": "capacitacion-formacion",
-          "estadoEjecucion": "no-verificado",
+          "estadoEjecucion": "parcialmente-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "coincidencia-parcial",
+            "proyectoIds": [
+              "ccss-tec-formacion"
+            ],
+            "fundamento": {
+              "es": "El programa TEC-CCSS confirma una acción de formación institucional en IA y dos prototipos formativos, pero no se encontró una fuente que lo identifique como la ejecución completa de este compromiso amplio de capacitación.",
+              "en": "The TEC-CCSS program confirms an institutional AI training action and two training prototypes, but no source identifies it as full delivery of this broad training commitment."
+            }
           },
           "recomendacionEditorial": "ecosistema",
-          "fechaUltimaRevision": "2026-08-21"
+          "fechaUltimaRevision": "2026-08-21",
+          "faseRealVerificada": "finalizado"
         },
         {
           "id": "enia-4-1-2-14",
@@ -2008,8 +2273,12 @@
           "tipoIntervencion": "capacitacion-formacion",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -2032,8 +2301,12 @@
           "tipoIntervencion": "capacitacion-formacion",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -2080,8 +2353,12 @@
           "tipoIntervencion": "solucion-ia-declarada",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "enia-solamente",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+              "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+            }
           },
           "recomendacionEditorial": "investigar-como-seguimiento",
           "fechaUltimaRevision": "2026-08-21"
@@ -2104,8 +2381,12 @@
           "tipoIntervencion": "solucion-ia-declarada",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "enia-solamente",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+              "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+            }
           },
           "recomendacionEditorial": "investigar-como-seguimiento",
           "fechaUltimaRevision": "2026-08-21"
@@ -2128,8 +2409,12 @@
           "tipoIntervencion": "solucion-ia-declarada",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "enia-solamente",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+              "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+            }
           },
           "recomendacionEditorial": "investigar-como-seguimiento",
           "fechaUltimaRevision": "2026-08-21"
@@ -2152,11 +2437,19 @@
           "tipoIntervencion": "solucion-ia-declarada",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "enia-solamente",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+              "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+            }
           },
           "recomendacionEditorial": "investigar-como-seguimiento",
-          "fechaUltimaRevision": "2026-08-21"
+          "fechaUltimaRevision": "2026-08-21",
+          "notasEditoriales": {
+            "es": "El MTSS mantiene un chat de atención desde 2018, pero las fuentes oficiales localizadas no lo describen como IA ni demuestran la creación del chatbot previsto por esta fila.",
+            "en": "MTSS has operated a support chat since 2018, but the official sources found do not describe it as AI or establish creation of the chatbot anticipated by this row."
+          }
         },
         {
           "id": "enia-4-1-3-05",
@@ -2174,13 +2467,55 @@
           "responsableEnFormalizacion": false,
           "aliadosOficiales": null,
           "tipoIntervencion": "solucion-ia-declarada",
-          "estadoEjecucion": "no-verificado",
+          "estadoEjecucion": "verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "nuevo-con-evidencia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "No existe aún una ficha equivalente en el catálogo. El INAMU documenta que la aplicación Ela está disponible, utiliza inteligencia artificial y brinda atención, orientación y referencias a mujeres durante las 24 horas.",
+              "en": "No equivalent catalogue record exists yet. INAMU documents that the Ela application is available, uses artificial intelligence and provides women with support, guidance and referrals around the clock."
+            }
           },
           "recomendacionEditorial": "investigar-como-seguimiento",
-          "fechaUltimaRevision": "2026-08-21"
+          "fechaUltimaRevision": "2026-08-21",
+          "evidenciasExternas": [
+            {
+              "id": "inamu-ela-ia-oficial",
+              "titulo": {
+                "es": "Aplicación móvil Ela con inteligencia artificial",
+                "en": "Ela mobile application with artificial intelligence"
+              },
+              "url": "https://www.inamu.go.cr/inteligencia-artificial",
+              "publicador": "Instituto Nacional de las Mujeres",
+              "fechaConsulta": "2026-08-21",
+              "respalda": [
+                "existencia",
+                "ejecucion",
+                "tecnica-ia",
+                "uso-operativo"
+              ]
+            },
+            {
+              "id": "inamu-ela-terminos-privacidad",
+              "titulo": {
+                "es": "Términos, condiciones de uso y privacidad de la aplicación Ela",
+                "en": "Ela application terms, conditions of use and privacy notice"
+              },
+              "url": "https://elainamu.inamu.go.cr/assets/terminos_condiciones",
+              "publicador": "Instituto Nacional de las Mujeres",
+              "fechaConsulta": "2026-08-21",
+              "respalda": [
+                "existencia",
+                "uso-operativo",
+                "gobernanza"
+              ]
+            }
+          ],
+          "faseRealVerificada": "operativo",
+          "notasEditoriales": {
+            "es": "La ficha técnica institucional identifica GPT-4 Turbo y búsqueda de archivos. La aplicación trata datos de registro y socioeconómicos, y puede compartir geolocalización con el 9-1-1 cuando la persona usuaria activa esa función. No se localizaron métricas públicas de uso, precisión o derivaciones.",
+            "en": "The institutional technical page identifies GPT-4 Turbo and file search. The application processes registration and socioeconomic data and can share geolocation with emergency services when the user activates that function. No public usage, accuracy or referral metrics were found."
+          }
         },
         {
           "id": "enia-4-1-3-06",
@@ -2200,11 +2535,19 @@
           "tipoIntervencion": "solucion-ia-declarada",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "enia-solamente",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+              "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+            }
           },
           "recomendacionEditorial": "investigar-como-seguimiento",
-          "fechaUltimaRevision": "2026-08-21"
+          "fechaUltimaRevision": "2026-08-21",
+          "notasEditoriales": {
+            "es": "No se localizó evidencia oficial posterior que confirme diseño, aprobación o uso de los kioscos interactivos del PANI.",
+            "en": "No later official evidence was found confirming the design, approval or use of PANI’s interactive kiosks."
+          }
         },
         {
           "id": "enia-4-1-3-07",
@@ -2224,11 +2567,19 @@
           "tipoIntervencion": "solucion-ia-declarada",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "enia-solamente",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+              "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+            }
           },
           "recomendacionEditorial": "investigar-como-seguimiento",
-          "fechaUltimaRevision": "2026-08-21"
+          "fechaUltimaRevision": "2026-08-21",
+          "notasEditoriales": {
+            "es": "No se localizó una herramienta oficial de CNE que atribuya a IA la generación de preevaluaciones de amenaza.",
+            "en": "No official CNE tool was found that attributes generation of preliminary hazard assessments to AI."
+          }
         },
         {
           "id": "enia-4-1-3-08",
@@ -2248,8 +2599,12 @@
           "tipoIntervencion": "solucion-ia-declarada",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "enia-solamente",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+              "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+            }
           },
           "recomendacionEditorial": "investigar-como-seguimiento",
           "fechaUltimaRevision": "2026-08-21"
@@ -2272,8 +2627,12 @@
           "tipoIntervencion": "solucion-ia-declarada",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "enia-solamente",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+              "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+            }
           },
           "recomendacionEditorial": "investigar-como-seguimiento",
           "fechaUltimaRevision": "2026-08-21"
@@ -2294,13 +2653,21 @@
           "responsableEnFormalizacion": false,
           "aliadosOficiales": null,
           "tipoIntervencion": "solucion-ia-declarada",
-          "estadoEjecucion": "no-verificado",
+          "estadoEjecucion": "parcialmente-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "coincidencia-parcial",
+            "proyectoIds": [
+              "hacienda-anomaly",
+              "hacienda-asistente"
+            ],
+            "fundamento": {
+              "es": "El catálogo documenta una solución analítica de detección de anomalías y un asistente tributario en operación. Ambos cubren partes de la formulación amplia, pero la fila no los nombra ni prueba todas las funcionalidades previstas.",
+              "en": "The catalogue documents an anomaly-detection analytics solution and an operating tax assistant. Both cover parts of the broad wording, but the row does not name them or prove every planned function."
+            }
           },
           "recomendacionEditorial": "investigar-como-seguimiento",
-          "fechaUltimaRevision": "2026-08-21"
+          "fechaUltimaRevision": "2026-08-21",
+          "faseRealVerificada": "operativo"
         },
         {
           "id": "enia-4-1-3-11",
@@ -2320,8 +2687,12 @@
           "tipoIntervencion": "politica-gobernanza",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -2344,11 +2715,19 @@
           "tipoIntervencion": "solucion-ia-declarada",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "enia-solamente",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+              "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+            }
           },
           "recomendacionEditorial": "investigar-como-seguimiento",
-          "fechaUltimaRevision": "2026-08-21"
+          "fechaUltimaRevision": "2026-08-21",
+          "notasEditoriales": {
+            "es": "Las fuentes oficiales revisadas confirman análisis de inteligencia, escáneres y coordinación policial, pero no identifican una herramienta concreta de IA desplegada en las unidades especiales.",
+            "en": "The official sources reviewed confirm intelligence analysis, scanners and police coordination, but do not identify a specific deployed AI tool in the special units."
+          }
         },
         {
           "id": "enia-4-1-3-13",
@@ -2368,8 +2747,12 @@
           "tipoIntervencion": "solucion-ia-declarada",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "enia-solamente",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+              "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+            }
           },
           "recomendacionEditorial": "investigar-como-seguimiento",
           "fechaUltimaRevision": "2026-08-21"
@@ -2390,13 +2773,19 @@
           "responsableEnFormalizacion": false,
           "aliadosOficiales": null,
           "tipoIntervencion": "solucion-ia-declarada",
-          "estadoEjecucion": "no-verificado",
+          "estadoEjecucion": "verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "posible-duplicado",
+            "proyectoIds": [],
+            "intervencionCanonicaId": "enia-4-1-3-05",
+            "fundamento": {
+              "es": "La redacción, institución, indicador o metas reproducen sustancialmente la fila enia-4-1-3-05. Se conserva como registro fuente y se remite a esa fila como decisión canónica.",
+              "en": "The wording, institution, indicator or targets substantially reproduce row enia-4-1-3-05. It is retained as a source record and points to that row as the canonical decision."
+            }
           },
           "recomendacionEditorial": "investigar-como-seguimiento",
-          "fechaUltimaRevision": "2026-08-21"
+          "fechaUltimaRevision": "2026-08-21",
+          "faseRealVerificada": "operativo"
         },
         {
           "id": "enia-4-1-3-15",
@@ -2414,10 +2803,20 @@
           "responsableEnFormalizacion": false,
           "aliadosOficiales": null,
           "tipoIntervencion": "solucion-ia-declarada",
-          "estadoEjecucion": "no-verificado",
+          "estadoEjecucion": "parcialmente-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "coincidencia-parcial",
+            "proyectoIds": [
+              "ccss-aida",
+              "ccss-lidia",
+              "ccss-redimed",
+              "ccss-depuracion-listas",
+              "ccss-logistica-ia-abastecimiento"
+            ],
+            "fundamento": {
+              "es": "La fila describe una cartera institucional amplia. Las cinco fichas relacionadas demuestran capacidades o soluciones que cubren partes del alcance, pero ninguna fuente permite atribuirles el porcentaje base de 67 ni tratarlas como una sola iniciativa.",
+              "en": "The row describes a broad institutional portfolio. The five related records demonstrate capabilities or solutions covering parts of that scope, but no source supports attributing the 67 baseline percentage to them or treating them as one initiative."
+            }
           },
           "recomendacionEditorial": "investigar-como-seguimiento",
           "fechaUltimaRevision": "2026-08-21"
@@ -2438,13 +2837,20 @@
           "responsableEnFormalizacion": false,
           "aliadosOficiales": null,
           "tipoIntervencion": "solucion-ia-declarada",
-          "estadoEjecucion": "no-verificado",
+          "estadoEjecucion": "parcialmente-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "coincidencia-parcial",
+            "proyectoIds": [
+              "ccss-lidia"
+            ],
+            "fundamento": {
+              "es": "LIDIA confirma modelos predictivos clínicos sobre EDUS y coincide con una parte sustantiva del objetivo. La fila es más amplia: incluye patrones epidemiológicos, patologías y comportamientos, y no nombra a LIDIA.",
+              "en": "LIDIA confirms clinical predictive models using EDUS and matches a substantial part of the objective. The row is broader: it includes epidemiological patterns, pathologies and service behavior, and does not name LIDIA."
+            }
           },
           "recomendacionEditorial": "investigar-como-seguimiento",
-          "fechaUltimaRevision": "2026-08-21"
+          "fechaUltimaRevision": "2026-08-21",
+          "faseRealVerificada": "piloto"
         },
         {
           "id": "enia-4-1-3-17",
@@ -2464,8 +2870,12 @@
           "tipoIntervencion": "solucion-ia-declarada",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "enia-solamente",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+              "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+            }
           },
           "recomendacionEditorial": "investigar-como-seguimiento",
           "fechaUltimaRevision": "2026-08-21"
@@ -2486,13 +2896,20 @@
           "responsableEnFormalizacion": false,
           "aliadosOficiales": null,
           "tipoIntervencion": "capacitacion-formacion",
-          "estadoEjecucion": "no-verificado",
+          "estadoEjecucion": "parcialmente-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "coincidencia-parcial",
+            "proyectoIds": [
+              "ccss-tec-formacion"
+            ],
+            "fundamento": {
+              "es": "El programa TEC-CCSS verifica formación y prototipos en IA, por lo que materializa parte de la fila. No demuestra la estrategia institucional completa de tecnologías emergentes, automatización y programación visual.",
+              "en": "The TEC-CCSS program verifies AI training and prototypes, so it delivers part of the row. It does not establish the full institutional strategy for emerging technologies, automation and visual programming."
+            }
           },
           "recomendacionEditorial": "ecosistema",
-          "fechaUltimaRevision": "2026-08-21"
+          "fechaUltimaRevision": "2026-08-21",
+          "faseRealVerificada": "finalizado"
         },
         {
           "id": "enia-4-1-3-19",
@@ -2512,11 +2929,19 @@
           "tipoIntervencion": "solucion-ia-declarada",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "enia-solamente",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+              "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+            }
           },
           "recomendacionEditorial": "investigar-como-seguimiento",
-          "fechaUltimaRevision": "2026-08-21"
+          "fechaUltimaRevision": "2026-08-21",
+          "notasEditoriales": {
+            "es": "No se localizó evidencia externa del componente de auditoría automatizada con IA sobre SIES/MISE. La fila reaparece con redacción equivalente en enia-4-1-3-23.",
+            "en": "No external evidence was found for the AI-based automated-audit component over SIES/MISE. The row reappears with equivalent wording in enia-4-1-3-23."
+          }
         },
         {
           "id": "enia-4-1-3-20",
@@ -2536,11 +2961,19 @@
           "tipoIntervencion": "solucion-ia-declarada",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "enia-solamente",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+              "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+            }
           },
           "recomendacionEditorial": "investigar-como-seguimiento",
-          "fechaUltimaRevision": "2026-08-21"
+          "fechaUltimaRevision": "2026-08-21",
+          "notasEditoriales": {
+            "es": "Por su posible efecto en perfiles y beneficios económicos, esta intervención requiere evidencia sobre variables, base jurídica, revisión humana, error y mecanismo de impugnación antes de catalogarse como implementada.",
+            "en": "Because it may affect profiles and financial benefits, this intervention requires evidence on variables, legal basis, human review, error and appeal mechanisms before being catalogued as implemented."
+          }
         },
         {
           "id": "enia-4-1-3-21",
@@ -2558,10 +2991,21 @@
           "responsableEnFormalizacion": false,
           "aliadosOficiales": null,
           "tipoIntervencion": "solucion-ia-declarada",
-          "estadoEjecucion": "no-verificado",
+          "estadoEjecucion": "parcialmente-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "posible-duplicado",
+            "proyectoIds": [
+              "ccss-aida",
+              "ccss-lidia",
+              "ccss-redimed",
+              "ccss-depuracion-listas",
+              "ccss-logistica-ia-abastecimiento"
+            ],
+            "intervencionCanonicaId": "enia-4-1-3-15",
+            "fundamento": {
+              "es": "La redacción, institución, indicador o metas reproducen sustancialmente la fila enia-4-1-3-15. Se conserva como registro fuente y se remite a esa fila como decisión canónica.",
+              "en": "The wording, institution, indicator or targets substantially reproduce row enia-4-1-3-15. It is retained as a source record and points to that row as the canonical decision."
+            }
           },
           "recomendacionEditorial": "investigar-como-seguimiento",
           "fechaUltimaRevision": "2026-08-21"
@@ -2582,13 +3026,21 @@
           "responsableEnFormalizacion": false,
           "aliadosOficiales": null,
           "tipoIntervencion": "capacitacion-formacion",
-          "estadoEjecucion": "no-verificado",
+          "estadoEjecucion": "parcialmente-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "posible-duplicado",
+            "proyectoIds": [
+              "ccss-tec-formacion"
+            ],
+            "intervencionCanonicaId": "enia-4-1-3-18",
+            "fundamento": {
+              "es": "La redacción, institución, indicador o metas reproducen sustancialmente la fila enia-4-1-3-18. Se conserva como registro fuente y se remite a esa fila como decisión canónica.",
+              "en": "The wording, institution, indicator or targets substantially reproduce row enia-4-1-3-18. It is retained as a source record and points to that row as the canonical decision."
+            }
           },
           "recomendacionEditorial": "ecosistema",
-          "fechaUltimaRevision": "2026-08-21"
+          "fechaUltimaRevision": "2026-08-21",
+          "faseRealVerificada": "finalizado"
         },
         {
           "id": "enia-4-1-3-23",
@@ -2608,8 +3060,13 @@
           "tipoIntervencion": "solucion-ia-declarada",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "posible-duplicado",
+            "proyectoIds": [],
+            "intervencionCanonicaId": "enia-4-1-3-19",
+            "fundamento": {
+              "es": "La redacción, institución, indicador o metas reproducen sustancialmente la fila enia-4-1-3-19. Se conserva como registro fuente y se remite a esa fila como decisión canónica.",
+              "en": "The wording, institution, indicator or targets substantially reproduce row enia-4-1-3-19. It is retained as a source record and points to that row as the canonical decision."
+            }
           },
           "recomendacionEditorial": "investigar-como-seguimiento",
           "fechaUltimaRevision": "2026-08-21"
@@ -2630,13 +3087,40 @@
           "responsableEnFormalizacion": false,
           "aliadosOficiales": null,
           "tipoIntervencion": "solucion-ia-declarada",
-          "estadoEjecucion": "no-verificado",
+          "estadoEjecucion": "verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "nuevo-con-evidencia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "No existe aún una ficha equivalente en el catálogo. Un boletín oficial del INS anterior al Plan confirma IA en reclamaciones e indemnizaciones de gastos médicos, automatización de flujos y resultados operativos; el Plan aporta una segunda referencia institucional al mismo proceso.",
+              "en": "No equivalent catalogue record exists yet. An official INS bulletin predating the Plan confirms AI in medical-expense claims and reimbursements, workflow automation and operating results; the Plan provides a second institutional reference to the same process."
+            }
           },
           "recomendacionEditorial": "investigar-como-seguimiento",
-          "fechaUltimaRevision": "2026-08-21"
+          "fechaUltimaRevision": "2026-08-21",
+          "evidenciasExternas": [
+            {
+              "id": "ins-reclamos-medicos-ia-2024",
+              "titulo": {
+                "es": "INS revoluciona su seguro de gastos médicos con inteligencia artificial y agilidad",
+                "en": "INS transforms its medical-expense insurance with artificial intelligence and agile methods"
+              },
+              "url": "https://www.grupoins.com/media/pyfkpyjz/bolet%C3%ADn-insignia-diciembre-2024.pdf",
+              "publicador": "Instituto Nacional de Seguros",
+              "fechaConsulta": "2026-08-21",
+              "respalda": [
+                "existencia",
+                "ejecucion",
+                "uso-operativo",
+                "resultado"
+              ]
+            }
+          ],
+          "faseRealVerificada": "operativo",
+          "notasEditoriales": {
+            "es": "El INS reporta cerca de 10.000 solicitudes mensuales, una reducción del tiempo promedio de pago de entre 12 y 13 días a entre 6 y 7 días, y un nivel de eficiencia de 72%. La fuente no publica arquitectura, criterios de clasificación, revisión humana ni métricas de error.",
+            "en": "INS reports about 10,000 monthly requests, a reduction in average payment time from 12-13 to 6-7 days, and a 72% efficiency level. The source does not publish the architecture, classification criteria, human-review process or error metrics."
+          }
         },
         {
           "id": "enia-4-1-3-25",
@@ -2656,11 +3140,19 @@
           "tipoIntervencion": "solucion-ia-declarada",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "enia-solamente",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+              "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+            }
           },
           "recomendacionEditorial": "investigar-como-seguimiento",
-          "fechaUltimaRevision": "2026-08-21"
+          "fechaUltimaRevision": "2026-08-21",
+          "notasEditoriales": {
+            "es": "La investigación documental no encontró formalización, convenio, contratación, piloto ni resultado ICE-OIJ. OIJ-TEC y SUPERCOP son iniciativas distintas y no deben fusionarse con esta fila. El Plan reutiliza además el mismo indicador y metas en enia-5-1-1-02 para un objetivo educativo diferente.",
+            "en": "Documentary research found no formalization, agreement, procurement, pilot or result for ICE-OIJ. OIJ-TEC and SUPERCOP are separate initiatives and must not be merged with this row. The Plan also reuses the same indicator and targets in enia-5-1-1-02 for a different education objective."
+          }
         },
         {
           "id": "enia-4-1-3-26",
@@ -2680,11 +3172,19 @@
           "tipoIntervencion": "solucion-ia-declarada",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "enia-solamente",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+              "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+            }
           },
           "recomendacionEditorial": "investigar-como-seguimiento",
-          "fechaUltimaRevision": "2026-08-21"
+          "fechaUltimaRevision": "2026-08-21",
+          "notasEditoriales": {
+            "es": "No se localizó evidencia oficial posterior que confirme IA en reclutamiento y selección de AyA. La política y los procedimientos de selección preexistentes no demuestran esta intervención.",
+            "en": "No later official evidence was found confirming AI in AyA recruitment and selection. Pre-existing selection policy and procedures do not establish this intervention."
+          }
         },
         {
           "id": "enia-4-1-3-27",
@@ -2704,11 +3204,19 @@
           "tipoIntervencion": "solucion-ia-declarada",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "enia-solamente",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+              "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+            }
           },
           "recomendacionEditorial": "investigar-como-seguimiento",
-          "fechaUltimaRevision": "2026-08-21"
+          "fechaUltimaRevision": "2026-08-21",
+          "notasEditoriales": {
+            "es": "El objetivo es apoyo para análisis de precios, revisión documental e informes; el Plan no delega en IA la adjudicación ni la aceptación o rechazo de ofertas. No se localizó evidencia externa de implementación.",
+            "en": "The objective is support for price analysis, document review and reports; the Plan does not delegate award, acceptance or rejection of bids to AI. No external implementation evidence was found."
+          }
         },
         {
           "id": "enia-4-1-3-28",
@@ -2728,11 +3236,19 @@
           "tipoIntervencion": "solucion-ia-declarada",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "enia-solamente",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+              "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+            }
           },
           "recomendacionEditorial": "investigar-como-seguimiento",
-          "fechaUltimaRevision": "2026-08-21"
+          "fechaUltimaRevision": "2026-08-21",
+          "notasEditoriales": {
+            "es": "AyA documentó en 2020 el proyecto RANC-EE y una medida futura de detección de fugas con IA. Esa fuente confirma el proyecto de agua, pero no la ejecución del flujo específico de análisis e informes descrito aquí ni el uso de IA en 2026.",
+            "en": "In 2020 AyA documented the RANC-EE project and a future AI-enabled leak-detection measure. That source confirms the water project, but not execution of the specific analysis-and-reporting workflow described here or AI use in 2026."
+          }
         },
         {
           "id": "enia-4-1-3-29",
@@ -2752,11 +3268,19 @@
           "tipoIntervencion": "automatizacion-digital",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a automatización digital; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns digital automation; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "revisar-si-es-ia",
-          "fechaUltimaRevision": "2026-08-21"
+          "fechaUltimaRevision": "2026-08-21",
+          "notasEditoriales": {
+            "es": "RPA automatiza tareas mediante reglas y no constituye por sí sola evidencia de inteligencia artificial. La fila se conserva como automatización digital.",
+            "en": "RPA automates tasks through rules and is not, by itself, evidence of artificial intelligence. The row remains classified as digital automation."
+          }
         },
         {
           "id": "enia-4-1-3-30",
@@ -2774,13 +3298,21 @@
           "responsableEnFormalizacion": false,
           "aliadosOficiales": null,
           "tipoIntervencion": "solucion-ia-declarada",
-          "estadoEjecucion": "no-verificado",
+          "estadoEjecucion": "parcialmente-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "posible-duplicado",
+            "proyectoIds": [
+              "ccss-lidia"
+            ],
+            "intervencionCanonicaId": "enia-4-1-3-16",
+            "fundamento": {
+              "es": "La redacción, institución, indicador o metas reproducen sustancialmente la fila enia-4-1-3-16. Se conserva como registro fuente y se remite a esa fila como decisión canónica.",
+              "en": "The wording, institution, indicator or targets substantially reproduce row enia-4-1-3-16. It is retained as a source record and points to that row as the canonical decision."
+            }
           },
           "recomendacionEditorial": "investigar-como-seguimiento",
-          "fechaUltimaRevision": "2026-08-21"
+          "fechaUltimaRevision": "2026-08-21",
+          "faseRealVerificada": "piloto"
         }
       ]
     },
@@ -2829,8 +3361,12 @@
           "tipoIntervencion": "capacitacion-formacion",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -2850,13 +3386,17 @@
           "responsableOficial": "MINSA",
           "responsableEnFormalizacion": false,
           "aliadosOficiales": null,
-          "tipoIntervencion": "capacitacion-formacion",
+          "tipoIntervencion": "solucion-ia-declarada",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "enia-solamente",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+              "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+            }
           },
-          "recomendacionEditorial": "ecosistema",
+          "recomendacionEditorial": "investigar-como-seguimiento",
           "fechaUltimaRevision": "2026-08-21"
         }
       ]
@@ -2901,8 +3441,12 @@
           "tipoIntervencion": "capacitacion-formacion",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -2925,8 +3469,12 @@
           "tipoIntervencion": "capacitacion-formacion",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -2973,8 +3521,12 @@
           "tipoIntervencion": "capacitacion-formacion",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -2997,8 +3549,12 @@
           "tipoIntervencion": "capacitacion-formacion",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -3021,8 +3577,12 @@
           "tipoIntervencion": "capacitacion-formacion",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -3069,8 +3629,12 @@
           "tipoIntervencion": "investigacion-diagnostico",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a investigación o diagnóstico; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns research or diagnostic work; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -3093,11 +3657,19 @@
           "tipoIntervencion": "investigacion-diagnostico",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a investigación o diagnóstico; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns research or diagnostic work; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
-          "fechaUltimaRevision": "2026-08-21"
+          "fechaUltimaRevision": "2026-08-21",
+          "notasEditoriales": {
+            "es": "La fila describe análisis estadístico para ubicar espacios de educación virtual, no un sistema de IA. El indicador y las metas 0/30/65 son idénticos a los de predicción de homicidios en enia-4-1-3-25, una anomalía de la fuente que no se corrige por inferencia.",
+            "en": "The row describes statistical analysis to locate virtual-education spaces, not an AI system. Its indicator and 0/30/65 targets are identical to those for homicide prediction in enia-4-1-3-25, a source anomaly that is not corrected by inference."
+          }
         },
         {
           "id": "enia-5-1-1-03",
@@ -3117,8 +3689,12 @@
           "tipoIntervencion": "investigacion-diagnostico",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a investigación o diagnóstico; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns research or diagnostic work; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -3165,8 +3741,12 @@
           "tipoIntervencion": "capacitacion-formacion",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -3213,8 +3793,12 @@
           "tipoIntervencion": "capacitacion-formacion",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -3237,8 +3821,12 @@
           "tipoIntervencion": "capacitacion-formacion",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -3261,8 +3849,12 @@
           "tipoIntervencion": "capacitacion-formacion",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -3285,8 +3877,13 @@
           "tipoIntervencion": "capacitacion-formacion",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "posible-duplicado",
+            "proyectoIds": [],
+            "intervencionCanonicaId": "enia-5-1-3-03",
+            "fundamento": {
+              "es": "La redacción, institución, indicador o metas reproducen sustancialmente la fila enia-5-1-3-03. Se conserva como registro fuente y se remite a esa fila como decisión canónica.",
+              "en": "The wording, institution, indicator or targets substantially reproduce row enia-5-1-3-03. It is retained as a source record and points to that row as the canonical decision."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -3309,8 +3906,12 @@
           "tipoIntervencion": "capacitacion-formacion",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -3338,8 +3939,12 @@
           "tipoIntervencion": "capacitacion-formacion",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -3362,8 +3967,12 @@
           "tipoIntervencion": "capacitacion-formacion",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -3410,8 +4019,12 @@
           "tipoIntervencion": "capacitacion-formacion",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -3439,8 +4052,12 @@
           "tipoIntervencion": "capacitacion-formacion",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -3463,8 +4080,12 @@
           "tipoIntervencion": "infraestructura-habilitante",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a infraestructura habilitante; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns enabling infrastructure; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -3509,13 +4130,20 @@
           "responsableEnFormalizacion": false,
           "aliadosOficiales": null,
           "tipoIntervencion": "capacitacion-formacion",
-          "estadoEjecucion": "no-verificado",
+          "estadoEjecucion": "parcialmente-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "mapeado-exacto",
+            "proyectoIds": [
+              "micitt-linc"
+            ],
+            "fundamento": {
+              "es": "La fila identifica expresamente a LINC como medio para capacitar población y el catálogo documenta la misma red en operación. La evidencia no permite verificar todas las alianzas o metas futuras.",
+              "en": "The row expressly identifies LINC as a vehicle for public training, and the catalogue documents the same operating network. The evidence does not verify every partnership or future target."
+            }
           },
           "recomendacionEditorial": "ecosistema",
-          "fechaUltimaRevision": "2026-08-21"
+          "fechaUltimaRevision": "2026-08-21",
+          "faseRealVerificada": "operativo"
         }
       ]
     },
@@ -3564,8 +4192,12 @@
           "tipoIntervencion": "infraestructura-habilitante",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a infraestructura habilitante; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns enabling infrastructure; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -3596,13 +4228,20 @@
           "responsableEnFormalizacion": false,
           "aliadosOficiales": null,
           "tipoIntervencion": "capacitacion-formacion",
-          "estadoEjecucion": "no-verificado",
+          "estadoEjecucion": "parcialmente-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "coincidencia-parcial",
+            "proyectoIds": [
+              "mep-intel"
+            ],
+            "fundamento": {
+              "es": "La especialidad MEP-Intel demuestra incorporación curricular de IA en educación técnica secundaria. La fila abarca primaria y secundaria académica de forma más amplia, por lo que no se considera identidad exacta.",
+              "en": "The MEP-Intel specialization demonstrates AI curriculum adoption in technical secondary education. The row more broadly covers primary and academic secondary education, so it is not treated as an exact identity."
+            }
           },
           "recomendacionEditorial": "ecosistema",
-          "fechaUltimaRevision": "2026-08-21"
+          "fechaUltimaRevision": "2026-08-21",
+          "faseRealVerificada": "operativo"
         }
       ]
     },
@@ -3651,8 +4290,12 @@
           "tipoIntervencion": "infraestructura-habilitante",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a infraestructura habilitante; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns enabling infrastructure; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -3707,13 +4350,20 @@
           "responsableEnFormalizacion": false,
           "aliadosOficiales": null,
           "tipoIntervencion": "capacitacion-formacion",
-          "estadoEjecucion": "no-verificado",
+          "estadoEjecucion": "verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "mapeado-exacto",
+            "proyectoIds": [
+              "mep-intel"
+            ],
+            "fundamento": {
+              "es": "El objetivo corresponde a la especialidad técnica en inteligencia artificial del MEP, documentada en el catálogo con inicio en cuatro colegios técnicos profesionales.",
+              "en": "The objective corresponds to MEP’s technical specialization in artificial intelligence, documented in the catalogue as having started in four technical vocational schools."
+            }
           },
           "recomendacionEditorial": "ecosistema",
-          "fechaUltimaRevision": "2026-08-21"
+          "fechaUltimaRevision": "2026-08-21",
+          "faseRealVerificada": "operativo"
         }
       ]
     },
@@ -3757,8 +4407,12 @@
           "tipoIntervencion": "infraestructura-habilitante",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a infraestructura habilitante; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns enabling infrastructure; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -3781,8 +4435,12 @@
           "tipoIntervencion": "infraestructura-habilitante",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a infraestructura habilitante; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns enabling infrastructure; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -3805,8 +4463,12 @@
           "tipoIntervencion": "infraestructura-habilitante",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a infraestructura habilitante; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns enabling infrastructure; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -3853,11 +4515,18 @@
           "tipoIntervencion": "infraestructura-habilitante",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "coincidencia-parcial",
+            "proyectoIds": [
+              "cenat-lania"
+            ],
+            "fundamento": {
+              "es": "LaNIA comparte la función de capacitación, sensibilización y desarrollo de iniciativas de alto impacto, pero la evidencia disponible no demuestra que sea el Centro Nacional de Excelencia definido por esta fila ni que esté operativo.",
+              "en": "LaNIA shares the training, awareness and high-impact initiative-development function, but available evidence does not establish that it is the National Center of Excellence defined by this row or that it is operating."
+            }
           },
           "recomendacionEditorial": "ecosistema",
-          "fechaUltimaRevision": "2026-08-21"
+          "fechaUltimaRevision": "2026-08-21",
+          "faseRealVerificada": "planificado"
         }
       ]
     },
@@ -3901,8 +4570,12 @@
           "tipoIntervencion": "infraestructura-habilitante",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a infraestructura habilitante; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns enabling infrastructure; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -3925,10 +4598,14 @@
           "tipoIntervencion": "infraestructura-habilitante",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "enia-solamente",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+              "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+            }
           },
-          "recomendacionEditorial": "ecosistema",
+          "recomendacionEditorial": "investigar-como-seguimiento",
           "fechaUltimaRevision": "2026-08-21"
         },
         {
@@ -3949,10 +4626,14 @@
           "tipoIntervencion": "infraestructura-habilitante",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "enia-solamente",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+              "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+            }
           },
-          "recomendacionEditorial": "ecosistema",
+          "recomendacionEditorial": "investigar-como-seguimiento",
           "fechaUltimaRevision": "2026-08-21"
         }
       ]
@@ -4002,8 +4683,12 @@
           "tipoIntervencion": "politica-gobernanza",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -4026,8 +4711,12 @@
           "tipoIntervencion": "politica-gobernanza",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
@@ -4074,8 +4763,12 @@
           "tipoIntervencion": "articulacion-financiamiento",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "no-determinado",
-            "proyectoIds": []
+            "estado": "no-es-sistema-ia",
+            "proyectoIds": [],
+            "fundamento": {
+              "es": "La fila corresponde a articulación o financiamiento; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
+              "en": "The row concerns coordination or funding; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+            }
           },
           "recomendacionEditorial": "ecosistema",
           "fechaUltimaRevision": "2026-08-21"
