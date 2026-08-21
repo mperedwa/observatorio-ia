@@ -24,5 +24,5 @@ export const COUNTERS: Counters = {
   descartadas: 0,
   pendientesMigracion: 0,
   instituciones: 7,
-  legislacion: 5,
+  legislacion: 7,
 };

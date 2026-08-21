@@ -1,5 +1,31 @@
 [
   {
+    "fecha": "2026-08-21",
+    "tipo": "legislacion",
+    "actualizacion": {
+      "es": "Se audita el inventario legislativo y se corrige el corte a 7 expedientes específicos o directamente relacionados con IA: 4 dictaminados y 3 en comisión, ninguno aprobado. Se incorporan el expediente 23.885 sobre nuevas formas de propaganda y el 25.379 o Ley Antitroll; el 25.171 se amplía para reflejar su alcance artístico, identitario y electoral y la objeción emitida por el TSE. Cada ficha distingue ahora regulación principal de IA de proyectos directamente relacionados, enlaza evidencia oficial del estado y muestra la fecha de verificación.",
+      "en": "The legislative inventory is audited and corrected to 7 bills specifically or directly related to AI: 4 with committee reports and 3 in committee, none passed. Bill 23.885 on new forms of advertising and Bill 25.379, the Anti-Troll Law, are added; Bill 25.171 is expanded to reflect its artistic, identity and electoral scope and the objection issued by the Supreme Electoral Tribunal. Each record now distinguishes core AI regulation from directly related bills, links official status evidence and displays its verification date."
+    },
+    "fuente": {
+      "es": "Asamblea Legislativa y Tribunal Supremo de Elecciones, verificación oficial al 21-ago-2026",
+      "en": "Legislative Assembly and Supreme Electoral Tribunal, official verification as of Aug 21, 2026"
+    },
+    "fuente_url": "https://www.asamblea.go.cr/ca/Lists/cp/DispForm.aspx?ContentTypeId=0x01008922D325D4FE564292B03FD67DF003A7&ID=22860"
+  },
+  {
+    "fecha": "2026-08-21",
+    "tipo": "recurso",
+    "actualizacion": {
+      "es": "Se estructura el inventario completo del Plan de Acción ENIA, versión 11 de agosto de 2025: 7 ejes, 13 líneas de acción, 36 resultados esperados, 129 intervenciones y 144 indicadores. Las metas del plan se conservan como declaraciones oficiales, no como evidencia de ejecución. Las 129 intervenciones comienzan con ejecución no verificada y cruce no determinado; el catálogo público no cambia hasta completar la investigación y el crosswalk.",
+      "en": "The complete inventory of the ENIA Action Plan, August 11, 2025 version, is structured: 7 axes, 13 action lines, 36 expected results, 129 interventions and 144 indicators. Plan targets remain official declarations, not evidence of execution. All 129 interventions start with unverified execution and an undetermined crosswalk; the public catalog does not change until research and matching are complete."
+    },
+    "fuente": {
+      "es": "MICITT, Plan de Acción de la ENIA, versión 11-ago-2025",
+      "en": "MICITT, ENIA Action Plan, Aug 11, 2025 version"
+    },
+    "fuente_url": "https://www.micitt.go.cr/sites/default/files/2025-10/Plan%20de%20Acci%C3%B3n%20ENIA%20-%20Versi%C3%B3n%2011%20agosto%202025%20Versi%C3%B3n%20Publicaci%C3%B3n.pdf"
+  },
+  {
     "fecha": "2026-08-19",
     "tipo": "proyecto",
     "actualizacion": {

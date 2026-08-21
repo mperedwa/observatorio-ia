@@ -27,6 +27,7 @@ const datasets: DatasetSpec[] = [
   { name: 'brechas', jsonPath: 'json/brechas.json', schemaPath: 'schemas/brechas.schema.json' },
   { name: 'changelog', jsonPath: 'json/changelog.json', schemaPath: 'schemas/changelog.schema.json' },
   { name: 'marcoPais', jsonPath: 'json/marcoPais.json', schemaPath: 'schemas/marcoPais.schema.json' },
+  { name: 'eniaAcciones', jsonPath: 'json/eniaAcciones.json', schemaPath: 'schemas/eniaAcciones.schema.json' },
 ];
 
 function loadJson(relPath: string): unknown {
@@ -65,6 +66,25 @@ export function crossCheck(): boolean {
   const instituciones = loadJson('json/instituciones.json') as Array<{ id: string; proyectosActivos: number }>;
   const institucionIds = new Set(instituciones.map((i) => i.id));
   const proyectoIds = new Set(proyectos.map((p) => p.id));
+  const inventarioEnia = loadJson('json/eniaAcciones.json') as {
+    resumen: {
+      ejes: number;
+      lineasAccion: number;
+      resultadosEsperados: number;
+      intervenciones: number;
+      indicadores: number;
+    };
+    resultados: Array<{
+      codigo: string;
+      eje: { numero: number };
+      lineaAccion: { codigo: string };
+      intervenciones: Array<{
+        id: string;
+        indicadores: unknown[];
+        cruceCatalogo: { proyectoIds: string[] };
+      }>;
+    }>;
+  };
   let ok = true;
   for (const p of proyectos) {
     if (!institucionIds.has(p.institucionId)) {
@@ -96,6 +116,56 @@ export function crossCheck(): boolean {
       console.log(
         `  WARN institución "${inst.id}" declara ${inst.proyectosActivos} proyectosActivos pero hay ${cuenta} en proyectos.json`,
       );
+    }
+  }
+
+  const resultadosEnia = inventarioEnia.resultados;
+  const intervencionesEnia = resultadosEnia.flatMap(
+    ({ intervenciones }) => intervenciones,
+  );
+  const indicadoresEnia = intervencionesEnia.reduce(
+    (total, { indicadores }) => total + indicadores.length,
+    0,
+  );
+  const resumenDerivado = {
+    ejes: new Set(resultadosEnia.map(({ eje }) => eje.numero)).size,
+    lineasAccion: new Set(
+      resultadosEnia.map(({ lineaAccion }) => lineaAccion.codigo),
+    ).size,
+    resultadosEsperados: resultadosEnia.length,
+    intervenciones: intervencionesEnia.length,
+    indicadores: indicadoresEnia,
+  };
+
+  for (const [campo, valor] of Object.entries(resumenDerivado)) {
+    if (inventarioEnia.resumen[campo as keyof typeof resumenDerivado] !== valor) {
+      console.log(
+        `  FAIL eniaAcciones.resumen.${campo} no coincide con el conteo derivado (${valor})`,
+      );
+      ok = false;
+    }
+  }
+
+  const codigosResultado = resultadosEnia.map(({ codigo }) => codigo);
+  if (new Set(codigosResultado).size !== codigosResultado.length) {
+    console.log('  FAIL eniaAcciones contiene códigos de resultado duplicados');
+    ok = false;
+  }
+
+  const idsIntervencion = intervencionesEnia.map(({ id }) => id);
+  if (new Set(idsIntervencion).size !== idsIntervencion.length) {
+    console.log('  FAIL eniaAcciones contiene IDs de intervención duplicados');
+    ok = false;
+  }
+
+  for (const intervencion of intervencionesEnia) {
+    for (const proyectoId of intervencion.cruceCatalogo.proyectoIds) {
+      if (!proyectoIds.has(proyectoId)) {
+        console.log(
+          `  FAIL intervención ENIA "${intervencion.id}" referencia proyecto desconocido "${proyectoId}"`,
+        );
+        ok = false;
+      }
     }
   }
   return ok;

@@ -501,10 +501,12 @@ Los conteos institucionales ya no usan `proyectosActivos` para la presentación 
 
 ### Fase 4 — Inventario y crosswalk ENIA
 
-- Extraer todas las intervenciones del Plan de Acción.
-- Clasificarlas sin decidir prematuramente que son sistemas.
-- Cruzarlas con el catálogo.
-- Investigar solo los faltantes con mayor impacto o evidencia de avance.
+- [x] Extraer todas las intervenciones del Plan de Acción.
+- [x] Clasificarlas sin decidir prematuramente que son sistemas.
+- [ ] Cruzarlas con el catálogo.
+- [ ] Investigar solo los faltantes con mayor impacto o evidencia de avance.
+
+La Fase 4A estructura la versión oficial del 11 de agosto de 2025 en 7 ejes, 13 líneas de acción, 36 resultados esperados, 129 intervenciones y 144 indicadores. Todas las intervenciones comienzan con ejecución no verificada y cruce no determinado. En paralelo, la auditoría de Marco país corrige el inventario a 7 expedientes relacionados con IA (4 dictaminados y 3 en comisión), confirma que MICITT sigue publicando la ENIA 2024–2027 y su Plan de Acción 2025, y mantiene sin cambios ILIA 2025 y los valores OCDE ya publicados. Detalle en `docs/fases/2026-08-21-fase-4a-inventario-enia-marco-pais.md`.
 
 ### Fase 5 — API, historial y monitoreo
 

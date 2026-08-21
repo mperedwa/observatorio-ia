@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-08-20T01:48:57.988Z",
+  "lastUpdate": "2026-08-21T18:36:14.909Z",
   "count": 5,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
@@ -240,10 +240,10 @@
           "es": "Expedientes de ley en trámite",
           "en": "Bills in progress"
         },
-        "valor": "5",
+        "valor": "7",
         "detalle": {
-          "es": "dos dictaminados, tres en comisión",
-          "en": "two with committee report, three in committee"
+          "es": "4 dictaminados, 3 en comisión",
+          "en": "4 with committee reports, 3 in committee"
         }
       },
       {

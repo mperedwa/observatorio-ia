@@ -1,6 +1,7 @@
 import data from './json/indicadores.json';
 import type { Bilingual } from '@/i18n/config';
 import { COUNTERS } from './counters';
+import { conteosLegislacion, detalleConteosLegislacion } from './legislacion';
 
 export interface IndicadorRegional {
   pais: Bilingual;
@@ -52,7 +53,7 @@ export interface KpiResumen {
 const KPI_AUTO_BY_LABEL: Record<string, number | undefined> = {
   'Iniciativas relacionadas con IA documentadas': COUNTERS.proyectos,
   'Instituciones con iniciativas documentadas': COUNTERS.instituciones,
-  'Expedientes de ley en trámite': COUNTERS.legislacion,
+  'Expedientes de ley en trámite': conteosLegislacion.total,
 };
 
 function resolveIliaPosicion(): { valor: string; detalle: Bilingual } | null {
@@ -81,6 +82,13 @@ function resolveIliaPosicion(): { valor: string; detalle: Bilingual } | null {
 
 function resolveKpi(k: KpiResumen): KpiResumen {
   if (k.valor !== 'auto') return k;
+  if (k.label.es === 'Expedientes de ley en trámite') {
+    return {
+      ...k,
+      valor: String(conteosLegislacion.total),
+      detalle: detalleConteosLegislacion,
+    };
+  }
   if (k.label.es === 'Posición ILIA Latinoamérica') {
     const resolved = resolveIliaPosicion();
     return resolved

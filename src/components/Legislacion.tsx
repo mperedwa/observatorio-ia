@@ -1,5 +1,10 @@
-import { expedientes, estadoBadgeCls } from '@/data/legislacion';
+import {
+  applyConteosLegislacion,
+  expedientes,
+  estadoBadgeCls,
+} from '@/data/legislacion';
 import { notasCoyuntura } from '@/data/coyuntura';
+import { formatearFechaCatalogo } from '@/data/presentacion-catalogo';
 import type { Dictionary } from '@/i18n/dictionaries';
 import type { Locale } from '@/i18n/config';
 
@@ -12,9 +17,11 @@ export function Legislacion({ locale, t }: { locale: Locale; t: Dictionary }) {
             {t.legislacion.kicker}
           </p>
           <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-slate-900">
-            {t.legislacion.titulo}
+            {applyConteosLegislacion(t.legislacion.titulo)}
           </h2>
-          <p className="mt-3 text-slate-600 max-w-2xl">{t.legislacion.sub}</p>
+          <p className="mt-3 text-slate-600 max-w-3xl">
+            {applyConteosLegislacion(t.legislacion.sub)}
+          </p>
         </header>
         {notasCoyuntura.length > 0 && (
           <div className="mb-8 space-y-4">
@@ -88,6 +95,9 @@ export function Legislacion({ locale, t }: { locale: Locale; t: Dictionary }) {
                     {t.legislacion.estados[e.estado]}
                   </span>
                 </div>
+                <p className="mt-2 text-xs leading-snug text-slate-500">
+                  {t.legislacion.alcances[e.alcanceIA]}
+                </p>
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-slate-900">{e.titulo[locale]}</h3>
@@ -101,18 +111,29 @@ export function Legislacion({ locale, t }: { locale: Locale; t: Dictionary }) {
                     {t.legislacion.presentadoLabel}:{' '}
                     <span className="text-slate-700">{e.presentado}</span>
                   </span>
-                  {e.fuenteUrl && (
-                    <a
-                      href={e.fuenteUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-institucional-700 hover:text-institucional-900 underline underline-offset-2"
-                    >
-                      {t.legislacion.verFuente} ↗
-                    </a>
-                  )}
+                </div>
+                <div className="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-xs text-slate-500">
+                  <a
+                    href={e.fuenteUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-institucional-700 hover:text-institucional-900 underline underline-offset-2"
+                  >
+                    {t.legislacion.verFuente} ↗
+                  </a>
+                  <a
+                    href={e.fuenteEstadoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-institucional-700 hover:text-institucional-900 underline underline-offset-2"
+                  >
+                    {t.legislacion.verEstadoOficial} ↗
+                  </a>
                   <span className="text-slate-400">
-                    {t.legislacion.fuenteOficial}
+                    {t.legislacion.verificadoLabel}:{' '}
+                    <time dateTime={e.fechaUltimaVerificacion}>
+                      {formatearFechaCatalogo(e.fechaUltimaVerificacion, locale)}
+                    </time>
                   </span>
                 </div>
               </div>

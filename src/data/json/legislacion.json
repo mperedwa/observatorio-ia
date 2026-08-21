@@ -10,12 +10,36 @@
       "en": "General framework for the development, use and application of AI in Costa Rica. The current substitute text (September 2024) designates MICITT as the governing authority, with technical support from SUTEL, responsible for registration, oversight and auditing; it sets four risk levels and requires chatbots to disclose that the interaction is with an AI system and deepfakes to disclose that the content was artificially generated or altered. It has a majority affirmative committee report from the Science, Technology and Education Committee and has been on the Plenary agenda since October 2024, without a vote. Filed by Vanessa Castro Mora (PUSC). The bill expires on May 30, 2027 if it is not approved before then."
     },
     "estado": "dictaminado",
+    "alcanceIA": "principal",
     "comision": {
       "es": "Ciencia, Tecnología y Educación",
       "en": "Science, Technology and Education"
     },
     "presentado": "2023",
-    "fuenteUrl": "https://delfino.cr/asamblea/proyecto/23771"
+    "fuenteUrl": "https://delfino.cr/asamblea/proyecto/23771",
+    "fuenteEstadoUrl": "https://www.asamblea.go.cr/ca/Lists/cp/DispForm.aspx?ContentTypeId=0x01008922D325D4FE564292B03FD67DF003A7&ID=22860",
+    "fechaUltimaVerificacion": "2026-08-21"
+  },
+  {
+    "numero": "23.885",
+    "titulo": {
+      "es": "Ley para Regular las Nuevas Formas de Propaganda",
+      "en": "Law to Regulate New Forms of Propaganda"
+    },
+    "resumen": {
+      "es": "Reforma electoral más amplia que busca regular nuevas formas de propaganda política. El expediente cuenta con dictamen y llegó al Plenario. Las mociones de fondo presentadas al texto incluyeron reglas sobre perfiles falsos, contenido sintético, inteligencia artificial y deepfakes; el observatorio lo clasifica como directamente relacionado, no como una ley general de IA. Las mociones documentan propuestas legislativas y no se presentan aquí como texto aprobado.",
+      "en": "Broader electoral reform intended to regulate new forms of political advertising. The bill has a committee report and reached the Plenary. Floor amendments filed against the text included rules on fake profiles, synthetic content, artificial intelligence and deepfakes; the observatory classifies it as directly related, not as a general AI law. The amendments document legislative proposals and are not presented here as enacted text."
+    },
+    "estado": "dictaminado",
+    "alcanceIA": "relacionado",
+    "comision": {
+      "es": "Reformas Electorales",
+      "en": "Electoral Reform"
+    },
+    "presentado": "2023",
+    "fuenteUrl": "https://delfino.cr/asamblea/proyecto/23885",
+    "fuenteEstadoUrl": "https://www.asamblea.go.cr/glcp/Consultas_mociones/MOCIONES%20DE%20FONDO%20V%C3%8DA%20ART%C3%8DCULO%20137/23.885/23.885%20Primer%20d%C3%ADa%2023-4-2025.pdf",
+    "fechaUltimaVerificacion": "2026-08-21"
   },
   {
     "numero": "23.919",
@@ -28,12 +52,15 @@
       "en": "Framework for the responsible promotion of AI with an emphasis on fundamental rights. The current substitute text (March 2025) creates the Inter-Institutional Commission for the Development of AI (CIDIA), attached to MICITT, and an ethical, technical and scientific advisory committee; it defines the high-risk systems category and penalizes the use of AI to spread disinformation through linguistic content and to create video, image or voice files made to appear authentic in order to deceive. It has a majority affirmative committee report from the Human Rights Committee and has been on the Plenary agenda since April 2025, without a vote. Filed by Óscar Izquierdo Sandí (PLN). The bill expires on September 6, 2027 if it is not approved before then."
     },
     "estado": "dictaminado",
+    "alcanceIA": "principal",
     "comision": {
       "es": "Derechos Humanos",
       "en": "Human Rights"
     },
     "presentado": "2023",
-    "fuenteUrl": "https://delfino.cr/asamblea/proyecto/23919"
+    "fuenteUrl": "https://delfino.cr/asamblea/proyecto/23919",
+    "fuenteEstadoUrl": "https://www.asamblea.go.cr/ca/Lists/cp/DispForm.aspx?ContentTypeId=0x01008922D325D4FE564292B03FD67DF003A7&ID=22860",
+    "fechaUltimaVerificacion": "2026-08-21"
   },
   {
     "numero": "24.484",
@@ -42,16 +69,19 @@
       "en": "Law for the Implementation of Artificial Intelligence Systems"
     },
     "resumen": {
-      "es": "Marco general basado en el nivel de riesgo. El texto sustitutivo vigente (octubre 2025) asigna al MICITT la rectoría y la coordinación con otras siete instituciones, y alcanza a personas físicas y jurídicas extranjeras cuyos sistemas surtan efectos en el país. Es el único de los tres que define expresamente la inteligencia artificial generativa como categoría funcional general, además de la falsificación profunda (deepfakes). Cuenta con dictamen afirmativo unánime en la Comisión de Ciencia, Tecnología y Educación (octubre 2025) y está en el orden del día del Plenario desde febrero de 2026, sin votación. Proponentes: Johana Obando Bonilla y tres diputaciones más. El expediente vence el 6 de agosto de 2028 si no se aprueba antes.",
-      "en": "Risk-based general framework. The current substitute text (October 2025) assigns MICITT the governing role and coordination with seven other institutions, and reaches foreign individuals and legal entities whose systems have effects in the country. It is the only one of the three that expressly defines generative artificial intelligence as a general functional category, in addition to deep fakes. It has a unanimous affirmative committee report from the Science, Technology and Education Committee (October 2025) and has been on the Plenary agenda since February 2026, without a vote. Filed by Johana Obando Bonilla and three other legislators. The bill expires on August 6, 2028 if it is not approved before then."
+      "es": "Marco general basado en el nivel de riesgo. El texto sustitutivo vigente (octubre 2025) asigna al MICITT la rectoría y la coordinación con otras siete instituciones, y alcanza a personas físicas y jurídicas extranjeras cuyos sistemas surtan efectos en el país. Es el único de los tres proyectos generales que define expresamente la inteligencia artificial generativa como categoría funcional general, además de la falsificación profunda (deepfakes). Cuenta con dictamen afirmativo unánime en la Comisión de Ciencia, Tecnología y Educación (octubre 2025) y está en el orden del día del Plenario desde febrero de 2026, sin votación. Proponentes: Johana Obando Bonilla y tres diputaciones más. El expediente vence el 6 de agosto de 2028 si no se aprueba antes.",
+      "en": "Risk-based general framework. The current substitute text (October 2025) assigns MICITT the governing role and coordination with seven other institutions, and reaches foreign individuals and legal entities whose systems have effects in the country. It is the only one of the three general bills that expressly defines generative artificial intelligence as a general functional category, in addition to deep fakes. It has a unanimous affirmative committee report from the Science, Technology and Education Committee (October 2025) and has been on the Plenary agenda since February 2026, without a vote. Filed by Johana Obando Bonilla and three other legislators. The bill expires on August 6, 2028 if it is not approved before then."
     },
     "estado": "dictaminado",
+    "alcanceIA": "principal",
     "comision": {
       "es": "Ciencia, Tecnología y Educación",
       "en": "Science, Technology and Education"
     },
     "presentado": "2024",
-    "fuenteUrl": "https://delfino.cr/asamblea/proyecto/24484"
+    "fuenteUrl": "https://delfino.cr/asamblea/proyecto/24484",
+    "fuenteEstadoUrl": "https://www.asamblea.go.cr/ca/Lists/cp/DispForm.aspx?ContentTypeId=0x01008922D325D4FE564292B03FD67DF003A7&ID=22860",
+    "fechaUltimaVerificacion": "2026-08-21"
   },
   {
     "numero": "24.875",
@@ -60,16 +90,19 @@
       "en": "Law to Regulate the Use of Artificial Intelligence in Electoral Processes"
     },
     "resumen": {
-      "es": "Establece obligaciones de divulgación cuando se genera contenido con IA, prohíbe deepfakes electorales, cuentas falsas automatizadas y estrategias de microtargeting diseñadas para socavar la integridad electoral. Multas de 10 a 50 salarios base. Presentado por Vanessa De Paul Castro Mora (PUSC).",
-      "en": "Establishes disclosure obligations when AI-generated content is used, prohibits electoral deepfakes, automated fake accounts, and micro-targeting strategies designed to undermine electoral integrity. Fines range from 10 to 50 base salaries. Filed by Vanessa De Paul Castro Mora (PUSC)."
+      "es": "Establece obligaciones de divulgación para contenido generado con IA y propone prohibiciones sobre deepfakes electorales, cuentas falsas automatizadas y estrategias de microsegmentación diseñadas para socavar la integridad electoral. Contempla multas de 10 a 50 salarios base. Al corte oficial del 7 de abril de 2026 permanecía en comisión, sin texto sustitutivo ni dictamen; se registraron mociones posteriores, pero no se encontró evidencia oficial de un cambio de estado. Proponente: Vanessa De Paul Castro Mora (PUSC).",
+      "en": "Establishes disclosure duties for AI-generated content and proposes prohibitions on electoral deepfakes, automated fake accounts and microtargeting strategies designed to undermine electoral integrity. It provides for fines from 10 to 50 base salaries. At the official April 7, 2026 cutoff it remained in committee, with no substitute text or committee report; later motions were recorded, but no official evidence of a status change was found. Filed by Vanessa De Paul Castro Mora (PUSC)."
     },
     "estado": "en-comision",
+    "alcanceIA": "principal",
     "comision": {
       "es": "Reformas Electorales",
       "en": "Electoral Reform"
     },
     "presentado": "2025",
-    "fuenteUrl": "https://delfino.cr/asamblea/proyecto/24875"
+    "fuenteUrl": "https://delfino.cr/asamblea/proyecto/24875",
+    "fuenteEstadoUrl": "https://www.asamblea.go.cr/ca/Lists/cp/DispForm.aspx?ContentTypeId=0x01008922D325D4FE564292B03FD67DF003A7&ID=22860",
+    "fechaUltimaVerificacion": "2026-08-21"
   },
   {
     "numero": "25.171",
@@ -78,15 +111,39 @@
       "en": "Law for the Protection of Personal Traits and Artistic Creations in Digital Environments"
     },
     "resumen": {
-      "es": "Tipifica la suplantación de identidad por medios digitales, incluyendo el uso no autorizado de voz, imagen y creaciones artísticas. Orientado a combatir deepfakes y fraude de identidad digital, más que a regular la IA como tal.",
-      "en": "Criminalizes identity impersonation through digital means, including unauthorized use of voice, image, and artistic creations. Aimed at combating deepfakes and digital identity fraud, rather than regulating AI as such."
+      "es": "Proyecto directamente relacionado que abarca la protección de creaciones artísticas, la identidad personal y la transparencia electoral en entornos digitales. El texto consultado incorpora obligaciones de identificación de contenido creado o alterado mediante IA y reglas contra deepfakes y suplantación. El Tribunal Supremo de Elecciones objetó el 21 de abril de 2026 la redacción electoral entonces consultada por problemas técnicos y constitucionales. El expediente permanece en la Comisión de Ciencia, Tecnología y Educación.",
+      "en": "Directly related bill covering the protection of artistic creations, personal identity and electoral transparency in digital environments. The reviewed text includes duties to identify content created or altered through AI and rules against deepfakes and impersonation. On April 21, 2026, the Supreme Electoral Tribunal objected to the electoral language then under consultation on technical and constitutional grounds. The bill remains before the Science, Technology and Education Committee."
     },
     "estado": "en-comision",
+    "alcanceIA": "relacionado",
     "comision": {
       "es": "Ciencia, Tecnología y Educación",
       "en": "Science, Technology and Education"
     },
     "presentado": "2025",
-    "fuenteUrl": "https://delfino.cr/asamblea/proyecto/25171"
+    "fuenteUrl": "https://delfino.cr/asamblea/proyecto/25171",
+    "fuenteEstadoUrl": "https://www.tse.go.cr/actas/2026/33-2026-del-21-de-abril-de-2026.html",
+    "fechaUltimaVerificacion": "2026-08-21"
+  },
+  {
+    "numero": "25.379",
+    "titulo": {
+      "es": "Ley contra la Manipulación de la Opinión Pública y la Voluntad Popular (Ley Antitroll)",
+      "en": "Law against the Manipulation of Public Opinion and the Popular Will (Anti-Troll Law)"
+    },
+    "resumen": {
+      "es": "Proyecto directamente relacionado que busca prevenir y sancionar la manipulación coordinada de la opinión pública mediante cuentas falsas, automatizadas o financiadas, incluida la coordinación algorítmica y el uso de inteligencia artificial. Fue presentado en enero de 2026 y remitido a la Comisión de Asuntos Jurídicos. En marzo de 2026, el Tribunal Supremo de Elecciones objetó imprecisiones del texto consultado; no se encontró evidencia oficial de dictamen o aprobación.",
+      "en": "Directly related bill intended to prevent and sanction coordinated manipulation of public opinion through fake, automated or funded accounts, including algorithmic coordination and the use of artificial intelligence. It was filed in January 2026 and referred to the Legal Affairs Committee. In March 2026, the Supreme Electoral Tribunal objected to imprecisions in the text under consultation; no official evidence of a committee report or passage was found."
+    },
+    "estado": "en-comision",
+    "alcanceIA": "relacionado",
+    "comision": {
+      "es": "Asuntos Jurídicos",
+      "en": "Legal Affairs"
+    },
+    "presentado": "2026",
+    "fuenteUrl": "https://delfino.cr/asamblea/proyecto/25379",
+    "fuenteEstadoUrl": "https://www.tse.go.cr/actas/2026/23-2026-del-10-de-marzo-de-2026.html",
+    "fechaUltimaVerificacion": "2026-08-21"
   }
 ]

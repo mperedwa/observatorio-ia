@@ -66,6 +66,10 @@ export interface Dictionary {
     expedienteLabel: string;
     comisionLabel: string;
     presentadoLabel: string;
+    alcances: {
+      principal: string;
+      relacionado: string;
+    };
     estados: {
       'en-comision': string;
       dictaminado: string;
@@ -75,7 +79,8 @@ export interface Dictionary {
       aprobada: string;
     };
     verFuente: string;
-    fuenteOficial: string;
+    verEstadoOficial: string;
+    verificadoLabel: string;
   };
   indicadores: {
     kicker: string;
@@ -486,11 +491,15 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     legislacion: {
       kicker: '02 / Legislación',
-      titulo: 'Cinco expedientes de ley en trámite, ninguno aprobado',
-      sub: 'Costa Rica aún no tiene un marco regulatorio formal de IA. De los cinco proyectos de ley presentados desde 2023, dos ya cuentan con dictamen de comisión.',
+      titulo: '{total} expedientes relacionados con IA, ninguno aprobado',
+      sub: 'El inventario distingue {principales} proyectos cuyo objeto principal es la IA y {relacionados} directamente relacionados. {dictaminados} cuentan con dictamen y {enComision} permanecen en comisión.',
       expedienteLabel: 'Expediente',
       comisionLabel: 'Comisión',
       presentadoLabel: 'Presentado',
+      alcances: {
+        principal: 'Regulación principal de IA',
+        relacionado: 'Directamente relacionado',
+      },
       estados: {
         'en-comision': 'En comisión',
         dictaminado: 'Dictaminado',
@@ -500,7 +509,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
         aprobada: 'Aprobada',
       },
       verFuente: 'Ver expediente',
-      fuenteOficial: 'Fuente: Asamblea Legislativa vía Delfino.cr',
+      verEstadoOficial: 'Ver evidencia oficial del estado',
+      verificadoLabel: 'Verificado',
     },
     indicadores: {
       kicker: '03 / Indicadores',
@@ -848,9 +858,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
       referenciaLabel: 'Referencia',
       estadoCRLabel: 'Estado en Costa Rica',
       porQueImporta: 'Por qué importa',
-      legislacionTitulo: 'Cinco expedientes, cero leyes aprobadas',
+      legislacionTitulo: '{total} expedientes, cero leyes aprobadas',
       legislacionSub:
-        'Los cinco proyectos de ley sobre IA presentados entre 2023 y 2025 siguen sin aprobarse. Dos ya cuentan con dictamen de comisión. Costa Rica avanza sin marco regulatorio formal.',
+        'El inventario reúne {principales} proyectos cuyo objeto principal es la IA y {relacionados} directamente relacionados, presentados entre 2023 y 2026. {dictaminados} ya cuentan con dictamen de comisión y {enComision} permanecen en comisión. Costa Rica sigue sin un marco regulatorio formal de IA.',
       metaDescripcion:
         'Análisis de la brecha de Costa Rica frente a líderes regionales y globales en adopción de IA en gobierno.',
       notaCierre:
@@ -1096,11 +1106,15 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     legislacion: {
       kicker: '02 / Legislation',
-      titulo: 'Five bills in progress, none passed',
-      sub: 'Costa Rica still has no formal AI regulatory framework. Of the five bills filed since 2023, two already have a committee report.',
+      titulo: '{total} AI-related bills, none passed',
+      sub: 'The inventory distinguishes {principales} bills whose primary subject is AI and {relacionados} directly related bills. {dictaminados} have committee reports and {enComision} remain in committee.',
       expedienteLabel: 'File',
       comisionLabel: 'Committee',
       presentadoLabel: 'Filed',
+      alcances: {
+        principal: 'Core AI regulation',
+        relacionado: 'Directly related',
+      },
       estados: {
         'en-comision': 'In committee',
         dictaminado: 'Committee report issued',
@@ -1110,7 +1124,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
         aprobada: 'Passed',
       },
       verFuente: 'View bill',
-      fuenteOficial: 'Source: Legislative Assembly via Delfino.cr',
+      verEstadoOficial: 'View official status evidence',
+      verificadoLabel: 'Verified',
     },
     indicadores: {
       kicker: '03 / Indicators',
@@ -1457,9 +1472,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
       referenciaLabel: 'Reference',
       estadoCRLabel: 'Status in Costa Rica',
       porQueImporta: 'Why it matters',
-      legislacionTitulo: 'Five bills, zero laws passed',
+      legislacionTitulo: '{total} bills, zero laws passed',
       legislacionSub:
-        'The five AI bills filed between 2023 and 2025 remain unapproved. Two already have a committee report. Costa Rica is moving forward without a formal regulatory framework.',
+        'The inventory covers {principales} bills whose primary subject is AI and {relacionados} directly related bills, filed between 2023 and 2026. {dictaminados} have committee reports and {enComision} remain in committee. Costa Rica still has no formal AI regulatory framework.',
       metaDescripcion:
         'Analysis of Costa Rica\u2019s gap versus regional and global leaders in AI adoption inside government.',
       notaCierre:

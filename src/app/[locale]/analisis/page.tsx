@@ -6,7 +6,11 @@ import { BrechaCard } from '@/components/BrechaCard';
 import { articulosOrdenados } from '@/data/articulos';
 import { brechas } from '@/data/brechas';
 import { comparativaRegional } from '@/data/indicadores';
-import { expedientes, estadoBadgeCls } from '@/data/legislacion';
+import {
+  applyConteosLegislacion,
+  expedientes,
+  estadoBadgeCls,
+} from '@/data/legislacion';
 import { getDictionary } from '@/i18n/dictionaries';
 import { locales, type Locale } from '@/i18n/config';
 
@@ -221,10 +225,10 @@ export default async function AnalisisPage({
       <section className="max-w-6xl mx-auto px-6 py-16">
         <header className="mb-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
-            {t.analisis.legislacionTitulo}
+            {applyConteosLegislacion(t.analisis.legislacionTitulo)}
           </h2>
           <p className="mt-2 text-slate-600 max-w-3xl text-pretty">
-            {t.analisis.legislacionSub}
+            {applyConteosLegislacion(t.analisis.legislacionSub)}
           </p>
         </header>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

@@ -49,10 +49,30 @@ interface IliaRow {
   destacado?: boolean;
 }
 
+function resolveLegislationKpi(counters: Counters): KpiAutoResult {
+  const expedientes = JSON.parse(
+    readFileSync(join(SRC_DIR, 'legislacion.json'), 'utf8'),
+  ) as Array<{ estado?: string }>;
+  const dictaminados = expedientes.filter(
+    ({ estado }) => estado === 'dictaminado',
+  ).length;
+  const enComision = expedientes.filter(
+    ({ estado }) => estado === 'en-comision',
+  ).length;
+
+  return {
+    valor: String(counters.legislacion),
+    detalle: {
+      es: `${dictaminados} dictaminados, ${enComision} en comisión`,
+      en: `${dictaminados} with committee reports, ${enComision} in committee`,
+    },
+  };
+}
+
 const KPI_AUTO: Record<string, (c: Counters, data: unknown) => KpiAutoResult> = {
   'Iniciativas relacionadas con IA documentadas': (c) => ({ valor: String(c.proyectos) }),
   'Instituciones con iniciativas documentadas': (c) => ({ valor: String(c.instituciones) }),
-  'Expedientes de ley en trámite': (c) => ({ valor: String(c.legislacion) }),
+  'Expedientes de ley en trámite': (c) => resolveLegislationKpi(c),
   'Posición ILIA Latinoamérica': (_c, data) => {
     const rows = (data as { ilia2025?: IliaRow[] } | undefined)?.ilia2025 ?? [];
     if (rows.length === 0) return { valor: '?' };

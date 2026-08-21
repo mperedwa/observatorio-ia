@@ -169,8 +169,8 @@
       },
       "valor": "auto",
       "detalle": {
-        "es": "dos dictaminados, tres en comisión",
-        "en": "two with committee report, three in committee"
+        "es": "auto-resuelto desde legislacion.json",
+        "en": "auto-resolved from legislacion.json"
       }
     },
     {

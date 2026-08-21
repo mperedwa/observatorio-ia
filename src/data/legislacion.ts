@@ -2,18 +2,46 @@ import data from './json/legislacion.json';
 import type { Bilingual } from '@/i18n/config';
 
 export type EstadoLey = 'en-comision' | 'dictaminado' | 'primer-debate' | 'segundo-debate' | 'archivado' | 'aprobada';
+export type AlcanceIALey = 'principal' | 'relacionado';
 
 export interface Expediente {
   numero: string;
   titulo: Bilingual;
   resumen: Bilingual;
   estado: EstadoLey;
+  alcanceIA: AlcanceIALey;
   comision: Bilingual;
   presentado: string;
   fuenteUrl: string;
+  fuenteEstadoUrl: string;
+  fechaUltimaVerificacion: string;
 }
 
 export const expedientes: Expediente[] = data as Expediente[];
+
+export const conteosLegislacion = {
+  total: expedientes.length,
+  dictaminados: expedientes.filter(({ estado }) => estado === 'dictaminado').length,
+  enComision: expedientes.filter(({ estado }) => estado === 'en-comision').length,
+  principales: expedientes.filter(({ alcanceIA }) => alcanceIA === 'principal').length,
+  relacionados: expedientes.filter(({ alcanceIA }) => alcanceIA === 'relacionado').length,
+} as const;
+
+/**
+ * Materializa las cifras legislativas desde el dataset para evitar que el
+ * titular y el resumen queden desfasados cuando cambia un expediente.
+ */
+export function applyConteosLegislacion(template: string): string {
+  return Object.entries(conteosLegislacion).reduce(
+    (texto, [clave, valor]) => texto.replaceAll(`{${clave}}`, String(valor)),
+    template,
+  );
+}
+
+export const detalleConteosLegislacion: Bilingual = {
+  es: `${conteosLegislacion.dictaminados} dictaminados, ${conteosLegislacion.enComision} en comisión`,
+  en: `${conteosLegislacion.dictaminados} with committee reports, ${conteosLegislacion.enComision} in committee`,
+};
 
 /**
  * Tailwind class string for the colored status badge of each `EstadoLey`.

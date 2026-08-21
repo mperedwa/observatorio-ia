@@ -43,6 +43,14 @@ interface Expediente {
   [key: string]: unknown;
 }
 
+type EstadoLey =
+  | 'en-comision'
+  | 'dictaminado'
+  | 'primer-debate'
+  | 'segundo-debate'
+  | 'archivado'
+  | 'aprobada';
+
 const DELFINO_UA =
   'InvestigacionObservatorioIA/1.0 (contacto: mperedwa@gmail.com; observatorioia.org)';
 const RATE_LIMIT_MS = 1800;
@@ -121,7 +129,7 @@ function parseDelfinoHtml(html: string): ParsedDelfino {
  * Mapea texto de estado Delfino → enum canónico de legislacion.json.
  * Tabla histórica del scraper original más variantes que Delfino emite en su UI.
  */
-function normalizeEstado(raw: string | null): string | null {
+export function normalizeEstado(raw: string | null): EstadoLey | null {
   if (!raw) return null;
   const t = raw.toLowerCase().trim();
   if (t.includes('archiv')) return 'archivado';
@@ -132,7 +140,11 @@ function normalizeEstado(raw: string | null): string | null {
   if (t.includes('en comisi') || t.includes('en trámite') || t.includes('en tramite')) {
     return 'en-comision';
   }
-  if (t.includes('presentado')) return 'presentado';
+  // "Presentado" es una etapa demasiado amplia y no pertenece a EstadoLey.
+  // Un expediente puede aparecer así en la fuente secundaria aun cuando una
+  // fuente oficial confirme que ya fue asignado a comisión. Se registra como
+  // nota para revisión humana, nunca como cambio aplicable al JSON validado.
+  if (t.includes('presentado')) return null;
   return null;
 }
 
@@ -181,6 +193,11 @@ export async function scrapeAsamblea(): Promise<ScraperReport> {
 
     // Estado
     const scrapedEstado = normalizeEstado(parsed.estadoRaw);
+    if (parsed.estadoRaw && scrapedEstado === null) {
+      report.notes.push(
+        `Estado no accionable ${exp.numero}: Delfino reporta "${parsed.estadoRaw}"; se conserva el estado curado hasta verificar una fuente oficial.`,
+      );
+    }
     if (scrapedEstado && scrapedEstado !== exp.estado) {
       const change: ProposedChange = {
         scraper: 'asamblea',
@@ -201,11 +218,16 @@ export async function scrapeAsamblea(): Promise<ScraperReport> {
     if (parsed.comisionRaw && exp.comision) {
       const scrapedComEs = stripDeprefix(parsed.comisionRaw);
       const localComEs = stripDeprefix((exp.comision as Bilingual).es);
-      if (
+      const difiere =
         scrapedComEs.toLowerCase() !== localComEs.toLowerCase() &&
         !scrapedComEs.toLowerCase().includes(localComEs.toLowerCase()) &&
-        !localComEs.toLowerCase().includes(scrapedComEs.toLowerCase())
-      ) {
+        !localComEs.toLowerCase().includes(scrapedComEs.toLowerCase());
+
+      if (difiere && exp.estado !== 'en-comision') {
+        report.notes.push(
+          `Comisión no accionable ${exp.numero}: Delfino reporta "${scrapedComEs}", pero el expediente está "${exp.estado}". Se conserva la comisión que emitió el dictamen hasta revisión oficial.`,
+        );
+      } else if (difiere) {
         const change: ProposedChange = {
           scraper: 'asamblea',
           dataset: 'legislacion',
