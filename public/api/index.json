@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-08-21T20:19:12.967Z",
+  "lastUpdate": "2026-08-21T23:11:06.526Z",
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "endpoints": [
@@ -31,7 +31,7 @@
     },
     {
       "url": "/api/enia-acciones.json",
-      "description": "Inventario y crosswalk del Plan de Acción ENIA: 129 filas fuente, 120 intervenciones canónicas, clasificación por tipo, evidencia de ejecución y relaciones con el catálogo.",
+      "description": "Inventario y crosswalk del Plan de Acción ENIA: 129 registros del documento oficial, 120 intervenciones únicas, clasificación por tipo, evidencia de ejecución y relaciones con el catálogo.",
       "count": 129
     }
   ]

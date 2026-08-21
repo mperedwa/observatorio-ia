@@ -80,36 +80,36 @@ export const eniaTranslations: Record<Locale, EniaTranslations> = {
   es: {
     metaTitle: 'Seguimiento del Plan de Acción ENIA',
     metaDescription:
-      'Explorador verificable de las 129 intervenciones del Plan de Acción ENIA de Costa Rica, con repeticiones, cruces al catálogo y evidencia de ejecución separada de las metas oficiales.',
+      'Explorador verificable de los 129 registros del Plan de Acción ENIA de Costa Rica, con acciones repetidas, cruces al catálogo y evidencia de ejecución separada de las metas oficiales.',
     kicker: 'Plan de Acción ENIA',
     title: 'Lo anunciado y lo verificado, en una misma vista',
     intro:
-      'El Plan oficial reúne metas de política, formación, infraestructura y soluciones tecnológicas. Este explorador conserva las 129 filas fuente, identifica 9 repeticiones y muestra qué intervenciones tienen correspondencia o evidencia fuera del documento.',
+      'El Plan contiene 129 registros en su matriz oficial. De esos, 9 registros repiten una acción que ya aparece en otra parte del documento, por lo que el observatorio distingue 120 intervenciones únicas. Conservamos los 129 registros para que la transcripción sea auditable y mostramos cuáles tienen correspondencia con el catálogo o evidencia pública de ejecución.',
     thesis:
       'Una meta oficial prueba que existe un compromiso. No prueba por sí sola que el sistema se haya construido, que use IA verificable o que produzca resultados.',
     updated: 'Corte editorial: 21 de agosto de 2026',
     sourceLink: 'Abrir el Plan de Acción oficial',
     sourceLanguage: 'El texto fuente del Plan se conserva en español, incluso en la versión en inglés del sitio.',
     stats: {
-      sourceRows: 'filas en la fuente',
-      canonicalRows: 'intervenciones canónicas',
+      sourceRows: 'registros del documento oficial',
+      canonicalRows: 'intervenciones únicas',
       declaredSolutions: 'soluciones de IA declaradas',
-      declaredSolutionsDetail: '25 canónicas al retirar repeticiones',
+      declaredSolutionsDetail: '25 únicas al excluir registros repetidos',
       catalogLinks: 'cruces exactos o parciales',
       unverifiedCommitments: 'compromisos solo en ENIA',
-      nonSystems: 'filas que no son sistemas de IA',
-      repetitions: 'repeticiones conservadas',
+      nonSystems: 'registros que no describen sistemas de IA',
+      repetitions: 'registros que repiten una acción',
     },
     explorer: {
       kicker: 'Explorador',
       title: 'Intervenciones del Plan',
       intro:
-        'La vista inicial muestra únicamente las soluciones declaradas y omite repeticiones. Podés ampliar al cruce con el catálogo o a las 120 intervenciones canónicas.',
+        'La vista inicial muestra únicamente las soluciones declaradas y omite los registros que repiten una acción. Podés ampliar al cruce con el catálogo o a las 120 intervenciones únicas.',
       viewsLabel: 'Vista',
       views: {
         soluciones: {
           label: 'Soluciones declaradas',
-          description: 'Filas que el Plan presenta como solución o componente de IA.',
+          description: 'Registros que el Plan presenta como solución o componente de IA.',
         },
         catalogo: {
           label: 'Cruce con catálogo',
@@ -126,7 +126,7 @@ export const eniaTranslations: Record<Locale, EniaTranslations> = {
       allAxes: 'Todos los ejes',
       statusLabel: 'Estado del cruce',
       allStatuses: 'Todos los estados',
-      showDuplicates: 'Mostrar las 9 repeticiones de la fuente',
+      showDuplicates: 'Mostrar los 9 registros que repiten una acción',
       results: 'intervenciones visibles',
       resultSingular: 'intervención visible',
       noResults: 'No hay intervenciones que coincidan con estos filtros.',
@@ -147,16 +147,16 @@ export const eniaTranslations: Record<Locale, EniaTranslations> = {
       target: 'Meta fuente',
       noValue: 'Sin valor en la celda fuente',
       editorialNote: 'Nota editorial',
-      canonicalReference: 'Decisión canónica',
+      canonicalReference: 'Intervención única relacionada',
       axis: 'Eje',
       type: 'Tipo',
     },
     methodology: {
       title: 'Cómo leer los números',
       body:
-        'El total de 129 reproduce las filas del documento. Para analizar intervenciones se usan 120 registros canónicos, porque nueve filas repiten sustancialmente otra acción. Los estados del cruce describen identidad documental; la ejecución se evalúa por separado.',
+        'El Plan contiene 129 registros. De esos, 9 registros repiten sustancialmente una acción que aparece en otra parte del documento. Por eso, el análisis distingue 120 intervenciones únicas. Los estados del cruce describen la relación con el catálogo; la ejecución se evalúa por separado.',
       canonical:
-        'Canónica: una intervención contada una vez, aunque el Plan repita su redacción o indicador.',
+        'Intervención única: cada acción se cuenta una sola vez, aunque el Plan repita su redacción o indicador.',
       status:
         'Coincidencia: relación acreditada con una ficha del catálogo; no equivale a cumplimiento total de la meta.',
       evidence:
@@ -175,7 +175,7 @@ export const eniaTranslations: Record<Locale, EniaTranslations> = {
     crossLabels: {
       'mapeado-exacto': 'Coincidencia exacta',
       'coincidencia-parcial': 'Coincidencia parcial',
-      'posible-duplicado': 'Repetición de la fuente',
+      'posible-duplicado': 'Acción repetida en el documento',
       'nuevo-con-evidencia': 'Hallazgo con evidencia',
       'enia-solamente': 'Solo en ENIA',
       'no-es-sistema-ia': 'No es un sistema de IA',
@@ -191,36 +191,36 @@ export const eniaTranslations: Record<Locale, EniaTranslations> = {
   en: {
     metaTitle: 'ENIA Action Plan tracker',
     metaDescription:
-      'Verifiable explorer of Costa Rica’s 129 ENIA Action Plan rows, with repetitions, catalog matches and execution evidence kept separate from official targets.',
+      'Verifiable explorer of Costa Rica’s 129 ENIA Action Plan records, with repeated actions, catalog matches and execution evidence kept separate from official targets.',
     kicker: 'ENIA Action Plan',
     title: 'What was announced and what is verified, in one view',
     intro:
-      'The official Plan combines policy, training, infrastructure and technology-solution targets. This explorer preserves all 129 source rows, identifies 9 repetitions and shows which interventions have a catalog match or evidence outside the document.',
+      'The Plan contains 129 records in its official matrix. Of these, 9 records repeat an action that appears elsewhere in the document, so the observatory distinguishes 120 unique interventions. We preserve all 129 records for an auditable transcription and show which ones match the catalog or have public execution evidence.',
     thesis:
       'An official target proves that a commitment exists. By itself, it does not prove that a system was built, uses verifiable AI or produced results.',
     updated: 'Editorial cutoff: August 21, 2026',
     sourceLink: 'Open the official Action Plan',
     sourceLanguage: 'The Plan’s source wording remains in Spanish, including on the English version of this site.',
     stats: {
-      sourceRows: 'rows in the source',
-      canonicalRows: 'canonical interventions',
+      sourceRows: 'records in the official document',
+      canonicalRows: 'unique interventions',
       declaredSolutions: 'declared AI solutions',
-      declaredSolutionsDetail: '25 canonical after repetitions are removed',
+      declaredSolutionsDetail: '25 unique after repeated records are excluded',
       catalogLinks: 'exact or partial matches',
       unverifiedCommitments: 'ENIA-only commitments',
-      nonSystems: 'rows that are not AI systems',
-      repetitions: 'preserved repetitions',
+      nonSystems: 'records that do not describe AI systems',
+      repetitions: 'records that repeat an action',
     },
     explorer: {
       kicker: 'Explorer',
       title: 'Action Plan interventions',
       intro:
-        'The initial view shows declared solutions only and hides repetitions. Expand to the catalog crosswalk or all 120 canonical interventions.',
+        'The initial view shows declared solutions only and hides records that repeat an action. Expand to the catalog crosswalk or all 120 unique interventions.',
       viewsLabel: 'View',
       views: {
         soluciones: {
           label: 'Declared solutions',
-          description: 'Rows the Plan presents as an AI solution or component.',
+          description: 'Records the Plan presents as an AI solution or component.',
         },
         catalogo: {
           label: 'Catalog crosswalk',
@@ -237,7 +237,7 @@ export const eniaTranslations: Record<Locale, EniaTranslations> = {
       allAxes: 'All axes',
       statusLabel: 'Crosswalk status',
       allStatuses: 'All statuses',
-      showDuplicates: 'Show the 9 source repetitions',
+      showDuplicates: 'Show the 9 records that repeat an action',
       results: 'visible interventions',
       resultSingular: 'visible intervention',
       noResults: 'No interventions match these filters.',
@@ -258,16 +258,16 @@ export const eniaTranslations: Record<Locale, EniaTranslations> = {
       target: 'Source target',
       noValue: 'No value in the source cell',
       editorialNote: 'Editorial note',
-      canonicalReference: 'Canonical decision',
+      canonicalReference: 'Related unique intervention',
       axis: 'Axis',
       type: 'Type',
     },
     methodology: {
       title: 'How to read the figures',
       body:
-        'The total of 129 reproduces the document’s rows. Analysis uses 120 canonical records because nine rows substantially repeat another action. Crosswalk status describes documentary identity; execution is evaluated separately.',
+        'The Plan contains 129 records. Of these, 9 records substantially repeat an action found elsewhere in the document. The analysis therefore distinguishes 120 unique interventions. Crosswalk status describes the relationship to the catalog; execution is evaluated separately.',
       canonical:
-        'Canonical: one intervention counted once, even when the Plan repeats its wording or indicator.',
+        'Unique intervention: each action is counted once, even when the Plan repeats its wording or indicator.',
       status:
         'Match: an evidenced relationship to a catalog record; it does not mean the full target has been delivered.',
       evidence:
@@ -286,7 +286,7 @@ export const eniaTranslations: Record<Locale, EniaTranslations> = {
     crossLabels: {
       'mapeado-exacto': 'Exact match',
       'coincidencia-parcial': 'Partial match',
-      'posible-duplicado': 'Source repetition',
+      'posible-duplicado': 'Repeated action in the document',
       'nuevo-con-evidencia': 'Finding with evidence',
       'enia-solamente': 'ENIA only',
       'no-es-sistema-ia': 'Not an AI system',

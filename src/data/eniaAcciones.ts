@@ -52,7 +52,7 @@ export interface IndicadorEnia {
 export interface CruceCatalogoEnia {
   estado: EstadoCruceEnia;
   proyectoIds: string[];
-  /** Fila fuente anterior que conserva la decisión canónica cuando hay repetición semántica. */
+  /** Registro anterior que representa la intervención única cuando hay repetición semántica. */
   intervencionCanonicaId?: string;
   /** Justificación editorial del cruce; no altera el texto transcrito del Plan. */
   fundamento: Bilingual;

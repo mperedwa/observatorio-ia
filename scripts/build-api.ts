@@ -142,7 +142,7 @@ const DATASETS: Dataset[] = [
     outputFilename: 'enia-acciones.json',
     endpoint: '/api/enia-acciones.json',
     description:
-      'Inventario y crosswalk del Plan de Acción ENIA: 129 filas fuente, 120 intervenciones canónicas, clasificación por tipo, evidencia de ejecución y relaciones con el catálogo.',
+      'Inventario y crosswalk del Plan de Acción ENIA: 129 registros del documento oficial, 120 intervenciones únicas, clasificación por tipo, evidencia de ejecución y relaciones con el catálogo.',
     getCount: (data) => {
       const count = (data as { resumen?: { intervenciones?: unknown } } | undefined)
         ?.resumen?.intervenciones;

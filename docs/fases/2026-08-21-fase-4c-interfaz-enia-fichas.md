@@ -4,6 +4,10 @@
 
 **Estado:** implementada localmente; pendiente de revisión visual de Mario antes de publicar.
 
+## Ajuste editorial posterior a la revisión local
+
+La interfaz pública evita los términos técnicos “fila fuente” e “intervención canónica”. En su lugar usa **129 registros del documento oficial**, **9 registros que repiten una acción** y **120 intervenciones únicas**. El mismo criterio se aplica al encabezado, contadores, filtros, metodología, fundamentos del cruce, notas editoriales, metadatos y versión inglesa. Los nombres técnicos del esquema interno se conservan para no introducir un cambio incompatible en la API.
+
 ## Objetivo
 
 Convertir el inventario y crosswalk de la Fase 4B en una experiencia pública que permita distinguir una meta oficial de su ejecución, incorporar los dos hallazgos oficiales que ya justificaban ficha y documentar OIJ–TEC sin fusionarlo con iniciativas distintas.
@@ -12,9 +16,9 @@ Convertir el inventario y crosswalk de la Fase 4B en una experiencia pública qu
 
 La nueva ruta bilingüe `/es/enia/` y `/en/enia/` publica:
 
-- 129 filas tal como aparecen en la matriz fuente;
-- 120 intervenciones canónicas después de identificar 9 repeticiones;
-- 29 filas que el Plan presenta como soluciones de IA, 25 canónicas;
+- 129 registros tal como aparecen en la matriz oficial;
+- 120 intervenciones únicas después de identificar 9 registros que repiten una acción;
+- 29 registros que el Plan presenta como soluciones de IA, 25 intervenciones únicas;
 - 83 acciones de política, formación, investigación, coordinación, infraestructura o automatización que no se presentan como sistemas de IA;
 - 6 coincidencias exactas y 9 parciales con el catálogo;
 - 22 compromisos de solución que permanecen solo en ENIA porque no se corroboró ejecución fuera del Plan.
@@ -84,7 +88,7 @@ Se añaden INAMU e INS al índice institucional. Poder Judicial pasa de ocho a n
 - `enia-4-1-3-05` pasa de `nuevo-con-evidencia` a `mapeado-exacto` y enlaza `inamu-ela`.
 - `enia-4-1-3-14` conserva su condición de repetición y enlaza la misma ficha.
 - `enia-4-1-3-24` pasa de `nuevo-con-evidencia` a `mapeado-exacto` y enlaza `ins-reclamos-medicos-ia`.
-- OIJ–TEC no se enlaza a la fila ICE y no altera su estado `enia-solamente`.
+- OIJ–TEC no se enlaza al registro ICE y no altera su estado `enia-solamente`.
 
 La transformación sigue siendo reproducible con `npm run crosswalk:enia`. La incorporación de las tres fichas y las instituciones puede reproducirse con `npm run catalog:enia-phase-4c`.
 
@@ -101,7 +105,7 @@ La transformación sigue siendo reproducible con `npm run crosswalk:enia`. La in
 
 - no se publica ninguna recomendación táctica del plan maestro privado;
 - la redacción del Plan se conserva como fuente y no se traduce como si fuera un nuevo hecho;
-- las repeticiones permanecen auditables, pero no inflan el total canónico;
+- los registros repetidos permanecen auditables, pero no inflan el total de intervenciones únicas;
 - los resultados del INS se etiquetan por su naturaleza autorreportada;
 - Ela no publica resultados que el INAMU no haya medido públicamente;
 - OIJ–TEC no se presenta como sistema productivo ni se fusiona con ICE o SUPERCOP.

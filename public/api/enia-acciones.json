@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-08-21T20:19:12.966Z",
+  "lastUpdate": "2026-08-21T23:11:06.525Z",
   "count": 129,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
@@ -40,8 +40,8 @@
       {
         "id": "duplicados-conservados",
         "descripcion": {
-          "es": "La fuente repite algunas intervenciones e indicadores, especialmente en CCSS dentro de 4.1.3. Se conservaron como filas separadas para no alterar la matriz oficial; la deduplicación se resolverá en el crosswalk.",
-          "en": "The source repeats some interventions and indicators, especially CCSS entries under 4.1.3. They remain as separate rows to preserve the official matrix; deduplication will be handled in the crosswalk."
+          "es": "El documento repite algunas intervenciones e indicadores, especialmente en CCSS dentro de 4.1.3. Se conservaron como registros separados para no alterar la matriz oficial; el cruce identifica cuáles representan una misma acción.",
+          "en": "The document repeats some interventions and indicators, especially CCSS entries under 4.1.3. They remain as separate records to preserve the official matrix; the crosswalk identifies which records represent the same action."
         }
       },
       {
@@ -96,8 +96,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -148,8 +148,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -176,8 +176,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -204,8 +204,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -232,8 +232,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -260,8 +260,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -288,8 +288,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -316,8 +316,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -344,8 +344,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -372,8 +372,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -429,8 +429,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -481,8 +481,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -509,8 +509,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -561,8 +561,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -589,8 +589,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -641,8 +641,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a articulación o financiamiento; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns coordination or funding; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a articulación o financiamiento; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns coordination or funding; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -669,8 +669,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a articulación o financiamiento; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns coordination or funding; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a articulación o financiamiento; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns coordination or funding; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -697,8 +697,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a articulación o financiamiento; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns coordination or funding; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a articulación o financiamiento; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns coordination or funding; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -754,8 +754,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -782,8 +782,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -810,8 +810,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -838,8 +838,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -895,8 +895,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -923,8 +923,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -982,8 +982,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -1010,8 +1010,8 @@
               "estado": "enia-solamente",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
-                "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+                "es": "El registro declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+                "en": "The record declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
               }
             },
             "recomendacionEditorial": "investigar-como-seguimiento",
@@ -1038,8 +1038,8 @@
               "estado": "enia-solamente",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
-                "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+                "es": "El registro declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+                "en": "The record declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
               }
             },
             "recomendacionEditorial": "investigar-como-seguimiento",
@@ -1090,8 +1090,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a articulación o financiamiento; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns coordination or funding; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a articulación o financiamiento; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns coordination or funding; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -1120,8 +1120,8 @@
                 "micitt-linc"
               ],
               "fundamento": {
-                "es": "La fila nombra expresamente a LINC y el catálogo contiene la misma red de Laboratorios de Innovación Comunitaria. La operación general está verificada; no lo está el cumplimiento íntegro de la meta municipal de esta fila.",
-                "en": "The row expressly names LINC, and the catalogue contains the same Community Innovation Labs network. General operation is verified; full delivery of this row’s municipal target is not."
+                "es": "El registro nombra expresamente a LINC y el catálogo contiene la misma red de Laboratorios de Innovación Comunitaria. La operación general está verificada; no lo está el cumplimiento íntegro de la meta municipal de este registro.",
+                "en": "The record expressly names LINC, and the catalogue contains the same Community Innovation Labs network. General operation is verified; full delivery of this record’s municipal target is not."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -1173,8 +1173,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a investigación o diagnóstico; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns research or diagnostic work; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a investigación o diagnóstico; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns research or diagnostic work; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -1201,8 +1201,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a investigación o diagnóstico; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns research or diagnostic work; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a investigación o diagnóstico; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns research or diagnostic work; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -1255,8 +1255,8 @@
                 "micitt-agroboost"
               ],
               "fundamento": {
-                "es": "AgroBoost aporta evidencia de asistencia y transferencia tecnológica a unidades productivas agrícolas, una parte del alcance amplio para emprendimientos, PYMES y PYMPAS. No hay identidad documental con toda la fila.",
-                "en": "AgroBoost provides evidence of assistance and technology transfer to agricultural production units, part of the broader scope for ventures, SMEs and small agricultural producers. Documentary identity with the full row is not established."
+                "es": "AgroBoost aporta evidencia de asistencia y transferencia tecnológica a unidades productivas agrícolas, una parte del alcance amplio para emprendimientos, PYMES y PYMPAS. No hay identidad documental con toda la intervención.",
+                "en": "AgroBoost provides evidence of assistance and technology transfer to agricultural production units, part of the broader scope for ventures, SMEs and small agricultural producers. Documentary identity with the full intervention is not established."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -1284,8 +1284,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -1312,8 +1312,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -1345,8 +1345,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -1397,8 +1397,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a articulación o financiamiento; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns coordination or funding; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a articulación o financiamiento; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns coordination or funding; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -1509,8 +1509,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a investigación o diagnóstico; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns research or diagnostic work; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a investigación o diagnóstico; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns research or diagnostic work; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -1537,8 +1537,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a investigación o diagnóstico; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns research or diagnostic work; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a investigación o diagnóstico; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns research or diagnostic work; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -1565,8 +1565,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a investigación o diagnóstico; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns research or diagnostic work; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a investigación o diagnóstico; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns research or diagnostic work; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -1594,8 +1594,8 @@
               "proyectoIds": [],
               "intervencionCanonicaId": "enia-2-2-1-02",
               "fundamento": {
-                "es": "La redacción, institución, indicador o metas reproducen sustancialmente la fila enia-2-2-1-02. Se conserva como registro fuente y se remite a esa fila como decisión canónica.",
-                "en": "The wording, institution, indicator or targets substantially reproduce row enia-2-2-1-02. It is retained as a source record and points to that row as the canonical decision."
+                "es": "La redacción, institución, indicador o metas reproducen sustancialmente la intervención enia-2-2-1-02. Se conserva este registro oficial y se vincula a esa intervención para contar la acción una sola vez.",
+                "en": "The wording, institution, indicator or targets substantially reproduce intervention enia-2-2-1-02. This official record is preserved and linked to that intervention so the action is counted only once."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -1646,8 +1646,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a articulación o financiamiento; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns coordination or funding; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a articulación o financiamiento; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns coordination or funding; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -1701,8 +1701,8 @@
               ],
               "intervencionCanonicaId": "enia-2-1-1-03",
               "fundamento": {
-                "es": "La redacción, institución, indicador o metas reproducen sustancialmente la fila enia-2-1-1-03. Se conserva como registro fuente y se remite a esa fila como decisión canónica.",
-                "en": "The wording, institution, indicator or targets substantially reproduce row enia-2-1-1-03. It is retained as a source record and points to that row as the canonical decision."
+                "es": "La redacción, institución, indicador o metas reproducen sustancialmente la intervención enia-2-1-1-03. Se conserva este registro oficial y se vincula a esa intervención para contar la acción una sola vez.",
+                "en": "The wording, institution, indicator or targets substantially reproduce intervention enia-2-1-1-03. This official record is preserved and linked to that intervention so the action is counted only once."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -1754,8 +1754,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -1782,8 +1782,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -1834,8 +1834,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -1862,8 +1862,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -1915,8 +1915,8 @@
               "proyectoIds": [],
               "intervencionCanonicaId": "enia-2-1-1-01",
               "fundamento": {
-                "es": "La redacción, institución, indicador o metas reproducen sustancialmente la fila enia-2-1-1-01. Se conserva como registro fuente y se remite a esa fila como decisión canónica.",
-                "en": "The wording, institution, indicator or targets substantially reproduce row enia-2-1-1-01. It is retained as a source record and points to that row as the canonical decision."
+                "es": "La redacción, institución, indicador o metas reproducen sustancialmente la intervención enia-2-1-1-01. Se conserva este registro oficial y se vincula a esa intervención para contar la acción una sola vez.",
+                "en": "The wording, institution, indicator or targets substantially reproduce intervention enia-2-1-1-01. This official record is preserved and linked to that intervention so the action is counted only once."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -1943,8 +1943,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -1971,8 +1971,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -1999,8 +1999,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -2027,8 +2027,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -2055,8 +2055,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -2083,8 +2083,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -2111,8 +2111,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -2139,8 +2139,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -2167,8 +2167,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -2195,8 +2195,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -2223,8 +2223,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -2282,8 +2282,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -2310,8 +2310,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -2362,8 +2362,8 @@
               "estado": "enia-solamente",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
-                "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+                "es": "El registro declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+                "en": "The record declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
               }
             },
             "recomendacionEditorial": "investigar-como-seguimiento",
@@ -2390,8 +2390,8 @@
               "estado": "enia-solamente",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
-                "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+                "es": "El registro declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+                "en": "The record declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
               }
             },
             "recomendacionEditorial": "investigar-como-seguimiento",
@@ -2418,8 +2418,8 @@
               "estado": "enia-solamente",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
-                "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+                "es": "El registro declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+                "en": "The record declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
               }
             },
             "recomendacionEditorial": "investigar-como-seguimiento",
@@ -2446,15 +2446,15 @@
               "estado": "enia-solamente",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
-                "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+                "es": "El registro declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+                "en": "The record declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
               }
             },
             "recomendacionEditorial": "investigar-como-seguimiento",
             "fechaUltimaRevision": "2026-08-21",
             "notasEditoriales": {
-              "es": "El MTSS mantiene un chat de atención desde 2018, pero las fuentes oficiales localizadas no lo describen como IA ni demuestran la creación del chatbot previsto por esta fila.",
-              "en": "MTSS has operated a support chat since 2018, but the official sources found do not describe it as AI or establish creation of the chatbot anticipated by this row."
+              "es": "El MTSS mantiene un chat de atención desde 2018, pero las fuentes oficiales localizadas no lo describen como IA ni demuestran la creación del chatbot previsto por este registro.",
+              "en": "MTSS has operated a support chat since 2018, but the official sources found do not describe it as AI or establish creation of the chatbot anticipated by this record."
             }
           },
           {
@@ -2480,8 +2480,8 @@
                 "inamu-ela"
               ],
               "fundamento": {
-                "es": "La ficha inamu-ela corresponde a la aplicación institucional descrita por esta fila. Las fuentes oficiales confirman disponibilidad, técnica de IA y uso; la coincidencia no implica que la meta de 1.200 atenciones esté verificada.",
-                "en": "The inamu-ela record corresponds to the institutional application described by this row. Official sources confirm availability, AI technique and use; the match does not establish delivery of the 1,200-service target."
+                "es": "La ficha inamu-ela corresponde a la aplicación institucional descrita por este registro. Las fuentes oficiales confirman disponibilidad, técnica de IA y uso; la coincidencia no implica que la meta de 1.200 atenciones esté verificada.",
+                "en": "The inamu-ela record corresponds to the institutional application described by this Plan record. Official sources confirm availability, AI technique and use; the match does not establish delivery of the 1,200-service target."
               }
             },
             "recomendacionEditorial": "revisar",
@@ -2546,8 +2546,8 @@
               "estado": "enia-solamente",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
-                "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+                "es": "El registro declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+                "en": "The record declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
               }
             },
             "recomendacionEditorial": "investigar-como-seguimiento",
@@ -2578,8 +2578,8 @@
               "estado": "enia-solamente",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
-                "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+                "es": "El registro declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+                "en": "The record declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
               }
             },
             "recomendacionEditorial": "investigar-como-seguimiento",
@@ -2610,8 +2610,8 @@
               "estado": "enia-solamente",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
-                "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+                "es": "El registro declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+                "en": "The record declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
               }
             },
             "recomendacionEditorial": "investigar-como-seguimiento",
@@ -2638,8 +2638,8 @@
               "estado": "enia-solamente",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
-                "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+                "es": "El registro declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+                "en": "The record declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
               }
             },
             "recomendacionEditorial": "investigar-como-seguimiento",
@@ -2669,8 +2669,8 @@
                 "hacienda-asistente"
               ],
               "fundamento": {
-                "es": "El catálogo documenta una solución analítica de detección de anomalías y un asistente tributario en operación. Ambos cubren partes de la formulación amplia, pero la fila no los nombra ni prueba todas las funcionalidades previstas.",
-                "en": "The catalogue documents an anomaly-detection analytics solution and an operating tax assistant. Both cover parts of the broad wording, but the row does not name them or prove every planned function."
+                "es": "El catálogo documenta una solución analítica de detección de anomalías y un asistente tributario en operación. Ambos cubren partes de la formulación amplia, pero el registro no los nombra ni prueba todas las funcionalidades previstas.",
+                "en": "The catalogue documents an anomaly-detection analytics solution and an operating tax assistant. Both cover parts of the broad wording, but the record does not name them or prove every planned function."
               }
             },
             "recomendacionEditorial": "investigar-como-seguimiento",
@@ -2698,8 +2698,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -2726,8 +2726,8 @@
               "estado": "enia-solamente",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
-                "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+                "es": "El registro declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+                "en": "The record declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
               }
             },
             "recomendacionEditorial": "investigar-como-seguimiento",
@@ -2758,8 +2758,8 @@
               "estado": "enia-solamente",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
-                "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+                "es": "El registro declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+                "en": "The record declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
               }
             },
             "recomendacionEditorial": "investigar-como-seguimiento",
@@ -2789,8 +2789,8 @@
               ],
               "intervencionCanonicaId": "enia-4-1-3-05",
               "fundamento": {
-                "es": "La redacción, institución, indicador o metas reproducen sustancialmente la fila enia-4-1-3-05. Se conserva como registro fuente y se remite a esa fila como decisión canónica.",
-                "en": "The wording, institution, indicator or targets substantially reproduce row enia-4-1-3-05. It is retained as a source record and points to that row as the canonical decision."
+                "es": "La redacción, institución, indicador o metas reproducen sustancialmente la intervención enia-4-1-3-05. Se conserva este registro oficial y se vincula a esa intervención para contar la acción una sola vez.",
+                "en": "The wording, institution, indicator or targets substantially reproduce intervention enia-4-1-3-05. This official record is preserved and linked to that intervention so the action is counted only once."
               }
             },
             "recomendacionEditorial": "investigar-como-seguimiento",
@@ -2824,8 +2824,8 @@
                 "ccss-logistica-ia-abastecimiento"
               ],
               "fundamento": {
-                "es": "La fila describe una cartera institucional amplia. Las cinco fichas relacionadas demuestran capacidades o soluciones que cubren partes del alcance, pero ninguna fuente permite atribuirles el porcentaje base de 67 ni tratarlas como una sola iniciativa.",
-                "en": "The row describes a broad institutional portfolio. The five related records demonstrate capabilities or solutions covering parts of that scope, but no source supports attributing the 67 baseline percentage to them or treating them as one initiative."
+                "es": "El registro describe una cartera institucional amplia. Las cinco fichas relacionadas demuestran capacidades o soluciones que cubren partes del alcance, pero ninguna fuente permite atribuirles el porcentaje base de 67 ni tratarlas como una sola iniciativa.",
+                "en": "The record describes a broad institutional portfolio. The five related records demonstrate capabilities or solutions covering parts of that scope, but no source supports attributing the 67 baseline percentage to them or treating them as one initiative."
               }
             },
             "recomendacionEditorial": "investigar-como-seguimiento",
@@ -2854,8 +2854,8 @@
                 "ccss-lidia"
               ],
               "fundamento": {
-                "es": "LIDIA confirma modelos predictivos clínicos sobre EDUS y coincide con una parte sustantiva del objetivo. La fila es más amplia: incluye patrones epidemiológicos, patologías y comportamientos, y no nombra a LIDIA.",
-                "en": "LIDIA confirms clinical predictive models using EDUS and matches a substantial part of the objective. The row is broader: it includes epidemiological patterns, pathologies and service behavior, and does not name LIDIA."
+                "es": "LIDIA confirma modelos predictivos clínicos sobre EDUS y coincide con una parte sustantiva del objetivo. La intervención es más amplia: incluye patrones epidemiológicos, patologías y comportamientos, y no nombra a LIDIA.",
+                "en": "LIDIA confirms clinical predictive models using EDUS and matches a substantial part of the objective. The intervention is broader: it includes epidemiological patterns, pathologies and service behavior, and does not name LIDIA."
               }
             },
             "recomendacionEditorial": "investigar-como-seguimiento",
@@ -2883,8 +2883,8 @@
               "estado": "enia-solamente",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
-                "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+                "es": "El registro declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+                "en": "The record declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
               }
             },
             "recomendacionEditorial": "investigar-como-seguimiento",
@@ -2913,8 +2913,8 @@
                 "ccss-tec-formacion"
               ],
               "fundamento": {
-                "es": "El programa TEC-CCSS verifica formación y prototipos en IA, por lo que materializa parte de la fila. No demuestra la estrategia institucional completa de tecnologías emergentes, automatización y programación visual.",
-                "en": "The TEC-CCSS program verifies AI training and prototypes, so it delivers part of the row. It does not establish the full institutional strategy for emerging technologies, automation and visual programming."
+                "es": "El programa TEC-CCSS verifica formación y prototipos en IA, por lo que materializa parte de la intervención. No demuestra la estrategia institucional completa de tecnologías emergentes, automatización y programación visual.",
+                "en": "The TEC-CCSS program verifies AI training and prototypes, so it delivers part of the intervention. It does not establish the full institutional strategy for emerging technologies, automation and visual programming."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -2942,15 +2942,15 @@
               "estado": "enia-solamente",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
-                "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+                "es": "El registro declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+                "en": "The record declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
               }
             },
             "recomendacionEditorial": "investigar-como-seguimiento",
             "fechaUltimaRevision": "2026-08-21",
             "notasEditoriales": {
-              "es": "No se localizó evidencia externa del componente de auditoría automatizada con IA sobre SIES/MISE. La fila reaparece con redacción equivalente en enia-4-1-3-23.",
-              "en": "No external evidence was found for the AI-based automated-audit component over SIES/MISE. The row reappears with equivalent wording in enia-4-1-3-23."
+              "es": "No se localizó evidencia externa del componente de auditoría automatizada con IA sobre SIES/MISE. La intervención reaparece con redacción equivalente en enia-4-1-3-23.",
+              "en": "No external evidence was found for the AI-based automated-audit component over SIES/MISE. The intervention reappears with equivalent wording in enia-4-1-3-23."
             }
           },
           {
@@ -2974,8 +2974,8 @@
               "estado": "enia-solamente",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
-                "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+                "es": "El registro declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+                "en": "The record declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
               }
             },
             "recomendacionEditorial": "investigar-como-seguimiento",
@@ -3013,8 +3013,8 @@
               ],
               "intervencionCanonicaId": "enia-4-1-3-15",
               "fundamento": {
-                "es": "La redacción, institución, indicador o metas reproducen sustancialmente la fila enia-4-1-3-15. Se conserva como registro fuente y se remite a esa fila como decisión canónica.",
-                "en": "The wording, institution, indicator or targets substantially reproduce row enia-4-1-3-15. It is retained as a source record and points to that row as the canonical decision."
+                "es": "La redacción, institución, indicador o metas reproducen sustancialmente la intervención enia-4-1-3-15. Se conserva este registro oficial y se vincula a esa intervención para contar la acción una sola vez.",
+                "en": "The wording, institution, indicator or targets substantially reproduce intervention enia-4-1-3-15. This official record is preserved and linked to that intervention so the action is counted only once."
               }
             },
             "recomendacionEditorial": "investigar-como-seguimiento",
@@ -3044,8 +3044,8 @@
               ],
               "intervencionCanonicaId": "enia-4-1-3-18",
               "fundamento": {
-                "es": "La redacción, institución, indicador o metas reproducen sustancialmente la fila enia-4-1-3-18. Se conserva como registro fuente y se remite a esa fila como decisión canónica.",
-                "en": "The wording, institution, indicator or targets substantially reproduce row enia-4-1-3-18. It is retained as a source record and points to that row as the canonical decision."
+                "es": "La redacción, institución, indicador o metas reproducen sustancialmente la intervención enia-4-1-3-18. Se conserva este registro oficial y se vincula a esa intervención para contar la acción una sola vez.",
+                "en": "The wording, institution, indicator or targets substantially reproduce intervention enia-4-1-3-18. This official record is preserved and linked to that intervention so the action is counted only once."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -3074,8 +3074,8 @@
               "proyectoIds": [],
               "intervencionCanonicaId": "enia-4-1-3-19",
               "fundamento": {
-                "es": "La redacción, institución, indicador o metas reproducen sustancialmente la fila enia-4-1-3-19. Se conserva como registro fuente y se remite a esa fila como decisión canónica.",
-                "en": "The wording, institution, indicator or targets substantially reproduce row enia-4-1-3-19. It is retained as a source record and points to that row as the canonical decision."
+                "es": "La redacción, institución, indicador o metas reproducen sustancialmente la intervención enia-4-1-3-19. Se conserva este registro oficial y se vincula a esa intervención para contar la acción una sola vez.",
+                "en": "The wording, institution, indicator or targets substantially reproduce intervention enia-4-1-3-19. This official record is preserved and linked to that intervention so the action is counted only once."
               }
             },
             "recomendacionEditorial": "investigar-como-seguimiento",
@@ -3104,8 +3104,8 @@
                 "ins-reclamos-medicos-ia"
               ],
               "fundamento": {
-                "es": "La ficha ins-reclamos-medicos-ia corresponde al proceso de reclamación e indemnización descrito por esta fila. Un boletín oficial anterior al Plan confirma operación y resultados reportados, aunque la técnica y la gobernanza permanecen sin determinar.",
-                "en": "The ins-reclamos-medicos-ia record corresponds to the claim and reimbursement process described by this row. An official bulletin predating the Plan confirms operation and reported results, although technique and governance remain undetermined."
+                "es": "La ficha ins-reclamos-medicos-ia corresponde al proceso de reclamación e indemnización descrito por este registro. Un boletín oficial anterior al Plan confirma operación y resultados reportados, aunque la técnica y la gobernanza permanecen sin determinar.",
+                "en": "The ins-reclamos-medicos-ia record corresponds to the claim and reimbursement process described by this Plan record. An official bulletin predating the Plan confirms operation and reported results, although technique and governance remain undetermined."
               }
             },
             "recomendacionEditorial": "investigar-como-seguimiento",
@@ -3155,15 +3155,15 @@
               "estado": "enia-solamente",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
-                "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+                "es": "El registro declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+                "en": "The record declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
               }
             },
             "recomendacionEditorial": "investigar-como-seguimiento",
             "fechaUltimaRevision": "2026-08-21",
             "notasEditoriales": {
-              "es": "La investigación documental no encontró formalización, convenio, contratación, piloto ni resultado ICE-OIJ. OIJ-TEC y SUPERCOP son iniciativas distintas y no deben fusionarse con esta fila. El Plan reutiliza además el mismo indicador y metas en enia-5-1-1-02 para un objetivo educativo diferente.",
-              "en": "Documentary research found no formalization, agreement, procurement, pilot or result for ICE-OIJ. OIJ-TEC and SUPERCOP are separate initiatives and must not be merged with this row. The Plan also reuses the same indicator and targets in enia-5-1-1-02 for a different education objective."
+              "es": "La investigación documental no encontró formalización, convenio, contratación, piloto ni resultado ICE-OIJ. OIJ-TEC y SUPERCOP son iniciativas distintas y no deben fusionarse con este registro. El Plan reutiliza además el mismo indicador y metas en enia-5-1-1-02 para un objetivo educativo diferente.",
+              "en": "Documentary research found no formalization, agreement, procurement, pilot or result for ICE-OIJ. OIJ-TEC and SUPERCOP are separate initiatives and must not be merged with this record. The Plan also reuses the same indicator and targets in enia-5-1-1-02 for a different education objective."
             }
           },
           {
@@ -3187,8 +3187,8 @@
               "estado": "enia-solamente",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
-                "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+                "es": "El registro declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+                "en": "The record declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
               }
             },
             "recomendacionEditorial": "investigar-como-seguimiento",
@@ -3219,8 +3219,8 @@
               "estado": "enia-solamente",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
-                "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+                "es": "El registro declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+                "en": "The record declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
               }
             },
             "recomendacionEditorial": "investigar-como-seguimiento",
@@ -3251,8 +3251,8 @@
               "estado": "enia-solamente",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
-                "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+                "es": "El registro declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+                "en": "The record declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
               }
             },
             "recomendacionEditorial": "investigar-como-seguimiento",
@@ -3283,15 +3283,15 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a automatización digital; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns digital automation; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a automatización digital; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns digital automation; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "revisar-si-es-ia",
             "fechaUltimaRevision": "2026-08-21",
             "notasEditoriales": {
-              "es": "RPA automatiza tareas mediante reglas y no constituye por sí sola evidencia de inteligencia artificial. La fila se conserva como automatización digital.",
-              "en": "RPA automates tasks through rules and is not, by itself, evidence of artificial intelligence. The row remains classified as digital automation."
+              "es": "RPA automatiza tareas mediante reglas y no constituye por sí sola evidencia de inteligencia artificial. El registro se conserva como automatización digital.",
+              "en": "RPA automates tasks through rules and is not, by itself, evidence of artificial intelligence. The record remains classified as digital automation."
             }
           },
           {
@@ -3318,8 +3318,8 @@
               ],
               "intervencionCanonicaId": "enia-4-1-3-16",
               "fundamento": {
-                "es": "La redacción, institución, indicador o metas reproducen sustancialmente la fila enia-4-1-3-16. Se conserva como registro fuente y se remite a esa fila como decisión canónica.",
-                "en": "The wording, institution, indicator or targets substantially reproduce row enia-4-1-3-16. It is retained as a source record and points to that row as the canonical decision."
+                "es": "La redacción, institución, indicador o metas reproducen sustancialmente la intervención enia-4-1-3-16. Se conserva este registro oficial y se vincula a esa intervención para contar la acción una sola vez.",
+                "en": "The wording, institution, indicator or targets substantially reproduce intervention enia-4-1-3-16. This official record is preserved and linked to that intervention so the action is counted only once."
               }
             },
             "recomendacionEditorial": "investigar-como-seguimiento",
@@ -3376,8 +3376,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -3404,8 +3404,8 @@
               "estado": "enia-solamente",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
-                "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+                "es": "El registro declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+                "en": "The record declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
               }
             },
             "recomendacionEditorial": "investigar-como-seguimiento",
@@ -3456,8 +3456,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -3484,8 +3484,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -3536,8 +3536,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -3564,8 +3564,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -3592,8 +3592,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -3644,8 +3644,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a investigación o diagnóstico; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns research or diagnostic work; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a investigación o diagnóstico; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns research or diagnostic work; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -3672,15 +3672,15 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a investigación o diagnóstico; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns research or diagnostic work; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a investigación o diagnóstico; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns research or diagnostic work; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
             "fechaUltimaRevision": "2026-08-21",
             "notasEditoriales": {
-              "es": "La fila describe análisis estadístico para ubicar espacios de educación virtual, no un sistema de IA. El indicador y las metas 0/30/65 son idénticos a los de predicción de homicidios en enia-4-1-3-25, una anomalía de la fuente que no se corrige por inferencia.",
-              "en": "The row describes statistical analysis to locate virtual-education spaces, not an AI system. Its indicator and 0/30/65 targets are identical to those for homicide prediction in enia-4-1-3-25, a source anomaly that is not corrected by inference."
+              "es": "El registro describe análisis estadístico para ubicar espacios de educación virtual, no un sistema de IA. El indicador y las metas 0/30/65 son idénticos a los de predicción de homicidios en enia-4-1-3-25, una anomalía del documento que no se corrige por inferencia.",
+              "en": "The record describes statistical analysis to locate virtual-education spaces, not an AI system. Its indicator and 0/30/65 targets are identical to those for homicide prediction in enia-4-1-3-25, a document anomaly that is not corrected by inference."
             }
           },
           {
@@ -3704,8 +3704,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a investigación o diagnóstico; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns research or diagnostic work; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a investigación o diagnóstico; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns research or diagnostic work; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -3756,8 +3756,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -3808,8 +3808,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -3836,8 +3836,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -3864,8 +3864,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -3893,8 +3893,8 @@
               "proyectoIds": [],
               "intervencionCanonicaId": "enia-5-1-3-03",
               "fundamento": {
-                "es": "La redacción, institución, indicador o metas reproducen sustancialmente la fila enia-5-1-3-03. Se conserva como registro fuente y se remite a esa fila como decisión canónica.",
-                "en": "The wording, institution, indicator or targets substantially reproduce row enia-5-1-3-03. It is retained as a source record and points to that row as the canonical decision."
+                "es": "La redacción, institución, indicador o metas reproducen sustancialmente la intervención enia-5-1-3-03. Se conserva este registro oficial y se vincula a esa intervención para contar la acción una sola vez.",
+                "en": "The wording, institution, indicator or targets substantially reproduce intervention enia-5-1-3-03. This official record is preserved and linked to that intervention so the action is counted only once."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -3921,8 +3921,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -3954,8 +3954,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -3982,8 +3982,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -4034,8 +4034,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -4067,8 +4067,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a capacitación o formación; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns training or education; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -4095,8 +4095,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a infraestructura habilitante; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns enabling infrastructure; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a infraestructura habilitante; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns enabling infrastructure; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -4149,8 +4149,8 @@
                 "micitt-linc"
               ],
               "fundamento": {
-                "es": "La fila identifica expresamente a LINC como medio para capacitar población y el catálogo documenta la misma red en operación. La evidencia no permite verificar todas las alianzas o metas futuras.",
-                "en": "The row expressly identifies LINC as a vehicle for public training, and the catalogue documents the same operating network. The evidence does not verify every partnership or future target."
+                "es": "El registro identifica expresamente a LINC como medio para capacitar población y el catálogo documenta la misma red en operación. La evidencia no permite verificar todas las alianzas o metas futuras.",
+                "en": "The record expressly identifies LINC as a vehicle for public training, and the catalogue documents the same operating network. The evidence does not verify every partnership or future target."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -4207,8 +4207,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a infraestructura habilitante; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns enabling infrastructure; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a infraestructura habilitante; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns enabling infrastructure; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -4247,8 +4247,8 @@
                 "mep-intel"
               ],
               "fundamento": {
-                "es": "La especialidad MEP-Intel demuestra incorporación curricular de IA en educación técnica secundaria. La fila abarca primaria y secundaria académica de forma más amplia, por lo que no se considera identidad exacta.",
-                "en": "The MEP-Intel specialization demonstrates AI curriculum adoption in technical secondary education. The row more broadly covers primary and academic secondary education, so it is not treated as an exact identity."
+                "es": "La especialidad MEP-Intel demuestra incorporación curricular de IA en educación técnica secundaria. La intervención abarca primaria y secundaria académica de forma más amplia, por lo que no se considera identidad exacta.",
+                "en": "The MEP-Intel specialization demonstrates AI curriculum adoption in technical secondary education. The intervention more broadly covers primary and academic secondary education, so it is not treated as an exact identity."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -4305,8 +4305,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a infraestructura habilitante; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns enabling infrastructure; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a infraestructura habilitante; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns enabling infrastructure; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -4422,8 +4422,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a infraestructura habilitante; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns enabling infrastructure; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a infraestructura habilitante; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns enabling infrastructure; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -4450,8 +4450,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a infraestructura habilitante; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns enabling infrastructure; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a infraestructura habilitante; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns enabling infrastructure; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -4478,8 +4478,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a infraestructura habilitante; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns enabling infrastructure; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a infraestructura habilitante; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns enabling infrastructure; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -4532,8 +4532,8 @@
                 "cenat-lania"
               ],
               "fundamento": {
-                "es": "LaNIA comparte la función de capacitación, sensibilización y desarrollo de iniciativas de alto impacto, pero la evidencia disponible no demuestra que sea el Centro Nacional de Excelencia definido por esta fila ni que esté operativo.",
-                "en": "LaNIA shares the training, awareness and high-impact initiative-development function, but available evidence does not establish that it is the National Center of Excellence defined by this row or that it is operating."
+                "es": "LaNIA comparte la función de capacitación, sensibilización y desarrollo de iniciativas de alto impacto, pero la evidencia disponible no demuestra que sea el Centro Nacional de Excelencia definido por este registro ni que esté operativo.",
+                "en": "LaNIA shares the training, awareness and high-impact initiative-development function, but available evidence does not establish that it is the National Center of Excellence defined by this record or that it is operating."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -4585,8 +4585,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a infraestructura habilitante; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns enabling infrastructure; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a infraestructura habilitante; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns enabling infrastructure; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -4613,8 +4613,8 @@
               "estado": "enia-solamente",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
-                "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+                "es": "El registro declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+                "en": "The record declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
               }
             },
             "recomendacionEditorial": "investigar-como-seguimiento",
@@ -4641,8 +4641,8 @@
               "estado": "enia-solamente",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
-                "en": "The row declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+                "es": "El registro declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
+                "en": "The record declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
               }
             },
             "recomendacionEditorial": "investigar-como-seguimiento",
@@ -4698,8 +4698,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -4726,8 +4726,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a política o gobernanza; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns policy or governance; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",
@@ -4778,8 +4778,8 @@
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
               "fundamento": {
-                "es": "La fila corresponde a articulación o financiamiento; es relevante para el ecosistema, pero no describe por sí misma la implementación de un sistema de IA.",
-                "en": "The row concerns coordination or funding; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
+                "es": "El registro corresponde a articulación o financiamiento; es relevante para el ecosistema, pero no describe por sí mismo la implementación de un sistema de IA.",
+                "en": "The record concerns coordination or funding; it is relevant to the ecosystem but does not itself describe implementation of an AI system."
               }
             },
             "recomendacionEditorial": "ecosistema",

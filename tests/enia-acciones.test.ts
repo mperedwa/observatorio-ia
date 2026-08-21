@@ -15,6 +15,16 @@ import {
   obtenerProyectoIdsMapeadosEnEnia,
   resultadosEnia,
 } from '../src/data/eniaAcciones';
+import { eniaTranslations } from '../src/app/[locale]/enia/translations';
+
+function collectStrings(value: unknown): string[] {
+  if (typeof value === 'string') return [value];
+  if (Array.isArray(value)) return value.flatMap(collectStrings);
+  if (value && typeof value === 'object') {
+    return Object.values(value).flatMap(collectStrings);
+  }
+  return [];
+}
 
 describe('inventario del Plan de Acción ENIA', () => {
   it('valida el dataset completo contra JSON Schema', () => {
@@ -147,7 +157,7 @@ describe('inventario del Plan de Acción ENIA', () => {
     expect(idsMapeados).not.toContain('pj-oij-tec-ia-investigacion');
   });
 
-  it('conserva nueve repeticiones con una fila canónica válida', () => {
+  it('conserva nueve repeticiones con un registro principal válido', () => {
     const porId = new Map(
       intervencionesEnia.map((intervencion) => [intervencion.id, intervencion]),
     );
@@ -176,6 +186,32 @@ describe('inventario del Plan de Acción ENIA', () => {
         'posible-duplicado',
       );
     }
+  });
+
+  it('explica los registros repetidos sin lenguaje tabular en la interfaz', () => {
+    expect(eniaTranslations.es.stats.repetitions).toBe(
+      'registros que repiten una acción',
+    );
+    expect(eniaTranslations.es.stats.canonicalRows).toBe(
+      'intervenciones únicas',
+    );
+
+    const textosEditoriales = [
+      ...collectStrings(eniaTranslations),
+      ...inventarioEnia.hallazgosExtraccion.flatMap((hallazgo) => [
+        hallazgo.descripcion.es,
+        hallazgo.descripcion.en,
+      ]),
+      ...intervencionesEnia.flatMap((intervencion) => [
+        intervencion.cruceCatalogo.fundamento.es,
+        intervencion.cruceCatalogo.fundamento.en,
+        intervencion.notasEditoriales?.es ?? '',
+        intervencion.notasEditoriales?.en ?? '',
+      ]),
+    ].join('\n');
+
+    expect(textosEditoriales).not.toMatch(/\bfilas?\b/i);
+    expect(textosEditoriales).not.toMatch(/\brows?\b/i);
   });
 
   it('mantiene separados los casos sensibles y enlaza las nuevas fichas', () => {

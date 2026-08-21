@@ -3,8 +3,8 @@
     "fecha": "2026-08-21",
     "tipo": "recurso",
     "actualizacion": {
-      "es": "Se publica el explorador bilingüe del Plan de Acción ENIA. La vista conserva las 129 filas oficiales, distingue 120 intervenciones canónicas de 9 repeticiones y separa 29 soluciones de IA declaradas de 83 acciones que no son sistemas. El crosswalk queda en 6 coincidencias exactas, 9 parciales y 22 compromisos de solución que permanecen solo en ENIA, con ejecución evaluada por separado.",
-      "en": "The bilingual ENIA Action Plan explorer is released. The view preserves all 129 official rows, distinguishes 120 canonical interventions from 9 repetitions, and separates 29 declared AI solutions from 83 actions that are not systems. The crosswalk now contains 6 exact matches, 9 partial matches and 22 solution commitments that remain ENIA-only, with execution assessed separately."
+      "es": "Se publica el explorador bilingüe del Plan de Acción ENIA. La vista conserva los 129 registros oficiales, distingue 120 intervenciones únicas y señala 9 registros que repiten una acción. También separa 29 soluciones de IA declaradas de 83 acciones que no son sistemas. El crosswalk queda en 6 coincidencias exactas, 9 parciales y 22 compromisos de solución que permanecen solo en ENIA, con ejecución evaluada por separado.",
+      "en": "The bilingual ENIA Action Plan explorer is released. The view preserves all 129 official records, distinguishes 120 unique interventions and identifies 9 records that repeat an action. It also separates 29 declared AI solutions from 83 actions that are not systems. The crosswalk now contains 6 exact matches, 9 partial matches and 22 solution commitments that remain ENIA-only, with execution assessed separately."
     },
     "fuente": {
       "es": "MICITT, Plan de Acción ENIA y crosswalk editorial, corte 21-ago-2026",
