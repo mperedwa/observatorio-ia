@@ -11,7 +11,8 @@ export type Categoria =
   | 'educacion'
   | 'fiscal'
   | 'infraestructura'
-  | 'agricultura';
+  | 'agricultura'
+  | 'social';
 export type Estado = EstadoProyectoLegacy;
 
 export interface Proyecto extends CamposModeloEvidencia {

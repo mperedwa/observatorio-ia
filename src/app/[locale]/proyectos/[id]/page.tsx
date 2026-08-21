@@ -31,6 +31,7 @@ const categoriaLabel: Record<string, { es: string; en: string }> = {
   fiscal: { es: 'Fiscal', en: 'Fiscal' },
   infraestructura: { es: 'Infraestructura', en: 'Infrastructure' },
   agricultura: { es: 'Agricultura', en: 'Agriculture' },
+  social: { es: 'Servicios sociales', en: 'Social services' },
 };
 
 export async function generateMetadata({

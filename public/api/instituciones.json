@@ -1,7 +1,7 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-08-21T18:36:14.908Z",
-  "count": 7,
+  "lastUpdate": "2026-08-21T20:19:12.964Z",
+  "count": 9,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "data": [
@@ -17,14 +17,14 @@
       },
       "tipo": "judicial",
       "url": "https://pj.poder-judicial.go.cr/",
-      "proyectosActivos": 8,
+      "proyectosActivos": 9,
       "resumen": {
-        "es": "Ocho iniciativas documentadas: tres adopciones verificadas, dos sistemas en seguimiento y tres registros de investigación, capacidades o digitalización sin IA confirmada.",
-        "en": "Eight documented initiatives: three verified adoptions, two systems under review, and three research, capacity-building or digitization records without confirmed AI."
+        "es": "Nueve iniciativas documentadas: tres adopciones verificadas, dos sistemas en seguimiento y cuatro registros de investigación, capacidades o digitalización sin IA confirmada.",
+        "en": "Nine documented initiatives: three verified adoptions, two systems under review, and four research, capacity-building or digitization records without confirmed AI."
       },
       "descripcion": {
-        "es": "El catálogo confirma un piloto de clasificación documental, un modelo de aprendizaje automático para presupuesto y el uso de Nymiz. ChatbotPJ y el chat de CONAMAJ permanecen en seguimiento. La investigación sobre sentencias, Giro Continuo y la inducción de Sala Primera se conservan como contexto, sin contarlos como sistemas de IA adoptados.",
-        "en": "The catalog confirms a document-classification pilot, a machine-learning budget model and the use of Nymiz. ChatbotPJ and the CONAMAJ chat remain under review. Research on rulings, Continuous Disbursement and the First Chamber induction are retained as context without counting them as adopted AI systems."
+        "es": "El catálogo confirma un piloto de clasificación documental, un modelo de aprendizaje automático para presupuesto y el uso de Nymiz. ChatbotPJ y el chat de CONAMAJ permanecen en seguimiento. La investigación OIJ–TEC, el análisis de sentencias, Giro Continuo y la inducción de Sala Primera se conservan como contexto, sin contarlos como sistemas de IA adoptados.",
+        "en": "The catalog confirms a document-classification pilot, a machine-learning budget model and the use of Nymiz. ChatbotPJ and the CONAMAJ chat remain under review. OIJ–TEC research, rulings analysis, Continuous Disbursement and the First Chamber induction are retained as context without counting them as adopted AI systems."
       },
       "lecciones": {
         "es": "La amplitud de una cartera no equivale al número de sistemas de IA en operación. Separar automatización, investigación, formación y sistemas confirmados evita atribuir IA o resultados a iniciativas que las fuentes no conectan.",
@@ -185,6 +185,58 @@
       "lecciones": {
         "es": "Una propuesta de laboratorio y un prototipo de investigación deben conservar su fase real. La ausencia de evidencia de operación o validación clínica se publica explícitamente.",
         "en": "A laboratory proposal and a research prototype should retain their actual phase. The absence of operational or clinical-validation evidence is published explicitly."
+      }
+    },
+    {
+      "id": "inamu",
+      "nombre": {
+        "es": "Instituto Nacional de las Mujeres",
+        "en": "National Institute for Women"
+      },
+      "nombreCorto": {
+        "es": "INAMU",
+        "en": "INAMU"
+      },
+      "tipo": "autonoma",
+      "url": "https://www.inamu.go.cr/",
+      "proyectosActivos": 1,
+      "resumen": {
+        "es": "Una adopción verificada: Ela, una aplicación con chat de IA para información, orientación y atención inicial a mujeres durante las 24 horas.",
+        "en": "One verified adoption: Ela, an AI-chat application providing women with information, guidance and initial support around the clock."
+      },
+      "descripcion": {
+        "es": "Las fuentes institucionales confirman disponibilidad, GPT-4 Turbo, búsqueda de archivos y tratamiento de datos personales. La ficha separa esa evidencia de los resultados todavía no publicados sobre calidad, seguridad, uso y derivaciones.",
+        "en": "Institutional sources confirm availability, GPT-4 Turbo, file search and personal-data processing. The record separates that evidence from still-unpublished outcomes on quality, safety, usage and referrals."
+      },
+      "lecciones": {
+        "es": "En un servicio dirigido a personas potencialmente vulnerables, confirmar la técnica y la disponibilidad no sustituye la evidencia sobre desempeño, escalamiento humano y protección de datos.",
+        "en": "For a service aimed at potentially vulnerable users, confirming technique and availability does not replace evidence on performance, human escalation and data protection."
+      }
+    },
+    {
+      "id": "ins",
+      "nombre": {
+        "es": "Instituto Nacional de Seguros",
+        "en": "National Insurance Institute"
+      },
+      "nombreCorto": {
+        "es": "INS",
+        "en": "INS"
+      },
+      "tipo": "autonoma",
+      "url": "https://www.grupoins.com/",
+      "proyectosActivos": 1,
+      "resumen": {
+        "es": "Una iniciativa en seguimiento: automatización con IA reportada para reclamos e indemnizaciones de gastos médicos.",
+        "en": "One initiative under review: reported AI automation for medical-expense claims and reimbursements."
+      },
+      "descripcion": {
+        "es": "El INS reporta operación, volumen y mejoras de tiempo y eficiencia. La ficha no entra en adopción verificada porque las fuentes disponibles no identifican la técnica, las reglas de clasificación, la revisión humana ni las métricas de error.",
+        "en": "INS reports operation, volume and improvements in time and efficiency. The record does not qualify as verified adoption because available sources do not identify the technique, classification rules, human review or error metrics."
+      },
+      "lecciones": {
+        "es": "Un resultado institucional puede documentarse sin convertirlo en evaluación independiente. Publicar la naturaleza de la fuente y los campos no determinados mantiene visible ese límite.",
+        "en": "An institution-reported result can be documented without treating it as an independent evaluation. Publishing source nature and undetermined fields keeps that boundary visible."
       }
     }
   ]

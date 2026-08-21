@@ -75,10 +75,10 @@ describe('inventario del Plan de Acción ENIA', () => {
   it('completa el crosswalk sin convertir una meta en evidencia', () => {
     expect(inventarioEnia.schemaVersion).toBe(2);
     expect(contarIntervencionesEniaPorCruce()).toEqual({
-      'mapeado-exacto': 4,
+      'mapeado-exacto': 6,
       'coincidencia-parcial': 9,
       'posible-duplicado': 9,
-      'nuevo-con-evidencia': 2,
+      'nuevo-con-evidencia': 0,
       'enia-solamente': 22,
       'no-es-sistema-ia': 83,
       'no-determinado': 0,
@@ -137,11 +137,14 @@ describe('inventario del Plan de Acción ENIA', () => {
       'cenat-lania',
       'hacienda-anomaly',
       'hacienda-asistente',
+      'inamu-ela',
+      'ins-reclamos-medicos-ia',
       'mep-intel',
       'micitt-agroboost',
       'micitt-linc',
     ]);
     expect(idsMapeados.every((id) => idsCatalogo.has(id))).toBe(true);
+    expect(idsMapeados).not.toContain('pj-oij-tec-ia-investigacion');
   });
 
   it('conserva nueve repeticiones con una fila canónica válida', () => {
@@ -175,7 +178,7 @@ describe('inventario del Plan de Acción ENIA', () => {
     }
   });
 
-  it('mantiene separados los casos sensibles y exige evidencia para el hallazgo nuevo', () => {
+  it('mantiene separados los casos sensibles y enlaza las nuevas fichas', () => {
     const porId = new Map(
       intervencionesEnia.map((intervencion) => [intervencion.id, intervencion]),
     );
@@ -185,20 +188,28 @@ describe('inventario del Plan de Acción ENIA', () => {
     const ayaCompras = porId.get('enia-4-1-3-27');
     const rpa = porId.get('enia-4-1-3-29');
 
-    expect(ins?.cruceCatalogo.estado).toBe('nuevo-con-evidencia');
+    expect(ins?.cruceCatalogo.estado).toBe('mapeado-exacto');
+    expect(ins?.cruceCatalogo.proyectoIds).toEqual([
+      'ins-reclamos-medicos-ia',
+    ]);
     expect(ins?.estadoEjecucion).toBe('verificado');
     expect(ins?.faseRealVerificada).toBe('operativo');
     expect(ins?.evidenciasExternas?.[0]?.publicador).toBe(
       'Instituto Nacional de Seguros',
     );
 
-    expect(inamu?.cruceCatalogo.estado).toBe('nuevo-con-evidencia');
+    expect(inamu?.cruceCatalogo.estado).toBe('mapeado-exacto');
+    expect(inamu?.cruceCatalogo.proyectoIds).toEqual(['inamu-ela']);
     expect(inamu?.estadoEjecucion).toBe('verificado');
     expect(inamu?.faseRealVerificada).toBe('operativo');
     expect(inamu?.evidenciasExternas?.map((fuente) => fuente.id)).toEqual([
       'inamu-ela-ia-oficial',
       'inamu-ela-terminos-privacidad',
     ]);
+
+    expect(
+      porId.get('enia-4-1-3-14')?.cruceCatalogo.proyectoIds,
+    ).toEqual(['inamu-ela']);
 
     expect(ice?.cruceCatalogo.estado).toBe('enia-solamente');
     expect(ice?.cruceCatalogo.proyectoIds).toEqual([]);

@@ -4,6 +4,8 @@
 
 **Estado:** implementada localmente; sin publicación ni cambios al catálogo público de 26 fichas.
 
+> Seguimiento: la Fase 4C incorporó posteriormente Ela, reclamos médicos del INS y OIJ–TEC, publicó el explorador ENIA y actualizó el catálogo a 29 fichas. Este documento conserva el corte de decisión previo a esa incorporación; ver `2026-08-21-fase-4c-interfaz-enia-fichas.md`.
+
 ## Objetivo
 
 Cruzar las 129 intervenciones de la versión publicada del Plan de Acción ENIA con las 26 iniciativas del catálogo, conservar las repeticiones de la fuente sin contarlas dos veces e investigar solo los vacíos con señal de avance o impacto alto.

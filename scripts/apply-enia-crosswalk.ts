@@ -126,10 +126,10 @@ const decisionesEspecificas: Record<string, DecisionCruce> = {
     },
   ),
   'enia-4-1-3-05': decision(
-    'nuevo-con-evidencia',
-    [],
-    'No existe aún una ficha equivalente en el catálogo. El INAMU documenta que la aplicación Ela está disponible, utiliza inteligencia artificial y brinda atención, orientación y referencias a mujeres durante las 24 horas.',
-    'No equivalent catalogue record exists yet. INAMU documents that the Ela application is available, uses artificial intelligence and provides women with support, guidance and referrals around the clock.',
+    'mapeado-exacto',
+    ['inamu-ela'],
+    'La ficha inamu-ela corresponde a la aplicación institucional descrita por esta fila. Las fuentes oficiales confirman disponibilidad, técnica de IA y uso; la coincidencia no implica que la meta de 1.200 atenciones esté verificada.',
+    'The inamu-ela record corresponds to the institutional application described by this row. Official sources confirm availability, AI technique and use; the match does not establish delivery of the 1,200-service target.',
     {
       estadoEjecucion: 'verificado',
       faseRealVerificada: 'operativo',
@@ -161,6 +161,7 @@ const decisionesEspecificas: Record<string, DecisionCruce> = {
         'La ficha técnica institucional identifica GPT-4 Turbo y búsqueda de archivos. La aplicación trata datos de registro y socioeconómicos, y puede compartir geolocalización con el 9-1-1 cuando la persona usuaria activa esa función. No se localizaron métricas públicas de uso, precisión o derivaciones.',
         'The institutional technical page identifies GPT-4 Turbo and file search. The application processes registration and socioeconomic data and can share geolocation with emergency services when the user activates that function. No public usage, accuracy or referral metrics were found.',
       ),
+      recomendacionEditorial: 'revisar',
     },
   ),
   'enia-4-1-3-10': decision(
@@ -209,10 +210,10 @@ const decisionesEspecificas: Record<string, DecisionCruce> = {
     },
   ),
   'enia-4-1-3-24': decision(
-    'nuevo-con-evidencia',
-    [],
-    'No existe aún una ficha equivalente en el catálogo. Un boletín oficial del INS anterior al Plan confirma IA en reclamaciones e indemnizaciones de gastos médicos, automatización de flujos y resultados operativos; el Plan aporta una segunda referencia institucional al mismo proceso.',
-    'No equivalent catalogue record exists yet. An official INS bulletin predating the Plan confirms AI in medical-expense claims and reimbursements, workflow automation and operating results; the Plan provides a second institutional reference to the same process.',
+    'mapeado-exacto',
+    ['ins-reclamos-medicos-ia'],
+    'La ficha ins-reclamos-medicos-ia corresponde al proceso de reclamación e indemnización descrito por esta fila. Un boletín oficial anterior al Plan confirma operación y resultados reportados, aunque la técnica y la gobernanza permanecen sin determinar.',
+    'The ins-reclamos-medicos-ia record corresponds to the claim and reimbursement process described by this row. An official bulletin predating the Plan confirms operation and reported results, although technique and governance remain undetermined.',
     {
       estadoEjecucion: 'verificado',
       faseRealVerificada: 'operativo',
@@ -292,6 +293,7 @@ const duplicados: Record<string, Duplicado> = {
   },
   'enia-4-1-3-14': {
     intervencionCanonicaId: 'enia-4-1-3-05',
+    proyectoIds: ['inamu-ela'],
     estadoEjecucion: 'verificado',
     faseRealVerificada: 'operativo',
   },

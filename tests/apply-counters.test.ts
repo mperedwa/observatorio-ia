@@ -4,16 +4,16 @@ import type { Counters } from '../src/data/counters';
 import { getDictionary } from '../src/i18n/dictionaries';
 
 const counters: Counters = {
-  proyectos: 26,
-  iniciativasDocumentadas: 26,
-  adopcionVerificada: 5,
-  verificadasCatalogo: 5,
-  seguimiento: 6,
-  ecosistema: 15,
+  proyectos: 29,
+  iniciativasDocumentadas: 29,
+  adopcionVerificada: 6,
+  verificadasCatalogo: 6,
+  seguimiento: 7,
+  ecosistema: 16,
   descartadas: 0,
   pendientesMigracion: 0,
-  instituciones: 7,
-  legislacion: 5,
+  instituciones: 9,
+  legislacion: 7,
 };
 
 describe('applyCounters', () => {
@@ -23,11 +23,11 @@ describe('applyCounters', () => {
         '{adopcionVerificada} verificadas, {seguimiento} en seguimiento y {ecosistema} de {iniciativasDocumentadas}',
         counters,
       ),
-    ).toBe('5 verificadas, 6 en seguimiento y 15 de 26');
+    ).toBe('6 verificadas, 7 en seguimiento y 16 de 29');
   });
 
   it('reemplaza todas las apariciones de una misma clave', () => {
-    expect(applyCounters('{proyectos}/{proyectos}', counters)).toBe('26/26');
+    expect(applyCounters('{proyectos}/{proyectos}', counters)).toBe('29/29');
   });
 
   it.each(['es', 'en'] as const)(

@@ -10,6 +10,7 @@ export function Nav({ locale, t }: { locale: Locale; t: Dictionary }) {
   const items = [
     { href: `${base}proyectos`, label: t.nav.proyectos },
     { href: `${base}marco-pais`, label: t.nav.marcoPais },
+    { href: `${base}enia`, label: t.nav.enia },
     { href: `${base}#instituciones`, label: t.nav.instituciones },
     { href: `${base}#legislacion`, label: t.nav.legislacion },
     { href: `${base}#indicadores`, label: t.nav.indicadores },

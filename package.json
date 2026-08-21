@@ -5,6 +5,7 @@
   "scripts": {
     "build": "next build",
     "build:api": "tsx scripts/build-api.ts",
+    "catalog:enia-phase-4c": "tsx scripts/add-enia-phase-4c-projects.ts",
     "classify-vs-repo": "tsx scripts/classify-vs-repo.ts",
     "crosswalk:enia": "tsx scripts/apply-enia-crosswalk.ts",
     "create-scrape-review-issue": "tsx scripts/create-scrape-review-issue.ts",

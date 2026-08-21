@@ -1,18 +1,18 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-08-21T18:36:14.910Z",
+  "lastUpdate": "2026-08-21T20:19:12.967Z",
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "endpoints": [
     {
       "url": "/api/proyectos.json",
       "description": "Catálogo de iniciativas relacionadas con IA en el sector público costarricense. Incluye sistemas, pilotos, planes y capacidades con descripción bilingüe ES/EN y una fuente pública consultada.",
-      "count": 26
+      "count": 29
     },
     {
       "url": "/api/instituciones.json",
       "description": "Instituciones públicas con iniciativas relacionadas con IA documentadas (ministerios, autónomas, judicial, universidades e investigación).",
-      "count": 7
+      "count": 9
     },
     {
       "url": "/api/legislacion.json",
@@ -28,6 +28,11 @@
       "url": "/api/brechas.json",
       "description": "Análisis de brechas: 7 capacidades que CR no tiene operativas vs Estonia/Singapur (gobernanza IA, X-Road, chatbot ciudadano, etc.).",
       "count": 7
+    },
+    {
+      "url": "/api/enia-acciones.json",
+      "description": "Inventario y crosswalk del Plan de Acción ENIA: 129 filas fuente, 120 intervenciones canónicas, clasificación por tipo, evidencia de ejecución y relaciones con el catálogo.",
+      "count": 129
     }
   ]
 }

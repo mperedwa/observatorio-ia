@@ -7,7 +7,7 @@ import { locales } from '@/i18n/config';
 const SITE_URL = 'https://www.observatorioia.org';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticPaths = ['', 'analisis', 'comparte', 'historial', 'marco-pais', 'privacidad', 'proyectos', 'quien-mantiene'];
+  const staticPaths = ['', 'analisis', 'comparte', 'enia', 'historial', 'marco-pais', 'privacidad', 'proyectos', 'quien-mantiene'];
   const paths = [
     ...staticPaths,
     ...proyectos.map((item) => `proyectos/${item.id}`),

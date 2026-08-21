@@ -14,7 +14,11 @@ const colorByInst: Record<string, { dot: string; text: string }> = {
   micitt: { dot: '#0284c7', text: '#0369a1' },
   cenat: { dot: '#7c3aed', text: '#6d28d9' },
   ucr: { dot: '#0d9488', text: '#0f766e' },
+  inamu: { dot: '#be185d', text: '#9d174d' },
+  ins: { dot: '#475569', text: '#334155' },
 };
+
+const defaultColor = { dot: '#64748b', text: '#475569' };
 
 export function AssetTimeline({
   locale,
@@ -85,7 +89,7 @@ export function AssetTimeline({
           {/* filas */}
           <div className="mt-8 space-y-5">
             {porInstitucion.map(({ inst, proyectos: ps }) => {
-              const color = colorByInst[inst.id];
+              const color = colorByInst[inst.id] ?? defaultColor;
               return (
                 <div
                   key={inst.id}

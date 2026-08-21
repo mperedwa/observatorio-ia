@@ -128,6 +128,7 @@ export default async function MarcoPaisPage({
             {CARD_ORDER.map((key) => {
               const card = dict.indicadores.cards[key];
               const numero = applyCounters(card.numero, COUNTERS);
+              const detalle = applyCounters(card.detalle, COUNTERS);
               return (
                 <div
                   key={key}
@@ -144,7 +145,7 @@ export default async function MarcoPaisPage({
                     {card.titulo}
                   </div>
                   <div className="mt-1 text-xs text-slate-500 leading-snug">
-                    {card.detalle}
+                    {detalle}
                   </div>
                 </div>
               );
@@ -221,6 +222,7 @@ export default async function MarcoPaisPage({
             <p className="mt-3 text-slate-600 text-pretty">{dict.conexion.sub}</p>
           </header>
           <div className="flex flex-wrap gap-3">
+            <CtaLink href={`/${lc}/enia`} label={dict.conexion.ctaEnia} />
             <CtaLink href={`/${lc}/#instituciones`} label={dict.conexion.ctaInstituciones} />
             <CtaLink href={`/${lc}/#panorama`} label={dict.conexion.ctaProyectos} />
             <CtaLink href={`/${lc}/#legislacion`} label={dict.conexion.ctaLegislacion} />

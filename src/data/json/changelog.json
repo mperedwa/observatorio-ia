@@ -1,6 +1,58 @@
 [
   {
     "fecha": "2026-08-21",
+    "tipo": "recurso",
+    "actualizacion": {
+      "es": "Se publica el explorador bilingüe del Plan de Acción ENIA. La vista conserva las 129 filas oficiales, distingue 120 intervenciones canónicas de 9 repeticiones y separa 29 soluciones de IA declaradas de 83 acciones que no son sistemas. El crosswalk queda en 6 coincidencias exactas, 9 parciales y 22 compromisos de solución que permanecen solo en ENIA, con ejecución evaluada por separado.",
+      "en": "The bilingual ENIA Action Plan explorer is released. The view preserves all 129 official rows, distinguishes 120 canonical interventions from 9 repetitions, and separates 29 declared AI solutions from 83 actions that are not systems. The crosswalk now contains 6 exact matches, 9 partial matches and 22 solution commitments that remain ENIA-only, with execution assessed separately."
+    },
+    "fuente": {
+      "es": "MICITT, Plan de Acción ENIA y crosswalk editorial, corte 21-ago-2026",
+      "en": "MICITT, ENIA Action Plan and editorial crosswalk, cutoff Aug 21, 2026"
+    },
+    "fuente_url": "https://www.micitt.go.cr/sites/default/files/2025-10/Plan%20de%20Acci%C3%B3n%20ENIA%20-%20Versi%C3%B3n%2011%20agosto%202025%20Versi%C3%B3n%20Publicaci%C3%B3n.pdf"
+  },
+  {
+    "fecha": "2026-08-21",
+    "tipo": "proyecto",
+    "actualizacion": {
+      "es": "Se incorpora inamu-ela como adopción verificada. Las fuentes oficiales confirman una aplicación disponible las 24 horas, con GPT-4 Turbo y búsqueda de archivos. La ficha publica como no determinados los resultados de uso, precisión, derivaciones, seguridad y revisión humana.",
+      "en": "inamu-ela is added as a verified adoption. Official sources confirm an around-the-clock application using GPT-4 Turbo and file search. The record publishes usage, accuracy, referral, safety and human-review outcomes as undetermined."
+    },
+    "fuente": {
+      "es": "INAMU, aplicación Ela y términos de uso, verificación 21-ago-2026",
+      "en": "INAMU, Ela application and terms of use, verified Aug 21, 2026"
+    },
+    "fuente_url": "https://www.inamu.go.cr/inteligencia-artificial"
+  },
+  {
+    "fecha": "2026-08-21",
+    "tipo": "proyecto",
+    "actualizacion": {
+      "es": "Se incorpora ins-reclamos-medicos-ia en seguimiento. El INS reporta operación, cerca de 10.000 solicitudes mensuales, reducción del pago promedio de 12–13 a 6–7 días y 72% de eficiencia. La técnica, clasificación, revisión humana, errores y vías de impugnación no están publicados, por lo que no suma a adopción verificada.",
+      "en": "ins-reclamos-medicos-ia is added under review. INS reports operation, about 10,000 monthly requests, a reduction in average payment time from 12–13 to 6–7 days and 72% efficiency. Technique, classification, human review, errors and appeal mechanisms are not published, so it does not count as verified adoption."
+    },
+    "fuente": {
+      "es": "INS, boletín INSignia de diciembre de 2024",
+      "en": "INS, December 2024 INSignia bulletin"
+    },
+    "fuente_url": "https://www.grupoins.com/media/pyfkpyjz/bolet%C3%ADn-insignia-diciembre-2024.pdf"
+  },
+  {
+    "fecha": "2026-08-21",
+    "tipo": "proyecto",
+    "actualizacion": {
+      "es": "Se incorpora pj-oij-tec-ia-investigacion como I+D del ecosistema. El proyecto 2024–2026 desarrolla reconocimiento de imágenes, categorización de casos y predicción de incidentes; una fuente judicial documenta el subcaso de tatuajes. No se afirma despliegue productivo y se mantiene separado del compromiso ICE de la ENIA y de SUPERCOP.",
+      "en": "pj-oij-tec-ia-investigacion is added as ecosystem R&D. The 2024–2026 project develops image recognition, case categorization and incident prediction; a Judiciary source documents the tattoo subcase. No production deployment is claimed, and it remains separate from the ENIA ICE commitment and SUPERCOP."
+    },
+    "fuente": {
+      "es": "Tecnológico de Costa Rica y Poder Judicial, verificación 21-ago-2026",
+      "en": "Costa Rica Institute of Technology and Judiciary, verified Aug 21, 2026"
+    },
+    "fuente_url": "https://orion.tec.ac.cr/es/projects/sistemas-basados-en-inteligencia-artificial-usando-machine-learni/"
+  },
+  {
+    "fecha": "2026-08-21",
     "tipo": "legislacion",
     "actualizacion": {
       "es": "Se audita el inventario legislativo y se corrige el corte a 7 expedientes específicos o directamente relacionados con IA: 4 dictaminados y 3 en comisión, ninguno aprobado. Se incorporan el expediente 23.885 sobre nuevas formas de propaganda y el 25.379 o Ley Antitroll; el 25.171 se amplía para reflejar su alcance artístico, identitario y electoral y la objeción emitida por el TSE. Cada ficha distingue ahora regulación principal de IA de proyectos directamente relacionados, enlaza evidencia oficial del estado y muestra la fecha de verificación.",

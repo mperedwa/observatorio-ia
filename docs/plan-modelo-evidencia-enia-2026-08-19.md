@@ -503,14 +503,16 @@ Los conteos institucionales ya no usan `proyectosActivos` para la presentación 
 
 - [x] Extraer todas las intervenciones del Plan de Acción.
 - [x] Clasificarlas sin decidir prematuramente que son sistemas.
-- [ ] Cruzarlas con el catálogo.
-- [ ] Investigar solo los faltantes con mayor impacto o evidencia de avance.
+- [x] Cruzarlas con el catálogo.
+- [x] Investigar solo los faltantes con mayor impacto o evidencia de avance.
 
 La Fase 4A estructura la versión oficial del 11 de agosto de 2025 en 7 ejes, 13 líneas de acción, 36 resultados esperados, 129 intervenciones y 144 indicadores. Todas las intervenciones comienzan con ejecución no verificada y cruce no determinado. En paralelo, la auditoría de Marco país corrige el inventario a 7 expedientes relacionados con IA (4 dictaminados y 3 en comisión), confirma que MICITT sigue publicando la ENIA 2024–2027 y su Plan de Acción 2025, y mantiene sin cambios ILIA 2025 y los valores OCDE ya publicados. Detalle en `docs/fases/2026-08-21-fase-4a-inventario-enia-marco-pais.md`.
 
+La Fase 4B completa el crosswalk y la investigación priorizada; la Fase 4C publica el explorador, incorpora Ela, reclamos médicos del INS y OIJ–TEC con fichas v2 completas y actualiza el corte a 29 iniciativas: 6 verificadas, 7 en seguimiento y 16 de ecosistema. Detalle en `docs/fases/2026-08-21-fase-4b-crosswalk-enia.md` y `docs/fases/2026-08-21-fase-4c-interfaz-enia-fichas.md`.
+
 ### Fase 5 — API, historial y monitoreo
 
-- Publicar schema y endpoint ENIA.
+- [x] Publicar schema y endpoint ENIA.
 - Registrar transiciones de estado y revisiones sin cambios.
 - Añadir cadencia de revisión: mensual para alto impacto/ENIA; trimestral o semestral para el resto.
 - Adaptar scrapers para proponer evidencias, no para convertir automáticamente menciones en proyectos verificados.

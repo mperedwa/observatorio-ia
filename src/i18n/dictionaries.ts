@@ -26,6 +26,7 @@ export interface Dictionary {
     recursos: string;
     acerca: string;
     marcoPais: string;
+    enia: string;
   };
   hero: {
     kicker: string;
@@ -419,6 +420,7 @@ export interface Dictionary {
       ctaLegislacion: string;
       ctaIndicadores: string;
       ctaRecursos: string;
+      ctaEnia: string;
     };
     fuentes: {
       kicker: string;
@@ -455,6 +457,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       recursos: 'Recursos',
       acerca: 'Acerca de',
       marcoPais: 'Marco país',
+      enia: 'Plan ENIA',
     },
     hero: {
       kicker: 'Observatorio público',
@@ -964,12 +967,12 @@ export const dictionaries: Record<Locale, Dictionary> = {
           instituciones: {
             numero: '{instituciones}',
             titulo: 'Instituciones con iniciativas documentadas',
-            detalle: 'Poder Judicial, CCSS, Hacienda, MEP, MICITT, UCR y CENAT',
+            detalle: 'Catálogo institucional en tres capas de evidencia',
           },
           proyectos: {
             numero: '{proyectos}',
             titulo: 'Iniciativas mapeadas',
-            detalle: '18 marcadas operativas, 6 piloto, 2 planificadas',
+            detalle: '{adopcionVerificada} verificadas, {seguimiento} en seguimiento y {ecosistema} de ecosistema',
           },
         },
       },
@@ -1023,6 +1026,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         ctaLegislacion: 'Ver legislación',
         ctaIndicadores: 'Ver indicadores',
         ctaRecursos: 'Ver recursos',
+        ctaEnia: 'Explorar el Plan ENIA',
       },
       fuentes: {
         kicker: 'Fuentes y metodología',
@@ -1070,6 +1074,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       recursos: 'Resources',
       acerca: 'About',
       marcoPais: 'Country Framework',
+      enia: 'ENIA Plan',
     },
     hero: {
       kicker: 'Public observatory',
@@ -1578,12 +1583,12 @@ export const dictionaries: Record<Locale, Dictionary> = {
           instituciones: {
             numero: '{instituciones}',
             titulo: 'Institutions with documented initiatives',
-            detalle: 'Judiciary, CCSS, Hacienda, MEP, MICITT, UCR and CENAT',
+            detalle: 'Institutional catalog across three evidence layers',
           },
           proyectos: {
             numero: '{proyectos}',
             titulo: 'Initiatives mapped',
-            detalle: '18 marked operational, 6 pilot, 2 planned',
+            detalle: '{adopcionVerificada} verified, {seguimiento} under review and {ecosistema} ecosystem records',
           },
         },
       },
@@ -1637,6 +1642,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         ctaLegislacion: 'See legislation',
         ctaIndicadores: 'See indicators',
         ctaRecursos: 'See resources',
+        ctaEnia: 'Explore the ENIA Plan',
       },
       fuentes: {
         kicker: 'Sources and methodology',

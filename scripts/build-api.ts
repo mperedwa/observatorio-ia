@@ -100,8 +100,10 @@ const KPI_AUTO: Record<string, (c: Counters, data: unknown) => KpiAutoResult> = 
 
 interface Dataset {
   filename: string;
+  outputFilename?: string;
   endpoint: string;
   description: string;
+  getCount?: (data: unknown) => number;
 }
 
 const DATASETS: Dataset[] = [
@@ -135,6 +137,18 @@ const DATASETS: Dataset[] = [
     description:
       'Análisis de brechas: 7 capacidades que CR no tiene operativas vs Estonia/Singapur (gobernanza IA, X-Road, chatbot ciudadano, etc.).',
   },
+  {
+    filename: 'eniaAcciones.json',
+    outputFilename: 'enia-acciones.json',
+    endpoint: '/api/enia-acciones.json',
+    description:
+      'Inventario y crosswalk del Plan de Acción ENIA: 129 filas fuente, 120 intervenciones canónicas, clasificación por tipo, evidencia de ejecución y relaciones con el catálogo.',
+    getCount: (data) => {
+      const count = (data as { resumen?: { intervenciones?: unknown } } | undefined)
+        ?.resumen?.intervenciones;
+      return typeof count === 'number' ? count : 0;
+    },
+  },
 ];
 
 interface ApiEnvelope<T> {
@@ -146,11 +160,13 @@ interface ApiEnvelope<T> {
   data: T;
 }
 
-function envelope<T>(data: T): ApiEnvelope<T> {
+function envelope<T>(data: T, explicitCount?: number): ApiEnvelope<T> {
   return {
     version: PKG.version,
     lastUpdate: new Date().toISOString(),
-    count: Array.isArray(data) ? data.length : Object.keys(data as object).length,
+    count:
+      explicitCount ??
+      (Array.isArray(data) ? data.length : Object.keys(data as object).length),
     source: 'https://observatorioia.org',
     license: 'CC BY 4.0',
     data,
@@ -211,7 +227,7 @@ ${rows}
   <pre>{
   "version": "0.1.0",
   "lastUpdate": "2026-05-04T...",
-  "count": 18,
+  "count": 29,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "data": [ ... ]
@@ -386,8 +402,11 @@ function main(): void {
     if (ds.filename === 'indicadores.json') {
       data = applyAutoKpis(data, counters);
     }
-    const env = envelope(data);
-    writeFileSync(join(OUT_DIR, ds.filename), JSON.stringify(env, null, 2));
+    const env = envelope(data, ds.getCount?.(data));
+    writeFileSync(
+      join(OUT_DIR, ds.outputFilename ?? ds.filename),
+      JSON.stringify(env, null, 2),
+    );
     endpointsMeta.push({
       endpoint: ds.endpoint,
       description: ds.description,

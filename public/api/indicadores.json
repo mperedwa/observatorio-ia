@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-08-21T18:36:14.909Z",
+  "lastUpdate": "2026-08-21T20:19:12.965Z",
   "count": 5,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
@@ -218,7 +218,7 @@
           "es": "Iniciativas relacionadas con IA documentadas",
           "en": "Documented AI-related initiatives"
         },
-        "valor": "26",
+        "valor": "29",
         "detalle": {
           "es": "incluye sistemas, pilotos, planes y capacidades",
           "en": "includes systems, pilots, plans and capabilities"
@@ -229,7 +229,7 @@
           "es": "Instituciones con iniciativas documentadas",
           "en": "Institutions with documented initiatives"
         },
-        "valor": "7",
+        "valor": "9",
         "detalle": {
           "es": "Poder Judicial, CCSS, Hacienda, MEP, MICITT, CENAT, UCR",
           "en": "Judicial Branch, CCSS, Finance, MEP, MICITT, CENAT, UCR"

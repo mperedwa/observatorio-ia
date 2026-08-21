@@ -146,14 +146,14 @@ describe('schema de proyectos v2', () => {
     expect(validate([proyectoJsonV2()]), JSON.stringify(validate.errors)).toBe(true);
   });
 
-  it('valida las 26 fichas reales ya migradas', () => {
+  it('valida las 29 fichas reales ya migradas', () => {
     expect(validate(proyectos), JSON.stringify(validate.errors)).toBe(true);
   });
 });
 
 describe('catálogo real migrado', () => {
   it('mantiene cobertura v2 completa y trazabilidad limpia', () => {
-    expect(proyectos).toHaveLength(26);
+    expect(proyectos).toHaveLength(29);
 
     for (const proyecto of proyectos) {
       expect(proyecto.modeloVersion, proyecto.id).toBe(MODELO_EVIDENCIA_VERSION);
@@ -165,13 +165,13 @@ describe('catálogo real migrado', () => {
     }
   });
 
-  it('fija el corte editorial derivado del 19 de agosto de 2026', () => {
+  it('fija el corte editorial derivado del 21 de agosto de 2026', () => {
     expect(resumirCatalogo(proyectos)).toEqual({
-      iniciativasDocumentadas: 26,
-      adopcionVerificada: 5,
-      verificadasCatalogo: 5,
-      seguimiento: 6,
-      ecosistema: 15,
+      iniciativasDocumentadas: 29,
+      adopcionVerificada: 6,
+      verificadasCatalogo: 6,
+      seguimiento: 7,
+      ecosistema: 16,
       descartadas: 0,
       pendientesMigracion: 0,
     });
@@ -184,7 +184,31 @@ describe('catálogo real migrado', () => {
       'pj-nymiz',
       'ccss-lidia',
       'hacienda-anomaly',
+      'inamu-ela',
     ]);
+  });
+
+  it('mantiene clasificaciones distintas para las tres fichas de la Fase 4C', () => {
+    const porId = new Map(proyectos.map((proyecto) => [proyecto.id, proyecto]));
+
+    expect(porId.get('inamu-ela')).toMatchObject({
+      estadoCatalogo: 'verificado',
+      tipoIniciativa: 'sistema-ia',
+      faseImplementacion: 'operativo',
+      estadoIA: 'confirmada',
+    });
+    expect(porId.get('ins-reclamos-medicos-ia')).toMatchObject({
+      estadoCatalogo: 'seguimiento',
+      tipoIniciativa: 'componente-ia',
+      faseImplementacion: 'operativo',
+      estadoIA: 'declarada-sin-tecnica',
+    });
+    expect(porId.get('pj-oij-tec-ia-investigacion')).toMatchObject({
+      estadoCatalogo: 'ecosistema',
+      tipoIniciativa: 'investigacion',
+      faseImplementacion: 'desarrollo',
+      estadoIA: 'confirmada',
+    });
   });
 });
 
