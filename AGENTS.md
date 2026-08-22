@@ -71,7 +71,7 @@ El proyecto VIVÍA en `~/Desktop/Proyectos/` (sincronizado por iCloud Drive). Mo
 ## Estado
 Fase 5C entregada localmente (2026-08-21): **puesta en marcha operativa del monitoreo**. Handoff legislativo reparado desde `last-run.json`, MIDEPLAN con respaldo restringido a URLs oficiales, Google News para las 9 instituciones más un frente transversal, agenda editorial idempotente con issues/Telegram, revisor sin stubs/push/deploy y pruebas E2E. El workflow nuevo no queda activo hasta un push explícitamente autorizado.
 
-Rediseño editorial R4 entregado localmente (2026-08-22): dirección **observatorio editorial de evidencia pública** o archivo cívico contemporáneo. El plan ejecutable está en `docs/plan-redisenio-editorial-2026-08-22.md`. R1 estableció Source Serif 4, papel/tinta/reglas, portada superior y catálogo horizontal; R2 convirtió la portada en una síntesis editorial y añadió navegación e índices; R3 convirtió instituciones y fichas en registros y expedientes; R4 convirtió ENIA, Marco país, legislación e historial en documentos continuos y registros densos con alternativas móviles. ENIA separa texto oficial, cruce editorial y evidencia externa; legislación separa coyuntura del estado oficial; historial conserva ocho frentes, ocho revisiones y 42 cambios publicados. Los JSON de evidencia no cambiaron. R5 es la próxima fase, pero no debe iniciarse hasta recoger la revisión visual local de Mario. Cada fase se valida, se compromete y se revisa localmente. No hacer push ni desplegar sin autorización explícita posterior.
+Rediseño editorial R1-R6 entregado localmente (2026-08-22): dirección **observatorio editorial de evidencia pública** o archivo cívico contemporáneo. El plan ejecutable está en `docs/plan-redisenio-editorial-2026-08-22.md`. R1 estableció Source Serif 4, papel/tinta/reglas, portada superior y catálogo horizontal; R2 convirtió la portada en síntesis editorial y añadió navegación e índices; R3 convirtió instituciones y fichas en registros y expedientes; R4 convirtió ENIA, Marco país, legislación e historial en documentos continuos; R5 alineó Indicadores, Análisis, artículos, superficies secundarias y 32 activos bilingües; R6 cerró contraste WCAG AA, teclado, idioma HTML, movimiento reducido, rendimiento y auditoría del export. `npm run audit:static` revisa 142 HTML y su paridad ES/EN. Lighthouse obtiene 100 en accesibilidad, buenas prácticas y SEO en plantillas indexables representativas, con rendimiento móvil de 92-96. Los JSON de evidencia no cambiaron. El candidato espera revisión visual final de Mario; no hacer push, desplegar ni activar workflows sin autorización explícita posterior.
 
 Fase 5B (mismo día): monitoreo y trazabilidad editorial con ocho frentes, bitácora de cambios y revisiones sin cambios, monitor mensual ENIA/Plan, propuestas de evidencia sin stubs ni altas automáticas, herramienta `record-review` con dry-run y endpoint `/api/monitoreo.json`.
 
@@ -83,14 +83,14 @@ Anteriormente (mayo 2026): Fase 6.1 (notificación Telegram filtrada tras scrape
 
 Próximas fases potenciales:
 - Comparación durante 14 días o 6 corridas entre monitoreo automático y revisión manual
-- Rediseño editorial R5-R6 previo al lanzamiento público
+- Revisión visual final y decisión explícita de publicación del candidato editorial R1-R6
 - Posts LinkedIn 02-05 (campaña ya iniciada con post 01)
 - Logo definitivo (Mario revisando 16 opciones Canva + Gemini)
 - Vigilancia manual anual: PROSIC reporte estado digital CR (feed vacío hoy)
 
 Datos en `src/data/json/` validados por schemas en `src/data/schemas/`. Los `.ts` quedan como reexports tipados. Política editorial: scrapers nunca tocan campos curados (titulo, descripcion, contexto, lecciones, resumen). Candidatos de Google News y Delfino son **prensa, no fuente oficial** — exigen validación contra fuente primaria. Informes CGR/DFOE son evidencia oficial.
 
-Scripts npm: `validate-data`, `scrape:micitt`, `scrape:camtic`, `scrape:asamblea`, `scrape:pj`, `scrape:delfino`, `scrape:citic`, `scrape:google-news`, `scrape:hacienda`, `scrape:cgr`, `scrape:mideplan`, `scrape:all`, `watch:enia`, `watch:ilia`, `watch:oecd`, `check-monitoring-due`, `create-monitoring-review-issue`, `record-review`. Detalle en `scrapers/README.md`.
+Scripts npm: `audit:static`, `validate-data`, `scrape:micitt`, `scrape:camtic`, `scrape:asamblea`, `scrape:pj`, `scrape:delfino`, `scrape:citic`, `scrape:google-news`, `scrape:hacienda`, `scrape:cgr`, `scrape:mideplan`, `scrape:all`, `watch:enia`, `watch:ilia`, `watch:oecd`, `check-monitoring-due`, `create-monitoring-review-issue`, `record-review`. Detalle en `scrapers/README.md`.
 
 Dependencias nuevas: `recharts@3.8.1` (Fase 4), `ajv@8` + `ajv-formats@3` + `tsx@4` + `playwright@1` + `cheerio@1` (Fase 5, todas devDeps salvo recharts).
 

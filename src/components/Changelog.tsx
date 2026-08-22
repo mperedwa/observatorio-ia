@@ -60,7 +60,7 @@ export function Changelog({ locale, t }: { locale: Locale; t: Dictionary }) {
               key={`${entry.fecha}-${entry.commit_sha ?? entry.actualizacion.es.slice(0, 32)}`}
               className="grid grid-cols-[2.5rem_minmax(0,1fr)] gap-x-3 border-b border-editorial-rule py-6"
             >
-              <span aria-hidden className="pt-1 font-mono text-xs tabular-nums text-slate-400">
+              <span aria-hidden className="pt-1 font-mono text-xs tabular-nums text-slate-500">
                 {String(index + 1).padStart(2, '0')}
               </span>
               <div className="min-w-0">

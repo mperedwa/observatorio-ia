@@ -73,7 +73,7 @@ export function AssetIlia({
             ? `La brecha exacta entre Costa Rica y Chile es de ${gap} puntos en el ILIA 2025.`
             : `The exact gap between Costa Rica and Chile is ${gap} points in ILIA 2025.`}
         </p>
-        <p className="mt-3 text-slate-400" style={{ fontSize: 16 }}>
+        <p className="mt-3 text-slate-500" style={{ fontSize: 16 }}>
           {locale === 'es' ? 'Fuente: CEPAL · ILIA 2025' : 'Source: ECLAC · ILIA 2025'}
         </p>
       </div>

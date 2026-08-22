@@ -55,7 +55,7 @@ export function InstitucionesGrid({
             >
               <span
                 aria-hidden
-                className="pt-1 font-mono text-xs tabular-nums text-slate-400"
+                className="pt-1 font-mono text-xs tabular-nums text-slate-500"
               >
                 {String(index + 1).padStart(2, '0')}
               </span>

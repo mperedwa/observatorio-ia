@@ -172,7 +172,7 @@ export function ExploradorEnia({ locale }: { locale: Locale }) {
   return (
     <section aria-labelledby="enia-explorador-titulo" className="mt-20">
       <header className="grid gap-2 sm:grid-cols-[3.25rem_minmax(0,1fr)] sm:gap-5">
-        <span aria-hidden className="pt-1 font-mono text-xs tabular-nums text-slate-400">
+        <span aria-hidden className="pt-1 font-mono text-xs tabular-nums text-slate-500">
           01
         </span>
         <div className="max-w-3xl">
@@ -360,7 +360,7 @@ function IntervencionRow({
     >
       <summary className="cursor-pointer list-none px-1 py-6 marker:hidden hover:bg-editorial-paper/55 focus-visible:outline-offset-[-3px] sm:px-3 sm:py-7 [&::-webkit-details-marker]:hidden">
         <div className="grid grid-cols-[2.5rem_minmax(0,1fr)_1rem] gap-x-3 sm:grid-cols-[3.25rem_minmax(0,1fr)_1.5rem] sm:gap-x-5">
-          <span aria-hidden className="pt-1 font-mono text-xs tabular-nums text-slate-400">
+          <span aria-hidden className="pt-1 font-mono text-xs tabular-nums text-slate-500">
             {String(index + 1).padStart(3, '0')}
           </span>
 
@@ -403,7 +403,7 @@ function IntervencionRow({
 
           <span
             aria-hidden
-            className="pt-1 text-slate-400 transition-transform group-open:rotate-180"
+            className="pt-1 text-slate-500 transition-transform group-open:rotate-180"
           >
             ↓
           </span>
@@ -453,7 +453,7 @@ function IntervencionRow({
           <details className="group/indicators mt-5 border-t border-editorial-rule pt-4">
             <summary className="cursor-pointer list-none text-sm font-semibold text-institucional-700 marker:hidden [&::-webkit-details-marker]:hidden">
               <span className="inline-flex items-center gap-2">
-                <span aria-hidden className="text-slate-400 transition-transform group-open/indicators:rotate-90">▸</span>
+                <span aria-hidden className="text-slate-500 transition-transform group-open/indicators:rotate-90">▸</span>
                 {t.explorer.indicators} ({intervencion.indicadores.length})
               </span>
             </summary>
@@ -583,7 +583,7 @@ function IntervencionRow({
             <ol className="mt-5 space-y-5">
               {evidencias.map((fuente, evidenceIndex) => (
                 <li key={fuente.id} className="border-t border-editorial-rule pt-4 text-sm">
-                  <span className="font-mono text-[0.68rem] tabular-nums text-slate-400">
+                  <span className="font-mono text-[0.68rem] tabular-nums text-slate-500">
                     {String(evidenceIndex + 1).padStart(2, '0')}
                   </span>
                   <a

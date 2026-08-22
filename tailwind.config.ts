@@ -22,7 +22,7 @@ const config: Config = {
         },
         editorial: {
           ink: '#10243e',
-          paper: '#f7f5ef',
+          paper: '#faf9f5',
           rule: '#cbd5e1',
           muted: '#475569',
           accent: '#b4533c',

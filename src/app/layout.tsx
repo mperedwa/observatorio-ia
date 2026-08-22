@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/next';
 import { AnalyticsManager } from '@/components/AnalyticsManager';
+import { DocumentLanguage } from '@/components/DocumentLanguage';
 import { Inter, Source_Serif_4 } from 'next/font/google';
 import './globals.css';
 
@@ -27,6 +28,10 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const vercelAnalyticsEnabled =
+    process.env.VERCEL === '1' ||
+    process.env.NEXT_PUBLIC_VERCEL_ANALYTICS_ENABLED === 'true';
+
   return (
     <html
       lang="es"
@@ -34,9 +39,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       suppressHydrationWarning
     >
       <body className="font-sans antialiased bg-white text-slate-900">
+        <DocumentLanguage />
         {children}
         <AnalyticsManager measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
-        <Analytics />
+        {vercelAnalyticsEnabled && <Analytics />}
       </body>
     </html>
   );

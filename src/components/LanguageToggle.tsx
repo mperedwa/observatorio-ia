@@ -18,7 +18,7 @@ export function LanguageToggle({ current }: { current: Locale }) {
     <div
       className="flex items-center gap-1 rounded-full border border-slate-200 bg-white p-0.5 text-xs"
       role="group"
-      aria-label="Language"
+      aria-label={current === 'es' ? 'Idioma' : 'Language'}
     >
       {locales.map((l) => {
         const active = l === current;

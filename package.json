@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "audit:static": "tsx scripts/audit-static-site.ts",
     "build": "next build",
     "build:api": "tsx scripts/build-api.ts",
     "catalog:enia-phase-4c": "tsx scripts/add-enia-phase-4c-projects.ts",
@@ -18,6 +19,7 @@
     "notify-classification-telegram": "tsx scripts/notify-classification-telegram.ts",
     "notify-telegram": "tsx scripts/notify-telegram.ts",
     "prebuild": "tsx scripts/build-api.ts",
+    "postbuild": "tsx scripts/finalize-static-html.ts",
     "scrape:all": "tsx scrapers/run-all.ts",
     "scrape:asamblea": "tsx scrapers/asamblea.ts",
     "scrape:camtic": "tsx scrapers/camtic.ts",

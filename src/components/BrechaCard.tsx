@@ -15,7 +15,7 @@ export function BrechaCard({
 }) {
   return (
     <article className="grid gap-4 border-b border-editorial-rule py-7 sm:grid-cols-[3.25rem_minmax(0,1fr)] sm:gap-5">
-      <span className="font-mono text-xs tabular-nums text-slate-400">
+      <span className="font-mono text-xs tabular-nums text-slate-500">
         {String(index).padStart(2, '0')}
       </span>
       <div>

@@ -395,7 +395,7 @@ export default async function ProyectoPage({
                     key={resultado.id}
                     className="grid grid-cols-[2rem_minmax(0,1fr)] gap-4 border-b border-editorial-rule py-5"
                   >
-                    <span aria-hidden className="font-mono text-xs text-slate-400">
+                    <span aria-hidden className="font-mono text-xs text-slate-500">
                       {String(index + 1).padStart(2, '0')}
                     </span>
                     <div>
@@ -474,7 +474,7 @@ export default async function ProyectoPage({
                           );
                         })
                       ) : (
-                        <span className="text-slate-400">—</span>
+                        <span className="text-slate-500">—</span>
                       )}
                     </div>
                   </div>
@@ -500,7 +500,7 @@ export default async function ProyectoPage({
               className="scroll-mt-24 border-b border-editorial-rule py-6"
             >
               <div className="grid grid-cols-[2rem_minmax(0,1fr)] gap-4 sm:grid-cols-[3rem_minmax(0,1fr)] sm:gap-5">
-                <span className="font-mono text-xs font-semibold tabular-nums text-slate-400">
+                <span className="font-mono text-xs font-semibold tabular-nums text-slate-500">
                   [{index + 1}]
                 </span>
                 <div className="min-w-0">

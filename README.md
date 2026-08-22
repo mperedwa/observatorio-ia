@@ -46,9 +46,10 @@ npm run validate-data
 npm test
 npx tsc --noEmit
 npm run build
+npm run audit:static
 ```
 
-La build estática se genera en `out/`. No hace falta desplegar para revisar el sitio localmente.
+La build estática se genera en `out/`. `audit:static` revisa idioma, metadatos, estructura accesible, enlaces internos y paridad ES/EN de los HTML exportados. No hace falta desplegar para revisar el sitio localmente.
 
 ## Estructura principal
 

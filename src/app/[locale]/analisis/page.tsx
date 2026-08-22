@@ -127,7 +127,7 @@ export default async function AnalisisPage({
                     href={`/${lc}/analisis/${a.slug}/`}
                     className="group grid gap-3 py-7 sm:grid-cols-[3.25rem_minmax(0,1fr)_auto] sm:gap-5"
                   >
-                    <span className="font-mono text-xs tabular-nums text-slate-400">
+                    <span className="font-mono text-xs tabular-nums text-slate-500">
                       {String(index + 1).padStart(2, '0')}
                     </span>
                     <span>
@@ -201,10 +201,10 @@ export default async function AnalisisPage({
                           target="_blank"
                           rel="noopener noreferrer"
                           title={f.descripcion[lc]}
-                          aria-label={f.descripcion[lc]}
                           className="text-institucional-700 hover:underline"
                         >
-                          {p.fuentes.length > 1 ? `↗${i + 1}` : '↗'}
+                          <span aria-hidden>{p.fuentes.length > 1 ? `↗${i + 1}` : '↗'}</span>
+                          <span className="sr-only">{f.descripcion[lc]}</span>
                         </a>
                       </span>
                     ))}
@@ -222,7 +222,7 @@ export default async function AnalisisPage({
                 p.destacado ? 'shadow-[inset_3px_0_0_0_#1d4ed8] pl-3' : ''
               }`}
             >
-              <span className="font-mono text-xs tabular-nums text-slate-400">
+              <span className="font-mono text-xs tabular-nums text-slate-500">
                 {String(index + 1).padStart(2, '0')}
               </span>
               <div>
@@ -248,7 +248,7 @@ export default async function AnalisisPage({
                     <dd className="mt-1 text-slate-700">
                       {p.hito[lc]}
                       {p.fuentes.map((f, i) => (
-                        <span key={f.url}> <a href={f.url} target="_blank" rel="noopener noreferrer" title={f.descripcion[lc]} aria-label={f.descripcion[lc]} className="font-semibold text-institucional-700 hover:underline">{p.fuentes.length > 1 ? `↗${i + 1}` : '↗'}</a></span>
+                        <span key={f.url}> <a href={f.url} target="_blank" rel="noopener noreferrer" title={f.descripcion[lc]} className="font-semibold text-institucional-700 hover:underline"><span aria-hidden>{p.fuentes.length > 1 ? `↗${i + 1}` : '↗'}</span><span className="sr-only">{f.descripcion[lc]}</span></a></span>
                       ))}
                     </dd>
                   </div>
@@ -283,7 +283,7 @@ export default async function AnalisisPage({
           <ol className="mt-9 border-t border-editorial-rule sm:ml-[4.5rem]">
             {expedientes.map((e, index) => (
               <li key={e.numero} className="grid gap-4 border-b border-editorial-rule py-7 sm:grid-cols-[3.25rem_minmax(0,1fr)_12rem] sm:gap-5">
-                <span className="font-mono text-xs tabular-nums text-slate-400">
+                <span className="font-mono text-xs tabular-nums text-slate-500">
                   {String(index + 1).padStart(2, '0')}
                 </span>
                 <article>

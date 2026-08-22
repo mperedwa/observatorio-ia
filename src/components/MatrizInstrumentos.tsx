@@ -123,7 +123,7 @@ export function MatrizInstrumentos({
               key={instrumento.id}
               className="grid grid-cols-[2.5rem_minmax(0,1fr)] gap-x-3 border-b border-editorial-rule py-7 sm:grid-cols-[3.25rem_minmax(0,1fr)] sm:gap-x-5"
             >
-              <span aria-hidden className="pt-1 font-mono text-xs tabular-nums text-slate-400">
+              <span aria-hidden className="pt-1 font-mono text-xs tabular-nums text-slate-500">
                 {String(index + 1).padStart(2, '0')}
               </span>
               <div className="min-w-0">

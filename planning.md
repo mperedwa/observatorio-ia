@@ -50,7 +50,7 @@ Mantener un observatorio público, bilingüe y verificable sobre adopción de IA
 - [x] Recoger y corregir las observaciones de la Fase 5B.
 - [x] Completar y revisar localmente la Fase 5C técnica.
 - [ ] Ejecutar un período de comparación entre monitoreo automático y revisión manual.
-- [ ] Completar el rediseño visual previo al lanzamiento.
+- [x] Completar el rediseño visual previo al lanzamiento.
 - [ ] Decisión explícita de push y despliegue.
 
 ## Fase activa: rediseño editorial
@@ -62,26 +62,26 @@ Dirección aprobada: **observatorio editorial de evidencia pública**, con el co
 - [x] R2. Estructura global, portada e índices de instituciones, legislación e indicadores.
 - [x] R3. Catálogos, instituciones y expedientes de detalle.
 - [x] R4. ENIA, Marco país, legislación e historial.
-- [ ] R5. Indicadores, análisis, superficies secundarias y assets.
-- [ ] R6. Accesibilidad, rendimiento y candidato local de publicación.
+- [x] R5. Indicadores, análisis, superficies secundarias y assets.
+- [x] R6. Accesibilidad, rendimiento y candidato local de publicación.
 
 Regla de ejecución: cada fase se valida, se compromete por separado y se revisa localmente. No se hace push ni despliegue sin autorización explícita posterior.
 
-Punto de revisión actual: R4 está implementada y validada en la rama local `redesign/editorial-v1`. ENIA separa texto oficial, cruce editorial y evidencia externa; Marco país funciona como documento continuo; legislación distingue coyuntura de estado oficial; historial ofrece tablas de escritorio y registros móviles. Antes de iniciar R5, Mario revisa estas cuatro rutas en ES y EN, escritorio y móvil.
+Punto de revisión actual: R1-R6 están implementadas y validadas en la rama local `redesign/editorial-v1`. El sitio completo comparte la gramática de archivo cívico contemporáneo y el export estático pasa la auditoría de 142 HTML, Lighthouse, teclado, movimiento reducido y cuatro tamaños de viewport. Mario revisa ahora el candidato final; push, despliegue y activación de workflows siguen pendientes de decisiones explícitas separadas.
 
 ## Próximas mejoras posibles
 
 ### Mantenimiento técnico
 
 - [ ] Verificador de enlaces externos que distinga enlaces rotos de servidores que bloquean `HEAD`.
-- [ ] Resolver o documentar la advertencia de `<img>` en `/comparte`.
+- [x] Resolver la advertencia de `<img>` en `/comparte`.
 - [ ] Añadir una indicación visible de desplazamiento horizontal en la línea de tiempo móvil.
-- [ ] Regenerar assets de `/comparte` después de aprobar definitivamente titulares y cifras.
+- [x] Regenerar assets de `/comparte` después de aprobar titulares y cifras.
 - [ ] Mantener revisión manual anual del informe PROSIC mientras su feed siga vacío.
 
 ### Diseño y experiencia
 
-- [ ] Ejecutar R5-R6 del plan de rediseño editorial después de revisar las superficies densas de R4.
+- [x] Ejecutar R5-R6 del plan de rediseño editorial después de revisar las superficies densas de R4.
 - [ ] Revisar densidad de navegación y longitud de portada después de acumular 30 días de analítica.
 - [ ] Definir logo definitivo.
 

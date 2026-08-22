@@ -224,7 +224,7 @@ export default async function HistorialPage({
                   key={frente.id}
                   className="grid grid-cols-[2.5rem_minmax(0,1fr)] gap-x-3 border-b border-editorial-rule py-7 sm:grid-cols-[3.25rem_minmax(0,1fr)] sm:gap-x-5"
                 >
-                  <span aria-hidden className="pt-1 font-mono text-xs tabular-nums text-slate-400">
+                  <span aria-hidden className="pt-1 font-mono text-xs tabular-nums text-slate-500">
                     {String(index + 1).padStart(2, '0')}
                   </span>
                   <div className="min-w-0">
@@ -286,7 +286,7 @@ export default async function HistorialPage({
                   key={revision.id}
                   className="grid grid-cols-[2.5rem_minmax(0,1fr)] gap-x-3 border-b border-editorial-rule py-7 sm:grid-cols-[3.25rem_9rem_minmax(0,1fr)] sm:gap-x-5 sm:py-8"
                 >
-                  <span aria-hidden className="pt-1 font-mono text-xs tabular-nums text-slate-400">
+                  <span aria-hidden className="pt-1 font-mono text-xs tabular-nums text-slate-500">
                     {String(index + 1).padStart(2, '0')}
                   </span>
                   <div>
@@ -394,7 +394,7 @@ export default async function HistorialPage({
                 key={`${entry.fecha}-${entry.tipo}-${entry.commit_sha ?? 'sin-commit'}-${entry.actualizacion.es.slice(0, 48)}`}
                 className="grid grid-cols-[2.5rem_minmax(0,1fr)] gap-x-3 border-b border-editorial-rule py-6"
               >
-                <span aria-hidden className="pt-1 font-mono text-xs tabular-nums text-slate-400">
+                <span aria-hidden className="pt-1 font-mono text-xs tabular-nums text-slate-500">
                   {String(index + 1).padStart(2, '0')}
                 </span>
                 <div className="min-w-0">
@@ -415,7 +415,7 @@ export default async function HistorialPage({
             ))}
           </div>
 
-          <p className="mt-6 text-xs text-slate-400">
+          <p className="mt-6 text-xs text-slate-500">
             {tx.totalCambios}: <span className="tabular-nums">{changelog.length}</span>
           </p>
         </section>

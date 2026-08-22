@@ -65,7 +65,7 @@ export function Legislacion({
                   key={nota.id}
                   className="grid grid-cols-[2.5rem_minmax(0,1fr)] gap-x-3 border-b border-editorial-rule py-7 sm:grid-cols-[3.25rem_minmax(0,1fr)] sm:gap-x-5 sm:py-9"
                 >
-                  <span aria-hidden className="pt-1 font-mono text-xs tabular-nums text-slate-400">
+                  <span aria-hidden className="pt-1 font-mono text-xs tabular-nums text-slate-500">
                     {String(index + 1).padStart(2, '0')}
                   </span>
                   <div className="min-w-0">
@@ -97,7 +97,6 @@ export function Legislacion({
                           target="_blank"
                           rel="noopener noreferrer"
                           title={fuente.descripcion[locale]}
-                          aria-label={fuente.descripcion[locale]}
                           className="font-semibold text-institucional-700 underline underline-offset-2 hover:text-institucional-900"
                         >
                           {fuente.nombre
@@ -129,7 +128,7 @@ export function Legislacion({
                 key={expediente.numero}
                 className="grid grid-cols-[2.5rem_minmax(0,1fr)] gap-x-3 border-b border-editorial-rule py-8 sm:grid-cols-[3.25rem_minmax(0,1fr)] sm:gap-x-5 sm:py-10 lg:grid-cols-[3.25rem_10rem_minmax(0,1fr)]"
               >
-                <span aria-hidden className="pt-1 font-mono text-xs tabular-nums text-slate-400">
+                <span aria-hidden className="pt-1 font-mono text-xs tabular-nums text-slate-500">
                   {String(index + 1).padStart(2, '0')}
                 </span>
 

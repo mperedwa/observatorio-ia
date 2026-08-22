@@ -163,7 +163,7 @@ export default async function EniaPage({
               <ol className="mt-7 grid border-t border-editorial-rule text-sm leading-relaxed text-slate-700 md:grid-cols-3 md:divide-x md:divide-editorial-rule">
                 {[t.methodology.canonical, t.methodology.status, t.methodology.evidence].map((item, index) => (
                   <li key={item} className="border-b border-editorial-rule py-4 md:border-b-0 md:px-5 md:first:pl-0">
-                    <span className="mb-2 block font-mono text-[0.68rem] tabular-nums text-slate-400">
+                    <span className="mb-2 block font-mono text-[0.68rem] tabular-nums text-slate-500">
                       {String(index + 1).padStart(2, '0')}
                     </span>
                     {item}

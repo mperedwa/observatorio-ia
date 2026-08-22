@@ -2,7 +2,7 @@
 
 Fecha: 22 de agosto de 2026.
 
-Estado: R5 completada localmente; pendiente la revisión visual de Mario antes de iniciar R6.
+Estado: R6 implementada y validada localmente; candidato editorial pendiente de la revisión visual final de Mario. Push y despliegue no autorizados.
 
 Punto de partida técnico: Fase 5C comprometida en `e6786ba`. Este plan no autoriza push, despliegue ni publicación.
 
@@ -456,7 +456,7 @@ feat(design): unifica registros de politica y monitoreo
 
 Objetivo: completar el lenguaje visual y evitar que las páginas menos frecuentes conserven el sistema anterior.
 
-Estado: implementación local completada el 22 de agosto de 2026 en la rama `redesign/editorial-v1`; pendiente la revisión visual de Mario antes de iniciar R6.
+Estado: implementación local completada y aprobada por Mario el 22 de agosto de 2026 en la rama `redesign/editorial-v1`.
 
 Resultado de la fase:
 
@@ -500,6 +500,23 @@ feat(design): completa visualizaciones y superficies editoriales
 
 Objetivo: cerrar el rediseño como candidato local de lanzamiento.
 
+Estado: implementación y validación técnica completadas localmente el 22 de agosto de 2026 en la rama `redesign/editorial-v1`; pendiente la revisión visual final de Mario. No se hizo push ni despliegue.
+
+Resultado de la fase:
+
+- contraste editorial ajustado a WCAG AA mediante un papel ligeramente más claro, ordinales y metadatos secundarios más legibles y colores semánticos oscuros sin fondos teñidos;
+- Lighthouse alcanza 100 en accesibilidad, buenas prácticas y SEO en las plantillas públicas indexables representativas; rendimiento móvil registra 92 en portada, 93 en Indicadores y 96 en ENIA, y la portada de escritorio registra 100, servidas con compresión;
+- ordenamiento de la tabla del artículo 01 operable con teclado, `aria-sort` y nombre accesible; filtros de ambos artículos y vistas ILIA publican `aria-pressed`;
+- corregidos nombres accesibles de fuentes y registros, subrayado persistente de enlaces dentro de párrafos, estructura de listas de definición y semántica de las vistas ILIA;
+- el idioma del documento cambia correctamente durante navegación cliente y el postbuild fija `lang="es"` o `lang="en"` en los 138 HTML localizados de la exportación;
+- Vercel Analytics solo se incorpora en builds de Vercel o cuando se habilita explícitamente, evitando un 404 en el candidato local y en hosts estáticos alternativos;
+- nueva auditoría `npm run audit:static`: revisa 142 HTML, paridad ES/EN, idioma, metadatos, `main`, `h1`, encabezados, IDs, imágenes, nombres y etiquetas accesibles, enlaces internos y anclas;
+- las cuatro páginas story ahora tienen `h1`; los 32 PNG bilingües se regeneraron con el contraste final;
+- QA ES/EN en 360 × 800, 390 × 844, 768 × 1024 y 1440 × 1000, más equivalente de zoom 200 %, movimiento reducido, foco y menú por teclado, filtros, ordenamiento y vistas de gráficos, sin errores de consola ni overflow;
+- la comparación antes/después conserva capturas de portada, proyectos, ENIA y Marco país fuera del repositorio;
+- los 96 usos iniciales de `rounded-*` quedaron reducidos a 18 y no existen desplazamientos verticales de tarjetas en hover;
+- ningún JSON de evidencia cambió; datos, filtros, drill-downs y enlaces a fuentes permanecen disponibles.
+
 Validación obligatoria:
 
 ```bash
@@ -508,6 +525,7 @@ npx tsc --noEmit
 npx tsc -p tsconfig.scripts.json --noEmit
 npm test
 npm run build
+npm run audit:static
 ```
 
 QA visual mínima:
@@ -627,12 +645,12 @@ Guardas cuantitativas orientativas para el cierre:
 - ajustes de navegación derivados de 30 días de analítica real;
 - publicación del sitio.
 
-## Siguiente acción después de R5
+## Siguiente acción después de R6
 
-1. Confirmar que el último commit de `redesign/editorial-v1` contiene R5 y que no modifica los JSON de evidencia ni incorpora documentos privados.
-2. Levantar `localhost:3001` y revisar Indicadores, Análisis, los dos artículos, Recursos, Quién mantiene, Privacidad y Comparte en ES y EN, escritorio y móvil.
-3. Recoger las observaciones visuales de Mario y resolverlas dentro de R5 si afectan lectura, densidad, visualizaciones o activos sociales.
-4. Iniciar R6 solamente después de aprobar estas superficies y sus 32 PNG bilingües.
+1. Revisar localmente el candidato completo en ES y EN, con énfasis en portada, catálogo, ENIA, Marco país, Indicadores, Análisis y los 32 PNG bilingües.
+2. Resolver dentro de R6 cualquier observación final de legibilidad, densidad, contraste o responsive.
+3. Aprobar o diferir de forma separada el logo definitivo; no bloquea el candidato actual.
+4. Decidir explícitamente si se fusiona, publica la rama y activa el monitoreo remoto. Ninguno de esos actos está autorizado por este plan.
 
 ## Definición final de terminado
 

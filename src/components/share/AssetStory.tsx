@@ -31,12 +31,17 @@ export function AssetStory({
           >
             {locale === 'es' ? 'ILIA 2025' : 'ILIA 2025'}
           </p>
-          <p
+          <h1
+            aria-label={
+              locale === 'es'
+                ? `${roundedGap} puntos abajo de Chile`
+                : `${roundedGap} points behind Chile`
+            }
             className="mt-8 font-bold text-white leading-none tabular-nums"
             style={{ fontSize: 240 }}
           >
             -{roundedGap}
-          </p>
+          </h1>
           <p className="mt-6 font-semibold text-slate-200" style={{ fontSize: 36 }}>
             {locale === 'es' ? 'puntos abajo de Chile' : 'points behind Chile'}
           </p>
@@ -63,12 +68,17 @@ export function AssetStory({
         >
           {t.timeline.kicker}
         </p>
-        <p
+        <h1
+          aria-label={
+            locale === 'es'
+              ? `${COUNTERS.adopcionVerificada} adopciones de IA verificadas`
+              : `${COUNTERS.adopcionVerificada} verified AI adoptions`
+          }
           className="mt-8 font-bold text-institucional-900 leading-none tabular-nums"
           style={{ fontSize: 280 }}
         >
           {COUNTERS.adopcionVerificada}
-        </p>
+        </h1>
         <p className="mt-6 font-editorial font-semibold text-editorial-ink" style={{ fontSize: 48, lineHeight: 1.15 }}>
           {locale === 'es'
             ? 'adopciones de IA verificadas'

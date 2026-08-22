@@ -86,7 +86,7 @@ function RankingView({ locale }: { locale: Locale }) {
           >
             <span
               className={`text-2xl sm:text-3xl font-bold tabular-nums w-10 text-center ${
-                r.destacado ? 'text-institucional-700' : 'text-slate-400'
+                r.destacado ? 'text-institucional-700' : 'text-slate-500'
               }`}
             >
               {pos}
@@ -141,7 +141,11 @@ export function ChartILIATabs({ locale, t }: { locale: Locale; t: Dictionary }) 
 
   return (
     <div>
-      <div role="tablist" className="mb-6 flex flex-wrap gap-1 border-b border-editorial-rule">
+      <div
+        role="group"
+        aria-label={locale === 'es' ? 'Vistas de la comparativa ILIA' : 'ILIA comparison views'}
+        className="mb-6 flex flex-wrap gap-1 border-b border-editorial-rule"
+      >
         {tab('grafico', t.chartIlia.tabGrafico)}
         {tab('tabla', t.chartIlia.tabTabla)}
         {tab('ranking', t.chartIlia.tabRanking)}

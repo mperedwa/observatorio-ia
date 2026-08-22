@@ -245,8 +245,14 @@ const CSS = `
 .pb-tbl th {
   text-align: left; padding: 10px 14px; background: var(--pb-surface-alt);
   font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.04em;
-  color: var(--pb-text-muted); cursor: pointer; user-select: none;
+  color: var(--pb-text-muted);
   border-bottom: 1px solid var(--pb-border);
+}
+.pb-tbl th.pb-sortable { padding: 0; }
+.pb-sort {
+  width: 100%; border: 0; background: transparent; padding: 10px 14px;
+  color: inherit; cursor: pointer; font: inherit; letter-spacing: inherit;
+  text-align: inherit; text-transform: inherit; user-select: none;
 }
 .pb-tbl td {
   padding: 10px 14px; border-bottom: 1px solid var(--pb-border); color: var(--pb-text);
@@ -262,14 +268,17 @@ const CSS = `
 
 /* R5 — lenguaje de archivo editorial */
 .policy-brief[data-theme="light"] {
-  --pb-bg: #ffffff; --pb-surface: #ffffff; --pb-surface-alt: #f7f5ef;
+  --pb-bg: #ffffff; --pb-surface: #ffffff; --pb-surface-alt: #faf9f5;
   --pb-text: #10243e; --pb-text-secondary: #475569; --pb-text-muted: #64748b;
   --pb-border: #cbd5e1; --pb-primary: #1d4ed8; --pb-primary-light: transparent;
+  --pb-success: #047857; --pb-success-light: transparent;
+  --pb-warning: #92400e; --pb-warning-light: transparent;
+  --pb-danger: #b91c1c; --pb-danger-light: transparent;
   --pb-chart-1: #1d4ed8; --pb-chart-2: #64748b;
 }
 .policy-brief { background: #fff; color: var(--pb-text); }
 .policy-brief > header {
-  background: #f7f5ef !important; border-color: var(--pb-border) !important;
+  background: #faf9f5 !important; border-color: var(--pb-border) !important;
 }
 .policy-brief > header h1 {
   max-width: 48rem; font-family: var(--font-source-serif), Georgia, serif !important;
@@ -318,12 +327,12 @@ const CSS = `
   background: transparent; border: 0; border-bottom: 2px solid transparent; border-radius: 0;
   padding: 7px 10px;
 }
-.pb-fbtn:hover { background: #f7f5ef; }
+.pb-fbtn:hover { background: #faf9f5; }
 .pb-fbtn-on { background: transparent; border-bottom-color: var(--pb-primary); color: var(--pb-primary); }
 .pb-tw { border: 0; border-top: 1px solid var(--pb-border); border-bottom: 1px solid var(--pb-border); border-radius: 0; }
-.pb-tbl th { background: #f7f5ef; }
+.pb-tbl th { background: #faf9f5; }
 .pb-dual { gap: 28px; }
-.policy-brief > footer { background: #f7f5ef !important; }
+.policy-brief > footer { background: #faf9f5 !important; }
 @media (max-width: 640px) {
   .pb-sh { grid-template-columns: 2.5rem minmax(0, 1fr); gap: 12px; }
   .pb-toc { padding-left: 8px; padding-right: 8px; }
@@ -597,6 +606,14 @@ export default function ArticleBrief({ locale }: { locale: Locale }) {
   };
 
   const arrow = (k: typeof sortKey) => sortKey === k ? (sortAsc ? ' ↑' : ' ↓') : ' ↕';
+  const sortDirection = (k: typeof sortKey): 'ascending' | 'descending' | 'none' =>
+    sortKey === k ? (sortAsc ? 'ascending' : 'descending') : 'none';
+  const sortColumns: Array<{ key: typeof sortKey; label: string }> = [
+    { key: 'inst', label: T.catalogo.table.institution },
+    { key: 'proyecto', label: T.catalogo.table.project },
+    { key: 'year', label: T.catalogo.table.year },
+    { key: 'status', label: T.catalogo.table.status },
+  ];
 
   const sections = SECTION_KEYS.map(s => ({ id: s.id, label: T.sections[s.tkey] }));
   const homeHref = `/${locale}/`;
@@ -862,6 +879,7 @@ export default function ArticleBrief({ locale }: { locale: Locale }) {
                       key={f.key}
                       type="button"
                       className={`pb-fbtn ${isOn ? 'pb-fbtn-on' : ''}`}
+                      aria-pressed={isOn}
                       onClick={() => {
                         setFilter(f.key);
                         trackEvent('visualization_interaction', {
@@ -885,10 +903,18 @@ export default function ArticleBrief({ locale }: { locale: Locale }) {
                 <table className="pb-tbl">
                   <thead>
                     <tr>
-                      <th onClick={() => doSort('inst')}>{T.catalogo.table.institution}{arrow('inst')}</th>
-                      <th onClick={() => doSort('proyecto')}>{T.catalogo.table.project}{arrow('proyecto')}</th>
-                      <th onClick={() => doSort('year')}>{T.catalogo.table.year}{arrow('year')}</th>
-                      <th onClick={() => doSort('status')}>{T.catalogo.table.status}{arrow('status')}</th>
+                      {sortColumns.map(({ key, label }) => (
+                        <th key={key} className="pb-sortable" aria-sort={sortDirection(key)}>
+                          <button
+                            type="button"
+                            className="pb-sort"
+                            aria-label={`${locale === 'es' ? 'Ordenar por' : 'Sort by'} ${label}`}
+                            onClick={() => doSort(key)}
+                          >
+                            {label}<span aria-hidden>{arrow(key)}</span>
+                          </button>
+                        </th>
+                      ))}
                       <th>{T.catalogo.table.impact}</th>
                     </tr>
                   </thead>

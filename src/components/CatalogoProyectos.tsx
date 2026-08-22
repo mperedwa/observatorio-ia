@@ -141,7 +141,7 @@ export function CatalogoProyectos({ locale, t }: { locale: Locale; t: Dictionary
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
-                  className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400"
+                  className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500"
                 >
                   <circle cx="11" cy="11" r="7" />
                   <path d="m20 20-3.5-3.5" />
@@ -151,7 +151,7 @@ export function CatalogoProyectos({ locale, t }: { locale: Locale; t: Dictionary
                   value={busqueda}
                   onChange={(event) => setBusqueda(event.target.value)}
                   placeholder={t.catalogo.buscarPlaceholder}
-                  className="w-full rounded-editorial border border-slate-400 bg-white py-2.5 pl-10 pr-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-institucional-700"
+                  className="w-full rounded-editorial border border-slate-400 bg-white py-2.5 pl-10 pr-3 text-sm text-slate-900 placeholder:text-slate-500 focus:border-institucional-700"
                 />
               </span>
             </label>

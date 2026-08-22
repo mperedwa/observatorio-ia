@@ -178,7 +178,7 @@ export function Recursos({
                 rel="noopener noreferrer"
                 className="group grid gap-3 py-6 transition-colors hover:bg-editorial-paper/55 sm:grid-cols-[3.25rem_minmax(0,1fr)_auto] sm:gap-5 sm:px-3"
               >
-                <span className="font-mono text-xs tabular-nums text-slate-400">
+                <span className="font-mono text-xs tabular-nums text-slate-500">
                   {String(index + 1).padStart(2, '0')}
                 </span>
                 <span>

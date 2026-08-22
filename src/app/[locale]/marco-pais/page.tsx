@@ -131,9 +131,10 @@ export default async function MarcoPaisPage({
                   key={key}
                   className="border-b border-r border-editorial-rule px-3 py-5 even:border-r-0 sm:px-5 sm:[&:nth-child(2n)]:border-r sm:[&:nth-child(3n)]:border-r-0 lg:border-r lg:last:border-r-0"
                 >
-                  <span className="font-mono text-[0.68rem] tabular-nums text-slate-400">
+                  <dt className="sr-only">{lc === 'es' ? 'Registro' : 'Record'}</dt>
+                  <dd aria-hidden className="font-mono text-[0.68rem] tabular-nums text-slate-500">
                     {String(index + 1).padStart(2, '0')}
-                  </span>
+                  </dd>
                   <dd className="mt-2 font-editorial text-4xl font-semibold leading-none tabular-nums text-editorial-ink sm:text-5xl">
                     {numero}
                   </dd>
@@ -172,7 +173,7 @@ export default async function MarcoPaisPage({
                 key={brecha.id}
                 className="grid grid-cols-[2.5rem_minmax(0,1fr)] gap-x-3 border-b border-editorial-rule py-5 sm:grid-cols-[3.25rem_minmax(0,1fr)] sm:gap-x-5"
               >
-                <span aria-hidden className="pt-1 font-mono text-xs tabular-nums text-slate-400">
+                <span aria-hidden className="pt-1 font-mono text-xs tabular-nums text-slate-500">
                   {String(index + 1).padStart(2, '0')}
                 </span>
                 <span className="border-l-2 border-editorial-accent pl-4 text-sm leading-relaxed text-slate-800 text-pretty sm:text-base">
@@ -217,7 +218,7 @@ export default async function MarcoPaisPage({
               <ul className="space-y-2 text-sm text-slate-700">
                 {dict.fuentes.tipos.map((tipo, index) => (
                   <li key={tipo} className="grid grid-cols-[1.75rem_minmax(0,1fr)] gap-x-2">
-                    <span aria-hidden className="font-mono text-[0.68rem] tabular-nums text-slate-400">
+                    <span aria-hidden className="font-mono text-[0.68rem] tabular-nums text-slate-500">
                       {String(index + 1).padStart(2, '0')}
                     </span>
                     <span className="text-pretty">{tipo}</span>
@@ -232,7 +233,7 @@ export default async function MarcoPaisPage({
               <ul className="space-y-2 text-sm text-slate-700">
                 {dict.fuentes.criterios.map((criterio, index) => (
                   <li key={criterio} className="grid grid-cols-[1.75rem_minmax(0,1fr)] gap-x-2">
-                    <span aria-hidden className="font-mono text-[0.68rem] tabular-nums text-slate-400">
+                    <span aria-hidden className="font-mono text-[0.68rem] tabular-nums text-slate-500">
                       {String(index + 1).padStart(2, '0')}
                     </span>
                     <span className="text-pretty">{criterio}</span>

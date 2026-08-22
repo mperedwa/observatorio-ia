@@ -119,7 +119,7 @@ export function EncabezadoSeccionExpediente({
 }) {
   return (
     <header className="grid gap-2 sm:grid-cols-[3.25rem_minmax(0,1fr)] sm:gap-5">
-      <span aria-hidden className="pt-1 font-mono text-xs tabular-nums text-slate-400">
+      <span aria-hidden className="pt-1 font-mono text-xs tabular-nums text-slate-500">
         {index}
       </span>
       <div>

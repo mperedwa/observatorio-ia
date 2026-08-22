@@ -8,7 +8,7 @@ export interface BreadcrumbItem {
 
 export function Breadcrumb({ locale, items }: { locale: Locale; items: BreadcrumbItem[] }) {
   return (
-    <nav aria-label="breadcrumb" className="text-xs text-slate-500">
+    <nav aria-label={locale === 'es' ? 'Migas de pan' : 'Breadcrumb'} className="text-xs text-slate-500">
       <ol className="flex flex-wrap items-center gap-1.5">
         {items.map((item, idx) => {
           const isLast = idx === items.length - 1;
@@ -26,14 +26,11 @@ export function Breadcrumb({ locale, items }: { locale: Locale; items: Breadcrum
                   {item.label}
                 </span>
               )}
-              {!isLast && <span aria-hidden className="text-slate-400">›</span>}
+              {!isLast && <span aria-hidden className="text-slate-500">›</span>}
             </li>
           );
         })}
       </ol>
-      <span className="sr-only" lang={locale}>
-        {locale === 'es' ? 'Migas de pan' : 'Breadcrumb'}
-      </span>
     </nav>
   );
 }

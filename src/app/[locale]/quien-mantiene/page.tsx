@@ -34,7 +34,7 @@ function linkifyAutoria(cuerpo: string): ReactNode[] {
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-institucional-700 hover:underline"
+        className="text-institucional-700 underline decoration-institucional-200 underline-offset-2 hover:decoration-institucional-700"
       >
         {m[1]}
       </a>,
@@ -122,7 +122,7 @@ export default async function QuienMantienePage({
           <ol className="mt-8 border-y border-editorial-rule sm:ml-[4.5rem]">
             {q.metodologia.bullets.map((b, i) => (
               <li key={i} className="grid grid-cols-[2.5rem_minmax(0,1fr)] gap-3 border-b border-editorial-rule py-4 text-sm leading-relaxed text-slate-700 last:border-b-0">
-                <span className="font-mono text-xs tabular-nums text-slate-400">{String(i + 1).padStart(2, '0')}</span>
+                <span className="font-mono text-xs tabular-nums text-slate-500">{String(i + 1).padStart(2, '0')}</span>
                 <span className="text-pretty">{b}</span>
               </li>
             ))}
@@ -154,7 +154,7 @@ export default async function QuienMantienePage({
             <ol className="mt-3 grid border-y border-editorial-rule sm:grid-cols-2 lg:grid-cols-3">
               {DIMENSIONES_EVIDENCIA.map((dimension, index) => (
                 <li key={dimension} className="flex gap-3 border-b border-editorial-rule px-3 py-3 text-xs text-slate-700 sm:[&:nth-child(odd)]:border-r lg:border-r lg:[&:nth-child(3n)]:border-r-0">
-                  <span className="font-mono tabular-nums text-slate-400">{String(index + 1).padStart(2, '0')}</span>
+                  <span className="font-mono tabular-nums text-slate-500">{String(index + 1).padStart(2, '0')}</span>
                   {t.catalogo.dimensiones[dimension]}
                 </li>
               ))}

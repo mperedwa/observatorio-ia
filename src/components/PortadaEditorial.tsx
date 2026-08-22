@@ -135,7 +135,7 @@ export function PortadaEditorial({ locale, t }: { locale: Locale; t: Dictionary 
                 >
                   <span
                     aria-hidden
-                    className="font-editorial text-2xl font-semibold tabular-nums text-slate-400"
+                    className="font-editorial text-2xl font-semibold tabular-nums text-slate-500"
                   >
                     {String(index + 1).padStart(2, '0')}
                   </span>
@@ -360,7 +360,7 @@ export function PortadaEditorial({ locale, t }: { locale: Locale; t: Dictionary 
                 >
                   <span
                     aria-hidden
-                    className="font-editorial text-xl font-semibold tabular-nums text-slate-400"
+                    className="font-editorial text-xl font-semibold tabular-nums text-slate-500"
                   >
                     {String(index + 1).padStart(2, '0')}
                   </span>

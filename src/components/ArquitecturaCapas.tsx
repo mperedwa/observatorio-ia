@@ -43,7 +43,7 @@ export function ArquitecturaCapas({
             <li key={capa.id}>
               <details open className="group border-b border-editorial-rule">
                 <summary className="grid cursor-pointer list-none grid-cols-[2.5rem_minmax(0,1fr)_1rem] gap-x-3 px-1 py-6 marker:hidden hover:bg-editorial-paper/55 focus-visible:outline-offset-[-3px] sm:grid-cols-[3.25rem_minmax(0,1fr)_10rem_1.5rem] sm:gap-x-5 sm:px-3 [&::-webkit-details-marker]:hidden">
-                  <span aria-hidden className="pt-1 font-mono text-xs tabular-nums text-slate-400">
+                  <span aria-hidden className="pt-1 font-mono text-xs tabular-nums text-slate-500">
                     {String(index + 1).padStart(2, '0')}
                   </span>
                   <div className="min-w-0">
@@ -59,7 +59,7 @@ export function ArquitecturaCapas({
                     tone={fuerzaTone[capa.fuerzaTipo]}
                     className="col-start-2 mt-3 sm:col-start-3 sm:mt-1"
                   />
-                  <span aria-hidden className="col-start-3 row-start-1 pt-1 text-slate-400 transition-transform group-open:rotate-180 sm:col-start-4">
+                  <span aria-hidden className="col-start-3 row-start-1 pt-1 text-slate-500 transition-transform group-open:rotate-180 sm:col-start-4">
                     ↓
                   </span>
                 </summary>

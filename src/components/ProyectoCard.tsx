@@ -55,12 +55,11 @@ export function ProyectoCard({
     <Link
       href={href}
       className="group block border-b border-editorial-rule px-1 py-7 transition-colors duration-150 hover:bg-editorial-paper/55 focus-visible:outline-offset-[-3px] sm:px-4"
-      aria-label={`${t.catalogo.fichaCta}: ${proyecto.titulo[locale]}`}
     >
       <article className="grid min-w-0 grid-cols-[2.25rem_minmax(0,1fr)] gap-x-3 sm:grid-cols-[3rem_minmax(0,1fr)_1.5rem] sm:gap-x-5">
         <span
           aria-hidden
-          className="pt-1 font-mono text-xs tabular-nums text-slate-400"
+          className="pt-1 font-mono text-xs tabular-nums text-slate-500"
         >
           {String(registryIndex ?? 0).padStart(2, '0')}
         </span>

@@ -225,13 +225,16 @@ const CSS = `
 
 /* R5 — lenguaje de archivo editorial */
 .policy-brief[data-theme="light"] {
-  --pb-bg: #ffffff; --pb-surface: #ffffff; --pb-surface-alt: #f7f5ef;
+  --pb-bg: #ffffff; --pb-surface: #ffffff; --pb-surface-alt: #faf9f5;
   --pb-text: #10243e; --pb-text-secondary: #475569; --pb-text-muted: #64748b;
   --pb-border: #cbd5e1; --pb-primary: #1d4ed8; --pb-primary-light: transparent;
+  --pb-success: #047857; --pb-success-light: transparent;
+  --pb-warning: #92400e; --pb-warning-light: transparent;
+  --pb-danger: #b91c1c; --pb-danger-light: transparent;
   --pb-chart-1: #1d4ed8; --pb-chart-2: #64748b;
 }
 .policy-brief { background: #fff; color: var(--pb-text); }
-.policy-brief > header { background: #f7f5ef !important; border-color: var(--pb-border) !important; }
+.policy-brief > header { background: #faf9f5 !important; border-color: var(--pb-border) !important; }
 .policy-brief > header h1 {
   max-width: 48rem; font-family: var(--font-source-serif), Georgia, serif !important;
   font-size: clamp(2.5rem, 6vw, 4.25rem) !important; font-weight: 600 !important;
@@ -277,22 +280,22 @@ const CSS = `
   background: transparent; border: 0; border-bottom: 2px solid transparent; border-radius: 0;
   padding: 7px 10px;
 }
-.pb-fbtn:hover { background: #f7f5ef; }
+.pb-fbtn:hover { background: #faf9f5; }
 .pb-fbtn-on { background: transparent; border-bottom-color: var(--pb-primary); color: var(--pb-primary); }
 .pb-tw { border: 0; border-top: 1px solid var(--pb-border); border-bottom: 1px solid var(--pb-border); border-radius: 0; }
-.pb-tbl th { background: #f7f5ef; }
+.pb-tbl th { background: #faf9f5; }
 .pb-tl-dot { width: 10px; height: 10px; left: -23px; border: 0; border-radius: 0; box-shadow: none; }
 .pb-tl-quote { background: transparent; border-left-width: 2px; border-radius: 0; }
 .pb-rec { background: transparent; border: 0; border-bottom: 1px solid var(--pb-border); border-radius: 0; padding: 20px 0; }
 .pb-rec-num {
   width: auto; height: auto; justify-content: flex-start; background: transparent; border-radius: 0;
-  font-family: var(--font-source-serif), Georgia, serif; color: #94a3b8;
+  font-family: var(--font-source-serif), Georgia, serif; color: #64748b;
 }
 .pb-rec-title, .pb-model-name { font-family: var(--font-source-serif), Georgia, serif; }
 .pb-model { background: transparent; border: 0; border-bottom: 1px solid var(--pb-border); border-radius: 0; padding: 20px 0; }
 .pb-model-cr { background: transparent; border-left-width: 2px; border-radius: 0; }
 .pb-dual { gap: 28px !important; }
-.policy-brief > footer { background: #f7f5ef !important; }
+.policy-brief > footer { background: #faf9f5 !important; }
 @media (max-width: 640px) {
   .pb-sh { grid-template-columns: 2.5rem minmax(0, 1fr); gap: 12px; }
   .pb-toc { padding-left: 8px; padding-right: 8px; }
@@ -636,6 +639,7 @@ export default function ArticleBrief({ locale }: { locale: Locale }) {
                       key={f.key}
                       type="button"
                       className={`pb-fbtn ${filter === f.key ? 'pb-fbtn-on' : ''}`}
+                      aria-pressed={filter === f.key}
                       onClick={() => {
                         setFilter(f.key);
                         trackEvent('visualization_interaction', {

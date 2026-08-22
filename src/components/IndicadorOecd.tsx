@@ -76,7 +76,7 @@ export function IndicadorOecd({
                 href={f.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-institucional-700 hover:underline"
+                className="text-institucional-700 underline decoration-institucional-200 underline-offset-2 hover:decoration-institucional-700"
               >
                 {f.nombre ? f.nombre[locale] : new URL(f.url).hostname}
               </a>
