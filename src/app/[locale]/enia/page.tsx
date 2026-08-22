@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Breadcrumb } from '@/components/Breadcrumb';
+import { EncabezadoSeccionExpediente } from '@/components/ExpedienteEditorial';
 import { ExploradorEnia } from '@/components/ExploradorEnia';
 import {
   contarIntervencionesEniaPorCruce,
@@ -83,7 +84,7 @@ export default async function EniaPage({
 
   return (
     <article className="bg-white">
-      <header className="border-b border-slate-300 bg-slate-50">
+      <header className="border-b border-editorial-rule bg-editorial-paper">
         <div className="mx-auto max-w-7xl px-6 pb-14 pt-10 sm:pb-16">
           <Breadcrumb
             locale={lc}
@@ -94,20 +95,20 @@ export default async function EniaPage({
           />
           <div className="mt-8 grid gap-10 lg:grid-cols-[minmax(0,1fr)_18rem] lg:items-end">
             <div className="max-w-4xl">
-              <p className="text-sm font-medium uppercase tracking-wider text-institucional-700">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-institucional-700">
                 {t.kicker}
               </p>
-              <h1 className="mt-3 text-4xl font-bold leading-tight text-slate-950 text-balance sm:text-6xl">
+              <h1 className="mt-3 font-editorial text-4xl font-semibold leading-[0.98] tracking-[-0.025em] text-editorial-ink text-balance sm:text-6xl">
                 {t.title}
               </h1>
-              <p className="mt-5 max-w-3xl text-lg leading-relaxed text-slate-600 text-pretty">
+              <p className="mt-5 max-w-3xl text-lg leading-relaxed text-editorial-muted text-pretty">
                 {t.intro}
               </p>
-              <p className="mt-5 max-w-3xl border-l-4 border-institucional-700 pl-4 text-base font-semibold leading-relaxed text-slate-800">
+              <p className="mt-6 max-w-3xl border-l-2 border-editorial-accent pl-4 text-base font-semibold leading-relaxed text-editorial-ink">
                 {t.thesis}
               </p>
             </div>
-            <div className="border-t border-slate-300 pt-5 text-sm lg:border-l lg:border-t-0 lg:pl-6 lg:pt-0">
+            <div className="border-t border-editorial-rule pt-5 text-sm lg:border-l lg:border-t-0 lg:pl-6 lg:pt-0">
               <p className="text-slate-500">{t.updated}</p>
               <a
                 href={inventarioEnia.fuente.url}
@@ -127,15 +128,13 @@ export default async function EniaPage({
 
       <div className="mx-auto max-w-7xl px-6 py-12 sm:py-16">
         <section aria-label={lc === 'es' ? 'Resumen del inventario' : 'Inventory summary'}>
-          <div className="grid grid-cols-2 border-y border-slate-300 md:grid-cols-3 lg:grid-cols-6">
-            {stats.map((stat, index) => (
+          <div className="grid grid-cols-2 border-t border-editorial-rule sm:grid-cols-3 lg:grid-cols-6">
+            {stats.map((stat) => (
               <div
                 key={stat.label}
-                className={`px-4 py-5 sm:px-5 ${
-                  index > 0 ? 'border-l border-slate-200' : ''
-                } ${index === 3 ? 'md:border-l-0 lg:border-l' : ''}`}
+                className="border-b border-r border-editorial-rule px-3 py-5 even:border-r-0 sm:px-5 sm:[&:nth-child(2n)]:border-r sm:[&:nth-child(3n)]:border-r-0 lg:border-r lg:last:border-r-0"
               >
-                <div className="text-3xl font-bold tabular-nums text-institucional-900 sm:text-4xl">
+                <div className="font-editorial text-3xl font-semibold tabular-nums text-editorial-ink sm:text-4xl">
                   {stat.value}
                 </div>
                 <div className="mt-2 text-xs font-semibold leading-snug text-slate-700">
@@ -153,16 +152,26 @@ export default async function EniaPage({
 
         <ExploradorEnia locale={lc} />
 
-        <section className="mt-16 border-t-4 border-institucional-800 bg-slate-50 px-6 py-8 sm:px-8">
-          <h2 className="text-xl font-bold text-slate-900">{t.methodology.title}</h2>
-          <p className="mt-3 max-w-4xl leading-relaxed text-slate-700">
-            {t.methodology.body}
-          </p>
-          <ul className="mt-6 grid gap-5 text-sm leading-relaxed text-slate-700 md:grid-cols-3">
-            <li className="border-t border-slate-300 pt-3">{t.methodology.canonical}</li>
-            <li className="border-t border-slate-300 pt-3">{t.methodology.status}</li>
-            <li className="border-t border-slate-300 pt-3">{t.methodology.evidence}</li>
-          </ul>
+        <section className="mt-20 border-t border-editorial-rule pt-10">
+          <EncabezadoSeccionExpediente index="02" title={t.methodology.title} />
+          <div className="mt-7 grid gap-7 sm:grid-cols-[3.25rem_minmax(0,1fr)] sm:gap-5">
+            <span aria-hidden />
+            <div>
+              <p className="max-w-4xl leading-relaxed text-slate-700">
+                {t.methodology.body}
+              </p>
+              <ol className="mt-7 grid border-t border-editorial-rule text-sm leading-relaxed text-slate-700 md:grid-cols-3 md:divide-x md:divide-editorial-rule">
+                {[t.methodology.canonical, t.methodology.status, t.methodology.evidence].map((item, index) => (
+                  <li key={item} className="border-b border-editorial-rule py-4 md:border-b-0 md:px-5 md:first:pl-0">
+                    <span className="mb-2 block font-mono text-[0.68rem] tabular-nums text-slate-400">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </div>
         </section>
       </div>
     </article>

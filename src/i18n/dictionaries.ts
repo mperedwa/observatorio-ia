@@ -122,6 +122,14 @@ export interface Dictionary {
     verFuente: string;
     verEstadoOficial: string;
     verificadoLabel: string;
+    coyunturaKicker: string;
+    coyunturaTitulo: string;
+    coyunturaSub: string;
+    registroTitulo: string;
+    registroSub: string;
+    estadoOficialLabel: string;
+    alcanceLabel: string;
+    fuentesOficialesLabel: string;
   };
   indicadores: {
     kicker: string;
@@ -614,6 +622,16 @@ export const dictionaries: Record<Locale, Dictionary> = {
       verFuente: 'Ver expediente',
       verEstadoOficial: 'Ver evidencia oficial del estado',
       verificadoLabel: 'Verificado',
+      coyunturaKicker: 'Lectura editorial',
+      coyunturaTitulo: 'Coyuntura alrededor de los expedientes',
+      coyunturaSub:
+        'Estas notas registran hechos y contexto público. No sustituyen el estado que publica la Asamblea Legislativa.',
+      registroTitulo: 'Registro oficial de expedientes',
+      registroSub:
+        'Número, comisión, alcance, estado y verificación se transcriben por separado del contexto editorial.',
+      estadoOficialLabel: 'Estado legislativo oficial',
+      alcanceLabel: 'Alcance respecto de IA',
+      fuentesOficialesLabel: 'Fuentes oficiales',
     },
     indicadores: {
       kicker: '03 / Indicadores',
@@ -1292,6 +1310,16 @@ export const dictionaries: Record<Locale, Dictionary> = {
       verFuente: 'View bill',
       verEstadoOficial: 'View official status evidence',
       verificadoLabel: 'Verified',
+      coyunturaKicker: 'Editorial reading',
+      coyunturaTitulo: 'Context surrounding the bills',
+      coyunturaSub:
+        'These notes record public events and context. They do not replace the status published by the Legislative Assembly.',
+      registroTitulo: 'Official bill register',
+      registroSub:
+        'Number, committee, scope, status and verification are transcribed separately from editorial context.',
+      estadoOficialLabel: 'Official legislative status',
+      alcanceLabel: 'Scope in relation to AI',
+      fuentesOficialesLabel: 'Official sources',
     },
     indicadores: {
       kicker: '03 / Indicators',

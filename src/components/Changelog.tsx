@@ -1,89 +1,52 @@
 import Link from 'next/link';
+import { MarcaDocumental } from '@/components/ExpedienteEditorial';
 import { changelog } from '@/data/changelog';
-import type { ChangelogTipo } from '@/data/changelog';
 import type { Dictionary } from '@/i18n/dictionaries';
 import type { Locale } from '@/i18n/config';
 
 const HOME_LIMIT = 10;
-
-/**
- * Subtle, neutral pill colors per change `tipo`. Distinct from the
- * `EstadoLey` palette used in legislacion badges (amber/sky/blue/purple/
- * emerald/slate) so the two taxonomies don't visually collide.
- */
-const tipoCls: Record<ChangelogTipo, string> = {
-  legislacion: 'bg-slate-100 text-slate-700 border-slate-300',
-  institucion: 'bg-stone-100 text-stone-700 border-stone-300',
-  indicador: 'bg-neutral-100 text-neutral-700 border-neutral-300',
-  proyecto: 'bg-zinc-100 text-zinc-700 border-zinc-300',
-  recurso: 'bg-gray-100 text-gray-700 border-gray-300',
-};
 
 export function Changelog({ locale, t }: { locale: Locale; t: Dictionary }) {
   const entries = changelog.slice(0, HOME_LIMIT);
   if (entries.length === 0) return null;
 
   return (
-    <section id="actualizaciones" className="bg-white border-y border-slate-200">
-      <div className="max-w-7xl mx-auto px-6 py-20">
-        <header className="mb-8">
-          <p className="text-sm font-medium uppercase tracking-wider text-institucional-700">
+    <section id="actualizaciones" className="border-y border-editorial-rule bg-white">
+      <div className="mx-auto max-w-7xl px-6 py-20">
+        <header className="mb-8 max-w-3xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-institucional-700">
             {t.changelog.kicker}
           </p>
-          <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-slate-900">
+          <h2 className="mt-2 font-editorial text-3xl font-semibold leading-tight text-editorial-ink sm:text-4xl">
             {t.changelog.titulo}
           </h2>
-          <p className="mt-3 text-slate-600 max-w-3xl text-pretty">{t.changelog.intro}</p>
+          <p className="mt-3 leading-relaxed text-slate-600 text-pretty">{t.changelog.intro}</p>
         </header>
 
-        <div className="overflow-x-auto rounded-lg border border-slate-200">
-          <table className="min-w-full divide-y divide-slate-200 text-sm">
-            <thead className="bg-slate-50 text-left text-xs uppercase tracking-wide text-slate-500">
+        <div className="hidden border-y border-editorial-rule md:block">
+          <table className="min-w-full divide-y divide-editorial-rule text-sm">
+            <thead className="bg-editorial-paper/55 text-left text-[0.68rem] uppercase tracking-[0.08em] text-slate-500">
               <tr>
-                <th scope="col" className="px-4 py-3 font-medium w-[110px]">
-                  {t.changelog.tableCols.fecha}
-                </th>
-                <th scope="col" className="px-4 py-3 font-medium w-[130px]">
-                  {t.changelog.tableCols.tipo}
-                </th>
-                <th scope="col" className="px-4 py-3 font-medium">
-                  {t.changelog.tableCols.actualizacion}
-                </th>
-                <th scope="col" className="px-4 py-3 font-medium w-[220px]">
-                  {t.changelog.tableCols.fuente}
-                </th>
+                <th scope="col" className="w-[110px] px-4 py-3 font-semibold">{t.changelog.tableCols.fecha}</th>
+                <th scope="col" className="w-[130px] px-4 py-3 font-semibold">{t.changelog.tableCols.tipo}</th>
+                <th scope="col" className="px-4 py-3 font-semibold">{t.changelog.tableCols.actualizacion}</th>
+                <th scope="col" className="w-[220px] px-4 py-3 font-semibold">{t.changelog.tableCols.fuente}</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-200 bg-white">
-              {entries.map((e) => (
-                <tr key={`${e.fecha}-${e.commit_sha ?? e.actualizacion.es.slice(0, 32)}`}>
-                  <td className="px-4 py-3 align-top tabular-nums text-slate-600 whitespace-nowrap">
-                    <time dateTime={e.fecha}>{e.fecha}</time>
+            <tbody className="divide-y divide-editorial-rule bg-white">
+              {entries.map((entry) => (
+                <tr key={`${entry.fecha}-${entry.commit_sha ?? entry.actualizacion.es.slice(0, 32)}`}>
+                  <td className="whitespace-nowrap px-4 py-4 align-top tabular-nums text-slate-600">
+                    <time dateTime={entry.fecha}>{entry.fecha}</time>
                   </td>
-                  <td className="px-4 py-3 align-top whitespace-nowrap">
-                    <span
-                      className={`inline-block text-xs px-2 py-0.5 rounded border ${tipoCls[e.tipo]}`}
-                    >
-                      {t.changelog.tipos[e.tipo]}
-                    </span>
+                  <td className="px-4 py-4 align-top">
+                    <MarcaDocumental label={t.changelog.tipos[entry.tipo]} />
                   </td>
-                  <td className="px-4 py-3 align-top text-slate-700 text-pretty">
-                    {e.actualizacion[locale]}
+                  <td className="px-4 py-4 align-top leading-relaxed text-slate-700 text-pretty">
+                    {entry.actualizacion[locale]}
                   </td>
-                  <td className="px-4 py-3 align-top text-slate-600 text-pretty">
-                    {e.fuente_url ? (
-                      <a
-                        href={e.fuente_url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        title={e.fuente[locale]}
-                        className="text-institucional-700 hover:text-institucional-900 underline underline-offset-2"
-                      >
-                        {e.fuente[locale]} ↗
-                      </a>
-                    ) : (
-                      e.fuente[locale]
-                    )}
+                  <td className="px-4 py-4 align-top text-slate-600 text-pretty">
+                    <Fuente entry={entry} locale={locale} />
                   </td>
                 </tr>
               ))}
@@ -91,15 +54,64 @@ export function Changelog({ locale, t }: { locale: Locale; t: Dictionary }) {
           </table>
         </div>
 
+        <div className="border-t border-editorial-rule md:hidden">
+          {entries.map((entry, index) => (
+            <article
+              key={`${entry.fecha}-${entry.commit_sha ?? entry.actualizacion.es.slice(0, 32)}`}
+              className="grid grid-cols-[2.5rem_minmax(0,1fr)] gap-x-3 border-b border-editorial-rule py-6"
+            >
+              <span aria-hidden className="pt-1 font-mono text-xs tabular-nums text-slate-400">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <div className="min-w-0">
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+                  <time dateTime={entry.fecha} className="text-xs tabular-nums text-slate-500">
+                    {entry.fecha}
+                  </time>
+                  <MarcaDocumental label={t.changelog.tipos[entry.tipo]} />
+                </div>
+                <p className="mt-3 text-sm leading-relaxed text-slate-700 text-pretty">
+                  {entry.actualizacion[locale]}
+                </p>
+                <p className="mt-3 text-xs leading-relaxed text-slate-500">
+                  <Fuente entry={entry} locale={locale} />
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+
         <div className="mt-6">
           <Link
             href={`/${locale}/historial`}
-            className="text-sm font-medium text-institucional-700 hover:text-institucional-900 underline underline-offset-2"
+            className="text-sm font-semibold text-institucional-700 underline underline-offset-2 hover:text-institucional-900"
           >
             {t.changelog.verHistorialCompleto} →
           </Link>
         </div>
       </div>
     </section>
+  );
+}
+
+function Fuente({
+  entry,
+  locale,
+}: {
+  entry: (typeof changelog)[number];
+  locale: Locale;
+}) {
+  if (!entry.fuente_url) return entry.fuente[locale];
+
+  return (
+    <a
+      href={entry.fuente_url}
+      target="_blank"
+      rel="noopener noreferrer"
+      title={entry.fuente[locale]}
+      className="font-semibold text-institucional-700 underline underline-offset-2 hover:text-institucional-900"
+    >
+      {entry.fuente[locale]} ↗
+    </a>
   );
 }

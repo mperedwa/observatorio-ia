@@ -1,70 +1,66 @@
+import { EncabezadoSeccionExpediente, MarcaDocumental } from '@/components/ExpedienteEditorial';
 import { hitos } from '@/data/marcoPais';
 import type { Dictionary } from '@/i18n/dictionaries';
 import type { Locale } from '@/i18n/config';
 
 function formatFechaCompleta(fecha: string, locale: Locale): string {
-  const d = new Date(`${fecha}T12:00:00Z`);
-  if (Number.isNaN(d.getTime())) return fecha;
+  const date = new Date(`${fecha}T12:00:00Z`);
+  if (Number.isNaN(date.getTime())) return fecha;
   return new Intl.DateTimeFormat(locale === 'es' ? 'es-CR' : 'en-US', {
     day: 'numeric',
     month: 'short',
     year: 'numeric',
-  }).format(d);
+  }).format(date);
 }
 
 export function TimelineGobernanza({
   locale,
   t,
+  sectionIndex = '03',
 }: {
   locale: Locale;
   t: Dictionary;
+  sectionIndex?: string;
 }) {
   const dict = t.marcoPais.timeline;
 
   return (
-    <section id="hitos" className="bg-slate-50 border-y border-slate-200">
-      <div className="max-w-5xl mx-auto px-6 py-20">
-        <header className="mb-10 max-w-3xl">
-          <p className="text-sm font-medium uppercase tracking-wider text-institucional-700">
-            {dict.kicker}
-          </p>
-          <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-slate-900">
-            {dict.titulo}
-          </h2>
-          <p className="mt-3 text-slate-600 text-pretty">{dict.sub}</p>
-        </header>
+    <section id="hitos" className="border-t border-editorial-rule bg-white">
+      <div className="mx-auto max-w-6xl px-6 py-20">
+        <EncabezadoSeccionExpediente
+          index={sectionIndex}
+          title={dict.titulo}
+          description={dict.sub}
+        />
 
-        <ol className="relative border-l-2 border-slate-200 pl-6 sm:pl-8 space-y-6">
-          {hitos.map((h, i) => (
-            <li key={`${h.anio}-${i}`} className="relative">
-              <span
-                aria-hidden="true"
-                className={`absolute -left-[33px] sm:-left-[41px] top-1.5 w-4 h-4 rounded-full border-2 ${
-                  h.pendiente
-                    ? 'bg-white border-slate-300 border-dashed'
-                    : 'bg-institucional-700 border-institucional-700'
-                }`}
-              />
-              <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                {h.pendiente ? (
-                  <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 bg-slate-100 border border-slate-200 border-dashed px-2 py-0.5 rounded">
-                    {dict.pendienteLabel}
-                  </span>
-                ) : (
-                  <span
-                    className="text-lg font-bold text-institucional-900 tabular-nums"
-                    title={h.fecha ? formatFechaCompleta(h.fecha, locale) : undefined}
+        <ol className="mt-9 border-t border-editorial-rule">
+          {hitos.map((hito, index) => (
+            <li
+              key={`${hito.anio}-${index}`}
+              className="grid grid-cols-[2.5rem_4.5rem_minmax(0,1fr)] gap-x-3 border-b border-editorial-rule py-5 sm:grid-cols-[3.25rem_7rem_minmax(0,1fr)] sm:gap-x-5 sm:py-6"
+            >
+              <span aria-hidden className="pt-1 font-mono text-xs tabular-nums text-slate-400">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <div>
+                {hito.pendiente ? (
+                  <MarcaDocumental label={dict.pendienteLabel} tone="pendiente" />
+                ) : hito.fecha ? (
+                  <time
+                    dateTime={hito.fecha}
+                    title={formatFechaCompleta(hito.fecha, locale)}
+                    className="font-editorial text-xl font-semibold tabular-nums text-institucional-900"
                   >
-                    {h.anio}
+                    {hito.anio}
+                  </time>
+                ) : (
+                  <span className="font-editorial text-xl font-semibold tabular-nums text-institucional-900">
+                    {hito.anio}
                   </span>
                 )}
               </div>
-              <p
-                className={`mt-1 text-sm sm:text-base text-pretty ${
-                  h.pendiente ? 'text-slate-600' : 'text-slate-800'
-                }`}
-              >
-                {h.evento[locale]}
+              <p className={`text-sm leading-relaxed text-pretty sm:text-base ${hito.pendiente ? 'text-slate-600' : 'text-slate-800'}`}>
+                {hito.evento[locale]}
               </p>
             </li>
           ))}

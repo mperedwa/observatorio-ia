@@ -1,107 +1,115 @@
-import { instrumentos, fuerzaBadgeCls } from '@/data/marcoPais';
+import {
+  EncabezadoSeccionExpediente,
+  MarcaDocumental,
+  type TonoDocumental,
+} from '@/components/ExpedienteEditorial';
+import { instrumentos, type FuerzaTipo } from '@/data/marcoPais';
 import type { Dictionary } from '@/i18n/dictionaries';
 import type { Locale } from '@/i18n/config';
 
+const fuerzaTone: Record<FuerzaTipo, TonoDocumental> = {
+  referencial: 'neutral',
+  orientadora: 'referencial',
+  obligatoria: 'atencion',
+  'no-vigente': 'contradicho',
+  operativa: 'confirmado',
+  pendiente: 'pendiente',
+};
+
 function formatPublicacion(fecha: string | undefined, locale: Locale): string {
   if (!fecha) return '—';
-  // YYYY-MM-DD -> "may 2019" / "May 2019". Si el día es 01 asumimos precisión mes.
-  const [yyyy, mm] = fecha.split('-');
-  const d = new Date(`${yyyy}-${mm}-15T12:00:00Z`);
-  if (Number.isNaN(d.getTime())) return fecha;
-  const fmt = new Intl.DateTimeFormat(locale === 'es' ? 'es-CR' : 'en-US', {
+  const [year, month] = fecha.split('-');
+  const date = new Date(`${year}-${month}-15T12:00:00Z`);
+  if (Number.isNaN(date.getTime())) return fecha;
+  return new Intl.DateTimeFormat(locale === 'es' ? 'es-CR' : 'en-US', {
     month: 'short',
     year: 'numeric',
-  });
-  return fmt.format(d);
+  }).format(date);
 }
 
 export function MatrizInstrumentos({
   locale,
   t,
+  sectionIndex = '04',
 }: {
   locale: Locale;
   t: Dictionary;
+  sectionIndex?: string;
 }) {
   const dict = t.marcoPais.matriz;
   const fuerzaLabels = t.marcoPais.fuerzaTipos;
 
   return (
-    <section id="matriz" className="bg-white border-y border-slate-200">
-      <div className="max-w-7xl mx-auto px-6 py-20">
-        <header className="mb-10 max-w-3xl">
-          <p className="text-sm font-medium uppercase tracking-wider text-institucional-700">
-            {dict.kicker}
-          </p>
-          <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-slate-900">
-            {dict.titulo}
-          </h2>
-          <p className="mt-3 text-slate-600 text-pretty">{dict.sub}</p>
-        </header>
+    <section id="matriz" className="border-t border-editorial-rule bg-white">
+      <div className="mx-auto max-w-7xl px-6 py-20">
+        <EncabezadoSeccionExpediente
+          index={sectionIndex}
+          title={dict.titulo}
+          description={dict.sub}
+        />
 
-        {/* Desktop: tabla. md+ */}
-        <div className="hidden md:block overflow-x-auto">
-          <table className="w-full text-sm border-collapse">
+        <div className="mt-9 hidden overflow-x-auto border-y border-editorial-rule lg:block">
+          <table className="w-full border-collapse text-sm">
             <thead>
-              <tr className="border-b-2 border-slate-200 text-left">
-                <th className="py-3 pr-4 text-xs uppercase tracking-wide text-slate-500 font-semibold w-[18%]">
+              <tr className="border-b border-editorial-rule bg-editorial-paper/55 text-left">
+                <th className="w-[18%] py-3 pl-3 pr-4 text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-slate-500">
                   {dict.cols.instrumento}
                 </th>
-                <th className="py-3 pr-4 text-xs uppercase tracking-wide text-slate-500 font-semibold w-[10%]">
+                <th className="w-[10%] px-3 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-slate-500">
                   {dict.cols.tipo}
                 </th>
-                <th className="py-3 pr-4 text-xs uppercase tracking-wide text-slate-500 font-semibold w-[10%]">
+                <th className="w-[10%] px-3 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-slate-500">
                   {dict.cols.alcance}
                 </th>
-                <th className="py-3 pr-4 text-xs uppercase tracking-wide text-slate-500 font-semibold w-[12%]">
+                <th className="w-[12%] px-3 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-slate-500">
                   {dict.cols.fuerza}
                 </th>
-                <th className="py-3 pr-4 text-xs uppercase tracking-wide text-slate-500 font-semibold">
+                <th className="px-3 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-slate-500">
                   {dict.cols.queResuelve}
                 </th>
-                <th className="py-3 pr-4 text-xs uppercase tracking-wide text-slate-500 font-semibold">
+                <th className="px-3 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-slate-500">
                   {dict.cols.queNoResuelve}
                 </th>
-                <th className="py-3 pr-4 text-xs uppercase tracking-wide text-slate-500 font-semibold w-[10%]">
+                <th className="w-[10%] px-3 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-slate-500">
                   {dict.cols.estado}
                 </th>
-                <th className="py-3 text-xs uppercase tracking-wide text-slate-500 font-semibold w-[10%]">
+                <th className="w-[10%] py-3 pl-3 pr-3 text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-slate-500">
                   {dict.cols.publicado}
                 </th>
               </tr>
             </thead>
             <tbody>
-              {instrumentos.map((inst) => (
-                <tr
-                  key={inst.id}
-                  className="border-b border-slate-100 align-top"
-                >
-                  <th
-                    scope="row"
-                    className="py-4 pr-4 text-left font-semibold text-institucional-900 text-pretty"
-                  >
-                    {inst.nombre[locale]}
+              {instrumentos.map((instrumento) => (
+                <tr key={instrumento.id} className="border-b border-editorial-rule align-top last:border-b-0">
+                  <th scope="row" className="py-4 pl-3 pr-4 text-left font-semibold leading-snug text-institucional-900 text-pretty">
+                    {instrumento.nombre[locale]}
                   </th>
-                  <td className="py-4 pr-4 text-slate-700">{inst.tipo[locale]}</td>
-                  <td className="py-4 pr-4 text-slate-700">{inst.alcance[locale]}</td>
-                  <td className="py-4 pr-4">
-                    <span
-                      className={`inline-block text-xs px-2 py-1 rounded border ${fuerzaBadgeCls[inst.fuerzaTipo]}`}
-                    >
-                      {fuerzaLabels[inst.fuerzaTipo]}
-                    </span>
+                  <td className="px-3 py-4 text-slate-700">{instrumento.tipo[locale]}</td>
+                  <td className="px-3 py-4 text-slate-700">{instrumento.alcance[locale]}</td>
+                  <td className="px-3 py-4">
+                    <MarcaDocumental
+                      label={fuerzaLabels[instrumento.fuerzaTipo]}
+                      tone={fuerzaTone[instrumento.fuerzaTipo]}
+                    />
                   </td>
-                  <td className="py-4 pr-4 text-slate-700 text-pretty">
-                    {inst.queResuelve[locale]}
+                  <td className="px-3 py-4 leading-relaxed text-slate-700 text-pretty">
+                    {instrumento.queResuelve[locale]}
                   </td>
-                  <td className="py-4 pr-4 text-slate-700 text-pretty">
-                    {inst.queNoResuelve[locale]}
+                  <td className="px-3 py-4 leading-relaxed text-slate-700 text-pretty">
+                    {instrumento.queNoResuelve[locale]}
                   </td>
-                  <td className="py-4 pr-4 text-slate-700">{inst.estado[locale]}</td>
+                  <td className="px-3 py-4 text-slate-700">{instrumento.estado[locale]}</td>
                   <td
-                    className="py-4 text-slate-700 tabular-nums whitespace-nowrap"
-                    title={inst._notaFechaPublicacion ?? undefined}
+                    className="py-4 pl-3 pr-3 tabular-nums text-slate-700"
+                    title={instrumento._notaFechaPublicacion ?? undefined}
                   >
-                    {formatPublicacion(inst.fechaPublicacion, locale)}
+                    {instrumento.fechaPublicacion ? (
+                      <time dateTime={instrumento.fechaPublicacion}>
+                        {formatPublicacion(instrumento.fechaPublicacion, locale)}
+                      </time>
+                    ) : (
+                      '—'
+                    )}
                   </td>
                 </tr>
               ))}
@@ -109,35 +117,39 @@ export function MatrizInstrumentos({
           </table>
         </div>
 
-        {/* Mobile: cards apiladas. < md */}
-        <div className="md:hidden space-y-4">
-          {instrumentos.map((inst) => (
+        <div className="mt-9 border-t border-editorial-rule lg:hidden">
+          {instrumentos.map((instrumento, index) => (
             <article
-              key={inst.id}
-              className="bg-white border border-slate-200 rounded-lg p-5"
+              key={instrumento.id}
+              className="grid grid-cols-[2.5rem_minmax(0,1fr)] gap-x-3 border-b border-editorial-rule py-7 sm:grid-cols-[3.25rem_minmax(0,1fr)] sm:gap-x-5"
             >
-              <header className="mb-3 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                <h3 className="text-base font-semibold text-institucional-900 text-pretty">
-                  {inst.nombre[locale]}
+              <span aria-hidden className="pt-1 font-mono text-xs tabular-nums text-slate-400">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <div className="min-w-0">
+                <h3 className="font-editorial text-2xl font-semibold leading-tight text-editorial-ink">
+                  {instrumento.nombre[locale]}
                 </h3>
-                <span
-                  className={`ml-auto inline-block text-xs px-2 py-1 rounded border ${fuerzaBadgeCls[inst.fuerzaTipo]}`}
-                >
-                  {fuerzaLabels[inst.fuerzaTipo]}
-                </span>
-              </header>
-              <dl className="space-y-3 text-sm">
-                <Row label={dict.cols.tipo} value={inst.tipo[locale]} />
-                <Row label={dict.cols.alcance} value={inst.alcance[locale]} />
-                <Row label={dict.cols.estado} value={inst.estado[locale]} />
-                <Row
-                  label={dict.cols.publicado}
-                  value={formatPublicacion(inst.fechaPublicacion, locale)}
-                  title={inst._notaFechaPublicacion}
-                />
-                <Row label={dict.cols.queResuelve} value={inst.queResuelve[locale]} />
-                <Row label={dict.cols.queNoResuelve} value={inst.queNoResuelve[locale]} />
-              </dl>
+                <div className="mt-3">
+                  <MarcaDocumental
+                    label={fuerzaLabels[instrumento.fuerzaTipo]}
+                    tone={fuerzaTone[instrumento.fuerzaTipo]}
+                  />
+                </div>
+                <dl className="mt-5 grid gap-x-5 gap-y-4 border-t border-editorial-rule pt-4 text-sm sm:grid-cols-2">
+                  <Row label={dict.cols.tipo} value={instrumento.tipo[locale]} />
+                  <Row label={dict.cols.alcance} value={instrumento.alcance[locale]} />
+                  <Row label={dict.cols.estado} value={instrumento.estado[locale]} />
+                  <Row
+                    label={dict.cols.publicado}
+                    value={formatPublicacion(instrumento.fechaPublicacion, locale)}
+                    title={instrumento._notaFechaPublicacion}
+                    dateTime={instrumento.fechaPublicacion}
+                  />
+                  <Row label={dict.cols.queResuelve} value={instrumento.queResuelve[locale]} />
+                  <Row label={dict.cols.queNoResuelve} value={instrumento.queNoResuelve[locale]} />
+                </dl>
+              </div>
             </article>
           ))}
         </div>
@@ -150,18 +162,20 @@ function Row({
   label,
   value,
   title,
+  dateTime,
 }: {
   label: string;
   value: string;
   title?: string;
+  dateTime?: string;
 }) {
   return (
     <div>
-      <dt className="text-xs uppercase tracking-wide text-slate-500 mb-0.5">
+      <dt className="text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-slate-500">
         {label}
       </dt>
-      <dd className="text-slate-700 text-pretty" title={title}>
-        {value}
+      <dd className="mt-1 leading-relaxed text-slate-700 text-pretty" title={title}>
+        {dateTime ? <time dateTime={dateTime}>{value}</time> : value}
       </dd>
     </div>
   );

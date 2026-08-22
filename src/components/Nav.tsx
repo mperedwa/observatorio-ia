@@ -19,16 +19,16 @@ export function Nav({ locale, t }: { locale: Locale; t: Dictionary }) {
   ];
   return (
     <header className="sticky top-0 z-50 border-b border-editorial-rule bg-editorial-paper/95 backdrop-blur">
-      <div className="relative mx-auto flex h-16 max-w-7xl items-center justify-between gap-2 px-3 sm:gap-4 sm:px-6">
-        <Link href={base} className="flex flex-shrink-0 items-center gap-2 sm:gap-3">
-          <Image src="/logo.svg" alt="" width={40} height={21} priority className="h-8 w-auto" />
+      <div className="relative mx-auto flex h-16 max-w-7xl items-center justify-between gap-1 px-2 sm:gap-4 sm:px-6">
+        <Link href={base} className="flex min-w-0 flex-shrink items-center gap-1.5 sm:flex-shrink-0 sm:gap-3">
+          <Image src="/logo.svg" alt="" width={40} height={21} priority className="h-7 w-auto flex-shrink-0 sm:h-8" />
           <div className="flex flex-col leading-tight">
-            <span className="font-editorial text-xl font-semibold text-editorial-ink">{t.siteName}</span>
-            <span className="text-xs text-slate-500 -mt-0.5">{t.siteCountry}</span>
+            <span className="whitespace-nowrap font-editorial text-lg font-semibold text-editorial-ink sm:text-xl">{t.siteName}</span>
+            <span className="-mt-0.5 whitespace-nowrap text-[0.65rem] text-slate-500 sm:text-xs">{t.siteCountry}</span>
           </div>
         </Link>
         <DesktopNav items={items} ariaLabel={t.nav.navegacionPrincipal} />
-        <div className="flex items-center gap-2">
+        <div className="flex flex-shrink-0 items-center gap-1 sm:gap-2">
           <LanguageToggle current={locale} />
           <MobileMenu
             items={items}

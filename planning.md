@@ -61,13 +61,13 @@ Dirección aprobada: **observatorio editorial de evidencia pública**, con el co
 - [x] R1. Fundamentos y piloto funcional en portada y catálogo de proyectos.
 - [x] R2. Estructura global, portada e índices de instituciones, legislación e indicadores.
 - [x] R3. Catálogos, instituciones y expedientes de detalle.
-- [ ] R4. ENIA, Marco país, legislación e historial.
+- [x] R4. ENIA, Marco país, legislación e historial.
 - [ ] R5. Indicadores, análisis, superficies secundarias y assets.
 - [ ] R6. Accesibilidad, rendimiento y candidato local de publicación.
 
 Regla de ejecución: cada fase se valida, se compromete por separado y se revisa localmente. No se hace push ni despliegue sin autorización explícita posterior.
 
-Punto de revisión actual: R3 está implementada y validada en la rama local `redesign/editorial-v1`. El índice institucional usa registros numerados y las fichas de proyecto e institución funcionan como expedientes documentales con cronología, matriz, fuentes y vacíos explícitos. Antes de iniciar R4, Mario revisa localmente catálogo, instituciones y fichas en escritorio y móvil.
+Punto de revisión actual: R4 está implementada y validada en la rama local `redesign/editorial-v1`. ENIA separa texto oficial, cruce editorial y evidencia externa; Marco país funciona como documento continuo; legislación distingue coyuntura de estado oficial; historial ofrece tablas de escritorio y registros móviles. Antes de iniciar R5, Mario revisa estas cuatro rutas en ES y EN, escritorio y móvil.
 
 ## Próximas mejoras posibles
 
@@ -81,7 +81,7 @@ Punto de revisión actual: R3 está implementada y validada en la rama local `re
 
 ### Diseño y experiencia
 
-- [ ] Ejecutar R4-R6 del plan de rediseño editorial después de revisar los expedientes de R3.
+- [ ] Ejecutar R5-R6 del plan de rediseño editorial después de revisar las superficies densas de R4.
 - [ ] Revisar densidad de navegación y longitud de portada después de acumular 30 días de analítica.
 - [ ] Definir logo definitivo.
 

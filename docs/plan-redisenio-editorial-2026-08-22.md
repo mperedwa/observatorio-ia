@@ -2,7 +2,7 @@
 
 Fecha: 22 de agosto de 2026.
 
-Estado: aprobado para iniciar implementación local.
+Estado: R4 completada localmente; pendiente la revisión visual de Mario antes de iniciar R5.
 
 Punto de partida técnico: Fase 5C comprometida en `e6786ba`. Este plan no autoriza push, despliegue ni publicación.
 
@@ -371,7 +371,7 @@ feat(design): reorganiza portada e indices editoriales
 
 Objetivo: aplicar la gramática aprobada a la exploración y a las fichas de detalle.
 
-Estado: implementación local completada el 22 de agosto de 2026 en la rama `redesign/editorial-v1`; pendiente la revisión visual de Mario antes de iniciar R4.
+Estado: implementación local completada y aprobada por Mario el 22 de agosto de 2026 en la rama `redesign/editorial-v1`.
 
 Resultado de la fase:
 
@@ -412,6 +412,23 @@ feat(design): convierte catalogos y fichas en expedientes
 ### R4. ENIA, Marco país, legislación e historial
 
 Objetivo: rediseñar las superficies documentales más densas sin reducir su trazabilidad.
+
+Estado: implementación local completada el 22 de agosto de 2026 en la rama `redesign/editorial-v1`; pendiente la revisión visual de Mario antes de iniciar R5.
+
+Resultado de la fase:
+
+- explorador ENIA convertido en un registro compacto y progresivo: conserva las vistas de 25, 120 y 129 filas, la búsqueda, los filtros, los duplicados, los estados y los enlaces al catálogo;
+- cada intervención separa explícitamente texto oficial, cruce editorial y evidencia externa, conserva el título oficial en español y ofrece indicadores como definiciones apiladas en móvil y tabla en escritorio;
+- Marco país convertido en un documento continuo con siete secciones numeradas para indicadores, arquitectura, cronología, instrumentos, brechas, conexiones y fuentes;
+- arquitectura y matriz sustituyen tarjetas por registros reglados, con fuerza normativa y estado expresados mediante texto y marca además del color;
+- legislación separa la coyuntura editorial del registro oficial y conserva siete expedientes con número, comisión, estado, alcance, fuentes y fecha de verificación;
+- historial alinea política, agenda de ocho frentes, ocho revisiones y 42 cambios publicados, con tablas en escritorio y registros completos en móvil;
+- estados, fechas, resultados y vacíos usan etiquetas textuales, reglas y elementos semánticos como `time`, `details`, listas, definiciones y tablas;
+- navegación ajustada para eliminar un desborde de 7 px a 360 px y conservar apertura, Escape y devolución de foco en el menú móvil;
+- 29 iniciativas, 9 instituciones, 129 registros ENIA, 120 intervenciones únicas y 7 expedientes legislativos conservados sin cambios en los JSON de evidencia;
+- AJV válido, TypeScript de app y scripts limpio, 93/93 pruebas y build de 145/145 páginas estáticas;
+- auditoría de 142 HTML con 58 fichas de proyecto, 18 institucionales y cero enlaces internos, anclas, IDs o jerarquías de encabezado defectuosas; todas las rutas de contenido conservan canonical y atributo de idioma;
+- revisión interactiva en ES y EN, escritorio y 360/390 px, sin errores de consola ni desbordamientos; los dos hallazgos menores detectados quedaron corregidos dentro de R4.
 
 Entregables:
 
@@ -593,12 +610,12 @@ Guardas cuantitativas orientativas para el cierre:
 - ajustes de navegación derivados de 30 días de analítica real;
 - publicación del sitio.
 
-## Siguiente acción después de R3
+## Siguiente acción después de R4
 
-1. Confirmar que el último commit de `redesign/editorial-v1` contiene R3 y que no modifica los JSON de evidencia ni incorpora documentos privados.
-2. Levantar `localhost:3001` y revisar catálogo, índice institucional y fichas de proyecto e institución en ES y EN, escritorio y móvil.
-3. Recoger las observaciones visuales de Mario y resolverlas dentro de R3 si afectan la gramática de expediente.
-4. Iniciar R4 solamente después de aprobar la densidad, la cronología, la matriz y la presentación de fuentes y vacíos.
+1. Confirmar que el último commit de `redesign/editorial-v1` contiene R4 y que no modifica los JSON de evidencia ni incorpora documentos privados.
+2. Levantar `localhost:3001` y revisar ENIA, Marco país, legislación e historial en ES y EN, escritorio y móvil.
+3. Recoger las observaciones visuales de Mario y resolverlas dentro de R4 si afectan densidad, separación de capas, tablas o registros móviles.
+4. Iniciar R5 solamente después de aprobar estas cuatro superficies documentales densas.
 
 ## Definición final de terminado
 

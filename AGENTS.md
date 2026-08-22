@@ -50,7 +50,7 @@ Toda la información viene del scoping en Obsidian: `Projects/CR-IA-Gobierno/`. 
 - Español de Costa Rica, sin guiones largos en copy ES (ver AGENTS.md global de Mario). Inglés americano.
 - Citas: cada dato debe tener `fuenteUrl` apuntando al documento original oficial.
 - Estados: `operativo` / `piloto` / `planificado` para proyectos; estados legislativos siguen Asamblea.
-- Tipografía: Inter (Google Fonts) — sans-serif limpia, headers grandes con números prominentes.
+- Tipografía: Source Serif 4 para títulos editoriales e Inter para interfaz y cuerpo; números prominentes cuando aporten jerarquía documental.
 - Paleta: azul institucional `institucional-700/900` para acento, slate para texto, blanco/`slate-50` para fondos.
 
 ## Agregar contenido nuevo
@@ -71,7 +71,7 @@ El proyecto VIVÍA en `~/Desktop/Proyectos/` (sincronizado por iCloud Drive). Mo
 ## Estado
 Fase 5C entregada localmente (2026-08-21): **puesta en marcha operativa del monitoreo**. Handoff legislativo reparado desde `last-run.json`, MIDEPLAN con respaldo restringido a URLs oficiales, Google News para las 9 instituciones más un frente transversal, agenda editorial idempotente con issues/Telegram, revisor sin stubs/push/deploy y pruebas E2E. El workflow nuevo no queda activo hasta un push explícitamente autorizado.
 
-Rediseño editorial R3 entregado localmente (2026-08-22): dirección **observatorio editorial de evidencia pública** o archivo cívico contemporáneo. El plan ejecutable está en `docs/plan-redisenio-editorial-2026-08-22.md`. R1 estableció Source Serif 4, papel/tinta/reglas, portada superior y catálogo horizontal; R2 convirtió la portada en una síntesis editorial y añadió navegación e índices; R3 convirtió el índice institucional y las fichas de proyecto e institución en registros y expedientes documentales. Las fichas muestran alcance, cronología, matriz, resultados o su ausencia, fuentes, consultas, preguntas y relaciones sin alterar los JSON de evidencia. R4 es la próxima fase, pero no debe iniciarse hasta recoger la revisión visual local de Mario. Cada fase se valida, se compromete y se revisa localmente. No hacer push ni desplegar sin autorización explícita posterior.
+Rediseño editorial R4 entregado localmente (2026-08-22): dirección **observatorio editorial de evidencia pública** o archivo cívico contemporáneo. El plan ejecutable está en `docs/plan-redisenio-editorial-2026-08-22.md`. R1 estableció Source Serif 4, papel/tinta/reglas, portada superior y catálogo horizontal; R2 convirtió la portada en una síntesis editorial y añadió navegación e índices; R3 convirtió instituciones y fichas en registros y expedientes; R4 convirtió ENIA, Marco país, legislación e historial en documentos continuos y registros densos con alternativas móviles. ENIA separa texto oficial, cruce editorial y evidencia externa; legislación separa coyuntura del estado oficial; historial conserva ocho frentes, ocho revisiones y 42 cambios publicados. Los JSON de evidencia no cambiaron. R5 es la próxima fase, pero no debe iniciarse hasta recoger la revisión visual local de Mario. Cada fase se valida, se compromete y se revisa localmente. No hacer push ni desplegar sin autorización explícita posterior.
 
 Fase 5B (mismo día): monitoreo y trazabilidad editorial con ocho frentes, bitácora de cambios y revisiones sin cambios, monitor mensual ENIA/Plan, propuestas de evidencia sin stubs ni altas automáticas, herramienta `record-review` con dry-run y endpoint `/api/monitoreo.json`.
 
@@ -83,7 +83,7 @@ Anteriormente (mayo 2026): Fase 6.1 (notificación Telegram filtrada tras scrape
 
 Próximas fases potenciales:
 - Comparación durante 14 días o 6 corridas entre monitoreo automático y revisión manual
-- Rediseño editorial R3-R6 previo al lanzamiento público
+- Rediseño editorial R5-R6 previo al lanzamiento público
 - Posts LinkedIn 02-05 (campaña ya iniciada con post 01)
 - Logo definitivo (Mario revisando 16 opciones Canva + Gemini)
 - Vigilancia manual anual: PROSIC reporte estado digital CR (feed vacío hoy)

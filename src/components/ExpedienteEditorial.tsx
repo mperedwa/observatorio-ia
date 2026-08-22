@@ -15,6 +15,25 @@ const estadoMarker: Record<EstadoEvaluacion, string> = {
   contradicho: 'bg-rose-600',
 };
 
+export type TonoDocumental =
+  | 'confirmado'
+  | 'parcial'
+  | 'atencion'
+  | 'contradicho'
+  | 'referencial'
+  | 'pendiente'
+  | 'neutral';
+
+const tonoMarker: Record<TonoDocumental, string> = {
+  confirmado: 'bg-emerald-600',
+  parcial: 'bg-sky-600',
+  atencion: 'bg-amber-500',
+  contradicho: 'bg-rose-600',
+  referencial: 'bg-violet-600',
+  pendiente: 'border border-dashed border-slate-500 bg-white',
+  neutral: 'bg-slate-400',
+};
+
 export function ExpedienteMeta({ items }: { items: ExpedienteMetaItem[] }) {
   return (
     <dl className="grid border-y border-editorial-rule sm:grid-cols-2 lg:grid-cols-4">
@@ -51,6 +70,38 @@ export function EstadoDocumental({
     <span className="inline-flex items-center gap-2 text-xs font-semibold text-slate-700">
       <span aria-hidden className={`h-2 w-2 flex-shrink-0 ${estadoMarker[estado]}`} />
       {label}
+    </span>
+  );
+}
+
+/**
+ * Marca reutilizable para taxonomías documentales que no pertenecen al
+ * modelo de evidencia. El texto comunica siempre el estado; el color solo
+ * funciona como ayuda secundaria.
+ */
+export function MarcaDocumental({
+  label,
+  tone = 'neutral',
+  detail,
+  className = '',
+}: {
+  label: string;
+  tone?: TonoDocumental;
+  detail?: ReactNode;
+  className?: string;
+}) {
+  return (
+    <span className={`inline-flex min-w-0 items-start gap-2 text-xs font-semibold leading-snug text-slate-700 ${className}`}>
+      <span
+        aria-hidden
+        className={`mt-[0.15rem] h-3.5 w-1 flex-shrink-0 ${tonoMarker[tone]}`}
+      />
+      <span>
+        {label}
+        {detail && (
+          <span className="mt-0.5 block font-normal text-slate-500">{detail}</span>
+        )}
+      </span>
     </span>
   );
 }

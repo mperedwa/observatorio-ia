@@ -2,6 +2,7 @@ import type { Locale } from '@/i18n/config';
 import type {
   EstadoCruceEnia,
   EstadoEjecucionEnia,
+  EvidenciaExternaEnia,
   TipoIntervencionEnia,
 } from '@/data/eniaAcciones';
 
@@ -63,6 +64,15 @@ export interface EniaTranslations {
     canonicalReference: string;
     axis: string;
     type: string;
+    officialSource: string;
+    editorialLayer: string;
+    externalLayer: string;
+    expandRecord: string;
+    collapseRecord: string;
+    supports: string;
+    sourceConsulted: string;
+    noExternalEvidence: string;
+    lastReview: string;
   };
   methodology: {
     title: string;
@@ -74,6 +84,7 @@ export interface EniaTranslations {
   typeLabels: Record<TipoIntervencionEnia, string>;
   crossLabels: Record<EstadoCruceEnia, string>;
   executionLabels: Record<EstadoEjecucionEnia, string>;
+  supportLabels: Record<EvidenciaExternaEnia['respalda'][number], string>;
 }
 
 export const eniaTranslations: Record<Locale, EniaTranslations> = {
@@ -150,6 +161,16 @@ export const eniaTranslations: Record<Locale, EniaTranslations> = {
       canonicalReference: 'Intervención única relacionada',
       axis: 'Eje',
       type: 'Tipo',
+      officialSource: 'Texto oficial',
+      editorialLayer: 'Cruce editorial',
+      externalLayer: 'Evidencia externa',
+      expandRecord: 'Abrir registro',
+      collapseRecord: 'Cerrar registro',
+      supports: 'Respalda',
+      sourceConsulted: 'Fuente consultada',
+      noExternalEvidence:
+        'Este registro no cita evidencia pública de ejecución adicional al Plan.',
+      lastReview: 'Última revisión editorial',
     },
     methodology: {
       title: 'Cómo leer los números',
@@ -186,6 +207,14 @@ export const eniaTranslations: Record<Locale, EniaTranslations> = {
       'parcialmente-verificado': 'Ejecución parcialmente verificada',
       verificado: 'Ejecución verificada',
       contradicho: 'Ejecución contradicha',
+    },
+    supportLabels: {
+      existencia: 'existencia',
+      ejecucion: 'ejecución',
+      'tecnica-ia': 'técnica de IA',
+      'uso-operativo': 'uso operativo',
+      resultado: 'resultado',
+      gobernanza: 'gobernanza',
     },
   },
   en: {
@@ -261,6 +290,16 @@ export const eniaTranslations: Record<Locale, EniaTranslations> = {
       canonicalReference: 'Related unique intervention',
       axis: 'Axis',
       type: 'Type',
+      officialSource: 'Official text',
+      editorialLayer: 'Editorial crosswalk',
+      externalLayer: 'External evidence',
+      expandRecord: 'Open record',
+      collapseRecord: 'Close record',
+      supports: 'Supports',
+      sourceConsulted: 'Source consulted',
+      noExternalEvidence:
+        'This record cites no public execution evidence beyond the Plan.',
+      lastReview: 'Latest editorial review',
     },
     methodology: {
       title: 'How to read the figures',
@@ -297,6 +336,14 @@ export const eniaTranslations: Record<Locale, EniaTranslations> = {
       'parcialmente-verificado': 'Execution partially verified',
       verificado: 'Execution verified',
       contradicho: 'Execution contradicted',
+    },
+    supportLabels: {
+      existencia: 'existence',
+      ejecucion: 'execution',
+      'tecnica-ia': 'AI technique',
+      'uso-operativo': 'operational use',
+      resultado: 'outcome',
+      gobernanza: 'governance',
     },
   },
 };

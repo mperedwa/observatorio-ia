@@ -31,8 +31,8 @@ export function LanguageToggle({ current }: { current: Locale }) {
             aria-current={active ? 'true' : undefined}
             className={
               active
-                ? 'px-2.5 py-1 rounded-full bg-institucional-700 text-white font-semibold'
-                : 'px-2.5 py-1 rounded-full text-slate-600 hover:text-institucional-700 transition-colors'
+                ? 'rounded-full bg-institucional-700 px-2 py-1 font-semibold text-white sm:px-2.5'
+                : 'rounded-full px-2 py-1 text-slate-600 transition-colors hover:text-institucional-700 sm:px-2.5'
             }
           >
             {localeNames[l]}

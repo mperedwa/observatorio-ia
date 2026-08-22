@@ -55,15 +55,17 @@ export default async function LegislacionPage({
   const t = getDictionary(lc);
 
   return (
-    <div className="bg-slate-50">
-      <div className="mx-auto max-w-7xl px-6 pt-10">
-        <Breadcrumb
-          locale={lc}
-          items={[
-            { label: t.breadcrumb.inicio, href: `/${lc}/` },
-            { label: t.nav.legislacion },
-          ]}
-        />
+    <div className="bg-white">
+      <div className="border-b border-editorial-rule bg-editorial-paper">
+        <div className="mx-auto max-w-7xl px-6 pb-8 pt-10">
+          <Breadcrumb
+            locale={lc}
+            items={[
+              { label: t.breadcrumb.inicio, href: `/${lc}/` },
+              { label: t.nav.legislacion },
+            ]}
+          />
+        </div>
       </div>
       <Legislacion locale={lc} t={t} headingLevel="h1" />
     </div>

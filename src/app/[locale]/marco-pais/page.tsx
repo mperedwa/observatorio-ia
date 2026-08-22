@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Breadcrumb } from '@/components/Breadcrumb';
+import { EncabezadoSeccionExpediente } from '@/components/ExpedienteEditorial';
 import { ArquitecturaCapas } from '@/components/ArquitecturaCapas';
 import { TimelineGobernanza } from '@/components/TimelineGobernanza';
 import { MatrizInstrumentos } from '@/components/MatrizInstrumentos';
@@ -80,9 +81,9 @@ export default async function MarcoPaisPage({
   const dict = t.marcoPais;
 
   return (
-    <div className="bg-slate-50">
-      <header className="bg-white border-b border-slate-200">
-        <div className="max-w-6xl mx-auto px-6 pt-10 pb-12">
+    <div className="bg-white">
+      <header className="border-b border-editorial-rule bg-editorial-paper">
+        <div className="mx-auto max-w-6xl px-6 pb-14 pt-10 sm:pb-16">
           <Breadcrumb
             locale={lc}
             items={[
@@ -90,16 +91,16 @@ export default async function MarcoPaisPage({
               { label: dict.kicker },
             ]}
           />
-          <p className="mt-6 text-sm font-medium uppercase tracking-wider text-institucional-700">
+          <p className="mt-8 text-xs font-semibold uppercase tracking-[0.12em] text-institucional-700">
             {dict.kicker}
           </p>
-          <h1 className="mt-2 text-3xl sm:text-5xl font-bold text-slate-900 text-balance leading-tight max-w-4xl">
+          <h1 className="mt-3 max-w-4xl font-editorial text-4xl font-semibold leading-[0.98] tracking-[-0.025em] text-editorial-ink text-balance sm:text-6xl">
             {dict.titulo}
           </h1>
-          <p className="mt-4 text-lg text-slate-600 max-w-3xl text-pretty">
+          <p className="mt-5 max-w-3xl text-lg leading-relaxed text-editorial-muted text-pretty">
             {dict.sub}
           </p>
-          <p className="mt-4 text-base sm:text-lg font-medium text-institucional-800 max-w-3xl text-pretty">
+          <p className="mt-6 max-w-3xl border-l-2 border-editorial-accent pl-4 text-base font-semibold leading-relaxed text-editorial-ink text-pretty sm:text-lg">
             {dict.tesis}
           </p>
           <p className="mt-3 text-xs text-slate-500">
@@ -108,100 +109,74 @@ export default async function MarcoPaisPage({
         </div>
       </header>
 
-      {/* KPI cards (6 indicadores rápidos) */}
       <section
         id="indicadores"
         aria-labelledby="indicadores-titulo"
         className="bg-white"
       >
-        <div className="max-w-6xl mx-auto px-6 pb-16">
-          <header className="mb-8 max-w-3xl">
-            <h2
-              id="indicadores-titulo"
-              className="text-2xl sm:text-3xl font-bold text-slate-900"
-            >
-              {dict.indicadores.titulo}
-            </h2>
-            <p className="mt-2 text-slate-600">{dict.indicadores.sub}</p>
-          </header>
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            {CARD_ORDER.map((key) => {
+        <div className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+          <EncabezadoSeccionExpediente
+            index="01"
+            id="indicadores-titulo"
+            title={dict.indicadores.titulo}
+            description={dict.indicadores.sub}
+          />
+          <dl className="mt-9 grid grid-cols-2 border-t border-editorial-rule sm:grid-cols-3 lg:grid-cols-6">
+            {CARD_ORDER.map((key, index) => {
               const card = dict.indicadores.cards[key];
               const numero = applyCounters(card.numero, COUNTERS);
               const detalle = applyCounters(card.detalle, COUNTERS);
               return (
                 <div
                   key={key}
-                  className="group relative overflow-hidden rounded-lg border border-slate-200 bg-white pl-5 pr-4 py-5 transition-all duration-200 hover:border-institucional-200 hover:bg-institucional-50/60 hover:shadow-sm"
+                  className="border-b border-r border-editorial-rule px-3 py-5 even:border-r-0 sm:px-5 sm:[&:nth-child(2n)]:border-r sm:[&:nth-child(3n)]:border-r-0 lg:border-r lg:last:border-r-0"
                 >
-                  <span
-                    aria-hidden="true"
-                    className="absolute left-0 top-0 bottom-0 w-1 bg-institucional-700 transition-colors group-hover:bg-institucional-800"
-                  />
-                  <div className="text-4xl sm:text-5xl font-bold text-institucional-900 tabular-nums leading-none">
+                  <span className="font-mono text-[0.68rem] tabular-nums text-slate-400">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <dd className="mt-2 font-editorial text-4xl font-semibold leading-none tabular-nums text-editorial-ink sm:text-5xl">
                     {numero}
-                  </div>
-                  <div className="mt-3 text-sm font-medium text-slate-900 leading-snug">
+                  </dd>
+                  <dt className="mt-3 text-sm font-semibold leading-snug text-slate-900">
                     {card.titulo}
-                  </div>
-                  <div className="mt-1 text-xs text-slate-500 leading-snug">
+                  </dt>
+                  <dd className="mt-1 text-xs leading-snug text-slate-500">
                     {detalle}
-                  </div>
+                  </dd>
                 </div>
               );
             })}
-          </div>
+          </dl>
         </div>
       </section>
 
-      {/* Arquitectura por capas */}
-      <ArquitecturaCapas locale={lc} t={t} />
+      <ArquitecturaCapas locale={lc} t={t} sectionIndex="02" />
 
-      {/* Timeline de hitos país */}
-      <TimelineGobernanza locale={lc} t={t} />
+      <TimelineGobernanza locale={lc} t={t} sectionIndex="03" />
 
-      {/* Matriz comparativa de instrumentos */}
-      <MatrizInstrumentos locale={lc} t={t} />
+      <MatrizInstrumentos locale={lc} t={t} sectionIndex="04" />
 
-      {/* Brechas pendientes */}
       <section
         id="brechas"
-        className="bg-slate-50 border-y border-slate-200"
+        className="border-t border-editorial-rule bg-white"
       >
-        <div className="max-w-5xl mx-auto px-6 py-20">
-          <header className="mb-10 max-w-3xl">
-            <p className="text-sm font-medium uppercase tracking-wider text-institucional-700">
-              {dict.brechas.kicker}
-            </p>
-            <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-slate-900">
-              {dict.brechas.titulo}
-            </h2>
-            <p className="mt-3 text-slate-600 text-pretty">{dict.brechas.sub}</p>
-          </header>
-          <ul className="space-y-3" role="list">
-            {brechas.map((b) => (
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <EncabezadoSeccionExpediente
+            index="05"
+            title={dict.brechas.titulo}
+            description={dict.brechas.sub}
+          />
+          <ul className="mt-9 border-t border-editorial-rule" role="list">
+            {brechas.map((brecha, index) => (
               <li
-                key={b.id}
-                className="flex items-start gap-3 bg-white border border-slate-200 rounded-md px-4 py-3"
+                key={brecha.id}
+                className="grid grid-cols-[2.5rem_minmax(0,1fr)] gap-x-3 border-b border-editorial-rule py-5 sm:grid-cols-[3.25rem_minmax(0,1fr)] sm:gap-x-5"
               >
-                <span
-                  aria-hidden="true"
-                  className="mt-0.5 inline-flex h-5 w-5 flex-none items-center justify-center rounded border border-slate-300 bg-white text-slate-400"
-                >
-                  <svg
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth={2.5}
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="w-3 h-3"
-                  >
-                    <path d="M4 4l12 12M16 4L4 16" />
-                  </svg>
+                <span aria-hidden className="pt-1 font-mono text-xs tabular-nums text-slate-400">
+                  {String(index + 1).padStart(2, '0')}
                 </span>
-                <span className="text-sm sm:text-base text-slate-800 text-pretty">
-                  {b.descripcion[lc]}
+                <span className="border-l-2 border-editorial-accent pl-4 text-sm leading-relaxed text-slate-800 text-pretty sm:text-base">
+                  {brecha.descripcion[lc]}
                 </span>
               </li>
             ))}
@@ -209,70 +184,58 @@ export default async function MarcoPaisPage({
         </div>
       </section>
 
-      {/* Conexión con el resto del Observatorio */}
-      <section id="conexion" className="bg-white border-y border-slate-200">
-        <div className="max-w-5xl mx-auto px-6 py-20">
-          <header className="mb-8 max-w-3xl">
-            <p className="text-sm font-medium uppercase tracking-wider text-institucional-700">
-              {dict.conexion.kicker}
-            </p>
-            <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-slate-900">
-              {dict.conexion.titulo}
-            </h2>
-            <p className="mt-3 text-slate-600 text-pretty">{dict.conexion.sub}</p>
-          </header>
-          <div className="flex flex-wrap gap-3">
+      <section id="conexion" className="border-t border-editorial-rule bg-editorial-paper/55">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <EncabezadoSeccionExpediente
+            index="06"
+            title={dict.conexion.titulo}
+            description={dict.conexion.sub}
+          />
+          <nav className="mt-9 grid border-t border-editorial-rule sm:grid-cols-2 lg:grid-cols-3" aria-label={dict.conexion.titulo}>
             <CtaLink href={`/${lc}/enia`} label={dict.conexion.ctaEnia} />
             <CtaLink href={`/${lc}/instituciones`} label={dict.conexion.ctaInstituciones} />
             <CtaLink href={`/${lc}/proyectos`} label={dict.conexion.ctaProyectos} />
             <CtaLink href={`/${lc}/legislacion`} label={dict.conexion.ctaLegislacion} />
             <CtaLink href={`/${lc}/indicadores`} label={dict.conexion.ctaIndicadores} />
             <CtaLink href={`/${lc}/recursos`} label={dict.conexion.ctaRecursos} />
-          </div>
+          </nav>
         </div>
       </section>
 
-      {/* Fuentes y metodología */}
-      <section id="fuentes" className="bg-slate-50">
-        <div className="max-w-5xl mx-auto px-6 py-20">
-          <header className="mb-8 max-w-3xl">
-            <p className="text-sm font-medium uppercase tracking-wider text-institucional-700">
-              {dict.fuentes.kicker}
-            </p>
-            <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-slate-900">
-              {dict.fuentes.titulo}
-            </h2>
-            <p className="mt-3 text-slate-600 text-pretty">{dict.fuentes.sub}</p>
-          </header>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white border border-slate-200 rounded-lg p-6">
-              <h3 className="text-base font-semibold text-institucional-900 mb-3">
+      <section id="fuentes" className="border-t border-editorial-rule bg-white">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <EncabezadoSeccionExpediente
+            index="07"
+            title={dict.fuentes.titulo}
+            description={dict.fuentes.sub}
+          />
+          <div className="mt-9 grid border-y border-editorial-rule md:grid-cols-2 md:divide-x md:divide-editorial-rule">
+            <div className="border-b border-editorial-rule py-6 md:border-b-0 md:pr-8">
+              <h3 className="mb-3 text-base font-semibold text-institucional-900">
                 {dict.fuentes.fuentesLabel}
               </h3>
               <ul className="space-y-2 text-sm text-slate-700">
-                {dict.fuentes.tipos.map((tipo) => (
-                  <li key={tipo} className="flex items-start gap-2">
-                    <span
-                      aria-hidden="true"
-                      className="mt-1.5 flex-none w-1.5 h-1.5 rounded-full bg-institucional-700"
-                    />
+                {dict.fuentes.tipos.map((tipo, index) => (
+                  <li key={tipo} className="grid grid-cols-[1.75rem_minmax(0,1fr)] gap-x-2">
+                    <span aria-hidden className="font-mono text-[0.68rem] tabular-nums text-slate-400">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
                     <span className="text-pretty">{tipo}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="bg-white border border-slate-200 rounded-lg p-6">
-              <h3 className="text-base font-semibold text-institucional-900 mb-3">
+            <div className="py-6 md:pl-8">
+              <h3 className="mb-3 text-base font-semibold text-institucional-900">
                 {dict.fuentes.criteriosLabel}
               </h3>
               <ul className="space-y-2 text-sm text-slate-700">
-                {dict.fuentes.criterios.map((c) => (
-                  <li key={c} className="flex items-start gap-2">
-                    <span
-                      aria-hidden="true"
-                      className="mt-1.5 flex-none w-1.5 h-1.5 rounded-full bg-institucional-700"
-                    />
-                    <span className="text-pretty">{c}</span>
+                {dict.fuentes.criterios.map((criterio, index) => (
+                  <li key={criterio} className="grid grid-cols-[1.75rem_minmax(0,1fr)] gap-x-2">
+                    <span aria-hidden className="font-mono text-[0.68rem] tabular-nums text-slate-400">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <span className="text-pretty">{criterio}</span>
                   </li>
                 ))}
               </ul>
@@ -288,10 +251,10 @@ function CtaLink({ href, label }: { href: string; label: string }) {
   return (
     <Link
       href={href}
-      className="inline-flex items-center gap-2 px-4 py-2.5 text-sm font-semibold rounded-md bg-institucional-700 text-white hover:bg-institucional-800 transition-colors"
+      className="group flex items-center justify-between gap-4 border-b border-editorial-rule py-4 text-sm font-semibold text-institucional-800 underline-offset-4 hover:underline sm:px-4 sm:[&:nth-child(odd)]:border-r lg:border-r lg:[&:nth-child(3n)]:border-r-0"
     >
       {label}
-      <span aria-hidden="true">→</span>
+      <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
     </Link>
   );
 }
