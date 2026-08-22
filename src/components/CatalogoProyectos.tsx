@@ -15,7 +15,7 @@ import { applyCounters } from '@/i18n/applyCounters';
 import type { Dictionary } from '@/i18n/dictionaries';
 import type { Locale } from '@/i18n/config';
 import { ProyectoCard } from './ProyectoCard';
-import { capaCard, capaChip } from './catalogoStyles';
+import { capaMarker } from './catalogoStyles';
 
 type VistaCatalogo = CapaCatalogo | 'todas';
 
@@ -65,8 +65,12 @@ export function CatalogoProyectos({ locale, t }: { locale: Locale; t: Dictionary
 
   return (
     <>
-      <div className="mt-10 grid gap-4 lg:grid-cols-3" aria-label={t.catalogo.kicker}>
-        {CAPAS_CATALOGO.map((capa) => {
+      <div
+        id="catalogo-capas"
+        className="mt-10 grid border-y border-editorial-rule lg:grid-cols-3"
+        aria-label={t.catalogo.kicker}
+      >
+        {CAPAS_CATALOGO.map((capa, index) => {
           const activa = vista === capa;
           return (
             <button
@@ -74,27 +78,31 @@ export function CatalogoProyectos({ locale, t }: { locale: Locale; t: Dictionary
               type="button"
               onClick={() => setVista(capa)}
               aria-pressed={activa}
-              className={`rounded-xl border p-5 text-left transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-institucional-500 focus-visible:ring-offset-2 ${
+              aria-controls="catalogo-resultados"
+              className={`border-b border-editorial-rule px-5 py-4 text-left transition-colors duration-150 sm:py-6 lg:border-b-0 ${
+                index < CAPAS_CATALOGO.length - 1 ? 'lg:border-r' : ''
+              } ${
                 activa
-                  ? `${capaCard[capa]} shadow-sm ring-2 ring-institucional-700 ring-offset-2`
-                  : 'border-slate-200 bg-white hover:border-slate-300 hover:shadow-sm'
+                  ? 'border-l-4 border-l-editorial-ink bg-editorial-paper/70 lg:border-l-0 lg:border-t-4 lg:border-t-editorial-ink'
+                  : 'border-l-4 border-l-transparent bg-white hover:bg-slate-50 lg:border-l-0 lg:border-t-4 lg:border-t-transparent'
               }`}
             >
               <div className="flex items-center justify-between gap-4">
-                <span className={`rounded-full border px-2.5 py-1 text-xs font-semibold ${capaChip[capa]}`}>
+                <span className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.11em] text-slate-600">
+                  <span className={`h-3 w-1 ${capaMarker[capa]}`} aria-hidden />
                   {t.catalogo.capas[capa].corto}
                 </span>
-                <span className="text-3xl font-bold tabular-nums text-slate-900">
+                <span className="font-editorial text-4xl font-semibold tabular-nums text-editorial-ink">
                   {conteos[capa]}
                 </span>
               </div>
-              <h2 className="mt-4 text-lg font-semibold text-slate-900">
+              <h2 className="mt-4 text-lg font-semibold text-editorial-ink">
                 {t.catalogo.capas[capa].titulo}
               </h2>
-              <p className="mt-2 text-sm leading-relaxed text-slate-600">
+              <p className="mt-2 hidden text-sm leading-relaxed text-editorial-muted sm:block">
                 {t.catalogo.capas[capa].descripcion}
               </p>
-              <p className="mt-3 text-xs leading-relaxed text-slate-500">
+              <p className="mt-3 hidden text-xs leading-relaxed text-slate-500 sm:block">
                 {t.catalogo.capas[capa].criterio}
               </p>
             </button>
@@ -117,8 +125,12 @@ export function CatalogoProyectos({ locale, t }: { locale: Locale; t: Dictionary
         </button>
       </div>
 
-      <section className="mt-10" aria-labelledby="catalogo-resultados">
-        <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 sm:p-5">
+      <section
+        id="catalogo-resultados"
+        className="mt-10"
+        aria-labelledby="catalogo-resultados-titulo"
+      >
+        <div className="border-y border-editorial-rule py-5">
           <div className="grid gap-4 md:grid-cols-2">
             <label className="block text-sm font-medium text-slate-700">
               {t.catalogo.buscarLabel}
@@ -139,7 +151,7 @@ export function CatalogoProyectos({ locale, t }: { locale: Locale; t: Dictionary
                   value={busqueda}
                   onChange={(event) => setBusqueda(event.target.value)}
                   placeholder={t.catalogo.buscarPlaceholder}
-                  className="w-full rounded-lg border border-slate-300 bg-white py-2.5 pl-10 pr-3 text-sm text-slate-900 outline-none placeholder:text-slate-400 focus:border-institucional-500 focus:ring-2 focus:ring-institucional-100"
+                  className="w-full rounded-editorial border border-slate-400 bg-white py-2.5 pl-10 pr-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-institucional-700"
                 />
               </span>
             </label>
@@ -149,7 +161,7 @@ export function CatalogoProyectos({ locale, t }: { locale: Locale; t: Dictionary
               <select
                 value={institucionId}
                 onChange={(event) => setInstitucionId(event.target.value)}
-                className="mt-2 w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 outline-none focus:border-institucional-500 focus:ring-2 focus:ring-institucional-100"
+                className="mt-2 w-full rounded-editorial border border-slate-400 bg-white px-3 py-2.5 text-sm text-slate-900 focus:border-institucional-700"
               >
                 <option value="todas">{t.catalogo.todasInstituciones}</option>
                 {instituciones.map((institucion) => (
@@ -167,7 +179,7 @@ export function CatalogoProyectos({ locale, t }: { locale: Locale; t: Dictionary
             <p className="text-xs font-medium uppercase tracking-wider text-institucional-700">
               {vista === 'todas' ? t.catalogo.kicker : t.catalogo.capas[vista].titulo}
             </p>
-            <h2 id="catalogo-resultados" className="mt-1 text-2xl font-bold text-slate-900" aria-live="polite">
+            <h2 id="catalogo-resultados-titulo" className="mt-1 font-editorial text-3xl font-semibold text-editorial-ink" aria-live="polite">
               {resultadosTexto}
             </h2>
           </div>
@@ -183,20 +195,21 @@ export function CatalogoProyectos({ locale, t }: { locale: Locale; t: Dictionary
         </div>
 
         {iniciativas.length > 0 ? (
-          <div className="grid gap-5 md:grid-cols-2">
-            {iniciativas.map((proyecto) => (
+          <div className="border-t border-editorial-rule">
+            {iniciativas.map((proyecto, index) => (
               <ProyectoCard
                 key={proyecto.id}
                 proyecto={proyecto}
                 locale={locale}
                 t={t}
-                variant="full"
+                variant="register"
+                registryIndex={index + 1}
                 showInstitution
               />
             ))}
           </div>
         ) : (
-          <div className="rounded-xl border border-dashed border-slate-300 bg-slate-50 px-6 py-12 text-center">
+          <div className="border-y border-dashed border-slate-400 bg-slate-50 px-6 py-12 text-center">
             <p className="text-sm text-slate-600">{t.catalogo.sinResultados}</p>
             <button
               type="button"

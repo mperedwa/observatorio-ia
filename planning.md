@@ -58,7 +58,7 @@ Mantener un observatorio público, bilingüe y verificable sobre adopción de IA
 Dirección aprobada: **observatorio editorial de evidencia pública**, con el concepto de archivo cívico contemporáneo. El plan completo, las referencias, los archivos afectados, los criterios de aceptación y el handoff para una sesión nueva están en [`docs/plan-redisenio-editorial-2026-08-22.md`](docs/plan-redisenio-editorial-2026-08-22.md).
 
 - [x] R0. Auditoría, dirección visual y plan ejecutable.
-- [ ] R1. Fundamentos y piloto funcional en portada y catálogo de proyectos.
+- [x] R1. Fundamentos y piloto funcional en portada y catálogo de proyectos.
 - [ ] R2. Estructura global, portada e índices de instituciones, legislación e indicadores.
 - [ ] R3. Catálogos, instituciones y expedientes de detalle.
 - [ ] R4. ENIA, Marco país, legislación e historial.
@@ -66,6 +66,8 @@ Dirección aprobada: **observatorio editorial de evidencia pública**, con el co
 - [ ] R6. Accesibilidad, rendimiento y candidato local de publicación.
 
 Regla de ejecución: cada fase se valida, se compromete por separado y se revisa localmente. No se hace push ni despliegue sin autorización explícita posterior.
+
+Punto de revisión actual: R1 está implementada y validada en la rama local `redesign/editorial-v1`. Antes de iniciar R2, Mario revisa la comparación local de portada y catálogo en ES y EN, escritorio y móvil.
 
 ## Próximas mejoras posibles
 
@@ -79,7 +81,7 @@ Regla de ejecución: cada fase se valida, se compromete por separado y se revisa
 
 ### Diseño y experiencia
 
-- [ ] Ejecutar R1-R6 del plan de rediseño editorial.
+- [ ] Ejecutar R2-R6 del plan de rediseño editorial después de aprobar el piloto R1.
 - [ ] Revisar densidad de navegación y longitud de portada después de acumular 30 días de analítica.
 - [ ] Definir logo definitivo.
 

@@ -1,10 +1,15 @@
 import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/next';
 import { AnalyticsManager } from '@/components/AnalyticsManager';
-import { Inter } from 'next/font/google';
+import { Inter, Source_Serif_4 } from 'next/font/google';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const sourceSerif = Source_Serif_4({
+  subsets: ['latin'],
+  variable: '--font-source-serif',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.observatorioia.org'),
@@ -23,7 +28,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className={inter.variable} suppressHydrationWarning>
+    <html
+      lang="es"
+      className={`${inter.variable} ${sourceSerif.variable}`}
+      suppressHydrationWarning
+    >
       <body className="font-sans antialiased bg-white text-slate-900">
         {children}
         <AnalyticsManager measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />

@@ -20,9 +20,20 @@ const config: Config = {
           800: '#1e40af',
           900: '#1e3a8a',
         },
+        editorial: {
+          ink: '#10243e',
+          paper: '#f7f5ef',
+          rule: '#cbd5e1',
+          muted: '#475569',
+          accent: '#b4533c',
+        },
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        editorial: ['var(--font-source-serif)', 'Georgia', 'serif'],
+      },
+      borderRadius: {
+        editorial: '0.125rem',
       },
     },
   },

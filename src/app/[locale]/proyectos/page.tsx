@@ -66,7 +66,7 @@ export default async function CatalogoPage({
           <p className="text-sm font-medium uppercase tracking-wider text-institucional-700">
             {t.catalogo.kicker}
           </p>
-          <h1 className="mt-3 text-4xl font-bold leading-tight text-slate-900 text-balance sm:text-5xl">
+          <h1 className="mt-3 font-editorial text-[2.5rem] font-semibold leading-[1.02] tracking-[-0.02em] text-editorial-ink text-balance sm:text-6xl">
             {t.catalogo.titulo}
           </h1>
           <p className="mt-5 max-w-3xl text-lg leading-relaxed text-slate-600 text-pretty">

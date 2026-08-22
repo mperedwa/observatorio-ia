@@ -71,7 +71,7 @@ El proyecto VIVÍA en `~/Desktop/Proyectos/` (sincronizado por iCloud Drive). Mo
 ## Estado
 Fase 5C entregada localmente (2026-08-21): **puesta en marcha operativa del monitoreo**. Handoff legislativo reparado desde `last-run.json`, MIDEPLAN con respaldo restringido a URLs oficiales, Google News para las 9 instituciones más un frente transversal, agenda editorial idempotente con issues/Telegram, revisor sin stubs/push/deploy y pruebas E2E. El workflow nuevo no queda activo hasta un push explícitamente autorizado.
 
-Rediseño editorial aprobado y planificado (2026-08-22): dirección **observatorio editorial de evidencia pública** o archivo cívico contemporáneo. El plan ejecutable está en `docs/plan-redisenio-editorial-2026-08-22.md`. R0 es documentación; la próxima fase es R1, un piloto funcional en la parte superior de la portada y `/[locale]/proyectos`. Cada fase se valida, se compromete y se revisa localmente. No hacer push ni desplegar sin autorización explícita posterior.
+Rediseño editorial R1 entregado localmente (2026-08-22): dirección **observatorio editorial de evidencia pública** o archivo cívico contemporáneo. El plan ejecutable está en `docs/plan-redisenio-editorial-2026-08-22.md`. R0 documentó la dirección y R1 implementó el piloto funcional en la parte superior de la portada y `/[locale]/proyectos`: Source Serif 4, papel/tinta/reglas editoriales, franjas de cifras, selector de capas y registro horizontal. R2 es la próxima fase, pero no debe iniciarse hasta recoger la revisión visual local de Mario. Cada fase se valida, se compromete y se revisa localmente. No hacer push ni desplegar sin autorización explícita posterior.
 
 Fase 5B (mismo día): monitoreo y trazabilidad editorial con ocho frentes, bitácora de cambios y revisiones sin cambios, monitor mensual ENIA/Plan, propuestas de evidencia sin stubs ni altas automáticas, herramienta `record-review` con dry-run y endpoint `/api/monitoreo.json`.
 
@@ -83,7 +83,7 @@ Anteriormente (mayo 2026): Fase 6.1 (notificación Telegram filtrada tras scrape
 
 Próximas fases potenciales:
 - Comparación durante 14 días o 6 corridas entre monitoreo automático y revisión manual
-- Rediseño editorial R1-R6 previo al lanzamiento público
+- Rediseño editorial R2-R6 previo al lanzamiento público
 - Posts LinkedIn 02-05 (campaña ya iniciada con post 01)
 - Logo definitivo (Mario revisando 16 opciones Canva + Gemini)
 - Vigilancia manual anual: PROSIC reporte estado digital CR (feed vacío hoy)

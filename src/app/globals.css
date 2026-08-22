@@ -5,10 +5,16 @@
 :root {
   --azul-institucional: #1e3a8a;
   --azul-claro: #3b82f6;
+  --azul-interactivo: #1d4ed8;
   --gris-claro: #f1f5f9;
   --gris-borde: #e2e8f0;
   --texto: #0f172a;
   --texto-suave: #475569;
+  --tinta-editorial: #10243e;
+  --papel-editorial: #f7f5ef;
+  --regla-editorial: #cbd5e1;
+  --acento-editorial: #b4533c;
+  --radio-editorial: 0.125rem;
 }
 
 html {
@@ -19,6 +25,30 @@ html {
 body {
   color: var(--texto);
   background: #ffffff;
+}
+
+:focus-visible {
+  outline: 3px solid var(--azul-interactivo);
+  outline-offset: 3px;
+}
+
+::selection {
+  color: var(--tinta-editorial);
+  background: #bfdbfe;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 @layer utilities {

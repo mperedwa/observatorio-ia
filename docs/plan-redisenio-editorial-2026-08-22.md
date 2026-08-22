@@ -269,6 +269,18 @@ No incluye cambios visuales.
 
 Objetivo: comprobar la dirección usando contenido real antes de extenderla.
 
+Estado: implementación local completada el 22 de agosto de 2026 en la rama `redesign/editorial-v1`; pendiente la revisión visual de Mario antes de iniciar R2.
+
+Resultado del piloto:
+
+- Source Serif 4 y tokens provisionales de tinta, papel, regla, acento, radio y foco;
+- portada superior en papel editorial, con encabezado tipográfico y dos franjas continuas de evidencia y contexto;
+- selector de capas documental, compacto en móvil y con estado activo textual más `aria-pressed`;
+- catálogo en registro numerado de una columna, sin tarjetas elevables, conservando institución, capa, fase, tipo, fecha documental y última verificación;
+- equivalencia ES/EN y ausencia de desborde horizontal a 360 px;
+- foco por teclado visible, búsqueda, filtros, tres capas y vista total verificados en navegador;
+- AJV válido, TypeScript de app y scripts limpio, 91/91 pruebas y build de 137/137 páginas estáticas.
+
 Superficies del piloto:
 
 - parte superior de la portada;
@@ -543,7 +555,7 @@ Guardas cuantitativas orientativas para el cierre:
 - limitar `rounded-full` a controles o marcas que realmente lo necesiten;
 - mantener la mayoría de superficies en blanco, papel o tinta institucional.
 
-## Decisiones diferidas que no bloquean R1
+## Decisiones diferidas que no bloquean las siguientes fases
 
 - logo definitivo;
 - elección final entre el acento coral o un sistema completamente azul y neutro;
@@ -552,15 +564,12 @@ Guardas cuantitativas orientativas para el cierre:
 - ajustes de navegación derivados de 30 días de analítica real;
 - publicación del sitio.
 
-## Primera acción de la próxima sesión
+## Siguiente acción después de R1
 
-1. Leer `AGENTS.md`, `planning.md` y este archivo.
-2. Confirmar que el último commit incluye R0 y que el archivo de analítica continúa fuera del staging.
-3. Crear la rama local `redesign/editorial-v1` desde ese punto de recuperación.
-4. Ejecutar la build de referencia y levantar `localhost:3001`.
-5. Capturar portada y proyectos actuales en 1440 × 1000 y 390 × 844.
-6. Implementar únicamente R1.
-7. Validar, hacer el commit de R1 y presentar la comparación local antes de iniciar R2.
+1. Confirmar que el último commit de `redesign/editorial-v1` contiene R1 y que el archivo de analítica continúa fuera del staging.
+2. Levantar `localhost:3001` y revisar portada y proyectos en ES y EN, escritorio y móvil.
+3. Recoger las observaciones visuales de Mario y resolverlas dentro de R1 si afectan el piloto.
+4. Iniciar R2 solamente después de aprobar la dirección del piloto.
 
 ## Definición final de terminado
 

@@ -12,10 +12,10 @@ export const capaDot: Record<CapaCatalogo, string> = {
   ecosistema: 'bg-sky-500',
 };
 
-export const capaCard: Record<CapaCatalogo, string> = {
-  verificado: 'border-emerald-200 bg-emerald-50/60',
-  seguimiento: 'border-amber-200 bg-amber-50/60',
-  ecosistema: 'border-sky-200 bg-sky-50/60',
+export const capaMarker: Record<CapaCatalogo, string> = {
+  verificado: 'bg-emerald-600',
+  seguimiento: 'bg-amber-500',
+  ecosistema: 'bg-sky-600',
 };
 
 export const evaluacionChip: Record<string, string> = {
