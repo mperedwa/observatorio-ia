@@ -2095,7 +2095,9 @@ const migrados = proyectos.map((proyecto) => {
     ...migracion.evidencia,
   };
 
-  if (migracion.quitarResultado) delete actualizado.resultado;
+  if ('quitarResultado' in migracion && migracion.quitarResultado) {
+    delete actualizado.resultado;
+  }
   return actualizado;
 });
 

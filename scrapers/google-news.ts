@@ -2,10 +2,12 @@
  * Scraper Google News RSS (Tier B).
  *
  * Estrategia: corre múltiples queries en `news.google.com/rss/search` para
- * cubrir instituciones que bloquean acceso directo:
+ * cubrir instituciones que bloquean acceso directo y ampliar la vigilancia
+ * transversal del sector público:
  *  - CCSS: firewall geográfico bloquea IPs no-CR.
  *  - Hacienda: WAF estricto rechaza fetch/curl.
  *  - CENAT/LaNIA: sitio sin feed ni sección de noticias.
+ *  - Las nueve instituciones catalogadas y señales de nuevas instituciones.
  *
  * Google News agrega prensa CR (La Nación, El Financiero, crhoy, El Observador,
  * Diario Extra, Semanario Universidad, La Teja, monumental.co.cr, Revista SUMMA,
@@ -19,21 +21,28 @@
 import { fetchStatic, mentionsAI, closeBrowser, resolveGoogleNewsUrl } from './lib/source';
 import { emptyReport, writeReport, summarize, type ScraperReport } from './lib/diff';
 
-interface NewsQuery {
+export interface NewsQuery {
   institucion: string;
   query: string;
 }
 
-const QUERIES: NewsQuery[] = [
-  { institucion: 'ccss', query: '"CCSS" inteligencia artificial Costa Rica' },
-  { institucion: 'hacienda', query: 'Hacienda inteligencia artificial Costa Rica' },
-  { institucion: 'cenat', query: 'CENAT OR LaNIA inteligencia artificial Costa Rica' },
+export const GOOGLE_NEWS_QUERIES: NewsQuery[] = [
+  { institucion: 'ccss', query: '("CCSS" OR "Caja Costarricense de Seguro Social") ("inteligencia artificial" OR algoritmo OR "machine learning") Costa Rica when:90d' },
+  { institucion: 'hacienda', query: '("Ministerio de Hacienda" OR site:hacienda.go.cr) ("inteligencia artificial" OR algoritmo OR automatización) "Costa Rica" when:90d' },
+  { institucion: 'cenat', query: '(CENAT OR LaNIA) ("inteligencia artificial" OR "machine learning") Costa Rica when:90d' },
+  { institucion: 'poder-judicial', query: '("Poder Judicial" OR OIJ) ("inteligencia artificial" OR algoritmo OR modelo predictivo) Costa Rica when:90d' },
+  { institucion: 'micitt', query: '(MICITT OR "Ministerio de Ciencia Innovación Tecnología y Telecomunicaciones") ("inteligencia artificial" OR ENIA) Costa Rica when:90d' },
+  { institucion: 'mep', query: '(MEP OR "Ministerio de Educación Pública") ("inteligencia artificial" OR algoritmo) Costa Rica when:90d' },
+  { institucion: 'ucr', query: '("Universidad de Costa Rica" OR site:ucr.ac.cr) ("inteligencia artificial" OR "machine learning") Costa Rica when:90d' },
+  { institucion: 'inamu', query: '(INAMU OR "Instituto Nacional de las Mujeres") ("inteligencia artificial" OR algoritmo) Costa Rica when:90d' },
+  { institucion: 'ins', query: '(INS OR "Instituto Nacional de Seguros") ("inteligencia artificial" OR algoritmo OR modelo predictivo) Costa Rica when:90d' },
+  { institucion: 'sector-publico', query: '"sector público" ("inteligencia artificial" OR "machine learning" OR algoritmo) Costa Rica when:90d' },
 ];
 
-const MAX_PER_QUERY = 6;
-const MAX_TOTAL_CANDIDATES = 12;
+const MAX_PER_QUERY = 4;
+const MAX_TOTAL_CANDIDATES = 20;
 
-interface RssItem {
+export interface RssItem {
   titulo: string;
   url: string;
   fecha?: string;
@@ -53,7 +62,7 @@ function decodeHtml(s: string): string {
     .trim();
 }
 
-function parseFeed(xml: string): RssItem[] {
+export function parseGoogleNewsFeed(xml: string): RssItem[] {
   const itemRe = /<item>([\s\S]*?)<\/item>/g;
   const out: RssItem[] = [];
   let m: RegExpExecArray | null;
@@ -68,7 +77,7 @@ function parseFeed(xml: string): RssItem[] {
   return out;
 }
 
-function buildUrl(q: string): string {
+export function buildGoogleNewsUrl(q: string): string {
   const params = new URLSearchParams({
     q,
     hl: 'es-419',
@@ -86,6 +95,43 @@ function isRelevant(item: RssItem): boolean {
   return mentionsAI(blob);
 }
 
+/**
+ * Reparte el límite global por rondas entre instituciones. Así una fuente con
+ * cuatro resultados no desplaza a instituciones ubicadas al final de la lista
+ * antes de que cada frente con señales aporte al menos un candidato.
+ */
+export function selectCandidatesRoundRobin<T extends { institucion: string }>(
+  candidates: T[],
+  maxTotal: number,
+): T[] {
+  if (maxTotal <= 0) return [];
+  const order: string[] = [];
+  const buckets = new Map<string, T[]>();
+  for (const candidate of candidates) {
+    if (!buckets.has(candidate.institucion)) {
+      order.push(candidate.institucion);
+      buckets.set(candidate.institucion, []);
+    }
+    buckets.get(candidate.institucion)!.push(candidate);
+  }
+
+  const selected: T[] = [];
+  let round = 0;
+  while (selected.length < maxTotal) {
+    let added = false;
+    for (const institucion of order) {
+      const candidate = buckets.get(institucion)?.[round];
+      if (!candidate) continue;
+      selected.push(candidate);
+      added = true;
+      if (selected.length === maxTotal) break;
+    }
+    if (!added) break;
+    round++;
+  }
+  return selected;
+}
+
 export async function scrapeGoogleNews(): Promise<ScraperReport> {
   const report = emptyReport('google-news');
 
@@ -94,10 +140,10 @@ export async function scrapeGoogleNews(): Promise<ScraperReport> {
   const seenTitles = new Set<string>();
   const allCandidates: Array<RssItem & { institucion: string }> = [];
 
-  for (const { institucion, query } of QUERIES) {
+  for (const { institucion, query } of GOOGLE_NEWS_QUERIES) {
     try {
-      const xml = await fetchStatic(buildUrl(query), { timeout: 20000 });
-      const items = parseFeed(xml);
+      const xml = await fetchStatic(buildGoogleNewsUrl(query), { timeout: 20000 });
+      const items = parseGoogleNewsFeed(xml);
       totalFetched += items.length;
       report.notes.push(`Query [${institucion}]: ${items.length} items.`);
 
@@ -132,14 +178,18 @@ export async function scrapeGoogleNews(): Promise<ScraperReport> {
   // En serie (no en paralelo) para no gatillar el rate-limit de Google; son
   // pocos candidatos (ya filtrados a los relevantes) y solo 2x/semana.
   let resueltos = 0;
-  for (const c of allCandidates.slice(0, MAX_TOTAL_CANDIDATES)) {
+  const selectedCandidates = selectCandidatesRoundRobin(
+    allCandidates,
+    MAX_TOTAL_CANDIDATES,
+  );
+  for (const c of selectedCandidates) {
     const prefix = c.fuente ? `[${c.institucion} · ${c.fuente}] ` : `[${c.institucion}] `;
     const realUrl = await resolveGoogleNewsUrl(c.url);
     if (realUrl !== c.url) resueltos++;
     report.candidates.push({ titulo: prefix + c.titulo, url: realUrl });
   }
   report.notes.push(
-    `Resolución Google News: ${resueltos}/${Math.min(allCandidates.length, MAX_TOTAL_CANDIDATES)} links resueltos a la URL del medio.`,
+    `Resolución Google News: ${resueltos}/${selectedCandidates.length} links resueltos a la URL del medio; selección por rondas entre instituciones.`,
   );
 
   return report;

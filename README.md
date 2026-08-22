@@ -81,6 +81,13 @@ npm run scrape:all
 npm run watch:enia
 npm run watch:ilia
 npm run watch:oecd
+npm run check-monitoring-due
+```
+
+`check-monitoring-due` anticipa siete días las revisiones de la agenda. En GitHub, el workflow de días hábiles abre una tarea idempotente y avisa por Telegram; nunca mueve fechas ni registra por sí solo un resultado sin cambios. Para previsualizar el issue localmente:
+
+```bash
+npm run create-monitoring-review-issue -- --dry-run
 ```
 
 Para registrar una revisión, el comando funciona como simulación por defecto y solo escribe con `--apply`:
@@ -90,7 +97,7 @@ npm run record-review -- --input /ruta/revision.json
 npm run record-review -- --input /ruta/revision.json --apply
 ```
 
-La implementación se documenta en [scrapers/README.md](scrapers/README.md).
+La implementación se documenta en [scrapers/README.md](scrapers/README.md) y la puesta en marcha de Fase 5C en [docs/fases/2026-08-21-fase-5c-puesta-en-marcha-operativa.md](docs/fases/2026-08-21-fase-5c-puesta-en-marcha-operativa.md).
 
 ## API pública
 

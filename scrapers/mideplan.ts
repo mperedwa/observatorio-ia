@@ -1,8 +1,9 @@
 /**
  * Scraper MIDEPLAN (mideplan.go.cr) — Tier C.
  *
- * Estrategia: el sitio es Drupal sin RSS público, pero el listado HTML
- * `/listado-noticias` expone noticias con `<h2>` titulares directamente.
+ * Estrategia: intentar primero el listado oficial de Drupal. Cuando el WAF
+ * responde 403, usar Google News exclusivamente como canal de descubrimiento
+ * y conservar solo enlaces cuya URL final pertenezca a mideplan.go.cr.
  *
  * Útil para detectar:
  *  - Plan Nacional de Desarrollo y mención a IA / transformación digital.
@@ -13,11 +14,18 @@
  */
 
 import { fetchStatic, mentionsAI, closeBrowser } from './lib/source';
+import { resolveGoogleNewsUrl } from './lib/source';
 import { emptyReport, writeReport, summarize, type ScraperReport } from './lib/diff';
+import { buildGoogleNewsUrl, parseGoogleNewsFeed } from './google-news';
 
 const BASE = 'https://www.mideplan.go.cr';
 const LISTING = `${BASE}/listado-noticias`;
 const PAGES = 2; // ~20 notas recientes (Drupal pagina cada 10)
+const FALLBACK_QUERIES = [
+  'site:mideplan.go.cr ("inteligencia artificial" OR algoritmo OR "transformación digital") when:180d',
+  'site:mideplan.go.cr (PNDIP OR "modernización del Estado" OR "gobierno digital") when:180d',
+];
+const FALLBACK_MAX_PER_QUERY = 5;
 
 const MIDEPLAN_KEYWORDS_SUBSTRING = [
   'inteligencia',
@@ -34,12 +42,12 @@ const MIDEPLAN_KEYWORDS_SUBSTRING = [
 
 const MIDEPLAN_KEYWORDS_WORD = ['PNDIP', 'ENIA', 'TIC', 'TICs'];
 
-interface Nota {
+export interface Nota {
   titulo: string;
   url: string;
 }
 
-function parseListing(html: string): Nota[] {
+export function parseMideplanListing(html: string): Nota[] {
   // Drupal Views: cada nota va en `<div class="item-noticias views-row">` con
   // `<h2>titulo</h2>` y un `<a href="/slug">` dentro del mismo bloque.
   const out: Nota[] = [];
@@ -77,7 +85,65 @@ function isRelevant(titulo: string): boolean {
   return false;
 }
 
-export async function scrapeMideplan(): Promise<ScraperReport> {
+export function isOfficialMideplanUrl(url: string): boolean {
+  try {
+    const hostname = new URL(url).hostname.toLowerCase().replace(/^www\./, '');
+    return hostname === 'mideplan.go.cr' || hostname.endsWith('.mideplan.go.cr');
+  } catch {
+    return false;
+  }
+}
+
+interface MideplanDeps {
+  fetchHtml: typeof fetchStatic;
+  resolveNewsUrl: typeof resolveGoogleNewsUrl;
+}
+
+interface FallbackResult {
+  notas: Nota[];
+  fetched: number;
+  resolved: number;
+  notes: string[];
+}
+
+async function discoverOfficialMideplanNews(
+  deps: MideplanDeps,
+): Promise<FallbackResult> {
+  const notas: Nota[] = [];
+  const seen = new Set<string>();
+  const notes: string[] = [];
+  let fetched = 0;
+  let resolved = 0;
+
+  for (const query of FALLBACK_QUERIES) {
+    try {
+      const xml = await deps.fetchHtml(buildGoogleNewsUrl(query), { timeout: 20000 });
+      const items = parseGoogleNewsFeed(xml);
+      fetched += items.length;
+
+      for (const item of items.slice(0, FALLBACK_MAX_PER_QUERY)) {
+        const finalUrl = await deps.resolveNewsUrl(item.url);
+        if (!isOfficialMideplanUrl(finalUrl)) continue;
+        resolved++;
+        if (seen.has(finalUrl)) continue;
+        seen.add(finalUrl);
+        notas.push({ titulo: item.titulo, url: finalUrl });
+      }
+    } catch (err) {
+      notes.push(`Error en respaldo de descubrimiento: ${(err as Error).message}`);
+    }
+  }
+
+  return { notas, fetched, resolved, notes };
+}
+
+export async function scrapeMideplan(
+  overrides: Partial<MideplanDeps> = {},
+): Promise<ScraperReport> {
+  const deps: MideplanDeps = {
+    fetchHtml: overrides.fetchHtml ?? fetchStatic,
+    resolveNewsUrl: overrides.resolveNewsUrl ?? resolveGoogleNewsUrl,
+  };
   const report = emptyReport('mideplan');
   const allNotas: Nota[] = [];
   const seen = new Set<string>();
@@ -85,8 +151,8 @@ export async function scrapeMideplan(): Promise<ScraperReport> {
   for (let i = 0; i < PAGES; i++) {
     const url = i === 0 ? LISTING : `${LISTING}?page=${i}`;
     try {
-      const html = await fetchStatic(url, { timeout: 20000 });
-      const notas = parseListing(html);
+      const html = await deps.fetchHtml(url, { timeout: 20000 });
+      const notas = parseMideplanListing(html);
       for (const n of notas) {
         if (seen.has(n.url)) continue;
         seen.add(n.url);
@@ -97,13 +163,31 @@ export async function scrapeMideplan(): Promise<ScraperReport> {
     }
   }
 
-  report.fetched = allNotas.length;
   if (allNotas.length === 0) {
-    report.notes.push('Listado MIDEPLAN no devolvió ítems (revisar selector).');
+    report.notes.push(
+      'El listado oficial de MIDEPLAN no fue accesible o no devolvió ítems; se activó el respaldo de descubrimiento.',
+    );
+    const fallback = await discoverOfficialMideplanNews(deps);
+    report.fetched = fallback.fetched;
+    report.notes.push(...fallback.notes);
+    report.notes.push(
+      `Respaldo Google News: ${fallback.resolved} enlaces resueltos al dominio oficial mideplan.go.cr.`,
+    );
+    allNotas.push(...fallback.notas);
+  } else {
+    report.fetched = allNotas.length;
+  }
+
+  if (allNotas.length === 0) {
+    report.notes.push('No se recuperaron noticias oficiales de MIDEPLAN por ninguna vía.');
     return report;
   }
 
-  const relevantes = allNotas.filter((n) => isRelevant(n.titulo));
+  // En el canal directo validamos keywords contra el titular. En el respaldo,
+  // las queries ya son deliberadamente estrechas y toda URL final fue validada
+  // contra el dominio oficial; el LLM y la revisión humana filtran después.
+  const usingFallback = report.notes.some((note) => note.includes('respaldo de descubrimiento'));
+  const relevantes = usingFallback ? allNotas : allNotas.filter((n) => isRelevant(n.titulo));
   report.matched = relevantes.length;
 
   if (relevantes.length === 0) {
@@ -115,6 +199,12 @@ export async function scrapeMideplan(): Promise<ScraperReport> {
 
   for (const n of relevantes.slice(0, 10)) {
     report.candidates.push({ titulo: n.titulo, url: n.url });
+  }
+
+  if (usingFallback && report.candidates.length > 0) {
+    report.notes.push(
+      'Google News solo descubrió los enlaces; los candidatos conservados apuntan a páginas oficiales de MIDEPLAN y siguen sujetos a revisión editorial.',
+    );
   }
 
   return report;

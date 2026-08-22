@@ -28,6 +28,7 @@
 
 import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
+import { pathToFileURL } from 'node:url';
 
 const ROOT = process.cwd();
 const CLASSIFICATION_PATH = join(ROOT, 'scraper-runs', 'classification.json');
@@ -42,7 +43,7 @@ interface ClassifiedItem {
   reason?: string;
 }
 
-interface Classification {
+export interface ScrapeReviewClassification {
   classifiedAt: string;
   sourceRanAt: string;
   totalDeduped: number;
@@ -89,7 +90,10 @@ function fmtFechaCR(iso: string): string {
   }
 }
 
-function buildBody(c: Classification, runId: string): string {
+export function buildScrapeReviewBody(
+  c: ScrapeReviewClassification,
+  runId: string,
+): string {
   const lines: string[] = [];
   lines.push(`<!-- scrape-review:${runId} -->`);
   lines.push(`**Scrape**: ${fmtFechaCR(c.sourceRanAt)} (run \`${runId}\`)`);
@@ -214,22 +218,17 @@ async function ensureLabel(token: string, repo: string, name: string): Promise<v
   }
 }
 
-async function main(): Promise<void> {
-  const token = process.env.GITHUB_TOKEN?.trim();
-  const repo = process.env.GITHUB_REPOSITORY?.trim();
+async function main(argv: string[]): Promise<void> {
   const runId = process.env.GITHUB_RUN_ID?.trim() || `local-${Date.now()}`;
-
-  if (!token || !repo) {
-    console.log('create-scrape-review-issue: GITHUB_TOKEN o GITHUB_REPOSITORY ausente, skip silencioso.');
-    return;
-  }
 
   if (!existsSync(CLASSIFICATION_PATH)) {
     console.log(`create-scrape-review-issue: no existe ${CLASSIFICATION_PATH}, skip.`);
     return;
   }
 
-  const c = JSON.parse(readFileSync(CLASSIFICATION_PATH, 'utf8')) as Classification;
+  const c = JSON.parse(
+    readFileSync(CLASSIFICATION_PATH, 'utf8'),
+  ) as ScrapeReviewClassification;
   const needsReview = c.counts.nuevos > 0 || c.counts.revisar > 0;
 
   if (!needsReview) {
@@ -239,10 +238,22 @@ async function main(): Promise<void> {
     return;
   }
 
+  const body = buildScrapeReviewBody(c, runId);
+  if (argv.includes('--dry-run')) {
+    console.log(body);
+    return;
+  }
+
+  const token = process.env.GITHUB_TOKEN?.trim();
+  const repo = process.env.GITHUB_REPOSITORY?.trim();
+  if (!token || !repo) {
+    console.log('create-scrape-review-issue: GITHUB_TOKEN o GITHUB_REPOSITORY ausente, skip silencioso.');
+    return;
+  }
+
   await ensureLabel(token, repo, 'scrape-review');
 
   const title = `[scrape ${fmtFechaCR(c.sourceRanAt)}] ${c.counts.nuevos} nuevo(s), ${c.counts.revisar} a revisar`;
-  const body = buildBody(c, runId);
 
   const existing = await findExistingIssue(token, repo, runId);
   if (existing) {
@@ -267,7 +278,11 @@ async function main(): Promise<void> {
   console.log(`create-scrape-review-issue: issue #${created.number} creado → ${created.html_url}`);
 }
 
-main().catch((err) => {
-  console.error('create-scrape-review-issue ERROR:', (err as Error).message);
-  process.exit(1);
-});
+const isDirectInvocation =
+  process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href;
+if (isDirectInvocation) {
+  main(process.argv.slice(2)).catch((err) => {
+    console.error('create-scrape-review-issue ERROR:', (err as Error).message);
+    process.exit(1);
+  });
+}

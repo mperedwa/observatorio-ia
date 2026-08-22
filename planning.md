@@ -34,10 +34,23 @@ Mantener un observatorio público, bilingüe y verificable sobre adopción de IA
 - [x] Endpoint `/api/monitoreo.json`.
 - [x] Herramienta editorial con dry-run para registrar revisiones.
 
+### Fase 5C: puesta en marcha operativa
+
+- [x] Corregir el handoff de cambios legislativos desde el reporte consolidado hasta el GitHub Issue.
+- [x] Alinear el revisor automático con `evidence-proposals.json`, sin stubs, altas ni despliegues automáticos.
+- [x] Recuperar MIDEPLAN con ruta directa y respaldo que solo conserva URLs oficiales.
+- [x] Ampliar Google News a las nueve instituciones y un frente transversal sin convertir prensa en fuente primaria.
+- [x] Generar recordatorios idempotentes cuando una revisión editorial esté próxima o vencida.
+- [x] Probar de extremo a extremo los casos sin hallazgos, señal nueva, actualización y cambio legislativo.
+- [x] Documentar operación, límites de cobertura y período inicial de comparación con revisión manual.
+
 ## Pendiente antes de publicar
 
-- [ ] Revisión local de la Fase 5B en escritorio y móvil con Mario.
-- [ ] Recoger y corregir observaciones.
+- [x] Revisión local de la Fase 5B en escritorio y móvil.
+- [x] Recoger y corregir las observaciones de la Fase 5B.
+- [x] Completar y revisar localmente la Fase 5C técnica.
+- [ ] Ejecutar un período de comparación entre monitoreo automático y revisión manual.
+- [ ] Completar el rediseño visual previo al lanzamiento.
 - [ ] Decisión explícita de push y despliegue.
 
 ## Próximas mejoras posibles

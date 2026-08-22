@@ -8,14 +8,15 @@
  * cubre exclusivamente cambios editoriales al catálogo legislativo.
  *
  * Flujo end-to-end:
- * 1. Scraper `asamblea.ts` produce `scraper-runs/asamblea-<timestamp>.json` con
- *    `changes[]` (ProposedChange[]).
- * 2. Este script busca el report más reciente y, si tiene changes, crea un GH
- *    Issue con label `legislacion-update`.
- * 3. Developer (SiriusOS) procesa el issue: valida el diff, opcionalmente
- *    despacha a analista para verificación de la fuente Delfino, y consolida.
+ * 1. `scrape:all` guarda el reporte de Asamblea dentro de
+ *    `scraper-runs/last-run.json` con `changes[]` (ProposedChange[]).
+ * 2. Este script extrae ese reporte —o usa `asamblea-*.json` como fallback de
+ *    una corrida individual— y crea un issue `legislacion-update`.
+ * 3. Developer (SiriusOS) procesa el issue, contrasta el diff con una fuente
+ *    oficial y consolida la recomendación.
  * 4. Mario da GO/NO por Telegram. GO → developer edita `legislacion.json`,
- *    corre validate/build, commit + push.
+ *    corre validate/build y crea un commit local. Push y despliegue requieren
+ *    una autorización posterior y separada.
  *
  * Idempotencia: si ya existe issue abierto con label `legislacion-update` para
  * el mismo `runId` (o report timestamp cuando runId no está), reutiliza.
@@ -28,6 +29,7 @@
 
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
+import { pathToFileURL } from 'node:url';
 
 const ROOT = process.cwd();
 const REPORTS_DIR = join(ROOT, 'scraper-runs');
@@ -60,6 +62,10 @@ interface ScraperReport {
   notes: string[];
 }
 
+interface ConsolidatedReport {
+  reports?: ScraperReport[];
+}
+
 interface IssueSummary {
   number: number;
   body: string | null;
@@ -77,14 +83,41 @@ function fmtFechaCR(iso: string): string {
   }
 }
 
-/** Encuentra el asamblea-*.json más reciente en scraper-runs/. */
-function findLatestAsambleaReport(): string | null {
-  if (!existsSync(REPORTS_DIR)) return null;
-  const files = readdirSync(REPORTS_DIR)
+export function selectAsambleaReport(
+  consolidated: ConsolidatedReport,
+): ScraperReport | null {
+  return consolidated.reports?.find(({ scraper }) => scraper === 'asamblea') ?? null;
+}
+
+/**
+ * Carga el reporte de Asamblea producido por `scrape:all`. El consolidado es
+ * la fuente principal; el archivo asamblea-*.json queda como fallback para
+ * ejecuciones individuales de `npm run scrape:asamblea`.
+ */
+export function loadLatestAsambleaReport(
+  reportsDir = REPORTS_DIR,
+): { report: ScraperReport; sourcePath: string } | null {
+  if (!existsSync(reportsDir)) return null;
+
+  const consolidatedPath = join(reportsDir, 'last-run.json');
+  if (existsSync(consolidatedPath)) {
+    const consolidated = JSON.parse(
+      readFileSync(consolidatedPath, 'utf8'),
+    ) as ConsolidatedReport;
+    const report = selectAsambleaReport(consolidated);
+    if (report) return { report, sourcePath: consolidatedPath };
+  }
+
+  const files = readdirSync(reportsDir)
     .filter((f) => f.startsWith('asamblea-') && f.endsWith('.json'))
     .sort()
     .reverse();
-  return files[0] ? join(REPORTS_DIR, files[0]) : null;
+  if (!files[0]) return null;
+  const sourcePath = join(reportsDir, files[0]);
+  return {
+    report: JSON.parse(readFileSync(sourcePath, 'utf8')) as ScraperReport,
+    sourcePath,
+  };
 }
 
 function fmtValue(v: unknown): string {
@@ -100,7 +133,7 @@ function fmtValue(v: unknown): string {
   return `\`${String(v)}\``;
 }
 
-function buildBody(report: ScraperReport, runId: string): string {
+export function buildBody(report: ScraperReport, runId: string): string {
   const lines: string[] = [];
   lines.push(`<!-- legislacion-update:${runId} -->`);
   lines.push(
@@ -138,7 +171,7 @@ function buildBody(report: ScraperReport, runId: string): string {
   lines.push('---');
   lines.push('');
   lines.push(
-    '_Generado por `scripts/create-legislacion-update-issue.ts`. El bot developer (SiriusOS) valida el diff, opcionalmente despacha al analista para verificar la fuente Delfino, y consolida. La decisión final (GO/NO por cambio) ocurre por Telegram con Mario. Los cambios aceptados se aplican editorialmente a `src/data/json/legislacion.json`._',
+    '_Generado por `scripts/create-legislacion-update-issue.ts`. El bot developer (SiriusOS) valida el diff, contrasta la señal con una fuente primaria y consolida. La decisión final (GO/NO por cambio) ocurre por Telegram con Mario. Los cambios aceptados se aplican editorialmente a `src/data/json/legislacion.json` en un commit local; push y despliegue requieren autorización separada._',
   );
   return lines.join('\n');
 }
@@ -190,43 +223,56 @@ async function ensureLabel(token: string, repo: string, name: string): Promise<v
       name,
       color: '1d76db',
       description:
-        'Cambio detectado por scraper Asamblea (Delfino) en estado o comisión de expediente legislativo. Requiere revisión editorial + GO Mario antes de aplicar.',
+        'Señal sobre estado o comisión de un expediente. Requiere fuente primaria y revisión editorial antes de aplicar.',
     });
   }
 }
 
-async function main(): Promise<void> {
+async function main(argv = process.argv.slice(2)): Promise<void> {
   const token = process.env.GITHUB_TOKEN?.trim();
   const repo = process.env.GITHUB_REPOSITORY?.trim();
   const runId = process.env.GITHUB_RUN_ID?.trim() || `local-${Date.now()}`;
+  const dryRun = argv.includes('--dry-run');
 
-  if (!token || !repo) {
+  if ((!token || !repo) && !dryRun) {
     console.log(
       'create-legislacion-update-issue: GITHUB_TOKEN o GITHUB_REPOSITORY ausente, skip silencioso.',
     );
     return;
   }
 
-  const reportPath = findLatestAsambleaReport();
-  if (!reportPath) {
-    console.log('create-legislacion-update-issue: no hay report asamblea-*.json, skip.');
+  const loaded = loadLatestAsambleaReport();
+  if (!loaded) {
+    console.log(
+      'create-legislacion-update-issue: no hay reporte de Asamblea en last-run.json ni asamblea-*.json, skip.',
+    );
     return;
   }
-
-  const report = JSON.parse(readFileSync(reportPath, 'utf8')) as ScraperReport;
+  const { report, sourcePath } = loaded;
 
   if (report.changes.length === 0) {
     console.log(
-      `create-legislacion-update-issue: report ${reportPath} tiene 0 changes, skip.`,
+      `create-legislacion-update-issue: report ${sourcePath} tiene 0 changes, skip.`,
     );
     return;
+  }
+
+  const body = buildBody(report, runId);
+  if (dryRun) {
+    console.log(
+      `create-legislacion-update-issue: dry-run desde ${sourcePath}; ${report.changes.length} cambio(s).`,
+    );
+    console.log(body);
+    return;
+  }
+
+  if (!token || !repo) {
+    throw new Error('GITHUB_TOKEN o GITHUB_REPOSITORY ausente.');
   }
 
   await ensureLabel(token, repo, 'legislacion-update');
 
   const title = `[legislacion-update ${fmtFechaCR(report.ranAt)}] ${report.changes.length} cambio(s) en expedientes`;
-  const body = buildBody(report, runId);
-
   const existing = await findExistingIssue(token, repo, runId);
   if (existing) {
     console.log(
@@ -254,7 +300,11 @@ async function main(): Promise<void> {
   );
 }
 
-main().catch((err) => {
-  console.error('create-legislacion-update-issue ERROR:', (err as Error).message);
-  process.exit(1);
-});
+const isDirectInvocation =
+  process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href;
+if (isDirectInvocation) {
+  main().catch((err) => {
+    console.error('create-legislacion-update-issue ERROR:', (err as Error).message);
+    process.exit(1);
+  });
+}

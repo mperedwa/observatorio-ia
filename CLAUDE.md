@@ -69,7 +69,9 @@ El proyecto VIVÍA en `~/Desktop/Proyectos/` (sincronizado por iCloud Drive). Mo
 4. Verificar `ls out/en/ out/es/` — ambos deben tener `index.html`
 
 ## Estado
-Fase 5B del plan de evidencia entregada (2026-08-21): **monitoreo y trazabilidad editorial**. Ocho frentes con cadencia, bitácora de cambios y revisiones sin cambios, monitor mensual ENIA/Plan, propuestas de evidencia de scrapers sin stubs ni altas automáticas, herramienta `record-review` con dry-run y endpoint `/api/monitoreo.json`.
+Fase 5C entregada localmente (2026-08-21): **puesta en marcha operativa del monitoreo**. Handoff legislativo reparado desde `last-run.json`, MIDEPLAN con respaldo restringido a URLs oficiales, Google News para las 9 instituciones más un frente transversal, agenda editorial idempotente con issues/Telegram, revisor sin stubs/push/deploy y pruebas E2E. El workflow nuevo no queda activo hasta un push explícitamente autorizado.
+
+Fase 5B (mismo día): monitoreo y trazabilidad editorial con ocho frentes, bitácora de cambios y revisiones sin cambios, monitor mensual ENIA/Plan, propuestas de evidencia sin stubs ni altas automáticas, herramienta `record-review` con dry-run y endpoint `/api/monitoreo.json`.
 
 La API pública JSON read-only tiene 7 endpoints + manifest + índice HTML bajo `/api/`: proyectos, instituciones, legislación, indicadores, brechas, ENIA y monitoreo. Cada endpoint envuelve los datos en `{version, lastUpdate, count, source, license, data}`. Licencia CC BY 4.0.
 
@@ -78,13 +80,15 @@ Antes (mismo día): Fase 8.2 (Tier C: CGR + MIDEPLAN, **10 scrapers** totales, 2
 Anteriormente (mayo 2026): Fase 6.1 (notificación Telegram filtrada tras scrape), Fase 6 (clasificador LLM Groq/Llama-3.1-8b-instant), Fase 7 (UCR 7° institución, 18 proyectos), Fase A (assets /comparte), Fase 5 (scrapers MVP + JSON validable).
 
 Próximas fases potenciales:
+- Comparación durante 14 días o 6 corridas entre monitoreo automático y revisión manual
+- Rediseño visual previo al lanzamiento público
 - Posts LinkedIn 02-05 (campaña ya iniciada con post 01)
 - Logo definitivo (Mario revisando 16 opciones Canva + Gemini)
 - Vigilancia manual anual: PROSIC reporte estado digital CR (feed vacío hoy)
 
 Datos en `src/data/json/` validados por schemas en `src/data/schemas/`. Los `.ts` quedan como reexports tipados. Política editorial: scrapers nunca tocan campos curados (titulo, descripcion, contexto, lecciones, resumen). Candidatos de Google News y Delfino son **prensa, no fuente oficial** — exigen validación contra fuente primaria. Informes CGR/DFOE son evidencia oficial.
 
-Scripts npm: `validate-data`, `scrape:micitt`, `scrape:camtic`, `scrape:asamblea`, `scrape:pj`, `scrape:delfino`, `scrape:citic`, `scrape:google-news`, `scrape:hacienda`, `scrape:cgr`, `scrape:mideplan`, `scrape:all`, `watch:enia`, `watch:ilia`, `watch:oecd`, `record-review`. Detalle en `scrapers/README.md`.
+Scripts npm: `validate-data`, `scrape:micitt`, `scrape:camtic`, `scrape:asamblea`, `scrape:pj`, `scrape:delfino`, `scrape:citic`, `scrape:google-news`, `scrape:hacienda`, `scrape:cgr`, `scrape:mideplan`, `scrape:all`, `watch:enia`, `watch:ilia`, `watch:oecd`, `check-monitoring-due`, `create-monitoring-review-issue`, `record-review`. Detalle en `scrapers/README.md`.
 
 Dependencias nuevas: `recharts@3.8.1` (Fase 4), `ajv@8` + `ajv-formats@3` + `tsx@4` + `playwright@1` + `cheerio@1` (Fase 5, todas devDeps salvo recharts).
 

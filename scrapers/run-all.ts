@@ -2,11 +2,11 @@
  * Orquestador de scrapers.
  *
  * Corre los scrapers en serie, valida con AJV, opcionalmente clasifica los
- * candidatos con un LLM (Groq + Llama 3.3 70B), y escribe un reporte
+ * candidatos con un LLM (Groq + Llama 3.1 8B Instant), y escribe un reporte
  * consolidado. NO aplica cambios editorialmente al JSON: los cambios
  * detectados por el scraper de Asamblea (Delfino) se surfacean vía GH Issue
  * con label `legislacion-update` (ver `scripts/create-legislacion-update-issue.ts`)
- * para revisión manual + GO de Mario antes de mergear.
+ * para revisión manual + GO de Mario antes de modificar datos.
  *
  * Los pasos "Detect changes" y "Create or update PR" del workflow scrape.yml
  * se retiraron el 2026-07-10 porque:
@@ -170,7 +170,7 @@ function renderMarkdown(c: Consolidated, totalChanges: number): string {
   lines.push(
     `- **Clasificación LLM**: ${
       c.classifierUsed
-        ? '✅ activa (Llama 3.3 70B vía Groq)'
+        ? '✅ activa (Llama 3.1 8B Instant vía Groq)'
         : '⚠️ sin LLM (configurar `GROQ_API_KEY` como secret de GitHub Actions para activar)'
     }`,
   );
@@ -266,7 +266,7 @@ function renderMarkdown(c: Consolidated, totalChanges: number): string {
   }
 
   lines.push('---');
-  lines.push('_Generado por `.github/workflows/scrape.yml`. Revisar antes de mergear._');
+  lines.push('_Generado por `.github/workflows/scrape.yml`. Cada señal requiere revisión editorial antes de modificar datos._');
   return lines.join('\n');
 }
 

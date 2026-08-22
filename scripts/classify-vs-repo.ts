@@ -5,7 +5,7 @@
  *   - src/app/[locale]/analisis/<slug>/translations.ts (artículos publicados)
  *
  * Salida: scraper-runs/classification.json con buckets:
- *   - nuevos      : sin match contra repo, ameritan agregarse
+ *   - nuevos      : sin match contra repo, ameritan investigación
  *   - ya_existe   : matcheados con un proyecto / recurso / artículo, sin señal de update
  *   - revisar     : matcheados PERO el titulo trae keywords de cambio de estado
  *                   (aprueba, pospone, lanza, resultado, etc.). Requieren revisión
@@ -83,7 +83,8 @@ interface Consolidated {
 
 // Mapeo del campo `source` del scrape (origen del feed) Y del hint en el
 // título (google-news manda `[ccss · ...]` como prefijo) al `institucionId`
-// del repo. Las fuentes que NO mapean caen a RUIDO o requieren hint.
+// del repo. Las fuentes editoriales explícitamente listadas abajo requieren
+// un hint; las fuentes oficiales transversales pueden continuar sin ficha.
 const SOURCE_TO_INSTITUCION: Record<string, string> = {
   micitt: 'micitt',
   pj: 'poder-judicial',
@@ -92,18 +93,19 @@ const SOURCE_TO_INSTITUCION: Record<string, string> = {
   citic: 'ucr',
   // Hints directos del título (cuando google-news prefija con [ccss · ...]).
   ccss: 'ccss',
+  'poder-judicial': 'poder-judicial',
   mep: 'mep',
   cenat: 'cenat',
   ucr: 'ucr',
-  tec: 'tec',
+  inamu: 'inamu',
+  ins: 'ins',
 };
 
-// Fuentes que NO mapean a institución pública por sí solas. Sin hint en el
-// título, se descartan como RUIDO directamente.
+// Fuentes privadas o editoriales que NO mapean a institución pública por sí
+// solas. MIDEPLAN y CGR quedan fuera de esta lista: son fuentes oficiales
+// transversales aunque hoy no tengan una ficha de institución en el catálogo.
 const SOURCES_NO_INSTITUCIONALES = new Set([
   'camtic',
-  'mideplan',
-  'cgr',
   'delfino',
 ]);
 
@@ -151,7 +153,7 @@ function normalize(s: string): string {
 // candidatos legítimos quedarían sin match.
 const SHORT_TOKEN_WHITELIST = new Set([
   'tec', 'ucr', 'mep', 'ice', 'cgr', 'aya', 'edus', 'gtmi', 'gtmi',
-  'una', 'utn', 'eut', 'rsn', 'aida', 'enia',
+  'una', 'utn', 'eut', 'rsn', 'aida', 'enia', 'ins',
 ]);
 
 // Aliases conocidos: cuando el texto contiene la frase, agregamos el token
@@ -204,7 +206,7 @@ function weightedOverlap(a: Set<string>, b: Set<string>): number {
 
 // Tokens que coinciden con institucionId conocidos cuentan como señal fuerte.
 const INSTITUCION_IDS_AS_TOKENS = new Set([
-  'ccss', 'micitt', 'hacienda', 'mep', 'ucr', 'cenat',
+  'ccss', 'micitt', 'hacienda', 'mep', 'ucr', 'cenat', 'inamu', 'ins',
 ]);
 
 const HINT_PREFIX = /^\[([a-z][a-z0-9-]*)\s*·/;

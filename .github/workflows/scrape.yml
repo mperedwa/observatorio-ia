@@ -5,15 +5,9 @@ on:
     # Lunes, miércoles y viernes a las 12:00 UTC (06:00 CR)
     - cron: '0 12 * * 1,3,5'
   workflow_dispatch:
-    inputs:
-      notify_threshold:
-        description: 'Score mínimo para notificar Telegram (default 7, baja a 5 o 3 para tests)'
-        required: false
-        default: '7'
 
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
   issues: write
 
 jobs:
@@ -48,7 +42,7 @@ jobs:
       - name: Run scrapers
         id: scrape
         env:
-          # Opcional: si el secret está configurado, los candidatos se enriquecen con Llama 3.3 70B vía Groq.
+          # Opcional: si el secret está configurado, los candidatos se enriquecen con Llama 3.1 8B Instant vía Groq.
           # Sin el secret, el workflow funciona en modo Fase 5 (lista plana de candidatos sin score).
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         run: npm run scrape:all
@@ -56,25 +50,15 @@ jobs:
       - name: Validate data after scrape
         run: npm run validate-data
 
-      - name: Notify Telegram (filtrado)
-        env:
-          # Opcional: si ambos secrets están configurados, manda mensaje al bot SOLO si
-          # hay cambios aplicados al JSON o ≥1 candidato con score ≥ NOTIFY_SCORE_THRESHOLD.
-          # Default threshold 7. Para tests usar workflow_dispatch input notify_threshold.
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          NOTIFY_SCORE_THRESHOLD: ${{ inputs.notify_threshold || '7' }}
-        run: npm run notify-telegram
-
-      - name: Classify candidates vs repo (proyectos.json)
-        # Contrasta cada candidato del scrape contra los proyectos del repo.
+      - name: Classify candidates vs repo
+        # Contrasta cada candidato contra proyectos, recursos y análisis publicados.
         # Marca YA_EXISTE / RUIDO / NUEVO en scraper-runs/classification.json
         # y genera evidence-proposals.json. Las propuestas no tienen shape de
         # proyecto, no asignan estado y nunca actualizan el catálogo.
         run: npm run classify-vs-repo
 
       - name: Notify Telegram (clasificación vs repo)
-        # Mensaje específico: 0 nuevos → corto "cobertura al día";
+        # Mensaje único de la corrida: 0 nuevos → corto "cobertura al día";
         # ≥1 nuevo → lista numerada para priorizar investigación. Skip sin secrets.
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
@@ -96,7 +80,7 @@ jobs:
         # Si el scraper de Asamblea (vía Delfino) detectó cambios en estado o
         # comisión de algún expediente, abre un GH Issue con label
         # `legislacion-update`. El bot developer valida + consolida + pide GO
-        # Mario. Los cambios aceptados se aplican editorialmente a
+        # a Mario. Los cambios aceptados se aplican editorialmente a
         # src/data/json/legislacion.json. Skip silencioso si 0 cambios.
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -108,7 +92,8 @@ jobs:
       # El auto-apply de cambios de Asamblea al catálogo (run-all.ts:applyAsambleaChanges)
       # también se retiró. Ahora los cambios detectados por scrapers sólo se surfacean
       # como GH Issues (label `scrape-review` y `legislacion-update`) para revisión
-      # manual + GO de Mario por Telegram antes de aplicar editorialmente al JSON.
+      # manual + GO de Mario por Telegram antes de aplicar editorialmente al JSON
+      # en un commit local. Push y despliegue requieren autorización separada.
       # Motivo: el step de PR fallaba con "GitHub Actions is not permitted to create
       # or approve pull requests" (permiso del repo, cambio de política de GitHub);
       # además, el flujo issue-based es más seguro que auto-PR sin revisión previa.

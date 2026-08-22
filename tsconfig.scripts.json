@@ -12,7 +12,10 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "incremental": true,
-    "types": ["node"]
+    "types": ["node"],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "include": ["scripts/**/*.ts", "scrapers/**/*.ts", "tests/**/*.ts"],
   "exclude": ["node_modules"]

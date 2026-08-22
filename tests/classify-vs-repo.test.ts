@@ -203,6 +203,22 @@ describe('classifyOne', () => {
     expect(result.reason).toMatch(/no mapea a institución pública/);
   });
 
+  it('G2. fuente oficial transversal MIDEPLAN sin ficha institucional → nuevo', () => {
+    const c = candidate({
+      source: 'mideplan',
+      titulo: 'MIDEPLAN publica avance verificable del PNDIP con inteligencia artificial',
+      url: 'https://www.mideplan.go.cr/noticias/avance-pndip',
+      score: 8,
+      tipo: 'actualizacion',
+    });
+
+    const result = classifyOne(c, [], NO_RECURSOS, NO_ARTICULOS);
+
+    expect(result.bucket).toBe('nuevo');
+    expect(result.institucionId).toBeNull();
+    expect(result.reason).toMatch(/requiere revisión humana/);
+  });
+
   it('I. URL google-news rss + publisher en prefijo del título coincide con fuenteUrl → ya_existe (no revisar por keyword)', () => {
     // Regresión del scrape 5-jun-2026: la URL del candidato viene como
     // news.google.com/rss/articles/CBMi... (encriptada), pero el prefijo
