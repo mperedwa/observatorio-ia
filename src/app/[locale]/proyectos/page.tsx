@@ -76,7 +76,7 @@ export default async function CatalogoPage({
 
         <CatalogoProyectos locale={lc} t={t} />
 
-        <section className="mt-16 rounded-2xl border border-institucional-200 bg-institucional-50 p-6 sm:p-8">
+        <section className="mt-16 border-y border-editorial-rule bg-editorial-paper/55 px-1 py-8 sm:px-8">
           <p className="text-xs font-semibold uppercase tracking-wider text-institucional-700">
             {t.catalogo.metodologiaTitulo}
           </p>

@@ -12,6 +12,16 @@ export type TipoFechaReferencia =
   | 'anuncio'
   | 'primera-evidencia';
 
+export type TipoHitoExpediente =
+  | TipoFechaReferencia
+  | 'ultima-verificacion'
+  | 'proxima-revision';
+
+export interface HitoExpediente {
+  fecha: string;
+  tipo: TipoHitoExpediente;
+}
+
 export interface ResumenInstitucionCatalogo {
   total: number;
   verificado: number;
@@ -55,6 +65,67 @@ export function obtenerFechaReferencia(
     return { fecha: proyecto.fechaPrimeraEvidencia, tipo: 'primera-evidencia' };
   }
   return null;
+}
+
+export function obtenerCronologiaProyecto(proyecto: Proyecto): HitoExpediente[] {
+  const hitos: Array<HitoExpediente | null> = [
+    proyecto.fechaPrimeraEvidencia
+      ? { fecha: proyecto.fechaPrimeraEvidencia, tipo: 'primera-evidencia' }
+      : null,
+    proyecto.fechaAnuncio
+      ? { fecha: proyecto.fechaAnuncio, tipo: 'anuncio' }
+      : null,
+    proyecto.fechaInicioPiloto
+      ? { fecha: proyecto.fechaInicioPiloto, tipo: 'inicio-piloto' }
+      : null,
+    proyecto.fechaInicioOperacion
+      ? { fecha: proyecto.fechaInicioOperacion, tipo: 'inicio-operacion' }
+      : null,
+    proyecto.fechaUltimaVerificacion
+      ? { fecha: proyecto.fechaUltimaVerificacion, tipo: 'ultima-verificacion' }
+      : null,
+    proyecto.fechaProximaRevision
+      ? { fecha: proyecto.fechaProximaRevision, tipo: 'proxima-revision' }
+      : null,
+  ];
+
+  return hitos
+    .filter((hito): hito is HitoExpediente => hito !== null)
+    .sort((a, b) => a.fecha.localeCompare(b.fecha));
+}
+
+export function obtenerUltimaVerificacion(
+  iniciativas: readonly Proyecto[],
+): string | null {
+  const fechas = iniciativas
+    .map((iniciativa) => iniciativa.fechaUltimaVerificacion)
+    .filter((fecha): fecha is string => fecha !== undefined)
+    .sort((a, b) => b.localeCompare(a));
+  return fechas[0] ?? null;
+}
+
+export function ordenarProyectosExpediente(
+  iniciativas: readonly Proyecto[],
+  locale: Locale,
+): Proyecto[] {
+  const prioridad: Record<CapaCatalogo, number> = {
+    verificado: 0,
+    seguimiento: 1,
+    ecosistema: 2,
+  };
+
+  return [...iniciativas].sort((a, b) => {
+    const diferenciaCapa =
+      prioridad[obtenerCapaCatalogo(a)] - prioridad[obtenerCapaCatalogo(b)];
+    if (diferenciaCapa !== 0) return diferenciaCapa;
+
+    const diferenciaVerificacion = (b.fechaUltimaVerificacion ?? '').localeCompare(
+      a.fechaUltimaVerificacion ?? '',
+    );
+    if (diferenciaVerificacion !== 0) return diferenciaVerificacion;
+
+    return a.titulo[locale].localeCompare(b.titulo[locale], locale);
+  });
 }
 
 export function obtenerAnioReferencia(proyecto: Proyecto): number | null {

@@ -329,7 +329,7 @@ feat(design): establece piloto editorial del observatorio
 
 Objetivo: convertir el piloto aprobado en el sistema general de navegación y descubrimiento.
 
-Estado: implementación local completada el 22 de agosto de 2026 en la rama `redesign/editorial-v1`; pendiente la revisión visual de Mario antes de iniciar R3.
+Estado: implementación local completada y aprobada por Mario el 22 de agosto de 2026 en la rama `redesign/editorial-v1`.
 
 Resultado de la fase:
 
@@ -370,6 +370,22 @@ feat(design): reorganiza portada e indices editoriales
 ### R3. Catálogos, instituciones y expedientes
 
 Objetivo: aplicar la gramática aprobada a la exploración y a las fichas de detalle.
+
+Estado: implementación local completada el 22 de agosto de 2026 en la rama `redesign/editorial-v1`; pendiente la revisión visual de Mario antes de iniciar R4.
+
+Resultado de la fase:
+
+- índice institucional convertido de cuadrícula de tarjetas a registro numerado, con conteos derivados, último corte y tres iniciativas destacadas mediante una regla estable;
+- fichas institucionales convertidas en expedientes con metadatos continuos, distribución por capa, resumen, registro completo y lectura editorial;
+- fichas de proyecto reorganizadas en alcance, cronología conocida, lectura de evidencia, resultados documentados, matriz, fuentes, preguntas, contexto y relacionados;
+- ausencia de resultados publicada explícitamente como vacío documental neutral, sin panel verde ni señal positiva;
+- fuentes presentadas como referencias numeradas con publicador, tipo, fecha de publicación, fecha de consulta y dimensiones respaldadas;
+- componentes reutilizables para metadatos, encabezados de sección y estados documentales, con texto y marca además del color;
+- catálogo conservado con búsqueda, filtro institucional, tres capas y vista total; su bloque metodológico adopta el lenguaje editorial;
+- corrección del desborde de 4 px de la cabecera móvil, con ancho exacto a 360 px;
+- 29 iniciativas y 9 instituciones conservadas sin cambios en los JSON de evidencia;
+- AJV válido, TypeScript de app y scripts limpio, 93/93 pruebas y build de 145/145 páginas estáticas;
+- auditoría de 142 HTML con 58 fichas de proyecto, 18 institucionales, 80 referencias de fuente y cero enlaces, anclas, metadatos o jerarquías de encabezado defectuosas.
 
 Entregables:
 
@@ -577,12 +593,12 @@ Guardas cuantitativas orientativas para el cierre:
 - ajustes de navegación derivados de 30 días de analítica real;
 - publicación del sitio.
 
-## Siguiente acción después de R2
+## Siguiente acción después de R3
 
-1. Confirmar que el último commit de `redesign/editorial-v1` contiene R2 y que no incorpora documentos privados de analítica.
-2. Levantar `localhost:3001` y revisar portada, navegación e índices en ES y EN, escritorio y móvil.
-3. Recoger las observaciones visuales de Mario y resolverlas dentro de R2 si afectan la estructura general.
-4. Iniciar R3 solamente después de aprobar la navegación, la longitud de la portada y las rutas de índice.
+1. Confirmar que el último commit de `redesign/editorial-v1` contiene R3 y que no modifica los JSON de evidencia ni incorpora documentos privados.
+2. Levantar `localhost:3001` y revisar catálogo, índice institucional y fichas de proyecto e institución en ES y EN, escritorio y móvil.
+3. Recoger las observaciones visuales de Mario y resolverlas dentro de R3 si afectan la gramática de expediente.
+4. Iniciar R4 solamente después de aprobar la densidad, la cronología, la matriz y la presentación de fuentes y vacíos.
 
 ## Definición final de terminado
 

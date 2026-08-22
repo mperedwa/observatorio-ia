@@ -1,10 +1,20 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Breadcrumb } from '@/components/Breadcrumb';
+import {
+  EncabezadoSeccionExpediente,
+  ExpedienteMeta,
+} from '@/components/ExpedienteEditorial';
 import { ProyectoCard } from '@/components/ProyectoCard';
 import { instituciones } from '@/data/instituciones';
 import { proyectos } from '@/data/proyectos';
-import { resumirInstitucionCatalogo } from '@/data/presentacion-catalogo';
+import {
+  formatearFechaCatalogo,
+  obtenerUltimaVerificacion,
+  ordenarProyectosExpediente,
+  resumirInstitucionCatalogo,
+} from '@/data/presentacion-catalogo';
 import { getDictionary } from '@/i18n/dictionaries';
 import { locales, type Locale } from '@/i18n/config';
 
@@ -56,13 +66,17 @@ export default async function InstitucionPage({
   if (!locales.includes(locale as Locale)) notFound();
   const inst = instituciones.find((i) => i.id === id);
   if (!inst) notFound();
+
   const lc = locale as Locale;
   const t = getDictionary(lc);
   const proyectosInst = proyectos.filter((p) => p.institucionId === inst.id);
+  const proyectosOrdenados = ordenarProyectosExpediente(proyectosInst, lc);
   const resumenCatalogo = resumirInstitucionCatalogo(proyectosInst);
+  const ultimaVerificacion = obtenerUltimaVerificacion(proyectosInst);
+  const indiceInstitucion = instituciones.findIndex((item) => item.id === inst.id) + 1;
 
   return (
-    <article className="max-w-5xl mx-auto px-6 py-12 sm:py-16">
+    <article className="mx-auto max-w-6xl px-6 py-12 sm:py-16">
       <Breadcrumb
         locale={lc}
         items={[
@@ -72,83 +86,155 @@ export default async function InstitucionPage({
         ]}
       />
 
-      <header className="mt-6 mb-10 border-b border-slate-200 pb-8">
-        <p className="text-xs uppercase tracking-wider text-institucional-700">
-          {t.instituciones.tipoLabel[inst.tipo]}
-        </p>
-        <h1 className="mt-2 text-3xl sm:text-4xl font-bold text-slate-900 text-balance leading-tight">
-          {inst.nombre[lc]}
-        </h1>
-        <a
-          href={inst.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-3 inline-block text-sm text-institucional-700 hover:underline"
-        >
-          ↗ {t.institucionDetalle.sitioOficialLabel}
-        </a>
-
-        <div className="mt-6 grid max-w-xl grid-cols-3 gap-4">
+      <header className="mt-8 pb-10">
+        <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_12rem] lg:items-end">
           <div>
-            <div className="text-2xl font-bold text-emerald-700 tabular-nums">
-              {resumenCatalogo.verificado}
-            </div>
-            <div className="text-xs text-slate-500">
-              {t.institucionDetalle.verificadosLabel}
-            </div>
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-institucional-700">
+              {t.institucionDetalle.expedienteLabel}
+            </p>
+            <h1 className="mt-3 max-w-4xl font-editorial text-[2.75rem] font-semibold leading-[0.98] tracking-[-0.025em] text-editorial-ink text-balance sm:text-6xl">
+              {inst.nombre[lc]}
+            </h1>
           </div>
-          <div>
-            <div className="text-2xl font-bold text-amber-700 tabular-nums">
-              {resumenCatalogo.seguimiento}
-            </div>
-            <div className="text-xs text-slate-500">
-              {t.institucionDetalle.seguimientoLabel}
-            </div>
-          </div>
-          <div>
-            <div className="text-2xl font-bold text-sky-700 tabular-nums">
-              {resumenCatalogo.ecosistema}
-            </div>
-            <div className="text-xs text-slate-500">
-              {t.institucionDetalle.ecosistemaLabel}
-            </div>
+          <div className="border-l-2 border-editorial-accent pl-4 lg:pb-1">
+            <p className="font-mono text-xs uppercase tracking-[0.1em] text-slate-500">
+              {t.instituciones.registroLabel}
+            </p>
+            <p className="mt-1 font-editorial text-3xl font-semibold text-editorial-ink tabular-nums">
+              {String(indiceInstitucion).padStart(2, '0')} /{' '}
+              {String(instituciones.length).padStart(2, '0')}
+            </p>
           </div>
         </div>
-        <p className="mt-4 max-w-2xl text-xs leading-relaxed text-slate-500">
+
+        <div className="mt-8">
+          <ExpedienteMeta
+            items={[
+              {
+                label: t.institucionDetalle.tipoLabel,
+                value: t.instituciones.tipoLabel[inst.tipo],
+              },
+              {
+                label: t.institucionDetalle.proyectosLabel,
+                value: resumenCatalogo.total,
+                detail: t.instituciones.conteoDerivadoLabel,
+              },
+              {
+                label: t.institucionDetalle.ultimaVerificacionLabel,
+                value: ultimaVerificacion ? (
+                  <time dateTime={ultimaVerificacion}>
+                    {formatearFechaCatalogo(ultimaVerificacion, lc)}
+                  </time>
+                ) : (
+                  '—'
+                ),
+              },
+              {
+                label: t.institucionDetalle.fuenteInstitucionalLabel,
+                value: (
+                  <a
+                    href={inst.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-institucional-700 underline-offset-4 hover:underline"
+                  >
+                    {t.institucionDetalle.sitioOficialLabel} <span aria-hidden>↗</span>
+                  </a>
+                ),
+              },
+            ]}
+          />
+        </div>
+
+        <dl className="grid border-b border-editorial-rule sm:grid-cols-3">
+          <div className="border-b border-editorial-rule py-4 sm:border-b-0 sm:border-r sm:px-5 sm:first:pl-0">
+            <dt className="flex items-center gap-2 text-xs text-slate-500">
+              <span aria-hidden className="h-4 w-1 bg-emerald-600" />
+              {t.institucionDetalle.verificadosLabel}
+            </dt>
+            <dd className="mt-1 font-editorial text-3xl font-semibold text-editorial-ink tabular-nums">
+              {resumenCatalogo.verificado}
+            </dd>
+          </div>
+          <div className="border-b border-editorial-rule py-4 sm:border-b-0 sm:border-r sm:px-5">
+            <dt className="flex items-center gap-2 text-xs text-slate-500">
+              <span aria-hidden className="h-4 w-1 bg-amber-500" />
+              {t.institucionDetalle.seguimientoLabel}
+            </dt>
+            <dd className="mt-1 font-editorial text-3xl font-semibold text-editorial-ink tabular-nums">
+              {resumenCatalogo.seguimiento}
+            </dd>
+          </div>
+          <div className="py-4 sm:px-5 sm:last:pr-0">
+            <dt className="flex items-center gap-2 text-xs text-slate-500">
+              <span aria-hidden className="h-4 w-1 bg-sky-600" />
+              {t.institucionDetalle.ecosistemaLabel}
+            </dt>
+            <dd className="mt-1 font-editorial text-3xl font-semibold text-editorial-ink tabular-nums">
+              {resumenCatalogo.ecosistema}
+            </dd>
+          </div>
+        </dl>
+        <p className="mt-3 max-w-3xl text-xs leading-relaxed text-slate-500">
           {t.institucionDetalle.conteoNota}
         </p>
       </header>
 
-      <section className="mb-12">
-        <h2 className="text-xs uppercase tracking-wider text-institucional-700 font-medium mb-3">
-          {t.institucionDetalle.resumenLabel}
-        </h2>
-        <p className="text-base text-slate-700 text-pretty leading-relaxed">
+      <section className="border-t border-editorial-rule py-10" aria-labelledby="resumen-institucion">
+        <EncabezadoSeccionExpediente
+          id="resumen-institucion"
+          index="01"
+          title={t.institucionDetalle.resumenLabel}
+        />
+        <p className="mt-6 max-w-4xl text-lg leading-relaxed text-editorial-muted text-pretty sm:ml-[5.25rem]">
           {(inst.descripcion ?? inst.resumen)[lc]}
         </p>
       </section>
 
-      <section className="mb-12">
-        <h2 className="text-xs uppercase tracking-wider text-institucional-700 font-medium mb-4">
-          {t.institucionDetalle.proyectosLabel} ({resumenCatalogo.total})
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {proyectosInst.map((p) => (
-            <ProyectoCard key={p.id} proyecto={p} locale={lc} t={t} variant="full" />
+      <section className="border-t border-editorial-rule py-10" aria-labelledby="registro-institucion">
+        <EncabezadoSeccionExpediente
+          id="registro-institucion"
+          index="02"
+          title={`${t.institucionDetalle.proyectosLabel} (${resumenCatalogo.total})`}
+          description={t.institucionDetalle.registroSub}
+        />
+        <div className="mt-7 border-t border-editorial-rule sm:ml-[5.25rem]">
+          {proyectosOrdenados.map((proyecto, index) => (
+            <ProyectoCard
+              key={proyecto.id}
+              proyecto={proyecto}
+              locale={lc}
+              t={t}
+              variant="register"
+              registryIndex={index + 1}
+            />
           ))}
         </div>
       </section>
 
       {inst.lecciones && (
-        <section className="mb-8 bg-slate-50 border border-slate-200 rounded-lg p-6">
-          <h2 className="text-xs uppercase tracking-wider text-institucional-700 font-medium mb-2">
-            {t.institucionDetalle.leccionesLabel}
-          </h2>
-          <p className="text-base text-slate-700 text-pretty leading-relaxed">
-            {inst.lecciones[lc]}
-          </p>
+        <section className="border-t border-editorial-rule py-10" aria-labelledby="lectura-institucion">
+          <EncabezadoSeccionExpediente
+            id="lectura-institucion"
+            index="03"
+            title={t.institucionDetalle.leccionesLabel}
+          />
+          <div className="mt-7 border-l-2 border-editorial-accent pl-5 sm:ml-[5.25rem] sm:pl-7">
+            <p className="max-w-4xl font-editorial text-xl leading-relaxed text-editorial-ink text-pretty sm:text-2xl">
+              {inst.lecciones[lc]}
+            </p>
+          </div>
         </section>
       )}
+
+      <div className="border-t border-editorial-rule pt-8 text-sm font-semibold">
+        <Link
+          href={`/${lc}/instituciones`}
+          className="text-institucional-700 underline-offset-4 hover:underline"
+        >
+          ← {t.nav.instituciones}
+        </Link>
+      </div>
     </article>
   );
 }

@@ -2,8 +2,11 @@ import { describe, expect, it } from 'vitest';
 import { proyectos } from '../src/data/proyectos';
 import {
   formatearFechaCatalogo,
+  obtenerCronologiaProyecto,
   obtenerCapaCatalogo,
   obtenerFechaReferencia,
+  obtenerUltimaVerificacion,
+  ordenarProyectosExpediente,
   resumirInstitucionCatalogo,
 } from '../src/data/presentacion-catalogo';
 
@@ -40,5 +43,24 @@ describe('presentación del catálogo', () => {
     expect(formatearFechaCatalogo('2026', 'es')).toBe('2026');
     expect(formatearFechaCatalogo('2026-07', 'es')).toBe('julio de 2026');
     expect(formatearFechaCatalogo('2026-07-10', 'en')).toBe('Jul 10, 2026');
+  });
+
+  it('construye una cronología solo con fechas documentadas', () => {
+    const nymiz = proyectos.find((proyecto) => proyecto.id === 'pj-nymiz');
+    expect(nymiz && obtenerCronologiaProyecto(nymiz)).toEqual([
+      { fecha: '2024', tipo: 'inicio-operacion' },
+      { fecha: '2024-03-20', tipo: 'primera-evidencia' },
+      { fecha: '2026-08-19', tipo: 'ultima-verificacion' },
+    ]);
+  });
+
+  it('deriva el último corte institucional y prioriza sus capas', () => {
+    const poderJudicial = proyectos.filter(
+      (proyecto) => proyecto.institucionId === 'poder-judicial',
+    );
+    expect(obtenerUltimaVerificacion(poderJudicial)).toBe('2026-08-21');
+    expect(obtenerCapaCatalogo(ordenarProyectosExpediente(poderJudicial, 'es')[0])).toBe(
+      'verificado',
+    );
   });
 });

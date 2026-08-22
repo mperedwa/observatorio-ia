@@ -87,6 +87,9 @@ export interface Dictionary {
     proyectosLabel: string;
     conteoDerivadoLabel: string;
     verDetalle: string;
+    registroLabel: string;
+    actividadLabel: string;
+    ultimaVerificacionLabel: string;
     tipoLabel: {
       ministerio: string;
       judicial: string;
@@ -278,6 +281,7 @@ export interface Dictionary {
     notaUso: string;
   };
   proyectoDetalle: {
+    expedienteLabel: string;
     institucionLabel: string;
     categoriaLabel: string;
     estadoLabel: string;
@@ -298,10 +302,20 @@ export interface Dictionary {
     ultimaVerificacionLabel: string;
     proximaRevisionLabel: string;
     objetivoDeclaradoLabel: string;
+    alcanceTitulo: string;
+    cronologiaTitulo: string;
+    cronologiaSub: string;
+    cronologiaEventos: {
+      ultimaVerificacion: string;
+      proximaRevision: string;
+    };
+    hallazgosTitulo: string;
     confirmadoLabel: string;
     noDeterminadoLabel: string;
     preguntasAbiertasLabel: string;
     resultadosDocumentadosLabel: string;
+    resultadosSub: string;
+    sinResultadosDocumentados: string;
     evidenciaTitulo: string;
     evidenciaSub: string;
     fuentesTitulo: string;
@@ -318,6 +332,7 @@ export interface Dictionary {
     sinPreguntasAbiertas: string;
   };
   institucionDetalle: {
+    expedienteLabel: string;
     tipoLabel: string;
     sitioOficialLabel: string;
     resumenLabel: string;
@@ -331,6 +346,9 @@ export interface Dictionary {
     seguimientoLabel: string;
     ecosistemaLabel: string;
     conteoNota: string;
+    ultimaVerificacionLabel: string;
+    registroSub: string;
+    fuenteInstitucionalLabel: string;
   };
   analisis: {
     kicker: string;
@@ -561,6 +579,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
       proyectosLabel: 'iniciativas',
       conteoDerivadoLabel: 'clasificadas en el catálogo',
       verDetalle: 'Ver detalle',
+      registroLabel: 'Registro institucional',
+      actividadLabel: 'Iniciativas destacadas',
+      ultimaVerificacionLabel: 'Último corte',
       tipoLabel: {
         ministerio: 'Ministerio',
         judicial: 'Poder Judicial',
@@ -861,6 +882,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       notaUso: 'Atribución sugerida: "Observatorio IA Costa Rica · observatorioia.org". Las imágenes se pueden usar libremente en publicaciones, presentaciones y redes sociales.',
     },
     proyectoDetalle: {
+      expedienteLabel: 'Expediente de iniciativa',
       institucionLabel: 'Institución',
       categoriaLabel: 'Categoría',
       estadoLabel: 'Estado',
@@ -889,10 +911,20 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ultimaVerificacionLabel: 'Última verificación',
       proximaRevisionLabel: 'Próxima revisión',
       objetivoDeclaradoLabel: 'Objetivo declarado por la institución',
+      alcanceTitulo: 'Alcance documentado',
+      cronologiaTitulo: 'Cronología conocida',
+      cronologiaSub: 'Solo se muestran hitos con una fecha explícita en las fuentes o en la revisión editorial.',
+      cronologiaEventos: {
+        ultimaVerificacion: 'Última verificación editorial',
+        proximaRevision: 'Próxima revisión programada',
+      },
+      hallazgosTitulo: 'Lectura de la evidencia',
       confirmadoLabel: 'Qué está confirmado',
       noDeterminadoLabel: 'Qué no se pudo determinar',
       preguntasAbiertasLabel: 'Preguntas abiertas',
       resultadosDocumentadosLabel: 'Resultados documentados',
+      resultadosSub: 'Los resultados se publican solo cuando una fuente los atribuye de manera trazable a esta iniciativa.',
+      sinResultadosDocumentados: 'No se localizaron resultados públicos atribuibles a esta iniciativa en el corte actual.',
       evidenciaTitulo: 'Matriz de evidencia',
       evidenciaSub: 'Cada dimensión se evalúa por separado. Un estado no determinado se publica como tal y no se completa por inferencia.',
       fuentesTitulo: 'Fuentes y trazabilidad',
@@ -909,6 +941,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       sinPreguntasAbiertas: 'No se registraron preguntas abiertas adicionales en el corte actual.',
     },
     institucionDetalle: {
+      expedienteLabel: 'Expediente institucional',
       tipoLabel: 'Tipo',
       sitioOficialLabel: 'Sitio oficial',
       resumenLabel: 'Resumen ejecutivo',
@@ -922,6 +955,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
       seguimientoLabel: 'en seguimiento',
       ecosistemaLabel: 'de ecosistema',
       conteoNota: 'Los conteos se calculan desde las fichas actuales del catálogo y no desde una cifra declarada por la institución.',
+      ultimaVerificacionLabel: 'Último corte de verificación',
+      registroSub: 'Todas las iniciativas asociadas a esta institución, ordenadas por capa de evidencia y corte de verificación.',
+      fuenteInstitucionalLabel: 'Fuente institucional',
     },
     analisis: {
       kicker: 'Análisis',
@@ -1221,6 +1257,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
       proyectosLabel: 'initiatives',
       conteoDerivadoLabel: 'classified in the catalog',
       verDetalle: 'View details',
+      registroLabel: 'Institutional register',
+      actividadLabel: 'Featured initiatives',
+      ultimaVerificacionLabel: 'Latest review',
       tipoLabel: {
         ministerio: 'Ministry',
         judicial: 'Judicial Branch',
@@ -1520,6 +1559,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       notaUso: 'Suggested attribution: "AI Observatory Costa Rica · observatorioia.org". Images may be freely used in publications, presentations and social media.',
     },
     proyectoDetalle: {
+      expedienteLabel: 'Initiative file',
       institucionLabel: 'Institution',
       categoriaLabel: 'Category',
       estadoLabel: 'Status',
@@ -1548,10 +1588,20 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ultimaVerificacionLabel: 'Last verified',
       proximaRevisionLabel: 'Next review',
       objetivoDeclaradoLabel: 'Objective stated by the institution',
+      alcanceTitulo: 'Documented scope',
+      cronologiaTitulo: 'Known timeline',
+      cronologiaSub: 'Only milestones with an explicit date in the sources or editorial review are shown.',
+      cronologiaEventos: {
+        ultimaVerificacion: 'Latest editorial verification',
+        proximaRevision: 'Next scheduled review',
+      },
+      hallazgosTitulo: 'Evidence reading',
       confirmadoLabel: 'What is confirmed',
       noDeterminadoLabel: 'What could not be determined',
       preguntasAbiertasLabel: 'Open questions',
       resultadosDocumentadosLabel: 'Documented results',
+      resultadosSub: 'Results are published only when a source traceably attributes them to this initiative.',
+      sinResultadosDocumentados: 'No public results attributable to this initiative were found in the current review.',
       evidenciaTitulo: 'Evidence matrix',
       evidenciaSub: 'Each dimension is assessed separately. An undetermined state is published as such and is not filled in by inference.',
       fuentesTitulo: 'Sources and traceability',
@@ -1568,6 +1618,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       sinPreguntasAbiertas: 'No additional open questions were recorded in the current review.',
     },
     institucionDetalle: {
+      expedienteLabel: 'Institutional file',
       tipoLabel: 'Type',
       sitioOficialLabel: 'Official website',
       resumenLabel: 'Executive summary',
@@ -1581,6 +1632,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
       seguimientoLabel: 'under review',
       ecosistemaLabel: 'ecosystem records',
       conteoNota: 'Counts are derived from the current catalog records, not from a figure declared by the institution.',
+      ultimaVerificacionLabel: 'Latest verification cut',
+      registroSub: 'All initiatives associated with this institution, ordered by evidence layer and verification cut.',
+      fuenteInstitucionalLabel: 'Institutional source',
     },
     analisis: {
       kicker: 'Analysis',
