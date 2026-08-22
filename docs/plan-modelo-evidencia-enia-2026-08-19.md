@@ -422,14 +422,14 @@ El primer producto editorial derivado debería ser “Lo anunciado versus lo ver
 
 - Añadir `schemaVersion` separado de la versión del paquete.
 - Publicar conteos desglosados por `estadoCatalogo`, fase y tipo de iniciativa.
-- Añadir `/api/enia-acciones.json`.
-- Derivar `lastUpdate` del último cambio real del dataset, no de la hora de cada build.
+- [x] Añadir `/api/enia-acciones.json`.
+- [x] Derivar `lastUpdate` del último cambio real del dataset, no de la hora de cada build.
 - Mantener temporalmente `fuenteUrl` y `estado` como campos de compatibilidad, marcados como deprecados.
 - Documentar el cambio semántico antes de modificar el significado de `/api/proyectos.json`.
 
 ### Mantenimiento y experiencia general
 
-- Actualizar `README.md` y `planning.md`: ambos describen todavía el proyecto inicial y fases ya entregadas.
+- [x] Actualizar `README.md` y `planning.md`: ambos describen el catálogo, la API y las fases vigentes.
 - Añadir una verificación automática de enlaces externos con distinción entre enlace roto y servidores que bloquean `HEAD`.
 - Regenerar los assets de `/comparte` únicamente después de fijar la nueva cifra y el nuevo headline; hoy heredan la misma semántica amplia del contador.
 - Resolver la advertencia de `<img>` en `/comparte` o documentar por qué se conserva para descargas de tamaño exacto.
@@ -513,9 +513,11 @@ La Fase 4B completa el crosswalk y la investigación priorizada; la Fase 4C publ
 ### Fase 5 — API, historial y monitoreo
 
 - [x] Publicar schema y endpoint ENIA.
-- Registrar transiciones de estado y revisiones sin cambios.
-- Añadir cadencia de revisión: mensual para alto impacto/ENIA; trimestral o semestral para el resto.
-- Adaptar scrapers para proponer evidencias, no para convertir automáticamente menciones en proyectos verificados.
+- [x] Registrar transiciones de estado y revisiones sin cambios.
+- [x] Añadir cadencia de revisión según el frente: semanal, mensual, trimestral o semestral.
+- [x] Adaptar scrapers para proponer evidencias, no para convertir automáticamente menciones en proyectos verificados.
+
+La Fase 5B publica `monitoreo.json` y `/api/monitoreo.json`, transforma `/historial` en agenda y bitácora editorial, añade un watcher mensual de la ENIA y del PDF del Plan de Acción, y reemplaza los stubs de proyectos del pipeline por paquetes con estado `propuesta-no-verificada`. El comando `record-review` funciona como dry-run por defecto y solo actualiza la bitácora con `--apply`; nunca altera los datasets sustantivos.
 
 ## Criterios de aceptación
 

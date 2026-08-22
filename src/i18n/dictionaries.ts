@@ -109,6 +109,7 @@ export interface Dictionary {
     ultimaActualizacion: string;
     fuentes: string;
     quienMantiene: string;
+    historialMonitoreo: string;
     apiPublica: string;
     atribucion: string;
   };
@@ -548,6 +549,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ultimaActualizacion: 'Última actualización: agosto 2026',
       fuentes: 'Fuentes públicas: instituciones de Costa Rica, organismos multilaterales, academia y prensa.',
       quienMantiene: 'Quién mantiene el observatorio',
+      historialMonitoreo: 'Historial y monitoreo editorial',
       apiPublica: 'API pública JSON para periodistas/investigadores',
       atribucion: 'Un proyecto de',
     },
@@ -909,7 +911,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       titulo: 'Historial de actualizaciones del catálogo',
       intro:
         'Este observatorio se actualiza conforme se identifican nuevas fuentes públicas, proyectos institucionales, expedientes legislativos e indicadores sobre inteligencia artificial en Costa Rica.',
-      verHistorialCompleto: 'Ver historial completo de actualizaciones',
+      verHistorialCompleto: 'Ver historial y monitoreo',
       tableCols: {
         fecha: 'Fecha',
         tipo: 'Tipo',
@@ -924,10 +926,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
         recurso: 'Recurso',
       },
       historialPagina: {
-        titulo: 'Historial completo de actualizaciones',
-        sub: 'Registro cronológico de cada cambio al catálogo verificado del observatorio. La página principal muestra las últimas diez entradas; este historial cubre todas las actualizaciones desde el inicio del observatorio.',
+        titulo: 'Historial y monitoreo editorial',
+        sub: 'Agenda de revisiones y registro cronológico de cambios, transiciones de estado y comprobaciones que terminaron sin cambios.',
         metaDescripcion:
-          'Historial completo de actualizaciones del Observatorio IA Costa Rica: cada cambio al catálogo con fecha, tipo, descripción y fuente pública.',
+          'Historial y monitoreo del Observatorio IA Costa Rica: próximas revisiones, cambios de estado, comprobaciones sin cambios y fuentes públicas.',
         volverHome: 'Volver a la página principal',
       },
     },
@@ -1164,6 +1166,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ultimaActualizacion: 'Last updated: August 2026',
       fuentes: 'Public sources: Costa Rican institutions, multilateral organizations, academia and the press.',
       quienMantiene: 'Who maintains the observatory',
+      historialMonitoreo: 'Editorial history and monitoring',
       apiPublica: 'Public JSON API for journalists/researchers',
       atribucion: 'A project by',
     },
@@ -1525,7 +1528,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       titulo: 'Catalog update history',
       intro:
         'This observatory is updated as new public sources, institutional projects, legislative bills and indicators on artificial intelligence in Costa Rica are identified.',
-      verHistorialCompleto: 'View full update history',
+      verHistorialCompleto: 'View history and monitoring',
       tableCols: {
         fecha: 'Date',
         tipo: 'Type',
@@ -1540,10 +1543,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
         recurso: 'Resource',
       },
       historialPagina: {
-        titulo: 'Full update history',
-        sub: 'Chronological record of every change to the observatory’s verified catalog. The home page shows the latest ten entries; this archive covers every update since the observatory began.',
+        titulo: 'Editorial history and monitoring',
+        sub: 'Review schedule and chronological record of changes, status transitions and checks that concluded with no changes.',
         metaDescripcion:
-          'Full update history for AI Observatory Costa Rica: every catalog change with date, type, description and public source.',
+          'History and monitoring for AI Observatory Costa Rica: upcoming reviews, status changes, checks with no changes and public sources.',
         volverHome: 'Back to home',
       },
     },

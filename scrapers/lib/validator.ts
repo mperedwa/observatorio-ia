@@ -28,6 +28,7 @@ const datasets: DatasetSpec[] = [
   { name: 'changelog', jsonPath: 'json/changelog.json', schemaPath: 'schemas/changelog.schema.json' },
   { name: 'marcoPais', jsonPath: 'json/marcoPais.json', schemaPath: 'schemas/marcoPais.schema.json' },
   { name: 'eniaAcciones', jsonPath: 'json/eniaAcciones.json', schemaPath: 'schemas/eniaAcciones.schema.json' },
+  { name: 'monitoreo', jsonPath: 'json/monitoreo.json', schemaPath: 'schemas/monitoreo.schema.json' },
 ];
 
 function loadJson(relPath: string): unknown {
@@ -81,8 +82,33 @@ export function crossCheck(): boolean {
       intervenciones: Array<{
         id: string;
         indicadores: unknown[];
-        cruceCatalogo: { proyectoIds: string[] };
+        cruceCatalogo: {
+          proyectoIds: string[];
+          intervencionCanonicaId?: string;
+        };
       }>;
+    }>;
+  };
+  const marcoPais = loadJson('json/marcoPais.json') as {
+    instrumentos: unknown[];
+  };
+  const monitoreo = loadJson('json/monitoreo.json') as {
+    fechaCorte: string;
+    politica: { cadencias: Array<{ id: string }> };
+    frentes: Array<{
+      id: string;
+      metrica: string;
+      cadenciaId: string;
+      fechaUltimaRevision: string;
+      fechaProximaRevision: string;
+      alcance: { cantidad: number };
+    }>;
+    revisiones: Array<{
+      id: string;
+      fecha: string;
+      frenteId: string;
+      resultado: string;
+      transiciones: unknown[];
     }>;
   };
   let ok = true;
@@ -166,6 +192,90 @@ export function crossCheck(): boolean {
         );
         ok = false;
       }
+    }
+  }
+
+  const cadenciaIds = new Set(
+    monitoreo.politica.cadencias.map(({ id }) => id),
+  );
+  const frenteIds = new Set(monitoreo.frentes.map(({ id }) => id));
+  const idsRevision = new Set<string>();
+
+  if (frenteIds.size !== monitoreo.frentes.length) {
+    console.log('  FAIL monitoreo contiene IDs de frente duplicados');
+    ok = false;
+  }
+
+  const conteosMonitoreo: Record<string, number> = {
+    'legislacion-expedientes': (loadJson('json/legislacion.json') as unknown[]).length,
+    'enia-intervenciones-unicas': intervencionesEnia.filter(
+      ({ cruceCatalogo }) => !cruceCatalogo.intervencionCanonicaId,
+    ).length,
+    'catalogo-seguimiento': proyectos.filter(
+      ({ estadoCatalogo }) => estadoCatalogo === 'seguimiento',
+    ).length,
+    'catalogo-verificado': proyectos.filter(
+      ({ estadoCatalogo }) => estadoCatalogo === 'verificado',
+    ).length,
+    'catalogo-ecosistema': proyectos.filter(
+      ({ estadoCatalogo }) => estadoCatalogo === 'ecosistema',
+    ).length,
+    'marco-pais-instrumentos': marcoPais.instrumentos.length,
+    'indicador-ilia': 1,
+    'indicador-oecd': 2,
+  };
+
+  for (const frente of monitoreo.frentes) {
+    if (!cadenciaIds.has(frente.cadenciaId)) {
+      console.log(
+        `  FAIL frente de monitoreo "${frente.id}" referencia cadencia desconocida "${frente.cadenciaId}"`,
+      );
+      ok = false;
+    }
+    if (frente.fechaProximaRevision <= frente.fechaUltimaRevision) {
+      console.log(
+        `  FAIL frente de monitoreo "${frente.id}" no tiene próxima revisión posterior a la última`,
+      );
+      ok = false;
+    }
+    const conteoEsperado = conteosMonitoreo[frente.metrica];
+    if (conteoEsperado === undefined) {
+      console.log(
+        `  FAIL frente de monitoreo "${frente.id}" usa métrica desconocida "${frente.metrica}"`,
+      );
+      ok = false;
+    } else if (frente.alcance.cantidad !== conteoEsperado) {
+      console.log(
+        `  FAIL frente de monitoreo "${frente.id}" declara ${frente.alcance.cantidad}, pero "${frente.metrica}" deriva ${conteoEsperado}`,
+      );
+      ok = false;
+    }
+  }
+
+  for (const revision of monitoreo.revisiones) {
+    if (idsRevision.has(revision.id)) {
+      console.log(`  FAIL monitoreo contiene revisión duplicada "${revision.id}"`);
+      ok = false;
+    }
+    idsRevision.add(revision.id);
+    if (!frenteIds.has(revision.frenteId)) {
+      console.log(
+        `  FAIL revisión "${revision.id}" referencia frente desconocido "${revision.frenteId}"`,
+      );
+      ok = false;
+    }
+    if (revision.fecha > monitoreo.fechaCorte) {
+      console.log(
+        `  FAIL revisión "${revision.id}" ocurre después del corte ${monitoreo.fechaCorte}`,
+      );
+      ok = false;
+    }
+    const sinCambios = revision.resultado === 'sin-cambios';
+    if (sinCambios !== (revision.transiciones.length === 0)) {
+      console.log(
+        `  FAIL revisión "${revision.id}" no alinea resultado y transiciones`,
+      );
+      ok = false;
     }
   }
   return ok;

@@ -31,13 +31,12 @@ import { join } from 'node:path';
 
 const ROOT = process.cwd();
 const CLASSIFICATION_PATH = join(ROOT, 'scraper-runs', 'classification.json');
-const STUB_PATH = join(ROOT, 'scraper-runs', 'stub-nuevos.json');
 
 interface ClassifiedItem {
   titulo: string;
   url: string;
   source: string;
-  score: number;
+  score: number | null;
   matched_type?: string;
   matched_id?: string;
   reason?: string;
@@ -54,22 +53,28 @@ interface Classification {
     nuevos: number;
     revisar: number;
     ya_decidido?: number;
+    propuestas_evidencia?: number;
   };
   ya_existe?: ClassifiedItem[];
   ruido?: ClassifiedItem[];
   nuevos?: ClassifiedItem[];
   revisar?: ClassifiedItem[];
+  evidenceProposals?: EvidenceProposal[];
 }
 
-interface Stub {
+interface EvidenceProposal {
   id: string;
-  titulo: { es: string; en: string };
-  institucionId: string;
-  categoria: string;
-  estado: string;
-  desde: string;
-  descripcion: { es: string; en: string };
-  fuenteUrl: string;
+  status: 'propuesta-no-verificada';
+  target: { type: string; id: string | null };
+  titulo: string;
+  url: string;
+  scraperSource: string;
+  tipoFuenteSugerido: string;
+  requiereContrastePrimario: boolean;
+  dimensionesSugeridas: string[];
+  razonAutomatica: string;
+  accionEditorial: string;
+  puedeActualizarCatalogo: false;
 }
 
 function fmtFechaCR(iso: string): string {
@@ -84,18 +89,18 @@ function fmtFechaCR(iso: string): string {
   }
 }
 
-function buildBody(c: Classification, stubs: Stub[], runId: string): string {
+function buildBody(c: Classification, runId: string): string {
   const lines: string[] = [];
   lines.push(`<!-- scrape-review:${runId} -->`);
   lines.push(`**Scrape**: ${fmtFechaCR(c.sourceRanAt)} (run \`${runId}\`)`);
   lines.push('');
   lines.push(
-    `**Resumen**: ${c.totalDeduped} candidatos · ${c.counts.nuevos} nuevos · ${c.counts.revisar} a revisar · ${c.counts.ya_existe} ya existen · ${c.counts.ruido} ruido${c.counts.ya_decidido ? ` · ${c.counts.ya_decidido} ya decididos (suprimidos por memoria)` : ''}`,
+    `**Resumen**: ${c.totalDeduped} candidatos · ${c.counts.nuevos} nuevos · ${c.counts.revisar} a revisar · ${c.counts.propuestas_evidencia ?? c.evidenceProposals?.length ?? 0} propuestas de evidencia · ${c.counts.ya_existe} ya existen · ${c.counts.ruido} ruido${c.counts.ya_decidido ? ` · ${c.counts.ya_decidido} ya decididos (suprimidos por memoria)` : ''}`,
   );
   lines.push('');
 
   if (c.counts.nuevos > 0 && c.nuevos && c.nuevos.length > 0) {
-    lines.push('## 🆕 Candidatos NUEVOS para mergear');
+    lines.push('## 🆕 Candidatos nuevos para investigar');
     lines.push('');
     lines.push('| # | Score | Source | Título | URL |');
     lines.push('|---|-------|--------|--------|-----|');
@@ -124,23 +129,29 @@ function buildBody(c: Classification, stubs: Stub[], runId: string): string {
     lines.push('');
   }
 
-  if (stubs.length > 0) {
-    lines.push('## Stubs propuestos (esqueleto de proyectos.json)');
+  if (c.evidenceProposals && c.evidenceProposals.length > 0) {
+    lines.push('## Paquetes de evidencia propuestos');
     lines.push('');
-    lines.push('<details><summary>Ver stub-nuevos.json</summary>');
+    lines.push('Estas señales son **propuestas no verificadas**. No crean proyectos, no cambian estados y no prueban ejecución.');
     lines.push('');
-    lines.push('```json');
-    lines.push(JSON.stringify(stubs, null, 2));
-    lines.push('```');
-    lines.push('');
-    lines.push('</details>');
+    lines.push('| Objetivo | Dimensiones sugeridas | Tipo de fuente | Contraste primario | Acción |');
+    lines.push('|----------|-----------------------|----------------|--------------------|--------|');
+    for (const proposal of c.evidenceProposals) {
+      const target = proposal.target.id
+        ? `\`${proposal.target.id}\` (${proposal.target.type})`
+        : 'Candidato nuevo';
+      const dimensions = proposal.dimensionesSugeridas.map((item) => `\`${item}\``).join(', ');
+      lines.push(
+        `| ${target} | ${dimensions} | \`${proposal.tipoFuenteSugerido}\` | ${proposal.requiereContrastePrimario ? 'Sí' : 'No'} | \`${proposal.accionEditorial}\` |`,
+      );
+    }
     lines.push('');
   }
 
   lines.push('---');
   lines.push('');
   lines.push(
-    '_Generado automáticamente por `scripts/create-scrape-review-issue.ts`. El bot developer (SiriusOS) procesa este issue, cruza contra el repo, despacha al analista para verificación de fuentes primarias, y posta el resultado consolidado como comentario. La decisión final (GO/NO/UPDATE) ocurre por Telegram con Mario._',
+    '_Generado automáticamente por `scripts/create-scrape-review-issue.ts`. Los scrapers solo proponen evidencia. El bot developer (SiriusOS) contrasta las fuentes y la decisión final (GO/NO/UPDATE) ocurre con Mario; ninguna mención se convierte automáticamente en iniciativa verificada._',
   );
 
   return lines.join('\n');
@@ -228,14 +239,10 @@ async function main(): Promise<void> {
     return;
   }
 
-  const stubs: Stub[] = existsSync(STUB_PATH)
-    ? (JSON.parse(readFileSync(STUB_PATH, 'utf8')) as Stub[])
-    : [];
-
   await ensureLabel(token, repo, 'scrape-review');
 
   const title = `[scrape ${fmtFechaCR(c.sourceRanAt)}] ${c.counts.nuevos} nuevo(s), ${c.counts.revisar} a revisar`;
-  const body = buildBody(c, stubs, runId);
+  const body = buildBody(c, runId);
 
   const existing = await findExistingIssue(token, repo, runId);
   if (existing) {

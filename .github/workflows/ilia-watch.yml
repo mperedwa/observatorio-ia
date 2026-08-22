@@ -10,6 +10,8 @@ on:
   schedule:
     # Día 1 de cada mes a las 12:00 UTC (06:00 CR / 07:00 ET)
     - cron: '0 12 1 * *'
+    # Refuerzo semanal sep-nov, ventana histórica de publicación del ILIA
+    - cron: '0 12 * 9-11 1'
   workflow_dispatch:
 
 permissions:

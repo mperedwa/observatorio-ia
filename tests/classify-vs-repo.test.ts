@@ -9,8 +9,10 @@
 import { describe, it, expect } from 'vitest';
 import {
   classifyOne,
+  buildEvidenceProposal,
   hasCambioEstado,
   type ClassifiedCandidate,
+  type ClassifiedItem,
   type Proyecto,
   type RecursoItem,
   type ArticuloItem,
@@ -314,5 +316,78 @@ describe('hasCambioEstado', () => {
       url: 'https://example.org/x',
     });
     expect(hasCambioEstado(c)).toBe('aprobacion');
+  });
+});
+
+describe('propuestas de evidencia', () => {
+  it('convierte un candidato nuevo en evidencia no verificada, no en proyecto', () => {
+    const item: ClassifiedItem = {
+      bucket: 'nuevo',
+      reason: 'score relevante, sin match en repo',
+      candidate: candidate({
+        source: 'google-news',
+        titulo: 'Institución reporta resultados de un nuevo piloto de IA',
+        url: 'https://example.org/noticia',
+        score: 8,
+      }),
+      institucionId: null,
+    };
+
+    const proposal = buildEvidenceProposal(item);
+
+    expect(proposal).toMatchObject({
+      status: 'propuesta-no-verificada',
+      target: { type: 'candidato-nuevo', id: null },
+      tipoFuenteSugerido: 'prensa',
+      requiereContrastePrimario: true,
+      accionEditorial: 'investigar-candidato',
+      puedeActualizarCatalogo: false,
+    });
+    expect(proposal?.dimensionesSugeridas).toContain('existencia');
+    expect(proposal?.dimensionesSugeridas).toContain('resultado');
+  });
+
+  it('dirige una señal oficial al proyecto existente y sugiere dimensiones', () => {
+    const item: ClassifiedItem = {
+      bucket: 'revisar',
+      reason: "match de proyecto. Trigger update: 'implementa'",
+      matched_type: 'proyecto',
+      matched_id: 'pj-ejemplo',
+      candidate: candidate({
+        source: 'pj',
+        titulo: 'Poder Judicial implementa modelo predictivo y publica resultados',
+        url: 'https://pj.example/actualizacion',
+        score: 9,
+      }),
+      institucionId: 'poder-judicial',
+    };
+
+    const proposal = buildEvidenceProposal(item);
+
+    expect(proposal).toMatchObject({
+      target: { type: 'proyecto', id: 'pj-ejemplo' },
+      tipoFuenteSugerido: 'primaria-oficial',
+      requiereContrastePrimario: false,
+      accionEditorial: 'contrastar-con-ficha',
+      puedeActualizarCatalogo: false,
+    });
+    expect(proposal?.dimensionesSugeridas).toEqual(
+      expect.arrayContaining(['ejecucion', 'tecnica-ia', 'resultado']),
+    );
+  });
+
+  it('no propone evidencia para ruido ni contenido ya registrado sin cambios', () => {
+    const item: ClassifiedItem = {
+      bucket: 'ya_existe',
+      reason: 'misma URL',
+      candidate: candidate({
+        source: 'micitt',
+        titulo: 'Misma publicación',
+        url: 'https://example.org/misma',
+      }),
+      institucionId: 'micitt',
+    };
+
+    expect(buildEvidenceProposal(item)).toBeNull();
   });
 });

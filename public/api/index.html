@@ -25,40 +25,53 @@
 
   <h2>Endpoints</h2>
   <table>
-    <thead><tr><th>Endpoint</th><th>Items</th><th>Descripción</th></tr></thead>
+    <thead><tr><th>Endpoint</th><th>Items</th><th>Actualizado</th><th>Descripción</th></tr></thead>
     <tbody>
       <tr>
         <td><code><a href="/api/proyectos.json">/api/proyectos.json</a></code></td>
         <td>29</td>
+        <td>2026-08-21</td>
         <td>Catálogo de iniciativas relacionadas con IA en el sector público costarricense. Incluye sistemas, pilotos, planes y capacidades con descripción bilingüe ES/EN y una fuente pública consultada.</td>
       </tr>
       <tr>
         <td><code><a href="/api/instituciones.json">/api/instituciones.json</a></code></td>
         <td>9</td>
+        <td>2026-08-21</td>
         <td>Instituciones públicas con iniciativas relacionadas con IA documentadas (ministerios, autónomas, judicial, universidades e investigación).</td>
       </tr>
       <tr>
         <td><code><a href="/api/legislacion.json">/api/legislacion.json</a></code></td>
         <td>7</td>
-        <td>Expedientes de ley relacionados con IA en la Asamblea Legislativa de Costa Rica. Estado actualizado por scraper automatizado.</td>
+        <td>2026-08-21</td>
+        <td>Expedientes de ley relacionados con IA en la Asamblea Legislativa de Costa Rica. Los monitores proponen señales; el estado publicado requiere revisión editorial de una fuente oficial.</td>
       </tr>
       <tr>
         <td><code><a href="/api/indicadores.json">/api/indicadores.json</a></code></td>
         <td>5</td>
+        <td>2026-08-21</td>
         <td>Indicadores cuantitativos: ILIA 2025 (Índice Latinoamericano de IA), comparativa regional, KPIs hero del observatorio.</td>
       </tr>
       <tr>
         <td><code><a href="/api/brechas.json">/api/brechas.json</a></code></td>
         <td>7</td>
+        <td>2026-08-21</td>
         <td>Análisis de brechas: 7 capacidades que CR no tiene operativas vs Estonia/Singapur (gobernanza IA, X-Road, chatbot ciudadano, etc.).</td>
       </tr>
       <tr>
         <td><code><a href="/api/enia-acciones.json">/api/enia-acciones.json</a></code></td>
         <td>129</td>
+        <td>2026-08-21</td>
         <td>Inventario y crosswalk del Plan de Acción ENIA: 129 registros del documento oficial, 120 intervenciones únicas, clasificación por tipo, evidencia de ejecución y relaciones con el catálogo.</td>
       </tr>
       <tr>
+        <td><code><a href="/api/monitoreo.json">/api/monitoreo.json</a></code></td>
+        <td>8</td>
+        <td>2026-08-21</td>
+        <td>Agenda y bitácora editorial: cadencias por frente, próximas revisiones, cambios de estado y revisiones documentadas sin cambios.</td>
+      </tr>
+      <tr>
         <td><code><a href="/api/index.json">/api/index.json</a></code></td>
+        <td>—</td>
         <td>—</td>
         <td>Manifest: lista todos los endpoints con metadata.</td>
       </tr>
@@ -69,7 +82,7 @@
   <p>Cada endpoint devuelve un envelope con metadata:</p>
   <pre>{
   "version": "0.1.0",
-  "lastUpdate": "2026-05-04T...",
+  "lastUpdate": "2026-08-21T00:00:00.000Z",
   "count": 29,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
@@ -80,7 +93,7 @@
   <p>Datos disponibles bajo <strong>CC BY 4.0</strong>. Si los usás, atribuir <strong>"Observatorio IA Costa Rica" (observatorioia.org)</strong> con enlace.</p>
 
   <h2>Política editorial</h2>
-  <p>Este observatorio es independiente, sin afiliación gubernamental. Cada registro del catálogo incluye en <code>fuenteUrl</code> una fuente pública consultada, que puede ser primaria o secundaria. Las actualizaciones se procesan mediante revisión humana; los scrapers nunca tocan campos editoriales (titulo, descripcion, contexto, lecciones, resumen).</p>
+  <p>Este observatorio es independiente, sin afiliación gubernamental. Las fichas del catálogo separan existencia, ejecución, técnica de IA, uso operativo, resultados y gobernanza, e identifican qué respalda cada fuente. Los monitores y scrapers solo generan señales o propuestas de evidencia; ninguna mención crea, reclasifica ni verifica una iniciativa automáticamente.</p>
 
   <h2>Mantenimiento</h2>
   <p>Mario Pérez Edwards · UnikPrompt · <a href="mailto:info@observatorioia.org">info@observatorioia.org</a></p>

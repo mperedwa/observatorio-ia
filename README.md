@@ -1,36 +1,119 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Observatorio IA Costa Rica
 
-## Getting Started
+Sitio público e independiente que documenta adopción de inteligencia artificial, iniciativas en seguimiento, capacidades del ecosistema, legislación e indicadores del sector público costarricense.
 
-First, run the development server:
+Dominio: [observatorioia.org](https://observatorioia.org)
+
+## Estado del catálogo
+
+Corte editorial: 21 de agosto de 2026.
+
+- 29 iniciativas relacionadas con IA en 9 instituciones.
+- 6 adopciones verificadas, 7 iniciativas en seguimiento y 16 registros de ecosistema y capacidades.
+- 7 expedientes legislativos relacionados con IA.
+- 129 registros del Plan de Acción ENIA, que representan 120 intervenciones únicas.
+- 8 frentes con cadencia de monitoreo y bitácora pública de revisiones.
+- 7 endpoints JSON de lectura pública.
+
+Una iniciativa solo cuenta como adopción verificada cuando la técnica de IA y la ejecución en piloto u operación están respaldadas por fuentes trazables. Un anuncio o una meta oficial no demuestra ejecución.
+
+## Stack
+
+- Next.js 14 con App Router y `output: 'export'`.
+- TypeScript estricto.
+- TailwindCSS.
+- Datos JSON validados con AJV y reexports tipados.
+- Vitest para reglas editoriales y de integridad.
+- Playwright y Cheerio para scraping y control de fuentes.
+
+## Desarrollo local
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+El sitio queda disponible en [http://localhost:3000/es/](http://localhost:3000/es/). Para usar otro puerto:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run dev -- -p 3001
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Validación completa:
 
-## Learn More
+```bash
+npm run validate-data
+npm test
+npx tsc --noEmit
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+La build estática se genera en `out/`. No hace falta desplegar para revisar el sitio localmente.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Estructura principal
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```text
+src/app/[locale]/       páginas bilingües ES/EN
+src/components/         interfaz y visualizaciones
+src/data/json/          fuentes de verdad públicas
+src/data/schemas/       contratos JSON Schema
+scrapers/               detectores de señales y monitores
+scripts/                API, clasificación y herramientas editoriales
+tests/                  reglas de evidencia e integridad
+docs/                   auditorías y entregas por fase
+```
 
-## Deploy on Vercel
+Datasets principales:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `proyectos.json`: catálogo con modelo de evidencia v2.
+- `instituciones.json`: instituciones documentadas.
+- `legislacion.json`: expedientes y evidencia oficial del estado.
+- `eniaAcciones.json`: inventario y crosswalk del Plan de Acción ENIA.
+- `monitoreo.json`: cadencias, próximas revisiones, transiciones y revisiones sin cambios.
+- `indicadores.json`, `marcoPais.json`, `brechas.json` y `changelog.json`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Monitoreo editorial
+
+Los scrapers no crean ni verifican proyectos. Generan señales y paquetes con estado `propuesta-no-verificada`; una persona debe contrastar las fuentes antes de cambiar los datos.
+
+```bash
+npm run scrape:all
+npm run watch:enia
+npm run watch:ilia
+npm run watch:oecd
+```
+
+Para registrar una revisión, el comando funciona como simulación por defecto y solo escribe con `--apply`:
+
+```bash
+npm run record-review -- --input /ruta/revision.json
+npm run record-review -- --input /ruta/revision.json --apply
+```
+
+La implementación se documenta en [scrapers/README.md](scrapers/README.md).
+
+## API pública
+
+`npm run build` genera un índice en `/api/` y siete endpoints:
+
+- `/api/proyectos.json`
+- `/api/instituciones.json`
+- `/api/legislacion.json`
+- `/api/indicadores.json`
+- `/api/brechas.json`
+- `/api/enia-acciones.json`
+- `/api/monitoreo.json`
+
+Licencia de datos: CC BY 4.0.
+
+## Política editorial
+
+- Todo contenido público nuevo debe ser bilingüe.
+- Cada afirmación relevante debe poder rastrearse a una fuente concreta.
+- Existencia, ejecución, técnica, uso operativo, resultados y gobernanza se evalúan por separado.
+- Los campos sin evidencia suficiente se publican como no determinados.
+- La prensa puede orientar una investigación, pero no sustituye una fuente primaria al afirmar ejecución.
+- No se publican recomendaciones tácticas, presupuestos ni planes privados del proyecto maestro.
+- No se despliega ni se publica mientras el sitio esté en revisión local.
+
+El plan vigente está en [docs/plan-modelo-evidencia-enia-2026-08-19.md](docs/plan-modelo-evidencia-enia-2026-08-19.md).

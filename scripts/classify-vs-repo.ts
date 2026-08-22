@@ -15,8 +15,9 @@
  *                   ledger entre corridas. NO entra al issue ni al analista. Evita
  *                   que un re-reporte vuelva a correr todo el ciclo cada semana.
  *
- * Y scraper-runs/stub-nuevos.json (sólo si nuevos > 0): esqueleto con shape de
- * proyectos.json + placeholders TODO_* para revisión humana antes de mergear.
+ * Y scraper-runs/evidence-proposals.json: paquetes de evidencia para revisión
+ * humana. No tienen shape de proyecto, no asignan estado de catálogo y declaran
+ * explícitamente que no pueden actualizar datos por sí solos.
  *
  * Reglas en orden (primer match gana):
  *   0. firma (URL o título) matchea una decisión 'rejected' del ledger        -> YA_DECIDIDO
@@ -44,7 +45,7 @@ const PROYECTOS_PATH = join(ROOT, 'src', 'data', 'json', 'proyectos.json');
 const RECURSOS_PATH = join(ROOT, 'src', 'components', 'Recursos.tsx');
 const ANALISIS_DIR = join(ROOT, 'src', 'app', '[locale]', 'analisis');
 const CLASSIFICATION_OUT = join(ROOT, 'scraper-runs', 'classification.json');
-const STUB_OUT = join(ROOT, 'scraper-runs', 'stub-nuevos.json');
+const EVIDENCE_PROPOSALS_OUT = join(ROOT, 'scraper-runs', 'evidence-proposals.json');
 
 type Bilingual = { es: string; en: string };
 
@@ -294,6 +295,38 @@ export interface ClassifiedItem {
   institucionId: string | null;
 }
 
+export type ProposedEvidenceDimension =
+  | 'existencia'
+  | 'ejecucion'
+  | 'tecnica-ia'
+  | 'uso-operativo'
+  | 'resultado'
+  | 'gobernanza';
+
+export type ProposedSourceType =
+  | 'primaria-oficial'
+  | 'academica'
+  | 'prensa'
+  | 'otra-secundaria';
+
+export interface EvidenceProposal {
+  id: string;
+  status: 'propuesta-no-verificada';
+  target: {
+    type: MatchedType | 'candidato-nuevo';
+    id: string | null;
+  };
+  titulo: string;
+  url: string;
+  scraperSource: string;
+  tipoFuenteSugerido: ProposedSourceType;
+  requiereContrastePrimario: boolean;
+  dimensionesSugeridas: ProposedEvidenceDimension[];
+  razonAutomatica: string;
+  accionEditorial: 'contrastar-con-ficha' | 'investigar-candidato';
+  puedeActualizarCatalogo: false;
+}
+
 // Palabras que sugieren cambio de estado / update sobre un tema existente.
 // Sin tildes (post-normalize). Si una de estas aparece en el título o resumen
 // del candidato, el match contra el repo se promueve a REVISAR para que un
@@ -344,6 +377,84 @@ export function hasCambioEstado(c: ClassifiedCandidate): string | null {
     if (CAMBIO_ESTADO_KEYWORDS.has(tok)) return tok;
   }
   return null;
+}
+
+const SOURCE_TYPE_BY_SCRAPER: Record<string, ProposedSourceType> = {
+  micitt: 'primaria-oficial',
+  asamblea: 'primaria-oficial',
+  pj: 'primaria-oficial',
+  hacienda: 'primaria-oficial',
+  cgr: 'primaria-oficial',
+  mideplan: 'primaria-oficial',
+  citic: 'academica',
+  delfino: 'prensa',
+  'google-news': 'prensa',
+  camtic: 'otra-secundaria',
+};
+
+function inferEvidenceDimensions(item: ClassifiedItem): ProposedEvidenceDimension[] {
+  const classification = item.candidate.classification;
+  const text = normalize(
+    `${item.candidate.candidate.titulo} ${classification?.resumen ?? ''} ${classification?.tags?.join(' ') ?? ''}`,
+  );
+  const dimensions = new Set<ProposedEvidenceDimension>();
+
+  if (item.bucket === 'nuevo') dimensions.add('existencia');
+  if (/\b(anuncia|crea|presenta|publica|proyecto|programa|iniciativa)\b/.test(text)) {
+    dimensions.add('existencia');
+  }
+  if (/\b(lanza|implementa|implementado|despliegue|desplegado|piloto|opera|operativo|inaugura|reanuda|suspende|cancela|concluye)\b/.test(text)) {
+    dimensions.add('ejecucion');
+  }
+  if (/\b(uso|utiliza|usuarios|atenciones|solicitudes|casos|produccion|servicio)\b/.test(text)) {
+    dimensions.add('uso-operativo');
+  }
+  if (/\b(modelo|algoritmo|machine learning|aprendizaje automatico|gpt|ia generativa|predictivo|red neuronal)\b/.test(text)) {
+    dimensions.add('tecnica-ia');
+  }
+  if (/\b(resultado|resultados|reduce|reduccion|incrementa|incremento|ahorro|recupera|eficiencia|precision|exactitud)\b/.test(text)) {
+    dimensions.add('resultado');
+  }
+  if (/\b(gobernanza|protocolo|lineamiento|auditoria|riesgo|privacidad|seguridad|sesgo|transparencia|revision humana|impugnacion)\b/.test(text)) {
+    dimensions.add('gobernanza');
+  }
+
+  if (item.bucket === 'revisar' && dimensions.size === 0) {
+    dimensions.add('ejecucion');
+  }
+  if (dimensions.size === 0) dimensions.add('existencia');
+  return [...dimensions];
+}
+
+export function buildEvidenceProposal(item: ClassifiedItem): EvidenceProposal | null {
+  if (item.bucket !== 'nuevo' && item.bucket !== 'revisar') return null;
+
+  const source = item.candidate.source;
+  const tipoFuenteSugerido = SOURCE_TYPE_BY_SCRAPER[source] ?? 'otra-secundaria';
+  const targetType = item.bucket === 'nuevo'
+    ? 'candidato-nuevo'
+    : (item.matched_type ?? 'candidato-nuevo');
+  const targetId = item.bucket === 'nuevo' ? null : (item.matched_id ?? null);
+  const suffix = targetId
+    ? `${targetId}-${slugify(item.candidate.candidate.titulo)}`
+    : slugify(item.candidate.candidate.titulo);
+
+  return {
+    id: `evidencia-${slugify(source)}-${suffix}`.slice(0, 120),
+    status: 'propuesta-no-verificada',
+    target: { type: targetType, id: targetId },
+    titulo: item.candidate.candidate.titulo,
+    url: item.candidate.candidate.url,
+    scraperSource: source,
+    tipoFuenteSugerido,
+    requiereContrastePrimario:
+      tipoFuenteSugerido === 'prensa' || tipoFuenteSugerido === 'otra-secundaria',
+    dimensionesSugeridas: inferEvidenceDimensions(item),
+    razonAutomatica: item.reason,
+    accionEditorial:
+      item.bucket === 'nuevo' ? 'investigar-candidato' : 'contrastar-con-ficha',
+    puedeActualizarCatalogo: false,
+  };
 }
 
 export function decideBucketForMatch(c: ClassifiedCandidate, match: MatchResult): ClassifiedItem {
@@ -542,38 +653,8 @@ export function classifyOne(
   };
 }
 
-const INSTITUCION_TO_CATEGORIA: Record<string, string> = {
-  'poder-judicial': 'judicial',
-  ccss: 'salud',
-  hacienda: 'fiscal',
-  mep: 'educacion',
-  micitt: 'infraestructura',
-  ucr: 'educacion',
-  cenat: 'infraestructura',
-};
-
 function slugify(s: string): string {
   return normalize(s).split(/\s+/).slice(0, 6).join('-').slice(0, 60) || 'sin-titulo';
-}
-
-function buildStub(item: ClassifiedItem): Partial<Proyecto> {
-  const c = item.candidate;
-  const inst = item.institucionId ?? 'TODO';
-  const id = `${inst.replace('poder-judicial', 'pj')}-${slugify(c.candidate.titulo)}`;
-  const categoria = inst === 'TODO' ? 'TODO_categoria' : (INSTITUCION_TO_CATEGORIA[inst] ?? 'TODO_categoria');
-  return {
-    id,
-    titulo: { es: c.candidate.titulo, en: 'TODO_translate_en' },
-    institucionId: inst,
-    categoria,
-    estado: 'planificado',
-    desde: new Date().toISOString().slice(0, 4),
-    descripcion: {
-      es: c.classification?.resumen ?? 'TODO_descripcion_es',
-      en: 'TODO_translate_en',
-    },
-    fuenteUrl: c.candidate.url,
-  };
 }
 
 // Parsers tolerantes para Recursos.tsx y translations.ts de artículos. Estos
@@ -697,6 +778,10 @@ function main(): void {
     reason: x.reason,
   });
 
+  const evidenceProposals = [...revisar, ...nuevos]
+    .map(buildEvidenceProposal)
+    .filter((proposal): proposal is EvidenceProposal => proposal !== null);
+
   const output = {
     classifiedAt: new Date().toISOString(),
     sourceRanAt: report.ranAt,
@@ -708,6 +793,7 @@ function main(): void {
       nuevos: nuevos.length,
       revisar: revisar.length,
       ya_decidido: ya_decidido.length,
+      propuestas_evidencia: evidenceProposals.length,
     },
     ya_existe: ya_existe.map(serializeItem),
     revisar: revisar.map(serializeItem),
@@ -729,18 +815,33 @@ function main(): void {
       tags: x.candidate.classification?.tags ?? [],
       reason: x.reason,
     })),
+    evidenceProposals,
   };
 
   writeFileSync(CLASSIFICATION_OUT, JSON.stringify(output, null, 2) + '\n');
-  console.log(
-    `classify-vs-repo: ${nuevos.length} nuevos, ${revisar.length} a revisar, ${ya_existe.length} ya existen, ${ruido.length} ruido, ${ya_decidido.length} ya decididos (suprimidos) → ${CLASSIFICATION_OUT}`,
+  writeFileSync(
+    EVIDENCE_PROPOSALS_OUT,
+    JSON.stringify(
+      {
+        generatedAt: output.classifiedAt,
+        sourceRanAt: output.sourceRanAt,
+        policy: {
+          status: 'propuesta-no-verificada',
+          canUpdateCatalog: false,
+          note: 'Cada propuesta requiere contraste editorial. Una mención no prueba ejecución ni autoriza crear o reclasificar una iniciativa.',
+        },
+        proposals: evidenceProposals,
+      },
+      null,
+      2,
+    ) + '\n',
   );
-
-  if (nuevos.length > 0) {
-    const stubs = nuevos.map((x) => buildStub(x));
-    writeFileSync(STUB_OUT, JSON.stringify(stubs, null, 2) + '\n');
-    console.log(`classify-vs-repo: stub-nuevos.json escrito con ${stubs.length} esqueletos`);
-  }
+  console.log(
+    `classify-vs-repo: ${nuevos.length} nuevos, ${revisar.length} a revisar, ${evidenceProposals.length} propuestas de evidencia, ${ya_existe.length} ya existen, ${ruido.length} ruido, ${ya_decidido.length} ya decididos (suprimidos) → ${CLASSIFICATION_OUT}`,
+  );
+  console.log(
+    `classify-vs-repo: paquetes no verificables escritos en ${EVIDENCE_PROPOSALS_OUT}; no se generan stubs de proyectos`,
+  );
 }
 
 // Solo ejecutar main() cuando se invoca el script directamente (no al

@@ -69,12 +69,13 @@ jobs:
       - name: Classify candidates vs repo (proyectos.json)
         # Contrasta cada candidato del scrape contra los proyectos del repo.
         # Marca YA_EXISTE / RUIDO / NUEVO en scraper-runs/classification.json
-        # y genera stub-nuevos.json para los NUEVOS (esqueleto listo a revisar).
+        # y genera evidence-proposals.json. Las propuestas no tienen shape de
+        # proyecto, no asignan estado y nunca actualizan el catálogo.
         run: npm run classify-vs-repo
 
       - name: Notify Telegram (clasificación vs repo)
         # Mensaje específico: 0 nuevos → corto "cobertura al día";
-        # ≥1 nuevo → lista numerada + GO request. Skip silencioso sin secrets.
+        # ≥1 nuevo → lista numerada para priorizar investigación. Skip sin secrets.
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}

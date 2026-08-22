@@ -6,7 +6,7 @@ Sitio público que mapea proyectos, legislación e indicadores de inteligencia a
 - Next.js 14 (App Router) con `output: 'export'` — sitio 100% estático
 - TypeScript estricto
 - TailwindCSS + paleta institucional (`institucional-*` extendida en `tailwind.config.ts`)
-- Datos en `src/data/*.ts` (TypeScript exports). Migrar a JSON en Fase 2 cuando los scrapers los pueblen.
+- Datos fuente en `src/data/json/*.json`, validados con AJV y reexportados con tipos desde `src/data/*.ts`.
 
 ## Comandos
 ```bash
@@ -18,16 +18,18 @@ npm run start      # sirve la build (no usar para edición)
 ## Estructura
 - `src/app/` — root layout + redirect page.tsx (`/` → `/es/`)
 - `src/app/[locale]/` — layout + page.tsx home por idioma (`generateStaticParams` produce `es` y `en`)
-  - `proyectos/[id]/page.tsx` — detalle por proyecto (22 páginas: 11 × 2 locales)
-  - `instituciones/[id]/page.tsx` — detalle por institución (10 páginas: 5 × 2)
+  - `proyectos/[id]/page.tsx` — detalle por iniciativa (58 páginas: 29 × 2 locales)
+  - `instituciones/[id]/page.tsx` — detalle por institución (18 páginas: 9 × 2)
   - `analisis/page.tsx` — brechas y benchmarks regionales (público parcial del plan maestro)
   - `quien-mantiene/page.tsx` — autoría, metodología y contacto
 - `src/i18n/` — `config.ts` (locales, tipo `Bilingual`) + `dictionaries.ts` (UI strings ES/EN tipados con `Dictionary`)
 - `src/components/` — Hero, TimelineAdopcion, InstitucionesGrid, MapaProyectos, Legislacion, Indicadores (incluye ChartILIA con Recharts), Recursos, Acerca, Nav, Footer, LanguageToggle, Breadcrumb, ProyectoCard, BrechaCard. Todos reciben `locale` y/o `t: Dictionary` por props. Las visualizaciones de Fase 4 (TimelineAdopcion, ChartILIA, MapaProyectos) son client components con tooltips en hover y drill-down al click.
 - `src/data/` — fuente de verdad. Datos viven como **JSON validable con AJV** en `src/data/json/`; los `.ts` son reexports tipados. **Strings de UI son `Bilingual = {es, en}`**, no strings planos. Campos no-traducibles (URLs, IDs, números, años) quedan como string/number plano.
-  - `json/instituciones.json` (6 instituciones: PJ, CCSS, Hacienda, MEP, MICITT, CENAT)
-  - `json/proyectos.json` (16 proyectos)
-  - `json/legislacion.json` (3 expedientes)
+  - `json/instituciones.json` (9 instituciones)
+  - `json/proyectos.json` (29 iniciativas)
+  - `json/legislacion.json` (7 expedientes)
+  - `json/eniaAcciones.json` (129 registros fuente, 120 intervenciones únicas)
+  - `json/monitoreo.json` (8 frentes, cadencias y bitácora editorial)
   - `json/indicadores.json` (ilia2025 + comparativaRegional + kpisHero)
   - `json/brechas.json` (7 brechas vs Estonia/Singapur)
   - `schemas/*.schema.json` — JSON Schema draft-07 que valida cada dataset (ejecutar con `npm run validate-data`)
@@ -67,11 +69,13 @@ El proyecto VIVÍA en `~/Desktop/Proyectos/` (sincronizado por iCloud Drive). Mo
 4. Verificar `ls out/en/ out/es/` — ambos deben tener `index.html`
 
 ## Estado
-Fase 9 entregada (2026-05-04): **API pública JSON read-only**. 5 endpoints + manifest + página HTML índice bajo `/api/` (servido por Vercel desde `out/api/`). Headers CORS abiertos via `vercel.json`. Cada endpoint envuelve los datos en `{version, lastUpdate, count, source, license, data}`. Licencia CC BY 4.0. `prebuild` corre `scripts/build-api.ts` automáticamente. Footer del sitio (ES/EN) ahora linkea a `/api/`. Endpoints: proyectos, instituciones, legislación, indicadores, brechas.
+Fase 5B del plan de evidencia entregada (2026-08-21): **monitoreo y trazabilidad editorial**. Ocho frentes con cadencia, bitácora de cambios y revisiones sin cambios, monitor mensual ENIA/Plan, propuestas de evidencia de scrapers sin stubs ni altas automáticas, herramienta `record-review` con dry-run y endpoint `/api/monitoreo.json`.
+
+La API pública JSON read-only tiene 7 endpoints + manifest + índice HTML bajo `/api/`: proyectos, instituciones, legislación, indicadores, brechas, ENIA y monitoreo. Cada endpoint envuelve los datos en `{version, lastUpdate, count, source, license, data}`. Licencia CC BY 4.0.
 
 Antes (mismo día): Fase 8.2 (Tier C: CGR + MIDEPLAN, **10 scrapers** totales, 27 candidatos típicos). Fase 8.1 (Tier B vía Google News + Hacienda Playwright). Fase 8 (Tier A: pj + delfino + citic + `mentionsAI` con word boundaries).
 
-Anteriormente (mayo 2026): Fase 6.1 (notificación Telegram filtrada tras scrape), Fase 6 (clasificador LLM Groq/Llama-3.3-70b), Fase 7 (UCR 7° institución, 18 proyectos), Fase A (assets /comparte), Fase 5 (scrapers MVP + JSON validable).
+Anteriormente (mayo 2026): Fase 6.1 (notificación Telegram filtrada tras scrape), Fase 6 (clasificador LLM Groq/Llama-3.1-8b-instant), Fase 7 (UCR 7° institución, 18 proyectos), Fase A (assets /comparte), Fase 5 (scrapers MVP + JSON validable).
 
 Próximas fases potenciales:
 - Posts LinkedIn 02-05 (campaña ya iniciada con post 01)
@@ -80,7 +84,7 @@ Próximas fases potenciales:
 
 Datos en `src/data/json/` validados por schemas en `src/data/schemas/`. Los `.ts` quedan como reexports tipados. Política editorial: scrapers nunca tocan campos curados (titulo, descripcion, contexto, lecciones, resumen). Candidatos de Google News y Delfino son **prensa, no fuente oficial** — exigen validación contra fuente primaria. Informes CGR/DFOE son evidencia oficial.
 
-Scripts npm: `validate-data`, `scrape:micitt`, `scrape:camtic`, `scrape:asamblea`, `scrape:pj`, `scrape:delfino`, `scrape:citic`, `scrape:google-news`, `scrape:hacienda`, `scrape:cgr`, `scrape:mideplan`, `scrape:all`. Detalle en `scrapers/README.md`.
+Scripts npm: `validate-data`, `scrape:micitt`, `scrape:camtic`, `scrape:asamblea`, `scrape:pj`, `scrape:delfino`, `scrape:citic`, `scrape:google-news`, `scrape:hacienda`, `scrape:cgr`, `scrape:mideplan`, `scrape:all`, `watch:enia`, `watch:ilia`, `watch:oecd`, `record-review`. Detalle en `scrapers/README.md`.
 
 Dependencias nuevas: `recharts@3.8.1` (Fase 4), `ajv@8` + `ajv-formats@3` + `tsx@4` + `playwright@1` + `cheerio@1` (Fase 5, todas devDeps salvo recharts).
 

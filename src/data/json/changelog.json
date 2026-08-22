@@ -3,6 +3,18 @@
     "fecha": "2026-08-21",
     "tipo": "recurso",
     "actualizacion": {
+      "es": "Se publica la agenda y bitácora de monitoreo editorial. Ocho frentes muestran su alcance, última revisión, próxima fecha y cadencia; la bitácora registra transiciones concretas y también revisiones que concluyeron sin cambios. Los scrapers dejan de generar esqueletos de proyectos y producen propuestas de evidencia que no pueden actualizar el catálogo automáticamente.",
+      "en": "The editorial monitoring schedule and review log are released. Eight areas show their scope, last review, next date and cadence; the log records specific transitions as well as reviews that concluded with no changes. Scrapers no longer generate project stubs and instead produce evidence proposals that cannot update the catalog automatically."
+    },
+    "fuente": {
+      "es": "Política de monitoreo y trazabilidad editorial, corte 21-ago-2026",
+      "en": "Editorial monitoring and traceability policy, cutoff Aug 21, 2026"
+    }
+  },
+  {
+    "fecha": "2026-08-21",
+    "tipo": "recurso",
+    "actualizacion": {
       "es": "Se publica el explorador bilingüe del Plan de Acción ENIA. La vista conserva los 129 registros oficiales, distingue 120 intervenciones únicas y señala 9 registros que repiten una acción. También separa 29 soluciones de IA declaradas de 83 acciones que no son sistemas. El crosswalk queda en 6 coincidencias exactas, 9 parciales y 22 compromisos de solución que permanecen solo en ENIA, con ejecución evaluada por separado.",
       "en": "The bilingual ENIA Action Plan explorer is released. The view preserves all 129 official records, distinguishes 120 unique interventions and identifies 9 records that repeat an action. It also separates 29 declared AI solutions from 83 actions that are not systems. The crosswalk now contains 6 exact matches, 9 partial matches and 22 solution commitments that remain ENIA-only, with execution assessed separately."
     },

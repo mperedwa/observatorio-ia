@@ -1,0 +1,48 @@
+name: Watch ENIA y Plan de Acción
+
+# Monitor mensual de la página oficial del MICITT y de la huella del PDF que
+# alimenta el inventario ENIA. Una diferencia genera una alerta para revisión;
+# nunca modifica el catálogo ni interpreta un cambio de documento como ejecución.
+
+on:
+  schedule:
+    # Día 21 de cada mes a las 12:00 UTC (06:00 CR / 08:00 ET en verano)
+    - cron: '0 12 21 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  watch-enia:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run ENIA watcher
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: npm run watch:enia
+
+      - name: Commit watcher state if changed
+        run: |
+          if [ -n "$(git status --porcelain scraper-runs/enia-state.json)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add scraper-runs/enia-state.json
+            git commit -m "chore(enia-watch): actualiza estado tras chequeo mensual"
+            git push
+          fi

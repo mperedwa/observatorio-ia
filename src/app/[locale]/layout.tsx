@@ -83,10 +83,10 @@ export default async function LocaleLayout({
   if (!locales.includes(locale as Locale)) notFound();
   const t = getDictionary(locale as Locale);
   return (
-    <>
+    <div lang={locale}>
       <Nav locale={locale as Locale} t={t} />
       <main lang={locale}>{children}</main>
       <Footer locale={locale as Locale} t={t} />
-    </>
+    </div>
   );
 }

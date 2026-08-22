@@ -1,10 +1,10 @@
 # Scrapers
 
-Scripts que detectan cambios en fuentes oficiales y abren un PR para revisión humana. **Nunca** publican datos directamente a producción.
+Scripts que detectan señales en fuentes públicas y abren colas de revisión humana mediante GitHub Issues. **Nunca** publican datos directamente ni convierten una mención en un proyecto verificado.
 
 ## Política editorial
 
-Los scrapers **jamás** modifican estos campos (curados editorialmente):
+Los scrapers **jamás** modifican los datasets curados. En particular, no alteran:
 
 - `titulo`
 - `descripcion`
@@ -12,13 +12,13 @@ Los scrapers **jamás** modifican estos campos (curados editorialmente):
 - `contexto`
 - `lecciones`
 
-Solo actualizan campos verificables desde la fuente: `estado`, `presentado`, `desde`, `resultado` (cuando viene cifrado de fuente oficial).
+Los cambios de estado legislativo y los candidatos se escriben en reportes dentro de `scraper-runs/`. Después de contrastarlos, una persona puede registrarlos editorialmente en los JSON fuente.
 
-Para nuevos proyectos detectados en MICITT/CAMTIC, los scrapers anotan el hallazgo como `candidate` en el reporte (no hacen `add` automático). Mario decide si promover el candidato a entrada formal.
+Para hallazgos nuevos o posibles actualizaciones, `classify-vs-repo` genera `evidence-proposals.json`. Cada paquete indica fuente sugerida, dimensiones que podrían estar respaldadas y si hace falta localizar una fuente primaria. Su estado siempre es `propuesta-no-verificada` y `puedeActualizarCatalogo` siempre es `false`.
 
 ## Clasificador LLM (opcional, Fase 6)
 
-Si `GROQ_API_KEY` está disponible en el entorno, el orquestador clasifica cada candidato con **Llama 3.3 70B vía Groq** (free tier, español nativo). Cada candidato recibe:
+Si `GROQ_API_KEY` está disponible en el entorno, el orquestador clasifica cada candidato con **Llama 3.1 8B Instant vía Groq**. Cada candidato recibe:
 
 - **score** (0-10): qué tan relevante es para el observatorio
 - **tipo**: `proyecto-nuevo`, `actualizacion`, `comunicado`, `evento`, `ruido`
@@ -52,7 +52,7 @@ npm run validate-data
 # Correr un scraper individual (requiere browsers de Playwright para fallback)
 npm run scrape:micitt    # MICITT (Drupal)
 npm run scrape:camtic    # CAMTIC (WordPress REST API)
-npm run scrape:asamblea  # Asamblea Legislativa (3 expedientes IA)
+npm run scrape:asamblea  # Asamblea Legislativa (7 expedientes relacionados con IA)
 npm run scrape:pj           # Poder Judicial Sala de Prensa (Joomla, paginado)
 npm run scrape:delfino      # Delfino.cr RSS (prensa editorial)
 npm run scrape:citic        # CITIC-UCR RSS (académico, IA software + ético-IA)
@@ -61,8 +61,17 @@ npm run scrape:hacienda     # Tier B: Hacienda con Playwright (best-effort)
 npm run scrape:cgr          # Tier C: Contraloría General (RSS noticias + RSS informes DFOE)
 npm run scrape:mideplan     # Tier C: MIDEPLAN listado /listado-noticias (Drupal Views)
 
-# Correr los 10 + aplicar cambios + escribir reporte
+# Correr los 10 y escribir reportes/propuestas, sin aplicar cambios
 npm run scrape:all
+
+# Monitores de versiones e indicadores
+npm run watch:enia
+npm run watch:ilia
+npm run watch:oecd
+
+# Registrar una revisión editorial; dry-run por defecto
+npm run record-review -- --input /ruta/revision.json
+npm run record-review -- --input /ruta/revision.json --apply
 ```
 
 Si Playwright no está instalado localmente, los scripts caen a `fetch` directo cuando es posible. Para instalar browsers:
@@ -79,10 +88,13 @@ scrapers/
 │   ├── source.ts       # fetch (estático o Playwright) + helpers IA
 │   ├── diff.ts         # tipos ProposedChange, applyChange, reportes
 │   ├── validator.ts    # AJV + cross-checks de integridad
-│   └── classifier.ts   # cliente Groq/Llama 3.3 (Fase 6)
+│   └── classifier.ts   # cliente Groq/Llama 3.1 (Fase 6)
+├── enia-watch.ts       # huellas de la página MICITT + PDF del Plan de Acción
+├── ilia-watch.ts       # detector de nueva edición del ILIA
+├── oecd-watch.ts       # detector DGI / OURdata
 ├── micitt.ts           # noticias MICITT (Drupal)
 ├── camtic.ts           # noticias CAMTIC (WordPress REST API)
-├── asamblea.ts         # estado de los 3 expedientes IA
+├── asamblea.ts         # estado de los 7 expedientes relacionados con IA
 ├── pj.ts               # Poder Judicial Sala de Prensa (Joomla, paginado)
 ├── delfino.ts          # Delfino.cr RSS (prensa editorial CR)
 ├── citic.ts            # CITIC-UCR RSS (académico, IA software + ético-IA)
@@ -102,11 +114,13 @@ scrapers/
 
 ## GitHub Action
 
-`.github/workflows/scrape.yml` corre lunes/miércoles/viernes 12:00 UTC (06:00 CR). Si detecta cambios en `src/data/json/`, abre un PR contra `main` con:
+`.github/workflows/scrape.yml` corre lunes/miércoles/viernes a las 12:00 UTC (06:00 CR). Clasifica las señales y, cuando hace falta revisión, abre GitHub Issues con las etiquetas `scrape-review` o `legislacion-update`. Los reportes se guardan como artefactos por 30 días; el workflow no crea branches, PR ni commits de datos.
 
-- Etiquetas: `scraper-auto`, `needs-review`
-- Cuerpo: contenido de `.scrapers/last-run.md`
-- Branch: `auto/scrape-<run-id>`
+Los monitores dedicados tienen su propia cadencia:
+
+- `enia-watch.yml`: mensual; compara página oficial y PDF.
+- `ilia-watch.yml`: mensual, con vigilancia semanal entre septiembre y noviembre.
+- `oecd-watch.yml`: semestral, acorde con la publicación histórica de DGI/OURdata.
 
 Para correr manualmente desde GitHub: Actions → "Scrape fuentes oficiales" → Run workflow.
 
@@ -125,7 +139,7 @@ Selectores actuales (mantener al día):
 |---|---|---|
 | MICITT | `fetchNotas` en `micitt.ts` | URL: `/micitt-Informa/noticias`. Selector: `a[href^="/el-sector-informa/"]` (filtrando "Leer más"). |
 | CAMTIC | `fetchNotas` en `camtic.ts` | WordPress REST API: `/wp-json/wp/v2/posts?per_page=20&_fields=id,date,link,title,excerpt`. Devuelve JSON estable; el RSS feed devolvía 0 items desde IPs no-CR. |
-| Asamblea | `fetchExpedienteData` en `asamblea.ts` | URL pattern `Detalle Proyectos de Ley.aspx?Numero_Proyecto=...`, extrae texto de `<body>` y normaliza a enum de estado. |
+| Asamblea | `fetchExpedienteData` en `asamblea.ts` | Lee dinámicamente los 7 números de `legislacion.json`, consulta sus fichas y normaliza únicamente estados accionables. |
 | Poder Judicial | `parseListing` en `pj.ts` | Joomla, categoría 8 Sala de Prensa. URL: `/index.php/component/content/category/8-sala-de-prensa?Itemid=409&start=N`. Pagina 4 páginas (≈20 notas). Extrae IDs+slugs de URLs `/article/<id>-<slug>`; el RSS de Joomla devuelve `<title>` vacío. |
 | Delfino.cr | `parseFeed` en `delfino.ts` | RSS oficial: `https://delfino.cr/feed`. Filtra por keywords IA + nombres instituciones gov (CCSS, MICITT, Hacienda, Asamblea, ENIA, etc.). Prensa editorial — los candidatos exigen validación contra fuente primaria antes de cualquier `add`/`update`. |
 | CITIC-UCR | `parseFeed` en `citic.ts` | RSS oficial: `https://citic.ucr.ac.cr/rss.xml`. Centro académico ya catalogado (proyecto ucr-citic-ia-software + Erasmus+ CIOdD). Filtra IA, ética IA, machine learning, computación cuántica, alianzas Erasmus. |

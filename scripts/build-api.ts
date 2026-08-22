@@ -103,6 +103,8 @@ interface Dataset {
   outputFilename?: string;
   endpoint: string;
   description: string;
+  /** Último cambio editorial real del dataset; nunca la hora de build. */
+  lastUpdate: string;
   getCount?: (data: unknown) => number;
 }
 
@@ -110,30 +112,35 @@ const DATASETS: Dataset[] = [
   {
     filename: 'proyectos.json',
     endpoint: '/api/proyectos.json',
+    lastUpdate: '2026-08-21',
     description:
       'Catálogo de iniciativas relacionadas con IA en el sector público costarricense. Incluye sistemas, pilotos, planes y capacidades con descripción bilingüe ES/EN y una fuente pública consultada.',
   },
   {
     filename: 'instituciones.json',
     endpoint: '/api/instituciones.json',
+    lastUpdate: '2026-08-21',
     description:
       'Instituciones públicas con iniciativas relacionadas con IA documentadas (ministerios, autónomas, judicial, universidades e investigación).',
   },
   {
     filename: 'legislacion.json',
     endpoint: '/api/legislacion.json',
+    lastUpdate: '2026-08-21',
     description:
-      'Expedientes de ley relacionados con IA en la Asamblea Legislativa de Costa Rica. Estado actualizado por scraper automatizado.',
+      'Expedientes de ley relacionados con IA en la Asamblea Legislativa de Costa Rica. Los monitores proponen señales; el estado publicado requiere revisión editorial de una fuente oficial.',
   },
   {
     filename: 'indicadores.json',
     endpoint: '/api/indicadores.json',
+    lastUpdate: '2026-08-21',
     description:
       'Indicadores cuantitativos: ILIA 2025 (Índice Latinoamericano de IA), comparativa regional, KPIs hero del observatorio.',
   },
   {
     filename: 'brechas.json',
     endpoint: '/api/brechas.json',
+    lastUpdate: '2026-08-21',
     description:
       'Análisis de brechas: 7 capacidades que CR no tiene operativas vs Estonia/Singapur (gobernanza IA, X-Road, chatbot ciudadano, etc.).',
   },
@@ -141,11 +148,23 @@ const DATASETS: Dataset[] = [
     filename: 'eniaAcciones.json',
     outputFilename: 'enia-acciones.json',
     endpoint: '/api/enia-acciones.json',
+    lastUpdate: '2026-08-21',
     description:
       'Inventario y crosswalk del Plan de Acción ENIA: 129 registros del documento oficial, 120 intervenciones únicas, clasificación por tipo, evidencia de ejecución y relaciones con el catálogo.',
     getCount: (data) => {
       const count = (data as { resumen?: { intervenciones?: unknown } } | undefined)
         ?.resumen?.intervenciones;
+      return typeof count === 'number' ? count : 0;
+    },
+  },
+  {
+    filename: 'monitoreo.json',
+    endpoint: '/api/monitoreo.json',
+    lastUpdate: '2026-08-21',
+    description:
+      'Agenda y bitácora editorial: cadencias por frente, próximas revisiones, cambios de estado y revisiones documentadas sin cambios.',
+    getCount: (data) => {
+      const count = (data as { frentes?: unknown[] } | undefined)?.frentes?.length;
       return typeof count === 'number' ? count : 0;
     },
   },
@@ -160,10 +179,55 @@ interface ApiEnvelope<T> {
   data: T;
 }
 
-function envelope<T>(data: T, explicitCount?: number): ApiEnvelope<T> {
+function normalizeLastUpdate(date: string): string {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) {
+    throw new Error(`lastUpdate inválido: ${date}`);
+  }
+  return `${date}T00:00:00.000Z`;
+}
+
+const EDITORIAL_DATE_KEYS = new Set([
+  'fechaCorte',
+  'fechaConsulta',
+  'fechaUltimaRevision',
+  'fechaUltimaVerificacion',
+]);
+
+function findLatestEmbeddedEditorialDate(value: unknown): string | null {
+  let latest: string | null = null;
+
+  function visit(current: unknown): void {
+    if (Array.isArray(current)) {
+      current.forEach(visit);
+      return;
+    }
+    if (!current || typeof current !== 'object') return;
+
+    for (const [key, nested] of Object.entries(current)) {
+      if (
+        EDITORIAL_DATE_KEYS.has(key) &&
+        typeof nested === 'string' &&
+        /^\d{4}-\d{2}-\d{2}$/.test(nested)
+      ) {
+        latest = latest === null || nested > latest ? nested : latest;
+      } else {
+        visit(nested);
+      }
+    }
+  }
+
+  visit(value);
+  return latest;
+}
+
+function envelope<T>(
+  data: T,
+  lastUpdate: string,
+  explicitCount?: number,
+): ApiEnvelope<T> {
   return {
     version: PKG.version,
-    lastUpdate: new Date().toISOString(),
+    lastUpdate: normalizeLastUpdate(lastUpdate),
     count:
       explicitCount ??
       (Array.isArray(data) ? data.length : Object.keys(data as object).length),
@@ -173,12 +237,18 @@ function envelope<T>(data: T, explicitCount?: number): ApiEnvelope<T> {
   };
 }
 
-function buildIndexHtml(endpoints: Array<{ endpoint: string; description: string; count: number }>): string {
+function buildIndexHtml(endpoints: Array<{
+  endpoint: string;
+  description: string;
+  count: number;
+  lastUpdate: string;
+}>): string {
   const rows = endpoints
     .map(
       (e) => `      <tr>
         <td><code><a href="${e.endpoint}">${e.endpoint}</a></code></td>
         <td>${e.count}</td>
+        <td>${e.lastUpdate.slice(0, 10)}</td>
         <td>${e.description}</td>
       </tr>`,
     )
@@ -211,11 +281,12 @@ function buildIndexHtml(endpoints: Array<{ endpoint: string; description: string
 
   <h2>Endpoints</h2>
   <table>
-    <thead><tr><th>Endpoint</th><th>Items</th><th>Descripción</th></tr></thead>
+    <thead><tr><th>Endpoint</th><th>Items</th><th>Actualizado</th><th>Descripción</th></tr></thead>
     <tbody>
 ${rows}
       <tr>
         <td><code><a href="/api/index.json">/api/index.json</a></code></td>
+        <td>—</td>
         <td>—</td>
         <td>Manifest: lista todos los endpoints con metadata.</td>
       </tr>
@@ -226,7 +297,7 @@ ${rows}
   <p>Cada endpoint devuelve un envelope con metadata:</p>
   <pre>{
   "version": "0.1.0",
-  "lastUpdate": "2026-05-04T...",
+  "lastUpdate": "2026-08-21T00:00:00.000Z",
   "count": 29,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
@@ -237,7 +308,7 @@ ${rows}
   <p>Datos disponibles bajo <strong>CC BY 4.0</strong>. Si los usás, atribuir <strong>"Observatorio IA Costa Rica" (observatorioia.org)</strong> con enlace.</p>
 
   <h2>Política editorial</h2>
-  <p>Este observatorio es independiente, sin afiliación gubernamental. Cada registro del catálogo incluye en <code>fuenteUrl</code> una fuente pública consultada, que puede ser primaria o secundaria. Las actualizaciones se procesan mediante revisión humana; los scrapers nunca tocan campos editoriales (titulo, descripcion, contexto, lecciones, resumen).</p>
+  <p>Este observatorio es independiente, sin afiliación gubernamental. Las fichas del catálogo separan existencia, ejecución, técnica de IA, uso operativo, resultados y gobernanza, e identifican qué respalda cada fuente. Los monitores y scrapers solo generan señales o propuestas de evidencia; ninguna mención crea, reclasifica ni verifica una iniciativa automáticamente.</p>
 
   <h2>Mantenimiento</h2>
   <p>Mario Pérez Edwards · UnikPrompt · <a href="mailto:info@observatorioia.org">info@observatorioia.org</a></p>
@@ -390,7 +461,12 @@ function main(): void {
   const counters = computeCounters(SRC_DIR);
   writeCountersTs(counters);
 
-  const endpointsMeta: Array<{ endpoint: string; description: string; count: number }> = [];
+  const endpointsMeta: Array<{
+    endpoint: string;
+    description: string;
+    count: number;
+    lastUpdate: string;
+  }> = [];
 
   for (const ds of DATASETS) {
     const srcPath = join(SRC_DIR, ds.filename);
@@ -402,7 +478,13 @@ function main(): void {
     if (ds.filename === 'indicadores.json') {
       data = applyAutoKpis(data, counters);
     }
-    const env = envelope(data, ds.getCount?.(data));
+    const embeddedLastUpdate = findLatestEmbeddedEditorialDate(data);
+    if (embeddedLastUpdate && embeddedLastUpdate > ds.lastUpdate) {
+      throw new Error(
+        `${ds.filename}: lastUpdate=${ds.lastUpdate} quedó atrás de una fecha editorial interna (${embeddedLastUpdate})`,
+      );
+    }
+    const env = envelope(data, ds.lastUpdate, ds.getCount?.(data));
     writeFileSync(
       join(OUT_DIR, ds.outputFilename ?? ds.filename),
       JSON.stringify(env, null, 2),
@@ -411,6 +493,7 @@ function main(): void {
       endpoint: ds.endpoint,
       description: ds.description,
       count: env.count,
+      lastUpdate: env.lastUpdate,
     });
     console.log(`  ✓ ${ds.endpoint} (${env.count} items)`);
   }
@@ -418,13 +501,17 @@ function main(): void {
   // Manifest
   const manifest = {
     version: PKG.version,
-    lastUpdate: new Date().toISOString(),
+    lastUpdate: endpointsMeta
+      .map(({ lastUpdate }) => lastUpdate)
+      .sort()
+      .at(-1),
     source: 'https://observatorioia.org',
     license: 'CC BY 4.0',
     endpoints: endpointsMeta.map((e) => ({
       url: e.endpoint,
       description: e.description,
       count: e.count,
+      lastUpdate: e.lastUpdate,
     })),
   };
   writeFileSync(join(OUT_DIR, 'index.json'), JSON.stringify(manifest, null, 2));

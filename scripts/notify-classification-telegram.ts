@@ -3,8 +3,8 @@
  *
  * Lee `scraper-runs/classification.json` y manda:
  *   - 0 nuevos:  mensaje breve "cobertura al día".
- *   - ≥1 nuevo:  lista numerada de candidatos NUEVOS con título, score,
- *                institución y URL + pregunta de GO.
+ *   - ≥1 nuevo:  lista numerada de señales nuevas con título, score,
+ *                institución y URL + pregunta de prioridad de investigación.
  *
  * Convive con scripts/notify-telegram.ts (que solo notifica de candidatos por
  * score, sin contraste contra el repo). Mensaje deliberadamente compacto para
@@ -47,7 +47,13 @@ interface ClassificationFile {
   sourceRanAt: string;
   totalDeduped: number;
   totalRaw: number;
-  counts: { ya_existe: number; ruido: number; nuevos: number; revisar: number };
+  counts: {
+    ya_existe: number;
+    ruido: number;
+    nuevos: number;
+    revisar: number;
+    propuestas_evidencia?: number;
+  };
   nuevos: NuevoEntry[];
   revisar?: RevisarEntry[];
 }
@@ -83,12 +89,12 @@ function buildZeroNuevosMessage(c: ClassificationFile): string {
   const lines = [
     `🟢 *Scrape procesado — ${escapeMd(fecha)}*`,
     '',
-    `${c.totalDeduped} candidato\\(s\\)${dedup}: *0 NUEVOS*, ${c.counts.ya_existe} ya existen, ${revisar} a revisar, ${c.counts.ruido} ruido\\.`,
+    `${c.totalDeduped} candidato\\(s\\)${dedup}: *0 SEÑALES NUEVAS*, ${c.counts.ya_existe} ya existen, ${revisar} a revisar, ${c.counts.ruido} ruido\\.`,
   ];
   if (revisar === 0) {
     lines.push('Cobertura al día\\. Sin acción requerida\\.');
   } else {
-    lines.push('Cobertura al día sobre items NUEVOS, pero hay updates de items existentes que vale la pena chequear\\.');
+    lines.push('Sin señales nuevas, pero hay posibles cambios en elementos existentes que vale la pena revisar\\.');
     appendRevisarSection(c, lines);
   }
   return lines.join('\n');
@@ -104,10 +110,10 @@ function buildNuevosMessage(c: ClassificationFile): string {
   lines.push(`🆕 *Scrape procesado — ${escapeMd(fecha)}*`);
   lines.push('');
   lines.push(
-    `${c.totalDeduped} candidato\\(s\\): *${c.counts.nuevos} NUEVO\\(s\\)*, ${c.counts.ya_existe} ya existen, ${c.counts.ruido} ruido\\.`,
+    `${c.totalDeduped} candidato\\(s\\): *${c.counts.nuevos} SEÑAL\\(ES\\) NUEVA\\(S\\)*, ${c.counts.ya_existe} ya existen, ${c.counts.ruido} ruido\\.`,
   );
   lines.push('');
-  lines.push('*Nuevos detectados — requieren tu GO antes de agregar al repo:*');
+  lines.push('*Señales nuevas — requieren investigación y contraste antes de cualquier cambio:*');
   lines.push('');
 
   const max = c.nuevos.length;
@@ -131,10 +137,10 @@ function buildNuevosMessage(c: ClassificationFile): string {
   }
 
   lines.push(
-    '¿Cuáles agrego al repo? Respondé con los números separados por coma \\(ej\\. _1, 3_\\) o _NO_ para descartarlos\\.',
+    '¿Cuáles priorizamos para investigar? Respondé con los números separados por coma \\(ej\\. _1, 3_\\) o _NO_ para descartarlos\\.',
   );
   lines.push(
-    `Stub disponible en el artifact \`scraper\\-reports\\-<run\\_id>/stub\\-nuevos\\.json\`\\.`,
+    `Paquetes no verificados disponibles en \`scraper\\-reports\\-<run\\_id>/evidence\\-proposals\\.json\`\\. No crean proyectos ni cambian estados\\.`,
   );
 
   appendRevisarSection(c, lines);

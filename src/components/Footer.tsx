@@ -17,8 +17,14 @@ export function Footer({ t, locale }: { t: Dictionary; locale: Locale }) {
           >
             {t.footer.quienMantiene} →
           </Link>
+          <Link
+            href={`/${locale}/historial`}
+            className="text-institucional-700 hover:underline font-medium"
+          >
+            {t.footer.historialMonitoreo} →
+          </Link>
           <a
-            href="/api/"
+            href="/api/index.html"
             className="text-institucional-700 hover:underline font-medium"
           >
             {t.footer.apiPublica} →
