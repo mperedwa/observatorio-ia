@@ -1,6 +1,6 @@
 # Observatorio IA Costa Rica: estado y próximas fases
 
-Actualizado: 21 de agosto de 2026.
+Actualizado: 22 de agosto de 2026.
 
 ## Objetivo
 
@@ -53,6 +53,20 @@ Mantener un observatorio público, bilingüe y verificable sobre adopción de IA
 - [ ] Completar el rediseño visual previo al lanzamiento.
 - [ ] Decisión explícita de push y despliegue.
 
+## Fase activa: rediseño editorial
+
+Dirección aprobada: **observatorio editorial de evidencia pública**, con el concepto de archivo cívico contemporáneo. El plan completo, las referencias, los archivos afectados, los criterios de aceptación y el handoff para una sesión nueva están en [`docs/plan-redisenio-editorial-2026-08-22.md`](docs/plan-redisenio-editorial-2026-08-22.md).
+
+- [x] R0. Auditoría, dirección visual y plan ejecutable.
+- [ ] R1. Fundamentos y piloto funcional en portada y catálogo de proyectos.
+- [ ] R2. Estructura global, portada e índices de instituciones, legislación e indicadores.
+- [ ] R3. Catálogos, instituciones y expedientes de detalle.
+- [ ] R4. ENIA, Marco país, legislación e historial.
+- [ ] R5. Indicadores, análisis, superficies secundarias y assets.
+- [ ] R6. Accesibilidad, rendimiento y candidato local de publicación.
+
+Regla de ejecución: cada fase se valida, se compromete por separado y se revisa localmente. No se hace push ni despliegue sin autorización explícita posterior.
+
 ## Próximas mejoras posibles
 
 ### Mantenimiento técnico
@@ -65,7 +79,7 @@ Mantener un observatorio público, bilingüe y verificable sobre adopción de IA
 
 ### Diseño y experiencia
 
-- [ ] Rediseño visual amplio para reducir la repetición de tarjetas, bordes sólidos y fondos tenues.
+- [ ] Ejecutar R1-R6 del plan de rediseño editorial.
 - [ ] Revisar densidad de navegación y longitud de portada después de acumular 30 días de analítica.
 - [ ] Definir logo definitivo.
 
