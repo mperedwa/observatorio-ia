@@ -2,7 +2,7 @@
 
 Fecha: 22 de agosto de 2026.
 
-Estado: R1-R8 implementadas y validadas localmente. Push y despliegue no autorizados.
+Estado: R1-R8 implementadas, validadas, aprobadas visualmente y publicadas en `observatorioia.org` el 22 de agosto de 2026. Los seis workflows de GitHub Actions quedaron activos.
 
 Punto de partida técnico: Fase 5C comprometida en `e6786ba`. Este plan no autoriza push, despliegue ni publicación.
 
@@ -500,7 +500,7 @@ feat(design): completa visualizaciones y superficies editoriales
 
 Objetivo: cerrar el rediseño como candidato local de lanzamiento.
 
-Estado: implementación y validación técnica completadas localmente el 22 de agosto de 2026 en la rama `redesign/editorial-v1`; pendiente la revisión visual final de Mario. No se hizo push ni despliegue.
+Estado: implementación y validación técnica completadas localmente el 22 de agosto de 2026 en la rama `redesign/editorial-v1`. Mario aprobó la revisión visual y la fase se publicó posteriormente como parte de R1-R8.
 
 Resultado de la fase:
 
@@ -563,7 +563,7 @@ chore(design): valida candidato editorial de lanzamiento
 
 Objetivo: convertir `/api/` en una puerta de entrada comprensible y coherente para periodistas, investigadores, desarrolladores y organizaciones que reutilizan los datos, sin cambiar las URLs ni el contrato de los siete endpoints JSON.
 
-Estado: implementada y validada localmente el 22 de agosto de 2026 sobre `redesign/editorial-v1`. No se hizo push ni despliegue.
+Estado: implementada y validada localmente el 22 de agosto de 2026 sobre `redesign/editorial-v1`, y publicada posteriormente como parte de R1-R8.
 
 Resultado de la fase:
 
@@ -622,7 +622,7 @@ feat(api): publica documentación editorial bilingüe
 
 Objetivo: convertir la exportación JSON actual en un producto de datos completo para reutilización periodística e investigativa, manteniendo las siete rutas existentes y su envoltura, y haciendo explícitas cobertura, semántica, procedencia y versión editorial.
 
-Estado: implementada y validada localmente el 22 de agosto de 2026 sobre `redesign/editorial-v1`. No se hizo push ni despliegue.
+Estado: implementada y validada localmente el 22 de agosto de 2026 sobre `redesign/editorial-v1`, y publicada posteriormente como parte de R1-R8.
 
 Resultado de la fase:
 
@@ -681,7 +681,7 @@ Criterios de aceptación:
 - las reglas del codebook coinciden con las constantes TypeScript del modelo de evidencia;
 - la documentación humana explica datasets, schemas, releases, licencias y límites sin exigir JavaScript;
 - AJV, integridad referencial, TypeScript, lint, pruebas, build, auditoría estática y QA ES/EN pasan;
-- no se publican recomendaciones tácticas, no se hace push y no se despliega.
+- no se publican recomendaciones tácticas; cualquier push o despliegue requiere autorización explícita separada.
 
 QA mínima:
 
@@ -708,7 +708,7 @@ feat(api): completa producto público de datos
 8. Revisar el diff y hacer un commit con rutas explícitas.
 9. Mostrar el resultado local a Mario.
 10. Registrar ajustes de revisión en un commit adicional de la misma fase si son necesarios.
-11. No hacer push ni desplegar.
+11. No hacer push ni desplegar sin autorización explícita separada.
 
 ## Comandos para revisión local
 
@@ -780,17 +780,19 @@ Guardas cuantitativas orientativas para el cierre:
 - incorporación de Figma como archivo formal;
 - animaciones o relatos visuales especiales;
 - ajustes de navegación derivados de 30 días de analítica real;
-- publicación del sitio.
+- publicación del sitio: resuelta el 22 de agosto de 2026.
 
-## Siguiente acción después de R7
+## Estado posterior a R8
 
-1. Revisar localmente el candidato completo en ES y EN, con énfasis en portada, catálogo, ENIA, Marco país, Indicadores, Análisis, API pública y los 32 PNG bilingües.
-2. Resolver en un commit de ajuste cualquier observación final de legibilidad, densidad, contraste o responsive.
-3. Aprobar o diferir de forma separada el logo definitivo; no bloquea el candidato actual.
-4. Decidir explícitamente si se fusiona, publica la rama y activa el monitoreo remoto. Ninguno de esos actos está autorizado por este plan.
+1. Mario revisó y aprobó localmente el candidato completo en ES y EN.
+2. `main` avanzó por fast-forward hasta `6f431ba` y se publicó en Vercel.
+3. Producción, API, schemas, release y descargas se verificaron en `observatorioia.org`.
+4. CI, Scrape, ILIA, OCDE, ENIA y Agenda editorial quedaron activos en GitHub Actions.
+5. El siguiente control es comparar el monitoreo automático con la revisión manual durante 14 días o 6 corridas.
+6. El logo definitivo sigue diferido y no afecta la publicación actual.
 
 ## Definición final de terminado
 
 El rediseño estará completo cuando todas las rutas públicas compartan una gramática editorial coherente, los datos y fuentes sigan intactos, la portada priorice en lugar de acumular, las superficies densas sean usables en móvil y el sitio pase todas las validaciones técnicas y visuales.
 
-El rediseño completo no equivale a publicación. La activación de workflows remotos, el push y el despliegue continúan sujetos a las decisiones separadas establecidas en la Fase 5C.
+El rediseño completo se publicó después de la autorización explícita de Mario. Cualquier cambio posterior de datos curados, workflows o producción conserva las guardas editoriales y las autorizaciones separadas establecidas en la Fase 5C.

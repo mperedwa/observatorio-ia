@@ -44,16 +44,18 @@ Mantener un observatorio público, bilingüe y verificable sobre adopción de IA
 - [x] Probar de extremo a extremo los casos sin hallazgos, señal nueva, actualización y cambio legislativo.
 - [x] Documentar operación, límites de cobertura y período inicial de comparación con revisión manual.
 
-## Pendiente antes de publicar
+## Estado de publicación
 
 - [x] Revisión local de la Fase 5B en escritorio y móvil.
 - [x] Recoger y corregir las observaciones de la Fase 5B.
 - [x] Completar y revisar localmente la Fase 5C técnica.
 - [ ] Ejecutar un período de comparación entre monitoreo automático y revisión manual.
 - [x] Completar el rediseño visual previo al lanzamiento.
-- [ ] Decisión explícita de push y despliegue.
+- [x] Recibir decisión explícita de push, despliegue y activación de workflows.
+- [x] Publicar R1-R8 en `main` y verificar `observatorioia.org`.
+- [x] Confirmar CI y los seis workflows de GitHub Actions como activos.
 
-## Fase activa: rediseño editorial
+## Fase completada: rediseño editorial
 
 Dirección aprobada: **observatorio editorial de evidencia pública**, con el concepto de archivo cívico contemporáneo. El plan completo, las referencias, los archivos afectados, los criterios de aceptación y el handoff para una sesión nueva están en [`docs/plan-redisenio-editorial-2026-08-22.md`](docs/plan-redisenio-editorial-2026-08-22.md).
 
@@ -67,9 +69,9 @@ Dirección aprobada: **observatorio editorial de evidencia pública**, con el co
 - [x] R7. Documentación editorial bilingüe de la API pública.
 - [x] R8. Producto público de datos reproducible: cobertura, schemas, codebook, procedencia y releases.
 
-Regla de ejecución: cada fase se valida, se compromete por separado y se revisa localmente. No se hace push ni despliegue sin autorización explícita posterior.
+Regla de ejecución: cada fase se valida, se compromete por separado y se revisa localmente. Todo push o despliegue requiere autorización explícita. Mario otorgó esa autorización el 22 de agosto de 2026 para publicar R1-R8 y activar los workflows.
 
-Punto de revisión actual: R1-R8 están implementadas y validadas en la rama local `redesign/editorial-v1`. R8 conserva las siete rutas originales, amplía la API a doce rutas y publica schemas, codebook, procedencia, release bloqueada y descargas JSON/CSV reproducibles. La revisión visual final de Mario, el push, el despliegue y la activación de workflows siguen pendientes de decisiones explícitas separadas.
+Punto actual: R1-R8 están publicadas desde `main` en `observatorioia.org`. R8 conserva las siete rutas originales, amplía la API a doce rutas y publica schemas, codebook, procedencia, release bloqueada y descargas JSON/CSV reproducibles. El siguiente control es comparar durante 14 días o 6 corridas el monitoreo automático con la revisión manual.
 
 ## Próximas mejoras posibles
 
