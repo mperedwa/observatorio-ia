@@ -102,7 +102,7 @@ La implementación se documenta en [scrapers/README.md](scrapers/README.md) y la
 
 ## API pública
 
-`npm run build` genera un índice en `/api/` y siete endpoints:
+`npm run build` genera documentación humana en español bajo `/api/`, su contraparte inglesa en `/api/en/`, un manifest y siete endpoints:
 
 - `/api/proyectos.json`
 - `/api/instituciones.json`
@@ -112,7 +112,7 @@ La implementación se documenta en [scrapers/README.md](scrapers/README.md) y la
 - `/api/enia-acciones.json`
 - `/api/monitoreo.json`
 
-Licencia de datos: CC BY 4.0.
+Todos responden con `{version, lastUpdate, count, source, license, data}`. `lastUpdate` representa el último cambio editorial conocido y no la hora de compilación. Licencia de datos: CC BY 4.0.
 
 ## Política editorial
 

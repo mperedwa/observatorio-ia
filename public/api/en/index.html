@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>API pública JSON | Observatorio IA Costa Rica</title>
+  <title>Public JSON API | AI Observatory Costa Rica</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="index, follow">
-  <meta name="description" content="Documentación de la API JSON pública del Observatorio IA Costa Rica para periodismo, investigación y reutilización cívica.">
-  <link rel="canonical" href="https://www.observatorioia.org/api/">
+  <meta name="description" content="Documentation for AI Observatory Costa Rica’s public JSON API for journalism, research and civic reuse.">
+  <link rel="canonical" href="https://www.observatorioia.org/api/en/">
   <link rel="alternate" hreflang="es" href="https://www.observatorioia.org/api/">
   <link rel="alternate" hreflang="en" href="https://www.observatorioia.org/api/en/">
   <link rel="alternate" hreflang="x-default" href="https://www.observatorioia.org/api/">
@@ -140,16 +140,16 @@
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <a class="skip-link" href="#contenido">Skip to content</a>
   <header class="site-header">
     <div class="shell">
-      <a class="brand" href="/es/">Observatorio IA Costa Rica</a>
+      <a class="brand" href="/en/">AI Observatory Costa Rica</a>
       <div class="header-tools">
-        <a class="back-link" href="/es/">Volver al observatorio</a>
-        <nav class="language" aria-label="Idioma de la documentación">
-          <a href="/api/" lang="es" hreflang="es" aria-current="page">ES</a>
+        <a class="back-link" href="/en/">Return to the observatory</a>
+        <nav class="language" aria-label="Documentation language">
+          <a href="/api/" lang="es" hreflang="es">ES</a>
           <span aria-hidden="true">/</span>
-          <a href="/api/en/" lang="en" hreflang="en">EN</a>
+          <a href="/api/en/" lang="en" hreflang="en" aria-current="page">EN</a>
         </nav>
       </div>
     </div>
@@ -158,21 +158,21 @@
     <section class="hero" aria-labelledby="api-title">
       <div class="shell hero-grid">
         <div>
-          <p class="eyebrow">Archivo de datos públicos / API 0.1.0</p>
-          <h1 id="api-title">Evidencia pública, lista para consultar</h1>
-          <p class="lede">Siete colecciones JSON documentan iniciativas, instituciones, legislación, indicadores, brechas, el Plan de Acción ENIA y el trabajo de monitoreo editorial.</p>
-          <p class="audience">Una interfaz de lectura para periodistas, investigadores, desarrolladores y organizaciones que necesitan examinar o reutilizar la evidencia del observatorio.</p>
+          <p class="eyebrow">Public data archive / API 0.1.0</p>
+          <h1 id="api-title">Public evidence, ready to query</h1>
+          <p class="lede">Seven JSON collections document initiatives, institutions, legislation, indicators, comparative gaps, the ENIA Action Plan and editorial monitoring work.</p>
+          <p class="audience">A human-readable interface for journalists, researchers, developers and organizations that need to examine or reuse the observatory’s evidence.</p>
         </div>
         <div>
           <dl class="facts">
-            <div><dt>endpoints documentados</dt><dd>7</dd></div>
-          <div><dt>licencia de datos</dt><dd>CC BY 4.0</dd></div>
-          <div><dt>lectura sin autenticación</dt><dd>GET</dd></div>
+            <div><dt>documented endpoints</dt><dd>7</dd></div>
+          <div><dt>data license</dt><dd>CC BY 4.0</dd></div>
+          <div><dt>read access without authentication</dt><dd>GET</dd></div>
           </dl>
           <aside class="quick" aria-labelledby="quick-title">
-            <p class="quick-kicker">Consulta inmediata</p>
-            <h2 id="quick-title">Empiece con el catálogo</h2>
-            <p>No requiere una cuenta ni una llave. La respuesta incluye los datos y la fecha editorial del último cambio conocido.</p>
+            <p class="quick-kicker">Immediate query</p>
+            <h2 id="quick-title">Start with the catalog</h2>
+            <p>No account or API key is required. The response includes both the data and the editorial date of the latest known change.</p>
             <code>curl -s https://observatorioia.org/api/proyectos.json</code>
           </aside>
         </div>
@@ -184,9 +184,9 @@
         <div class="section-heading">
           <span class="section-number" aria-hidden="true">01</span>
           <div>
-            <p class="eyebrow">01 / Colecciones</p>
-            <h2 id="collections-title">Siete conjuntos, un contrato estable</h2>
-            <p class="section-intro">El conteo describe la unidad propia de cada archivo. No debe sumarse entre colecciones ni interpretarse por sí solo como adopción verificada de IA.</p>
+            <p class="eyebrow">01 / Collections</p>
+            <h2 id="collections-title">Seven datasets, one stable contract</h2>
+            <p class="section-intro">Each count uses the unit declared for that file. Counts should not be added across collections or treated on their own as verified AI adoption.</p>
           </div>
         </div>
         <ol class="endpoint-list">
@@ -195,15 +195,15 @@
           <article>
             <div class="endpoint-heading">
               <div>
-                <p class="collection-name">Iniciativas</p>
+                <p class="collection-name">Initiatives</p>
                 <h3><a href="/api/proyectos.json"><code>/api/proyectos.json</code><span aria-hidden="true"> ↗</span></a></h3>
               </div>
-              <span class="open-label">Abrir JSON</span>
+              <span class="open-label">Open JSON</span>
             </div>
-            <p class="endpoint-description">Catálogo de iniciativas relacionadas con IA en el sector público costarricense. Incluye sistemas, pilotos, planes y capacidades con textos bilingües y fuentes públicas trazables.</p>
+            <p class="endpoint-description">Catalog of AI-related initiatives in Costa Rica’s public sector. It includes systems, pilots, plans and capabilities with bilingual ES/EN descriptions and traceable public sources.</p>
             <dl class="endpoint-meta">
-              <div><dt>Contenido</dt><dd><strong>29</strong> iniciativas</dd></div>
-              <div><dt>Corte editorial</dt><dd><time datetime="2026-08-21">2026-08-21</time></dd></div>
+              <div><dt>Contents</dt><dd><strong>29</strong> initiatives</dd></div>
+              <div><dt>Editorial cutoff</dt><dd><time datetime="2026-08-21">2026-08-21</time></dd></div>
             </dl>
           </article>
         </li>
@@ -212,15 +212,15 @@
           <article>
             <div class="endpoint-heading">
               <div>
-                <p class="collection-name">Instituciones</p>
+                <p class="collection-name">Institutions</p>
                 <h3><a href="/api/instituciones.json"><code>/api/instituciones.json</code><span aria-hidden="true"> ↗</span></a></h3>
               </div>
-              <span class="open-label">Abrir JSON</span>
+              <span class="open-label">Open JSON</span>
             </div>
-            <p class="endpoint-description">Instituciones públicas con iniciativas relacionadas con IA documentadas, incluidos ministerios, instituciones autónomas, Poder Judicial, universidades y organismos de investigación.</p>
+            <p class="endpoint-description">Public institutions with documented AI-related initiatives, including ministries, autonomous institutions, the judiciary, universities and research bodies.</p>
             <dl class="endpoint-meta">
-              <div><dt>Contenido</dt><dd><strong>9</strong> instituciones</dd></div>
-              <div><dt>Corte editorial</dt><dd><time datetime="2026-08-21">2026-08-21</time></dd></div>
+              <div><dt>Contents</dt><dd><strong>9</strong> institutions</dd></div>
+              <div><dt>Editorial cutoff</dt><dd><time datetime="2026-08-21">2026-08-21</time></dd></div>
             </dl>
           </article>
         </li>
@@ -229,15 +229,15 @@
           <article>
             <div class="endpoint-heading">
               <div>
-                <p class="collection-name">Legislación</p>
+                <p class="collection-name">Legislation</p>
                 <h3><a href="/api/legislacion.json"><code>/api/legislacion.json</code><span aria-hidden="true"> ↗</span></a></h3>
               </div>
-              <span class="open-label">Abrir JSON</span>
+              <span class="open-label">Open JSON</span>
             </div>
-            <p class="endpoint-description">Expedientes relacionados con IA en la Asamblea Legislativa. Los monitores proponen señales; cada estado publicado requiere revisión editorial contra una fuente oficial.</p>
+            <p class="endpoint-description">AI-related bills in Costa Rica’s Legislative Assembly. Monitors propose signals, while every published status requires editorial review against an official source.</p>
             <dl class="endpoint-meta">
-              <div><dt>Contenido</dt><dd><strong>7</strong> expedientes</dd></div>
-              <div><dt>Corte editorial</dt><dd><time datetime="2026-08-21">2026-08-21</time></dd></div>
+              <div><dt>Contents</dt><dd><strong>7</strong> bills</dd></div>
+              <div><dt>Editorial cutoff</dt><dd><time datetime="2026-08-21">2026-08-21</time></dd></div>
             </dl>
           </article>
         </li>
@@ -246,15 +246,15 @@
           <article>
             <div class="endpoint-heading">
               <div>
-                <p class="collection-name">Indicadores</p>
+                <p class="collection-name">Indicators</p>
                 <h3><a href="/api/indicadores.json"><code>/api/indicadores.json</code><span aria-hidden="true"> ↗</span></a></h3>
               </div>
-              <span class="open-label">Abrir JSON</span>
+              <span class="open-label">Open JSON</span>
             </div>
-            <p class="endpoint-description">Indicadores cuantitativos, incluidos ILIA 2025, comparativas regionales y las cifras principales del observatorio.</p>
+            <p class="endpoint-description">Quantitative indicators, including ILIA 2025, regional comparisons and the observatory’s headline metrics.</p>
             <dl class="endpoint-meta">
-              <div><dt>Contenido</dt><dd><strong>5</strong> bloques</dd></div>
-              <div><dt>Corte editorial</dt><dd><time datetime="2026-08-21">2026-08-21</time></dd></div>
+              <div><dt>Contents</dt><dd><strong>5</strong> groups</dd></div>
+              <div><dt>Editorial cutoff</dt><dd><time datetime="2026-08-21">2026-08-21</time></dd></div>
             </dl>
           </article>
         </li>
@@ -263,15 +263,15 @@
           <article>
             <div class="endpoint-heading">
               <div>
-                <p class="collection-name">Brechas comparadas</p>
+                <p class="collection-name">Comparative gaps</p>
                 <h3><a href="/api/brechas.json"><code>/api/brechas.json</code><span aria-hidden="true"> ↗</span></a></h3>
               </div>
-              <span class="open-label">Abrir JSON</span>
+              <span class="open-label">Open JSON</span>
             </div>
-            <p class="endpoint-description">Análisis de siete capacidades no documentadas como operativas en Costa Rica, comparadas con referentes de Estonia y Singapur.</p>
+            <p class="endpoint-description">Analysis of seven capabilities not documented as operational in Costa Rica, benchmarked against Estonia and Singapore.</p>
             <dl class="endpoint-meta">
-              <div><dt>Contenido</dt><dd><strong>7</strong> brechas</dd></div>
-              <div><dt>Corte editorial</dt><dd><time datetime="2026-08-21">2026-08-21</time></dd></div>
+              <div><dt>Contents</dt><dd><strong>7</strong> gaps</dd></div>
+              <div><dt>Editorial cutoff</dt><dd><time datetime="2026-08-21">2026-08-21</time></dd></div>
             </dl>
           </article>
         </li>
@@ -280,15 +280,15 @@
           <article>
             <div class="endpoint-heading">
               <div>
-                <p class="collection-name">Plan de Acción ENIA</p>
+                <p class="collection-name">ENIA Action Plan</p>
                 <h3><a href="/api/enia-acciones.json"><code>/api/enia-acciones.json</code><span aria-hidden="true"> ↗</span></a></h3>
               </div>
-              <span class="open-label">Abrir JSON</span>
+              <span class="open-label">Open JSON</span>
             </div>
-            <p class="endpoint-description">Inventario y cruce editorial del Plan de Acción ENIA: 129 registros del documento oficial, 120 intervenciones únicas, clasificación, evidencia de ejecución y relaciones con el catálogo.</p>
+            <p class="endpoint-description">Inventory and crosswalk of the ENIA Action Plan: 129 records from the official document, 120 unique interventions, type classification, execution evidence and catalog relationships.</p>
             <dl class="endpoint-meta">
-              <div><dt>Contenido</dt><dd><strong>129</strong> registros fuente</dd></div>
-              <div><dt>Corte editorial</dt><dd><time datetime="2026-08-21">2026-08-21</time></dd></div>
+              <div><dt>Contents</dt><dd><strong>129</strong> source records</dd></div>
+              <div><dt>Editorial cutoff</dt><dd><time datetime="2026-08-21">2026-08-21</time></dd></div>
             </dl>
           </article>
         </li>
@@ -297,15 +297,15 @@
           <article>
             <div class="endpoint-heading">
               <div>
-                <p class="collection-name">Monitoreo editorial</p>
+                <p class="collection-name">Editorial monitoring</p>
                 <h3><a href="/api/monitoreo.json"><code>/api/monitoreo.json</code><span aria-hidden="true"> ↗</span></a></h3>
               </div>
-              <span class="open-label">Abrir JSON</span>
+              <span class="open-label">Open JSON</span>
             </div>
-            <p class="endpoint-description">Agenda y bitácora editorial con cadencias por frente, próximas revisiones, cambios de estado y revisiones documentadas sin cambios.</p>
+            <p class="endpoint-description">Editorial schedule and log, including cadence by monitoring front, upcoming reviews, status changes and documented no-change reviews.</p>
             <dl class="endpoint-meta">
-              <div><dt>Contenido</dt><dd><strong>8</strong> frentes</dd></div>
-              <div><dt>Corte editorial</dt><dd><time datetime="2026-08-21">2026-08-21</time></dd></div>
+              <div><dt>Contents</dt><dd><strong>8</strong> monitoring fronts</dd></div>
+              <div><dt>Editorial cutoff</dt><dd><time datetime="2026-08-21">2026-08-21</time></dd></div>
             </dl>
           </article>
         </li>
@@ -314,7 +314,7 @@
           <span class="record-number" aria-hidden="true">M</span>
           <div>
             <h3 id="manifest-title"><a href="/api/index.json"><code>/api/index.json</code><span aria-hidden="true"> ↗</span></a></h3>
-            <p><strong>Manifest de la API.</strong> Use el manifest para descubrir programáticamente todos los endpoints, sus conteos y fechas editoriales.</p>
+            <p><strong>API manifest.</strong> Use the manifest to discover every endpoint programmatically, together with counts and editorial dates.</p>
           </div>
         </aside>
       </div>
@@ -325,9 +325,9 @@
         <div class="section-heading">
           <span class="section-number" aria-hidden="true">02</span>
           <div>
-            <p class="eyebrow">02 / Contrato</p>
-            <h2 id="contract-title">Cómo leer una respuesta</h2>
-            <p class="section-intro">Todos los endpoints comparten la misma envoltura. El campo data conserva la estructura natural de cada conjunto.</p>
+            <p class="eyebrow">02 / Contract</p>
+            <h2 id="contract-title">How to read a response</h2>
+            <p class="section-intro">Every endpoint uses the same envelope. The data field preserves the natural structure of each dataset.</p>
           </div>
         </div>
         <div class="contract-grid">
@@ -340,21 +340,21 @@
   &quot;data&quot;: [ ... ]
 }</code></pre>
           <dl class="field-list">
-              <div><dt><code>version</code></dt><dd>Versión de la aplicación que generó la exportación.</dd></div>
-              <div><dt><code>lastUpdate</code></dt><dd>Fecha del último cambio editorial conocido, no la hora de compilación.</dd></div>
-              <div><dt><code>count</code></dt><dd>Cantidad según la unidad declarada por el endpoint.</dd></div>
-              <div><dt><code>source</code></dt><dd>Sitio responsable de la publicación del conjunto.</dd></div>
-              <div><dt><code>license</code></dt><dd>Condiciones de reutilización de los datos.</dd></div>
-              <div><dt><code>data</code></dt><dd>Colección o documento completo del conjunto solicitado.</dd></div>
+              <div><dt><code>version</code></dt><dd>Application version that generated the export.</dd></div>
+              <div><dt><code>lastUpdate</code></dt><dd>Date of the latest known editorial change, not the build time.</dd></div>
+              <div><dt><code>count</code></dt><dd>Quantity according to the unit declared by the endpoint.</dd></div>
+              <div><dt><code>source</code></dt><dd>Site responsible for publishing the dataset.</dd></div>
+              <div><dt><code>license</code></dt><dd>Terms governing reuse of the data.</dd></div>
+              <div><dt><code>data</code></dt><dd>Complete collection or document returned by the endpoint.</dd></div>
           </dl>
         </div>
         <div class="interpretation">
-          <h3>Criterios de interpretación</h3>
+          <h3>Interpretation rules</h3>
           <ul>
-              <li>Los textos públicos se entregan como objetos bilingües con campos es y en.</li>
-              <li>En el catálogo, existencia, ejecución, técnica de IA, uso operativo, resultados y gobernanza se evalúan por separado.</li>
-              <li>No determinado significa que la evidencia pública disponible no permite confirmar ni descartar una afirmación.</li>
-              <li>Las fuentes indican qué dimensiones respaldan. Una noticia puede orientar la investigación, pero no sustituye una fuente primaria al confirmar ejecución.</li>
+              <li>Public text is delivered as bilingual objects with es and en fields.</li>
+              <li>In the catalog, existence, execution, AI technique, operational use, results and governance are assessed separately.</li>
+              <li>Undetermined means the available public evidence cannot confirm or rule out a claim.</li>
+              <li>Sources identify the dimensions they support. News coverage can guide research but does not replace a primary source when confirming execution.</li>
           </ul>
         </div>
       </div>
@@ -365,28 +365,28 @@
         <div class="section-heading">
           <span class="section-number" aria-hidden="true">03</span>
           <div>
-            <p class="eyebrow">03 / Consultar</p>
-            <h2 id="examples-title">Ejemplos reproducibles</h2>
-            <p class="section-intro">Las rutas son archivos estáticos. Funcionan desde una terminal, un cuaderno de análisis, una hoja de cálculo con importación JSON o cualquier cliente HTTP.</p>
+            <p class="eyebrow">03 / Query</p>
+            <h2 id="examples-title">Reproducible examples</h2>
+            <p class="section-intro">These routes are static files. They work from a terminal, an analysis notebook, a spreadsheet with JSON import or any HTTP client.</p>
           </div>
         </div>
         <div class="code-grid">
           <article class="code-example">
-            <h3>Descargar el catálogo</h3>
-            <p>Obtiene la envoltura completa de iniciativas.</p>
+            <h3>Download the catalog</h3>
+            <p>Returns the complete initiatives envelope.</p>
             <pre><code>curl -s https://observatorioia.org/api/proyectos.json</code></pre>
           </article>
           <article class="code-example">
-            <h3>Consumir desde JavaScript</h3>
-            <p>Lee datos y fecha editorial sin depender del orden de los campos.</p>
+            <h3>Consume from JavaScript</h3>
+            <p>Reads data and editorial date without relying on field order.</p>
             <pre><code>const response = await fetch(
   &#039;https://observatorioia.org/api/proyectos.json&#039;
 );
 const { data, lastUpdate } = await response.json();</code></pre>
           </article>
           <article class="code-example wide">
-            <h3>Filtrar adopciones verificadas</h3>
-            <p>Este ejemplo selecciona únicamente registros cuya ubicación editorial es verificado. La fase y las demás dimensiones siguen disponibles para análisis separado.</p>
+            <h3>Filter verified adoptions</h3>
+            <p>This example selects records whose editorial placement is verified. Phase and every other evidence dimension remain available for separate analysis.</p>
             <pre><code>curl -s https://observatorioia.org/api/proyectos.json |
   jq &#039;.data[] | select(.estadoCatalogo == &quot;verificado&quot;) |
       {id, titulo, faseImplementacion, fechaUltimaVerificacion}&#039;</code></pre>
@@ -400,23 +400,23 @@ const { data, lastUpdate } = await response.json();</code></pre>
         <div class="section-heading">
           <span class="section-number" aria-hidden="true">04</span>
           <div>
-            <p class="eyebrow">04 / Reutilizar</p>
-            <h2 id="reuse-title">Atribución, límites y contacto</h2>
+            <p class="eyebrow">04 / Reuse</p>
+            <h2 id="reuse-title">Attribution, limits and contact</h2>
           </div>
         </div>
         <div class="reuse-grid">
-          <article><h3>Cómo citar</h3><p>Observatorio IA Costa Rica, conjunto consultado, fecha de corte editorial y URL directa del endpoint.</p></article>
-          <article><h3>Qué no afirma la API</h3><p>El catálogo incluye adopciones verificadas, iniciativas en seguimiento y capacidades del ecosistema. El total de iniciativas documentadas no equivale al número de sistemas de IA operativos.</p></article>
-          <article><h3>Mantenimiento editorial</h3><p>Los monitores generan señales. Ningún scraper crea, reclasifica ni verifica una iniciativa automáticamente; los cambios publicados requieren revisión editorial.</p></article>
+          <article><h3>How to cite</h3><p>AI Observatory Costa Rica, dataset consulted, editorial cutoff date and direct endpoint URL.</p></article>
+          <article><h3>What the API does not claim</h3><p>The catalog includes verified adoptions, initiatives under review and ecosystem capabilities. The total number of documented initiatives is not the number of operational AI systems.</p></article>
+          <article><h3>Editorial maintenance</h3><p>Monitors generate signals. No scraper creates, reclassifies or verifies an initiative automatically; published changes require editorial review.</p></article>
         </div>
-        <p class="contact">Consultas sobre datos o metodología: <a href="mailto:info@observatorioia.org">info@observatorioia.org</a></p>
+        <p class="contact">Questions about data or methodology: <a href="mailto:info@observatorioia.org">info@observatorioia.org</a></p>
       </div>
     </section>
   </main>
   <footer class="site-footer">
     <div class="shell">
-      <p>© 2026 Observatorio IA Costa Rica</p>
-      <p><a href="/es/quien-mantiene/">Mantenimiento editorial</a> · <a href="/api/index.json">JSON manifest</a></p>
+      <p>© 2026 AI Observatory Costa Rica</p>
+      <p><a href="/en/quien-mantiene/">Editorial maintenance</a> · <a href="/api/index.json">JSON manifest</a></p>
     </div>
   </footer>
 </body>

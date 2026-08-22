@@ -64,10 +64,11 @@ Dirección aprobada: **observatorio editorial de evidencia pública**, con el co
 - [x] R4. ENIA, Marco país, legislación e historial.
 - [x] R5. Indicadores, análisis, superficies secundarias y assets.
 - [x] R6. Accesibilidad, rendimiento y candidato local de publicación.
+- [x] R7. Documentación editorial bilingüe de la API pública.
 
 Regla de ejecución: cada fase se valida, se compromete por separado y se revisa localmente. No se hace push ni despliegue sin autorización explícita posterior.
 
-Punto de revisión actual: R1-R6 están implementadas y validadas en la rama local `redesign/editorial-v1`. El sitio completo comparte la gramática de archivo cívico contemporáneo y el export estático pasa la auditoría de 142 HTML, Lighthouse, teclado, movimiento reducido y cuatro tamaños de viewport. Mario revisa ahora el candidato final; push, despliegue y activación de workflows siguen pendientes de decisiones explícitas separadas.
+Punto de revisión actual: R1-R7 están implementadas y validadas en la rama local `redesign/editorial-v1`. `/api/` y `/api/en/` comparten ahora el sistema editorial y documentan contrato, conteos, evidencia, ejemplos y reutilización. Los siete JSON conservaron URLs, envoltura y contenido; la auditoría cubre 143 HTML, 140 localizados y paridad ES/EN. Mario revisa el candidato final; push, despliegue y activación de workflows siguen pendientes de decisiones explícitas separadas.
 
 ## Próximas mejoras posibles
 
@@ -81,7 +82,7 @@ Punto de revisión actual: R1-R6 están implementadas y validadas en la rama loc
 
 ### Diseño y experiencia
 
-- [x] Ejecutar R5-R6 del plan de rediseño editorial después de revisar las superficies densas de R4.
+- [x] Ejecutar R5-R7 del plan de rediseño editorial después de revisar las superficies densas de R4.
 - [ ] Revisar densidad de navegación y longitud de portada después de acumular 30 días de analítica.
 - [ ] Definir logo definitivo.
 

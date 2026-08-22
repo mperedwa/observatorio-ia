@@ -29,7 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...articulosOrdenados.map((item) => `analisis/${item.slug}`),
   ];
 
-  return locales.flatMap((locale) =>
+  const localizedPages: MetadataRoute.Sitemap = locales.flatMap((locale) =>
     paths.map((path) => {
       const suffix = path ? `${path}/` : '';
       const isDetail = path.startsWith('proyectos/') || path.startsWith('instituciones/');
@@ -56,4 +56,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
       };
     }),
   );
+
+  const apiLanguages = {
+    es: `${SITE_URL}/api/`,
+    en: `${SITE_URL}/api/en/`,
+    'x-default': `${SITE_URL}/api/`,
+  };
+
+  return [
+    ...localizedPages,
+    {
+      url: apiLanguages.es,
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
+      alternates: { languages: apiLanguages },
+    },
+    {
+      url: apiLanguages.en,
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
+      alternates: { languages: apiLanguages },
+    },
+  ];
 }

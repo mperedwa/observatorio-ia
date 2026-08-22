@@ -1,5 +1,5 @@
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
-import { dirname, extname, join, relative, resolve, sep } from 'node:path';
+import { extname, join, relative, resolve, sep } from 'node:path';
 import { load, type CheerioAPI } from 'cheerio';
 
 const OUTPUT_DIR = resolve(process.cwd(), 'out');
@@ -32,6 +32,12 @@ function routeTarget(pathname: string): string {
   return join(OUTPUT_DIR, pathname, 'index.html');
 }
 
+function localeForRoute(route: string): Locale | undefined {
+  if (route === '/api/') return 'es';
+  if (route === '/api/en/') return 'en';
+  return LOCALES.find((locale) => route.startsWith(`/${locale}/`));
+}
+
 function accessibleName($: CheerioAPI, element: Parameters<CheerioAPI>[0]): string {
   const node = $(element);
   const labelledBy = node.attr('aria-labelledby');
@@ -49,7 +55,7 @@ function auditDocument(file: string, findings: Finding[], knownRoutes: Set<strin
   const route = routeFor(file);
   const source = readFileSync(file, 'utf8');
   const $ = load(source);
-  const expectedLocale = LOCALES.find((locale) => route.startsWith(`/${locale}/`));
+  const expectedLocale = localeForRoute(route);
 
   if (expectedLocale && $('html').attr('lang') !== expectedLocale) {
     findings.push({ file: route, message: `lang debe ser ${expectedLocale}, recibido ${$('html').attr('lang') ?? 'vacío'}` });
@@ -139,6 +145,13 @@ function auditLocaleParity(routes: Set<string>, findings: Finding[]) {
       if (!routes.has(counterpart)) findings.push({ file: route, message: `falta contraparte ${other}: ${counterpart}` });
     }
   }
+
+  if (routes.has('/api/') && !routes.has('/api/en/')) {
+    findings.push({ file: '/api/', message: 'falta contraparte en: /api/en/' });
+  }
+  if (routes.has('/api/en/') && !routes.has('/api/')) {
+    findings.push({ file: '/api/en/', message: 'falta contraparte es: /api/' });
+  }
 }
 
 if (!existsSync(OUTPUT_DIR)) throw new Error('No existe out/. Ejecutá npm run build primero.');
@@ -155,6 +168,6 @@ if (findings.length) {
   console.error(`\nAuditoría estática fallida: ${findings.length} hallazgos en ${html.length} documentos.`);
   process.exitCode = 1;
 } else {
-  const localized = html.filter((file) => /\/(es|en)\//.test(`${dirname(file)}${sep}`)).length;
+  const localized = html.filter((file) => localeForRoute(routeFor(file))).length;
   console.log(`Auditoría estática válida: ${html.length} HTML, ${localized} localizados y paridad ES/EN completa.`);
 }

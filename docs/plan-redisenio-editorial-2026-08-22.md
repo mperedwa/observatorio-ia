@@ -2,7 +2,7 @@
 
 Fecha: 22 de agosto de 2026.
 
-Estado: R6 implementada y validada localmente; candidato editorial pendiente de la revisión visual final de Mario. Push y despliegue no autorizados.
+Estado: R1-R7 implementadas y validadas localmente; candidato editorial pendiente de la revisión visual final de Mario. Push y despliegue no autorizados.
 
 Punto de partida técnico: Fase 5C comprometida en `e6786ba`. Este plan no autoriza push, despliegue ni publicación.
 
@@ -559,6 +559,65 @@ Commit sugerido:
 chore(design): valida candidato editorial de lanzamiento
 ```
 
+### R7. Documentación editorial bilingüe de la API pública
+
+Objetivo: convertir `/api/` en una puerta de entrada comprensible y coherente para periodistas, investigadores, desarrolladores y organizaciones que reutilizan los datos, sin cambiar las URLs ni el contrato de los siete endpoints JSON.
+
+Estado: implementada y validada localmente el 22 de agosto de 2026 sobre `redesign/editorial-v1`. No se hizo push ni despliegue.
+
+Resultado de la fase:
+
+- `/api/` funciona como documentación española por defecto y `/api/en/` como contraparte inglesa, con canonical, `hreflang` y alternancia visibles;
+- las siete colecciones se presentan como registros numerados con descripción humana, unidad de conteo y fecha editorial;
+- contrato, criterios de interpretación, modelo de evidencia, licencia, límites, mantenimiento y contacto quedan documentados en ambos idiomas;
+- ejemplos copiables con `curl`, `jq` y JavaScript funcionan sin JavaScript de interfaz ni dependencias de cliente;
+- el pie del sitio enlaza la versión correspondiente al idioma y el sitemap publica ambas rutas con sus alternates;
+- las pruebas verifican los siete enlaces, manifest, metadatos, estructura ES/EN y la envoltura exacta de todos los payloads;
+- la auditoría estática pasa con 143 HTML, 140 localizados y paridad ES/EN completa;
+- QA cubrió 360 × 800, 390 × 844, 768 × 1024 y 1440 × 1000; se corrigió un desbordamiento móvil inicial de los bloques de código;
+- salto al contenido, foco visible, cambio de idioma, enlace desde el pie y apertura por teclado de un JSON fueron verificados en navegador;
+- Lighthouse alcanza 100 en rendimiento, accesibilidad, buenas prácticas y SEO para ES móvil y EN escritorio;
+- 95 pruebas, AJV, ambos proyectos TypeScript, lint y build estática de 145 rutas pasan;
+- los siete JSON públicos, `src/data/json/`, contadores y manifest conservaron su contenido.
+
+Alcance:
+
+- conservar `/api/` como documentación española por defecto y añadir `/api/en/` como contraparte inglesa;
+- aplicar papel, tinta, reglas, numeración y jerarquía tipográfica del archivo cívico contemporáneo;
+- explicar el significado de `version`, `lastUpdate`, `count`, `source`, `license` y `data`;
+- publicar la unidad de conteo propia de cada endpoint, evitando que los totales se sumen o se interpreten como adopciones verificadas;
+- documentar el modelo de evidencia, los campos bilingües, el significado de no determinado y la función de las fuentes;
+- añadir ejemplos reproducibles con `curl`, `jq` y JavaScript;
+- explicar atribución CC BY 4.0, límites editoriales, mantenimiento y contacto;
+- enlazar la documentación localizada desde el pie del sitio e incorporarla al sitemap;
+- extender pruebas y auditoría estática a ambas versiones humanas.
+
+Criterios de aceptación:
+
+- los siete endpoints y `/api/index.json` conservan sus rutas;
+- los payloads mantienen exactamente la envoltura `{version,lastUpdate,count,source,license,data}`;
+- `src/data/json/` no cambia y una nueva build produce los mismos JSON públicos;
+- ES y EN contienen los siete enlaces, manifest, contrato, criterios de interpretación, ejemplos y atribución;
+- existe exactamente un `main` y un `h1` por documento, foco visible y navegación completa por teclado;
+- no hay desbordamiento no intencional en 360, 390, 768 y 1440 px;
+- la documentación funciona sin JavaScript y conserva enlaces directos copiables;
+- tipos, lint, pruebas, AJV, build y `audit:static` pasan antes del commit.
+
+QA visual mínima:
+
+- `/api/` y `/api/en/` en escritorio y móvil;
+- alternancia ES/EN;
+- apertura del manifest y de al menos un endpoint;
+- navegación por teclado y foco visible;
+- consola sin errores;
+- comparación antes/después de `/api/`.
+
+Commit sugerido:
+
+```text
+feat(api): publica documentación editorial bilingüe
+```
+
 ## Flujo de trabajo de cada fase
 
 1. Leer este plan y confirmar la fase activa.
@@ -645,10 +704,10 @@ Guardas cuantitativas orientativas para el cierre:
 - ajustes de navegación derivados de 30 días de analítica real;
 - publicación del sitio.
 
-## Siguiente acción después de R6
+## Siguiente acción después de R7
 
-1. Revisar localmente el candidato completo en ES y EN, con énfasis en portada, catálogo, ENIA, Marco país, Indicadores, Análisis y los 32 PNG bilingües.
-2. Resolver dentro de R6 cualquier observación final de legibilidad, densidad, contraste o responsive.
+1. Revisar localmente el candidato completo en ES y EN, con énfasis en portada, catálogo, ENIA, Marco país, Indicadores, Análisis, API pública y los 32 PNG bilingües.
+2. Resolver en un commit de ajuste cualquier observación final de legibilidad, densidad, contraste o responsive.
 3. Aprobar o diferir de forma separada el logo definitivo; no bloquea el candidato actual.
 4. Decidir explícitamente si se fusiona, publica la rama y activa el monitoreo remoto. Ninguno de esos actos está autorizado por este plan.
 

@@ -54,7 +54,10 @@ export function Footer({ t, locale }: { t: Dictionary; locale: Locale }) {
             >
               {t.footer.historialMonitoreo}
             </Link>
-            <a href="/api/index.html" className="text-editorial-ink hover:underline">
+            <a
+              href={locale === 'es' ? '/api/' : '/api/en/'}
+              className="text-editorial-ink hover:underline"
+            >
               {t.footer.apiPublica}
             </a>
             <Link
