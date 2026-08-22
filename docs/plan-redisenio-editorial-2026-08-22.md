@@ -2,7 +2,7 @@
 
 Fecha: 22 de agosto de 2026.
 
-Estado: R4 completada localmente; pendiente la revisión visual de Mario antes de iniciar R5.
+Estado: R5 completada localmente; pendiente la revisión visual de Mario antes de iniciar R6.
 
 Punto de partida técnico: Fase 5C comprometida en `e6786ba`. Este plan no autoriza push, despliegue ni publicación.
 
@@ -413,7 +413,7 @@ feat(design): convierte catalogos y fichas en expedientes
 
 Objetivo: rediseñar las superficies documentales más densas sin reducir su trazabilidad.
 
-Estado: implementación local completada el 22 de agosto de 2026 en la rama `redesign/editorial-v1`; pendiente la revisión visual de Mario antes de iniciar R5.
+Estado: implementación local completada y aprobada por Mario el 22 de agosto de 2026 en la rama `redesign/editorial-v1`.
 
 Resultado de la fase:
 
@@ -455,6 +455,23 @@ feat(design): unifica registros de politica y monitoreo
 ### R5. Indicadores, análisis y superficies secundarias
 
 Objetivo: completar el lenguaje visual y evitar que las páginas menos frecuentes conserven el sistema anterior.
+
+Estado: implementación local completada el 22 de agosto de 2026 en la rama `redesign/editorial-v1`; pendiente la revisión visual de Mario antes de iniciar R6.
+
+Resultado de la fase:
+
+- Indicadores convertido en un documento de tres secciones numeradas para ILIA, Digital Government Index y OURdata, con barras rectas, paleta contenida, fuentes visibles y vistas de gráfico, tabla y ranking conservadas;
+- índice de Análisis convertido en registro editorial para artículos, comparativa regional, siete brechas y siete expedientes, con tabla de escritorio y registros completos en móvil;
+- los dos artículos de Estado y Algoritmo adoptan papel, tinta, tipografía editorial, reglas y llamadas laterales sin perder filtros, ordenamiento, tablas, detalles ni gráficos SVG;
+- corregida la hidratación de los artículos: el CSS embebido ya produce el mismo contenido en servidor y cliente y no fuerza el reemplazo del árbol React;
+- Recursos, Quién mantiene y Privacidad convertidos en documentos continuos y registros numerados; autoría, método, capas de catálogo y matriz de evidencia quedan explícitos sin tarjetas decorativas;
+- la galería de material para compartir adopta la misma jerarquía editorial y sustituye imágenes HTML sin optimización por `next/image` compatible con la exportación estática;
+- 32 PNG bilingües regenerados en formatos cuadrado, OpenGraph y story, con papel, tinta, reglas y una paleta funcional común;
+- brecha ILIA corregida desde el texto obsoleto de 19 puntos al cálculo exacto derivado de los datos, 16,73 en ES y 16.73 en EN; el titular redondeado conserva 17;
+- titular de la línea de tiempo actualizado de 2019-2024 a 2019-2025 para incluir la adopción verificada de INAMU;
+- el logo actual se conserva porque todavía no se ha aprobado una variante definitiva;
+- ningún JSON de evidencia cambió; AJV, TypeScript, lint y la build de 145/145 páginas estáticas pasan sin errores;
+- revisión interactiva en ES y EN, escritorio de 1440 px y móvil de 390 px, sin errores de consola ni desbordamientos; las 16 imágenes de la galería cargan con sus dimensiones esperadas en la build estática.
 
 Entregables:
 
@@ -610,12 +627,12 @@ Guardas cuantitativas orientativas para el cierre:
 - ajustes de navegación derivados de 30 días de analítica real;
 - publicación del sitio.
 
-## Siguiente acción después de R4
+## Siguiente acción después de R5
 
-1. Confirmar que el último commit de `redesign/editorial-v1` contiene R4 y que no modifica los JSON de evidencia ni incorpora documentos privados.
-2. Levantar `localhost:3001` y revisar ENIA, Marco país, legislación e historial en ES y EN, escritorio y móvil.
-3. Recoger las observaciones visuales de Mario y resolverlas dentro de R4 si afectan densidad, separación de capas, tablas o registros móviles.
-4. Iniciar R5 solamente después de aprobar estas cuatro superficies documentales densas.
+1. Confirmar que el último commit de `redesign/editorial-v1` contiene R5 y que no modifica los JSON de evidencia ni incorpora documentos privados.
+2. Levantar `localhost:3001` y revisar Indicadores, Análisis, los dos artículos, Recursos, Quién mantiene, Privacidad y Comparte en ES y EN, escritorio y móvil.
+3. Recoger las observaciones visuales de Mario y resolverlas dentro de R5 si afectan lectura, densidad, visualizaciones o activos sociales.
+4. Iniciar R6 solamente después de aprobar estas superficies y sus 32 PNG bilingües.
 
 ## Definición final de terminado
 

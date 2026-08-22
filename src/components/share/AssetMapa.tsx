@@ -7,10 +7,10 @@ import { CAPAS_CATALOGO, resumirInstitucionCatalogo, type CapaCatalogo } from '@
 import { applyCounters } from '@/i18n/applyCounters';
 import { COUNTERS } from '@/data/counters';
 
-const capaColor: Record<CapaCatalogo, { bg: string; text: string; border: string }> = {
-  verificado: { bg: '#d1fae5', text: '#065f46', border: '#6ee7b7' },
-  seguimiento: { bg: '#fef3c7', text: '#92400e', border: '#fcd34d' },
-  ecosistema: { bg: '#e0f2fe', text: '#075985', border: '#7dd3fc' },
+const capaColor: Record<CapaCatalogo, { text: string; border: string }> = {
+  verificado: { text: '#166534', border: '#16a34a' },
+  seguimiento: { text: '#92400e', border: '#d97706' },
+  ecosistema: { text: '#1e40af', border: '#2563eb' },
 };
 
 export function AssetMapa({
@@ -40,19 +40,19 @@ export function AssetMapa({
           {t.panorama.kicker}
         </p>
         <h1
-          className="mt-4 font-bold text-slate-900 leading-tight"
+          className="mt-4 font-editorial font-semibold leading-[1.02] text-editorial-ink"
           style={{ fontSize: 44, maxWidth: 940 }}
         >
           {applyCounters(t.comparte.assets.mapaTitulo, COUNTERS)}
         </h1>
 
-        <div className="mt-10 grid grid-cols-2 gap-4 flex-1 content-start">
+        <div className="mt-10 grid flex-1 grid-cols-2 content-start border-y border-editorial-rule">
           {grupos.map(({ inst, proyectos: ps }) => {
             const resumen = resumirInstitucionCatalogo(ps);
             return (
               <article
                 key={inst.id}
-                className="bg-white border-2 border-slate-200 rounded-xl p-5"
+                className="border-b border-editorial-rule p-5 odd:border-r odd:border-editorial-rule"
               >
                 <header className="flex items-baseline justify-between gap-4">
                   <span className="font-bold text-slate-900" style={{ fontSize: 22 }}>
@@ -66,9 +66,8 @@ export function AssetMapa({
                   {CAPAS_CATALOGO.map((capa) => (
                     <div
                       key={capa}
-                      className="rounded-lg border-2 px-3 py-2"
+                      className="border-l-4 px-3 py-1"
                       style={{
-                        background: capaColor[capa].bg,
                         borderColor: capaColor[capa].border,
                         color: capaColor[capa].text,
                       }}
@@ -90,10 +89,7 @@ export function AssetMapa({
         <div className="mt-8 flex items-center gap-6 text-slate-600" style={{ fontSize: 16 }}>
           {CAPAS_CATALOGO.map((capa) => (
             <span key={capa} className="flex items-center gap-2">
-              <span
-                className="w-4 h-4 rounded"
-                style={{ background: capaColor[capa].bg, border: `2px solid ${capaColor[capa].border}` }}
-              />
+              <span className="h-4 w-1" style={{ background: capaColor[capa].border }} />
               {t.catalogo.capas[capa].corto}
             </span>
           ))}

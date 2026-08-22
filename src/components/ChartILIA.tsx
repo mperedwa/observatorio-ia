@@ -36,7 +36,7 @@ function CustomTooltip({
   if (!active || !payload || !payload.length) return null;
   const row = payload[0].payload;
   return (
-    <div className="bg-white border border-slate-200 rounded-md shadow-lg p-3 text-xs max-w-xs">
+    <div className="max-w-xs border border-editorial-rule bg-white p-3 text-xs shadow-lg">
       <div className="font-semibold text-slate-900 mb-1">
         {row.pais} <span className="tabular-nums text-institucional-700">{row.ilia.toFixed(2)}</span>
       </div>
@@ -105,7 +105,7 @@ export function ChartILIA({ locale, t }: { locale: Locale; t: Dictionary }) {
               cursor={{ fill: 'rgba(15, 23, 42, 0.04)' }}
               content={<CustomTooltip t={t} />}
             />
-            <Bar dataKey="ilia" radius={[0, 6, 6, 0]}>
+            <Bar dataKey="ilia" radius={0}>
               {data.map((row, idx) => (
                 <Cell
                   key={idx}
@@ -127,7 +127,7 @@ export function ChartILIA({ locale, t }: { locale: Locale; t: Dictionary }) {
       <button
         type="button"
         onClick={handleClick}
-        className="mt-4 text-xs text-institucional-700 hover:underline"
+        className="mt-4 border-b border-institucional-700 pb-0.5 text-xs font-semibold text-institucional-700 hover:text-institucional-900"
       >
         {t.chartIlia.drillCta}
       </button>

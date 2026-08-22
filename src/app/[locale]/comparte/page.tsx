@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Breadcrumb } from '@/components/Breadcrumb';
+import { EncabezadoSeccionExpediente } from '@/components/ExpedienteEditorial';
 import { brechas } from '@/data/brechas';
 import { getDictionary } from '@/i18n/dictionaries';
 import { locales, type Locale } from '@/i18n/config';
@@ -141,31 +143,33 @@ export default async function ComartePage({
   const resolveLabel = (label: string) => applyCounters(label, COUNTERS);
 
   return (
-    <article className="max-w-6xl mx-auto px-6 py-12 sm:py-16">
-      <Breadcrumb
-        locale={lc}
-        items={[
-          { label: t.breadcrumb.inicio, href: `/${lc}/` },
-          { label: t.comparte.kicker },
-        ]}
-      />
-
-      <header className="mt-6 mb-12 border-b border-slate-200 pb-8">
-        <p className="text-xs uppercase tracking-wider text-institucional-700">{t.comparte.kicker}</p>
-        <h1 className="mt-2 text-3xl sm:text-4xl font-bold text-slate-900 text-balance leading-tight">
-          {t.comparte.titulo}
-        </h1>
-        <p className="mt-4 text-lg text-slate-600 text-pretty max-w-3xl">{t.comparte.sub}</p>
-        <p className="mt-3 text-sm text-slate-500">{t.comparte.instrucciones}</p>
+    <article className="bg-white">
+      <header className="border-b border-editorial-rule bg-editorial-paper">
+        <div className="mx-auto max-w-6xl px-6 pb-14 pt-10 sm:pb-16">
+          <Breadcrumb
+            locale={lc}
+            items={[
+              { label: t.breadcrumb.inicio, href: `/${lc}/` },
+              { label: t.comparte.kicker },
+            ]}
+          />
+          <p className="mt-7 text-xs font-semibold uppercase tracking-[0.12em] text-institucional-700">{t.comparte.kicker}</p>
+          <h1 className="mt-3 max-w-4xl font-editorial text-4xl font-semibold leading-[0.98] tracking-[-0.025em] text-editorial-ink text-balance sm:text-6xl">
+            {t.comparte.titulo}
+          </h1>
+          <p className="mt-5 max-w-3xl text-lg leading-relaxed text-editorial-muted text-pretty">{t.comparte.sub}</p>
+          <p className="mt-5 max-w-3xl border-l-2 border-editorial-accent pl-4 text-sm leading-relaxed text-editorial-muted">{t.comparte.instrucciones}</p>
+        </div>
       </header>
 
-      {sections.map((section) => (
-        <section key={section.id} className="mb-14">
-          <h2 className="text-xl font-semibold text-slate-900 mb-5">{section.titulo}</h2>
+      <div className="mx-auto max-w-6xl px-6">
+      {sections.map((section, sectionIndex) => (
+        <section key={section.id} className="border-b border-editorial-rule py-12 sm:py-16">
+          <EncabezadoSeccionExpediente index={String(sectionIndex + 1).padStart(2, '0')} title={section.titulo} />
           <div
-            className={`grid gap-5 ${
+            className={`mt-8 grid gap-x-7 gap-y-10 sm:ml-[4.5rem] ${
               section.items[0]?.size === 'story'
-                ? 'grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 max-w-3xl'
+                ? 'grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 max-w-4xl'
                 : section.items[0]?.size === 'horizontal'
                   ? 'grid-cols-1 sm:grid-cols-2'
                   : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'
@@ -174,27 +178,28 @@ export default async function ComartePage({
             {section.items.map((item) => (
               <article
                 key={item.filename}
-                className="border border-slate-200 rounded-lg overflow-hidden bg-white flex flex-col"
+                className="flex min-w-0 flex-col"
               >
-                <div className={`bg-slate-50 ${aspectClass[item.size]}`}>
-                  <img
+                <div className={`border border-editorial-rule bg-editorial-paper ${aspectClass[item.size]}`}>
+                  <Image
                     src={`/comparte-assets/${lc}/${item.filename}`}
                     alt={resolveLabel(item.label)}
-                    width={1080}
+                    width={item.size === 'horizontal' ? 1200 : 1080}
                     height={item.size === 'square' ? 1080 : item.size === 'horizontal' ? 630 : 1920}
                     className="w-full h-full object-cover"
                     loading="lazy"
+                    unoptimized
                   />
                 </div>
-                <div className="p-4 flex-1 flex flex-col">
-                  <p className="text-sm font-semibold text-slate-900 mb-1">
+                <div className="flex flex-1 flex-col border-b border-editorial-rule py-4">
+                  <p className="font-editorial text-lg font-semibold leading-snug text-editorial-ink">
                     {resolveLabel(item.label)}
                   </p>
-                  <p className="text-xs text-slate-500 mb-3">{sizeLabel[item.size]}</p>
+                  <p className="mt-1 text-[0.68rem] uppercase tracking-[0.06em] text-slate-500">{sizeLabel[item.size]}</p>
                   <a
                     href={`/comparte-assets/${lc}/${item.filename}`}
                     download={item.filename}
-                    className="mt-auto inline-block text-sm text-institucional-700 hover:underline self-start"
+                    className="mt-4 self-start border-b border-institucional-700 pb-0.5 text-xs font-semibold text-institucional-700 hover:text-institucional-900"
                   >
                     ↓ {t.comparte.descargar}
                   </a>
@@ -205,7 +210,7 @@ export default async function ComartePage({
         </section>
       ))}
 
-      <section className="mt-16 pt-8 border-t border-slate-200">
+      <section className="py-12 sm:py-16">
         <p className="text-sm text-slate-600 italic text-pretty max-w-3xl">{t.comparte.notaUso}</p>
         <p className="mt-3 text-sm">
           <Link href={`/${lc}/quien-mantiene`} className="text-institucional-700 hover:underline">
@@ -213,6 +218,7 @@ export default async function ComartePage({
           </Link>
         </p>
       </section>
+      </div>
     </article>
   );
 }

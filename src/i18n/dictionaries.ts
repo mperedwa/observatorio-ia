@@ -881,7 +881,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       },
       assets: {
         kpiHeroTitulo: '{adopcionVerificada} verificadas · {seguimiento} en seguimiento · {ecosistema} de ecosistema',
-        timelineTitulo: 'Adopción de IA verificada, 2019-2024',
+        timelineTitulo: 'Adopción de IA verificada, 2019-2025',
         iliaTitulo: 'Costa Rica vs América Latina (ILIA 2025)',
         mapaTitulo: '{iniciativasDocumentadas} iniciativas en tres capas de evidencia',
         brechaXroad: 'Brecha 1 — Interoperabilidad nacional',
@@ -1568,7 +1568,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       },
       assets: {
         kpiHeroTitulo: '{adopcionVerificada} verified · {seguimiento} under review · {ecosistema} ecosystem',
-        timelineTitulo: 'Verified AI adoption, 2019-2024',
+        timelineTitulo: 'Verified AI adoption, 2019-2025',
         iliaTitulo: 'Costa Rica vs Latin America (ILIA 2025)',
         mapaTitulo: '{iniciativasDocumentadas} initiatives across three evidence layers',
         brechaXroad: 'Gap 1 — National interoperability',

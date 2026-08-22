@@ -223,6 +223,82 @@ const CSS = `
   margin-top: 8px;
 }
 
+/* R5 — lenguaje de archivo editorial */
+.policy-brief[data-theme="light"] {
+  --pb-bg: #ffffff; --pb-surface: #ffffff; --pb-surface-alt: #f7f5ef;
+  --pb-text: #10243e; --pb-text-secondary: #475569; --pb-text-muted: #64748b;
+  --pb-border: #cbd5e1; --pb-primary: #1d4ed8; --pb-primary-light: transparent;
+  --pb-chart-1: #1d4ed8; --pb-chart-2: #64748b;
+}
+.policy-brief { background: #fff; color: var(--pb-text); }
+.policy-brief > header { background: #f7f5ef !important; border-color: var(--pb-border) !important; }
+.policy-brief > header h1 {
+  max-width: 48rem; font-family: var(--font-source-serif), Georgia, serif !important;
+  font-size: clamp(2.5rem, 6vw, 4.25rem) !important; font-weight: 600 !important;
+  line-height: .98 !important; letter-spacing: -.025em;
+}
+.policy-brief > header p { max-width: 46rem; }
+.policy-brief > nav { top: 4rem !important; z-index: 30 !important; background: #fff !important; }
+.pb-toc { gap: 0; padding-top: 0; padding-bottom: 0; }
+.pb-toc a { border-bottom: 2px solid transparent; border-radius: 0; padding: 12px 10px; }
+.pb-toc a:hover { background: transparent; border-bottom-color: var(--pb-primary); }
+.pb-sh { display: grid; grid-template-columns: 3.25rem minmax(0, 1fr); align-items: start; gap: 20px; }
+.pb-sn {
+  display: block; min-width: 0; min-height: 0; padding: 5px 0 0; background: transparent;
+  color: #94a3b8; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: .72rem; font-weight: 500; border-radius: 0;
+}
+.pb-st {
+  font-family: var(--font-source-serif), Georgia, serif; font-size: clamp(1.9rem, 4vw, 2.5rem);
+  font-weight: 600; line-height: 1.08; letter-spacing: -.015em;
+}
+.pb-p { max-width: 46rem; }
+.pb-callout {
+  background: transparent !important; border-left-width: 2px; border-radius: 0;
+  padding: 2px 0 2px 18px;
+}
+.pb-metric-card {
+  background: transparent; border: 0; border-top: 1px solid var(--pb-border);
+  border-bottom: 1px solid var(--pb-border); border-radius: 0; padding: 18px 0; text-align: left;
+}
+.pb-mn { font-family: var(--font-source-serif), Georgia, serif; font-weight: 600; }
+.pb-chart {
+  background: transparent; border: 0; border-top: 1px solid var(--pb-border);
+  border-bottom: 1px solid var(--pb-border); border-radius: 0; padding: 20px 0; margin: 22px 0 32px;
+}
+.pb-chart-title { font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; }
+.policy-brief details { background: transparent; border: 0; border-top: 1px solid var(--pb-border); border-radius: 0; }
+.policy-brief details:last-of-type { border-bottom: 1px solid var(--pb-border); }
+.policy-brief details > summary { padding: 14px 0; }
+.policy-brief details > div { padding: 0 0 18px; }
+.pb-hr { margin: 50px 0; }
+.pb-badge { border-left: 4px solid currentColor; border-radius: 0; padding: 0 0 0 8px; background: transparent; }
+.pb-fbtn {
+  background: transparent; border: 0; border-bottom: 2px solid transparent; border-radius: 0;
+  padding: 7px 10px;
+}
+.pb-fbtn:hover { background: #f7f5ef; }
+.pb-fbtn-on { background: transparent; border-bottom-color: var(--pb-primary); color: var(--pb-primary); }
+.pb-tw { border: 0; border-top: 1px solid var(--pb-border); border-bottom: 1px solid var(--pb-border); border-radius: 0; }
+.pb-tbl th { background: #f7f5ef; }
+.pb-tl-dot { width: 10px; height: 10px; left: -23px; border: 0; border-radius: 0; box-shadow: none; }
+.pb-tl-quote { background: transparent; border-left-width: 2px; border-radius: 0; }
+.pb-rec { background: transparent; border: 0; border-bottom: 1px solid var(--pb-border); border-radius: 0; padding: 20px 0; }
+.pb-rec-num {
+  width: auto; height: auto; justify-content: flex-start; background: transparent; border-radius: 0;
+  font-family: var(--font-source-serif), Georgia, serif; color: #94a3b8;
+}
+.pb-rec-title, .pb-model-name { font-family: var(--font-source-serif), Georgia, serif; }
+.pb-model { background: transparent; border: 0; border-bottom: 1px solid var(--pb-border); border-radius: 0; padding: 20px 0; }
+.pb-model-cr { background: transparent; border-left-width: 2px; border-radius: 0; }
+.pb-dual { gap: 28px !important; }
+.policy-brief > footer { background: #f7f5ef !important; }
+@media (max-width: 640px) {
+  .pb-sh { grid-template-columns: 2.5rem minmax(0, 1fr); gap: 12px; }
+  .pb-toc { padding-left: 8px; padding-right: 8px; }
+  .pb-dual { grid-template-columns: 1fr !important; }
+}
+
 @media print {
   .policy-brief {
     --pb-bg: white !important; --pb-surface: white !important;
@@ -381,7 +457,6 @@ function SemaforoBar({
 
 export default function ArticleBrief({ locale }: { locale: Locale }) {
   const T = TRANSLATIONS[locale];
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
   const [filter, setFilter] = useState<FilterKey>('all');
 
   const sections = useMemo(
@@ -405,24 +480,8 @@ export default function ArticleBrief({ locale }: { locale: Locale }) {
 
   return (
     <>
-      <style>{CSS}</style>
-      <div className="policy-brief" data-theme={theme}>
-
-        {/* Theme toggle */}
-        <button
-          type="button"
-          className="pb-theme-btn"
-          onClick={() => setTheme((t) => (t === 'light' ? 'dark' : 'light'))}
-          aria-label={theme === 'light' ? T.theme.toDark : T.theme.toLight}
-        >
-          <svg width="20" height="20" viewBox="0 0 20 20" style={{ fill: 'var(--pb-text)' }}>
-            {theme === 'light' ? (
-              <path d="M10 3a1 1 0 011 1v1a1 1 0 11-2 0V4a1 1 0 011-1zm4.22 1.28a1 1 0 011.42 1.42l-.72.7a1 1 0 11-1.41-1.41l.71-.71zM17 9a1 1 0 110 2h-1a1 1 0 110-2h1zM15.66 14.3a1 1 0 01.02 1.42l-.02.02a1 1 0 01-1.42-1.42l.71-.71a1 1 0 011.42.28l-.71.41zM10 15a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 14.3l.71.7a1 1 0 01-1.42 1.43l-.71-.71a1 1 0 011.42-1.42zM3 9h1a1 1 0 110 2H3a1 1 0 110-2zm1.64-4.01a1 1 0 011.42 0l.7.71a1 1 0 01-1.41 1.42l-.71-.71a1 1 0 010-1.42zM10 7a3 3 0 100 6 3 3 0 000-6z" />
-            ) : (
-              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.003 8.003 0 1010.586 10.586z" />
-            )}
-          </svg>
-        </button>
+      <style dangerouslySetInnerHTML={{ __html: CSS }} />
+      <div className="policy-brief" data-theme="light">
 
         {/* HEADER */}
         <header style={{ background: 'var(--pb-surface)', borderBottom: '1px solid var(--pb-border)' }}>
@@ -492,7 +551,7 @@ export default function ArticleBrief({ locale }: { locale: Locale }) {
         </nav>
 
         {/* CONTENT */}
-        <main style={{ background: 'var(--pb-bg)' }}>
+        <div style={{ background: 'var(--pb-bg)' }}>
           <div style={{ maxWidth: 880, margin: '0 auto', padding: '44px 24px 64px' }}>
 
             {/* ── Executive Summary ── */}
@@ -856,7 +915,7 @@ export default function ArticleBrief({ locale }: { locale: Locale }) {
             </section>
 
           </div>
-        </main>
+        </div>
 
         {/* FOOTER */}
         <footer style={{ background: 'var(--pb-surface)', borderTop: '1px solid var(--pb-border)', padding: '32px 24px' }}>

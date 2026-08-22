@@ -1,6 +1,7 @@
 import { ChartOecdIndex } from './ChartOecdIndex';
 import type { OecdIndex } from '@/data/indicadores';
 import type { Locale } from '@/i18n/config';
+import { EncabezadoSeccionExpediente } from './ExpedienteEditorial';
 
 interface SectionCopy {
   titulo: string;
@@ -12,32 +13,28 @@ interface SectionCopy {
 }
 
 export function IndicadorOecd({
+  index,
   data,
   locale,
   copy,
-  headingLevel = 'h3',
 }: {
+  index: string;
   data: OecdIndex;
   locale: Locale;
   copy: SectionCopy;
-  headingLevel?: 'h2' | 'h3';
 }) {
-  const Heading = headingLevel;
   const delta = data.crVsAnterior.delta;
   const deltaSign = delta > 0 ? '+' : '';
   const deltaColor = delta > 0 ? 'text-emerald-700' : delta < 0 ? 'text-rose-700' : 'text-slate-600';
 
   return (
-    <div className="border border-slate-200 rounded-lg p-6 bg-white">
-      <div className="flex items-center justify-between mb-2">
-        <Heading className="text-lg font-semibold text-slate-900">{copy.titulo}</Heading>
-      </div>
-      <p className="text-sm text-slate-600 mb-6">{copy.sub}</p>
+    <section className="border-b border-editorial-rule py-12 last:border-b-0 sm:py-16">
+      <EncabezadoSeccionExpediente index={index} title={copy.titulo} description={copy.sub} />
+      <div className="mt-8 sm:pl-[4.5rem]">
+        <ChartOecdIndex data={data} locale={locale} scoreLabel={copy.scoreLabel} />
 
-      <ChartOecdIndex data={data} locale={locale} scoreLabel={copy.scoreLabel} />
-
-      <div className="mt-6 grid gap-4 sm:grid-cols-2">
-        <div>
+      <div className="mt-8 grid border-y border-editorial-rule sm:grid-cols-2 sm:divide-x sm:divide-editorial-rule">
+        <div className="py-5 sm:pr-6">
           <p className="text-xs font-medium uppercase tracking-wider text-slate-500 mb-2">
             {copy.subdimsLabel}
           </p>
@@ -52,7 +49,7 @@ export function IndicadorOecd({
             ))}
           </ul>
         </div>
-        <div>
+        <div className="border-t border-editorial-rule py-5 sm:border-t-0 sm:pl-6">
           <p className="text-xs font-medium uppercase tracking-wider text-slate-500 mb-2">
             {copy.crProgresoLabel}
           </p>
@@ -70,7 +67,7 @@ export function IndicadorOecd({
         </div>
       </div>
 
-      <div className="mt-6 pt-4 border-t border-slate-100">
+      <div className="mt-7 border-t border-editorial-rule pt-5">
         <p className="text-xs text-slate-500 mb-2">{copy.fuenteLabel}</p>
         <ul className="space-y-1 text-xs">
           {data.fuentes.map((f, i) => (
@@ -89,6 +86,7 @@ export function IndicadorOecd({
           ))}
         </ul>
       </div>
-    </div>
+      </div>
+    </section>
   );
 }

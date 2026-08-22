@@ -39,7 +39,7 @@ export function AssetKpiHero({
 
   return (
     <AssetFrame size={size} locale={locale} variant="gradient">
-      <div className="flex-1 flex flex-col p-12 pb-20">
+      <div className="flex flex-1 flex-col justify-center p-14 pb-24 pt-16">
         <div>
           <p
             className="font-semibold uppercase tracking-widest text-institucional-700"
@@ -48,8 +48,8 @@ export function AssetKpiHero({
             {t.hero.kicker}
           </p>
           <h1
-            className="mt-4 font-bold text-slate-900 leading-tight"
-            style={{ fontSize: 50, maxWidth: 960 }}
+            className="mt-4 font-editorial font-semibold leading-[1.02] text-editorial-ink"
+            style={{ fontSize: 54, maxWidth: 960 }}
           >
             {applyCounters(t.comparte.assets.kpiHeroTitulo, COUNTERS)}
           </h1>
@@ -60,14 +60,14 @@ export function AssetKpiHero({
           </p>
         </div>
 
-        <div className="mt-12 grid grid-cols-2 gap-x-8 gap-y-7">
-          {resumen.map((k) => (
+        <div className="mt-12 grid grid-cols-2 border-y border-editorial-rule">
+          {resumen.map((k, index) => (
             <div
               key={k.label}
-              className="border-l-4 border-institucional-700 pl-5"
+              className={`px-5 py-6 ${index % 2 === 0 ? 'border-r border-editorial-rule pl-0' : ''} ${index < 2 ? 'border-b border-editorial-rule' : ''}`}
             >
               <div
-                className="font-bold text-institucional-900 tabular-nums leading-none"
+                className="font-editorial font-semibold leading-none tabular-nums text-institucional-900"
                 style={{ fontSize: 68 }}
               >
                 {k.valor}

@@ -32,7 +32,7 @@ function CustomTooltip({
   if (!active || !payload || !payload.length) return null;
   const row = payload[0].payload;
   return (
-    <div className="bg-white border border-slate-200 rounded-md shadow-lg p-3 text-xs max-w-xs">
+    <div className="max-w-xs border border-editorial-rule bg-white p-3 text-xs shadow-lg">
       <div className="font-semibold text-slate-900 mb-1">{row.pais}</div>
       <div className="text-slate-600">
         <span className="text-slate-500">{scoreLabel}: </span>
@@ -87,7 +87,7 @@ export function ChartOecdIndex({
             cursor={{ fill: 'rgba(15, 23, 42, 0.04)' }}
             content={<CustomTooltip scoreLabel={scoreLabel} />}
           />
-          <Bar dataKey="score" radius={[0, 6, 6, 0]}>
+          <Bar dataKey="score" radius={0}>
             {rows.map((row, idx) => (
               <Cell
                 key={idx}
@@ -95,7 +95,7 @@ export function ChartOecdIndex({
                   row.destacado
                     ? '#1d4ed8'
                     : row.esPromedio
-                      ? '#0f766e'
+                      ? '#475569'
                       : '#94a3b8'
                 }
               />

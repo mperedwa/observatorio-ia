@@ -34,7 +34,7 @@ export function AssetFrame({
     variant === 'dark'
       ? 'bg-slate-900 text-white'
       : variant === 'gradient'
-        ? 'bg-gradient-to-br from-institucional-50 via-white to-slate-50 text-slate-900'
+        ? 'bg-editorial-paper text-editorial-ink'
         : 'bg-white text-slate-900';
   return (
     <div
@@ -45,15 +45,18 @@ export function AssetFrame({
         fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
       }}
     >
+      <div
+        aria-hidden
+        className={`absolute inset-x-0 top-0 h-3 ${variant === 'dark' ? 'bg-institucional-600' : 'bg-editorial-ink'}`}
+      />
       <div className="absolute inset-0 flex flex-col">{children}</div>
       <footer
-        className={`absolute bottom-6 right-6 flex items-baseline gap-3 ${
-          variant === 'dark' ? 'text-slate-300' : 'text-slate-500'
+        className={`absolute inset-x-0 bottom-0 flex items-baseline justify-between border-t px-8 py-5 ${
+          variant === 'dark' ? 'border-slate-700 text-slate-300' : 'border-editorial-rule text-slate-500'
         }`}
         style={{ fontSize: 16 }}
       >
-        <span className="font-semibold tracking-tight">observatorioia.org</span>
-        <span className="opacity-60">·</span>
+        <span className="font-semibold tracking-[0.02em]">observatorioia.org</span>
         <span>{locale === 'es' ? 'Agosto 2026' : 'August 2026'}</span>
       </footer>
     </div>

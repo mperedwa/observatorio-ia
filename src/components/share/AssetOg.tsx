@@ -57,7 +57,7 @@ export function AssetOg({
           {content.kicker}
         </p>
         <h1
-          className="mt-3 font-bold text-slate-900 leading-tight"
+          className="mt-3 font-editorial font-semibold leading-[1.02] text-editorial-ink"
           style={{ fontSize: 56, maxWidth: 1000 }}
         >
           {content.title}

@@ -6,7 +6,10 @@ import { getDictionary } from '@/i18n/dictionaries';
 import { locales, type Locale } from '@/i18n/config';
 import { CAPAS_CATALOGO } from '@/data/presentacion-catalogo';
 import { DIMENSIONES_EVIDENCIA } from '@/data/modelo-evidencia';
-import { capaChip } from '@/components/catalogoStyles';
+import {
+  EncabezadoSeccionExpediente,
+  MarcaDocumental,
+} from '@/components/ExpedienteEditorial';
 import Link from 'next/link';
 
 // Enlaza inline la firma de autoría en el cuerpo de "Autoría". Los dos términos
@@ -89,105 +92,94 @@ export default async function QuienMantienePage({
   const q = t.quienMantiene;
 
   return (
-    <article className="max-w-4xl mx-auto px-6 py-12 sm:py-16">
-      <Breadcrumb
-        locale={lc}
-        items={[
-          { label: t.breadcrumb.inicio, href: `/${lc}/` },
-          { label: q.kicker },
-        ]}
-      />
-
-      <header className="mt-6 mb-12 border-b border-slate-200 pb-8">
-        <p className="text-xs uppercase tracking-wider text-institucional-700">{q.kicker}</p>
-        <h1 className="mt-2 text-3xl sm:text-4xl font-bold text-slate-900 text-balance leading-tight">
-          {q.titulo}
-        </h1>
+    <article className="bg-white">
+      <header className="border-b border-editorial-rule bg-editorial-paper">
+        <div className="mx-auto max-w-6xl px-6 pb-14 pt-10 sm:pb-16">
+          <Breadcrumb
+            locale={lc}
+            items={[
+              { label: t.breadcrumb.inicio, href: `/${lc}/` },
+              { label: q.kicker },
+            ]}
+          />
+          <p className="mt-7 text-xs font-semibold uppercase tracking-[0.12em] text-institucional-700">{q.kicker}</p>
+          <h1 className="mt-3 max-w-4xl font-editorial text-4xl font-semibold leading-[0.98] tracking-[-0.025em] text-editorial-ink text-balance sm:text-6xl">
+            {q.titulo}
+          </h1>
+        </div>
       </header>
 
-      <section className="mb-10">
-        <h2 className="text-lg font-semibold text-slate-900 mb-2">{q.autoria.titulo}</h2>
-        <p className="text-base text-slate-700 text-pretty leading-relaxed">{linkifyAutoria(q.autoria.cuerpo)}</p>
-      </section>
+      <div className="mx-auto max-w-6xl px-6">
+        <section className="py-12 sm:py-16">
+          <EncabezadoSeccionExpediente index="01" title={q.autoria.titulo} />
+          <p className="mt-6 max-w-3xl text-base leading-relaxed text-editorial-muted text-pretty sm:ml-[4.5rem]">
+            {linkifyAutoria(q.autoria.cuerpo)}
+          </p>
+        </section>
 
-      <section className="mb-10">
-        <h2 className="text-lg font-semibold text-slate-900 mb-2">{q.metodologia.titulo}</h2>
-        <p className="text-base text-slate-700 text-pretty leading-relaxed mb-3">
-          {q.metodologia.cuerpo}
-        </p>
-        <ul className="space-y-2 text-base text-slate-700">
-          {q.metodologia.bullets.map((b, i) => (
-            <li key={i} className="flex gap-3">
-              <span aria-hidden className="text-institucional-700 mt-1">▸</span>
-              <span className="text-pretty leading-relaxed">{b}</span>
-            </li>
-          ))}
-        </ul>
-      </section>
+        <section className="border-t border-editorial-rule py-12 sm:py-16">
+          <EncabezadoSeccionExpediente index="02" title={q.metodologia.titulo} description={q.metodologia.cuerpo} />
+          <ol className="mt-8 border-y border-editorial-rule sm:ml-[4.5rem]">
+            {q.metodologia.bullets.map((b, i) => (
+              <li key={i} className="grid grid-cols-[2.5rem_minmax(0,1fr)] gap-3 border-b border-editorial-rule py-4 text-sm leading-relaxed text-slate-700 last:border-b-0">
+                <span className="font-mono text-xs tabular-nums text-slate-400">{String(i + 1).padStart(2, '0')}</span>
+                <span className="text-pretty">{b}</span>
+              </li>
+            ))}
+          </ol>
+        </section>
 
-      <section className="mb-10 border-t border-slate-200 pt-10">
-        <h2 className="text-lg font-semibold text-slate-900 mb-2">
-          {t.catalogo.metodologiaTitulo}
-        </h2>
-        <p className="text-base text-slate-700 text-pretty leading-relaxed">
-          {t.catalogo.metodologiaCuerpo}
-        </p>
-        <div className="mt-6 grid gap-4 md:grid-cols-3">
-          {CAPAS_CATALOGO.map((capa) => (
-            <article key={capa} className="rounded-xl border border-slate-200 bg-slate-50 p-5">
-              <span className={`rounded-full border px-2.5 py-1 text-xs font-semibold ${capaChip[capa]}`}>
-                {t.catalogo.capas[capa].corto}
-              </span>
-              <h3 className="mt-4 text-sm font-semibold text-slate-900">
-                {t.catalogo.capas[capa].titulo}
-              </h3>
-              <p className="mt-2 text-xs leading-relaxed text-slate-600">
-                {t.catalogo.capas[capa].criterio}
-              </p>
-            </article>
-          ))}
-        </div>
-        <div className="mt-6 rounded-xl border border-institucional-200 bg-institucional-50 p-5">
-          <h3 className="text-sm font-semibold text-slate-900">
-            {t.proyectoDetalle.evidenciaTitulo}
-          </h3>
-          <div className="mt-3 flex flex-wrap gap-2">
-            {DIMENSIONES_EVIDENCIA.map((dimension) => (
-              <span key={dimension} className="rounded-full border border-institucional-200 bg-white px-3 py-1 text-xs text-institucional-800">
-                {t.catalogo.dimensiones[dimension]}
-              </span>
+        <section className="border-t border-editorial-rule py-12 sm:py-16">
+          <EncabezadoSeccionExpediente index="03" title={t.catalogo.metodologiaTitulo} description={t.catalogo.metodologiaCuerpo} />
+          <div className="mt-9 border-y border-editorial-rule sm:ml-[4.5rem] md:grid md:grid-cols-3 md:divide-x md:divide-editorial-rule">
+            {CAPAS_CATALOGO.map((capa) => (
+              <article key={capa} className="border-b border-editorial-rule py-5 last:border-b-0 md:border-b-0 md:px-5 md:first:pl-0">
+                <MarcaDocumental
+                  label={t.catalogo.capas[capa].corto}
+                  tone={capa === 'verificado' ? 'confirmado' : capa === 'seguimiento' ? 'atencion' : 'parcial'}
+                />
+                <h3 className="mt-4 font-editorial text-xl font-semibold text-editorial-ink">
+                  {t.catalogo.capas[capa].titulo}
+                </h3>
+                <p className="mt-2 text-xs leading-relaxed text-slate-600">
+                  {t.catalogo.capas[capa].criterio}
+                </p>
+              </article>
             ))}
           </div>
-        </div>
-        <Link
-          href={`/${lc}/proyectos`}
-          className="mt-5 inline-flex text-sm font-semibold text-institucional-700 hover:underline"
-        >
-          {t.hero.ctaCatalogo} →
-        </Link>
-      </section>
+          <div className="mt-8 border-t border-editorial-rule pt-5 sm:ml-[4.5rem]">
+            <h3 className="text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-slate-500">
+              {t.proyectoDetalle.evidenciaTitulo}
+            </h3>
+            <ol className="mt-3 grid border-y border-editorial-rule sm:grid-cols-2 lg:grid-cols-3">
+              {DIMENSIONES_EVIDENCIA.map((dimension, index) => (
+                <li key={dimension} className="flex gap-3 border-b border-editorial-rule px-3 py-3 text-xs text-slate-700 sm:[&:nth-child(odd)]:border-r lg:border-r lg:[&:nth-child(3n)]:border-r-0">
+                  <span className="font-mono tabular-nums text-slate-400">{String(index + 1).padStart(2, '0')}</span>
+                  {t.catalogo.dimensiones[dimension]}
+                </li>
+              ))}
+            </ol>
+            <Link href={`/${lc}/proyectos`} className="mt-5 inline-flex border-b border-institucional-700 pb-0.5 text-sm font-semibold text-institucional-700 hover:text-institucional-900">
+              {t.hero.ctaCatalogo} →
+            </Link>
+          </div>
+        </section>
 
-      <section className="mb-10 bg-institucional-50 border border-institucional-200 rounded-lg p-6">
-        <h2 className="text-lg font-semibold text-slate-900 mb-2">{q.contacto.titulo}</h2>
-        <p className="text-base text-slate-700 text-pretty leading-relaxed mb-3">
-          {q.contacto.cuerpo}
-        </p>
-        <a
-          href="mailto:info@observatorioia.org"
-          className="inline-block text-sm font-medium text-institucional-700 hover:underline"
-        >
-          ↗ {q.contacto.emailLabel} (info@observatorioia.org)
-        </a>
-      </section>
+        <section className="border-t border-editorial-rule py-12 sm:py-16">
+          <EncabezadoSeccionExpediente index="04" title={q.contacto.titulo} />
+          <div className="mt-6 max-w-3xl border-l-2 border-editorial-accent pl-4 sm:ml-[4.5rem]">
+            <p className="text-base leading-relaxed text-slate-700 text-pretty">{q.contacto.cuerpo}</p>
+            <a href="mailto:info@observatorioia.org" className="mt-4 inline-block border-b border-institucional-700 pb-0.5 text-sm font-semibold text-institucional-700 hover:text-institucional-900">
+              {q.contacto.emailLabel} · info@observatorioia.org ↗
+            </a>
+          </div>
+        </section>
 
-      <section>
-        <h2 className="text-sm font-semibold text-slate-700 uppercase tracking-wider mb-2">
-          {q.disclaimer.titulo}
-        </h2>
-        <p className="text-sm text-slate-600 text-pretty leading-relaxed italic">
-          {q.disclaimer.cuerpo}
-        </p>
-      </section>
+        <section className="border-t border-editorial-rule py-10">
+          <h2 className="text-[0.68rem] font-semibold uppercase tracking-[0.1em] text-slate-500">{q.disclaimer.titulo}</h2>
+          <p className="mt-3 max-w-3xl text-sm italic leading-relaxed text-editorial-muted text-pretty">{q.disclaimer.cuerpo}</p>
+        </section>
+      </div>
     </article>
   );
 }

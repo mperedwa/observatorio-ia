@@ -159,46 +159,49 @@ export function Recursos({
   const Heading = headingLevel;
 
   return (
-    <section id="recursos" className="bg-slate-50 border-y border-slate-200">
+    <section id="recursos" className={headingLevel === 'h1' ? 'bg-white' : 'border-y border-editorial-rule bg-editorial-paper/55'}>
       <div className={`max-w-7xl mx-auto px-6 ${headingLevel === 'h1' ? 'pb-20 pt-10' : 'py-20'}`}>
-        <header className="mb-10">
-          <p className="text-sm font-medium uppercase tracking-wider text-institucional-700">
+        <header className="border-b border-editorial-rule pb-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-institucional-700">
             {t.recursos.kicker}
           </p>
-          <Heading className="mt-2 font-editorial text-4xl font-semibold leading-tight tracking-[-0.02em] text-editorial-ink text-balance sm:text-6xl">
+          <Heading className="mt-3 max-w-4xl font-editorial text-4xl font-semibold leading-[0.98] tracking-[-0.025em] text-editorial-ink text-balance sm:text-6xl">
             {t.recursos.titulo}
           </Heading>
         </header>
-        <ul className="divide-y divide-slate-200 bg-white border border-slate-200 rounded-lg">
-          {recursos.map((r) => (
-            <li key={r.url}>
+        <ol className="border-b border-editorial-rule">
+          {recursos.map((r, index) => (
+            <li key={r.url} className="border-b border-editorial-rule last:border-b-0">
               <a
                 href={r.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block p-5 hover:bg-slate-50 transition-colors"
+                className="group grid gap-3 py-6 transition-colors hover:bg-editorial-paper/55 sm:grid-cols-[3.25rem_minmax(0,1fr)_auto] sm:gap-5 sm:px-3"
               >
-                <div className="flex items-baseline justify-between gap-4">
-                  <div>
-                    <p className="text-xs uppercase tracking-wide text-slate-500">
+                <span className="font-mono text-xs tabular-nums text-slate-400">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <span>
+                    <span className="block text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-slate-500">
                       {r.tipo[locale]}
-                    </p>
-                    <p className="mt-1 font-medium text-slate-900">{r.titulo[locale]}</p>
-                    <p className="text-sm text-slate-500 mt-0.5">{r.fuente}</p>
+                    </span>
+                    <span className="mt-2 block max-w-3xl font-editorial text-xl font-semibold leading-snug text-editorial-ink group-hover:text-institucional-800 sm:text-2xl">
+                      {r.titulo[locale]}
+                    </span>
+                    <span className="mt-1 block text-sm text-slate-500">{r.fuente}</span>
                     {r.nota && (
-                      <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                      <span className="mt-3 block max-w-4xl text-xs leading-relaxed text-slate-600">
                         {r.nota[locale]}
-                      </p>
+                      </span>
                     )}
-                  </div>
-                  <span className="text-institucional-700 text-sm whitespace-nowrap">
-                    {t.recursos.abrir}
-                  </span>
-                </div>
+                </span>
+                <span className="self-end whitespace-nowrap border-b border-institucional-700 pb-0.5 text-xs font-semibold text-institucional-700">
+                  {t.recursos.abrir}
+                </span>
               </a>
             </li>
           ))}
-        </ul>
+        </ol>
       </div>
     </section>
   );

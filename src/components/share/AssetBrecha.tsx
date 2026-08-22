@@ -27,7 +27,7 @@ export function AssetBrecha({
 
   return (
     <AssetFrame size={size} locale={locale} variant="light">
-      <div className="flex-1 flex flex-col p-16">
+      <div className="flex-1 flex flex-col p-16 pb-24">
         <div>
           <p
             className="font-semibold uppercase tracking-widest text-institucional-700"
@@ -36,7 +36,7 @@ export function AssetBrecha({
             {locale === 'es' ? `Brecha ${idx} de 7` : `Gap ${idx} of 7`}
           </p>
           <h1
-            className="mt-4 font-bold text-slate-900 leading-tight"
+            className="mt-4 font-editorial font-semibold leading-[1.02] text-editorial-ink"
             style={{ fontSize: 56, maxWidth: 940 }}
           >
             {b.capacidad[locale]}
@@ -49,14 +49,14 @@ export function AssetBrecha({
           </p>
         </div>
 
-        <div className="mt-12 flex-1 flex flex-col gap-8">
+        <div className="mt-12 flex flex-1 flex-col gap-8 border-y border-editorial-rule py-8">
           <div>
             <p className="text-slate-700" style={{ fontSize: 24, lineHeight: 1.4 }}>
               {b.evidenciaReferencia[locale]}
             </p>
           </div>
 
-          <div className="border-l-8 border-amber-400 pl-6 py-2 bg-amber-50 rounded-r-lg">
+          <div className="border-l-4 border-amber-500 py-2 pl-6">
             <p
               className="font-semibold uppercase tracking-wide text-amber-800 mb-2"
               style={{ fontSize: 16 }}

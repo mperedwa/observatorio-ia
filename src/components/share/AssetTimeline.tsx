@@ -6,19 +6,7 @@ import type { Dictionary } from '@/i18n/dictionaries';
 import { esAdopcionVerificada } from '@/data/modelo-evidencia';
 import { obtenerAnioReferencia } from '@/data/presentacion-catalogo';
 
-const colorByInst: Record<string, { dot: string; text: string }> = {
-  'poder-judicial': { dot: '#4f46e5', text: '#4338ca' },
-  ccss: { dot: '#059669', text: '#047857' },
-  hacienda: { dot: '#d97706', text: '#b45309' },
-  mep: { dot: '#e11d48', text: '#be123c' },
-  micitt: { dot: '#0284c7', text: '#0369a1' },
-  cenat: { dot: '#7c3aed', text: '#6d28d9' },
-  ucr: { dot: '#0d9488', text: '#0f766e' },
-  inamu: { dot: '#be185d', text: '#9d174d' },
-  ins: { dot: '#475569', text: '#334155' },
-};
-
-const defaultColor = { dot: '#64748b', text: '#475569' };
+const timelineColor = { dot: '#1d4ed8', text: '#334155' };
 
 export function AssetTimeline({
   locale,
@@ -50,7 +38,7 @@ export function AssetTimeline({
 
   return (
     <AssetFrame size={size} locale={locale} variant="light">
-      <div className="flex-1 flex flex-col p-16 pb-20">
+      <div className="flex flex-1 flex-col justify-center p-16 pb-24">
         <p
           className="font-semibold uppercase tracking-widest text-institucional-700"
           style={{ fontSize: 22 }}
@@ -58,7 +46,7 @@ export function AssetTimeline({
           {t.timeline.kicker}
         </p>
         <h1
-          className="mt-4 font-bold text-slate-900 leading-tight"
+          className="mt-4 font-editorial font-semibold leading-[1.02] text-editorial-ink"
           style={{ fontSize: 48, maxWidth: 940 }}
         >
           {t.comparte.assets.timelineTitulo}
@@ -89,7 +77,7 @@ export function AssetTimeline({
           {/* filas */}
           <div className="mt-8 space-y-5">
             {porInstitucion.map(({ inst, proyectos: ps }) => {
-              const color = colorByInst[inst.id] ?? defaultColor;
+              const color = timelineColor;
               return (
                 <div
                   key={inst.id}
@@ -113,7 +101,7 @@ export function AssetTimeline({
                           style={{ left: `${x}%` }}
                         >
                           <span
-                            className="block rounded-full"
+                            className="block"
                             style={{
                               width: 18,
                               height: 18,

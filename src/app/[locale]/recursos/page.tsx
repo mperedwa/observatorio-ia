@@ -54,7 +54,7 @@ export default async function RecursosPage({
   const t = getDictionary(lc);
 
   return (
-    <div className="bg-slate-50">
+    <div className="bg-white">
       <div className="mx-auto max-w-7xl px-6 pt-10">
         <Breadcrumb
           locale={lc}

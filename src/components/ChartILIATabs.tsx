@@ -47,7 +47,7 @@ function TableView({ t, locale }: { t: Dictionary; locale: Locale }) {
             return (
               <tr
                 key={r.pais}
-                className={`border-b border-slate-100 ${r.destacado ? 'bg-institucional-50' : ''}`}
+                className={`border-b border-editorial-rule ${r.destacado ? 'shadow-[inset_3px_0_0_0_#1d4ed8]' : ''}`}
               >
                 <td className="py-3 pr-4 tabular-nums text-slate-500 font-medium">{i + 1}</td>
                 <td className={`py-3 pr-4 ${r.destacado ? 'font-semibold text-institucional-900' : 'text-slate-900'}`}>
@@ -55,9 +55,9 @@ function TableView({ t, locale }: { t: Dictionary; locale: Locale }) {
                 </td>
                 <td className="py-3 pr-4 tabular-nums font-semibold text-slate-900">{r.ilia.toFixed(2)}</td>
                 <td className="py-3 min-w-[120px]">
-                  <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
+                  <div className="h-1.5 overflow-hidden bg-slate-100">
                     <div
-                      className={`h-full rounded-full ${r.destacado ? 'bg-institucional-700' : 'bg-slate-400'}`}
+                      className={`h-full ${r.destacado ? 'bg-institucional-700' : 'bg-slate-400'}`}
                       style={{ width: `${pct}%` }}
                     />
                   </div>
@@ -74,16 +74,14 @@ function TableView({ t, locale }: { t: Dictionary; locale: Locale }) {
 function RankingView({ locale }: { locale: Locale }) {
   const data = rows(locale);
   return (
-    <ol className="space-y-2">
+    <ol className="border-y border-editorial-rule">
       {data.map((r, i) => {
         const pos = i + 1;
         return (
           <li
             key={r.pais}
-            className={`flex items-center gap-4 px-4 py-3 rounded-md border ${
-              r.destacado
-                ? 'border-institucional-700 bg-institucional-50'
-                : 'border-slate-200 bg-white'
+            className={`flex items-center gap-4 border-b border-editorial-rule px-2 py-4 last:border-b-0 sm:px-4 ${
+              r.destacado ? 'shadow-[inset_3px_0_0_0_#1d4ed8]' : ''
             }`}
           >
             <span
@@ -130,10 +128,10 @@ export function ChartILIATabs({ locale, t }: { locale: Locale; t: Dictionary }) 
           });
         }}
         aria-pressed={active}
-        className={`px-4 py-1.5 text-sm font-medium rounded-md border transition-colors ${
+        className={`border-b-2 px-3 py-2 text-sm font-semibold transition-colors ${
           active
-            ? 'bg-institucional-700 text-white border-institucional-700'
-            : 'bg-white text-slate-700 border-slate-300 hover:bg-slate-50'
+            ? 'border-institucional-700 text-institucional-800'
+            : 'border-transparent text-slate-600 hover:border-slate-300 hover:text-slate-900'
         }`}
       >
         {label}
@@ -143,7 +141,7 @@ export function ChartILIATabs({ locale, t }: { locale: Locale; t: Dictionary }) 
 
   return (
     <div>
-      <div role="tablist" className="flex flex-wrap gap-2 mb-6">
+      <div role="tablist" className="mb-6 flex flex-wrap gap-1 border-b border-editorial-rule">
         {tab('grafico', t.chartIlia.tabGrafico)}
         {tab('tabla', t.chartIlia.tabTabla)}
         {tab('ranking', t.chartIlia.tabRanking)}

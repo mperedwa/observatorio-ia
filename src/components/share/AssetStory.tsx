@@ -2,6 +2,7 @@ import { AssetFrame, type AssetSize } from './AssetFrame';
 import { COUNTERS } from '@/data/counters';
 import type { Locale } from '@/i18n/config';
 import type { Dictionary } from '@/i18n/dictionaries';
+import { comparativaRegional } from '@/data/indicadores';
 
 export type StoryVariant = 'timeline' | 'brecha';
 
@@ -16,6 +17,10 @@ export function AssetStory({
   size: AssetSize;
   variant: StoryVariant;
 }) {
+  const chile = comparativaRegional.find((p) => p.pais.es === 'Chile')?.ilia ?? 0;
+  const costaRica = comparativaRegional.find((p) => p.destacado)?.ilia ?? 0;
+  const roundedGap = Math.round(chile - costaRica);
+
   if (variant === 'brecha') {
     return (
       <AssetFrame size={size} locale={locale} variant="dark">
@@ -30,7 +35,7 @@ export function AssetStory({
             className="mt-8 font-bold text-white leading-none tabular-nums"
             style={{ fontSize: 240 }}
           >
-            -17
+            -{roundedGap}
           </p>
           <p className="mt-6 font-semibold text-slate-200" style={{ fontSize: 36 }}>
             {locale === 'es' ? 'puntos abajo de Chile' : 'points behind Chile'}
@@ -64,7 +69,7 @@ export function AssetStory({
         >
           {COUNTERS.adopcionVerificada}
         </p>
-        <p className="mt-6 font-bold text-slate-900" style={{ fontSize: 44, lineHeight: 1.2 }}>
+        <p className="mt-6 font-editorial font-semibold text-editorial-ink" style={{ fontSize: 48, lineHeight: 1.15 }}>
           {locale === 'es'
             ? 'adopciones de IA verificadas'
             : 'verified AI adoptions'}
