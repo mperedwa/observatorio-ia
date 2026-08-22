@@ -8,16 +8,30 @@ import { COUNTERS } from '@/data/counters';
 import type { Dictionary } from '@/i18n/dictionaries';
 import type { Locale } from '@/i18n/config';
 
-export function InstitucionesGrid({ locale, t }: { locale: Locale; t: Dictionary }) {
+export function InstitucionesGrid({
+  locale,
+  t,
+  headingLevel = 'h2',
+}: {
+  locale: Locale;
+  t: Dictionary;
+  headingLevel?: 'h1' | 'h2';
+}) {
+  const Heading = headingLevel;
+  const ItemHeading = headingLevel === 'h1' ? 'h2' : 'h3';
+
   return (
-    <section id="instituciones" className="max-w-7xl mx-auto px-6 py-20">
+    <section
+      id="instituciones"
+      className={`max-w-7xl mx-auto px-6 ${headingLevel === 'h1' ? 'pb-20 pt-10' : 'py-20'}`}
+    >
       <header className="mb-10">
         <p className="text-sm font-medium uppercase tracking-wider text-institucional-700">
           {t.instituciones.kicker}
         </p>
-        <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-slate-900">
+        <Heading className="mt-2 font-editorial text-4xl font-semibold leading-tight tracking-[-0.02em] text-editorial-ink text-balance sm:text-6xl">
           {t.instituciones.titulo}
-        </h2>
+        </Heading>
         <p className="mt-3 text-slate-600 max-w-2xl">
           {applyCounters(t.instituciones.sub, COUNTERS)}
         </p>
@@ -40,9 +54,9 @@ export function InstitucionesGrid({ locale, t }: { locale: Locale; t: Dictionary
                   <p className="text-xs uppercase tracking-wide text-slate-500">
                     {t.instituciones.tipoLabel[inst.tipo]}
                   </p>
-                  <h3 className="mt-1 text-xl font-semibold text-slate-900 group-hover:text-institucional-700 transition-colors">
+                  <ItemHeading className="mt-1 text-xl font-semibold text-slate-900 group-hover:text-institucional-700 transition-colors">
                     {inst.nombreCorto[locale]}
-                  </h3>
+                  </ItemHeading>
                 </div>
                 <div className="text-right">
                   <div className="text-3xl font-bold text-institucional-900 tabular-nums">

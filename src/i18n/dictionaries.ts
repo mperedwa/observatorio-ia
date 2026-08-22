@@ -27,6 +27,9 @@ export interface Dictionary {
     acerca: string;
     marcoPais: string;
     enia: string;
+    navegacionPrincipal: string;
+    abrirMenu: string;
+    cerrarMenu: string;
   };
   hero: {
     kicker: string;
@@ -41,6 +44,40 @@ export interface Dictionary {
       instituciones: string;
       legislacion: string;
       ranking: string;
+    };
+  };
+  home: {
+    seleccion: {
+      kicker: string;
+      titulo: string;
+      sub: string;
+      regla: string;
+    };
+    contexto: {
+      kicker: string;
+      titulo: string;
+      marcoLabel: string;
+      legislacionLabel: string;
+      ultimaActividadLabel: string;
+    };
+    cambios: {
+      kicker: string;
+      titulo: string;
+      sub: string;
+    };
+    rutas: {
+      kicker: string;
+      titulo: string;
+      sub: string;
+      metodologiaLabel: string;
+      descripciones: {
+        proyectos: string;
+        instituciones: string;
+        enia: string;
+        legislacion: string;
+        indicadores: string;
+        metodologia: string;
+      };
     };
   };
   instituciones: {
@@ -93,7 +130,7 @@ export interface Dictionary {
     brechaPuntos: string;
     brechaPost: string;
   };
-  recursos: { kicker: string; titulo: string; abrir: string };
+  recursos: { kicker: string; titulo: string; abrir: string; metaDescripcion: string };
   acerca: {
     kicker: string;
     titulo: string;
@@ -112,6 +149,10 @@ export interface Dictionary {
     historialMonitoreo: string;
     apiPublica: string;
     atribucion: string;
+    explorarLabel: string;
+    transparenciaLabel: string;
+    privacidadLabel: string;
+    recursosLabel: string;
   };
   estado: { operativo: string; piloto: string; planificado: string };
   languageToggle: { label: string; es: string; en: string };
@@ -459,6 +500,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
       acerca: 'Acerca de',
       marcoPais: 'Marco país',
       enia: 'Plan ENIA',
+      navegacionPrincipal: 'Navegación principal',
+      abrirMenu: 'Abrir menú',
+      cerrarMenu: 'Cerrar menú',
     },
     hero: {
       kicker: 'Observatorio público',
@@ -474,6 +518,40 @@ export const dictionaries: Record<Locale, Dictionary> = {
         instituciones: 'Instituciones',
         legislacion: 'Legislación',
         ranking: 'Ranking ILIA',
+      },
+    },
+    home: {
+      seleccion: {
+        kicker: 'Evidencia destacada',
+        titulo: 'Tres fichas verificadas para empezar',
+        sub: 'Una entrada breve al catálogo completo, seleccionada mediante una regla pública y reproducible.',
+        regla: 'Regla de selección: verificación más reciente; en empate, fecha documental e identificador.',
+      },
+      contexto: {
+        kicker: 'Lectura de conjunto',
+        titulo: 'Del marco país al movimiento legislativo',
+        marcoLabel: 'Arquitectura pública',
+        legislacionLabel: 'Actividad legislativa',
+        ultimaActividadLabel: 'Último cambio registrado',
+      },
+      cambios: {
+        kicker: 'Bitácora pública',
+        titulo: 'Qué cambió en el Observatorio',
+        sub: 'Las tres entradas más recientes del registro editorial, con fecha y procedencia.',
+      },
+      rutas: {
+        kicker: 'Índice del Observatorio',
+        titulo: 'Elegí el nivel de evidencia que necesitás',
+        sub: 'Cada colección completa tiene su propia ruta; la portada solo ofrece la lectura de entrada.',
+        metodologiaLabel: 'Metodología',
+        descripciones: {
+          proyectos: '{iniciativasDocumentadas} iniciativas clasificadas por evidencia, fase e institución.',
+          instituciones: '{instituciones} carteras institucionales con sus conteos derivados del catálogo.',
+          enia: 'La matriz oficial del Plan, sus intervenciones únicas y el cruce con evidencia pública.',
+          legislacion: '{legislacion} expedientes con estado, comisión, fuente oficial y fecha de verificación.',
+          indicadores: 'Series ILIA, DGI y OURdata para ubicar a Costa Rica en contexto regional.',
+          metodologia: 'Criterios de inclusión, trazabilidad, autoría y canales para corregir datos.',
+        },
       },
     },
     instituciones: {
@@ -531,6 +609,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       kicker: '04 / Recursos',
       titulo: 'Documentos y fuentes oficiales',
       abrir: '↗ Abrir',
+      metaDescripcion: 'Directorio bilingüe de documentos, normas, estrategias, indicadores y fuentes públicas utilizadas por el Observatorio IA Costa Rica.',
     },
     acerca: {
       kicker: '05 / Acerca de',
@@ -552,6 +631,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
       historialMonitoreo: 'Historial y monitoreo editorial',
       apiPublica: 'API pública JSON para periodistas/investigadores',
       atribucion: 'Un proyecto de',
+      explorarLabel: 'Explorar',
+      transparenciaLabel: 'Transparencia',
+      privacidadLabel: 'Privacidad y analítica',
+      recursosLabel: 'Fuentes y recursos',
     },
     estado: {
       operativo: 'Operativo',
@@ -1077,6 +1160,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
       acerca: 'About',
       marcoPais: 'Country Framework',
       enia: 'ENIA Plan',
+      navegacionPrincipal: 'Primary navigation',
+      abrirMenu: 'Open menu',
+      cerrarMenu: 'Close menu',
     },
     hero: {
       kicker: 'Public observatory',
@@ -1092,6 +1178,40 @@ export const dictionaries: Record<Locale, Dictionary> = {
         instituciones: 'Institutions',
         legislacion: 'Legislation',
         ranking: 'ILIA ranking',
+      },
+    },
+    home: {
+      seleccion: {
+        kicker: 'Featured evidence',
+        titulo: 'Start with three verified records',
+        sub: 'A short entry point into the full catalog, selected through a public and reproducible rule.',
+        regla: 'Selection rule: most recently verified; ties are ordered by documentary date and identifier.',
+      },
+      contexto: {
+        kicker: 'Country reading',
+        titulo: 'From the country framework to legislative activity',
+        marcoLabel: 'Public architecture',
+        legislacionLabel: 'Legislative activity',
+        ultimaActividadLabel: 'Latest recorded change',
+      },
+      cambios: {
+        kicker: 'Public log',
+        titulo: 'What changed in the Observatory',
+        sub: 'The three latest entries in the editorial record, with date and provenance.',
+      },
+      rutas: {
+        kicker: 'Observatory index',
+        titulo: 'Choose the level of evidence you need',
+        sub: 'Every complete collection has its own route; the home page provides the opening read.',
+        metodologiaLabel: 'Methodology',
+        descripciones: {
+          proyectos: '{iniciativasDocumentadas} initiatives classified by evidence, phase and institution.',
+          instituciones: '{instituciones} institutional portfolios with counts derived from the catalog.',
+          enia: 'The Plan’s official matrix, its unique interventions and its crosswalk to public evidence.',
+          legislacion: '{legislacion} bills with status, committee, official source and verification date.',
+          indicadores: 'ILIA, DGI and OURdata series placing Costa Rica in regional context.',
+          metodologia: 'Inclusion criteria, traceability, authorship and channels for correcting data.',
+        },
       },
     },
     instituciones: {
@@ -1149,6 +1269,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       kicker: '04 / Resources',
       titulo: 'Official documents and sources',
       abrir: '↗ Open',
+      metaDescripcion: 'Bilingual directory of documents, regulations, strategies, indicators and public sources used by AI Observatory Costa Rica.',
     },
     acerca: {
       kicker: '05 / About',
@@ -1169,6 +1290,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
       historialMonitoreo: 'Editorial history and monitoring',
       apiPublica: 'Public JSON API for journalists/researchers',
       atribucion: 'A project by',
+      explorarLabel: 'Explore',
+      transparenciaLabel: 'Transparency',
+      privacidadLabel: 'Privacy and analytics',
+      recursosLabel: 'Sources and resources',
     },
     estado: {
       operativo: 'Live',

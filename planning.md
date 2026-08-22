@@ -59,7 +59,7 @@ Dirección aprobada: **observatorio editorial de evidencia pública**, con el co
 
 - [x] R0. Auditoría, dirección visual y plan ejecutable.
 - [x] R1. Fundamentos y piloto funcional en portada y catálogo de proyectos.
-- [ ] R2. Estructura global, portada e índices de instituciones, legislación e indicadores.
+- [x] R2. Estructura global, portada e índices de instituciones, legislación e indicadores.
 - [ ] R3. Catálogos, instituciones y expedientes de detalle.
 - [ ] R4. ENIA, Marco país, legislación e historial.
 - [ ] R5. Indicadores, análisis, superficies secundarias y assets.
@@ -67,7 +67,7 @@ Dirección aprobada: **observatorio editorial de evidencia pública**, con el co
 
 Regla de ejecución: cada fase se valida, se compromete por separado y se revisa localmente. No se hace push ni despliegue sin autorización explícita posterior.
 
-Punto de revisión actual: R1 está implementada y validada en la rama local `redesign/editorial-v1`. Antes de iniciar R2, Mario revisa la comparación local de portada y catálogo en ES y EN, escritorio y móvil.
+Punto de revisión actual: R2 está implementada y validada en la rama local `redesign/editorial-v1`. La portada ya funciona como síntesis y las colecciones completas tienen rutas propias en ES y EN. Antes de iniciar R3, Mario revisa localmente portada, navegación e índices en escritorio y móvil.
 
 ## Próximas mejoras posibles
 
@@ -81,7 +81,7 @@ Punto de revisión actual: R1 está implementada y validada en la rama local `re
 
 ### Diseño y experiencia
 
-- [ ] Ejecutar R2-R6 del plan de rediseño editorial después de aprobar el piloto R1.
+- [ ] Ejecutar R3-R6 del plan de rediseño editorial después de revisar la estructura de R2.
 - [ ] Revisar densidad de navegación y longitud de portada después de acumular 30 días de analítica.
 - [ ] Definir logo definitivo.
 

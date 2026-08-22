@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -11,35 +11,48 @@ export interface MobileMenuItem {
 
 export function MobileMenu({
   items,
-  ariaLabel,
+  openLabel,
+  closeLabel,
+  navigationLabel,
 }: {
   items: MobileMenuItem[];
-  ariaLabel: string;
+  openLabel: string;
+  closeLabel: string;
+  navigationLabel: string;
 }) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
 
   useEffect(() => {
+    if (!open) return;
+
+    panelRef.current?.querySelector<HTMLAnchorElement>('a')?.focus();
+
     function onKey(e: KeyboardEvent) {
-      if (e.key === 'Escape') setOpen(false);
+      if (e.key !== 'Escape') return;
+      setOpen(false);
+      window.requestAnimationFrame(() => buttonRef.current?.focus());
     }
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
-  }, []);
+  }, [open]);
 
   return (
-    <div className="lg:hidden">
+    <div className="xl:hidden">
       <button
+        ref={buttonRef}
         type="button"
-        aria-label={ariaLabel}
+        aria-label={open ? closeLabel : openLabel}
         aria-expanded={open}
         aria-controls="mobile-menu-panel"
         onClick={() => setOpen((v) => !v)}
-        className="inline-flex items-center justify-center w-9 h-9 rounded-md text-slate-700 hover:bg-slate-100 transition-colors"
+        className="inline-flex h-9 w-9 items-center justify-center rounded-editorial text-slate-700 transition-colors hover:bg-white"
       >
         {open ? (
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden>
@@ -54,20 +67,30 @@ export function MobileMenu({
 
       {open && (
         <div
+          ref={panelRef}
           id="mobile-menu-panel"
-          className="absolute left-0 right-0 top-16 z-40 bg-white border-b border-slate-200 shadow-sm"
+          className="absolute left-0 right-0 top-16 z-40 border-b border-editorial-rule bg-editorial-paper shadow-sm"
         >
-          <nav className="max-w-7xl mx-auto px-6 py-2 flex flex-col">
-            {items.map((it) => (
-              <Link
-                key={it.href}
-                href={it.href}
-                onClick={() => setOpen(false)}
-                className="py-3 text-base text-slate-800 border-b border-slate-100 last:border-0 hover:text-institucional-700 transition-colors"
-              >
-                {it.label}
-              </Link>
-            ))}
+          <nav aria-label={navigationLabel} className="mx-auto flex max-w-7xl flex-col px-6 py-2">
+            {items.map((item) => {
+              const active = pathname === item.href || pathname.startsWith(`${item.href}/`);
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  aria-current={active ? 'page' : undefined}
+                  onClick={() => setOpen(false)}
+                  className={`border-b border-editorial-rule py-3 text-base transition-colors last:border-0 ${
+                    active
+                      ? 'font-semibold text-editorial-ink'
+                      : 'text-slate-700 hover:text-institucional-700'
+                  }`}
+                >
+                  {item.label}
+                  {active && <span aria-hidden className="ml-2 text-editorial-accent">●</span>}
+                </Link>
+              );
+            })}
           </nav>
         </div>
       )}

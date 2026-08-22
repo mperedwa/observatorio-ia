@@ -67,6 +67,7 @@ export default async function InstitucionPage({
         locale={lc}
         items={[
           { label: t.breadcrumb.inicio, href: `/${lc}/` },
+          { label: t.nav.instituciones, href: `/${lc}/instituciones` },
           { label: inst.nombreCorto[lc] },
         ]}
       />

@@ -147,17 +147,27 @@ const recursos: Recurso[] = [
   },
 ];
 
-export function Recursos({ locale, t }: { locale: Locale; t: Dictionary }) {
+export function Recursos({
+  locale,
+  t,
+  headingLevel = 'h2',
+}: {
+  locale: Locale;
+  t: Dictionary;
+  headingLevel?: 'h1' | 'h2';
+}) {
+  const Heading = headingLevel;
+
   return (
     <section id="recursos" className="bg-slate-50 border-y border-slate-200">
-      <div className="max-w-7xl mx-auto px-6 py-20">
+      <div className={`max-w-7xl mx-auto px-6 ${headingLevel === 'h1' ? 'pb-20 pt-10' : 'py-20'}`}>
         <header className="mb-10">
           <p className="text-sm font-medium uppercase tracking-wider text-institucional-700">
             {t.recursos.kicker}
           </p>
-          <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-slate-900">
+          <Heading className="mt-2 font-editorial text-4xl font-semibold leading-tight tracking-[-0.02em] text-editorial-ink text-balance sm:text-6xl">
             {t.recursos.titulo}
-          </h2>
+          </Heading>
         </header>
         <ul className="divide-y divide-slate-200 bg-white border border-slate-200 rounded-lg">
           {recursos.map((r) => (

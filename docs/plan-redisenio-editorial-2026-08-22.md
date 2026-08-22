@@ -269,7 +269,7 @@ No incluye cambios visuales.
 
 Objetivo: comprobar la dirección usando contenido real antes de extenderla.
 
-Estado: implementación local completada el 22 de agosto de 2026 en la rama `redesign/editorial-v1`; pendiente la revisión visual de Mario antes de iniciar R2.
+Estado: implementación local completada y aprobada por Mario el 22 de agosto de 2026 en la rama `redesign/editorial-v1`.
 
 Resultado del piloto:
 
@@ -328,6 +328,19 @@ feat(design): establece piloto editorial del observatorio
 ### R2. Estructura global, portada e índices
 
 Objetivo: convertir el piloto aprobado en el sistema general de navegación y descubrimiento.
+
+Estado: implementación local completada el 22 de agosto de 2026 en la rama `redesign/editorial-v1`; pendiente la revisión visual de Mario antes de iniciar R3.
+
+Resultado de la fase:
+
+- navegación principal con rutas reales, estado activo mediante texto, regla y `aria-current`, y menú móvil que gestiona foco, Escape y etiquetas abiertas/cerradas;
+- pie simplificado en dos grupos, con acceso directo a colecciones, metodología, historial, API, privacidad y recursos;
+- portada reducida a cuatro bloques editoriales después del encabezado: tres fichas verificadas mediante regla estable, lectura de Marco país y legislación, tres cambios recientes e índice de rutas;
+- índices bilingües y estáticos para instituciones, legislación e indicadores, con títulos `h1`, metadatos, canonical y alternates propios;
+- ruta bilingüe de Recursos para conservar su inventario completo al retirarlo de la portada;
+- enlaces de Marco país, breadcrumbs y sitemap actualizados para las rutas nuevas;
+- ausencia de desborde horizontal comprobada en portada e índices a 390 px;
+- AJV válido, TypeScript de app y scripts limpio, 91/91 pruebas y build de 145/145 páginas estáticas.
 
 Entregables:
 
@@ -564,12 +577,12 @@ Guardas cuantitativas orientativas para el cierre:
 - ajustes de navegación derivados de 30 días de analítica real;
 - publicación del sitio.
 
-## Siguiente acción después de R1
+## Siguiente acción después de R2
 
-1. Confirmar que el último commit de `redesign/editorial-v1` contiene R1 y que el archivo de analítica continúa fuera del staging.
-2. Levantar `localhost:3001` y revisar portada y proyectos en ES y EN, escritorio y móvil.
-3. Recoger las observaciones visuales de Mario y resolverlas dentro de R1 si afectan el piloto.
-4. Iniciar R2 solamente después de aprobar la dirección del piloto.
+1. Confirmar que el último commit de `redesign/editorial-v1` contiene R2 y que no incorpora documentos privados de analítica.
+2. Levantar `localhost:3001` y revisar portada, navegación e índices en ES y EN, escritorio y móvil.
+3. Recoger las observaciones visuales de Mario y resolverlas dentro de R2 si afectan la estructura general.
+4. Iniciar R3 solamente después de aprobar la navegación, la longitud de la portada y las rutas de índice.
 
 ## Definición final de terminado
 

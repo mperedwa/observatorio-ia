@@ -15,11 +15,14 @@ export function IndicadorOecd({
   data,
   locale,
   copy,
+  headingLevel = 'h3',
 }: {
   data: OecdIndex;
   locale: Locale;
   copy: SectionCopy;
+  headingLevel?: 'h2' | 'h3';
 }) {
+  const Heading = headingLevel;
   const delta = data.crVsAnterior.delta;
   const deltaSign = delta > 0 ? '+' : '';
   const deltaColor = delta > 0 ? 'text-emerald-700' : delta < 0 ? 'text-rose-700' : 'text-slate-600';
@@ -27,7 +30,7 @@ export function IndicadorOecd({
   return (
     <div className="border border-slate-200 rounded-lg p-6 bg-white">
       <div className="flex items-center justify-between mb-2">
-        <h3 className="text-lg font-semibold text-slate-900">{copy.titulo}</h3>
+        <Heading className="text-lg font-semibold text-slate-900">{copy.titulo}</Heading>
       </div>
       <p className="text-sm text-slate-600 mb-6">{copy.sub}</p>
 

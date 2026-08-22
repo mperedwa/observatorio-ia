@@ -8,17 +8,28 @@ import { formatearFechaCatalogo } from '@/data/presentacion-catalogo';
 import type { Dictionary } from '@/i18n/dictionaries';
 import type { Locale } from '@/i18n/config';
 
-export function Legislacion({ locale, t }: { locale: Locale; t: Dictionary }) {
+export function Legislacion({
+  locale,
+  t,
+  headingLevel = 'h2',
+}: {
+  locale: Locale;
+  t: Dictionary;
+  headingLevel?: 'h1' | 'h2';
+}) {
+  const Heading = headingLevel;
+  const ItemHeading = headingLevel === 'h1' ? 'h2' : 'h3';
+
   return (
     <section id="legislacion" className="bg-slate-50 border-y border-slate-200">
-      <div className="max-w-7xl mx-auto px-6 py-20">
+      <div className={`max-w-7xl mx-auto px-6 ${headingLevel === 'h1' ? 'pb-20 pt-10' : 'py-20'}`}>
         <header className="mb-10">
           <p className="text-sm font-medium uppercase tracking-wider text-institucional-700">
             {t.legislacion.kicker}
           </p>
-          <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-slate-900">
+          <Heading className="mt-2 font-editorial text-4xl font-semibold leading-tight tracking-[-0.02em] text-editorial-ink text-balance sm:text-6xl">
             {applyConteosLegislacion(t.legislacion.titulo)}
-          </h2>
+          </Heading>
           <p className="mt-3 text-slate-600 max-w-3xl">
             {applyConteosLegislacion(t.legislacion.sub)}
           </p>
@@ -41,9 +52,9 @@ export function Legislacion({ locale, t }: { locale: Locale; t: Dictionary }) {
                     {n.fecha}
                   </time>
                 </div>
-                <h3 className="mt-3 text-lg font-semibold text-slate-900">
+                <ItemHeading className="mt-3 text-lg font-semibold text-slate-900">
                   {n.titulo[locale]}
-                </h3>
+                </ItemHeading>
                 <p className="mt-2 text-sm text-slate-700 text-pretty">
                   {n.texto[locale]}
                 </p>
@@ -100,7 +111,9 @@ export function Legislacion({ locale, t }: { locale: Locale; t: Dictionary }) {
                 </p>
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-slate-900">{e.titulo[locale]}</h3>
+                <ItemHeading className="text-lg font-semibold text-slate-900">
+                  {e.titulo[locale]}
+                </ItemHeading>
                 <p className="mt-2 text-sm text-slate-600 text-pretty">{e.resumen[locale]}</p>
                 <div className="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-xs text-slate-500">
                   <span>

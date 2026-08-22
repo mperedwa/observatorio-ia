@@ -7,7 +7,21 @@ import { locales } from '@/i18n/config';
 const SITE_URL = 'https://www.observatorioia.org';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticPaths = ['', 'analisis', 'comparte', 'enia', 'historial', 'marco-pais', 'privacidad', 'proyectos', 'quien-mantiene'];
+  const staticPaths = [
+    '',
+    'analisis',
+    'comparte',
+    'enia',
+    'historial',
+    'indicadores',
+    'instituciones',
+    'legislacion',
+    'marco-pais',
+    'privacidad',
+    'proyectos',
+    'quien-mantiene',
+    'recursos',
+  ];
   const paths = [
     ...staticPaths,
     ...proyectos.map((item) => `proyectos/${item.id}`),
@@ -18,10 +32,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return locales.flatMap((locale) =>
     paths.map((path) => {
       const suffix = path ? `${path}/` : '';
+      const isDetail = path.startsWith('proyectos/') || path.startsWith('instituciones/');
+      const isPrimaryIndex = [
+        'analisis',
+        'indicadores',
+        'instituciones',
+        'legislacion',
+        'marco-pais',
+      ].includes(path);
+      const priority = path === '' ? 1 : path === 'proyectos' ? 0.9 : isPrimaryIndex ? 0.8 : 0.6;
+
       return {
         url: `${SITE_URL}/${locale}/${suffix}`,
-        changeFrequency: path.startsWith('proyectos/') || path.startsWith('instituciones/') ? 'monthly' : 'weekly',
-        priority: path === '' ? 1 : path === 'proyectos' ? 0.9 : path === 'analisis' || path === 'marco-pais' ? 0.8 : 0.6,
+        changeFrequency: isDetail ? 'monthly' : 'weekly',
+        priority,
         alternates: {
           languages: {
             es: `${SITE_URL}/es/${suffix}`,

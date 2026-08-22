@@ -223,11 +223,11 @@ export default async function MarcoPaisPage({
           </header>
           <div className="flex flex-wrap gap-3">
             <CtaLink href={`/${lc}/enia`} label={dict.conexion.ctaEnia} />
-            <CtaLink href={`/${lc}/#instituciones`} label={dict.conexion.ctaInstituciones} />
-            <CtaLink href={`/${lc}/#panorama`} label={dict.conexion.ctaProyectos} />
-            <CtaLink href={`/${lc}/#legislacion`} label={dict.conexion.ctaLegislacion} />
-            <CtaLink href={`/${lc}/#indicadores`} label={dict.conexion.ctaIndicadores} />
-            <CtaLink href={`/${lc}/#recursos`} label={dict.conexion.ctaRecursos} />
+            <CtaLink href={`/${lc}/instituciones`} label={dict.conexion.ctaInstituciones} />
+            <CtaLink href={`/${lc}/proyectos`} label={dict.conexion.ctaProyectos} />
+            <CtaLink href={`/${lc}/legislacion`} label={dict.conexion.ctaLegislacion} />
+            <CtaLink href={`/${lc}/indicadores`} label={dict.conexion.ctaIndicadores} />
+            <CtaLink href={`/${lc}/recursos`} label={dict.conexion.ctaRecursos} />
           </div>
         </div>
       </section>
