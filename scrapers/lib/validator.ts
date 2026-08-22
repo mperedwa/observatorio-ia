@@ -3,6 +3,18 @@ import addFormats from 'ajv-formats';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import {
+  DIMENSIONES_EVIDENCIA,
+  ESTADOS_CATALOGO,
+  ESTADOS_EVALUACION,
+  ESTADOS_IA,
+  FASES_IMPLEMENTACION,
+  NATURALEZAS_AFIRMACION,
+  RESPALDOS_FUENTE,
+  TIPOS_FUENTE,
+  TIPOS_INICIATIVA,
+  TIPOS_RELACION,
+  MODELO_EVIDENCIA_VERSION,
+  esAdopcionVerificada,
   encontrarErroresTrazabilidad,
   type CamposModeloEvidencia,
   type RelacionIniciativa,
@@ -25,10 +37,13 @@ const datasets: DatasetSpec[] = [
   { name: 'legislacion', jsonPath: 'json/legislacion.json', schemaPath: 'schemas/legislacion.schema.json' },
   { name: 'indicadores', jsonPath: 'json/indicadores.json', schemaPath: 'schemas/indicadores.schema.json' },
   { name: 'brechas', jsonPath: 'json/brechas.json', schemaPath: 'schemas/brechas.schema.json' },
+  { name: 'coyuntura', jsonPath: 'json/coyuntura.json', schemaPath: 'schemas/coyuntura.schema.json' },
   { name: 'changelog', jsonPath: 'json/changelog.json', schemaPath: 'schemas/changelog.schema.json' },
   { name: 'marcoPais', jsonPath: 'json/marcoPais.json', schemaPath: 'schemas/marcoPais.schema.json' },
   { name: 'eniaAcciones', jsonPath: 'json/eniaAcciones.json', schemaPath: 'schemas/eniaAcciones.schema.json' },
   { name: 'monitoreo', jsonPath: 'json/monitoreo.json', schemaPath: 'schemas/monitoreo.schema.json' },
+  { name: 'recursos', jsonPath: 'json/recursos.json', schemaPath: 'schemas/recursos.schema.json' },
+  { name: 'apiCodebook', jsonPath: 'json/apiCodebook.json', schemaPath: 'schemas/apiCodebook.schema.json' },
 ];
 
 function loadJson(relPath: string): unknown {
@@ -89,8 +104,25 @@ export function crossCheck(): boolean {
       }>;
     }>;
   };
+  const recursos = loadJson('json/recursos.json') as Array<{ id: string }>;
+  const resourceIds = new Set(recursos.map(({ id }) => id));
   const marcoPais = loadJson('json/marcoPais.json') as {
-    instrumentos: unknown[];
+    instrumentos: Array<{ id: string; recursoIds?: string[] }>;
+  };
+  const apiCodebook = loadJson('json/apiCodebook.json') as {
+    vocabularios: Array<{ id: string; valores: Array<{ valor: string }> }>;
+    datasets: Array<{ id: string; endpoint: string }>;
+    reglaAdopcionVerificada: {
+      condiciones: Array<{
+        campo: string;
+        operador: string;
+        valores: Array<string | number | boolean | null>;
+      }>;
+    };
+    procedencia: {
+      corpusCostaRicaRecursoIds: string[];
+      corpusCostaRicaEndpoints: string[];
+    };
   };
   const monitoreo = loadJson('json/monitoreo.json') as {
     fechaCorte: string;
@@ -112,6 +144,102 @@ export function crossCheck(): boolean {
     }>;
   };
   let ok = true;
+
+  if (resourceIds.size !== recursos.length) {
+    console.log('  FAIL recursos contiene IDs duplicados');
+    ok = false;
+  }
+
+  for (const instrumento of marcoPais.instrumentos) {
+    for (const recursoId of instrumento.recursoIds ?? []) {
+      if (!resourceIds.has(recursoId)) {
+        console.log(
+          `  FAIL instrumento de Marco país "${instrumento.id}" referencia recurso desconocido "${recursoId}"`,
+        );
+        ok = false;
+      }
+    }
+  }
+
+  for (const recursoId of apiCodebook.procedencia.corpusCostaRicaRecursoIds) {
+    if (!resourceIds.has(recursoId)) {
+      console.log(`  FAIL codebook referencia recurso desconocido "${recursoId}"`);
+      ok = false;
+    }
+  }
+
+  const codebookEndpoints = new Set(apiCodebook.datasets.map(({ endpoint }) => endpoint));
+  for (const endpoint of apiCodebook.procedencia.corpusCostaRicaEndpoints) {
+    if (!codebookEndpoints.has(endpoint)) {
+      console.log(`  FAIL procedencia del codebook referencia endpoint desconocido "${endpoint}"`);
+      ok = false;
+    }
+  }
+
+  const datasetsCodebookEsperados = [
+    ['proyectos', '/api/proyectos.json'],
+    ['instituciones', '/api/instituciones.json'],
+    ['legislacion', '/api/legislacion.json'],
+    ['indicadores', '/api/indicadores.json'],
+    ['brechas', '/api/brechas.json'],
+    ['enia-acciones', '/api/enia-acciones.json'],
+    ['monitoreo', '/api/monitoreo.json'],
+    ['marco-pais', '/api/marco-pais.json'],
+    ['historial', '/api/historial.json'],
+    ['coyuntura', '/api/coyuntura.json'],
+    ['recursos', '/api/recursos.json'],
+  ];
+  const datasetsCodebookPublicados = apiCodebook.datasets.map(({ id, endpoint }) => [id, endpoint]);
+  if (JSON.stringify(datasetsCodebookPublicados) !== JSON.stringify(datasetsCodebookEsperados)) {
+    console.log('  FAIL apiCodebook.datasets no coincide con las 11 colecciones públicas');
+    ok = false;
+  }
+
+  const vocabulariosEsperados: Record<string, readonly string[]> = {
+    tipoIniciativa: TIPOS_INICIATIVA,
+    estadoCatalogo: ESTADOS_CATALOGO,
+    faseImplementacion: FASES_IMPLEMENTACION,
+    estadoIA: ESTADOS_IA,
+    estadoEvaluacion: ESTADOS_EVALUACION,
+    dimensionEvidencia: DIMENSIONES_EVIDENCIA,
+    tipoFuente: TIPOS_FUENTE,
+    respaldoFuente: RESPALDOS_FUENTE,
+    naturalezaAfirmacion: NATURALEZAS_AFIRMACION,
+    tipoRelacion: TIPOS_RELACION,
+  };
+
+  for (const [id, esperados] of Object.entries(vocabulariosEsperados)) {
+    const vocabulario = apiCodebook.vocabularios.find((item) => item.id === id);
+    const publicados = vocabulario?.valores.map(({ valor }) => valor) ?? [];
+    if (JSON.stringify(publicados) !== JSON.stringify(esperados)) {
+      console.log(`  FAIL apiCodebook vocabulario "${id}" no coincide con modelo-evidencia.ts`);
+      ok = false;
+    }
+  }
+
+  const reglaAdopcionEsperada = [
+    { campo: 'modeloVersion', operador: 'igual', valores: [MODELO_EVIDENCIA_VERSION] },
+    { campo: 'estadoCatalogo', operador: 'igual', valores: ['verificado'] },
+    { campo: 'tipoIniciativa', operador: 'uno-de', valores: ['sistema-ia', 'componente-ia'] },
+    { campo: 'faseImplementacion', operador: 'uno-de', valores: ['piloto', 'operativo'] },
+    { campo: 'estadoIA', operador: 'igual', valores: ['confirmada'] },
+    { campo: 'evaluacion.ejecucion.estado', operador: 'igual', valores: ['confirmado'] },
+    { campo: 'trazabilidad', operador: 'sin-errores', valores: [] },
+  ];
+  if (
+    JSON.stringify(apiCodebook.reglaAdopcionVerificada.condiciones) !==
+    JSON.stringify(reglaAdopcionEsperada)
+  ) {
+    console.log('  FAIL apiCodebook reglaAdopcionVerificada no coincide con esAdopcionVerificada()');
+    ok = false;
+  }
+
+  const adopcionesVerificadas = proyectos.filter(esAdopcionVerificada).length;
+  if (adopcionesVerificadas === 0) {
+    console.log('  FAIL la regla canónica no reconoce ninguna adopción verificada');
+    ok = false;
+  }
+
   for (const p of proyectos) {
     if (!institucionIds.has(p.institucionId)) {
       console.log(`  FAIL proyecto "${p.id}" referencia institucionId desconocida "${p.institucionId}"`);

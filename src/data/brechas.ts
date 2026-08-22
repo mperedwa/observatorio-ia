@@ -9,6 +9,7 @@ export interface Brecha {
   estadoCR: Bilingual;
   porQueImporta: Bilingual;
   fuenteUrl: string;
+  fuenteUrlAlcance: 'referencia-internacional';
 }
 
 export const brechas: Brecha[] = data as Brecha[];

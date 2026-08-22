@@ -2,7 +2,7 @@
 
 Fecha: 22 de agosto de 2026.
 
-Estado: R1-R7 implementadas y validadas localmente; candidato editorial pendiente de la revisión visual final de Mario. Push y despliegue no autorizados.
+Estado: R1-R8 implementadas y validadas localmente. Push y despliegue no autorizados.
 
 Punto de partida técnico: Fase 5C comprometida en `e6786ba`. Este plan no autoriza push, despliegue ni publicación.
 
@@ -616,6 +616,84 @@ Commit sugerido:
 
 ```text
 feat(api): publica documentación editorial bilingüe
+```
+
+### R8. Producto público de datos reproducible
+
+Objetivo: convertir la exportación JSON actual en un producto de datos completo para reutilización periodística e investigativa, manteniendo las siete rutas existentes y su envoltura, y haciendo explícitas cobertura, semántica, procedencia y versión editorial.
+
+Estado: implementada y validada localmente el 22 de agosto de 2026 sobre `redesign/editorial-v1`. No se hizo push ni despliegue.
+
+Resultado de la fase:
+
+- las siete rutas originales y la envoltura `{version,lastUpdate,count,source,license,data}` permanecen intactas;
+- la API crece a doce rutas con Marco país, Historial, Coyuntura, Recursos y Codebook;
+- los doce endpoints publican schema de respuesta y schema de `data`; los segundos coinciden byte por byte con los schemas AJV fuente;
+- la release `2026-08-22-r8` congela doce payloads y veinticuatro schemas, declara checksums SHA-256 y queda protegida por `release.lock` contra reescrituras silenciosas;
+- las descargas incluyen un bundle JSON completo y CSV de 29 proyectos, 7 expedientes y 129 registros fuente del Plan de Acción ENIA;
+- Recursos pasa de datos embebidos en el componente a 16 registros JSON validables con IDs estables y tipo de fuente;
+- ILIA 2025 declara edición y URL oficial en el ranking y en cada fila comparativa; GTMI queda identificado correctamente como índice de madurez GovTech y no como ranking de preparación para IA;
+- las siete brechas distinguen la fuente del referente internacional, la síntesis editorial fechada sobre Costa Rica y el análisis editorial; las afirmaciones absolutas se reformulan según el corpus público revisado;
+- el codebook publica contrato, bilingüismo, significado de no determinado, trazabilidad, diez vocabularios, regla exacta de adopción verificada, campos clave, notas de interpretación, corpus de procedencia, licencia y exclusiones deliberadas;
+- el manifest añade descubrimiento bilingüe, unidad de conteo, documentación, schemas, release y descargas sin retirar campos anteriores;
+- la documentación humana ofrece enlaces directos al bundle y los tres CSV y reproduce correctamente la regla de adopción verificada;
+- AJV, integridad referencial, ambos proyectos TypeScript, lint, 101 pruebas, build de 145 rutas y auditoría de 143 HTML pasan;
+- QA ES/EN en 360, 390, 768 y 1440 px confirma foco visible, teclado, idioma, apertura de dataset, schema y release, `Content-Type` JSON/CSV, cero overflow y consola limpia;
+- la QA detectó y corrigió el encabezado impreciso “fuentes oficiales” por “fuentes de referencia”, coherente con la presencia explícita de prensa y fuentes secundarias.
+
+Arquitectura:
+
+- conservar exactamente `{version,lastUpdate,count,source,license,data}` en todos los endpoints de datasets;
+- sumar de forma aditiva Marco país, Historial, Coyuntura, Recursos y un codebook bilingüe;
+- mover Recursos a JSON validable y añadir schema AJV a Coyuntura;
+- publicar los JSON Schema usados por el repositorio y un índice con checksum;
+- publicar vocabularios controlados, regla de adopción verificada, campos clave, plantillas de URL y límites de interpretación;
+- mantener `version` como versión de aplicación por compatibilidad y añadir una identidad de release independiente en manifest, snapshots y descargas;
+- generar una release fechada, determinista e inmutable en su ruta, con checksums y un bundle completo;
+- ofrecer CSV aplanados para los conjuntos tabulares prioritarios sin degradar los JSON anidados;
+- distinguir la licencia CC BY 4.0 de la compilación de los derechos propios de cada documento fuente.
+
+Cobertura prevista:
+
+- los siete endpoints actuales conservan URL y contrato;
+- `/api/marco-pais.json` publica capas, hitos, instrumentos y brechas del marco nacional;
+- `/api/historial.json` publica la bitácora editorial curada;
+- `/api/coyuntura.json` publica notas de contexto claramente separadas del estado legislativo oficial;
+- `/api/recursos.json` publica el directorio de documentos y fuentes con IDs estables;
+- `/api/codebook.json` publica metodología, vocabularios, campos clave y reglas derivadas;
+- `/api/schemas/`, `/api/releases/` y `/api/downloads/` permiten validar, reproducir y descargar el corte.
+
+Procedencia:
+
+- ILIA 2025 incorporará su fuente oficial dentro del bloque de datos;
+- las brechas declararán que `fuenteUrl` respalda el referente internacional y que `estadoCR` es una síntesis editorial del corpus público revisado, no una prueba de inexistencia absoluta;
+- Marco país relacionará instrumentos con recursos o endpoints públicos cuando exista una referencia directa;
+- Recursos corregirá nombres contra la fuente primaria antes de entrar al pipeline JSON.
+
+Criterios de aceptación:
+
+- las siete URLs existentes y su envoltura permanecen compatibles;
+- todos los JSON fuente públicos están cubiertos por schema y por la API, salvo contenido narrativo que deliberadamente no sea un dataset;
+- manifest y codebook son bilingües y enlazan schema, release y documentación;
+- cada schema de `data` publicado coincide byte por byte con el schema fuente correspondiente y cada schema de respuesta valida la envoltura completa;
+- los checksums de release se recomputan en pruebas y coinciden;
+- el bundle y los CSV se generan determinísticamente y sus conteos coinciden con los JSON;
+- las reglas del codebook coinciden con las constantes TypeScript del modelo de evidencia;
+- la documentación humana explica datasets, schemas, releases, licencias y límites sin exigir JavaScript;
+- AJV, integridad referencial, TypeScript, lint, pruebas, build, auditoría estática y QA ES/EN pasan;
+- no se publican recomendaciones tácticas, no se hace push y no se despliega.
+
+QA mínima:
+
+- apertura por teclado de un dataset nuevo, un schema y una release;
+- paridad de `/api/` y `/api/en/` en 360, 390, 768 y 1440 px;
+- verificación de `Content-Type`, CORS previsto, checksums, descarga CSV y bundle;
+- consola limpia, foco visible, sin overflow y enlaces internos válidos.
+
+Commit sugerido:
+
+```text
+feat(api): completa producto público de datos
 ```
 
 ## Flujo de trabajo de cada fase

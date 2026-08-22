@@ -1,0 +1,51 @@
+{
+  "releaseId": "2026-08-22-r8",
+  "date": "2026-08-22",
+  "source": "https://observatorioia.org",
+  "license": "CC BY 4.0",
+  "files": [
+    {
+      "url": "/api/downloads/observatorio-ia-2026-08-22-r8.json",
+      "format": "json",
+      "bytes": 661511,
+      "sha256": "4dba84417d3c33a41556da252c85384b885cc7566189b728b287cfdf475036e0",
+      "description": {
+        "es": "Bundle completo con las envolturas de todos los datasets de la release.",
+        "en": "Complete bundle containing every dataset envelope in the release."
+      }
+    },
+    {
+      "url": "/api/downloads/proyectos-2026-08-22-r8.csv",
+      "format": "csv",
+      "bytes": 9576,
+      "sha256": "738ca4ef3c13ddc8d341528f78de305756e9813c8aa2a818f26ac683c640bbb2",
+      "rows": 29,
+      "description": {
+        "es": "Catálogo de iniciativas aplanado para hojas de cálculo.",
+        "en": "Flattened initiative catalog for spreadsheets."
+      }
+    },
+    {
+      "url": "/api/downloads/legislacion-2026-08-22-r8.csv",
+      "format": "csv",
+      "bytes": 11292,
+      "sha256": "524e1679f4cd541c58092a3c680043b56fa9bcd57673cdd7f289cf8ccaff54b8",
+      "rows": 7,
+      "description": {
+        "es": "Expedientes legislativos aplanados con fuente de contenido y estado oficial.",
+        "en": "Flattened legislative bills with content and official-status sources."
+      }
+    },
+    {
+      "url": "/api/downloads/enia-intervenciones-2026-08-22-r8.csv",
+      "format": "csv",
+      "bytes": 96708,
+      "sha256": "1478bdd0d72be0be56529f98faf265791fcea55ca2dca05fb9ee0d1a2248de3f",
+      "rows": 129,
+      "description": {
+        "es": "Los 129 registros del Plan de Acción ENIA aplanados para análisis tabular.",
+        "en": "All 129 ENIA Action Plan source records flattened for tabular analysis."
+      }
+    }
+  ]
+}

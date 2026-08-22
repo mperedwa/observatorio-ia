@@ -1,15 +1,17 @@
 {
   "ilia2025": [
-    { "pais": { "es": "Chile", "en": "Chile" }, "ilia": 70.56 },
-    { "pais": { "es": "Brasil", "en": "Brazil" }, "ilia": 67.39 },
-    { "pais": { "es": "Uruguay", "en": "Uruguay" }, "ilia": 62.32 },
-    { "pais": { "es": "Colombia", "en": "Colombia" }, "ilia": 55.84 },
-    { "pais": { "es": "Costa Rica", "en": "Costa Rica" }, "ilia": 53.83, "destacado": true }
+    { "pais": { "es": "Chile", "en": "Chile" }, "ilia": 70.56, "edicion": 2025, "fuenteUrl": "https://indicelatam.cl/wp-content/uploads/2025/10/Documento_ILIA_2025.pdf" },
+    { "pais": { "es": "Brasil", "en": "Brazil" }, "ilia": 67.39, "edicion": 2025, "fuenteUrl": "https://indicelatam.cl/wp-content/uploads/2025/10/Documento_ILIA_2025.pdf" },
+    { "pais": { "es": "Uruguay", "en": "Uruguay" }, "ilia": 62.32, "edicion": 2025, "fuenteUrl": "https://indicelatam.cl/wp-content/uploads/2025/10/Documento_ILIA_2025.pdf" },
+    { "pais": { "es": "Colombia", "en": "Colombia" }, "ilia": 55.84, "edicion": 2025, "fuenteUrl": "https://indicelatam.cl/wp-content/uploads/2025/10/Documento_ILIA_2025.pdf" },
+    { "pais": { "es": "Costa Rica", "en": "Costa Rica" }, "ilia": 53.83, "edicion": 2025, "fuenteUrl": "https://indicelatam.cl/wp-content/uploads/2025/10/Documento_ILIA_2025.pdf", "destacado": true }
   ],
   "comparativaRegional": [
     {
       "pais": { "es": "Chile", "en": "Chile" },
       "ilia": 70.56,
+      "iliaEdicion": 2025,
+      "iliaFuenteUrl": "https://indicelatam.cl/wp-content/uploads/2025/10/Documento_ILIA_2025.pdf",
       "inversion": { "es": "USD 32M", "en": "USD 32M" },
       "enteEjecutor": {
         "es": "CENIA (Centro Nacional de IA), operativo",
@@ -32,6 +34,8 @@
     {
       "pais": { "es": "Brasil", "en": "Brazil" },
       "ilia": 67.39,
+      "iliaEdicion": 2025,
+      "iliaFuenteUrl": "https://indicelatam.cl/wp-content/uploads/2025/10/Documento_ILIA_2025.pdf",
       "inversion": { "es": "USD 4,000M (PBIA)", "en": "USD 4,000M (PBIA)" },
       "enteEjecutor": {
         "es": "Plan Brasileiro de IA (PBIA), liderado por MCTI",
@@ -54,6 +58,8 @@
     {
       "pais": { "es": "Uruguay", "en": "Uruguay" },
       "ilia": 62.32,
+      "iliaEdicion": 2025,
+      "iliaFuenteUrl": "https://indicelatam.cl/wp-content/uploads/2025/10/Documento_ILIA_2025.pdf",
       "inversion": {
         "es": "Agesic con presupuesto operativo desde 2007",
         "en": "Agesic with operating budget since 2007"
@@ -93,6 +99,8 @@
     {
       "pais": { "es": "Colombia", "en": "Colombia" },
       "ilia": 55.84,
+      "iliaEdicion": 2025,
+      "iliaFuenteUrl": "https://indicelatam.cl/wp-content/uploads/2025/10/Documento_ILIA_2025.pdf",
       "inversion": {
         "es": "Política Nacional de IA aprobada (CONPES)",
         "en": "National AI Policy approved (CONPES)"
@@ -115,6 +123,8 @@
     {
       "pais": { "es": "Costa Rica", "en": "Costa Rica" },
       "ilia": 53.83,
+      "iliaEdicion": 2025,
+      "iliaFuenteUrl": "https://indicelatam.cl/wp-content/uploads/2025/10/Documento_ILIA_2025.pdf",
       "inversion": {
         "es": "Sin presupuesto IA explícito en presupuesto nacional",
         "en": "No explicit AI budget in national budget"

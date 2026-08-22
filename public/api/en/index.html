@@ -75,12 +75,21 @@
     .endpoint-heading code { font-size: .86rem; }
     .open-label { flex: none; padding-top: .15rem; color: var(--muted); font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
     .endpoint-description { max-width: 52rem; margin: 1rem 0 0; color: #334155; }
-    .endpoint-meta { display: grid; grid-template-columns: repeat(2, minmax(0, 13rem)); gap: 1rem; margin: 1.35rem 0 0; }
+    .endpoint-meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)); gap: 1rem; margin: 1.35rem 0 0; }
     .endpoint-meta div { border-left: 1px solid var(--rule); padding-left: .8rem; }
     .endpoint-meta dt { color: var(--muted); font-size: .68rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
     .endpoint-meta dd { margin: .2rem 0 0; color: var(--ink); font-size: .85rem; }
     .manifest { display: grid; grid-template-columns: 3.25rem minmax(0, 1fr); gap: 1rem; margin-top: 1.5rem; padding-block: 1.5rem; border-bottom: 1px solid var(--rule); }
     .manifest p { margin: .35rem 0 0; color: var(--muted); }
+    .infrastructure { margin-top: 2rem; border-top: 1px solid var(--rule); }
+    .infrastructure > header { padding-block: 1.5rem; border-bottom: 1px solid var(--rule); }
+    .infrastructure > header h3 { font-family: var(--serif); font-size: 1.5rem; }
+    .infrastructure > header p { max-width: 52rem; margin: .5rem 0 0; color: var(--muted); }
+    .infrastructure-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .infrastructure-links a { display: block; padding: 1.35rem 1.2rem 1.35rem 0; border-bottom: 1px solid var(--rule); font-weight: 750; }
+    .infrastructure-links a + a { border-left: 1px solid var(--rule); padding-left: 1.2rem; }
+    .download-files { display: flex; flex-wrap: wrap; gap: .55rem 1.25rem; margin: 1.25rem 0 0; padding: 0; list-style: none; }
+    .download-files a { font-size: .82rem; font-weight: 700; }
     .contract-grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(22rem, 1.1fr); gap: clamp(3rem, 7vw, 6rem); margin-top: 3.25rem; min-width: 0; }
     .contract-grid > *, .code-example { min-width: 0; }
     pre { max-width: 100%; min-width: 0; margin: 0; overflow-x: auto; border-left: 3px solid var(--accent); background: var(--ink); padding: 1.4rem; color: #f8fafc; font-size: .79rem; line-height: 1.65; }
@@ -110,7 +119,7 @@
     @media (max-width: 760px) {
       .shell { width: min(100% - 2rem, 74rem); }
       .back-link { display: none; }
-      .hero-grid, .contract-grid, .code-grid, .reuse-grid { grid-template-columns: 1fr; }
+      .hero-grid, .contract-grid, .code-grid, .reuse-grid, .infrastructure-links { grid-template-columns: 1fr; }
       .hero-grid { gap: 3rem; }
       .endpoint-heading { align-items: flex-start; }
       .open-label { display: none; }
@@ -118,6 +127,7 @@
       .code-example p { min-height: 0; }
       .interpretation ul { grid-template-columns: 1fr; }
       .reuse-grid article + article { border-left: 0; padding-left: 0; }
+      .infrastructure-links a + a { border-left: 0; padding-left: 0; }
       .site-footer .shell { flex-direction: column; }
     }
     @media (max-width: 480px) {
@@ -160,12 +170,12 @@
         <div>
           <p class="eyebrow">Public data archive / API 0.1.0</p>
           <h1 id="api-title">Public evidence, ready to query</h1>
-          <p class="lede">Seven JSON collections document initiatives, institutions, legislation, indicators, comparative gaps, the ENIA Action Plan and editorial monitoring work.</p>
+          <p class="lede">Eleven evidence collections and one codebook document the catalog, public policy, sources and the observatory’s editorial work.</p>
           <p class="audience">A human-readable interface for journalists, researchers, developers and organizations that need to examine or reuse the observatory’s evidence.</p>
         </div>
         <div>
           <dl class="facts">
-            <div><dt>documented endpoints</dt><dd>7</dd></div>
+            <div><dt>documented JSON routes</dt><dd>12</dd></div>
           <div><dt>data license</dt><dd>CC BY 4.0</dd></div>
           <div><dt>read access without authentication</dt><dd>GET</dd></div>
           </dl>
@@ -185,7 +195,7 @@
           <span class="section-number" aria-hidden="true">01</span>
           <div>
             <p class="eyebrow">01 / Collections</p>
-            <h2 id="collections-title">Seven datasets, one stable contract</h2>
+            <h2 id="collections-title">Twelve routes, one stable contract</h2>
             <p class="section-intro">Each count uses the unit declared for that file. Counts should not be added across collections or treated on their own as verified AI adoption.</p>
           </div>
         </div>
@@ -204,6 +214,8 @@
             <dl class="endpoint-meta">
               <div><dt>Contents</dt><dd><strong>29</strong> initiatives</dd></div>
               <div><dt>Editorial cutoff</dt><dd><time datetime="2026-08-21">2026-08-21</time></dd></div>
+              <div><dt>Schema</dt><dd><a href="/api/schemas/proyectos.schema.json">View schema</a></dd></div>
+              <div><dt>Release</dt><dd><a href="/api/releases/2026-08-22-r8/proyectos.json">2026-08-22-r8</a></dd></div>
             </dl>
           </article>
         </li>
@@ -221,6 +233,8 @@
             <dl class="endpoint-meta">
               <div><dt>Contents</dt><dd><strong>9</strong> institutions</dd></div>
               <div><dt>Editorial cutoff</dt><dd><time datetime="2026-08-21">2026-08-21</time></dd></div>
+              <div><dt>Schema</dt><dd><a href="/api/schemas/instituciones.schema.json">View schema</a></dd></div>
+              <div><dt>Release</dt><dd><a href="/api/releases/2026-08-22-r8/instituciones.json">2026-08-22-r8</a></dd></div>
             </dl>
           </article>
         </li>
@@ -238,6 +252,8 @@
             <dl class="endpoint-meta">
               <div><dt>Contents</dt><dd><strong>7</strong> bills</dd></div>
               <div><dt>Editorial cutoff</dt><dd><time datetime="2026-08-21">2026-08-21</time></dd></div>
+              <div><dt>Schema</dt><dd><a href="/api/schemas/legislacion.schema.json">View schema</a></dd></div>
+              <div><dt>Release</dt><dd><a href="/api/releases/2026-08-22-r8/legislacion.json">2026-08-22-r8</a></dd></div>
             </dl>
           </article>
         </li>
@@ -254,7 +270,9 @@
             <p class="endpoint-description">Quantitative indicators, including ILIA 2025, regional comparisons and the observatory’s headline metrics.</p>
             <dl class="endpoint-meta">
               <div><dt>Contents</dt><dd><strong>5</strong> groups</dd></div>
-              <div><dt>Editorial cutoff</dt><dd><time datetime="2026-08-21">2026-08-21</time></dd></div>
+              <div><dt>Editorial cutoff</dt><dd><time datetime="2026-08-22">2026-08-22</time></dd></div>
+              <div><dt>Schema</dt><dd><a href="/api/schemas/indicadores.schema.json">View schema</a></dd></div>
+              <div><dt>Release</dt><dd><a href="/api/releases/2026-08-22-r8/indicadores.json">2026-08-22-r8</a></dd></div>
             </dl>
           </article>
         </li>
@@ -271,7 +289,9 @@
             <p class="endpoint-description">Analysis of seven capabilities not documented as operational in Costa Rica, benchmarked against Estonia and Singapore.</p>
             <dl class="endpoint-meta">
               <div><dt>Contents</dt><dd><strong>7</strong> gaps</dd></div>
-              <div><dt>Editorial cutoff</dt><dd><time datetime="2026-08-21">2026-08-21</time></dd></div>
+              <div><dt>Editorial cutoff</dt><dd><time datetime="2026-08-22">2026-08-22</time></dd></div>
+              <div><dt>Schema</dt><dd><a href="/api/schemas/brechas.schema.json">View schema</a></dd></div>
+              <div><dt>Release</dt><dd><a href="/api/releases/2026-08-22-r8/brechas.json">2026-08-22-r8</a></dd></div>
             </dl>
           </article>
         </li>
@@ -289,6 +309,8 @@
             <dl class="endpoint-meta">
               <div><dt>Contents</dt><dd><strong>129</strong> source records</dd></div>
               <div><dt>Editorial cutoff</dt><dd><time datetime="2026-08-21">2026-08-21</time></dd></div>
+              <div><dt>Schema</dt><dd><a href="/api/schemas/enia-acciones.schema.json">View schema</a></dd></div>
+              <div><dt>Release</dt><dd><a href="/api/releases/2026-08-22-r8/enia-acciones.json">2026-08-22-r8</a></dd></div>
             </dl>
           </article>
         </li>
@@ -306,6 +328,103 @@
             <dl class="endpoint-meta">
               <div><dt>Contents</dt><dd><strong>8</strong> monitoring fronts</dd></div>
               <div><dt>Editorial cutoff</dt><dd><time datetime="2026-08-21">2026-08-21</time></dd></div>
+              <div><dt>Schema</dt><dd><a href="/api/schemas/monitoreo.schema.json">View schema</a></dd></div>
+              <div><dt>Release</dt><dd><a href="/api/releases/2026-08-22-r8/monitoreo.json">2026-08-22-r8</a></dd></div>
+            </dl>
+          </article>
+        </li>
+        <li class="endpoint-record">
+          <span class="record-number" aria-hidden="true">08</span>
+          <article>
+            <div class="endpoint-heading">
+              <div>
+                <p class="collection-name">Country framework</p>
+                <h3><a href="/api/marco-pais.json"><code>/api/marco-pais.json</code><span aria-hidden="true"> ↗</span></a></h3>
+              </div>
+              <span class="open-label">Open JSON</span>
+            </div>
+            <p class="endpoint-description">Public architecture of Costa Rica’s AI framework, including layers, milestones, instruments, related references and operational gaps.</p>
+            <dl class="endpoint-meta">
+              <div><dt>Contents</dt><dd><strong>4</strong> sections</dd></div>
+              <div><dt>Editorial cutoff</dt><dd><time datetime="2026-08-22">2026-08-22</time></dd></div>
+              <div><dt>Schema</dt><dd><a href="/api/schemas/marco-pais.schema.json">View schema</a></dd></div>
+              <div><dt>Release</dt><dd><a href="/api/releases/2026-08-22-r8/marco-pais.json">2026-08-22-r8</a></dd></div>
+            </dl>
+          </article>
+        </li>
+        <li class="endpoint-record">
+          <span class="record-number" aria-hidden="true">09</span>
+          <article>
+            <div class="endpoint-heading">
+              <div>
+                <p class="collection-name">Editorial history</p>
+                <h3><a href="/api/historial.json"><code>/api/historial.json</code><span aria-hidden="true"> ↗</span></a></h3>
+              </div>
+              <span class="open-label">Open JSON</span>
+            </div>
+            <p class="endpoint-description">Public bilingual log of editorial changes, with date, type, source and commit when available.</p>
+            <dl class="endpoint-meta">
+              <div><dt>Contents</dt><dd><strong>43</strong> published changes</dd></div>
+              <div><dt>Editorial cutoff</dt><dd><time datetime="2026-08-22">2026-08-22</time></dd></div>
+              <div><dt>Schema</dt><dd><a href="/api/schemas/historial.schema.json">View schema</a></dd></div>
+              <div><dt>Release</dt><dd><a href="/api/releases/2026-08-22-r8/historial.json">2026-08-22-r8</a></dd></div>
+            </dl>
+          </article>
+        </li>
+        <li class="endpoint-record">
+          <span class="record-number" aria-hidden="true">10</span>
+          <article>
+            <div class="endpoint-heading">
+              <div>
+                <p class="collection-name">Current affairs</p>
+                <h3><a href="/api/coyuntura.json"><code>/api/coyuntura.json</code><span aria-hidden="true"> ↗</span></a></h3>
+              </div>
+              <span class="open-label">Open JSON</span>
+            </div>
+            <p class="endpoint-description">Dated, traceable editorial notes that add public context without replacing official bill or initiative status.</p>
+            <dl class="endpoint-meta">
+              <div><dt>Contents</dt><dd><strong>2</strong> notes</dd></div>
+              <div><dt>Editorial cutoff</dt><dd><time datetime="2026-06-18">2026-06-18</time></dd></div>
+              <div><dt>Schema</dt><dd><a href="/api/schemas/coyuntura.schema.json">View schema</a></dd></div>
+              <div><dt>Release</dt><dd><a href="/api/releases/2026-08-22-r8/coyuntura.json">2026-08-22-r8</a></dd></div>
+            </dl>
+          </article>
+        </li>
+        <li class="endpoint-record">
+          <span class="record-number" aria-hidden="true">11</span>
+          <article>
+            <div class="endpoint-heading">
+              <div>
+                <p class="collection-name">Resources and sources</p>
+                <h3><a href="/api/recursos.json"><code>/api/recursos.json</code><span aria-hidden="true"> ↗</span></a></h3>
+              </div>
+              <span class="open-label">Open JSON</span>
+            </div>
+            <p class="endpoint-description">Directory with stable IDs for documents, regulations, indicators and sources used by the observatory.</p>
+            <dl class="endpoint-meta">
+              <div><dt>Contents</dt><dd><strong>16</strong> resources</dd></div>
+              <div><dt>Editorial cutoff</dt><dd><time datetime="2026-08-22">2026-08-22</time></dd></div>
+              <div><dt>Schema</dt><dd><a href="/api/schemas/recursos.schema.json">View schema</a></dd></div>
+              <div><dt>Release</dt><dd><a href="/api/releases/2026-08-22-r8/recursos.json">2026-08-22-r8</a></dd></div>
+            </dl>
+          </article>
+        </li>
+        <li class="endpoint-record">
+          <span class="record-number" aria-hidden="true">12</span>
+          <article>
+            <div class="endpoint-heading">
+              <div>
+                <p class="collection-name">Codebook and methodology</p>
+                <h3><a href="/api/codebook.json"><code>/api/codebook.json</code><span aria-hidden="true"> ↗</span></a></h3>
+              </div>
+              <span class="open-label">Open JSON</span>
+            </div>
+            <p class="endpoint-description">Bilingual dictionary for the contract, controlled vocabularies, verified-adoption rule, provenance and interpretation limits.</p>
+            <dl class="endpoint-meta">
+              <div><dt>Contents</dt><dd><strong>11</strong> documented datasets</dd></div>
+              <div><dt>Editorial cutoff</dt><dd><time datetime="2026-08-22">2026-08-22</time></dd></div>
+              <div><dt>Schema</dt><dd><a href="/api/schemas/codebook.schema.json">View schema</a></dd></div>
+              <div><dt>Release</dt><dd><a href="/api/releases/2026-08-22-r8/codebook.json">2026-08-22-r8</a></dd></div>
             </dl>
           </article>
         </li>
@@ -316,6 +435,23 @@
             <h3 id="manifest-title"><a href="/api/index.json"><code>/api/index.json</code><span aria-hidden="true"> ↗</span></a></h3>
             <p><strong>API manifest.</strong> Use the manifest to discover every endpoint programmatically, together with counts and editorial dates.</p>
           </div>
+        </aside>
+        <aside class="infrastructure" aria-labelledby="infrastructure-title">
+          <header>
+            <h3 id="infrastructure-title">Validate, reproduce and download</h3>
+            <p>Public schemas, a dated release and checksum-backed downloads let readers reproduce an analysis without depending on the future state of the site.</p>
+          </header>
+          <nav class="infrastructure-links" aria-label="Validate, reproduce and download">
+            <a href="/api/schemas/index.json">Schema index<span aria-hidden="true"> ↗</span></a>
+            <a href="/api/releases/2026-08-22-r8/release.json">R8 release<span aria-hidden="true"> ↗</span></a>
+            <a href="/api/downloads/index.json">Downloads and CSV<span aria-hidden="true"> ↗</span></a>
+          </nav>
+          <ul class="download-files" aria-label="Direct release files">
+            <li><a download href="/api/downloads/observatorio-ia-2026-08-22-r8.json">Complete JSON bundle</a></li>
+            <li><a download href="/api/downloads/proyectos-2026-08-22-r8.csv">Projects CSV</a></li>
+            <li><a download href="/api/downloads/legislacion-2026-08-22-r8.csv">Legislation CSV</a></li>
+            <li><a download href="/api/downloads/enia-intervenciones-2026-08-22-r8.csv">ENIA interventions CSV</a></li>
+          </ul>
         </aside>
       </div>
     </section>
@@ -333,7 +469,7 @@
         <div class="contract-grid">
           <pre><code>{
   &quot;version&quot;: &quot;0.1.0&quot;,
-  &quot;lastUpdate&quot;: &quot;2026-08-21T00:00:00.000Z&quot;,
+  &quot;lastUpdate&quot;: &quot;2026-08-22T00:00:00.000Z&quot;,
   &quot;count&quot;: 29,
   &quot;source&quot;: &quot;https://observatorioia.org&quot;,
   &quot;license&quot;: &quot;CC BY 4.0&quot;,
@@ -385,11 +521,19 @@
 const { data, lastUpdate } = await response.json();</code></pre>
           </article>
           <article class="code-example wide">
-            <h3>Filter verified adoptions</h3>
-            <p>This example selects records whose editorial placement is verified. Phase and every other evidence dimension remain available for separate analysis.</p>
+            <h3>Reproduce verified adoption</h3>
+            <p>Applies the substantive conditions published in the codebook. The export has already passed the traceability validation that completes the rule.</p>
             <pre><code>curl -s https://observatorioia.org/api/proyectos.json |
-  jq &#039;.data[] | select(.estadoCatalogo == &quot;verificado&quot;) |
-      {id, titulo, faseImplementacion, fechaUltimaVerificacion}&#039;</code></pre>
+  jq &#039;.data[] |
+    select(.modeloVersion == 2) |
+    select(.estadoCatalogo == &quot;verificado&quot;) |
+    select(.tipoIniciativa == &quot;sistema-ia&quot; or
+           .tipoIniciativa == &quot;componente-ia&quot;) |
+    select(.faseImplementacion == &quot;piloto&quot; or
+           .faseImplementacion == &quot;operativo&quot;) |
+    select(.estadoIA == &quot;confirmada&quot;) |
+    select(.evaluacion.ejecucion.estado == &quot;confirmado&quot;) |
+    {id, titulo, faseImplementacion, fechaUltimaVerificacion}&#039;</code></pre>
           </article>
         </div>
       </div>
@@ -405,7 +549,7 @@ const { data, lastUpdate } = await response.json();</code></pre>
           </div>
         </div>
         <div class="reuse-grid">
-          <article><h3>How to cite</h3><p>AI Observatory Costa Rica, dataset consulted, editorial cutoff date and direct endpoint URL.</p></article>
+          <article><h3>How to cite</h3><p>AI Observatory Costa Rica, dataset consulted, release or editorial cutoff date and direct endpoint URL. CC BY 4.0 covers the compilation; each source document retains its own terms.</p></article>
           <article><h3>What the API does not claim</h3><p>The catalog includes verified adoptions, initiatives under review and ecosystem capabilities. The total number of documented initiatives is not the number of operational AI systems.</p></article>
           <article><h3>Editorial maintenance</h3><p>Monitors generate signals. No scraper creates, reclassifies or verifies an initiative automatically; published changes require editorial review.</p></article>
         </div>

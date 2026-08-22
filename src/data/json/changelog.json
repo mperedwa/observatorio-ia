@@ -1,5 +1,18 @@
 [
   {
+    "fecha": "2026-08-22",
+    "tipo": "recurso",
+    "actualizacion": {
+      "es": "La API pública pasa de siete exportaciones parciales a un producto de datos reproducible. Conserva las rutas y la envoltura existentes, suma Marco país, historial, coyuntura, recursos y un codebook metodológico, y publica schemas, una release fechada, checksums y descargas JSON/CSV. También explicita el alcance de las fuentes de brechas, agrega procedencia por fila a ILIA 2025 y corrige la identificación del GTMI como índice de madurez GovTech, no como ranking de preparación para IA.",
+      "en": "The public API moves from seven partial exports to a reproducible data product. It preserves the existing routes and envelope, adds the country framework, editorial history, current-affairs notes, resources and a methodological codebook, and publishes schemas, a dated release, checksums and JSON/CSV downloads. It also makes the source scope of comparative gaps explicit, adds row-level provenance to ILIA 2025 and corrects GTMI identification as a GovTech maturity index rather than an AI-readiness ranking."
+    },
+    "fuente": {
+      "es": "Contrato editorial R8 del Observatorio IA Costa Rica, corte 22-ago-2026",
+      "en": "AI Observatory Costa Rica R8 editorial contract, cutoff Aug 22, 2026"
+    },
+    "fuente_url": "https://observatorioia.org/api/"
+  },
+  {
     "fecha": "2026-08-21",
     "tipo": "recurso",
     "actualizacion": {

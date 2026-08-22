@@ -273,7 +273,8 @@
         "en": "Provides no institutional procedures."
       },
       "estado": { "es": "Vigente", "en": "In force" },
-      "fechaPublicacion": "2019-05-22"
+      "fechaPublicacion": "2019-05-22",
+      "recursoIds": ["principios-ocde-ia"]
     },
     {
       "id": "enia",
@@ -291,7 +292,8 @@
         "en": "Does not define a daily operational protocol."
       },
       "estado": { "es": "Vigente", "en": "In force" },
-      "fechaPublicacion": "2024-10-24"
+      "fechaPublicacion": "2024-10-24",
+      "recursoIds": ["enia-2024-2027"]
     },
     {
       "id": "plan-accion",
@@ -312,7 +314,8 @@
         "en": "Does not standardize daily execution per institution."
       },
       "estado": { "es": "Vigente", "en": "In force" },
-      "fechaPublicacion": "2025-08-11"
+      "fechaPublicacion": "2025-08-11",
+      "recursoIds": ["plan-accion-enia-2025"]
     },
     {
       "id": "cntd-cap7",
@@ -333,7 +336,8 @@
         "en": "Does not descend to a detailed institutional playbook."
       },
       "estado": { "es": "Vigente", "en": "In force" },
-      "fechaPublicacion": "2024-06-19"
+      "fechaPublicacion": "2024-06-19",
+      "recursoIds": ["decreto-44507-micitt", "cntd-vigente"]
     },
     {
       "id": "proyectos-ley",
@@ -354,7 +358,8 @@
         "en": "Does not solve current public operations."
       },
       "estado": { "es": "En trámite", "en": "In process" },
-      "fechaPublicacion": "2023-05-30"
+      "fechaPublicacion": "2023-05-30",
+      "endpointRelacionado": "/api/legislacion.json"
     },
     {
       "id": "lineamientos-pj",
@@ -375,7 +380,8 @@
         "en": "Does not apply to the State at large."
       },
       "estado": { "es": "Vigente", "en": "In force" },
-      "fechaPublicacion": "2026-02-26"
+      "fechaPublicacion": "2026-02-26",
+      "recursoIds": ["lineamientos-ia-generativa-pj"]
     }
   ],
   "brechas": [

@@ -1,0 +1,919 @@
+{
+  "version": "0.1.0",
+  "lastUpdate": "2026-08-22T00:00:00.000Z",
+  "count": 11,
+  "source": "https://observatorioia.org",
+  "license": "CC BY 4.0",
+  "data": {
+    "schemaVersion": 1,
+    "fechaCorte": "2026-08-22",
+    "alcance": {
+      "es": "Diccionario público del contrato, los vocabularios y las reglas editoriales usadas para interpretar los datos del Observatorio IA Costa Rica.",
+      "en": "Public dictionary for the contract, vocabularies and editorial rules used to interpret AI Observatory Costa Rica data."
+    },
+    "contrato": {
+      "envoltura": [
+        {
+          "campo": "version",
+          "descripcion": {
+            "es": "Versión de la aplicación que generó el archivo. No identifica por sí sola una release de datos.",
+            "en": "Version of the application that generated the file. It does not identify a data release by itself."
+          }
+        },
+        {
+          "campo": "lastUpdate",
+          "descripcion": {
+            "es": "Último cambio editorial conocido del conjunto, no la hora de compilación.",
+            "en": "Latest known editorial change to the dataset, not the build time."
+          }
+        },
+        {
+          "campo": "count",
+          "descripcion": {
+            "es": "Cantidad expresada en la unidad propia del conjunto.",
+            "en": "Quantity expressed in the dataset's declared unit."
+          }
+        },
+        {
+          "campo": "source",
+          "descripcion": {
+            "es": "Entidad responsable de la compilación publicada.",
+            "en": "Entity responsible for the published compilation."
+          }
+        },
+        {
+          "campo": "license",
+          "descripcion": {
+            "es": "Licencia de la compilación del Observatorio. Los documentos enlazados conservan sus propios derechos.",
+            "en": "License for the Observatory compilation. Linked source documents retain their own rights."
+          }
+        },
+        {
+          "campo": "data",
+          "descripcion": {
+            "es": "Contenido completo del conjunto en su estructura natural.",
+            "en": "Complete dataset content in its natural structure."
+          }
+        }
+      ],
+      "bilinguismo": {
+        "es": "Los textos editoriales traducibles usan objetos con claves es y en. Nombres propios, identificadores, URLs, fechas, números y transcripciones fuente pueden permanecer como valores planos.",
+        "en": "Translatable editorial text uses objects with es and en keys. Proper names, identifiers, URLs, dates, numbers and source transcriptions may remain scalar values."
+      },
+      "noDeterminado": {
+        "es": "Indica que la evidencia pública revisada no permite confirmar ni descartar una afirmación. No equivale a no, cero ni inexistente.",
+        "en": "Means that reviewed public evidence cannot confirm or rule out a claim. It does not mean no, zero or nonexistent."
+      },
+      "trazabilidad": {
+        "es": "Sin errores de trazabilidad significa que no hay IDs de fuente duplicados; toda evaluación afirmativa referencia una fuente existente que respalda esa dimensión; y todo resultado verificado referencia una fuente declarada para resultados. Las relaciones entre iniciativas también se validan contra IDs existentes y no pueden apuntar al mismo registro.",
+        "en": "No traceability errors means there are no duplicate source IDs; every affirmative assessment references an existing source that supports that dimension; and every verified result references a source declared for results. Initiative relationships are also checked against existing IDs and cannot point to the same record."
+      }
+    },
+    "reglaAdopcionVerificada": {
+      "descripcion": {
+        "es": "Una iniciativa cuenta como adopción verificada solo cuando cumple simultáneamente todas las condiciones. estadoCatalogo por sí solo no basta.",
+        "en": "An initiative counts as verified adoption only when it meets every condition simultaneously. estadoCatalogo alone is not sufficient."
+      },
+      "condiciones": [
+        {
+          "campo": "modeloVersion",
+          "operador": "igual",
+          "valores": [
+            2
+          ]
+        },
+        {
+          "campo": "estadoCatalogo",
+          "operador": "igual",
+          "valores": [
+            "verificado"
+          ]
+        },
+        {
+          "campo": "tipoIniciativa",
+          "operador": "uno-de",
+          "valores": [
+            "sistema-ia",
+            "componente-ia"
+          ]
+        },
+        {
+          "campo": "faseImplementacion",
+          "operador": "uno-de",
+          "valores": [
+            "piloto",
+            "operativo"
+          ]
+        },
+        {
+          "campo": "estadoIA",
+          "operador": "igual",
+          "valores": [
+            "confirmada"
+          ]
+        },
+        {
+          "campo": "evaluacion.ejecucion.estado",
+          "operador": "igual",
+          "valores": [
+            "confirmado"
+          ]
+        },
+        {
+          "campo": "trazabilidad",
+          "operador": "sin-errores",
+          "valores": []
+        }
+      ]
+    },
+    "vocabularios": [
+      {
+        "id": "tipoIniciativa",
+        "campo": "proyectos[].tipoIniciativa",
+        "valores": [
+          {
+            "valor": "sistema-ia",
+            "etiqueta": {
+              "es": "Sistema de IA",
+              "en": "AI system"
+            }
+          },
+          {
+            "valor": "componente-ia",
+            "etiqueta": {
+              "es": "Componente de IA",
+              "en": "AI component"
+            }
+          },
+          {
+            "valor": "infraestructura-digital",
+            "etiqueta": {
+              "es": "Infraestructura digital",
+              "en": "Digital infrastructure"
+            }
+          },
+          {
+            "valor": "programa-capacidades",
+            "etiqueta": {
+              "es": "Programa de capacidades",
+              "en": "Capacity program"
+            }
+          },
+          {
+            "valor": "investigacion",
+            "etiqueta": {
+              "es": "Investigación",
+              "en": "Research"
+            }
+          },
+          {
+            "valor": "politica-gobernanza",
+            "etiqueta": {
+              "es": "Política o gobernanza",
+              "en": "Policy or governance"
+            }
+          },
+          {
+            "valor": "digitalizacion-no-ia",
+            "etiqueta": {
+              "es": "Digitalización sin IA confirmada",
+              "en": "Digitalization without confirmed AI"
+            }
+          },
+          {
+            "valor": "por-determinar",
+            "etiqueta": {
+              "es": "Por determinar",
+              "en": "To be determined"
+            }
+          }
+        ]
+      },
+      {
+        "id": "estadoCatalogo",
+        "campo": "proyectos[].estadoCatalogo",
+        "valores": [
+          {
+            "valor": "verificado",
+            "etiqueta": {
+              "es": "Verificado",
+              "en": "Verified"
+            }
+          },
+          {
+            "valor": "seguimiento",
+            "etiqueta": {
+              "es": "En seguimiento",
+              "en": "Under review"
+            }
+          },
+          {
+            "valor": "ecosistema",
+            "etiqueta": {
+              "es": "Ecosistema y capacidades",
+              "en": "Ecosystem and capacities"
+            }
+          },
+          {
+            "valor": "descartado",
+            "etiqueta": {
+              "es": "Descartado",
+              "en": "Excluded"
+            }
+          }
+        ]
+      },
+      {
+        "id": "faseImplementacion",
+        "campo": "proyectos[].faseImplementacion",
+        "valores": [
+          {
+            "valor": "anunciado",
+            "etiqueta": {
+              "es": "Anunciado",
+              "en": "Announced"
+            }
+          },
+          {
+            "valor": "planificado",
+            "etiqueta": {
+              "es": "Planificado",
+              "en": "Planned"
+            }
+          },
+          {
+            "valor": "desarrollo",
+            "etiqueta": {
+              "es": "En desarrollo",
+              "en": "In development"
+            }
+          },
+          {
+            "valor": "prueba-concepto",
+            "etiqueta": {
+              "es": "Prueba de concepto",
+              "en": "Proof of concept"
+            }
+          },
+          {
+            "valor": "piloto",
+            "etiqueta": {
+              "es": "Piloto",
+              "en": "Pilot"
+            }
+          },
+          {
+            "valor": "operativo",
+            "etiqueta": {
+              "es": "Operativo",
+              "en": "Operational"
+            }
+          },
+          {
+            "valor": "pausado",
+            "etiqueta": {
+              "es": "Pausado",
+              "en": "Paused"
+            }
+          },
+          {
+            "valor": "suspendido",
+            "etiqueta": {
+              "es": "Suspendido",
+              "en": "Suspended"
+            }
+          },
+          {
+            "valor": "finalizado",
+            "etiqueta": {
+              "es": "Finalizado",
+              "en": "Completed"
+            }
+          },
+          {
+            "valor": "cancelado",
+            "etiqueta": {
+              "es": "Cancelado",
+              "en": "Cancelled"
+            }
+          },
+          {
+            "valor": "no-determinado",
+            "etiqueta": {
+              "es": "No determinado",
+              "en": "Undetermined"
+            }
+          }
+        ]
+      },
+      {
+        "id": "estadoIA",
+        "campo": "proyectos[].estadoIA",
+        "valores": [
+          {
+            "valor": "confirmada",
+            "etiqueta": {
+              "es": "IA confirmada",
+              "en": "AI confirmed"
+            }
+          },
+          {
+            "valor": "declarada-sin-tecnica",
+            "etiqueta": {
+              "es": "IA declarada sin técnica publicada",
+              "en": "AI claimed without published technique"
+            }
+          },
+          {
+            "valor": "no-determinada",
+            "etiqueta": {
+              "es": "IA no determinada",
+              "en": "AI undetermined"
+            }
+          },
+          {
+            "valor": "descartada",
+            "etiqueta": {
+              "es": "IA descartada",
+              "en": "AI ruled out"
+            }
+          }
+        ]
+      },
+      {
+        "id": "estadoEvaluacion",
+        "campo": "proyectos[].evaluacion.*.estado",
+        "valores": [
+          {
+            "valor": "confirmado",
+            "etiqueta": {
+              "es": "Confirmado",
+              "en": "Confirmed"
+            }
+          },
+          {
+            "valor": "parcialmente-confirmado",
+            "etiqueta": {
+              "es": "Parcialmente confirmado",
+              "en": "Partially confirmed"
+            }
+          },
+          {
+            "valor": "inferido",
+            "etiqueta": {
+              "es": "Inferido",
+              "en": "Inferred"
+            }
+          },
+          {
+            "valor": "no-determinado",
+            "etiqueta": {
+              "es": "No determinado",
+              "en": "Undetermined"
+            }
+          },
+          {
+            "valor": "contradicho",
+            "etiqueta": {
+              "es": "Contradicho",
+              "en": "Contradicted"
+            }
+          }
+        ]
+      },
+      {
+        "id": "dimensionEvidencia",
+        "campo": "proyectos[].evaluacion",
+        "valores": [
+          {
+            "valor": "existencia",
+            "etiqueta": {
+              "es": "Existencia",
+              "en": "Existence"
+            }
+          },
+          {
+            "valor": "ejecucion",
+            "etiqueta": {
+              "es": "Ejecución",
+              "en": "Execution"
+            }
+          },
+          {
+            "valor": "tecnicaIA",
+            "etiqueta": {
+              "es": "Técnica de IA",
+              "en": "AI technique"
+            }
+          },
+          {
+            "valor": "usoOperativo",
+            "etiqueta": {
+              "es": "Uso operativo",
+              "en": "Operational use"
+            }
+          },
+          {
+            "valor": "resultados",
+            "etiqueta": {
+              "es": "Resultados",
+              "en": "Results"
+            }
+          },
+          {
+            "valor": "gobernanza",
+            "etiqueta": {
+              "es": "Gobernanza",
+              "en": "Governance"
+            }
+          }
+        ]
+      },
+      {
+        "id": "tipoFuente",
+        "campo": "*.tipoFuente",
+        "valores": [
+          {
+            "valor": "primaria-oficial",
+            "etiqueta": {
+              "es": "Primaria oficial",
+              "en": "Official primary"
+            }
+          },
+          {
+            "valor": "acceso-informacion",
+            "etiqueta": {
+              "es": "Acceso a información",
+              "en": "Access to information"
+            }
+          },
+          {
+            "valor": "multilateral",
+            "etiqueta": {
+              "es": "Multilateral",
+              "en": "Multilateral"
+            }
+          },
+          {
+            "valor": "academica",
+            "etiqueta": {
+              "es": "Académica",
+              "en": "Academic"
+            }
+          },
+          {
+            "valor": "prensa",
+            "etiqueta": {
+              "es": "Prensa",
+              "en": "News media"
+            }
+          },
+          {
+            "valor": "otra-secundaria",
+            "etiqueta": {
+              "es": "Otra secundaria",
+              "en": "Other secondary"
+            }
+          }
+        ]
+      },
+      {
+        "id": "respaldoFuente",
+        "campo": "proyectos[].fuentes[].respalda[]",
+        "valores": [
+          {
+            "valor": "existencia",
+            "etiqueta": {
+              "es": "Existencia",
+              "en": "Existence"
+            }
+          },
+          {
+            "valor": "objetivo-declarado",
+            "etiqueta": {
+              "es": "Objetivo declarado",
+              "en": "Stated objective"
+            }
+          },
+          {
+            "valor": "meta",
+            "etiqueta": {
+              "es": "Meta",
+              "en": "Target"
+            }
+          },
+          {
+            "valor": "ejecucion",
+            "etiqueta": {
+              "es": "Ejecución",
+              "en": "Execution"
+            }
+          },
+          {
+            "valor": "tecnica-ia",
+            "etiqueta": {
+              "es": "Técnica de IA",
+              "en": "AI technique"
+            }
+          },
+          {
+            "valor": "uso-operativo",
+            "etiqueta": {
+              "es": "Uso operativo",
+              "en": "Operational use"
+            }
+          },
+          {
+            "valor": "resultado-reportado",
+            "etiqueta": {
+              "es": "Resultado reportado",
+              "en": "Reported result"
+            }
+          },
+          {
+            "valor": "resultado-independiente",
+            "etiqueta": {
+              "es": "Resultado independiente",
+              "en": "Independent result"
+            }
+          },
+          {
+            "valor": "gobernanza",
+            "etiqueta": {
+              "es": "Gobernanza",
+              "en": "Governance"
+            }
+          },
+          {
+            "valor": "inferencia-editorial",
+            "etiqueta": {
+              "es": "Inferencia editorial",
+              "en": "Editorial inference"
+            }
+          }
+        ]
+      },
+      {
+        "id": "naturalezaAfirmacion",
+        "campo": "proyectos[].fuentes[].naturalezaAfirmacion[]",
+        "valores": [
+          {
+            "valor": "hecho",
+            "etiqueta": {
+              "es": "Hecho",
+              "en": "Fact"
+            }
+          },
+          {
+            "valor": "objetivo-declarado",
+            "etiqueta": {
+              "es": "Objetivo declarado",
+              "en": "Stated objective"
+            }
+          },
+          {
+            "valor": "meta",
+            "etiqueta": {
+              "es": "Meta",
+              "en": "Target"
+            }
+          },
+          {
+            "valor": "resultado-reportado",
+            "etiqueta": {
+              "es": "Resultado reportado",
+              "en": "Reported result"
+            }
+          },
+          {
+            "valor": "resultado-independiente",
+            "etiqueta": {
+              "es": "Resultado independiente",
+              "en": "Independent result"
+            }
+          },
+          {
+            "valor": "inferencia-editorial",
+            "etiqueta": {
+              "es": "Inferencia editorial",
+              "en": "Editorial inference"
+            }
+          }
+        ]
+      },
+      {
+        "id": "tipoRelacion",
+        "campo": "proyectos[].relaciones[].tipo",
+        "valores": [
+          {
+            "valor": "mismo-que",
+            "etiqueta": {
+              "es": "Mismo que",
+              "en": "Same as"
+            }
+          },
+          {
+            "valor": "posible-duplicado",
+            "etiqueta": {
+              "es": "Posible duplicado",
+              "en": "Possible duplicate"
+            }
+          },
+          {
+            "valor": "componente-de",
+            "etiqueta": {
+              "es": "Componente de",
+              "en": "Component of"
+            }
+          },
+          {
+            "valor": "depende-de",
+            "etiqueta": {
+              "es": "Depende de",
+              "en": "Depends on"
+            }
+          },
+          {
+            "valor": "alimenta-a",
+            "etiqueta": {
+              "es": "Alimenta a",
+              "en": "Feeds"
+            }
+          },
+          {
+            "valor": "distinto-de",
+            "etiqueta": {
+              "es": "Distinto de",
+              "en": "Distinct from"
+            }
+          },
+          {
+            "valor": "relacion-no-acreditada",
+            "etiqueta": {
+              "es": "Relación no acreditada",
+              "en": "Unsubstantiated relationship"
+            }
+          }
+        ]
+      }
+    ],
+    "datasets": [
+      {
+        "id": "proyectos",
+        "endpoint": "/api/proyectos.json",
+        "schemaUrl": "/api/schemas/proyectos.schema.json",
+        "unidadConteo": {
+          "es": "iniciativas",
+          "en": "initiatives"
+        },
+        "camposClave": [
+          "id",
+          "institucionId",
+          "tipoIniciativa",
+          "estadoCatalogo",
+          "faseImplementacion",
+          "estadoIA",
+          "evaluacion",
+          "fuentes",
+          "fechaUltimaVerificacion"
+        ],
+        "urlRegistro": {
+          "es": "/es/proyectos/{id}/",
+          "en": "/en/proyectos/{id}/"
+        }
+      },
+      {
+        "id": "instituciones",
+        "endpoint": "/api/instituciones.json",
+        "schemaUrl": "/api/schemas/instituciones.schema.json",
+        "unidadConteo": {
+          "es": "instituciones",
+          "en": "institutions"
+        },
+        "camposClave": [
+          "id",
+          "nombre",
+          "tipo",
+          "url",
+          "proyectosActivos"
+        ],
+        "urlRegistro": {
+          "es": "/es/instituciones/{id}/",
+          "en": "/en/instituciones/{id}/"
+        },
+        "notaInterpretacion": {
+          "es": "Los resúmenes institucionales sintetizan las iniciativas relacionadas por institucionId; url identifica el sitio institucional y no respalda por sí sola cada afirmación del resumen.",
+          "en": "Institution summaries synthesize initiatives linked by institucionId; url identifies the institution website and does not by itself support every statement in the summary."
+        }
+      },
+      {
+        "id": "legislacion",
+        "endpoint": "/api/legislacion.json",
+        "schemaUrl": "/api/schemas/legislacion.schema.json",
+        "unidadConteo": {
+          "es": "expedientes",
+          "en": "bills"
+        },
+        "camposClave": [
+          "numero",
+          "estado",
+          "alcanceIA",
+          "fuenteUrl",
+          "fuenteEstadoUrl",
+          "fechaUltimaVerificacion"
+        ]
+      },
+      {
+        "id": "indicadores",
+        "endpoint": "/api/indicadores.json",
+        "schemaUrl": "/api/schemas/indicadores.schema.json",
+        "unidadConteo": {
+          "es": "bloques",
+          "en": "groups"
+        },
+        "camposClave": [
+          "ilia2025",
+          "comparativaRegional",
+          "dgi2025",
+          "ourdata2025",
+          "kpisHero"
+        ],
+        "notaInterpretacion": {
+          "es": "ilia2025 y cada fila de comparativaRegional declaran edición y URL del ILIA. Las demás fuentes de cada fila respaldan sus hitos o contexto y no sustituyen la fuente del puntaje.",
+          "en": "ilia2025 and every comparativaRegional row declare the ILIA edition and URL. Other row sources support milestones or context and do not replace the score source."
+        }
+      },
+      {
+        "id": "brechas",
+        "endpoint": "/api/brechas.json",
+        "schemaUrl": "/api/schemas/brechas.schema.json",
+        "unidadConteo": {
+          "es": "brechas",
+          "en": "gaps"
+        },
+        "camposClave": [
+          "id",
+          "capacidad",
+          "paisReferencia",
+          "evidenciaReferencia",
+          "estadoCR",
+          "porQueImporta",
+          "fuenteUrl",
+          "fuenteUrlAlcance"
+        ],
+        "notaInterpretacion": {
+          "es": "fuenteUrl respalda el referente internacional. estadoCR es una síntesis fechada del corpus costarricense declarado en procedencia, no una prueba de inexistencia absoluta; porQueImporta es interpretación editorial.",
+          "en": "fuenteUrl supports the international benchmark. estadoCR is a dated synthesis of the Costa Rican corpus declared under provenance, not proof of absolute nonexistence; porQueImporta is editorial interpretation."
+        }
+      },
+      {
+        "id": "enia-acciones",
+        "endpoint": "/api/enia-acciones.json",
+        "schemaUrl": "/api/schemas/enia-acciones.schema.json",
+        "unidadConteo": {
+          "es": "registros fuente",
+          "en": "source records"
+        },
+        "camposClave": [
+          "fechaCorte",
+          "fuente",
+          "resumen",
+          "resultados[].codigo",
+          "resultados[].intervenciones[].id",
+          "resultados[].intervenciones[].estadoEjecucion",
+          "resultados[].intervenciones[].cruceCatalogo"
+        ],
+        "notaInterpretacion": {
+          "es": "Los compromisos, metas e indicadores transcriben el plan oficial; no constituyen evidencia de ejecución. estadoEjecucion y cruceCatalogo son evaluaciones editoriales separadas.",
+          "en": "Commitments, targets and indicators transcribe the official plan and are not evidence of execution. estadoEjecucion and cruceCatalogo are separate editorial assessments."
+        }
+      },
+      {
+        "id": "monitoreo",
+        "endpoint": "/api/monitoreo.json",
+        "schemaUrl": "/api/schemas/monitoreo.schema.json",
+        "unidadConteo": {
+          "es": "frentes",
+          "en": "monitoring fronts"
+        },
+        "camposClave": [
+          "fechaCorte",
+          "politica",
+          "frentes",
+          "revisiones"
+        ]
+      },
+      {
+        "id": "marco-pais",
+        "endpoint": "/api/marco-pais.json",
+        "schemaUrl": "/api/schemas/marco-pais.schema.json",
+        "unidadConteo": {
+          "es": "secciones",
+          "en": "sections"
+        },
+        "camposClave": [
+          "capas",
+          "hitos",
+          "instrumentos",
+          "brechas"
+        ],
+        "notaInterpretacion": {
+          "es": "Capas, vacíos y brechas son síntesis editoriales. Los instrumentos enlazan recursos o endpoints cuando existe una referencia directa; su ausencia no debe leerse como prueba exhaustiva de inexistencia.",
+          "en": "Layers, missing elements and gaps are editorial syntheses. Instruments link resources or endpoints when a direct reference exists; absence should not be read as exhaustive proof of nonexistence."
+        }
+      },
+      {
+        "id": "historial",
+        "endpoint": "/api/historial.json",
+        "schemaUrl": "/api/schemas/historial.schema.json",
+        "unidadConteo": {
+          "es": "cambios publicados",
+          "en": "published changes"
+        },
+        "camposClave": [
+          "fecha",
+          "tipo",
+          "actualizacion",
+          "fuente",
+          "fuente_url",
+          "commit_sha"
+        ]
+      },
+      {
+        "id": "coyuntura",
+        "endpoint": "/api/coyuntura.json",
+        "schemaUrl": "/api/schemas/coyuntura.schema.json",
+        "unidadConteo": {
+          "es": "notas",
+          "en": "notes"
+        },
+        "camposClave": [
+          "id",
+          "fecha",
+          "titulo",
+          "texto",
+          "implicacion",
+          "fuentes"
+        ],
+        "notaInterpretacion": {
+          "es": "texto resume hechos atribuidos a las fuentes; implicacion es interpretación editorial y no reemplaza estados oficiales del catálogo o de la Asamblea.",
+          "en": "texto summarizes facts attributed to sources; implicacion is editorial interpretation and does not replace official catalog or Legislative Assembly status."
+        }
+      },
+      {
+        "id": "recursos",
+        "endpoint": "/api/recursos.json",
+        "schemaUrl": "/api/schemas/recursos.schema.json",
+        "unidadConteo": {
+          "es": "recursos",
+          "en": "resources"
+        },
+        "camposClave": [
+          "id",
+          "titulo",
+          "fuente",
+          "url",
+          "tipo",
+          "tipoFuente",
+          "nota"
+        ],
+        "notaInterpretacion": {
+          "es": "Es un directorio curado de fuentes utilizadas o destacadas por el Observatorio, no una bibliografía exhaustiva sobre IA en Costa Rica.",
+          "en": "This is a curated directory of sources used or highlighted by the Observatory, not an exhaustive bibliography on AI in Costa Rica."
+        }
+      }
+    ],
+    "procedencia": {
+      "brechas": {
+        "es": "En brechas, fuenteUrl respalda la evidencia del referente internacional. estadoCR es una síntesis editorial del corpus público costarricense revisado al corte y no una prueba de inexistencia absoluta; porQueImporta expresa el análisis editorial del Observatorio.",
+        "en": "In comparative gaps, fuenteUrl supports evidence about the international benchmark. estadoCR is an editorial synthesis of the Costa Rican public corpus reviewed at the cutoff and is not proof of absolute nonexistence; porQueImporta expresses the Observatory's editorial analysis."
+      },
+      "corpusCostaRicaRecursoIds": [
+        "decreto-44507-micitt",
+        "cntd-vigente",
+        "enia-2024-2027",
+        "plan-accion-enia-2025",
+        "lineamientos-ia-generativa-pj"
+      ],
+      "corpusCostaRicaEndpoints": [
+        "/api/proyectos.json",
+        "/api/legislacion.json",
+        "/api/indicadores.json",
+        "/api/recursos.json",
+        "/api/marco-pais.json"
+      ]
+    },
+    "licencia": {
+      "compilacion": "CC BY 4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0/",
+      "nota": {
+        "es": "La licencia cubre la selección, estructuración y texto editorial del Observatorio. Cada documento enlazado conserva los términos definidos por su publicador.",
+        "en": "The license covers the Observatory's selection, structure and editorial text. Each linked document retains the terms set by its publisher."
+      }
+    },
+    "fueraDeAlcance": {
+      "es": "Artículos narrativos, páginas institucionales, privacidad y activos sociales no se replican como datasets. Su publicación web sigue siendo la versión canónica.",
+      "en": "Narrative articles, institutional pages, privacy content and social assets are not replicated as datasets. Their web publication remains canonical."
+    }
+  }
+}

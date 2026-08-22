@@ -1,0 +1,129 @@
+{
+  "version": "0.1.0",
+  "releaseId": "2026-08-22-r8",
+  "lastUpdate": "2026-08-22T00:00:00.000Z",
+  "source": "https://observatorioia.org",
+  "license": "CC BY 4.0",
+  "schemas": [
+    {
+      "datasetId": "proyectos",
+      "url": "/api/schemas/proyectos.schema.json",
+      "dataSchemaUrl": "/api/schemas/proyectos-data.schema.json",
+      "draft": "http://json-schema.org/draft-07/schema#",
+      "bytes": 11610,
+      "sha256": "328d5e3b2c716b978bf90724c96a6ab61110864a97ed29b1ff6f1b06ff2e5352",
+      "dataSchemaBytes": 9870,
+      "dataSchemaSha256": "9cf7a0e44fe58530ab6f745d10b8c6f52c0a7c0e36d6d8dae372bf163f91bb57"
+    },
+    {
+      "datasetId": "instituciones",
+      "url": "/api/schemas/instituciones.schema.json",
+      "dataSchemaUrl": "/api/schemas/instituciones-data.schema.json",
+      "draft": "http://json-schema.org/draft-07/schema#",
+      "bytes": 2726,
+      "sha256": "2b08707d6cedec7b33bed4076ac96d9cc27b23f5927d75a8a6d43e40ee82025f",
+      "dataSchemaBytes": 1211,
+      "dataSchemaSha256": "180ee8399a24e6eddb3c83f69b6fc77a197098adfbbdba1598b06411ade772c3"
+    },
+    {
+      "datasetId": "legislacion",
+      "url": "/api/schemas/legislacion.schema.json",
+      "dataSchemaUrl": "/api/schemas/legislacion-data.schema.json",
+      "draft": "http://json-schema.org/draft-07/schema#",
+      "bytes": 3022,
+      "sha256": "deb795d37c6dbb14bada341398cf286d08954617f8cc511cf8f8b6dd706baed6",
+      "dataSchemaBytes": 1479,
+      "dataSchemaSha256": "e9ea09f68506fbf3964a6ef5aa65090a72799fc305bfc3b2e2e323b5be3f7d02"
+    },
+    {
+      "datasetId": "indicadores",
+      "url": "/api/schemas/indicadores.schema.json",
+      "dataSchemaUrl": "/api/schemas/indicadores-data.schema.json",
+      "draft": "http://json-schema.org/draft-07/schema#",
+      "bytes": 7418,
+      "sha256": "80f796aa55be5d822f50f3fa2be87a2134a6f337f4e742003ea06b46a77a348e",
+      "dataSchemaBytes": 4507,
+      "dataSchemaSha256": "f6d4dca7ef22462ec682be1011e0edba827df28e0a41dbac2c383644f0e74fb4"
+    },
+    {
+      "datasetId": "brechas",
+      "url": "/api/schemas/brechas.schema.json",
+      "dataSchemaUrl": "/api/schemas/brechas-data.schema.json",
+      "draft": "http://json-schema.org/draft-07/schema#",
+      "bytes": 2507,
+      "sha256": "e05bb6739a21b99a2ee7a7189fac043d4185deeada146ab3d6caa024789f9b2e",
+      "dataSchemaBytes": 1119,
+      "dataSchemaSha256": "b6cefc6c67ef8de7522b7267892ee7fd0b89e0daad987994069cbf2e2be54b3d"
+    },
+    {
+      "datasetId": "enia-acciones",
+      "url": "/api/schemas/enia-acciones.schema.json",
+      "dataSchemaUrl": "/api/schemas/enia-acciones-data.schema.json",
+      "draft": "http://json-schema.org/draft-07/schema#",
+      "bytes": 11727,
+      "sha256": "33d73f96a238dc051767213e0de1dd9b996620deaa91b9f01726b1792d08087c",
+      "dataSchemaBytes": 8714,
+      "dataSchemaSha256": "cb279832395413e6ebbd96256d2393541139763d445cce2779a13cf703d4be27"
+    },
+    {
+      "datasetId": "monitoreo",
+      "url": "/api/schemas/monitoreo.schema.json",
+      "dataSchemaUrl": "/api/schemas/monitoreo-data.schema.json",
+      "draft": "http://json-schema.org/draft-07/schema#",
+      "bytes": 8029,
+      "sha256": "42cd5d7df0170cfe9c5b08f10fecd2861eda5091cd0288981f1bf28d0349d15e",
+      "dataSchemaBytes": 5392,
+      "dataSchemaSha256": "a26d28eab161a472cc1264cc76a09c443e2a1e8df257eb12dc7b3022936f52f8"
+    },
+    {
+      "datasetId": "marco-pais",
+      "url": "/api/schemas/marco-pais.schema.json",
+      "dataSchemaUrl": "/api/schemas/marco-pais-data.schema.json",
+      "draft": "http://json-schema.org/draft-07/schema#",
+      "bytes": 8064,
+      "sha256": "bc6cb55c2a026b3e707468c2c7094a1f2460acee47cfe89821e1bb1e3b9affe8",
+      "dataSchemaBytes": 5134,
+      "dataSchemaSha256": "c5fbfce7f5b45710f5bc73cef67229b13c588cbb1643c6e5c416e3ed08e9848a"
+    },
+    {
+      "datasetId": "historial",
+      "url": "/api/schemas/historial.schema.json",
+      "dataSchemaUrl": "/api/schemas/historial-data.schema.json",
+      "draft": "http://json-schema.org/draft-07/schema#",
+      "bytes": 2362,
+      "sha256": "3ca559ef7c490ad24f186489e59c29e3c5e687e1a24b2ba33f6a7741579b5083",
+      "dataSchemaBytes": 966,
+      "dataSchemaSha256": "6f6502b5706210d1eee507906e1b48286df6e06239d422b7a12c56094c84dcdd"
+    },
+    {
+      "datasetId": "coyuntura",
+      "url": "/api/schemas/coyuntura.schema.json",
+      "dataSchemaUrl": "/api/schemas/coyuntura-data.schema.json",
+      "draft": "http://json-schema.org/draft-07/schema#",
+      "bytes": 2956,
+      "sha256": "4753bbf8908a328789e0eda6232124cf37eac06084b1b4baf7b4769a248678ca",
+      "dataSchemaBytes": 1506,
+      "dataSchemaSha256": "5e85c53fd44e5b15a4412394cb7a061d57c8c4b76c7602177bc5f0d5850bff64"
+    },
+    {
+      "datasetId": "recursos",
+      "url": "/api/schemas/recursos.schema.json",
+      "dataSchemaUrl": "/api/schemas/recursos-data.schema.json",
+      "draft": "http://json-schema.org/draft-07/schema#",
+      "bytes": 2641,
+      "sha256": "f2aab0195bccac064c050e3271353b0282459f45873928e260cceb9448b214a5",
+      "dataSchemaBytes": 1189,
+      "dataSchemaSha256": "93913a2d7c522cf20346285b2b728819fe22d8e21c658f34c201a46cdc7a7c9e"
+    },
+    {
+      "datasetId": "codebook",
+      "url": "/api/schemas/codebook.schema.json",
+      "dataSchemaUrl": "/api/schemas/codebook-data.schema.json",
+      "draft": "http://json-schema.org/draft-07/schema#",
+      "bytes": 9230,
+      "sha256": "5d7257ab58d49f4e728068ec8ea51611ea59bb059b5756f346ca043016b848a3",
+      "dataSchemaBytes": 5425,
+      "dataSchemaSha256": "fe0099a21ca612ff266cee74239e5fa16d992f846280e728c51b80adb7d3e1a6"
+    }
+  ]
+}

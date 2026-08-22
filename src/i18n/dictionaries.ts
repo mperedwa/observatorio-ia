@@ -646,7 +646,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     recursos: {
       kicker: '04 / Recursos',
-      titulo: 'Documentos y fuentes oficiales',
+      titulo: 'Documentos y fuentes de referencia',
       abrir: '↗ Abrir',
       metaDescripcion: 'Directorio bilingüe de documentos, normas, estrategias, indicadores y fuentes públicas utilizadas por el Observatorio IA Costa Rica.',
     },
@@ -1334,7 +1334,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     recursos: {
       kicker: '04 / Resources',
-      titulo: 'Official documents and sources',
+      titulo: 'Documents and reference sources',
       abrir: '↗ Open',
       metaDescripcion: 'Bilingual directory of documents, regulations, strategies, indicators and public sources used by AI Observatory Costa Rica.',
     },

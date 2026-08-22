@@ -1,0 +1,440 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "proyectos.schema.json",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "titulo",
+      "institucionId",
+      "categoria",
+      "estado",
+      "descripcion",
+      "fuenteUrl"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "id": {
+        "$ref": "#/definitions/id"
+      },
+      "titulo": {
+        "$ref": "#/definitions/bilingual"
+      },
+      "institucionId": {
+        "$ref": "#/definitions/id"
+      },
+      "categoria": {
+        "type": "string",
+        "enum": [
+          "judicial",
+          "salud",
+          "educacion",
+          "fiscal",
+          "infraestructura",
+          "agricultura",
+          "social"
+        ]
+      },
+      "estado": {
+        "type": "string",
+        "enum": [
+          "operativo",
+          "piloto",
+          "planificado"
+        ]
+      },
+      "descripcion": {
+        "$ref": "#/definitions/bilingual"
+      },
+      "resultado": {
+        "$ref": "#/definitions/bilingual"
+      },
+      "contexto": {
+        "$ref": "#/definitions/bilingual"
+      },
+      "desde": {
+        "type": "string",
+        "pattern": "^[0-9]{4}$"
+      },
+      "fuenteUrl": {
+        "type": "string",
+        "format": "uri"
+      },
+      "modeloVersion": {
+        "type": "integer",
+        "const": 2
+      },
+      "tipoIniciativa": {
+        "type": "string",
+        "enum": [
+          "sistema-ia",
+          "componente-ia",
+          "infraestructura-digital",
+          "programa-capacidades",
+          "investigacion",
+          "politica-gobernanza",
+          "digitalizacion-no-ia",
+          "por-determinar"
+        ]
+      },
+      "estadoCatalogo": {
+        "type": "string",
+        "enum": [
+          "verificado",
+          "seguimiento",
+          "ecosistema",
+          "descartado"
+        ]
+      },
+      "faseImplementacion": {
+        "type": "string",
+        "enum": [
+          "anunciado",
+          "planificado",
+          "desarrollo",
+          "prueba-concepto",
+          "piloto",
+          "operativo",
+          "pausado",
+          "suspendido",
+          "finalizado",
+          "cancelado",
+          "no-determinado"
+        ]
+      },
+      "estadoIA": {
+        "type": "string",
+        "enum": [
+          "confirmada",
+          "declarada-sin-tecnica",
+          "no-determinada",
+          "descartada"
+        ]
+      },
+      "evaluacion": {
+        "$ref": "#/definitions/evaluacion"
+      },
+      "fuentes": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "$ref": "#/definitions/fuente"
+        }
+      },
+      "fechaPrimeraEvidencia": {
+        "$ref": "#/definitions/fechaFlexible"
+      },
+      "fechaAnuncio": {
+        "$ref": "#/definitions/fechaFlexible"
+      },
+      "fechaInicioPiloto": {
+        "$ref": "#/definitions/fechaFlexible"
+      },
+      "fechaInicioOperacion": {
+        "$ref": "#/definitions/fechaFlexible"
+      },
+      "fechaUltimaVerificacion": {
+        "type": "string",
+        "format": "date"
+      },
+      "fechaProximaRevision": {
+        "type": "string",
+        "format": "date"
+      },
+      "objetivoDeclarado": {
+        "$ref": "#/definitions/bilingual"
+      },
+      "resultadosVerificados": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/resultadoVerificado"
+        }
+      },
+      "preguntasAbiertas": {
+        "$ref": "#/definitions/listaBilingual"
+      },
+      "datosConocidos": {
+        "$ref": "#/definitions/listaBilingual"
+      },
+      "datosNoDeterminados": {
+        "$ref": "#/definitions/listaBilingual"
+      },
+      "relaciones": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/relacion"
+        }
+      }
+    },
+    "allOf": [
+      {
+        "if": {
+          "required": ["modeloVersion"],
+          "properties": {
+            "modeloVersion": {
+              "const": 2
+            }
+          }
+        },
+        "then": {
+          "required": [
+            "tipoIniciativa",
+            "estadoCatalogo",
+            "faseImplementacion",
+            "estadoIA",
+            "evaluacion",
+            "fuentes",
+            "fechaPrimeraEvidencia",
+            "fechaUltimaVerificacion"
+          ]
+        }
+      }
+    ]
+  },
+  "definitions": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "bilingual": {
+      "type": "object",
+      "required": [
+        "es",
+        "en"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "es": {
+          "type": "string",
+          "minLength": 1
+        },
+        "en": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "listaBilingual": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/bilingual"
+      }
+    },
+    "fechaFlexible": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[0-9]{4}$"
+        },
+        {
+          "type": "string",
+          "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])$"
+        },
+        {
+          "type": "string",
+          "format": "date"
+        }
+      ]
+    },
+    "evaluacionDimension": {
+      "type": "object",
+      "required": [
+        "estado",
+        "fuenteIds"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "estado": {
+          "type": "string",
+          "enum": [
+            "confirmado",
+            "parcialmente-confirmado",
+            "inferido",
+            "no-determinado",
+            "contradicho"
+          ]
+        },
+        "fuenteIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/definitions/id"
+          }
+        }
+      }
+    },
+    "evaluacion": {
+      "type": "object",
+      "required": [
+        "existencia",
+        "ejecucion",
+        "tecnicaIA",
+        "usoOperativo",
+        "resultados",
+        "gobernanza"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "existencia": {
+          "$ref": "#/definitions/evaluacionDimension"
+        },
+        "ejecucion": {
+          "$ref": "#/definitions/evaluacionDimension"
+        },
+        "tecnicaIA": {
+          "$ref": "#/definitions/evaluacionDimension"
+        },
+        "usoOperativo": {
+          "$ref": "#/definitions/evaluacionDimension"
+        },
+        "resultados": {
+          "$ref": "#/definitions/evaluacionDimension"
+        },
+        "gobernanza": {
+          "$ref": "#/definitions/evaluacionDimension"
+        }
+      }
+    },
+    "fuente": {
+      "type": "object",
+      "required": [
+        "id",
+        "titulo",
+        "url",
+        "publicador",
+        "tipoFuente",
+        "fechaConsulta",
+        "respalda",
+        "naturalezaAfirmacion"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "titulo": {
+          "$ref": "#/definitions/bilingual"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "publicador": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tipoFuente": {
+          "type": "string",
+          "enum": [
+            "primaria-oficial",
+            "acceso-informacion",
+            "multilateral",
+            "academica",
+            "prensa",
+            "otra-secundaria"
+          ]
+        },
+        "fechaPublicacion": {
+          "$ref": "#/definitions/fechaFlexible"
+        },
+        "fechaConsulta": {
+          "type": "string",
+          "format": "date"
+        },
+        "respalda": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "existencia",
+              "objetivo-declarado",
+              "meta",
+              "ejecucion",
+              "tecnica-ia",
+              "uso-operativo",
+              "resultado-reportado",
+              "resultado-independiente",
+              "gobernanza",
+              "inferencia-editorial"
+            ]
+          }
+        },
+        "naturalezaAfirmacion": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "hecho",
+              "objetivo-declarado",
+              "meta",
+              "resultado-reportado",
+              "resultado-independiente",
+              "inferencia-editorial"
+            ]
+          }
+        }
+      }
+    },
+    "resultadoVerificado": {
+      "type": "object",
+      "required": [
+        "id",
+        "texto",
+        "fuenteIds"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "texto": {
+          "$ref": "#/definitions/bilingual"
+        },
+        "fuenteIds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/definitions/id"
+          }
+        },
+        "fecha": {
+          "$ref": "#/definitions/fechaFlexible"
+        }
+      }
+    },
+    "relacion": {
+      "type": "object",
+      "required": [
+        "iniciativaId",
+        "tipo"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "iniciativaId": {
+          "$ref": "#/definitions/id"
+        },
+        "tipo": {
+          "type": "string",
+          "enum": [
+            "mismo-que",
+            "posible-duplicado",
+            "componente-de",
+            "depende-de",
+            "alimenta-a",
+            "distinto-de",
+            "relacion-no-acreditada"
+          ]
+        },
+        "nota": {
+          "$ref": "#/definitions/bilingual"
+        }
+      }
+    }
+  }
+}

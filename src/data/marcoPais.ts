@@ -54,6 +54,10 @@ export interface Instrumento {
   fechaPublicacion?: string;
   /** Fecha de última revisión/modificación oficial del instrumento. Opcional. */
   ultimaRevision?: string;
+  /** IDs estables del directorio público de recursos que respaldan el instrumento. */
+  recursoIds?: string[];
+  /** Endpoint público relacionado cuando la evidencia vive en otro dataset. */
+  endpointRelacionado?: string;
   /**
    * Nota libre cuando `fechaPublicacion` está intencionalmente omitida
    * (ej: "verificar Gaceta", "rolling — sin fecha única"). Solo presente

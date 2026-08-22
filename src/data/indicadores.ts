@@ -6,6 +6,8 @@ import { conteosLegislacion, detalleConteosLegislacion } from './legislacion';
 export interface IndicadorRegional {
   pais: Bilingual;
   ilia: number;
+  edicion: number;
+  fuenteUrl: string;
   destacado?: boolean;
 }
 
@@ -25,6 +27,8 @@ export interface FuenteCitada {
 export interface ComparativaPais {
   pais: Bilingual;
   ilia: number;
+  iliaEdicion: number;
+  iliaFuenteUrl: string;
   inversion: Bilingual;
   enteEjecutor: Bilingual;
   hito: Bilingual;

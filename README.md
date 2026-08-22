@@ -13,7 +13,7 @@ Corte editorial: 21 de agosto de 2026.
 - 7 expedientes legislativos relacionados con IA.
 - 129 registros del Plan de Acción ENIA, que representan 120 intervenciones únicas.
 - 8 frentes con cadencia de monitoreo y bitácora pública de revisiones.
-- 7 endpoints JSON de lectura pública.
+- 12 endpoints JSON de lectura pública.
 
 Una iniciativa solo cuenta como adopción verificada cuando la técnica de IA y la ejecución en piloto u operación están respaldadas por fuentes trazables. Un anuncio o una meta oficial no demuestra ejecución.
 
@@ -102,7 +102,7 @@ La implementación se documenta en [scrapers/README.md](scrapers/README.md) y la
 
 ## API pública
 
-`npm run build` genera documentación humana en español bajo `/api/`, su contraparte inglesa en `/api/en/`, un manifest y siete endpoints:
+`npm run build` genera documentación humana en español bajo `/api/`, su contraparte inglesa en `/api/en/`, un manifest y doce endpoints:
 
 - `/api/proyectos.json`
 - `/api/instituciones.json`
@@ -111,8 +111,22 @@ La implementación se documenta en [scrapers/README.md](scrapers/README.md) y la
 - `/api/brechas.json`
 - `/api/enia-acciones.json`
 - `/api/monitoreo.json`
+- `/api/marco-pais.json`
+- `/api/historial.json`
+- `/api/coyuntura.json`
+- `/api/recursos.json`
+- `/api/codebook.json`
 
-Todos responden con `{version, lastUpdate, count, source, license, data}`. `lastUpdate` representa el último cambio editorial conocido y no la hora de compilación. Licencia de datos: CC BY 4.0.
+Las siete rutas originales se conservan. Todos los endpoints responden con `{version, lastUpdate, count, source, license, data}`. `lastUpdate` representa el último cambio editorial conocido y no la hora de compilación.
+
+R8 añade schemas para la respuesta completa y para su campo `data`, una release inmutable por fecha y descargas con SHA-256:
+
+- `/api/schemas/index.json`
+- `/api/releases/index.json`
+- `/api/releases/2026-08-22-r8/release.json`
+- `/api/downloads/index.json`
+
+Las descargas incluyen un bundle JSON completo y CSV de proyectos, legislación e intervenciones ENIA. La licencia CC BY 4.0 cubre la selección, la estructura y el contenido original del Observatorio; cada documento enlazado conserva los términos de su publicador.
 
 ## Política editorial
 

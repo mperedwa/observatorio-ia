@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "instituciones.schema.json",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "nombre", "nombreCorto", "tipo", "url", "proyectosActivos", "resumen"],
+    "additionalProperties": false,
+    "properties": {
+      "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+      "nombre": { "$ref": "#/definitions/bilingual" },
+      "nombreCorto": { "$ref": "#/definitions/bilingual" },
+      "tipo": {
+        "type": "string",
+        "enum": ["ministerio", "asamblea", "judicial", "autonoma", "universidad", "investigacion", "camara"]
+      },
+      "url": { "type": "string", "format": "uri" },
+      "proyectosActivos": { "type": "integer", "minimum": 0 },
+      "resumen": { "$ref": "#/definitions/bilingual" },
+      "descripcion": { "$ref": "#/definitions/bilingual" },
+      "lecciones": { "$ref": "#/definitions/bilingual" }
+    }
+  },
+  "definitions": {
+    "bilingual": {
+      "type": "object",
+      "required": ["es", "en"],
+      "additionalProperties": false,
+      "properties": {
+        "es": { "type": "string", "minLength": 1 },
+        "en": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

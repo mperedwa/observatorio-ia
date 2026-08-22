@@ -1,0 +1,19 @@
+{
+  "latest": "2026-08-22-r8",
+  "source": "https://observatorioia.org",
+  "license": "CC BY 4.0",
+  "releases": [
+    {
+      "id": "2026-08-22-r8",
+      "date": "2026-08-22",
+      "title": {
+        "es": "Corte R8 del producto público de datos",
+        "en": "R8 public data product release"
+      },
+      "manifestUrl": "/api/releases/2026-08-22-r8/release.json",
+      "datasets": 12,
+      "bytes": 7866,
+      "sha256": "680a472b6d7640b46c69c764da6b2b3284eab88dcdcd04f648430a09cba080c3"
+    }
+  ]
+}

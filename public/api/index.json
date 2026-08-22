@@ -1,50 +1,246 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-08-21T00:00:00.000Z",
+  "dataRelease": {
+    "id": "2026-08-22-r8",
+    "date": "2026-08-22",
+    "title": {
+      "es": "Corte R8 del producto público de datos",
+      "en": "R8 public data product release"
+    },
+    "manifestUrl": "/api/releases/2026-08-22-r8/release.json"
+  },
+  "lastUpdate": "2026-08-22T00:00:00.000Z",
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "licenseScope": {
+    "es": "La licencia cubre la compilación y el contenido original del observatorio; las fuentes enlazadas conservan sus propios términos.",
+    "en": "The license covers the observatory compilation and original content; linked sources retain their own terms."
+  },
+  "documentation": {
+    "es": "/api/",
+    "en": "/api/en/"
+  },
+  "codebook": "/api/codebook.json",
+  "schemas": "/api/schemas/index.json",
+  "releases": "/api/releases/index.json",
+  "downloads": "/api/downloads/index.json",
   "endpoints": [
     {
+      "id": "proyectos",
       "url": "/api/proyectos.json",
       "description": "Catálogo de iniciativas relacionadas con IA en el sector público costarricense. Incluye sistemas, pilotos, planes y capacidades con descripción bilingüe ES/EN y una fuente pública consultada.",
+      "descriptionI18n": {
+        "es": "Catálogo de iniciativas relacionadas con IA en el sector público costarricense. Incluye sistemas, pilotos, planes y capacidades con textos bilingües y fuentes públicas trazables.",
+        "en": "Catalog of AI-related initiatives in Costa Rica’s public sector. It includes systems, pilots, plans and capabilities with bilingual ES/EN descriptions and traceable public sources."
+      },
       "count": 29,
-      "lastUpdate": "2026-08-21T00:00:00.000Z"
+      "countUnit": {
+        "es": "iniciativas",
+        "en": "initiatives"
+      },
+      "lastUpdate": "2026-08-21T00:00:00.000Z",
+      "schemaUrl": "/api/schemas/proyectos.schema.json",
+      "dataSchemaUrl": "/api/schemas/proyectos-data.schema.json",
+      "releaseUrl": "/api/releases/2026-08-22-r8/proyectos.json"
     },
     {
+      "id": "instituciones",
       "url": "/api/instituciones.json",
       "description": "Instituciones públicas con iniciativas relacionadas con IA documentadas (ministerios, autónomas, judicial, universidades e investigación).",
+      "descriptionI18n": {
+        "es": "Instituciones públicas con iniciativas relacionadas con IA documentadas, incluidos ministerios, instituciones autónomas, Poder Judicial, universidades y organismos de investigación.",
+        "en": "Public institutions with documented AI-related initiatives, including ministries, autonomous institutions, the judiciary, universities and research bodies."
+      },
       "count": 9,
-      "lastUpdate": "2026-08-21T00:00:00.000Z"
+      "countUnit": {
+        "es": "instituciones",
+        "en": "institutions"
+      },
+      "lastUpdate": "2026-08-21T00:00:00.000Z",
+      "schemaUrl": "/api/schemas/instituciones.schema.json",
+      "dataSchemaUrl": "/api/schemas/instituciones-data.schema.json",
+      "releaseUrl": "/api/releases/2026-08-22-r8/instituciones.json"
     },
     {
+      "id": "legislacion",
       "url": "/api/legislacion.json",
       "description": "Expedientes de ley relacionados con IA en la Asamblea Legislativa de Costa Rica. Los monitores proponen señales; el estado publicado requiere revisión editorial de una fuente oficial.",
+      "descriptionI18n": {
+        "es": "Expedientes relacionados con IA en la Asamblea Legislativa. Los monitores proponen señales; cada estado publicado requiere revisión editorial contra una fuente oficial.",
+        "en": "AI-related bills in Costa Rica’s Legislative Assembly. Monitors propose signals, while every published status requires editorial review against an official source."
+      },
       "count": 7,
-      "lastUpdate": "2026-08-21T00:00:00.000Z"
+      "countUnit": {
+        "es": "expedientes",
+        "en": "bills"
+      },
+      "lastUpdate": "2026-08-21T00:00:00.000Z",
+      "schemaUrl": "/api/schemas/legislacion.schema.json",
+      "dataSchemaUrl": "/api/schemas/legislacion-data.schema.json",
+      "releaseUrl": "/api/releases/2026-08-22-r8/legislacion.json"
     },
     {
+      "id": "indicadores",
       "url": "/api/indicadores.json",
       "description": "Indicadores cuantitativos: ILIA 2025 (Índice Latinoamericano de IA), comparativa regional, KPIs hero del observatorio.",
+      "descriptionI18n": {
+        "es": "Indicadores cuantitativos, incluidos ILIA 2025, comparativas regionales y las cifras principales del observatorio.",
+        "en": "Quantitative indicators, including ILIA 2025, regional comparisons and the observatory’s headline metrics."
+      },
       "count": 5,
-      "lastUpdate": "2026-08-21T00:00:00.000Z"
+      "countUnit": {
+        "es": "bloques",
+        "en": "groups"
+      },
+      "lastUpdate": "2026-08-22T00:00:00.000Z",
+      "schemaUrl": "/api/schemas/indicadores.schema.json",
+      "dataSchemaUrl": "/api/schemas/indicadores-data.schema.json",
+      "releaseUrl": "/api/releases/2026-08-22-r8/indicadores.json"
     },
     {
+      "id": "brechas",
       "url": "/api/brechas.json",
-      "description": "Análisis de brechas: 7 capacidades que CR no tiene operativas vs Estonia/Singapur (gobernanza IA, X-Road, chatbot ciudadano, etc.).",
+      "description": "Análisis comparado de siete capacidades no documentadas como operativas en el corpus público costarricense revisado, frente a referentes de Estonia y Singapur.",
+      "descriptionI18n": {
+        "es": "Análisis de siete capacidades no documentadas como operativas en Costa Rica, comparadas con referentes de Estonia y Singapur.",
+        "en": "Analysis of seven capabilities not documented as operational in Costa Rica, benchmarked against Estonia and Singapore."
+      },
       "count": 7,
-      "lastUpdate": "2026-08-21T00:00:00.000Z"
+      "countUnit": {
+        "es": "brechas",
+        "en": "gaps"
+      },
+      "lastUpdate": "2026-08-22T00:00:00.000Z",
+      "schemaUrl": "/api/schemas/brechas.schema.json",
+      "dataSchemaUrl": "/api/schemas/brechas-data.schema.json",
+      "releaseUrl": "/api/releases/2026-08-22-r8/brechas.json"
     },
     {
+      "id": "enia-acciones",
       "url": "/api/enia-acciones.json",
       "description": "Inventario y crosswalk del Plan de Acción ENIA: 129 registros del documento oficial, 120 intervenciones únicas, clasificación por tipo, evidencia de ejecución y relaciones con el catálogo.",
+      "descriptionI18n": {
+        "es": "Inventario y cruce editorial del Plan de Acción ENIA: 129 registros del documento oficial, 120 intervenciones únicas, clasificación, evidencia de ejecución y relaciones con el catálogo.",
+        "en": "Inventory and crosswalk of the ENIA Action Plan: 129 records from the official document, 120 unique interventions, type classification, execution evidence and catalog relationships."
+      },
       "count": 129,
-      "lastUpdate": "2026-08-21T00:00:00.000Z"
+      "countUnit": {
+        "es": "registros fuente",
+        "en": "source records"
+      },
+      "lastUpdate": "2026-08-21T00:00:00.000Z",
+      "schemaUrl": "/api/schemas/enia-acciones.schema.json",
+      "dataSchemaUrl": "/api/schemas/enia-acciones-data.schema.json",
+      "releaseUrl": "/api/releases/2026-08-22-r8/enia-acciones.json"
     },
     {
+      "id": "monitoreo",
       "url": "/api/monitoreo.json",
       "description": "Agenda y bitácora editorial: cadencias por frente, próximas revisiones, cambios de estado y revisiones documentadas sin cambios.",
+      "descriptionI18n": {
+        "es": "Agenda y bitácora editorial con cadencias por frente, próximas revisiones, cambios de estado y revisiones documentadas sin cambios.",
+        "en": "Editorial schedule and log, including cadence by monitoring front, upcoming reviews, status changes and documented no-change reviews."
+      },
       "count": 8,
-      "lastUpdate": "2026-08-21T00:00:00.000Z"
+      "countUnit": {
+        "es": "frentes",
+        "en": "monitoring fronts"
+      },
+      "lastUpdate": "2026-08-21T00:00:00.000Z",
+      "schemaUrl": "/api/schemas/monitoreo.schema.json",
+      "dataSchemaUrl": "/api/schemas/monitoreo-data.schema.json",
+      "releaseUrl": "/api/releases/2026-08-22-r8/monitoreo.json"
+    },
+    {
+      "id": "marco-pais",
+      "url": "/api/marco-pais.json",
+      "description": "Arquitectura pública del marco de IA en Costa Rica: capas, hitos, instrumentos y brechas operativas.",
+      "descriptionI18n": {
+        "es": "Arquitectura pública del marco de IA en Costa Rica, con capas, hitos, instrumentos, referencias relacionadas y brechas operativas.",
+        "en": "Public architecture of Costa Rica’s AI framework, including layers, milestones, instruments, related references and operational gaps."
+      },
+      "count": 4,
+      "countUnit": {
+        "es": "secciones",
+        "en": "sections"
+      },
+      "lastUpdate": "2026-08-22T00:00:00.000Z",
+      "schemaUrl": "/api/schemas/marco-pais.schema.json",
+      "dataSchemaUrl": "/api/schemas/marco-pais-data.schema.json",
+      "releaseUrl": "/api/releases/2026-08-22-r8/marco-pais.json"
+    },
+    {
+      "id": "historial",
+      "url": "/api/historial.json",
+      "description": "Bitácora pública y bilingüe de cambios editoriales con fecha, tipo, fuente y commit cuando está disponible.",
+      "descriptionI18n": {
+        "es": "Bitácora pública y bilingüe de cambios editoriales, con fecha, tipo, fuente y commit cuando está disponible.",
+        "en": "Public bilingual log of editorial changes, with date, type, source and commit when available."
+      },
+      "count": 43,
+      "countUnit": {
+        "es": "cambios publicados",
+        "en": "published changes"
+      },
+      "lastUpdate": "2026-08-22T00:00:00.000Z",
+      "schemaUrl": "/api/schemas/historial.schema.json",
+      "dataSchemaUrl": "/api/schemas/historial-data.schema.json",
+      "releaseUrl": "/api/releases/2026-08-22-r8/historial.json"
+    },
+    {
+      "id": "coyuntura",
+      "url": "/api/coyuntura.json",
+      "description": "Notas editoriales fechadas y trazables que aportan contexto sin sustituir estados o afirmaciones oficiales.",
+      "descriptionI18n": {
+        "es": "Notas editoriales fechadas y trazables que aportan contexto público sin sustituir el estado oficial de expedientes o iniciativas.",
+        "en": "Dated, traceable editorial notes that add public context without replacing official bill or initiative status."
+      },
+      "count": 2,
+      "countUnit": {
+        "es": "notas",
+        "en": "notes"
+      },
+      "lastUpdate": "2026-06-18T00:00:00.000Z",
+      "schemaUrl": "/api/schemas/coyuntura.schema.json",
+      "dataSchemaUrl": "/api/schemas/coyuntura-data.schema.json",
+      "releaseUrl": "/api/releases/2026-08-22-r8/coyuntura.json"
+    },
+    {
+      "id": "recursos",
+      "url": "/api/recursos.json",
+      "description": "Directorio con IDs estables de documentos, normas, indicadores y fuentes utilizados por el observatorio.",
+      "descriptionI18n": {
+        "es": "Directorio con IDs estables de documentos, normas, indicadores y fuentes utilizados por el observatorio.",
+        "en": "Directory with stable IDs for documents, regulations, indicators and sources used by the observatory."
+      },
+      "count": 16,
+      "countUnit": {
+        "es": "recursos",
+        "en": "resources"
+      },
+      "lastUpdate": "2026-08-22T00:00:00.000Z",
+      "schemaUrl": "/api/schemas/recursos.schema.json",
+      "dataSchemaUrl": "/api/schemas/recursos-data.schema.json",
+      "releaseUrl": "/api/releases/2026-08-22-r8/recursos.json"
+    },
+    {
+      "id": "codebook",
+      "url": "/api/codebook.json",
+      "description": "Diccionario bilingüe del contrato, vocabularios, regla de adopción verificada, procedencia y límites de interpretación.",
+      "descriptionI18n": {
+        "es": "Diccionario bilingüe del contrato, vocabularios controlados, regla de adopción verificada, procedencia y límites de interpretación.",
+        "en": "Bilingual dictionary for the contract, controlled vocabularies, verified-adoption rule, provenance and interpretation limits."
+      },
+      "count": 11,
+      "countUnit": {
+        "es": "datasets documentados",
+        "en": "documented datasets"
+      },
+      "lastUpdate": "2026-08-22T00:00:00.000Z",
+      "schemaUrl": "/api/schemas/codebook.schema.json",
+      "dataSchemaUrl": "/api/schemas/codebook-data.schema.json",
+      "releaseUrl": "/api/releases/2026-08-22-r8/codebook.json"
     }
   ]
 }

@@ -8,21 +8,37 @@
  * Cada endpoint refleja directamente `src/data/json/<dataset>.json` (la
  * fuente de verdad) más metadata: `lastUpdate`, `version`, `count`.
  *
- * Genera además `/api/index.json` (manifest) y documentación humana bilingüe
- * en `/api/` (ES) y `/api/en/` (EN), enlazada a cada endpoint.
+ * Genera además `/api/index.json` (manifest), documentación humana bilingüe,
+ * schemas de respuesta y datos, una release bloqueable y descargas JSON/CSV
+ * con checksums SHA-256.
  *
  * Correr: `npm run build:api` (incluido en `npm run build`).
  */
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { join } from 'node:path';
 import { computeCounters, type Counters } from './lib/counters';
 
 const ROOT = process.cwd();
 const SRC_DIR = join(ROOT, 'src', 'data', 'json');
+const SCHEMA_SRC_DIR = join(ROOT, 'src', 'data', 'schemas');
 const OUT_DIR = join(ROOT, 'public', 'api');
+const SCHEMA_OUT_DIR = join(OUT_DIR, 'schemas');
+const RELEASES_OUT_DIR = join(OUT_DIR, 'releases');
+const DOWNLOADS_OUT_DIR = join(OUT_DIR, 'downloads');
 const COUNTERS_TS = join(ROOT, 'src', 'data', 'counters.ts');
 const PKG = JSON.parse(readFileSync(join(ROOT, 'package.json'), 'utf8')) as { version: string };
+
+const DATA_RELEASE = {
+  id: '2026-08-22-r8',
+  date: '2026-08-22',
+  title: {
+    es: 'Corte R8 del producto público de datos',
+    en: 'R8 public data product release',
+  },
+} as const;
+const RELEASE_LOCK_PATH = join(RELEASES_OUT_DIR, DATA_RELEASE.id, 'release.lock');
 
 /**
  * Indicadores cuyo `valor` (y opcionalmente `detalle`) se resuelve dinámicamente
@@ -101,6 +117,7 @@ const KPI_AUTO: Record<string, (c: Counters, data: unknown) => KpiAutoResult> = 
 interface Dataset {
   filename: string;
   outputFilename?: string;
+  schemaFilename?: string;
   endpoint: string;
   title: KpiBilingual;
   description: string;
@@ -157,7 +174,7 @@ const DATASETS: Dataset[] = [
     endpoint: '/api/indicadores.json',
     title: { es: 'Indicadores', en: 'Indicators' },
     countUnit: { es: 'bloques', en: 'groups' },
-    lastUpdate: '2026-08-21',
+    lastUpdate: '2026-08-22',
     description:
       'Indicadores cuantitativos: ILIA 2025 (Índice Latinoamericano de IA), comparativa regional, KPIs hero del observatorio.',
     descriptionEs:
@@ -170,9 +187,9 @@ const DATASETS: Dataset[] = [
     endpoint: '/api/brechas.json',
     title: { es: 'Brechas comparadas', en: 'Comparative gaps' },
     countUnit: { es: 'brechas', en: 'gaps' },
-    lastUpdate: '2026-08-21',
+    lastUpdate: '2026-08-22',
     description:
-      'Análisis de brechas: 7 capacidades que CR no tiene operativas vs Estonia/Singapur (gobernanza IA, X-Road, chatbot ciudadano, etc.).',
+      'Análisis comparado de siete capacidades no documentadas como operativas en el corpus público costarricense revisado, frente a referentes de Estonia y Singapur.',
     descriptionEs:
       'Análisis de siete capacidades no documentadas como operativas en Costa Rica, comparadas con referentes de Estonia y Singapur.',
     descriptionEn:
@@ -211,6 +228,78 @@ const DATASETS: Dataset[] = [
       'Editorial schedule and log, including cadence by monitoring front, upcoming reviews, status changes and documented no-change reviews.',
     getCount: (data) => {
       const count = (data as { frentes?: unknown[] } | undefined)?.frentes?.length;
+      return typeof count === 'number' ? count : 0;
+    },
+  },
+  {
+    filename: 'marcoPais.json',
+    outputFilename: 'marco-pais.json',
+    endpoint: '/api/marco-pais.json',
+    title: { es: 'Marco país', en: 'Country framework' },
+    countUnit: { es: 'secciones', en: 'sections' },
+    lastUpdate: '2026-08-22',
+    description:
+      'Arquitectura pública del marco de IA en Costa Rica: capas, hitos, instrumentos y brechas operativas.',
+    descriptionEs:
+      'Arquitectura pública del marco de IA en Costa Rica, con capas, hitos, instrumentos, referencias relacionadas y brechas operativas.',
+    descriptionEn:
+      'Public architecture of Costa Rica\u2019s AI framework, including layers, milestones, instruments, related references and operational gaps.',
+  },
+  {
+    filename: 'changelog.json',
+    outputFilename: 'historial.json',
+    endpoint: '/api/historial.json',
+    title: { es: 'Historial editorial', en: 'Editorial history' },
+    countUnit: { es: 'cambios publicados', en: 'published changes' },
+    lastUpdate: '2026-08-22',
+    description:
+      'Bitácora pública y bilingüe de cambios editoriales con fecha, tipo, fuente y commit cuando está disponible.',
+    descriptionEs:
+      'Bitácora pública y bilingüe de cambios editoriales, con fecha, tipo, fuente y commit cuando está disponible.',
+    descriptionEn:
+      'Public bilingual log of editorial changes, with date, type, source and commit when available.',
+  },
+  {
+    filename: 'coyuntura.json',
+    endpoint: '/api/coyuntura.json',
+    title: { es: 'Coyuntura', en: 'Current affairs' },
+    countUnit: { es: 'notas', en: 'notes' },
+    lastUpdate: '2026-06-18',
+    description:
+      'Notas editoriales fechadas y trazables que aportan contexto sin sustituir estados o afirmaciones oficiales.',
+    descriptionEs:
+      'Notas editoriales fechadas y trazables que aportan contexto público sin sustituir el estado oficial de expedientes o iniciativas.',
+    descriptionEn:
+      'Dated, traceable editorial notes that add public context without replacing official bill or initiative status.',
+  },
+  {
+    filename: 'recursos.json',
+    endpoint: '/api/recursos.json',
+    title: { es: 'Recursos y fuentes', en: 'Resources and sources' },
+    countUnit: { es: 'recursos', en: 'resources' },
+    lastUpdate: '2026-08-22',
+    description:
+      'Directorio con IDs estables de documentos, normas, indicadores y fuentes utilizados por el observatorio.',
+    descriptionEs:
+      'Directorio con IDs estables de documentos, normas, indicadores y fuentes utilizados por el observatorio.',
+    descriptionEn:
+      'Directory with stable IDs for documents, regulations, indicators and sources used by the observatory.',
+  },
+  {
+    filename: 'apiCodebook.json',
+    outputFilename: 'codebook.json',
+    endpoint: '/api/codebook.json',
+    title: { es: 'Codebook y metodología', en: 'Codebook and methodology' },
+    countUnit: { es: 'datasets documentados', en: 'documented datasets' },
+    lastUpdate: '2026-08-22',
+    description:
+      'Diccionario bilingüe del contrato, vocabularios, regla de adopción verificada, procedencia y límites de interpretación.',
+    descriptionEs:
+      'Diccionario bilingüe del contrato, vocabularios controlados, regla de adopción verificada, procedencia y límites de interpretación.',
+    descriptionEn:
+      'Bilingual dictionary for the contract, controlled vocabularies, verified-adoption rule, provenance and interpretation limits.',
+    getCount: (data) => {
+      const count = (data as { datasets?: unknown[] } | undefined)?.datasets?.length;
       return typeof count === 'number' ? count : 0;
     },
   },
@@ -286,6 +375,7 @@ function envelope<T>(
 type ApiIndexLocale = 'es' | 'en';
 
 interface ApiIndexEndpoint {
+  id: string;
   endpoint: string;
   title: KpiBilingual;
   description: string;
@@ -294,6 +384,9 @@ interface ApiIndexEndpoint {
   countUnit: KpiBilingual;
   count: number;
   lastUpdate: string;
+  schemaUrl: string;
+  dataSchemaUrl: string;
+  releaseUrl: string;
 }
 
 const API_INDEX_COPY = {
@@ -308,11 +401,11 @@ const API_INDEX_COPY = {
     kicker: 'Archivo de datos públicos',
     title: 'Evidencia pública, lista para consultar',
     intro:
-      'Siete colecciones JSON documentan iniciativas, instituciones, legislación, indicadores, brechas, el Plan de Acción ENIA y el trabajo de monitoreo editorial.',
+      'Once colecciones de evidencia y un codebook documentan el catálogo, la política pública, las fuentes y el trabajo editorial del observatorio.',
     audience:
       'Una interfaz de lectura para periodistas, investigadores, desarrolladores y organizaciones que necesitan examinar o reutilizar la evidencia del observatorio.',
     facts: [
-      { value: '7', label: 'endpoints documentados' },
+      { value: '__DATASET_COUNT__', label: 'rutas JSON documentadas' },
       { value: 'CC BY 4.0', label: 'licencia de datos' },
       { value: 'GET', label: 'lectura sin autenticación' },
     ],
@@ -321,15 +414,27 @@ const API_INDEX_COPY = {
     quickText:
       'No requiere una cuenta ni una llave. La respuesta incluye los datos y la fecha editorial del último cambio conocido.',
     collectionsKicker: '01 / Colecciones',
-    collectionsTitle: 'Siete conjuntos, un contrato estable',
+    collectionsTitle: 'Doce rutas, un contrato estable',
     collectionsIntro:
       'El conteo describe la unidad propia de cada archivo. No debe sumarse entre colecciones ni interpretarse por sí solo como adopción verificada de IA.',
     countLabel: 'Contenido',
     updatedLabel: 'Corte editorial',
     openLabel: 'Abrir JSON',
+    schemaLabel: 'Ver schema',
     manifestTitle: 'Manifest de la API',
     manifestText:
       'Use el manifest para descubrir programáticamente todos los endpoints, sus conteos y fechas editoriales.',
+    infrastructureTitle: 'Validar, reproducir y descargar',
+    infrastructureText:
+      'Los schemas públicos, la release fechada y las descargas con checksum permiten repetir un análisis sin depender del estado futuro del sitio.',
+    schemasTitle: 'Índice de schemas',
+    releaseTitle: 'Release R8',
+    downloadsTitle: 'Descargas y CSV',
+    downloadFilesLabel: 'Archivos directos de la release',
+    bundleTitle: 'Bundle JSON completo',
+    projectsCsvTitle: 'Proyectos CSV',
+    legislationCsvTitle: 'Legislación CSV',
+    eniaCsvTitle: 'Intervenciones ENIA CSV',
     contractKicker: '02 / Contrato',
     contractTitle: 'Cómo leer una respuesta',
     contractIntro:
@@ -355,16 +460,16 @@ const API_INDEX_COPY = {
       'Las rutas son archivos estáticos. Funcionan desde una terminal, un cuaderno de análisis, una hoja de cálculo con importación JSON o cualquier cliente HTTP.',
     curlTitle: 'Descargar el catálogo',
     curlText: 'Obtiene la envoltura completa de iniciativas.',
-    filterTitle: 'Filtrar adopciones verificadas',
+    filterTitle: 'Reproducir la adopción verificada',
     filterText:
-      'Este ejemplo selecciona únicamente registros cuya ubicación editorial es verificado. La fase y las demás dimensiones siguen disponibles para análisis separado.',
+      'Aplica las condiciones sustantivas publicadas en el codebook. La exportación ya pasó la validación de trazabilidad que completa la regla.',
     jsTitle: 'Consumir desde JavaScript',
     jsText: 'Lee datos y fecha editorial sin depender del orden de los campos.',
     reuseKicker: '04 / Reutilizar',
     reuseTitle: 'Atribución, límites y contacto',
     citationTitle: 'Cómo citar',
     citation:
-      'Observatorio IA Costa Rica, conjunto consultado, fecha de corte editorial y URL directa del endpoint.',
+      'Observatorio IA Costa Rica, conjunto consultado, release o fecha de corte editorial y URL directa del endpoint. CC BY 4.0 cubre la compilación; cada documento fuente conserva sus propios términos.',
     limitTitle: 'Qué no afirma la API',
     limitText:
       'El catálogo incluye adopciones verificadas, iniciativas en seguimiento y capacidades del ecosistema. El total de iniciativas documentadas no equivale al número de sistemas de IA operativos.',
@@ -384,11 +489,11 @@ const API_INDEX_COPY = {
     kicker: 'Public data archive',
     title: 'Public evidence, ready to query',
     intro:
-      'Seven JSON collections document initiatives, institutions, legislation, indicators, comparative gaps, the ENIA Action Plan and editorial monitoring work.',
+      'Eleven evidence collections and one codebook document the catalog, public policy, sources and the observatory\u2019s editorial work.',
     audience:
       'A human-readable interface for journalists, researchers, developers and organizations that need to examine or reuse the observatory\u2019s evidence.',
     facts: [
-      { value: '7', label: 'documented endpoints' },
+      { value: '__DATASET_COUNT__', label: 'documented JSON routes' },
       { value: 'CC BY 4.0', label: 'data license' },
       { value: 'GET', label: 'read access without authentication' },
     ],
@@ -397,15 +502,27 @@ const API_INDEX_COPY = {
     quickText:
       'No account or API key is required. The response includes both the data and the editorial date of the latest known change.',
     collectionsKicker: '01 / Collections',
-    collectionsTitle: 'Seven datasets, one stable contract',
+    collectionsTitle: 'Twelve routes, one stable contract',
     collectionsIntro:
       'Each count uses the unit declared for that file. Counts should not be added across collections or treated on their own as verified AI adoption.',
     countLabel: 'Contents',
     updatedLabel: 'Editorial cutoff',
     openLabel: 'Open JSON',
+    schemaLabel: 'View schema',
     manifestTitle: 'API manifest',
     manifestText:
       'Use the manifest to discover every endpoint programmatically, together with counts and editorial dates.',
+    infrastructureTitle: 'Validate, reproduce and download',
+    infrastructureText:
+      'Public schemas, a dated release and checksum-backed downloads let readers reproduce an analysis without depending on the future state of the site.',
+    schemasTitle: 'Schema index',
+    releaseTitle: 'R8 release',
+    downloadsTitle: 'Downloads and CSV',
+    downloadFilesLabel: 'Direct release files',
+    bundleTitle: 'Complete JSON bundle',
+    projectsCsvTitle: 'Projects CSV',
+    legislationCsvTitle: 'Legislation CSV',
+    eniaCsvTitle: 'ENIA interventions CSV',
     contractKicker: '02 / Contract',
     contractTitle: 'How to read a response',
     contractIntro:
@@ -431,16 +548,16 @@ const API_INDEX_COPY = {
       'These routes are static files. They work from a terminal, an analysis notebook, a spreadsheet with JSON import or any HTTP client.',
     curlTitle: 'Download the catalog',
     curlText: 'Returns the complete initiatives envelope.',
-    filterTitle: 'Filter verified adoptions',
+    filterTitle: 'Reproduce verified adoption',
     filterText:
-      'This example selects records whose editorial placement is verified. Phase and every other evidence dimension remain available for separate analysis.',
+      'Applies the substantive conditions published in the codebook. The export has already passed the traceability validation that completes the rule.',
     jsTitle: 'Consume from JavaScript',
     jsText: 'Reads data and editorial date without relying on field order.',
     reuseKicker: '04 / Reuse',
     reuseTitle: 'Attribution, limits and contact',
     citationTitle: 'How to cite',
     citation:
-      'AI Observatory Costa Rica, dataset consulted, editorial cutoff date and direct endpoint URL.',
+      'AI Observatory Costa Rica, dataset consulted, release or editorial cutoff date and direct endpoint URL. CC BY 4.0 covers the compilation; each source document retains its own terms.',
     limitTitle: 'What the API does not claim',
     limitText:
       'The catalog includes verified adoptions, initiatives under review and ecosystem capabilities. The total number of documented initiatives is not the number of operational AI systems.',
@@ -482,6 +599,8 @@ function buildIndexHtml(endpoints: ApiIndexEndpoint[], locale: ApiIndexLocale): 
             <dl class="endpoint-meta">
               <div><dt>${copy.countLabel}</dt><dd><strong>${endpoint.count}</strong> ${escapeHtml(endpoint.countUnit[locale])}</dd></div>
               <div><dt>${copy.updatedLabel}</dt><dd><time datetime="${endpoint.lastUpdate.slice(0, 10)}">${endpoint.lastUpdate.slice(0, 10)}</time></dd></div>
+              <div><dt>Schema</dt><dd><a href="${endpoint.schemaUrl}">${copy.schemaLabel}</a></dd></div>
+              <div><dt>Release</dt><dd><a href="${endpoint.releaseUrl}">${DATA_RELEASE.id}</a></dd></div>
             </dl>
           </article>
         </li>`;
@@ -489,7 +608,10 @@ function buildIndexHtml(endpoints: ApiIndexEndpoint[], locale: ApiIndexLocale): 
     .join('\n');
 
   const facts = copy.facts
-    .map(({ value, label }) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`)
+    .map(({ value, label }) => {
+      const renderedValue = value === '__DATASET_COUNT__' ? String(endpoints.length) : value;
+      return `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(renderedValue)}</dd></div>`;
+    })
     .join('\n          ');
   const fields = copy.fields
     .map(([name, description]) => `<div><dt><code>${name}</code></dt><dd>${escapeHtml(description)}</dd></div>`)
@@ -508,8 +630,16 @@ function buildIndexHtml(endpoints: ApiIndexEndpoint[], locale: ApiIndexLocale): 
 }`;
   const curlExample = 'curl -s https://observatorioia.org/api/proyectos.json';
   const filterExample = `curl -s https://observatorioia.org/api/proyectos.json |
-  jq '.data[] | select(.estadoCatalogo == "verificado") |
-      {id, titulo, faseImplementacion, fechaUltimaVerificacion}'`;
+  jq '.data[] |
+    select(.modeloVersion == 2) |
+    select(.estadoCatalogo == "verificado") |
+    select(.tipoIniciativa == "sistema-ia" or
+           .tipoIniciativa == "componente-ia") |
+    select(.faseImplementacion == "piloto" or
+           .faseImplementacion == "operativo") |
+    select(.estadoIA == "confirmada") |
+    select(.evaluacion.ejecucion.estado == "confirmado") |
+    {id, titulo, faseImplementacion, fechaUltimaVerificacion}'`;
   const jsExample = `const response = await fetch(
   'https://observatorioia.org/api/proyectos.json'
 );
@@ -592,12 +722,21 @@ const { data, lastUpdate } = await response.json();`;
     .endpoint-heading code { font-size: .86rem; }
     .open-label { flex: none; padding-top: .15rem; color: var(--muted); font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
     .endpoint-description { max-width: 52rem; margin: 1rem 0 0; color: #334155; }
-    .endpoint-meta { display: grid; grid-template-columns: repeat(2, minmax(0, 13rem)); gap: 1rem; margin: 1.35rem 0 0; }
+    .endpoint-meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)); gap: 1rem; margin: 1.35rem 0 0; }
     .endpoint-meta div { border-left: 1px solid var(--rule); padding-left: .8rem; }
     .endpoint-meta dt { color: var(--muted); font-size: .68rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
     .endpoint-meta dd { margin: .2rem 0 0; color: var(--ink); font-size: .85rem; }
     .manifest { display: grid; grid-template-columns: 3.25rem minmax(0, 1fr); gap: 1rem; margin-top: 1.5rem; padding-block: 1.5rem; border-bottom: 1px solid var(--rule); }
     .manifest p { margin: .35rem 0 0; color: var(--muted); }
+    .infrastructure { margin-top: 2rem; border-top: 1px solid var(--rule); }
+    .infrastructure > header { padding-block: 1.5rem; border-bottom: 1px solid var(--rule); }
+    .infrastructure > header h3 { font-family: var(--serif); font-size: 1.5rem; }
+    .infrastructure > header p { max-width: 52rem; margin: .5rem 0 0; color: var(--muted); }
+    .infrastructure-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .infrastructure-links a { display: block; padding: 1.35rem 1.2rem 1.35rem 0; border-bottom: 1px solid var(--rule); font-weight: 750; }
+    .infrastructure-links a + a { border-left: 1px solid var(--rule); padding-left: 1.2rem; }
+    .download-files { display: flex; flex-wrap: wrap; gap: .55rem 1.25rem; margin: 1.25rem 0 0; padding: 0; list-style: none; }
+    .download-files a { font-size: .82rem; font-weight: 700; }
     .contract-grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(22rem, 1.1fr); gap: clamp(3rem, 7vw, 6rem); margin-top: 3.25rem; min-width: 0; }
     .contract-grid > *, .code-example { min-width: 0; }
     pre { max-width: 100%; min-width: 0; margin: 0; overflow-x: auto; border-left: 3px solid var(--accent); background: var(--ink); padding: 1.4rem; color: #f8fafc; font-size: .79rem; line-height: 1.65; }
@@ -627,7 +766,7 @@ const { data, lastUpdate } = await response.json();`;
     @media (max-width: 760px) {
       .shell { width: min(100% - 2rem, 74rem); }
       .back-link { display: none; }
-      .hero-grid, .contract-grid, .code-grid, .reuse-grid { grid-template-columns: 1fr; }
+      .hero-grid, .contract-grid, .code-grid, .reuse-grid, .infrastructure-links { grid-template-columns: 1fr; }
       .hero-grid { gap: 3rem; }
       .endpoint-heading { align-items: flex-start; }
       .open-label { display: none; }
@@ -635,6 +774,7 @@ const { data, lastUpdate } = await response.json();`;
       .code-example p { min-height: 0; }
       .interpretation ul { grid-template-columns: 1fr; }
       .reuse-grid article + article { border-left: 0; padding-left: 0; }
+      .infrastructure-links a + a { border-left: 0; padding-left: 0; }
       .site-footer .shell { flex-direction: column; }
     }
     @media (max-width: 480px) {
@@ -713,6 +853,23 @@ ${endpointRows}
             <h3 id="manifest-title"><a href="/api/index.json"><code>/api/index.json</code><span aria-hidden="true"> ↗</span></a></h3>
             <p><strong>${copy.manifestTitle}.</strong> ${copy.manifestText}</p>
           </div>
+        </aside>
+        <aside class="infrastructure" aria-labelledby="infrastructure-title">
+          <header>
+            <h3 id="infrastructure-title">${copy.infrastructureTitle}</h3>
+            <p>${copy.infrastructureText}</p>
+          </header>
+          <nav class="infrastructure-links" aria-label="${copy.infrastructureTitle}">
+            <a href="/api/schemas/index.json">${copy.schemasTitle}<span aria-hidden="true"> ↗</span></a>
+            <a href="/api/releases/${DATA_RELEASE.id}/release.json">${copy.releaseTitle}<span aria-hidden="true"> ↗</span></a>
+            <a href="/api/downloads/index.json">${copy.downloadsTitle}<span aria-hidden="true"> ↗</span></a>
+          </nav>
+          <ul class="download-files" aria-label="${copy.downloadFilesLabel}">
+            <li><a download href="/api/downloads/observatorio-ia-${DATA_RELEASE.id}.json">${copy.bundleTitle}</a></li>
+            <li><a download href="/api/downloads/proyectos-${DATA_RELEASE.id}.csv">${copy.projectsCsvTitle}</a></li>
+            <li><a download href="/api/downloads/legislacion-${DATA_RELEASE.id}.csv">${copy.legislationCsvTitle}</a></li>
+            <li><a download href="/api/downloads/enia-intervenciones-${DATA_RELEASE.id}.csv">${copy.eniaCsvTitle}</a></li>
+          </ul>
         </aside>
       </div>
     </section>
@@ -937,8 +1094,470 @@ function validateProyectos(): void {
   );
 }
 
+interface GeneratedDataset {
+  config: Dataset;
+  id: string;
+  outputFilename: string;
+  schemaOutputFilename: string;
+  dataSchemaOutputFilename: string;
+  schemaUrl: string;
+  dataSchemaUrl: string;
+  releaseUrl: string;
+  envelope: ApiEnvelope<unknown>;
+  serialized: string;
+  endpointSchemaSerialized: string;
+  dataSchemaSerialized: string;
+}
+
+interface DownloadArtifact {
+  url: string;
+  format: 'json' | 'csv';
+  bytes: number;
+  sha256: string;
+  rows?: number;
+  description: KpiBilingual;
+}
+
+function outputFilenameFor(ds: Dataset): string {
+  return ds.outputFilename ?? ds.filename;
+}
+
+function datasetIdFor(ds: Dataset): string {
+  return outputFilenameFor(ds).replace(/\.json$/, '');
+}
+
+function schemaSourceFilenameFor(ds: Dataset): string {
+  return ds.schemaFilename ?? ds.filename.replace(/\.json$/, '.schema.json');
+}
+
+function schemaOutputFilenameFor(ds: Dataset): string {
+  return outputFilenameFor(ds).replace(/\.json$/, '.schema.json');
+}
+
+function dataSchemaOutputFilenameFor(ds: Dataset): string {
+  return outputFilenameFor(ds).replace(/\.json$/, '-data.schema.json');
+}
+
+function buildEndpointSchema(
+  ds: Dataset,
+  schemaUrl: string,
+  dataSchemaUrl: string,
+  dataSchemaSerialized: string,
+): string {
+  const parsed = JSON.parse(dataSchemaSerialized) as Record<string, unknown>;
+  const rawDefinitions =
+    parsed.definitions && typeof parsed.definitions === 'object'
+      ? (parsed.definitions as Record<string, unknown>)
+      : {};
+  if ('_dataset' in rawDefinitions) {
+    throw new Error(`${ds.filename}: el schema fuente ya usa la definición reservada _dataset`);
+  }
+  const {
+    $schema: _sourceDraft,
+    $id: _sourceId,
+    definitions: _sourceDefinitions,
+    ...datasetShape
+  } = parsed;
+
+  return JSON.stringify(
+    {
+      $schema: 'http://json-schema.org/draft-07/schema#',
+      $id: `https://observatorioia.org${schemaUrl}`,
+      title: `${ds.title.es} / ${ds.title.en}`,
+      description:
+        'Schema de la respuesta pública completa; el campo data también se publica por separado. / Full public-response schema; the data field schema is also published separately.',
+      type: 'object',
+      required: ['version', 'lastUpdate', 'count', 'source', 'license', 'data'],
+      additionalProperties: false,
+      properties: {
+        version: { type: 'string', minLength: 1 },
+        lastUpdate: { type: 'string', format: 'date-time' },
+        count: { type: 'integer', minimum: 0 },
+        source: { const: 'https://observatorioia.org' },
+        license: { const: 'CC BY 4.0' },
+        data: { $ref: '#/definitions/_dataset' },
+      },
+      definitions: {
+        ...rawDefinitions,
+        _dataset: datasetShape,
+      },
+      'x-observatorio-data-schema': dataSchemaUrl,
+    },
+    null,
+    2,
+  );
+}
+
+function sha256(value: string): string {
+  return createHash('sha256').update(value).digest('hex');
+}
+
+function bytes(value: string): number {
+  return Buffer.byteLength(value, 'utf8');
+}
+
+function writeJson(path: string, value: unknown): string {
+  const serialized = JSON.stringify(value, null, 2);
+  writeFileSync(path, serialized);
+  return serialized;
+}
+
+/**
+ * Durante la preparación de una release todavía sin lock, permite regenerar
+ * artefactos. Una vez versionado `release.lock`, cualquier divergencia falla y
+ * obliga a abrir un DATA_RELEASE.id nuevo.
+ */
+function writeImmutableText(path: string, value: string): void {
+  if (existsSync(path)) {
+    const previous = readFileSync(path, 'utf8');
+    if (previous !== value && existsSync(RELEASE_LOCK_PATH)) {
+      throw new Error(
+        `La release ${DATA_RELEASE.id} es inmutable y ${path} ya contiene otro contenido. ` +
+          'Cree un nuevo DATA_RELEASE.id antes de publicar un corte distinto.',
+      );
+    }
+    if (previous === value) return;
+  }
+  writeFileSync(path, value);
+}
+
+function writeImmutableJson(path: string, value: unknown): string {
+  const serialized = JSON.stringify(value, null, 2);
+  writeImmutableText(path, serialized);
+  return serialized;
+}
+
+function csvCell(value: unknown): string {
+  if (value === null || value === undefined) return '';
+  const text = String(value);
+  return /[",\r\n]/.test(text) ? `"${text.replaceAll('"', '""')}"` : text;
+}
+
+function serializeCsv(headers: string[], rows: Array<Record<string, unknown>>): string {
+  const lines = [
+    headers.map(csvCell).join(','),
+    ...rows.map((row) => headers.map((header) => csvCell(row[header])).join(',')),
+  ];
+  return `${lines.join('\n')}\n`;
+}
+
+function datasetById(generated: GeneratedDataset[], id: string): GeneratedDataset {
+  const dataset = generated.find((item) => item.id === id);
+  if (!dataset) throw new Error(`Dataset generado no encontrado: ${id}`);
+  return dataset;
+}
+
+function buildCsvArtifacts(generated: GeneratedDataset[]): DownloadArtifact[] {
+  const artifacts: DownloadArtifact[] = [];
+
+  const proyectos = datasetById(generated, 'proyectos').envelope.data as Array<{
+    id: string;
+    titulo: KpiBilingual;
+    institucionId: string;
+    categoria: string;
+    tipoIniciativa?: string;
+    estadoCatalogo?: string;
+    faseImplementacion?: string;
+    estadoIA?: string;
+    desde?: string;
+    fechaPrimeraEvidencia?: string;
+    fechaUltimaVerificacion?: string;
+    fuentes?: unknown[];
+    resultadosVerificados?: unknown[];
+  }>;
+  const proyectosRows = proyectos.map((proyecto) => ({
+    id: proyecto.id,
+    titulo_es: proyecto.titulo.es,
+    titulo_en: proyecto.titulo.en,
+    institucion_id: proyecto.institucionId,
+    categoria: proyecto.categoria,
+    tipo_iniciativa: proyecto.tipoIniciativa,
+    estado_catalogo: proyecto.estadoCatalogo,
+    fase_implementacion: proyecto.faseImplementacion,
+    estado_ia: proyecto.estadoIA,
+    desde: proyecto.desde,
+    fecha_primera_evidencia: proyecto.fechaPrimeraEvidencia,
+    fecha_ultima_verificacion: proyecto.fechaUltimaVerificacion,
+    fuentes: proyecto.fuentes?.length ?? 0,
+    resultados_verificados: proyecto.resultadosVerificados?.length ?? 0,
+    url_es: `https://observatorioia.org/es/proyectos/${proyecto.id}/`,
+    url_en: `https://observatorioia.org/en/proyectos/${proyecto.id}/`,
+  }));
+  const proyectosHeaders = Object.keys(proyectosRows[0] ?? {});
+  const proyectosCsv = serializeCsv(proyectosHeaders, proyectosRows);
+  const proyectosFilename = `proyectos-${DATA_RELEASE.id}.csv`;
+  writeImmutableText(join(DOWNLOADS_OUT_DIR, proyectosFilename), proyectosCsv);
+  artifacts.push({
+    url: `/api/downloads/${proyectosFilename}`,
+    format: 'csv',
+    bytes: bytes(proyectosCsv),
+    sha256: sha256(proyectosCsv),
+    rows: proyectosRows.length,
+    description: {
+      es: 'Catálogo de iniciativas aplanado para hojas de cálculo.',
+      en: 'Flattened initiative catalog for spreadsheets.',
+    },
+  });
+
+  const legislacion = datasetById(generated, 'legislacion').envelope.data as Array<{
+    numero: string;
+    titulo: KpiBilingual;
+    resumen: KpiBilingual;
+    estado: string;
+    alcanceIA: string;
+    comision: KpiBilingual;
+    presentado: string;
+    fuenteUrl: string;
+    fuenteEstadoUrl: string;
+    fechaUltimaVerificacion: string;
+  }>;
+  const legislacionRows = legislacion.map((expediente) => ({
+    numero: expediente.numero,
+    titulo_es: expediente.titulo.es,
+    titulo_en: expediente.titulo.en,
+    resumen_es: expediente.resumen.es,
+    resumen_en: expediente.resumen.en,
+    estado: expediente.estado,
+    alcance_ia: expediente.alcanceIA,
+    comision_es: expediente.comision.es,
+    comision_en: expediente.comision.en,
+    presentado: expediente.presentado,
+    fuente: expediente.fuenteUrl,
+    fuente_estado_oficial: expediente.fuenteEstadoUrl,
+    fecha_ultima_verificacion: expediente.fechaUltimaVerificacion,
+  }));
+  const legislacionHeaders = Object.keys(legislacionRows[0] ?? {});
+  const legislacionCsv = serializeCsv(legislacionHeaders, legislacionRows);
+  const legislacionFilename = `legislacion-${DATA_RELEASE.id}.csv`;
+  writeImmutableText(join(DOWNLOADS_OUT_DIR, legislacionFilename), legislacionCsv);
+  artifacts.push({
+    url: `/api/downloads/${legislacionFilename}`,
+    format: 'csv',
+    bytes: bytes(legislacionCsv),
+    sha256: sha256(legislacionCsv),
+    rows: legislacionRows.length,
+    description: {
+      es: 'Expedientes legislativos aplanados con fuente de contenido y estado oficial.',
+      en: 'Flattened legislative bills with content and official-status sources.',
+    },
+  });
+
+  const enia = datasetById(generated, 'enia-acciones').envelope.data as {
+    resultados: Array<{
+      codigo: string;
+      eje: { numero: number; nombre: KpiBilingual };
+      lineaAccion: { codigo: string; nombre: KpiBilingual };
+      resultadoEsperado: KpiBilingual;
+      intervenciones: Array<{
+        id: string;
+        paginaPlan: number;
+        intervencionEstrategicaFuenteEs: string;
+        objetivoFuenteEs: string;
+        responsableOficial: string;
+        estadoEjecucion: string;
+        fechaUltimaRevision: string;
+        cruceCatalogo: { estado: string; proyectoIds: string[] };
+        indicadores: unknown[];
+      }>;
+    }>;
+  };
+  const eniaRows = enia.resultados.flatMap((resultado) =>
+    resultado.intervenciones.map((intervencion) => ({
+      resultado_codigo: resultado.codigo,
+      eje_numero: resultado.eje.numero,
+      eje_es: resultado.eje.nombre.es,
+      eje_en: resultado.eje.nombre.en,
+      linea_accion_codigo: resultado.lineaAccion.codigo,
+      linea_accion_es: resultado.lineaAccion.nombre.es,
+      linea_accion_en: resultado.lineaAccion.nombre.en,
+      resultado_esperado_es: resultado.resultadoEsperado.es,
+      resultado_esperado_en: resultado.resultadoEsperado.en,
+      intervencion_id: intervencion.id,
+      pagina_plan: intervencion.paginaPlan,
+      intervencion_fuente_es: intervencion.intervencionEstrategicaFuenteEs,
+      objetivo_fuente_es: intervencion.objetivoFuenteEs,
+      responsable_oficial: intervencion.responsableOficial,
+      estado_ejecucion: intervencion.estadoEjecucion,
+      cruce_catalogo_estado: intervencion.cruceCatalogo.estado,
+      proyecto_ids: intervencion.cruceCatalogo.proyectoIds.join('|'),
+      indicadores: intervencion.indicadores.length,
+      fecha_ultima_revision: intervencion.fechaUltimaRevision,
+    })),
+  );
+  const eniaHeaders = Object.keys(eniaRows[0] ?? {});
+  const eniaCsv = serializeCsv(eniaHeaders, eniaRows);
+  const eniaFilename = `enia-intervenciones-${DATA_RELEASE.id}.csv`;
+  writeImmutableText(join(DOWNLOADS_OUT_DIR, eniaFilename), eniaCsv);
+  artifacts.push({
+    url: `/api/downloads/${eniaFilename}`,
+    format: 'csv',
+    bytes: bytes(eniaCsv),
+    sha256: sha256(eniaCsv),
+    rows: eniaRows.length,
+    description: {
+      es: 'Los 129 registros del Plan de Acción ENIA aplanados para análisis tabular.',
+      en: 'All 129 ENIA Action Plan source records flattened for tabular analysis.',
+    },
+  });
+
+  return artifacts;
+}
+
+function writeSchemas(generated: GeneratedDataset[]): string {
+  mkdirSync(SCHEMA_OUT_DIR, { recursive: true });
+  const schemas = generated.map((dataset) => {
+    writeFileSync(
+      join(SCHEMA_OUT_DIR, dataset.schemaOutputFilename),
+      dataset.endpointSchemaSerialized,
+    );
+    writeFileSync(
+      join(SCHEMA_OUT_DIR, dataset.dataSchemaOutputFilename),
+      dataset.dataSchemaSerialized,
+    );
+    return {
+      datasetId: dataset.id,
+      url: dataset.schemaUrl,
+      dataSchemaUrl: dataset.dataSchemaUrl,
+      draft: 'http://json-schema.org/draft-07/schema#',
+      bytes: bytes(dataset.endpointSchemaSerialized),
+      sha256: sha256(dataset.endpointSchemaSerialized),
+      dataSchemaBytes: bytes(dataset.dataSchemaSerialized),
+      dataSchemaSha256: sha256(dataset.dataSchemaSerialized),
+    };
+  });
+  return writeJson(join(SCHEMA_OUT_DIR, 'index.json'), {
+    version: PKG.version,
+    releaseId: DATA_RELEASE.id,
+    lastUpdate: normalizeLastUpdate(DATA_RELEASE.date),
+    source: 'https://observatorioia.org',
+    license: 'CC BY 4.0',
+    schemas,
+  });
+}
+
+function writeRelease(generated: GeneratedDataset[]): {
+  manifestUrl: string;
+  releaseIndexUrl: string;
+} {
+  mkdirSync(RELEASES_OUT_DIR, { recursive: true });
+  const releaseDir = join(RELEASES_OUT_DIR, DATA_RELEASE.id);
+  const releaseSchemaDir = join(releaseDir, 'schemas');
+  mkdirSync(releaseSchemaDir, { recursive: true });
+
+  const datasets = generated.map((dataset) => {
+    writeImmutableText(join(releaseDir, dataset.outputFilename), dataset.serialized);
+    writeImmutableText(
+      join(releaseSchemaDir, dataset.schemaOutputFilename),
+      dataset.endpointSchemaSerialized,
+    );
+    writeImmutableText(
+      join(releaseSchemaDir, dataset.dataSchemaOutputFilename),
+      dataset.dataSchemaSerialized,
+    );
+    return {
+      id: dataset.id,
+      url: dataset.releaseUrl,
+      schemaUrl: `/api/releases/${DATA_RELEASE.id}/schemas/${dataset.schemaOutputFilename}`,
+      dataSchemaUrl: `/api/releases/${DATA_RELEASE.id}/schemas/${dataset.dataSchemaOutputFilename}`,
+      count: dataset.envelope.count,
+      lastUpdate: dataset.envelope.lastUpdate,
+      bytes: bytes(dataset.serialized),
+      sha256: sha256(dataset.serialized),
+      schemaSha256: sha256(dataset.endpointSchemaSerialized),
+      dataSchemaSha256: sha256(dataset.dataSchemaSerialized),
+    };
+  });
+
+  const releaseManifest = {
+    id: DATA_RELEASE.id,
+    date: DATA_RELEASE.date,
+    title: DATA_RELEASE.title,
+    immutable: true,
+    applicationVersion: PKG.version,
+    source: 'https://observatorioia.org',
+    license: 'CC BY 4.0',
+    licenseUrl: 'https://creativecommons.org/licenses/by/4.0/',
+    datasets,
+  };
+  const releaseManifestPath = join(releaseDir, 'release.json');
+  const releaseSerialized = writeImmutableJson(releaseManifestPath, releaseManifest);
+  const manifestUrl = `/api/releases/${DATA_RELEASE.id}/release.json`;
+
+  const releaseIndexPath = join(RELEASES_OUT_DIR, 'index.json');
+  let previous: Array<Record<string, unknown>> = [];
+  if (existsSync(releaseIndexPath)) {
+    const parsed = JSON.parse(readFileSync(releaseIndexPath, 'utf8')) as {
+      releases?: Array<Record<string, unknown>>;
+    };
+    previous = Array.isArray(parsed.releases) ? parsed.releases : [];
+  }
+  const current = {
+    id: DATA_RELEASE.id,
+    date: DATA_RELEASE.date,
+    title: DATA_RELEASE.title,
+    manifestUrl,
+    datasets: datasets.length,
+    bytes: bytes(releaseSerialized),
+    sha256: sha256(releaseSerialized),
+  };
+  const releases = [
+    ...previous.filter((release) => release.id !== DATA_RELEASE.id),
+    current,
+  ].sort((a, b) => String(b.date).localeCompare(String(a.date)));
+  writeJson(releaseIndexPath, {
+    latest: DATA_RELEASE.id,
+    source: 'https://observatorioia.org',
+    license: 'CC BY 4.0',
+    releases,
+  });
+
+  return { manifestUrl, releaseIndexUrl: '/api/releases/index.json' };
+}
+
+function writeDownloads(generated: GeneratedDataset[]): string {
+  mkdirSync(DOWNLOADS_OUT_DIR, { recursive: true });
+  const bundle = {
+    release: {
+      id: DATA_RELEASE.id,
+      date: DATA_RELEASE.date,
+      applicationVersion: PKG.version,
+      source: 'https://observatorioia.org',
+      license: 'CC BY 4.0',
+    },
+    datasets: Object.fromEntries(
+      generated.map((dataset) => [dataset.id, dataset.envelope]),
+    ),
+  };
+  const bundleFilename = `observatorio-ia-${DATA_RELEASE.id}.json`;
+  const bundleSerialized = writeImmutableJson(
+    join(DOWNLOADS_OUT_DIR, bundleFilename),
+    bundle,
+  );
+  const artifacts: DownloadArtifact[] = [
+    {
+      url: `/api/downloads/${bundleFilename}`,
+      format: 'json',
+      bytes: bytes(bundleSerialized),
+      sha256: sha256(bundleSerialized),
+      description: {
+        es: 'Bundle completo con las envolturas de todos los datasets de la release.',
+        en: 'Complete bundle containing every dataset envelope in the release.',
+      },
+    },
+    ...buildCsvArtifacts(generated),
+  ];
+  writeJson(join(DOWNLOADS_OUT_DIR, 'index.json'), {
+    releaseId: DATA_RELEASE.id,
+    date: DATA_RELEASE.date,
+    source: 'https://observatorioia.org',
+    license: 'CC BY 4.0',
+    files: artifacts,
+  });
+  return '/api/downloads/index.json';
+}
+
 function main(): void {
-  if (!existsSync(OUT_DIR)) mkdirSync(OUT_DIR, { recursive: true });
+  mkdirSync(OUT_DIR, { recursive: true });
 
   validateProyectos();
 
@@ -946,13 +1565,18 @@ function main(): void {
   writeCountersTs(counters);
 
   const endpointsMeta: ApiIndexEndpoint[] = [];
+  const generated: GeneratedDataset[] = [];
 
   for (const ds of DATASETS) {
     const srcPath = join(SRC_DIR, ds.filename);
+    const schemaSourcePath = join(SCHEMA_SRC_DIR, schemaSourceFilenameFor(ds));
     if (!existsSync(srcPath)) {
-      console.warn(`  skip: ${ds.filename} no existe`);
-      continue;
+      throw new Error(`Dataset público no encontrado: ${srcPath}`);
     }
+    if (!existsSync(schemaSourcePath)) {
+      throw new Error(`Schema público no encontrado: ${schemaSourcePath}`);
+    }
+
     let data = JSON.parse(readFileSync(srcPath, 'utf8')) as unknown;
     if (ds.filename === 'indicadores.json') {
       data = applyAutoKpis(data, counters);
@@ -963,12 +1587,41 @@ function main(): void {
         `${ds.filename}: lastUpdate=${ds.lastUpdate} quedó atrás de una fecha editorial interna (${embeddedLastUpdate})`,
       );
     }
+
+    const id = datasetIdFor(ds);
+    const outputFilename = outputFilenameFor(ds);
+    const schemaOutputFilename = schemaOutputFilenameFor(ds);
+    const dataSchemaOutputFilename = dataSchemaOutputFilenameFor(ds);
+    const schemaUrl = `/api/schemas/${schemaOutputFilename}`;
+    const dataSchemaUrl = `/api/schemas/${dataSchemaOutputFilename}`;
+    const releaseUrl = `/api/releases/${DATA_RELEASE.id}/${outputFilename}`;
     const env = envelope(data, ds.lastUpdate, ds.getCount?.(data));
-    writeFileSync(
-      join(OUT_DIR, ds.outputFilename ?? ds.filename),
-      JSON.stringify(env, null, 2),
+    const serialized = JSON.stringify(env, null, 2);
+    const dataSchemaSerialized = readFileSync(schemaSourcePath, 'utf8');
+    const endpointSchemaSerialized = buildEndpointSchema(
+      ds,
+      schemaUrl,
+      dataSchemaUrl,
+      dataSchemaSerialized,
     );
+
+    writeFileSync(join(OUT_DIR, outputFilename), serialized);
+    generated.push({
+      config: ds,
+      id,
+      outputFilename,
+      schemaOutputFilename,
+      dataSchemaOutputFilename,
+      schemaUrl,
+      dataSchemaUrl,
+      releaseUrl,
+      envelope: env,
+      serialized,
+      endpointSchemaSerialized,
+      dataSchemaSerialized,
+    });
     endpointsMeta.push({
+      id,
       endpoint: ds.endpoint,
       title: ds.title,
       description: ds.description,
@@ -977,28 +1630,63 @@ function main(): void {
       countUnit: ds.countUnit,
       count: env.count,
       lastUpdate: env.lastUpdate,
+      schemaUrl,
+      dataSchemaUrl,
+      releaseUrl,
     });
     console.log(`  ✓ ${ds.endpoint} (${env.count} items)`);
   }
 
-  // Manifest
+  writeSchemas(generated);
+  const release = writeRelease(generated);
+  const downloadsUrl = writeDownloads(generated);
+
+  // Manifest de descubrimiento. Conserva los campos históricos por endpoint y
+  // suma metadata bilingüe, schemas y snapshots sin alterar las envolturas.
   const manifest = {
     version: PKG.version,
+    dataRelease: {
+      ...DATA_RELEASE,
+      manifestUrl: release.manifestUrl,
+    },
     lastUpdate: endpointsMeta
       .map(({ lastUpdate }) => lastUpdate)
       .sort()
       .at(-1),
     source: 'https://observatorioia.org',
     license: 'CC BY 4.0',
+    licenseUrl: 'https://creativecommons.org/licenses/by/4.0/',
+    licenseScope: {
+      es: 'La licencia cubre la compilación y el contenido original del observatorio; las fuentes enlazadas conservan sus propios términos.',
+      en: 'The license covers the observatory compilation and original content; linked sources retain their own terms.',
+    },
+    documentation: {
+      es: '/api/',
+      en: '/api/en/',
+    },
+    codebook: '/api/codebook.json',
+    schemas: '/api/schemas/index.json',
+    releases: release.releaseIndexUrl,
+    downloads: downloadsUrl,
     endpoints: endpointsMeta.map((e) => ({
+      id: e.id,
       url: e.endpoint,
       description: e.description,
+      descriptionI18n: {
+        es: e.descriptionEs,
+        en: e.descriptionEn,
+      },
       count: e.count,
+      countUnit: e.countUnit,
       lastUpdate: e.lastUpdate,
+      schemaUrl: e.schemaUrl,
+      dataSchemaUrl: e.dataSchemaUrl,
+      releaseUrl: e.releaseUrl,
     })),
   };
-  writeFileSync(join(OUT_DIR, 'index.json'), JSON.stringify(manifest, null, 2));
+  writeJson(join(OUT_DIR, 'index.json'), manifest);
   console.log(`  ✓ /api/index.json (${endpointsMeta.length} endpoints)`);
+  console.log(`  ✓ schemas, release ${DATA_RELEASE.id} y descargas reproducibles`);
 
   // HTML index humano
   writeFileSync(join(OUT_DIR, 'index.html'), buildIndexHtml(endpointsMeta, 'es'));
