@@ -1,7 +1,7 @@
 # Plan de consistencia metodológica y editorial
 
 Fecha: 2026-08-23
-Estado: ejecutado localmente, pendiente de revisión y publicación
+Estado: ejecutado y publicado
 Alcance: catálogo, fichas, portada, legislación, indicadores, consentimiento analítico y API pública.
 
 ## Objetivo
@@ -75,6 +75,14 @@ Una iniciativa solo cuenta como adopción verificada cuando:
 - [x] Escaneo de términos sensibles en los cambios de catálogo y diccionario.
 
 La comparación SHA-256 antes/después confirmó que los 38 archivos de la release R8 permanecen idénticos. El filtro `jq` documentado reproduce exactamente las seis adopciones verificadas y el endpoint corriente de proyectos coincide de forma exacta con `src/data/json/proyectos.json`.
+
+### C5. Publicación
+
+- [x] Autorización explícita de Mario recibida el 2026-08-23.
+- [x] Release implementada en el commit `7cbfdac` y enviada a `origin/main`.
+- [x] GitHub Actions CI `32660404593` finalizó correctamente.
+- [x] Vercel publicó el deployment `dpl_5vF6k59bJyPVncSsCpW81sSxybwn` en `observatorioia.org` y `www.observatorioia.org`.
+- [x] Smoke test público ES/EN, API, releases, checksums y headers de descarga aprobado.
 
 ## Criterios de aceptación
 
