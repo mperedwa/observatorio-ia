@@ -15,11 +15,13 @@ import {
   TIPOS_FUENTE,
   TIPOS_INICIATIVA,
   TIPOS_RELACION,
+  encontrarErroresCompletitudMetodologica,
   encontrarErroresTrazabilidad,
   esAdopcionVerificada,
   esVisibleEnCatalogo,
   resolverFaseImplementacion,
   resumirCatalogo,
+  tieneFuentePrimariaDeEjecucion,
   type CamposModeloEvidencia,
   type EstadoEvaluacion,
   type EvaluacionEvidencia,
@@ -29,14 +31,17 @@ const FUENTE_ID = 'fuente-principal';
 
 function evaluacion(
   ejecucion: EstadoEvaluacion = 'confirmado',
+  tecnicaIA: EstadoEvaluacion = 'confirmado',
 ): EvaluacionEvidencia {
+  const fuenteIds = (estado: EstadoEvaluacion) =>
+    estado === 'no-determinado' || estado === 'no-aplica' ? [] : [FUENTE_ID];
   return {
     existencia: { estado: 'confirmado', fuenteIds: [FUENTE_ID] },
     ejecucion: {
       estado: ejecucion,
-      fuenteIds: ejecucion === 'no-determinado' ? [] : [FUENTE_ID],
+      fuenteIds: fuenteIds(ejecucion),
     },
-    tecnicaIA: { estado: 'confirmado', fuenteIds: [FUENTE_ID] },
+    tecnicaIA: { estado: tecnicaIA, fuenteIds: fuenteIds(tecnicaIA) },
     usoOperativo: { estado: 'confirmado', fuenteIds: [FUENTE_ID] },
     resultados: { estado: 'no-determinado', fuenteIds: [] },
     gobernanza: { estado: 'no-determinado', fuenteIds: [] },
@@ -68,6 +73,12 @@ function iniciativaV2(
     ],
     fechaPrimeraEvidencia: '2026-08',
     fechaUltimaVerificacion: '2026-08-19',
+    preguntasAbiertas: [
+      {
+        es: '¿Existen resultados y documentos de gobernanza públicos?',
+        en: 'Are public results and governance documents available?',
+      },
+    ],
     ...overrides,
   };
 }
@@ -152,12 +163,13 @@ describe('schema de proyectos v2', () => {
 });
 
 describe('catálogo real migrado', () => {
-  it('mantiene cobertura v2 completa y trazabilidad limpia', () => {
+  it('mantiene cobertura v2 completa, trazabilidad limpia y seguimiento de vacíos', () => {
     expect(proyectos).toHaveLength(29);
 
     for (const proyecto of proyectos) {
       expect(proyecto.modeloVersion, proyecto.id).toBe(MODELO_EVIDENCIA_VERSION);
       expect(encontrarErroresTrazabilidad(proyecto), proyecto.id).toEqual([]);
+      expect(encontrarErroresCompletitudMetodologica(proyecto), proyecto.id).toEqual([]);
       expect(
         proyecto.fuentes?.some((fuente) => fuente.url === proyecto.fuenteUrl),
         proyecto.id,
@@ -165,7 +177,7 @@ describe('catálogo real migrado', () => {
     }
   });
 
-  it('fija el corte editorial derivado del 21 de agosto de 2026', () => {
+  it('fija el corte editorial derivado del 23 de agosto de 2026', () => {
     expect(resumirCatalogo(proyectos)).toEqual({
       iniciativasDocumentadas: 29,
       adopcionVerificada: 6,
@@ -213,14 +225,29 @@ describe('catálogo real migrado', () => {
 });
 
 describe('reglas derivadas del catálogo', () => {
-  it('cuenta únicamente sistemas o componentes con ejecución confirmada', () => {
+  it('cuenta únicamente sistemas o componentes con técnica, ejecución y fuente primaria confirmadas', () => {
     expect(esAdopcionVerificada(iniciativaV2())).toBe(true);
+    expect(tieneFuentePrimariaDeEjecucion(iniciativaV2())).toBe(true);
     expect(esAdopcionVerificada(iniciativaV2({ faseImplementacion: 'planificado' }))).toBe(false);
     expect(esAdopcionVerificada(iniciativaV2({ tipoIniciativa: 'programa-capacidades' }))).toBe(false);
     expect(esAdopcionVerificada(iniciativaV2({ estadoIA: 'declarada-sin-tecnica' }))).toBe(false);
     expect(
       esAdopcionVerificada(iniciativaV2({ evaluacion: evaluacion('parcialmente-confirmado') })),
     ).toBe(false);
+    expect(
+      esAdopcionVerificada(
+        iniciativaV2({ evaluacion: evaluacion('confirmado', 'parcialmente-confirmado') }),
+      ),
+    ).toBe(false);
+
+    const soloPrensa = iniciativaV2();
+    soloPrensa.fuentes = soloPrensa.fuentes!.map((fuente) => ({
+      ...fuente,
+      tipoFuente: 'prensa',
+    }));
+    expect(encontrarErroresTrazabilidad(soloPrensa)).toEqual([]);
+    expect(tieneFuentePrimariaDeEjecucion(soloPrensa)).toBe(false);
+    expect(esAdopcionVerificada(soloPrensa)).toBe(false);
   });
 
   it('no convierte una ficha legacy en adopción por inferencia', () => {
@@ -304,5 +331,34 @@ describe('trazabilidad', () => {
       `ejecucion: fuente ${FUENTE_ID} no respalda esa dimensión`,
     );
     expect(esAdopcionVerificada(iniciativa)).toBe(false);
+  });
+
+  it('acepta no aplica sin fuentes afirmativas y lo distingue de un vacío', () => {
+    const iniciativa = iniciativaV2();
+    iniciativa.evaluacion = {
+      ...iniciativa.evaluacion!,
+      resultados: { estado: 'no-aplica', fuenteIds: [] },
+      gobernanza: { estado: 'no-aplica', fuenteIds: [] },
+    };
+    iniciativa.preguntasAbiertas = undefined;
+
+    expect(encontrarErroresTrazabilidad(iniciativa)).toEqual([]);
+    expect(encontrarErroresCompletitudMetodologica(iniciativa)).toEqual([]);
+  });
+});
+
+describe('completitud metodológica', () => {
+  it('exige una pregunta abierta o próxima revisión cuando quedan dimensiones no determinadas', () => {
+    const sinSeguimiento = iniciativaV2({ preguntasAbiertas: undefined });
+    expect(encontrarErroresCompletitudMetodologica(sinSeguimiento)).toEqual([
+      'vacíos sin pregunta abierta ni próxima revisión: resultados, gobernanza',
+    ]);
+
+    expect(
+      encontrarErroresCompletitudMetodologica(
+        iniciativaV2({ preguntasAbiertas: undefined, fechaProximaRevision: '2026-11-23' }),
+      ),
+    ).toEqual([]);
+    expect(encontrarErroresCompletitudMetodologica(iniciativaV2())).toEqual([]);
   });
 });

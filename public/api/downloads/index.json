@@ -1,24 +1,24 @@
 {
-  "releaseId": "2026-08-22-r8",
-  "date": "2026-08-22",
+  "releaseId": "2026-08-23-r9",
+  "date": "2026-08-23",
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "files": [
     {
-      "url": "/api/downloads/observatorio-ia-2026-08-22-r8.json",
+      "url": "/api/downloads/observatorio-ia-2026-08-23-r9.json",
       "format": "json",
-      "bytes": 661511,
-      "sha256": "4dba84417d3c33a41556da252c85384b885cc7566189b728b287cfdf475036e0",
+      "bytes": 669162,
+      "sha256": "422022cfce1ac219527611c3e963a73f7783b837052f2c4c3316e144229d3fed",
       "description": {
         "es": "Bundle completo con las envolturas de todos los datasets de la release.",
         "en": "Complete bundle containing every dataset envelope in the release."
       }
     },
     {
-      "url": "/api/downloads/proyectos-2026-08-22-r8.csv",
+      "url": "/api/downloads/proyectos-2026-08-23-r9.csv",
       "format": "csv",
-      "bytes": 9576,
-      "sha256": "738ca4ef3c13ddc8d341528f78de305756e9813c8aa2a818f26ac683c640bbb2",
+      "bytes": 9572,
+      "sha256": "cd87485ddf594dce0339b35d709b9aa3fe3e29c4d78b6d79d3d25fb0086c7311",
       "rows": 29,
       "description": {
         "es": "Catálogo de iniciativas aplanado para hojas de cálculo.",
@@ -26,10 +26,10 @@
       }
     },
     {
-      "url": "/api/downloads/legislacion-2026-08-22-r8.csv",
+      "url": "/api/downloads/legislacion-2026-08-23-r9.csv",
       "format": "csv",
-      "bytes": 11292,
-      "sha256": "524e1679f4cd541c58092a3c680043b56fa9bcd57673cdd7f289cf8ccaff54b8",
+      "bytes": 11311,
+      "sha256": "ba66f0a2fa0d6418524017a70b068796b5aa68459ecc4f5585347f99a82de8b4",
       "rows": 7,
       "description": {
         "es": "Expedientes legislativos aplanados con fuente de contenido y estado oficial.",
@@ -37,7 +37,7 @@
       }
     },
     {
-      "url": "/api/downloads/enia-intervenciones-2026-08-22-r8.csv",
+      "url": "/api/downloads/enia-intervenciones-2026-08-23-r9.csv",
       "format": "csv",
       "bytes": 96708,
       "sha256": "1478bdd0d72be0be56529f98faf265791fcea55ca2dca05fb9ee0d1a2248de3f",

@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/next';
-import { AnalyticsManager } from '@/components/AnalyticsManager';
 import { DocumentLanguage } from '@/components/DocumentLanguage';
 import { Inter, Source_Serif_4 } from 'next/font/google';
 import './globals.css';
@@ -41,7 +40,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="font-sans antialiased bg-white text-slate-900">
         <DocumentLanguage />
         {children}
-        <AnalyticsManager measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
         {vercelAnalyticsEnabled && <Analytics />}
       </body>
     </html>

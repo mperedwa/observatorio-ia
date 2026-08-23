@@ -52,6 +52,7 @@ export const ESTADOS_EVALUACION = [
   'parcialmente-confirmado',
   'inferido',
   'no-determinado',
+  'no-aplica',
   'contradicho',
 ] as const;
 
@@ -205,6 +206,10 @@ export interface ResumenCatalogo {
 
 const TIPOS_QUE_CUENTAN = new Set<TipoIniciativa>(['sistema-ia', 'componente-ia']);
 const FASES_QUE_CUENTAN = new Set<FaseImplementacion>(['piloto', 'operativo']);
+const TIPOS_FUENTE_PRIMARIA_EJECUCION = new Set<TipoFuente>([
+  'primaria-oficial',
+  'acceso-informacion',
+]);
 const RESPALDOS_POR_DIMENSION: Record<
   DimensionEvidencia,
   readonly RespaldoFuente[]
@@ -245,7 +250,22 @@ export function esAdopcionVerificada(iniciativa: CamposModeloEvidencia): boolean
     TIPOS_QUE_CUENTAN.has(iniciativa.tipoIniciativa) &&
     FASES_QUE_CUENTAN.has(iniciativa.faseImplementacion) &&
     iniciativa.estadoIA === 'confirmada' &&
-    iniciativa.evaluacion?.ejecucion.estado === 'confirmado'
+    iniciativa.evaluacion.tecnicaIA.estado === 'confirmado' &&
+    iniciativa.evaluacion.ejecucion.estado === 'confirmado' &&
+    tieneFuentePrimariaDeEjecucion(iniciativa)
+  );
+}
+
+export function tieneFuentePrimariaDeEjecucion(
+  iniciativa: CamposModeloEvidencia,
+): boolean {
+  if (!tieneModeloEvidenciaV2(iniciativa)) return false;
+  const fuenteIds = new Set(iniciativa.evaluacion.ejecucion.fuenteIds);
+  return iniciativa.fuentes.some(
+    (fuente) =>
+      fuenteIds.has(fuente.id) &&
+      TIPOS_FUENTE_PRIMARIA_EJECUCION.has(fuente.tipoFuente) &&
+      fuente.respalda.includes('ejecucion'),
   );
 }
 
@@ -314,8 +334,13 @@ export function encontrarErroresTrazabilidad(
   for (const dimension of DIMENSIONES_EVIDENCIA) {
     const evaluacion = iniciativa.evaluacion?.[dimension];
     if (!evaluacion) continue;
-    if (evaluacion.estado !== 'no-determinado' && evaluacion.fuenteIds.length === 0) {
+    const noRequiereFuente =
+      evaluacion.estado === 'no-determinado' || evaluacion.estado === 'no-aplica';
+    if (!noRequiereFuente && evaluacion.fuenteIds.length === 0) {
       errores.push(`${dimension}: ${evaluacion.estado} sin fuente`);
+    }
+    if (noRequiereFuente && evaluacion.fuenteIds.length > 0) {
+      errores.push(`${dimension}: ${evaluacion.estado} no debe citar fuentes afirmativas`);
     }
     for (const fuenteId of evaluacion.fuenteIds) {
       const fuente = fuentesPorId.get(fuenteId);
@@ -345,4 +370,28 @@ export function encontrarErroresTrazabilidad(
   }
 
   return errores;
+}
+
+/**
+ * Obliga a que los vacíos materiales queden vinculados con una pregunta o una
+ * fecha de seguimiento. `no-aplica` no es un vacío: declara que la dimensión no
+ * corresponde al objeto documentado.
+ */
+export function encontrarErroresCompletitudMetodologica(
+  iniciativa: CamposModeloEvidencia,
+): string[] {
+  if (!tieneModeloEvidenciaV2(iniciativa)) return [];
+
+  const dimensionesPendientes = DIMENSIONES_EVIDENCIA.filter(
+    (dimension) => iniciativa.evaluacion[dimension].estado === 'no-determinado',
+  );
+  if (dimensionesPendientes.length === 0) return [];
+
+  const tienePregunta = (iniciativa.preguntasAbiertas?.length ?? 0) > 0;
+  const tieneProximaRevision = Boolean(iniciativa.fechaProximaRevision);
+  if (tienePregunta || tieneProximaRevision) return [];
+
+  return [
+    `vacíos sin pregunta abierta ni próxima revisión: ${dimensionesPendientes.join(', ')}`,
+  ];
 }

@@ -12,6 +12,7 @@ const estadoMarker: Record<EstadoEvaluacion, string> = {
   'parcialmente-confirmado': 'bg-amber-500',
   inferido: 'bg-violet-600',
   'no-determinado': 'border border-slate-400 bg-white',
+  'no-aplica': 'bg-slate-300',
   contradicho: 'bg-rose-600',
 };
 

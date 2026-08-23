@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Nav } from '@/components/Nav';
 import { Footer } from '@/components/Footer';
+import { AnalyticsManager } from '@/components/AnalyticsManager';
 import { locales, type Locale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/dictionaries';
 
@@ -87,6 +88,10 @@ export default async function LocaleLayout({
       <Nav locale={locale as Locale} t={t} />
       <main lang={locale}>{children}</main>
       <Footer locale={locale as Locale} t={t} />
+      <AnalyticsManager
+        locale={locale as Locale}
+        measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}
+      />
     </div>
   );
 }

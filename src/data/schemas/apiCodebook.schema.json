@@ -7,17 +7,18 @@
   "required": ["schemaVersion", "fechaCorte", "alcance", "contrato", "reglaAdopcionVerificada", "vocabularios", "datasets", "procedencia", "licencia", "fueraDeAlcance"],
   "additionalProperties": false,
   "properties": {
-    "schemaVersion": { "const": 1 },
+    "schemaVersion": { "const": 2 },
     "fechaCorte": { "type": "string", "format": "date" },
     "alcance": { "$ref": "#/definitions/bilingual" },
     "contrato": {
       "type": "object",
-      "required": ["envoltura", "bilinguismo", "noDeterminado", "trazabilidad"],
+      "required": ["envoltura", "bilinguismo", "noDeterminado", "noAplica", "trazabilidad"],
       "additionalProperties": false,
       "properties": {
         "envoltura": { "type": "array", "minItems": 6, "items": { "$ref": "#/definitions/campoDocumentado" } },
         "bilinguismo": { "$ref": "#/definitions/bilingual" },
         "noDeterminado": { "$ref": "#/definitions/bilingual" },
+        "noAplica": { "$ref": "#/definitions/bilingual" },
         "trazabilidad": { "$ref": "#/definitions/bilingual" }
       }
     },

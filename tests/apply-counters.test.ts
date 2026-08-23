@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { applyCounters } from '../src/i18n/applyCounters';
 import type { Counters } from '../src/data/counters';
 import { getDictionary } from '../src/i18n/dictionaries';
+import indicadores from '../src/data/json/indicadores.json';
 
 const counters: Counters = {
   proyectos: 29,
@@ -40,4 +41,17 @@ describe('applyCounters', () => {
       }
     },
   );
+});
+
+describe('detalle institucional de portada', () => {
+  it('enumera las nueve instituciones en ambos idiomas', () => {
+    const kpi = indicadores.kpisHero.find(
+      ({ label }) => label.es === 'Instituciones con iniciativas documentadas',
+    );
+
+    expect(kpi?.detalle).toEqual({
+      es: 'Poder Judicial, CCSS, Hacienda, MEP, MICITT, CENAT, UCR, INAMU e INS',
+      en: 'Judicial Branch, CCSS, Finance, MEP, MICITT, CENAT, UCR, INAMU and INS',
+    });
+  });
 });

@@ -23,5 +23,6 @@ export const evaluacionChip: Record<string, string> = {
   'parcialmente-confirmado': 'border-lime-200 bg-lime-50 text-lime-800',
   inferido: 'border-violet-200 bg-violet-50 text-violet-800',
   'no-determinado': 'border-slate-200 bg-slate-100 text-slate-700',
+  'no-aplica': 'border-slate-200 bg-white text-slate-600',
   contradicho: 'border-rose-200 bg-rose-50 text-rose-800',
 };

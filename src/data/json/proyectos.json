@@ -91,6 +91,7 @@
     "fechaPrimeraEvidencia": "2023",
     "fechaInicioPiloto": "2023",
     "fechaUltimaVerificacion": "2026-08-19",
+    "fechaProximaRevision": "2026-11-19",
     "objetivoDeclarado": {
       "es": "Clasificar documentos que ingresan al Juzgado Especializado de Cobro Judicial de Pérez Zeledón para agilizar su tramitación.",
       "en": "Classify documents received by the Specialized Debt Collection Court of Pérez Zeledón to speed up processing."
@@ -117,6 +118,12 @@
       {
         "es": "No se localizaron métricas públicas del volumen de documentos procesados atribuibles a este clasificador.",
         "en": "No public metrics were found for the volume of documents processed by this classifier."
+      }
+    ],
+    "preguntasAbiertas": [
+      {
+        "es": "¿Qué protocolo de revisión humana, registro de errores e impugnación rige las clasificaciones producidas durante el piloto?",
+        "en": "What human-review, error-logging and appeal protocol governs classifications produced during the pilot?"
       }
     ]
   },
@@ -212,6 +219,7 @@
     "fechaPrimeraEvidencia": "2019",
     "fechaInicioOperacion": "2019",
     "fechaUltimaVerificacion": "2026-08-19",
+    "fechaProximaRevision": "2026-11-19",
     "objetivoDeclarado": {
       "es": "Predecir el porcentaje de ejecución presupuestaria a partir de su comportamiento histórico.",
       "en": "Predict the percentage of budget execution from its historical behavior."
@@ -233,6 +241,12 @@
       {
         "es": "No se localizaron métricas públicas posteriores que actualicen el ahorro acumulado.",
         "en": "No later public metrics updating cumulative savings were found."
+      }
+    ],
+    "preguntasAbiertas": [
+      {
+        "es": "¿Qué controles de validación, revisión humana y seguimiento de error utiliza actualmente el modelo presupuestario?",
+        "en": "What validation, human-review and error-monitoring controls does the budget model currently use?"
       }
     ]
   },
@@ -345,6 +359,7 @@
     "fechaPrimeraEvidencia": "2024-03-20",
     "fechaInicioOperacion": "2024",
     "fechaUltimaVerificacion": "2026-08-19",
+    "fechaProximaRevision": "2026-11-19",
     "objetivoDeclarado": {
       "es": "Despersonalizar sentencias judiciales para proteger datos sensibles antes de su consulta o publicación.",
       "en": "Depersonalize judicial rulings to protect sensitive data before consultation or publication."
@@ -359,6 +374,12 @@
       {
         "es": "No se localizaron métricas institucionales públicas sobre ahorro de tiempo o volumen procesado.",
         "en": "No public institutional metrics on time savings or processing volume were found."
+      }
+    ],
+    "preguntasAbiertas": [
+      {
+        "es": "¿Qué volumen de sentencias procesa Nymiz y qué tasas de error o corrección humana registra el Poder Judicial?",
+        "en": "What volume of rulings does Nymiz process, and what error or human-correction rates does the Judicial Branch record?"
       }
     ]
   },
@@ -453,6 +474,7 @@
     ],
     "fechaPrimeraEvidencia": "2020",
     "fechaUltimaVerificacion": "2026-08-19",
+    "fechaProximaRevision": "2027-02-19",
     "objetivoDeclarado": {
       "es": "Facilitar investigaciones jurídicas mediante clasificación temática y análisis automatizado de sentencias de la Sala Constitucional.",
       "en": "Support legal research through thematic classification and automated analysis of Constitutional Chamber rulings."
@@ -519,14 +541,12 @@
         ]
       },
       "tecnicaIA": {
-        "estado": "no-determinado",
+        "estado": "no-aplica",
         "fuenteIds": []
       },
       "usoOperativo": {
-        "estado": "confirmado",
-        "fuenteIds": [
-          "pj-giro-continuo-2024"
-        ]
+        "estado": "no-aplica",
+        "fuenteIds": []
       },
       "resultados": {
         "estado": "confirmado",
@@ -535,7 +555,7 @@
         ]
       },
       "gobernanza": {
-        "estado": "no-determinado",
+        "estado": "no-aplica",
         "fuenteIds": []
       }
     },
@@ -549,7 +569,6 @@
         "respalda": [
           "existencia",
           "ejecucion",
-          "uso-operativo",
           "resultado-reportado"
         ],
         "naturalezaAfirmacion": [
@@ -762,7 +781,7 @@
         ]
       },
       "usoOperativo": {
-        "estado": "no-determinado",
+        "estado": "no-aplica",
         "fuenteIds": []
       },
       "resultados": {
@@ -772,7 +791,7 @@
         ]
       },
       "gobernanza": {
-        "estado": "no-determinado",
+        "estado": "no-aplica",
         "fuenteIds": []
       }
     },
@@ -868,14 +887,12 @@
         ]
       },
       "tecnicaIA": {
-        "estado": "no-determinado",
+        "estado": "no-aplica",
         "fuenteIds": []
       },
       "usoOperativo": {
-        "estado": "confirmado",
-        "fuenteIds": [
-          "bid-edus"
-        ]
+        "estado": "no-aplica",
+        "fuenteIds": []
       },
       "resultados": {
         "estado": "confirmado",
@@ -884,7 +901,7 @@
         ]
       },
       "gobernanza": {
-        "estado": "no-determinado",
+        "estado": "no-aplica",
         "fuenteIds": []
       }
     },
@@ -897,7 +914,6 @@
         "respalda": [
           "existencia",
           "ejecucion",
-          "uso-operativo",
           "resultado-reportado"
         ],
         "naturalezaAfirmacion": [
@@ -1187,6 +1203,7 @@
     "fechaPrimeraEvidencia": "2023",
     "fechaInicioPiloto": "2023",
     "fechaUltimaVerificacion": "2026-08-19",
+    "fechaProximaRevision": "2026-11-19",
     "objetivoDeclarado": {
       "es": "Identificar personas con riesgo elevado de enfermedades mediante modelos predictivos sobre información del EDUS.",
       "en": "Identify people at elevated disease risk through predictive models using EDUS information."
@@ -1219,6 +1236,12 @@
       {
         "es": "No se localizaron métricas públicas de precisión, sensibilidad o falsos positivos auditadas independientemente.",
         "en": "No independently audited public metrics for accuracy, sensitivity or false positives were found."
+      }
+    ],
+    "preguntasAbiertas": [
+      {
+        "es": "¿Qué protocolo institucional documenta la validación clínica, la revisión humana y el manejo de falsos positivos de LIDIA?",
+        "en": "What institutional protocol documents LIDIA's clinical validation, human review and handling of false positives?"
       }
     ],
     "relaciones": [
@@ -1589,18 +1612,18 @@
     "estado": "operativo",
     "desde": "2024",
     "descripcion": {
-      "es": "Solución del Ministerio de Hacienda para detectar patrones anómalos en comprobantes electrónicos y priorizar fiscalizaciones. El proyecto inició en 2022, realizó pruebas en 2023 y tuvo implementación integral durante 2024-2025, con revisión técnica humana antes de cualquier actuación.",
-      "en": "Finance Ministry solution for detecting anomalous patterns in electronic invoices and prioritizing audits. The project began in 2022, was tested in 2023 and was fully implemented during 2024-2025, with human technical review before any action."
+      "es": "Solución del Ministerio de Hacienda para detectar patrones anómalos en comprobantes electrónicos y priorizar fiscalizaciones. El proyecto inició en 2022, realizó pruebas en 2023 y el Informe de Riesgos Macrofiscales 2025 registra el uso continuo del detector E-IAD.",
+      "en": "Finance Ministry solution for detecting anomalous patterns in electronic invoices and prioritizing audits. The project began in 2022, was tested in 2023, and the 2025 Macrofiscal Risk Report records continued use of the E-IAD detector."
     },
     "resultado": {
       "es": "Hacienda reportó 50 casos fiscalizados y cerca de ₡8,000 millones recuperados durante 2025.",
       "en": "The Finance Ministry reported 50 audited cases and approximately ₡8 billion recovered during 2025."
     },
     "contexto": {
-      "es": "La ficha corresponde a la solución de detección de anomalías en facturación electrónica. TRIBU-CR y ATENA son sistemas distintos y ya no se presentan como un solo stack.",
-      "en": "This entry covers the electronic-invoicing anomaly-detection solution. TRIBU-CR and ATENA are distinct systems and are no longer presented as a single stack."
+      "es": "La ficha corresponde a la solución de detección de anomalías en facturación electrónica. Hacienda confirma su uso continuo y el CIAT documenta instalación y aprendizaje automático no supervisado. TRIBU-CR y ATENA son sistemas distintos.",
+      "en": "This entry covers the electronic-invoicing anomaly-detection solution. The Finance Ministry confirms continued use, and CIAT documents installation and unsupervised machine learning. TRIBU-CR and ATENA are distinct systems."
     },
-    "fuenteUrl": "https://www.nacion.com/economia/hacienda-revela-la-tecnologia-que-le-permitio/G63WRWKZ7NHLXBSHCS6RI3T4JU/story/",
+    "fuenteUrl": "https://www.hacienda.go.cr/docs/InformedeRiesgosMacroFiscales2025.pdf",
     "modeloVersion": 2,
     "tipoIniciativa": "sistema-ia",
     "estadoCatalogo": "verificado",
@@ -1610,27 +1633,29 @@
       "existencia": {
         "estado": "confirmado",
         "fuenteIds": [
-          "microsoft-eiad-costa-rica"
+          "hacienda-riesgos-macrofiscales-2025",
+          "ciat-eiad-costa-rica"
         ]
       },
       "ejecucion": {
         "estado": "confirmado",
         "fuenteIds": [
-          "microsoft-eiad-costa-rica",
-          "nacion-anomaly-2026"
+          "hacienda-riesgos-macrofiscales-2025",
+          "ciat-eiad-costa-rica"
         ]
       },
       "tecnicaIA": {
         "estado": "confirmado",
         "fuenteIds": [
+          "ciat-eiad-costa-rica",
           "microsoft-eiad-costa-rica"
         ]
       },
       "usoOperativo": {
         "estado": "confirmado",
         "fuenteIds": [
-          "microsoft-eiad-costa-rica",
-          "nacion-anomaly-2026"
+          "hacienda-riesgos-macrofiscales-2025",
+          "ciat-eiad-costa-rica"
         ]
       },
       "resultados": {
@@ -1647,6 +1672,46 @@
       }
     },
     "fuentes": [
+      {
+        "id": "hacienda-riesgos-macrofiscales-2025",
+        "url": "https://www.hacienda.go.cr/docs/InformedeRiesgosMacroFiscales2025.pdf",
+        "publicador": "Ministerio de Hacienda",
+        "tipoFuente": "primaria-oficial",
+        "fechaPublicacion": "2025",
+        "respalda": [
+          "existencia",
+          "ejecucion",
+          "uso-operativo"
+        ],
+        "naturalezaAfirmacion": [
+          "hecho"
+        ],
+        "titulo": {
+          "es": "Informe de Riesgos Macrofiscales 2025",
+          "en": "2025 Macrofiscal Risk Report"
+        },
+        "fechaConsulta": "2026-08-23"
+      },
+      {
+        "id": "ciat-eiad-costa-rica",
+        "url": "https://www.ciat.org/e-iad-electronic-invoicing-anomaly-detector/?lang=en",
+        "publicador": "Centro Interamericano de Administraciones Tributarias",
+        "tipoFuente": "multilateral",
+        "respalda": [
+          "existencia",
+          "ejecucion",
+          "tecnica-ia",
+          "uso-operativo"
+        ],
+        "naturalezaAfirmacion": [
+          "hecho"
+        ],
+        "titulo": {
+          "es": "E-IAD: detector de anomalías en facturación electrónica",
+          "en": "E-IAD: Electronic Invoicing Anomaly Detector"
+        },
+        "fechaConsulta": "2026-08-23"
+      },
       {
         "id": "microsoft-eiad-costa-rica",
         "url": "https://www.microsoft.com/en/customers/story/1653565125024864159-inter-american-center-of-tax-administrations-costa-rica-financial-services-e-invoicing-anomaly-detection-solution-accelerator",
@@ -1696,7 +1761,7 @@
     "fechaPrimeraEvidencia": "2022",
     "fechaInicioPiloto": "2023",
     "fechaInicioOperacion": "2024",
-    "fechaUltimaVerificacion": "2026-08-19",
+    "fechaUltimaVerificacion": "2026-08-23",
     "objetivoDeclarado": {
       "es": "Detectar patrones anómalos en comprobantes electrónicos para priorizar casos de fiscalización tributaria.",
       "en": "Detect anomalous patterns in electronic invoices to prioritize tax-audit cases."
@@ -1716,8 +1781,12 @@
     ],
     "datosConocidos": [
       {
-        "es": "La revisión técnica humana ocurre antes de iniciar actuaciones de fiscalización.",
-        "en": "Human technical review takes place before audit actions begin."
+        "es": "Hacienda registra el uso continuo del E-IAD en 2025; el CIAT documenta su instalación en Costa Rica y la técnica de aprendizaje automático no supervisado.",
+        "en": "The Finance Ministry records continued E-IAD use in 2025; CIAT documents its installation in Costa Rica and its unsupervised machine-learning technique."
+      },
+      {
+        "es": "La fuente periodística reporta revisión técnica humana antes de iniciar actuaciones de fiscalización.",
+        "en": "The news report states that human technical review occurs before audit actions begin."
       }
     ],
     "datosNoDeterminados": [
@@ -1888,21 +1957,19 @@
         ]
       },
       "tecnicaIA": {
-        "estado": "no-determinado",
+        "estado": "no-aplica",
         "fuenteIds": []
       },
       "usoOperativo": {
-        "estado": "confirmado",
-        "fuenteIds": [
-          "hacienda-tribu-resolucion"
-        ]
+        "estado": "no-aplica",
+        "fuenteIds": []
       },
       "resultados": {
         "estado": "no-determinado",
         "fuenteIds": []
       },
       "gobernanza": {
-        "estado": "no-determinado",
+        "estado": "no-aplica",
         "fuenteIds": []
       }
     },
@@ -1915,8 +1982,7 @@
         "fechaPublicacion": "2025",
         "respalda": [
           "existencia",
-          "ejecucion",
-          "uso-operativo"
+          "ejecucion"
         ],
         "naturalezaAfirmacion": [
           "hecho"
@@ -1931,6 +1997,7 @@
     "fechaPrimeraEvidencia": "2025",
     "fechaInicioOperacion": "2025-10-06",
     "fechaUltimaVerificacion": "2026-08-19",
+    "fechaProximaRevision": "2027-02-19",
     "objetivoDeclarado": {
       "es": "Integrar en una plataforma los principales módulos de gestión tributaria y sustituir sistemas anteriores.",
       "en": "Integrate the main tax-management modules into one platform and replace previous systems."
@@ -2000,11 +2067,11 @@
         ]
       },
       "tecnicaIA": {
-        "estado": "no-determinado",
+        "estado": "no-aplica",
         "fuenteIds": []
       },
       "usoOperativo": {
-        "estado": "no-determinado",
+        "estado": "no-aplica",
         "fuenteIds": []
       },
       "resultados": {
@@ -2014,7 +2081,7 @@
         ]
       },
       "gobernanza": {
-        "estado": "no-determinado",
+        "estado": "no-aplica",
         "fuenteIds": []
       }
     },
@@ -2091,7 +2158,7 @@
     "tipoIniciativa": "programa-capacidades",
     "estadoCatalogo": "ecosistema",
     "faseImplementacion": "operativo",
-    "estadoIA": "no-determinada",
+    "estadoIA": "confirmada",
     "evaluacion": {
       "existencia": {
         "estado": "confirmado",
@@ -2106,14 +2173,12 @@
         ]
       },
       "tecnicaIA": {
-        "estado": "no-determinado",
+        "estado": "no-aplica",
         "fuenteIds": []
       },
       "usoOperativo": {
-        "estado": "confirmado",
-        "fuenteIds": [
-          "micitt-linc-oficial"
-        ]
+        "estado": "no-aplica",
+        "fuenteIds": []
       },
       "resultados": {
         "estado": "confirmado",
@@ -2122,7 +2187,7 @@
         ]
       },
       "gobernanza": {
-        "estado": "no-determinado",
+        "estado": "no-aplica",
         "fuenteIds": []
       }
     },
@@ -2136,7 +2201,6 @@
           "existencia",
           "objetivo-declarado",
           "ejecucion",
-          "uso-operativo",
           "resultado-reportado"
         ],
         "naturalezaAfirmacion": [
@@ -2216,11 +2280,11 @@
         ]
       },
       "tecnicaIA": {
-        "estado": "no-determinado",
+        "estado": "no-aplica",
         "fuenteIds": []
       },
       "usoOperativo": {
-        "estado": "no-determinado",
+        "estado": "no-aplica",
         "fuenteIds": []
       },
       "resultados": {
@@ -2263,6 +2327,7 @@
     "fechaPrimeraEvidencia": "2026-03",
     "fechaAnuncio": "2026-03",
     "fechaUltimaVerificacion": "2026-08-19",
+    "fechaProximaRevision": "2027-02-19",
     "objetivoDeclarado": {
       "es": "Definir y adoptar un modelo nacional de interoperabilidad gubernamental basado en X-Road.",
       "en": "Define and adopt a national government-interoperability model based on X-Road."
@@ -2322,7 +2387,7 @@
         "fuenteIds": []
       },
       "usoOperativo": {
-        "estado": "no-determinado",
+        "estado": "no-aplica",
         "fuenteIds": []
       },
       "resultados": {
@@ -2444,7 +2509,7 @@
         ]
       },
       "usoOperativo": {
-        "estado": "no-determinado",
+        "estado": "no-aplica",
         "fuenteIds": []
       },
       "resultados": {
@@ -2486,6 +2551,7 @@
     ],
     "fechaPrimeraEvidencia": "2025-03-01",
     "fechaUltimaVerificacion": "2026-08-19",
+    "fechaProximaRevision": "2027-02-19",
     "objetivoDeclarado": {
       "es": "Diseñar y evaluar estrategias de IA para requisitos, generación y reparación de código, calidad y pruebas de software.",
       "en": "Design and evaluate AI strategies for requirements, code generation and repair, quality and software testing."
@@ -2552,11 +2618,11 @@
         ]
       },
       "tecnicaIA": {
-        "estado": "no-determinado",
+        "estado": "no-aplica",
         "fuenteIds": []
       },
       "usoOperativo": {
-        "estado": "no-determinado",
+        "estado": "no-aplica",
         "fuenteIds": []
       },
       "resultados": {
@@ -2598,6 +2664,7 @@
     ],
     "fechaPrimeraEvidencia": "2025-08-25",
     "fechaUltimaVerificacion": "2026-08-19",
+    "fechaProximaRevision": "2027-02-19",
     "objetivoDeclarado": {
       "es": "Desarrollar capacidades y herramientas para el uso ético de IA en educación superior.",
       "en": "Develop capabilities and tools for the ethical use of AI in higher education."
@@ -2649,7 +2716,7 @@
         "fuenteIds": []
       },
       "usoOperativo": {
-        "estado": "no-determinado",
+        "estado": "no-aplica",
         "fuenteIds": []
       },
       "resultados": {
@@ -2753,7 +2820,7 @@
         ]
       },
       "usoOperativo": {
-        "estado": "no-determinado",
+        "estado": "no-aplica",
         "fuenteIds": []
       },
       "resultados": {
@@ -2795,6 +2862,7 @@
     "fechaPrimeraEvidencia": "2024",
     "fechaInicioPiloto": "2024",
     "fechaUltimaVerificacion": "2026-08-19",
+    "fechaProximaRevision": "2027-02-19",
     "objetivoDeclarado": {
       "es": "Evaluar aprendizaje automático para clasificar arritmias a partir de señales de electrocardiograma.",
       "en": "Evaluate machine learning for classifying arrhythmias from electrocardiogram signals."
@@ -2857,11 +2925,11 @@
         ]
       },
       "tecnicaIA": {
-        "estado": "no-determinado",
+        "estado": "no-aplica",
         "fuenteIds": []
       },
       "usoOperativo": {
-        "estado": "no-determinado",
+        "estado": "no-aplica",
         "fuenteIds": []
       },
       "resultados": {
@@ -2869,7 +2937,7 @@
         "fuenteIds": []
       },
       "gobernanza": {
-        "estado": "no-determinado",
+        "estado": "no-aplica",
         "fuenteIds": []
       }
     },
@@ -2898,6 +2966,7 @@
     ],
     "fechaPrimeraEvidencia": "2026-07-17",
     "fechaUltimaVerificacion": "2026-08-19",
+    "fechaProximaRevision": "2027-02-19",
     "objetivoDeclarado": {
       "es": "Formar al personal de la Sala Primera en uso de indicaciones para herramientas de IA como apoyo.",
       "en": "Train First Chamber staff in prompting AI tools for support."

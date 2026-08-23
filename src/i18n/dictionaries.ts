@@ -129,7 +129,8 @@ export interface Dictionary {
     registroSub: string;
     estadoOficialLabel: string;
     alcanceLabel: string;
-    fuentesOficialesLabel: string;
+    fuenteOficialLabel: string;
+    referenciaComplementariaLabel: string;
   };
   indicadores: {
     kicker: string;
@@ -140,6 +141,7 @@ export interface Dictionary {
     brechaPre: string;
     brechaPuntos: string;
     brechaPost: string;
+    lecturaObservatorioLabel: string;
   };
   recursos: { kicker: string; titulo: string; abrir: string; metaDescripcion: string };
   acerca: {
@@ -619,8 +621,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
         archivado: 'Archivado',
         aprobada: 'Aprobada',
       },
-      verFuente: 'Ver expediente',
-      verEstadoOficial: 'Ver evidencia oficial del estado',
+      verFuente: 'Abrir referencia',
+      verEstadoOficial: 'Abrir evidencia oficial',
       verificadoLabel: 'Verificado',
       coyunturaKicker: 'Lectura editorial',
       coyunturaTitulo: 'Coyuntura alrededor de los expedientes',
@@ -631,7 +633,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
         'Número, comisión, alcance, estado y verificación se transcriben por separado del contexto editorial.',
       estadoOficialLabel: 'Estado legislativo oficial',
       alcanceLabel: 'Alcance respecto de IA',
-      fuentesOficialesLabel: 'Fuentes oficiales',
+      fuenteOficialLabel: 'Fuente oficial del estado',
+      referenciaComplementariaLabel: 'Referencia complementaria',
     },
     indicadores: {
       kicker: '03 / Indicadores',
@@ -643,6 +646,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       brechaPuntos: 'puntos',
       brechaPost:
         'Cerrar la brecha requiere implementación de la ENIA con metas medibles, presupuesto asignado y un marco regulatorio aprobado.',
+      lecturaObservatorioLabel: 'Lectura del Observatorio',
     },
     recursos: {
       kicker: '04 / Recursos',
@@ -783,23 +787,24 @@ export const dictionaries: Record<Locale, Dictionary> = {
         'no-determinado': 'No determinado',
       },
       estadosIA: {
-        confirmada: 'IA confirmada',
+        confirmada: 'Relación explícita con IA',
         'declarada-sin-tecnica': 'IA declarada, técnica no publicada',
-        'no-determinada': 'IA no determinada',
-        descartada: 'IA descartada',
+        'no-determinada': 'Relación con IA no determinada',
+        descartada: 'Sin IA confirmada',
       },
       evaluacionEstados: {
         confirmado: 'Confirmado',
         'parcialmente-confirmado': 'Parcialmente confirmado',
         inferido: 'Inferido',
         'no-determinado': 'No determinado',
+        'no-aplica': 'No aplica',
         contradicho: 'Contradicho',
       },
       dimensiones: {
         existencia: 'Existencia',
         ejecucion: 'Ejecución',
         tecnicaIA: 'Técnica de IA',
-        usoOperativo: 'Uso operativo',
+        usoOperativo: 'Uso operativo de IA',
         resultados: 'Resultados',
         gobernanza: 'Gobernanza',
       },
@@ -923,7 +928,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       fichaEvidenciaLabel: 'Ficha de evidencia',
       tipoIniciativaLabel: 'Tipo de iniciativa',
       faseLabel: 'Fase documentada',
-      estadoIALabel: 'Confirmación de IA',
+      estadoIALabel: 'Relación con IA en la fuente',
       evidenciaEjecucionLabel: 'Evidencia de ejecución',
       primeraEvidenciaLabel: 'Primera evidencia',
       ultimaVerificacionLabel: 'Última verificación',
@@ -944,7 +949,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       resultadosSub: 'Los resultados se publican solo cuando una fuente los atribuye de manera trazable a esta iniciativa.',
       sinResultadosDocumentados: 'No se localizaron resultados públicos atribuibles a esta iniciativa en el corte actual.',
       evidenciaTitulo: 'Matriz de evidencia',
-      evidenciaSub: 'Cada dimensión se evalúa por separado. Un estado no determinado se publica como tal y no se completa por inferencia.',
+      evidenciaSub: 'Cada dimensión se evalúa por separado. No determinado señala un vacío de evidencia; no aplica indica que la dimensión no corresponde al objeto documentado.',
       fuentesTitulo: 'Fuentes y trazabilidad',
       fuentesSub: 'Las fuentes indican qué afirmaciones respaldan, su origen y la fecha en que fueron consultadas.',
       publicadorLabel: 'Publicador',
@@ -1024,8 +1029,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
           'Solo un sistema o componente de IA con técnica confirmada y ejecución confirmada en piloto u operación cuenta como adopción verificada.',
           'Un anuncio oficial demuestra que una iniciativa fue anunciada, no que comenzó a ejecutarse. Permanece en seguimiento hasta localizar evidencia posterior.',
           'Infraestructura, investigación, formación, gobernanza y digitalización se preservan como ecosistema y capacidades, sin sumarlas al contador de adopción.',
-          'Cada afirmación enlaza fuentes trazables e indica qué respalda cada una. La prensa puede orientar la búsqueda, pero no sustituye una fuente primaria cuando se afirma ejecución.',
-          'Los campos sin evidencia suficiente se publican como no determinados y las fichas con vacíos relevantes conservan preguntas abiertas o una fecha de próxima revisión.',
+          'Cada afirmación enlaza fuentes trazables e indica qué respalda cada una. La prensa puede orientar la búsqueda, pero una adopción verificada exige una fuente primaria para afirmar ejecución.',
+          'Los campos sin evidencia suficiente se publican como no determinados y las fichas con vacíos relevantes conservan preguntas abiertas o una fecha de próxima revisión. No aplica se reserva para dimensiones ajenas al objeto documentado.',
           'Los textos de "Contexto" y "Lecciones" son interpretación editorial sobre datos verificados, claramente separados del dato bruto.',
         ],
       },
@@ -1307,8 +1312,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
         archivado: 'Archived',
         aprobada: 'Passed',
       },
-      verFuente: 'View bill',
-      verEstadoOficial: 'View official status evidence',
+      verFuente: 'Open reference',
+      verEstadoOficial: 'Open official evidence',
       verificadoLabel: 'Verified',
       coyunturaKicker: 'Editorial reading',
       coyunturaTitulo: 'Context surrounding the bills',
@@ -1319,7 +1324,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
         'Number, committee, scope, status and verification are transcribed separately from editorial context.',
       estadoOficialLabel: 'Official legislative status',
       alcanceLabel: 'Scope in relation to AI',
-      fuentesOficialesLabel: 'Official sources',
+      fuenteOficialLabel: 'Official status source',
+      referenciaComplementariaLabel: 'Complementary reference',
     },
     indicadores: {
       kicker: '03 / Indicators',
@@ -1331,6 +1337,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       brechaPuntos: 'points',
       brechaPost:
         'Closing the gap requires implementing ENIA with measurable targets, allocated budget and an approved regulatory framework.',
+      lecturaObservatorioLabel: 'Observatory interpretation',
     },
     recursos: {
       kicker: '04 / Resources',
@@ -1470,23 +1477,24 @@ export const dictionaries: Record<Locale, Dictionary> = {
         'no-determinado': 'Undetermined',
       },
       estadosIA: {
-        confirmada: 'AI confirmed',
+        confirmada: 'Explicit relationship to AI',
         'declarada-sin-tecnica': 'AI declared, technique not published',
-        'no-determinada': 'AI undetermined',
-        descartada: 'AI excluded',
+        'no-determinada': 'Relationship to AI undetermined',
+        descartada: 'No confirmed AI',
       },
       evaluacionEstados: {
         confirmado: 'Confirmed',
         'parcialmente-confirmado': 'Partially confirmed',
         inferido: 'Inferred',
         'no-determinado': 'Undetermined',
+        'no-aplica': 'Not applicable',
         contradicho: 'Contradicted',
       },
       dimensiones: {
         existencia: 'Existence',
         ejecucion: 'Execution',
         tecnicaIA: 'AI technique',
-        usoOperativo: 'Operational use',
+        usoOperativo: 'Operational AI use',
         resultados: 'Results',
         gobernanza: 'Governance',
       },
@@ -1610,7 +1618,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       fichaEvidenciaLabel: 'Evidence record',
       tipoIniciativaLabel: 'Initiative type',
       faseLabel: 'Documented phase',
-      estadoIALabel: 'AI confirmation',
+      estadoIALabel: 'Relationship to AI in the source',
       evidenciaEjecucionLabel: 'Execution evidence',
       primeraEvidenciaLabel: 'First evidence',
       ultimaVerificacionLabel: 'Last verified',
@@ -1631,7 +1639,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       resultadosSub: 'Results are published only when a source traceably attributes them to this initiative.',
       sinResultadosDocumentados: 'No public results attributable to this initiative were found in the current review.',
       evidenciaTitulo: 'Evidence matrix',
-      evidenciaSub: 'Each dimension is assessed separately. An undetermined state is published as such and is not filled in by inference.',
+      evidenciaSub: 'Each dimension is assessed separately. Undetermined marks an evidence gap; not applicable means the dimension does not correspond to the documented object.',
       fuentesTitulo: 'Sources and traceability',
       fuentesSub: 'Sources state which claims they support, their origin and the date on which they were consulted.',
       publicadorLabel: 'Publisher',
@@ -1711,8 +1719,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
           'Only an AI system or component with a confirmed technique and confirmed pilot or operational execution counts as verified adoption.',
           'An official announcement proves that an initiative was announced, not that execution began. It remains under review until later evidence is found.',
           'Infrastructure, research, training, governance and digitization are retained as ecosystem and capabilities without adding them to the adoption count.',
-          'Every claim links to traceable sources and states what each source supports. News reporting may guide research but does not replace a primary source when execution is asserted.',
-          'Fields without sufficient evidence are published as undetermined, and records with material gaps retain open questions or a next review date.',
+          'Every claim links to traceable sources and states what each source supports. News reporting may guide research, but verified adoption requires a primary source to establish execution.',
+          'Fields without sufficient evidence are published as undetermined, and records with material gaps retain open questions or a next review date. Not applicable is reserved for dimensions outside the documented object.',
           'The "Context" and "Lessons" sections are editorial interpretation built on verified data, clearly separated from the raw data.',
         ],
       },

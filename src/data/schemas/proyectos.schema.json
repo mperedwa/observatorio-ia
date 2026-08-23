@@ -252,6 +252,7 @@
             "parcialmente-confirmado",
             "inferido",
             "no-determinado",
+            "no-aplica",
             "contradicho"
           ]
         },

@@ -1,0 +1,362 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://observatorioia.org/api/schemas/monitoreo.schema.json",
+  "title": "Monitoreo editorial / Editorial monitoring",
+  "description": "Schema de la respuesta pública completa; el campo data también se publica por separado. / Full public-response schema; the data field schema is also published separately.",
+  "type": "object",
+  "required": [
+    "version",
+    "lastUpdate",
+    "count",
+    "source",
+    "license",
+    "data"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "lastUpdate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "source": {
+      "const": "https://observatorioia.org"
+    },
+    "license": {
+      "const": "CC BY 4.0"
+    },
+    "data": {
+      "$ref": "#/definitions/_dataset"
+    }
+  },
+  "definitions": {
+    "bilingual": {
+      "type": "object",
+      "required": [
+        "es",
+        "en"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "es": {
+          "type": "string",
+          "minLength": 1
+        },
+        "en": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "cadenciaId": {
+      "type": "string",
+      "enum": [
+        "semanal",
+        "mensual",
+        "trimestral",
+        "semestral"
+      ]
+    },
+    "cadencia": {
+      "type": "object",
+      "required": [
+        "id",
+        "dias",
+        "nombre",
+        "aplicaA"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/cadenciaId"
+        },
+        "dias": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "nombre": {
+          "$ref": "#/definitions/bilingual"
+        },
+        "aplicaA": {
+          "$ref": "#/definitions/bilingual"
+        }
+      }
+    },
+    "frente": {
+      "type": "object",
+      "required": [
+        "id",
+        "ambito",
+        "metrica",
+        "nombre",
+        "descripcion",
+        "cadenciaId",
+        "fechaUltimaRevision",
+        "fechaProximaRevision",
+        "alcance",
+        "fuenteUrl"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "ambito": {
+          "type": "string",
+          "enum": [
+            "catalogo",
+            "enia",
+            "legislacion",
+            "marco-pais",
+            "indicador"
+          ]
+        },
+        "metrica": {
+          "type": "string",
+          "enum": [
+            "legislacion-expedientes",
+            "enia-intervenciones-unicas",
+            "catalogo-seguimiento",
+            "catalogo-verificado",
+            "catalogo-ecosistema",
+            "marco-pais-instrumentos",
+            "indicador-ilia",
+            "indicador-oecd"
+          ]
+        },
+        "nombre": {
+          "$ref": "#/definitions/bilingual"
+        },
+        "descripcion": {
+          "$ref": "#/definitions/bilingual"
+        },
+        "cadenciaId": {
+          "$ref": "#/definitions/cadenciaId"
+        },
+        "notaCadencia": {
+          "$ref": "#/definitions/bilingual"
+        },
+        "fechaUltimaRevision": {
+          "type": "string",
+          "format": "date"
+        },
+        "fechaProximaRevision": {
+          "type": "string",
+          "format": "date"
+        },
+        "alcance": {
+          "type": "object",
+          "required": [
+            "cantidad",
+            "unidad"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "cantidad": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "unidad": {
+              "$ref": "#/definitions/bilingual"
+            }
+          }
+        },
+        "fuenteUrl": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "revision": {
+      "type": "object",
+      "required": [
+        "id",
+        "fecha",
+        "frenteId",
+        "resultado",
+        "resumen",
+        "fuenteUrl",
+        "transiciones"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "fecha": {
+          "type": "string",
+          "format": "date"
+        },
+        "frenteId": {
+          "$ref": "#/definitions/id"
+        },
+        "resultado": {
+          "type": "string",
+          "enum": [
+            "cambio-detectado",
+            "cambio-publicado",
+            "sin-cambios"
+          ]
+        },
+        "resumen": {
+          "$ref": "#/definitions/bilingual"
+        },
+        "fuenteUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "commitSha": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{7,40}$"
+        },
+        "transiciones": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/transicion"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "resultado": {
+                "const": "sin-cambios"
+              }
+            },
+            "required": [
+              "resultado"
+            ]
+          },
+          "then": {
+            "properties": {
+              "transiciones": {
+                "maxItems": 0
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "transiciones": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "transicion": {
+      "type": "object",
+      "required": [
+        "objetoTipo",
+        "objetoId",
+        "campo",
+        "antes",
+        "despues"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "objetoTipo": {
+          "type": "string",
+          "enum": [
+            "proyecto",
+            "intervencion-enia",
+            "expediente",
+            "instrumento",
+            "indicador"
+          ]
+        },
+        "objetoId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "campo": {
+          "type": "string",
+          "minLength": 1
+        },
+        "antes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "despues": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "_dataset": {
+      "type": "object",
+      "required": [
+        "schemaVersion",
+        "fechaCorte",
+        "politica",
+        "frentes",
+        "revisiones"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schemaVersion": {
+          "type": "integer",
+          "const": 1
+        },
+        "fechaCorte": {
+          "type": "string",
+          "format": "date"
+        },
+        "politica": {
+          "type": "object",
+          "required": [
+            "descripcion",
+            "automatizacion",
+            "cadencias"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "descripcion": {
+              "$ref": "#/definitions/bilingual"
+            },
+            "automatizacion": {
+              "$ref": "#/definitions/bilingual"
+            },
+            "cadencias": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/definitions/cadencia"
+              }
+            }
+          }
+        },
+        "frentes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/frente"
+          }
+        },
+        "revisiones": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/revision"
+          }
+        }
+      }
+    }
+  },
+  "x-observatorio-data-schema": "/api/schemas/monitoreo-data.schema.json"
+}

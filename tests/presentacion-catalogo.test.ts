@@ -51,6 +51,7 @@ describe('presentación del catálogo', () => {
       { fecha: '2024', tipo: 'inicio-operacion' },
       { fecha: '2024-03-20', tipo: 'primera-evidencia' },
       { fecha: '2026-08-19', tipo: 'ultima-verificacion' },
+      { fecha: '2026-11-19', tipo: 'proxima-revision' },
     ]);
   });
 

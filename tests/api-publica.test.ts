@@ -9,7 +9,9 @@ import { describe, expect, it } from 'vitest';
 const ROOT = process.cwd();
 const API_DIR = join(ROOT, 'public', 'api');
 const SOURCE_SCHEMA_DIR = join(ROOT, 'src', 'data', 'schemas');
-const RELEASE_ID = '2026-08-22-r8';
+const SOURCE_DATA_DIR = join(ROOT, 'src', 'data', 'json');
+const RELEASE_ID = '2026-08-23-r9';
+const PREVIOUS_RELEASE_ID = '2026-08-22-r8';
 
 const ORIGINAL_ENDPOINTS = [
   '/api/proyectos.json',
@@ -160,7 +162,7 @@ function readIndexHtml(locale: 'es' | 'en') {
   return load(readFileSync(filename, 'utf8'));
 }
 
-describe('API pública estática R8', () => {
+describe('API pública estática R9', () => {
   it('conserva las siete rutas originales y suma cinco rutas complementarias', () => {
     const manifest = readJson<Manifest>('index.json');
     const urls = manifest.endpoints.map(({ url }) => url);
@@ -204,7 +206,7 @@ describe('API pública estática R8', () => {
       'enia-acciones': 129,
       monitoreo: 8,
       'marco-pais': 4,
-      historial: 43,
+      historial: 44,
       coyuntura: 2,
       recursos: 16,
       codebook: 11,
@@ -224,7 +226,7 @@ describe('API pública estática R8', () => {
 
     expect(manifest.dataRelease).toMatchObject({
       id: RELEASE_ID,
-      date: '2026-08-22',
+      date: '2026-08-23',
       manifestUrl: `/api/releases/${RELEASE_ID}/release.json`,
     });
     expect(manifest.documentation).toEqual({ es: '/api/', en: '/api/en/' });
@@ -286,15 +288,27 @@ describe('API pública estática R8', () => {
     }>('releases/index.json');
 
     expect(release.id).toBe(RELEASE_ID);
-    expect(release.date).toBe('2026-08-22');
+    expect(release.date).toBe('2026-08-23');
     expect(release.immutable).toBe(true);
     expect(readFileSync(join(API_DIR, 'releases', RELEASE_ID, 'release.lock'), 'utf8')).toContain(
       `release=${RELEASE_ID}`,
     );
     expect(releaseIndex.latest).toBe(RELEASE_ID);
+    expect(releaseIndex.releases).toHaveLength(2);
     expect(releaseIndex.releases.find(({ id }) => id === RELEASE_ID)).toMatchObject({
       bytes: byteLength(releaseText),
       sha256: digest(releaseText),
+    });
+    const previousReleaseText = readFileSync(
+      join(API_DIR, 'releases', PREVIOUS_RELEASE_ID, 'release.json'),
+      'utf8',
+    );
+    expect(
+      readFileSync(join(API_DIR, 'releases', PREVIOUS_RELEASE_ID, 'release.lock'), 'utf8'),
+    ).toContain(`release=${PREVIOUS_RELEASE_ID}`);
+    expect(releaseIndex.releases.find(({ id }) => id === PREVIOUS_RELEASE_ID)).toMatchObject({
+      bytes: byteLength(previousReleaseText),
+      sha256: digest(previousReleaseText),
     });
     expect(release.datasets).toHaveLength(12);
     for (const dataset of release.datasets) {
@@ -344,6 +358,13 @@ describe('API pública estática R8', () => {
     expect(Object.keys(bundle.datasets)).toHaveLength(12);
     expect(bundle.datasets.proyectos.count).toBe(29);
     expect(bundle.datasets['enia-acciones'].count).toBe(129);
+
+    const legislationCsvFile = downloads.files.find(({ url }) =>
+      url.includes(`/legislacion-${RELEASE_ID}.csv`),
+    )!;
+    const legislationCsv = readApiUrl(legislationCsvFile.url);
+    expect(legislationCsv.split('\n')[0]).toContain('referencia_complementaria');
+    expect(legislationCsv.split('\n')[0]).toContain('fuente_estado_oficial');
   });
 
   it('declara Content-Type, CORS y caché para JSON y CSV en Vercel', () => {
@@ -372,8 +393,12 @@ describe('API pública estática R8', () => {
 
   it('documenta metodología, procedencia y límites interpretativos', () => {
     const codebook = readJson<ApiEnvelope<{
+      schemaVersion: number;
+      contrato: {
+        noAplica: { es: string; en: string };
+      };
       reglaAdopcionVerificada: {
-        condiciones: Array<{ campo: string; valores: Array<string | number> }>;
+        condiciones: Array<{ campo: string; valores: Array<string | number | boolean> }>;
       };
       vocabularios: unknown[];
       datasets: Array<{
@@ -397,13 +422,25 @@ describe('API pública estática R8', () => {
       nota?: { es: string; en: string };
     }>>>('recursos.json');
 
-    expect(codebook.data.reglaAdopcionVerificada.condiciones).toHaveLength(7);
+    expect(codebook.data.schemaVersion).toBe(2);
+    expect(codebook.data.contrato.noAplica.es).toContain('no corresponde');
+    expect(codebook.data.reglaAdopcionVerificada.condiciones).toHaveLength(9);
     expect(codebook.data.reglaAdopcionVerificada.condiciones[0]).toEqual({
       campo: 'modeloVersion',
       operador: 'igual',
       valores: [2],
     });
     expect(codebook.data.vocabularios).toHaveLength(10);
+    expect(codebook.data.reglaAdopcionVerificada.condiciones).toContainEqual({
+      campo: 'evaluacion.tecnicaIA.estado',
+      operador: 'igual',
+      valores: ['confirmado'],
+    });
+    expect(codebook.data.reglaAdopcionVerificada.condiciones).toContainEqual({
+      campo: 'fuentePrimariaEjecucion',
+      operador: 'igual',
+      valores: [true],
+    });
     expect(codebook.data.datasets).toHaveLength(11);
     for (const id of ['instituciones', 'indicadores', 'brechas', 'enia-acciones', 'marco-pais', 'coyuntura', 'recursos']) {
       expect(codebook.data.datasets.find((dataset) => dataset.id === id)?.notaInterpretacion).toBeDefined();
@@ -458,6 +495,23 @@ describe('API pública estática R8', () => {
 
     expect(readIndexHtml('es')('h1').text()).toContain('Evidencia pública');
     expect(readIndexHtml('en')('h1').text()).toContain('Public evidence');
+    expect(readIndexHtml('es')('code').text()).toContain(
+      '.evaluacion.tecnicaIA.estado == "confirmado"',
+    );
+    expect(readIndexHtml('es')('code').text()).toContain(
+      '.tipoFuente == "primaria-oficial"',
+    );
+  });
+
+  it('mantiene el endpoint de proyectos sincronizado exactamente con la fuente curada', () => {
+    const source = JSON.parse(
+      readFileSync(join(SOURCE_DATA_DIR, 'proyectos.json'), 'utf8'),
+    ) as unknown;
+    const endpoint = readJson<ApiEnvelope>('proyectos.json');
+
+    expect(endpoint.count).toBe(29);
+    expect(endpoint.lastUpdate).toBe('2026-08-23T00:00:00.000Z');
+    expect(endpoint.data).toEqual(source);
   });
 
   it('mantiene visibles los ocho frentes y su bitácora editorial', () => {

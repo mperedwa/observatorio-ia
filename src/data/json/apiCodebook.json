@@ -1,6 +1,6 @@
 {
-  "schemaVersion": 1,
-  "fechaCorte": "2026-08-22",
+  "schemaVersion": 2,
+  "fechaCorte": "2026-08-23",
   "alcance": {
     "es": "Diccionario público del contrato, los vocabularios y las reglas editoriales usadas para interpretar los datos del Observatorio IA Costa Rica.",
     "en": "Public dictionary for the contract, vocabularies and editorial rules used to interpret AI Observatory Costa Rica data."
@@ -19,18 +19,22 @@
       "en": "Translatable editorial text uses objects with es and en keys. Proper names, identifiers, URLs, dates, numbers and source transcriptions may remain scalar values."
     },
     "noDeterminado": {
-      "es": "Indica que la evidencia pública revisada no permite confirmar ni descartar una afirmación. No equivale a no, cero ni inexistente.",
-      "en": "Means that reviewed public evidence cannot confirm or rule out a claim. It does not mean no, zero or nonexistent."
+      "es": "Indica que la evidencia pública revisada no permite confirmar ni descartar una afirmación. No equivale a no, cero ni inexistente, y exige una pregunta abierta o próxima revisión.",
+      "en": "Means that reviewed public evidence cannot confirm or rule out a claim. It does not mean no, zero or nonexistent, and it requires an open question or next review."
+    },
+    "noAplica": {
+      "es": "Indica que la dimensión no corresponde al objeto documentado. Por ejemplo, un programa de formación puede estar operativo sin que exista una técnica o un uso operativo de IA que evaluar.",
+      "en": "Means that the dimension does not correspond to the documented object. For example, a training program may be operational without there being an AI technique or operational AI use to assess."
     },
     "trazabilidad": {
-      "es": "Sin errores de trazabilidad significa que no hay IDs de fuente duplicados; toda evaluación afirmativa referencia una fuente existente que respalda esa dimensión; y todo resultado verificado referencia una fuente declarada para resultados. Las relaciones entre iniciativas también se validan contra IDs existentes y no pueden apuntar al mismo registro.",
-      "en": "No traceability errors means there are no duplicate source IDs; every affirmative assessment references an existing source that supports that dimension; and every verified result references a source declared for results. Initiative relationships are also checked against existing IDs and cannot point to the same record."
+      "es": "Sin errores de trazabilidad significa que no hay IDs de fuente duplicados; toda evaluación afirmativa referencia una fuente existente que respalda esa dimensión; y todo resultado verificado referencia una fuente declarada para resultados. Una adopción verificada exige además que una fuente primaria oficial o de acceso a información respalde la ejecución. Las relaciones entre iniciativas también se validan contra IDs existentes y no pueden apuntar al mismo registro.",
+      "en": "No traceability errors means there are no duplicate source IDs; every affirmative assessment references an existing source that supports that dimension; and every verified result references a source declared for results. Verified adoption also requires an official primary or access-to-information source supporting execution. Initiative relationships are also checked against existing IDs and cannot point to the same record."
     }
   },
   "reglaAdopcionVerificada": {
     "descripcion": {
-      "es": "Una iniciativa cuenta como adopción verificada solo cuando cumple simultáneamente todas las condiciones. estadoCatalogo por sí solo no basta.",
-      "en": "An initiative counts as verified adoption only when it meets every condition simultaneously. estadoCatalogo alone is not sufficient."
+      "es": "Una iniciativa cuenta como adopción verificada solo cuando cumple simultáneamente todas las condiciones. estadoCatalogo y estadoIA por sí solos no bastan: estadoIA registra la relación explícita con IA en la fuente, mientras evaluacion.tecnicaIA confirma la técnica.",
+      "en": "An initiative counts as verified adoption only when it meets every condition simultaneously. estadoCatalogo and estadoIA are not sufficient on their own: estadoIA records an explicit relationship to AI in the source, while evaluacion.tecnicaIA confirms the technique."
     },
     "condiciones": [
       { "campo": "modeloVersion", "operador": "igual", "valores": [2] },
@@ -38,7 +42,9 @@
       { "campo": "tipoIniciativa", "operador": "uno-de", "valores": ["sistema-ia", "componente-ia"] },
       { "campo": "faseImplementacion", "operador": "uno-de", "valores": ["piloto", "operativo"] },
       { "campo": "estadoIA", "operador": "igual", "valores": ["confirmada"] },
+      { "campo": "evaluacion.tecnicaIA.estado", "operador": "igual", "valores": ["confirmado"] },
       { "campo": "evaluacion.ejecucion.estado", "operador": "igual", "valores": ["confirmado"] },
+      { "campo": "fuentePrimariaEjecucion", "operador": "igual", "valores": [true] },
       { "campo": "trazabilidad", "operador": "sin-errores", "valores": [] }
     ]
   },
@@ -88,10 +94,10 @@
       "id": "estadoIA",
       "campo": "proyectos[].estadoIA",
       "valores": [
-        { "valor": "confirmada", "etiqueta": { "es": "IA confirmada", "en": "AI confirmed" } },
+        { "valor": "confirmada", "etiqueta": { "es": "Relación explícita con IA", "en": "Explicit relationship to AI" } },
         { "valor": "declarada-sin-tecnica", "etiqueta": { "es": "IA declarada sin técnica publicada", "en": "AI claimed without published technique" } },
-        { "valor": "no-determinada", "etiqueta": { "es": "IA no determinada", "en": "AI undetermined" } },
-        { "valor": "descartada", "etiqueta": { "es": "IA descartada", "en": "AI ruled out" } }
+        { "valor": "no-determinada", "etiqueta": { "es": "Relación con IA no determinada", "en": "Relationship to AI undetermined" } },
+        { "valor": "descartada", "etiqueta": { "es": "Sin IA confirmada", "en": "No confirmed AI" } }
       ]
     },
     {
@@ -102,6 +108,7 @@
         { "valor": "parcialmente-confirmado", "etiqueta": { "es": "Parcialmente confirmado", "en": "Partially confirmed" } },
         { "valor": "inferido", "etiqueta": { "es": "Inferido", "en": "Inferred" } },
         { "valor": "no-determinado", "etiqueta": { "es": "No determinado", "en": "Undetermined" } },
+        { "valor": "no-aplica", "etiqueta": { "es": "No aplica", "en": "Not applicable" } },
         { "valor": "contradicho", "etiqueta": { "es": "Contradicho", "en": "Contradicted" } }
       ]
     },
@@ -112,7 +119,7 @@
         { "valor": "existencia", "etiqueta": { "es": "Existencia", "en": "Existence" } },
         { "valor": "ejecucion", "etiqueta": { "es": "Ejecución", "en": "Execution" } },
         { "valor": "tecnicaIA", "etiqueta": { "es": "Técnica de IA", "en": "AI technique" } },
-        { "valor": "usoOperativo", "etiqueta": { "es": "Uso operativo", "en": "Operational use" } },
+        { "valor": "usoOperativo", "etiqueta": { "es": "Uso operativo de IA", "en": "Operational AI use" } },
         { "valor": "resultados", "etiqueta": { "es": "Resultados", "en": "Results" } },
         { "valor": "gobernanza", "etiqueta": { "es": "Gobernanza", "en": "Governance" } }
       ]
@@ -172,9 +179,9 @@
     }
   ],
   "datasets": [
-    { "id": "proyectos", "endpoint": "/api/proyectos.json", "schemaUrl": "/api/schemas/proyectos.schema.json", "unidadConteo": { "es": "iniciativas", "en": "initiatives" }, "camposClave": ["id", "institucionId", "tipoIniciativa", "estadoCatalogo", "faseImplementacion", "estadoIA", "evaluacion", "fuentes", "fechaUltimaVerificacion"], "urlRegistro": { "es": "/es/proyectos/{id}/", "en": "/en/proyectos/{id}/" } },
+    { "id": "proyectos", "endpoint": "/api/proyectos.json", "schemaUrl": "/api/schemas/proyectos.schema.json", "unidadConteo": { "es": "iniciativas", "en": "initiatives" }, "camposClave": ["id", "institucionId", "tipoIniciativa", "estadoCatalogo", "faseImplementacion", "estadoIA", "evaluacion", "fuentes", "fechaUltimaVerificacion"], "urlRegistro": { "es": "/es/proyectos/{id}/", "en": "/en/proyectos/{id}/" }, "notaInterpretacion": { "es": "estadoIA describe la relación explícita con IA en las fuentes y no sustituye evaluacion.tecnicaIA. no-aplica distingue dimensiones ajenas al objeto; todo no-determinado conserva pregunta o fecha de seguimiento.", "en": "estadoIA describes the explicit relationship to AI in the sources and does not replace evaluacion.tecnicaIA. no-aplica separates dimensions outside the documented object; every undetermined field retains an open question or follow-up date." } },
     { "id": "instituciones", "endpoint": "/api/instituciones.json", "schemaUrl": "/api/schemas/instituciones.schema.json", "unidadConteo": { "es": "instituciones", "en": "institutions" }, "camposClave": ["id", "nombre", "tipo", "url", "proyectosActivos"], "urlRegistro": { "es": "/es/instituciones/{id}/", "en": "/en/instituciones/{id}/" }, "notaInterpretacion": { "es": "Los resúmenes institucionales sintetizan las iniciativas relacionadas por institucionId; url identifica el sitio institucional y no respalda por sí sola cada afirmación del resumen.", "en": "Institution summaries synthesize initiatives linked by institucionId; url identifies the institution website and does not by itself support every statement in the summary." } },
-    { "id": "legislacion", "endpoint": "/api/legislacion.json", "schemaUrl": "/api/schemas/legislacion.schema.json", "unidadConteo": { "es": "expedientes", "en": "bills" }, "camposClave": ["numero", "estado", "alcanceIA", "fuenteUrl", "fuenteEstadoUrl", "fechaUltimaVerificacion"] },
+    { "id": "legislacion", "endpoint": "/api/legislacion.json", "schemaUrl": "/api/schemas/legislacion.schema.json", "unidadConteo": { "es": "expedientes", "en": "bills" }, "camposClave": ["numero", "estado", "alcanceIA", "fuenteUrl", "fuenteEstadoUrl", "fechaUltimaVerificacion"], "notaInterpretacion": { "es": "fuenteEstadoUrl respalda el estado con una fuente oficial; fuenteUrl es una referencia complementaria para consultar el expediente y no se presenta como oficial.", "en": "fuenteEstadoUrl supports status with an official source; fuenteUrl is a complementary reference for consulting the bill and is not presented as official." } },
     { "id": "indicadores", "endpoint": "/api/indicadores.json", "schemaUrl": "/api/schemas/indicadores.schema.json", "unidadConteo": { "es": "bloques", "en": "groups" }, "camposClave": ["ilia2025", "comparativaRegional", "dgi2025", "ourdata2025", "kpisHero"], "notaInterpretacion": { "es": "ilia2025 y cada fila de comparativaRegional declaran edición y URL del ILIA. Las demás fuentes de cada fila respaldan sus hitos o contexto y no sustituyen la fuente del puntaje.", "en": "ilia2025 and every comparativaRegional row declare the ILIA edition and URL. Other row sources support milestones or context and do not replace the score source." } },
     { "id": "brechas", "endpoint": "/api/brechas.json", "schemaUrl": "/api/schemas/brechas.schema.json", "unidadConteo": { "es": "brechas", "en": "gaps" }, "camposClave": ["id", "capacidad", "paisReferencia", "evidenciaReferencia", "estadoCR", "porQueImporta", "fuenteUrl", "fuenteUrlAlcance"], "notaInterpretacion": { "es": "fuenteUrl respalda el referente internacional. estadoCR es una síntesis fechada del corpus costarricense declarado en procedencia, no una prueba de inexistencia absoluta; porQueImporta es interpretación editorial.", "en": "fuenteUrl supports the international benchmark. estadoCR is a dated synthesis of the Costa Rican corpus declared under provenance, not proof of absolute nonexistence; porQueImporta is editorial interpretation." } },
     { "id": "enia-acciones", "endpoint": "/api/enia-acciones.json", "schemaUrl": "/api/schemas/enia-acciones.schema.json", "unidadConteo": { "es": "registros fuente", "en": "source records" }, "camposClave": ["fechaCorte", "fuente", "resumen", "resultados[].codigo", "resultados[].intervenciones[].id", "resultados[].intervenciones[].estadoEjecucion", "resultados[].intervenciones[].cruceCatalogo"], "notaInterpretacion": { "es": "Los compromisos, metas e indicadores transcriben el plan oficial; no constituyen evidencia de ejecución. estadoEjecucion y cruceCatalogo son evaluaciones editoriales separadas.", "en": "Commitments, targets and indicators transcribe the official plan and are not evidence of execution. estadoEjecucion and cruceCatalogo are separate editorial assessments." } },

@@ -1,5 +1,17 @@
 [
   {
+    "fecha": "2026-08-23",
+    "tipo": "recurso",
+    "actualizacion": {
+      "es": "Se cierra una auditoría de consistencia metodológica: la adopción verificada exige técnica confirmada y una fuente primaria para ejecución; Hacienda incorpora evidencia directa del uso continuo del E-IAD; la matriz distingue no determinado de no aplica; los vacíos relevantes requieren pregunta o próxima revisión; y se corrigen etiquetas de fuentes, producción, interpretación, instituciones e idioma del consentimiento. La API abre una release nueva y conserva R8 sin cambios.",
+      "en": "A methodological-consistency audit is completed: verified adoption requires a confirmed technique and a primary source for execution; the Finance Ministry record adds direct evidence of continued E-IAD use; the matrix separates undetermined from not applicable; material gaps require an open question or next review; and labels for sources, production, interpretation, institutions and consent language are corrected. The API opens a new release while preserving R8 unchanged."
+    },
+    "fuente": {
+      "es": "Plan de consistencia metodológica y editorial del Observatorio, corte 23-ago-2026",
+      "en": "Observatory methodological and editorial consistency plan, cutoff Aug 23, 2026"
+    }
+  },
+  {
     "fecha": "2026-08-22",
     "tipo": "recurso",
     "actualizacion": {

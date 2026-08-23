@@ -44,13 +44,21 @@ export function Indicadores({
           </p>
           <div className="mt-8 sm:pl-[4.5rem]">
             <ChartILIATabs locale={locale} t={t} />
-            <p className="mt-7 max-w-3xl border-l-2 border-editorial-accent pl-4 text-sm leading-relaxed text-editorial-muted">
-            {t.indicadores.brechaPre}{' '}
-            <span className="font-semibold text-editorial-ink">
-              {brecha} {t.indicadores.brechaPuntos}
-            </span>
-            . {t.indicadores.brechaPost}
+            <p className="mt-7 max-w-3xl text-sm leading-relaxed text-editorial-muted">
+              {t.indicadores.brechaPre}{' '}
+              <span className="font-semibold text-editorial-ink">
+                {brecha} {t.indicadores.brechaPuntos}
+              </span>
+              .
             </p>
+            <aside className="mt-4 max-w-3xl border-l-2 border-editorial-accent pl-4">
+              <p className="text-[0.68rem] font-semibold uppercase tracking-[0.1em] text-editorial-accent">
+                {t.indicadores.lecturaObservatorioLabel}
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-editorial-muted">
+                {t.indicadores.brechaPost}
+              </p>
+            </aside>
           </div>
         </section>
 

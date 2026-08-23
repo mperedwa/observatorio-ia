@@ -1,0 +1,159 @@
+{
+  "id": "2026-08-23-r9",
+  "date": "2026-08-23",
+  "title": {
+    "es": "Corte R9 de consistencia metodológica",
+    "en": "R9 methodological consistency release"
+  },
+  "immutable": true,
+  "applicationVersion": "0.1.0",
+  "source": "https://observatorioia.org",
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "datasets": [
+    {
+      "id": "proyectos",
+      "url": "/api/releases/2026-08-23-r9/proyectos.json",
+      "schemaUrl": "/api/releases/2026-08-23-r9/schemas/proyectos.schema.json",
+      "dataSchemaUrl": "/api/releases/2026-08-23-r9/schemas/proyectos-data.schema.json",
+      "count": 29,
+      "lastUpdate": "2026-08-23T00:00:00.000Z",
+      "bytes": 152669,
+      "sha256": "bbbc834a4f781f93bb6e3600c73a631c1924f47cda97a0f27940af57534c10cc",
+      "schemaSha256": "2389ca52fa2c697c219da00719ea3233d1a619975d0534e2eb001267fce646b2",
+      "dataSchemaSha256": "557da637b2a362948cbb5e2c1281f3ec307436b55bb224ae05921d98c5994da2"
+    },
+    {
+      "id": "instituciones",
+      "url": "/api/releases/2026-08-23-r9/instituciones.json",
+      "schemaUrl": "/api/releases/2026-08-23-r9/schemas/instituciones.schema.json",
+      "dataSchemaUrl": "/api/releases/2026-08-23-r9/schemas/instituciones-data.schema.json",
+      "count": 9,
+      "lastUpdate": "2026-08-21T00:00:00.000Z",
+      "bytes": 16516,
+      "sha256": "b8ff9f04c3b88898a6ac63e281a0a53ea79b9d814d0f52d604f1123916c57e53",
+      "schemaSha256": "2b08707d6cedec7b33bed4076ac96d9cc27b23f5927d75a8a6d43e40ee82025f",
+      "dataSchemaSha256": "180ee8399a24e6eddb3c83f69b6fc77a197098adfbbdba1598b06411ade772c3"
+    },
+    {
+      "id": "legislacion",
+      "url": "/api/releases/2026-08-23-r9/legislacion.json",
+      "schemaUrl": "/api/releases/2026-08-23-r9/schemas/legislacion.schema.json",
+      "dataSchemaUrl": "/api/releases/2026-08-23-r9/schemas/legislacion-data.schema.json",
+      "count": 7,
+      "lastUpdate": "2026-08-21T00:00:00.000Z",
+      "bytes": 13809,
+      "sha256": "1a60c079cccf564c394f16a19992abd65895235932aa91153b8b37ed40f5d559",
+      "schemaSha256": "deb795d37c6dbb14bada341398cf286d08954617f8cc511cf8f8b6dd706baed6",
+      "dataSchemaSha256": "e9ea09f68506fbf3964a6ef5aa65090a72799fc305bfc3b2e2e323b5be3f7d02"
+    },
+    {
+      "id": "indicadores",
+      "url": "/api/releases/2026-08-23-r9/indicadores.json",
+      "schemaUrl": "/api/releases/2026-08-23-r9/schemas/indicadores.schema.json",
+      "dataSchemaUrl": "/api/releases/2026-08-23-r9/schemas/indicadores-data.schema.json",
+      "count": 5,
+      "lastUpdate": "2026-08-23T00:00:00.000Z",
+      "bytes": 16569,
+      "sha256": "45ed56147d8a1d0c0a75b760facaebf6f4f9ad11e47a7dcc9585f6bdd6be3be1",
+      "schemaSha256": "80f796aa55be5d822f50f3fa2be87a2134a6f337f4e742003ea06b46a77a348e",
+      "dataSchemaSha256": "f6d4dca7ef22462ec682be1011e0edba827df28e0a41dbac2c383644f0e74fb4"
+    },
+    {
+      "id": "brechas",
+      "url": "/api/releases/2026-08-23-r9/brechas.json",
+      "schemaUrl": "/api/releases/2026-08-23-r9/schemas/brechas.schema.json",
+      "dataSchemaUrl": "/api/releases/2026-08-23-r9/schemas/brechas-data.schema.json",
+      "count": 7,
+      "lastUpdate": "2026-08-22T00:00:00.000Z",
+      "bytes": 13745,
+      "sha256": "728a1175d70b76075f2862683a4f74d4b62f14ba46282905c5eac570cd8a6dfd",
+      "schemaSha256": "e05bb6739a21b99a2ee7a7189fac043d4185deeada146ab3d6caa024789f9b2e",
+      "dataSchemaSha256": "b6cefc6c67ef8de7522b7267892ee7fd0b89e0daad987994069cbf2e2be54b3d"
+    },
+    {
+      "id": "enia-acciones",
+      "url": "/api/releases/2026-08-23-r9/enia-acciones.json",
+      "schemaUrl": "/api/releases/2026-08-23-r9/schemas/enia-acciones.schema.json",
+      "dataSchemaUrl": "/api/releases/2026-08-23-r9/schemas/enia-acciones-data.schema.json",
+      "count": 129,
+      "lastUpdate": "2026-08-21T00:00:00.000Z",
+      "bytes": 266991,
+      "sha256": "1ea16ef0228e69bec61d1d0f531972751e8b67a08660ad7ae8e580bb0afd37cd",
+      "schemaSha256": "33d73f96a238dc051767213e0de1dd9b996620deaa91b9f01726b1792d08087c",
+      "dataSchemaSha256": "cb279832395413e6ebbd96256d2393541139763d445cce2779a13cf703d4be27"
+    },
+    {
+      "id": "monitoreo",
+      "url": "/api/releases/2026-08-23-r9/monitoreo.json",
+      "schemaUrl": "/api/releases/2026-08-23-r9/schemas/monitoreo.schema.json",
+      "dataSchemaUrl": "/api/releases/2026-08-23-r9/schemas/monitoreo-data.schema.json",
+      "count": 8,
+      "lastUpdate": "2026-08-21T00:00:00.000Z",
+      "bytes": 17240,
+      "sha256": "fd60fe69250d15bf5e809ad30d52ed6df777179d3669c943dfd4f26c6f26f7ba",
+      "schemaSha256": "42cd5d7df0170cfe9c5b08f10fecd2861eda5091cd0288981f1bf28d0349d15e",
+      "dataSchemaSha256": "a26d28eab161a472cc1264cc76a09c443e2a1e8df257eb12dc7b3022936f52f8"
+    },
+    {
+      "id": "marco-pais",
+      "url": "/api/releases/2026-08-23-r9/marco-pais.json",
+      "schemaUrl": "/api/releases/2026-08-23-r9/schemas/marco-pais.schema.json",
+      "dataSchemaUrl": "/api/releases/2026-08-23-r9/schemas/marco-pais-data.schema.json",
+      "count": 4,
+      "lastUpdate": "2026-08-22T00:00:00.000Z",
+      "bytes": 20745,
+      "sha256": "38a98bfb149b443c0a4c7947b745ea979f5968f1ef81baee228746fa5d588af7",
+      "schemaSha256": "bc6cb55c2a026b3e707468c2c7094a1f2460acee47cfe89821e1bb1e3b9affe8",
+      "dataSchemaSha256": "c5fbfce7f5b45710f5bc73cef67229b13c588cbb1643c6e5c416e3ed08e9848a"
+    },
+    {
+      "id": "historial",
+      "url": "/api/releases/2026-08-23-r9/historial.json",
+      "schemaUrl": "/api/releases/2026-08-23-r9/schemas/historial.schema.json",
+      "dataSchemaUrl": "/api/releases/2026-08-23-r9/schemas/historial-data.schema.json",
+      "count": 44,
+      "lastUpdate": "2026-08-23T00:00:00.000Z",
+      "bytes": 49833,
+      "sha256": "acdb60322628d42a11625135b6e870330250a43108c584407dffc1a7955b4f91",
+      "schemaSha256": "3ca559ef7c490ad24f186489e59c29e3c5e687e1a24b2ba33f6a7741579b5083",
+      "dataSchemaSha256": "6f6502b5706210d1eee507906e1b48286df6e06239d422b7a12c56094c84dcdd"
+    },
+    {
+      "id": "coyuntura",
+      "url": "/api/releases/2026-08-23-r9/coyuntura.json",
+      "schemaUrl": "/api/releases/2026-08-23-r9/schemas/coyuntura.schema.json",
+      "dataSchemaUrl": "/api/releases/2026-08-23-r9/schemas/coyuntura-data.schema.json",
+      "count": 2,
+      "lastUpdate": "2026-08-23T00:00:00.000Z",
+      "bytes": 11450,
+      "sha256": "f3eb6b5f1354d2cb3e87fd6df1f5796e33fda45729255a969c7139a08f58cc46",
+      "schemaSha256": "4753bbf8908a328789e0eda6232124cf37eac06084b1b4baf7b4769a248678ca",
+      "dataSchemaSha256": "5e85c53fd44e5b15a4412394cb7a061d57c8c4b76c7602177bc5f0d5850bff64"
+    },
+    {
+      "id": "recursos",
+      "url": "/api/releases/2026-08-23-r9/recursos.json",
+      "schemaUrl": "/api/releases/2026-08-23-r9/schemas/recursos.schema.json",
+      "dataSchemaUrl": "/api/releases/2026-08-23-r9/schemas/recursos-data.schema.json",
+      "count": 16,
+      "lastUpdate": "2026-08-22T00:00:00.000Z",
+      "bytes": 9003,
+      "sha256": "2bbe8856241092a3e9f105ebce1f1e048f9305f40aeb2995f48e7ef569c87b35",
+      "schemaSha256": "f2aab0195bccac064c050e3271353b0282459f45873928e260cceb9448b214a5",
+      "dataSchemaSha256": "93913a2d7c522cf20346285b2b728819fe22d8e21c658f34c201a46cdc7a7c9e"
+    },
+    {
+      "id": "codebook",
+      "url": "/api/releases/2026-08-23-r9/codebook.json",
+      "schemaUrl": "/api/releases/2026-08-23-r9/schemas/codebook.schema.json",
+      "dataSchemaUrl": "/api/releases/2026-08-23-r9/schemas/codebook-data.schema.json",
+      "count": 11,
+      "lastUpdate": "2026-08-23T00:00:00.000Z",
+      "bytes": 30702,
+      "sha256": "a89502488106a07a4f686967e9b39d66abd0a5a21b0f53c931434f041144c8a7",
+      "schemaSha256": "92f4efd89fd0da3f81a764bc3fe56ddd9a1f9c5568e6e7dd48da89e83bbb4209",
+      "dataSchemaSha256": "839fc981313273f14d4d3bc7808e578b79c443f6967d7354c7a31f2c939051c4"
+    }
+  ]
+}

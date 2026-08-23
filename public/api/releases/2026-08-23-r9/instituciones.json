@@ -1,0 +1,243 @@
+{
+  "version": "0.1.0",
+  "lastUpdate": "2026-08-21T00:00:00.000Z",
+  "count": 9,
+  "source": "https://observatorioia.org",
+  "license": "CC BY 4.0",
+  "data": [
+    {
+      "id": "poder-judicial",
+      "nombre": {
+        "es": "Poder Judicial",
+        "en": "Judicial Branch"
+      },
+      "nombreCorto": {
+        "es": "Poder Judicial",
+        "en": "Judicial Branch"
+      },
+      "tipo": "judicial",
+      "url": "https://pj.poder-judicial.go.cr/",
+      "proyectosActivos": 9,
+      "resumen": {
+        "es": "Nueve iniciativas documentadas: tres adopciones verificadas, dos sistemas en seguimiento y cuatro registros de investigación, capacidades o digitalización sin IA confirmada.",
+        "en": "Nine documented initiatives: three verified adoptions, two systems under review, and four research, capacity-building or digitization records without confirmed AI."
+      },
+      "descripcion": {
+        "es": "El catálogo confirma un piloto de clasificación documental, un modelo de aprendizaje automático para presupuesto y el uso de Nymiz. ChatbotPJ y el chat de CONAMAJ permanecen en seguimiento. La investigación OIJ–TEC, el análisis de sentencias, Giro Continuo y la inducción de Sala Primera se conservan como contexto, sin contarlos como sistemas de IA adoptados.",
+        "en": "The catalog confirms a document-classification pilot, a machine-learning budget model and the use of Nymiz. ChatbotPJ and the CONAMAJ chat remain under review. OIJ–TEC research, rulings analysis, Continuous Disbursement and the First Chamber induction are retained as context without counting them as adopted AI systems."
+      },
+      "lecciones": {
+        "es": "La amplitud de una cartera no equivale al número de sistemas de IA en operación. Separar automatización, investigación, formación y sistemas confirmados evita atribuir IA o resultados a iniciativas que las fuentes no conectan.",
+        "en": "Portfolio breadth is not the same as the number of operational AI systems. Separating automation, research, training and confirmed systems prevents AI or results from being attributed to initiatives that the sources do not connect."
+      }
+    },
+    {
+      "id": "ccss",
+      "nombre": {
+        "es": "Caja Costarricense de Seguro Social",
+        "en": "Costa Rican Social Security Fund"
+      },
+      "nombreCorto": {
+        "es": "CCSS",
+        "en": "CCSS"
+      },
+      "tipo": "autonoma",
+      "url": "https://www.ccss.sa.cr/",
+      "proyectosActivos": 7,
+      "resumen": {
+        "es": "Siete iniciativas documentadas: LIDIA como adopción verificada; AIDA, depuración de listas y monitoreo logístico en seguimiento; EDUS, REDIMED y formación TEC-CCSS como ecosistema y capacidades.",
+        "en": "Seven documented initiatives: LIDIA as verified adoption; AIDA, wait-list cleanup and logistics monitoring under review; and EDUS, REDIMED and TEC-CCSS training as ecosystem and capabilities."
+      },
+      "descripcion": {
+        "es": "EDUS funciona como infraestructura digital y LIDIA utiliza sus datos en modelos predictivos con piloto confirmado. AIDA fue anunciada para integrarse a EDUS, pero no se localizó evidencia posterior de inicio de uso. REDIMED mezcla una red parcialmente desplegada con un componente de IA en validación; los otros dos componentes reportados requieren mayor evidencia técnica o primaria.",
+        "en": "EDUS operates as digital infrastructure, and LIDIA uses its data in predictive models with a confirmed pilot. AIDA was announced for integration with EDUS, but no later evidence of use was found. REDIMED combines a partially deployed network with an AI component under validation; the other two reported components require stronger technical or primary evidence."
+      },
+      "lecciones": {
+        "es": "La infraestructura, la formación y un anuncio de despliegue son piezas relevantes, pero no prueban por sí solas que un sistema clínico esté operativo. Las fichas separan cada componente y publican los resultados según la naturaleza de su fuente.",
+        "en": "Infrastructure, training and a deployment announcement are relevant, but they do not by themselves prove that a clinical system is operational. The records separate each component and publish results according to the nature of their source."
+      }
+    },
+    {
+      "id": "hacienda",
+      "nombre": {
+        "es": "Ministerio de Hacienda",
+        "en": "Ministry of Finance"
+      },
+      "nombreCorto": {
+        "es": "Hacienda",
+        "en": "Finance"
+      },
+      "tipo": "ministerio",
+      "url": "https://www.hacienda.go.cr/",
+      "proyectosActivos": 3,
+      "resumen": {
+        "es": "Tres iniciativas diferenciadas: detección de anomalías como adopción verificada, el asistente para contribuyentes en seguimiento y TRIBU-CR como infraestructura digital del ecosistema.",
+        "en": "Three distinct initiatives: anomaly detection as verified adoption, the taxpayer assistant under review, and TRIBU-CR as ecosystem digital infrastructure."
+      },
+      "descripcion": {
+        "es": "La solución de detección de anomalías tiene técnica, ejecución y revisión humana documentadas, además de un resultado fiscal reportado. TRIBU-CR está operativa como plataforma tributaria, pero la fuente oficial consultada no identifica un componente concreto de IA. Infoyasistencia presta servicio, aunque no publica su técnica ni métricas.",
+        "en": "The anomaly-detection solution has documented technique, execution and human review, plus a reported fiscal result. TRIBU-CR is operational as a tax platform, but the official source reviewed does not identify a specific AI component. Infoyasistencia provides a service, although its technique and metrics are not published."
+      },
+      "lecciones": {
+        "es": "Separar la plataforma tributaria, el asistente y el modelo de anomalías permite atribuir evidencia y resultados al componente correcto, sin asumir que toda la modernización digital utiliza IA.",
+        "en": "Separating the tax platform, assistant and anomaly model keeps evidence and results attached to the correct component without assuming that all digital modernization uses AI."
+      }
+    },
+    {
+      "id": "mep",
+      "nombre": {
+        "es": "Ministerio de Educación Pública",
+        "en": "Ministry of Public Education"
+      },
+      "nombreCorto": {
+        "es": "MEP",
+        "en": "MEP"
+      },
+      "tipo": "ministerio",
+      "url": "https://www.mep.go.cr/",
+      "proyectosActivos": 1,
+      "resumen": {
+        "es": "Especialización técnica de tres años en IA y aprendizaje automático, iniciada en cuatro colegios técnicos profesionales en 2023.",
+        "en": "Three-year technical specialization in AI and machine learning, launched in four technical vocational schools in 2023."
+      },
+      "descripcion": {
+        "es": "La ficha documenta un programa educativo sobre aprendizaje automático, ética y aspectos legales de IA. Se clasifica como capacidad del ecosistema porque forma estudiantes y no demuestra que el MEP utilice un sistema de IA para prestar un servicio público.",
+        "en": "The record documents an educational program covering machine learning, ethics and legal aspects of AI. It is classified as an ecosystem capability because it trains students and does not demonstrate that MEP uses an AI system to deliver a public service."
+      },
+      "lecciones": {
+        "es": "Enseñar IA y operar IA son hechos distintos. El programa es relevante para la capacidad nacional, pero no entra en el contador de adopción institucional.",
+        "en": "Teaching AI and operating AI are different facts. The program is relevant to national capacity but does not enter the institutional adoption count."
+      }
+    },
+    {
+      "id": "micitt",
+      "nombre": {
+        "es": "Ministerio de Ciencia, Innovación, Tecnología y Telecomunicaciones",
+        "en": "Ministry of Science, Innovation, Technology and Telecommunications"
+      },
+      "nombreCorto": {
+        "es": "MICITT",
+        "en": "MICITT"
+      },
+      "tipo": "ministerio",
+      "url": "https://www.micitt.go.cr/",
+      "proyectosActivos": 3,
+      "resumen": {
+        "es": "Tres registros de ecosistema y capacidades: la red de formación LINC, el proyecto de interoperabilidad CONECTA en desarrollo y el programa agrícola AgroBoost.",
+        "en": "Three ecosystem and capability records: the LINC training network, the CONECTA interoperability project under development, and the AgroBoost agricultural program."
+      },
+      "descripcion": {
+        "es": "Las tres fichas visibles documentan formación, infraestructura de interoperabilidad y transferencia tecnológica. LINC reporta personas capacitadas; CONECTA confirma un diagnóstico con 30 instituciones y una hoja de ruta, no integraciones operativas en esas 30 entidades; AgroBoost no publica un sistema de IA específico reproducible.",
+        "en": "The three visible records document training, interoperability infrastructure and technology transfer. LINC reports people trained; CONECTA confirms a diagnostic exercise with 30 institutions and a roadmap, not operational integrations across those 30 entities; AgroBoost does not publish a reproducible, specific AI system."
+      },
+      "lecciones": {
+        "es": "Una meta, una hoja de ruta o la participación en un diagnóstico no prueban ejecución completa. El catálogo conserva estos hitos sin convertirlos en sistemas operativos ni en integraciones ya realizadas.",
+        "en": "A target, roadmap or participation in a diagnostic exercise does not prove complete execution. The catalog retains these milestones without turning them into operational systems or completed integrations."
+      }
+    },
+    {
+      "id": "ucr",
+      "nombre": {
+        "es": "Universidad de Costa Rica",
+        "en": "University of Costa Rica"
+      },
+      "nombreCorto": {
+        "es": "UCR",
+        "en": "UCR"
+      },
+      "tipo": "universidad",
+      "url": "https://www.ucr.ac.cr/",
+      "proyectosActivos": 2,
+      "resumen": {
+        "es": "Dos iniciativas de ecosistema: investigación del CITIC sobre IA en ingeniería de software y el proyecto Erasmus+ Ethical AI sobre capacidades y gobernanza en educación superior.",
+        "en": "Two ecosystem initiatives: CITIC research on AI in software engineering and the Erasmus+ Ethical AI project on higher-education capabilities and governance."
+      },
+      "descripcion": {
+        "es": "El proyecto del CITIC, activo entre 2025 y 2028, diseña y evalúa estrategias de IA para requisitos, código, calidad y pruebas de software. Ethical AI desarrolla herramientas y capacidades para el uso ético de IA en educación superior. Ninguna ficha documenta un sistema desplegado por la UCR para prestar un servicio público.",
+        "en": "The CITIC project, active from 2025 to 2028, designs and evaluates AI strategies for requirements, code, quality and software testing. Ethical AI develops tools and capabilities for ethical AI use in higher education. Neither record documents a system deployed by UCR to deliver a public service."
+      },
+      "lecciones": {
+        "es": "La producción académica y las herramientas de gobernanza son resultados verificables de investigación y capacidades. Se presentan en su propia capa y no como adopción operativa del Estado.",
+        "en": "Academic outputs and governance tools are verifiable research and capability results. They are presented in their own layer rather than as operational State adoption."
+      }
+    },
+    {
+      "id": "cenat",
+      "nombre": {
+        "es": "Centro Nacional de Alta Tecnología",
+        "en": "National Center for High Technology"
+      },
+      "nombreCorto": {
+        "es": "CENAT",
+        "en": "CENAT"
+      },
+      "tipo": "investigacion",
+      "url": "https://cenat.ac.cr/",
+      "proyectosActivos": 2,
+      "resumen": {
+        "es": "Dos registros de ecosistema: la propuesta de Laboratorio Nacional de IA (LaNIA) y una investigación del CNCA con un prototipo para clasificar arritmias.",
+        "en": "Two ecosystem records: the proposed National AI Laboratory (LaNIA) and CNCA research with a prototype for arrhythmia classification."
+      },
+      "descripcion": {
+        "es": "LaNIA fue presentada como propuesta y plan piloto; no se localizó evidencia posterior de que entrara en operación como laboratorio nacional. El proyecto del CNCA documenta publicación y prototipo con aprendizaje automático, pero no validación clínica ni uso en pacientes.",
+        "en": "LaNIA was presented as a proposal and pilot plan; no later evidence was found showing that it entered operation as a national laboratory. The CNCA project documents a publication and machine-learning prototype, but not clinical validation or use in patients."
+      },
+      "lecciones": {
+        "es": "Una propuesta de laboratorio y un prototipo de investigación deben conservar su fase real. La ausencia de evidencia de operación o validación clínica se publica explícitamente.",
+        "en": "A laboratory proposal and a research prototype should retain their actual phase. The absence of operational or clinical-validation evidence is published explicitly."
+      }
+    },
+    {
+      "id": "inamu",
+      "nombre": {
+        "es": "Instituto Nacional de las Mujeres",
+        "en": "National Institute for Women"
+      },
+      "nombreCorto": {
+        "es": "INAMU",
+        "en": "INAMU"
+      },
+      "tipo": "autonoma",
+      "url": "https://www.inamu.go.cr/",
+      "proyectosActivos": 1,
+      "resumen": {
+        "es": "Una adopción verificada: Ela, una aplicación con chat de IA para información, orientación y atención inicial a mujeres durante las 24 horas.",
+        "en": "One verified adoption: Ela, an AI-chat application providing women with information, guidance and initial support around the clock."
+      },
+      "descripcion": {
+        "es": "Las fuentes institucionales confirman disponibilidad, GPT-4 Turbo, búsqueda de archivos y tratamiento de datos personales. La ficha separa esa evidencia de los resultados todavía no publicados sobre calidad, seguridad, uso y derivaciones.",
+        "en": "Institutional sources confirm availability, GPT-4 Turbo, file search and personal-data processing. The record separates that evidence from still-unpublished outcomes on quality, safety, usage and referrals."
+      },
+      "lecciones": {
+        "es": "En un servicio dirigido a personas potencialmente vulnerables, confirmar la técnica y la disponibilidad no sustituye la evidencia sobre desempeño, escalamiento humano y protección de datos.",
+        "en": "For a service aimed at potentially vulnerable users, confirming technique and availability does not replace evidence on performance, human escalation and data protection."
+      }
+    },
+    {
+      "id": "ins",
+      "nombre": {
+        "es": "Instituto Nacional de Seguros",
+        "en": "National Insurance Institute"
+      },
+      "nombreCorto": {
+        "es": "INS",
+        "en": "INS"
+      },
+      "tipo": "autonoma",
+      "url": "https://www.grupoins.com/",
+      "proyectosActivos": 1,
+      "resumen": {
+        "es": "Una iniciativa en seguimiento: automatización con IA reportada para reclamos e indemnizaciones de gastos médicos.",
+        "en": "One initiative under review: reported AI automation for medical-expense claims and reimbursements."
+      },
+      "descripcion": {
+        "es": "El INS reporta operación, volumen y mejoras de tiempo y eficiencia. La ficha no entra en adopción verificada porque las fuentes disponibles no identifican la técnica, las reglas de clasificación, la revisión humana ni las métricas de error.",
+        "en": "INS reports operation, volume and improvements in time and efficiency. The record does not qualify as verified adoption because available sources do not identify the technique, classification rules, human review or error metrics."
+      },
+      "lecciones": {
+        "es": "Un resultado institucional puede documentarse sin convertirlo en evaluación independiente. Publicar la naturaleza de la fuente y los campos no determinados mantiene visible ese límite.",
+        "en": "An institution-reported result can be documented without treating it as an independent evaluation. Publishing source nature and undetermined fields keeps that boundary visible."
+      }
+    }
+  ]
+}

@@ -194,29 +194,38 @@ export function Legislacion({
                     </div>
                   </dl>
 
-                  <div className="mt-6 border-t border-editorial-rule pt-4">
-                    <p className="text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-slate-500">
-                      {t.legislacion.fuentesOficialesLabel}
-                    </p>
-                    <div className="mt-2 flex flex-wrap gap-x-5 gap-y-2 text-sm">
-                      <a
-                        href={expediente.fuenteUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-semibold text-institucional-700 underline underline-offset-2 hover:text-institucional-900"
-                      >
-                        {t.legislacion.verFuente} ↗
-                      </a>
-                      <a
-                        href={expediente.fuenteEstadoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-semibold text-institucional-700 underline underline-offset-2 hover:text-institucional-900"
-                      >
-                        {t.legislacion.verEstadoOficial} ↗
-                      </a>
+                  <dl className="mt-6 grid gap-4 border-t border-editorial-rule pt-4 text-sm sm:grid-cols-2">
+                    <div>
+                      <dt className="text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-slate-500">
+                        {t.legislacion.fuenteOficialLabel}
+                      </dt>
+                      <dd className="mt-2">
+                        <a
+                          href={expediente.fuenteEstadoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-semibold text-institucional-700 underline underline-offset-2 hover:text-institucional-900"
+                        >
+                          {t.legislacion.verEstadoOficial} ↗
+                        </a>
+                      </dd>
                     </div>
-                  </div>
+                    <div>
+                      <dt className="text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-slate-500">
+                        {t.legislacion.referenciaComplementariaLabel}
+                      </dt>
+                      <dd className="mt-2">
+                        <a
+                          href={expediente.fuenteUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-semibold text-institucional-700 underline underline-offset-2 hover:text-institucional-900"
+                        >
+                          {t.legislacion.verFuente} ↗
+                        </a>
+                      </dd>
+                    </div>
+                  </dl>
                 </div>
               </article>
             ))}

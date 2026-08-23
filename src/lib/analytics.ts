@@ -4,6 +4,24 @@ import type { Locale } from '@/i18n/config';
 
 export const ANALYTICS_CONSENT_KEY = 'observatorioia.analytics-consent.v1';
 
+export const ANALYTICS_CONSENT_COPY: Record<
+  Locale,
+  { text: string; accept: string; reject: string; policy: string }
+> = {
+  es: {
+    text: 'Usamos analítica para entender qué contenidos resultan útiles. Google Analytics solo se activa con su permiso y no enviamos datos personales.',
+    accept: 'Aceptar analítica',
+    reject: 'Solo lo necesario',
+    policy: 'Privacidad',
+  },
+  en: {
+    text: 'We use analytics to understand which content is useful. Google Analytics only loads with your permission, and we do not send personal data.',
+    accept: 'Accept analytics',
+    reject: 'Necessary only',
+    policy: 'Privacy',
+  },
+};
+
 export type AnalyticsEventName =
   | 'content_open'
   | 'visualization_interaction'

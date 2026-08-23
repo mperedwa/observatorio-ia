@@ -19,6 +19,12 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { join } from 'node:path';
 import { computeCounters, type Counters } from './lib/counters';
+import {
+  encontrarErroresCompletitudMetodologica,
+  encontrarErroresTrazabilidad,
+  esAdopcionVerificada,
+  type CamposModeloEvidencia,
+} from '../src/data/modelo-evidencia';
 
 const ROOT = process.cwd();
 const SRC_DIR = join(ROOT, 'src', 'data', 'json');
@@ -31,11 +37,11 @@ const COUNTERS_TS = join(ROOT, 'src', 'data', 'counters.ts');
 const PKG = JSON.parse(readFileSync(join(ROOT, 'package.json'), 'utf8')) as { version: string };
 
 const DATA_RELEASE = {
-  id: '2026-08-22-r8',
-  date: '2026-08-22',
+  id: '2026-08-23-r9',
+  date: '2026-08-23',
   title: {
-    es: 'Corte R8 del producto público de datos',
-    en: 'R8 public data product release',
+    es: 'Corte R9 de consistencia metodológica',
+    en: 'R9 methodological consistency release',
   },
 } as const;
 const RELEASE_LOCK_PATH = join(RELEASES_OUT_DIR, DATA_RELEASE.id, 'release.lock');
@@ -135,7 +141,7 @@ const DATASETS: Dataset[] = [
     endpoint: '/api/proyectos.json',
     title: { es: 'Iniciativas', en: 'Initiatives' },
     countUnit: { es: 'iniciativas', en: 'initiatives' },
-    lastUpdate: '2026-08-21',
+    lastUpdate: '2026-08-23',
     description:
       'Catálogo de iniciativas relacionadas con IA en el sector público costarricense. Incluye sistemas, pilotos, planes y capacidades con descripción bilingüe ES/EN y una fuente pública consultada.',
     descriptionEs:
@@ -174,7 +180,7 @@ const DATASETS: Dataset[] = [
     endpoint: '/api/indicadores.json',
     title: { es: 'Indicadores', en: 'Indicators' },
     countUnit: { es: 'bloques', en: 'groups' },
-    lastUpdate: '2026-08-22',
+    lastUpdate: '2026-08-23',
     description:
       'Indicadores cuantitativos: ILIA 2025 (Índice Latinoamericano de IA), comparativa regional, KPIs hero del observatorio.',
     descriptionEs:
@@ -251,7 +257,7 @@ const DATASETS: Dataset[] = [
     endpoint: '/api/historial.json',
     title: { es: 'Historial editorial', en: 'Editorial history' },
     countUnit: { es: 'cambios publicados', en: 'published changes' },
-    lastUpdate: '2026-08-22',
+    lastUpdate: '2026-08-23',
     description:
       'Bitácora pública y bilingüe de cambios editoriales con fecha, tipo, fuente y commit cuando está disponible.',
     descriptionEs:
@@ -264,7 +270,7 @@ const DATASETS: Dataset[] = [
     endpoint: '/api/coyuntura.json',
     title: { es: 'Coyuntura', en: 'Current affairs' },
     countUnit: { es: 'notas', en: 'notes' },
-    lastUpdate: '2026-06-18',
+    lastUpdate: '2026-08-23',
     description:
       'Notas editoriales fechadas y trazables que aportan contexto sin sustituir estados o afirmaciones oficiales.',
     descriptionEs:
@@ -291,7 +297,7 @@ const DATASETS: Dataset[] = [
     endpoint: '/api/codebook.json',
     title: { es: 'Codebook y metodología', en: 'Codebook and methodology' },
     countUnit: { es: 'datasets documentados', en: 'documented datasets' },
-    lastUpdate: '2026-08-22',
+    lastUpdate: '2026-08-23',
     description:
       'Diccionario bilingüe del contrato, vocabularios, regla de adopción verificada, procedencia y límites de interpretación.',
     descriptionEs:
@@ -428,7 +434,7 @@ const API_INDEX_COPY = {
     infrastructureText:
       'Los schemas públicos, la release fechada y las descargas con checksum permiten repetir un análisis sin depender del estado futuro del sitio.',
     schemasTitle: 'Índice de schemas',
-    releaseTitle: 'Release R8',
+    releaseTitle: 'Release R9',
     downloadsTitle: 'Descargas y CSV',
     downloadFilesLabel: 'Archivos directos de la release',
     bundleTitle: 'Bundle JSON completo',
@@ -452,7 +458,8 @@ const API_INDEX_COPY = {
       'Los textos públicos se entregan como objetos bilingües con campos es y en.',
       'En el catálogo, existencia, ejecución, técnica de IA, uso operativo, resultados y gobernanza se evalúan por separado.',
       'No determinado significa que la evidencia pública disponible no permite confirmar ni descartar una afirmación.',
-      'Las fuentes indican qué dimensiones respaldan. Una noticia puede orientar la investigación, pero no sustituye una fuente primaria al confirmar ejecución.',
+      'No aplica significa que una dimensión no corresponde al tipo de iniciativa documentada; no expresa una investigación pendiente.',
+      'Las fuentes indican qué dimensiones respaldan. Confirmar ejecución exige al menos una fuente primaria oficial o de acceso a la información; la prensa y las fuentes de proveedores solo pueden complementar ese respaldo.',
     ],
     examplesKicker: '03 / Consultar',
     examplesTitle: 'Ejemplos reproducibles',
@@ -516,7 +523,7 @@ const API_INDEX_COPY = {
     infrastructureText:
       'Public schemas, a dated release and checksum-backed downloads let readers reproduce an analysis without depending on the future state of the site.',
     schemasTitle: 'Schema index',
-    releaseTitle: 'R8 release',
+    releaseTitle: 'R9 release',
     downloadsTitle: 'Downloads and CSV',
     downloadFilesLabel: 'Direct release files',
     bundleTitle: 'Complete JSON bundle',
@@ -540,7 +547,8 @@ const API_INDEX_COPY = {
       'Public text is delivered as bilingual objects with es and en fields.',
       'In the catalog, existence, execution, AI technique, operational use, results and governance are assessed separately.',
       'Undetermined means the available public evidence cannot confirm or rule out a claim.',
-      'Sources identify the dimensions they support. News coverage can guide research but does not replace a primary source when confirming execution.',
+      'Not applicable means a dimension does not correspond to the documented initiative type; it is not an open research gap.',
+      'Sources identify the dimensions they support. Confirming execution requires at least one official primary or freedom-of-information source; news and vendor sources may only supplement that evidence.',
     ],
     examplesKicker: '03 / Query',
     examplesTitle: 'Reproducible examples',
@@ -638,7 +646,20 @@ function buildIndexHtml(endpoints: ApiIndexEndpoint[], locale: ApiIndexLocale): 
     select(.faseImplementacion == "piloto" or
            .faseImplementacion == "operativo") |
     select(.estadoIA == "confirmada") |
+    select(.evaluacion.tecnicaIA.estado == "confirmado") |
     select(.evaluacion.ejecucion.estado == "confirmado") |
+    select(. as $iniciativa |
+      [.fuentes[] |
+        select(
+          (.tipoFuente == "primaria-oficial" or
+           .tipoFuente == "acceso-informacion") and
+          (.respalda | index("ejecucion")) and
+          (.id as $fuenteId |
+            $iniciativa.evaluacion.ejecucion.fuenteIds |
+            index($fuenteId))
+        )
+      ] | length > 0
+    ) |
     {id, titulo, faseImplementacion, fechaUltimaVerificacion}'`;
   const jsExample = `const response = await fetch(
   'https://observatorioia.org/api/proyectos.json'
@@ -1063,6 +1084,21 @@ function validateProyectos(): void {
     }
 
     const esModeloV2 = p.modeloVersion === 2;
+    if (esModeloV2) {
+      const iniciativa = p as unknown as CamposModeloEvidencia;
+      for (const error of encontrarErroresTrazabilidad(iniciativa)) {
+        errors.push(`  - ${id}: trazabilidad: ${error}`);
+      }
+      for (const error of encontrarErroresCompletitudMetodologica(iniciativa)) {
+        errors.push(`  - ${id}: completitud metodológica: ${error}`);
+      }
+      if (p.estadoCatalogo === 'verificado' && !esAdopcionVerificada(iniciativa)) {
+        errors.push(
+          `  - ${id}: estadoCatalogo=verificado no satisface la regla de adopción verificada`,
+        );
+      }
+    }
+
     const resultado = p.resultado as Record<string, unknown> | undefined;
     if (!resultado || typeof resultado !== 'object') {
       if (!esModeloV2) {
@@ -1083,14 +1119,15 @@ function validateProyectos(): void {
       'validateProyectos FAILED — corregí proyectos.json antes de pushear:',
       ...errors,
       '',
-      'Reglas: cada entrada debe tener `desde`; las fichas legacy también requieren `resultado` bilingüe.',
+      'Reglas: cada entrada debe tener `desde`; las fichas v2 deben cumplir trazabilidad, seguimiento de vacíos y el contrato de adopción verificada.',
+      'Las fichas legacy también requieren `resultado` bilingüe.',
       'En modelo v2, `resultado` se omite cuando no hay resultados públicos verificados.',
       'Ver: src/data/json/proyectos.json + tooltips de TimelineAdopcion.',
     ].join('\n');
     throw new Error(msg);
   }
   console.log(
-    `  ✓ validateProyectos: ${data.length} entradas con fecha base y resultados v2 opcionales`,
+    `  ✓ validateProyectos: ${data.length} entradas con trazabilidad, vacíos y regla de adopción validados`,
   );
 }
 
@@ -1322,7 +1359,7 @@ function buildCsvArtifacts(generated: GeneratedDataset[]): DownloadArtifact[] {
     comision_es: expediente.comision.es,
     comision_en: expediente.comision.en,
     presentado: expediente.presentado,
-    fuente: expediente.fuenteUrl,
+    referencia_complementaria: expediente.fuenteUrl,
     fuente_estado_oficial: expediente.fuenteEstadoUrl,
     fecha_ultima_verificacion: expediente.fechaUltimaVerificacion,
   }));

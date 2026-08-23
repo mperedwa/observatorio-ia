@@ -3,29 +3,16 @@
 import Script from 'next/script';
 import { useEffect, useState } from 'react';
 import {
+  ANALYTICS_CONSENT_COPY,
   ANALYTICS_CONSENT_KEY,
   localeFromPath,
   trackEvent,
   type AnalyticsEventName,
   type AnalyticsEventParams,
 } from '@/lib/analytics';
+import type { Locale } from '@/i18n/config';
 
 type Consent = 'granted' | 'denied' | null;
-
-const copy = {
-  es: {
-    text: 'Usamos analítica para entender qué contenidos resultan útiles. Google Analytics solo se activa con su permiso y no enviamos datos personales.',
-    accept: 'Aceptar analítica',
-    reject: 'Solo lo necesario',
-    policy: 'Privacidad',
-  },
-  en: {
-    text: 'We use analytics to understand which content is useful. Google Analytics only loads with your permission, and we do not send personal data.',
-    accept: 'Accept analytics',
-    reject: 'Necessary only',
-    policy: 'Privacy',
-  },
-} as const;
 
 function classifyAnchor(anchor: HTMLAnchorElement): { name: AnalyticsEventName; params: Partial<AnalyticsEventParams> } | null {
   const href = anchor.getAttribute('href');
@@ -60,12 +47,16 @@ function classifyAnchor(anchor: HTMLAnchorElement): { name: AnalyticsEventName; 
   return null;
 }
 
-export function AnalyticsManager({ measurementId }: { measurementId?: string }) {
+export function AnalyticsManager({
+  measurementId,
+  locale,
+}: {
+  measurementId?: string;
+  locale: Locale;
+}) {
   const [consent, setConsent] = useState<Consent>(null);
-  const [locale, setLocale] = useState<'es' | 'en'>('es');
 
   useEffect(() => {
-    setLocale(localeFromPath(window.location.pathname));
     const stored = localStorage.getItem(ANALYTICS_CONSENT_KEY);
     setConsent(stored === 'granted' || stored === 'denied' ? stored : null);
   }, []);
@@ -126,14 +117,14 @@ export function AnalyticsManager({ measurementId }: { measurementId?: string }) 
         </>
       )}
       {measurementId && consent === null && (
-        <aside className="fixed inset-x-4 bottom-4 z-[100] mx-auto max-w-3xl rounded-lg border border-slate-300 bg-white p-4 shadow-xl" aria-label={copy[locale].policy}>
+        <aside className="fixed inset-x-4 bottom-4 z-[100] mx-auto max-w-3xl rounded-lg border border-slate-300 bg-white p-4 shadow-xl" aria-label={ANALYTICS_CONSENT_COPY[locale].policy}>
           <p className="text-sm text-slate-700">
-            {copy[locale].text}{' '}
-            <a href={`/${locale}/privacidad/`} className="font-medium text-institucional-700 underline underline-offset-2">{copy[locale].policy}</a>
+            {ANALYTICS_CONSENT_COPY[locale].text}{' '}
+            <a href={`/${locale}/privacidad/`} className="font-medium text-institucional-700 underline underline-offset-2">{ANALYTICS_CONSENT_COPY[locale].policy}</a>
           </p>
           <div className="mt-3 flex flex-wrap gap-2">
-            <button type="button" onClick={() => choose('granted')} className="rounded-md bg-institucional-700 px-3 py-2 text-sm font-semibold text-white hover:bg-institucional-800">{copy[locale].accept}</button>
-            <button type="button" onClick={() => choose('denied')} className="rounded-md border border-slate-300 px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50">{copy[locale].reject}</button>
+            <button type="button" onClick={() => choose('granted')} className="rounded-md bg-institucional-700 px-3 py-2 text-sm font-semibold text-white hover:bg-institucional-800">{ANALYTICS_CONSENT_COPY[locale].accept}</button>
+            <button type="button" onClick={() => choose('denied')} className="rounded-md border border-slate-300 px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50">{ANALYTICS_CONSENT_COPY[locale].reject}</button>
           </div>
         </aside>
       )}

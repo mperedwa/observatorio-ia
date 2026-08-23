@@ -15,6 +15,7 @@ import {
   TIPOS_RELACION,
   MODELO_EVIDENCIA_VERSION,
   esAdopcionVerificada,
+  encontrarErroresCompletitudMetodologica,
   encontrarErroresTrazabilidad,
   type CamposModeloEvidencia,
   type RelacionIniciativa,
@@ -223,7 +224,9 @@ export function crossCheck(): boolean {
     { campo: 'tipoIniciativa', operador: 'uno-de', valores: ['sistema-ia', 'componente-ia'] },
     { campo: 'faseImplementacion', operador: 'uno-de', valores: ['piloto', 'operativo'] },
     { campo: 'estadoIA', operador: 'igual', valores: ['confirmada'] },
+    { campo: 'evaluacion.tecnicaIA.estado', operador: 'igual', valores: ['confirmado'] },
     { campo: 'evaluacion.ejecucion.estado', operador: 'igual', valores: ['confirmado'] },
+    { campo: 'fuentePrimariaEjecucion', operador: 'igual', valores: [true] },
     { campo: 'trazabilidad', operador: 'sin-errores', valores: [] },
   ];
   if (
@@ -248,6 +251,18 @@ export function crossCheck(): boolean {
 
     for (const error of encontrarErroresTrazabilidad(p)) {
       console.log(`  FAIL proyecto "${p.id}" tiene trazabilidad inválida: ${error}`);
+      ok = false;
+    }
+
+    for (const error of encontrarErroresCompletitudMetodologica(p)) {
+      console.log(`  FAIL proyecto "${p.id}" tiene un vacío metodológico: ${error}`);
+      ok = false;
+    }
+
+    if (p.estadoCatalogo === 'verificado' && !esAdopcionVerificada(p)) {
+      console.log(
+        `  FAIL proyecto "${p.id}" está marcado verificado pero no cumple la regla canónica`,
+      );
       ok = false;
     }
 

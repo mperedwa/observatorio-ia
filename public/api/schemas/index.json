@@ -1,7 +1,7 @@
 {
   "version": "0.1.0",
-  "releaseId": "2026-08-22-r8",
-  "lastUpdate": "2026-08-22T00:00:00.000Z",
+  "releaseId": "2026-08-23-r9",
+  "lastUpdate": "2026-08-23T00:00:00.000Z",
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "schemas": [
@@ -10,10 +10,10 @@
       "url": "/api/schemas/proyectos.schema.json",
       "dataSchemaUrl": "/api/schemas/proyectos-data.schema.json",
       "draft": "http://json-schema.org/draft-07/schema#",
-      "bytes": 11610,
-      "sha256": "328d5e3b2c716b978bf90724c96a6ab61110864a97ed29b1ff6f1b06ff2e5352",
-      "dataSchemaBytes": 9870,
-      "dataSchemaSha256": "9cf7a0e44fe58530ab6f745d10b8c6f52c0a7c0e36d6d8dae372bf163f91bb57"
+      "bytes": 11635,
+      "sha256": "2389ca52fa2c697c219da00719ea3233d1a619975d0534e2eb001267fce646b2",
+      "dataSchemaBytes": 9895,
+      "dataSchemaSha256": "557da637b2a362948cbb5e2c1281f3ec307436b55bb224ae05921d98c5994da2"
     },
     {
       "datasetId": "instituciones",
@@ -120,10 +120,10 @@
       "url": "/api/schemas/codebook.schema.json",
       "dataSchemaUrl": "/api/schemas/codebook-data.schema.json",
       "draft": "http://json-schema.org/draft-07/schema#",
-      "bytes": 9230,
-      "sha256": "5d7257ab58d49f4e728068ec8ea51611ea59bb059b5756f346ca043016b848a3",
-      "dataSchemaBytes": 5425,
-      "dataSchemaSha256": "fe0099a21ca612ff266cee74239e5fa16d992f846280e728c51b80adb7d3e1a6"
+      "bytes": 9343,
+      "sha256": "92f4efd89fd0da3f81a764bc3fe56ddd9a1f9c5568e6e7dd48da89e83bbb4209",
+      "dataSchemaBytes": 5496,
+      "dataSchemaSha256": "839fc981313273f14d4d3bc7808e578b79c443f6967d7354c7a31f2c939051c4"
     }
   ]
 }
