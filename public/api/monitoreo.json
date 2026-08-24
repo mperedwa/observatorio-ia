@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-08-21T00:00:00.000Z",
+  "lastUpdate": "2026-08-24T00:00:00.000Z",
   "count": 8,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
@@ -20,6 +20,7 @@
         {
           "id": "semanal",
           "dias": 7,
+          "diasAnticipacionHabiles": 1,
           "nombre": {
             "es": "Semanal",
             "en": "Weekly"
@@ -32,6 +33,7 @@
         {
           "id": "mensual",
           "dias": 31,
+          "diasAnticipacionHabiles": 3,
           "nombre": {
             "es": "Mensual",
             "en": "Monthly"
@@ -44,6 +46,7 @@
         {
           "id": "trimestral",
           "dias": 92,
+          "diasAnticipacionHabiles": 5,
           "nombre": {
             "es": "Trimestral",
             "en": "Quarterly"
@@ -56,6 +59,7 @@
         {
           "id": "semestral",
           "dias": 184,
+          "diasAnticipacionHabiles": 5,
           "nombre": {
             "es": "Semestral",
             "en": "Semiannual"

@@ -37,11 +37,11 @@ const COUNTERS_TS = join(ROOT, 'src', 'data', 'counters.ts');
 const PKG = JSON.parse(readFileSync(join(ROOT, 'package.json'), 'utf8')) as { version: string };
 
 const DATA_RELEASE = {
-  id: '2026-08-23-r9',
-  date: '2026-08-23',
+  id: '2026-08-24-r10',
+  date: '2026-08-24',
   title: {
-    es: 'Corte R9 de consistencia metodológica',
-    en: 'R9 methodological consistency release',
+    es: 'Corte R10 de operación editorial',
+    en: 'R10 editorial operations release',
   },
 } as const;
 const RELEASE_LOCK_PATH = join(RELEASES_OUT_DIR, DATA_RELEASE.id, 'release.lock');
@@ -132,6 +132,8 @@ interface Dataset {
   countUnit: KpiBilingual;
   /** Último cambio editorial real del dataset; nunca la hora de build. */
   lastUpdate: string;
+  /** Las bitácoras rodantes no se duplican en cada release sustantiva. */
+  publicationMode?: 'release' | 'rolling';
   getCount?: (data: unknown) => number;
 }
 
@@ -225,7 +227,8 @@ const DATASETS: Dataset[] = [
     endpoint: '/api/monitoreo.json',
     title: { es: 'Monitoreo editorial', en: 'Editorial monitoring' },
     countUnit: { es: 'frentes', en: 'monitoring fronts' },
-    lastUpdate: '2026-08-21',
+    lastUpdate: '2026-08-24',
+    publicationMode: 'rolling',
     description:
       'Agenda y bitácora editorial: cadencias por frente, próximas revisiones, cambios de estado y revisiones documentadas sin cambios.',
     descriptionEs:
@@ -257,7 +260,7 @@ const DATASETS: Dataset[] = [
     endpoint: '/api/historial.json',
     title: { es: 'Historial editorial', en: 'Editorial history' },
     countUnit: { es: 'cambios publicados', en: 'published changes' },
-    lastUpdate: '2026-08-23',
+    lastUpdate: '2026-08-24',
     description:
       'Bitácora pública y bilingüe de cambios editoriales con fecha, tipo, fuente y commit cuando está disponible.',
     descriptionEs:
@@ -297,7 +300,7 @@ const DATASETS: Dataset[] = [
     endpoint: '/api/codebook.json',
     title: { es: 'Codebook y metodología', en: 'Codebook and methodology' },
     countUnit: { es: 'datasets documentados', en: 'documented datasets' },
-    lastUpdate: '2026-08-23',
+    lastUpdate: '2026-08-24',
     description:
       'Diccionario bilingüe del contrato, vocabularios, regla de adopción verificada, procedencia y límites de interpretación.',
     descriptionEs:
@@ -392,7 +395,8 @@ interface ApiIndexEndpoint {
   lastUpdate: string;
   schemaUrl: string;
   dataSchemaUrl: string;
-  releaseUrl: string;
+  publicationMode: 'release' | 'rolling';
+  releaseUrl?: string;
 }
 
 const API_INDEX_COPY = {
@@ -427,14 +431,16 @@ const API_INDEX_COPY = {
     updatedLabel: 'Corte editorial',
     openLabel: 'Abrir JSON',
     schemaLabel: 'Ver schema',
+    publicationLabel: 'Publicación',
+    rollingLabel: 'Bitácora rodante',
     manifestTitle: 'Manifest de la API',
     manifestText:
       'Use el manifest para descubrir programáticamente todos los endpoints, sus conteos y fechas editoriales.',
     infrastructureTitle: 'Validar, reproducir y descargar',
     infrastructureText:
-      'Los schemas públicos, la release fechada y las descargas con checksum permiten repetir un análisis sin depender del estado futuro del sitio.',
+      'Los schemas públicos, la release sustantiva y las descargas con checksum permiten repetir un análisis. La bitácora de monitoreo se identifica aparte como rodante.',
     schemasTitle: 'Índice de schemas',
-    releaseTitle: 'Release R9',
+    releaseTitle: 'Release R10',
     downloadsTitle: 'Descargas y CSV',
     downloadFilesLabel: 'Archivos directos de la release',
     bundleTitle: 'Bundle JSON completo',
@@ -482,7 +488,7 @@ const API_INDEX_COPY = {
       'El catálogo incluye adopciones verificadas, iniciativas en seguimiento y capacidades del ecosistema. El total de iniciativas documentadas no equivale al número de sistemas de IA operativos.',
     maintenanceTitle: 'Mantenimiento editorial',
     maintenanceText:
-      'Los monitores generan señales. Ningún scraper crea, reclasifica ni verifica una iniciativa automáticamente; los cambios publicados requieren revisión editorial.',
+      'Los monitores generan señales. Ningún scraper crea, reclasifica ni verifica una iniciativa automáticamente; la bitácora rodante registra revisiones aprobadas y los cambios sustantivos requieren una nueva release.',
     contact: 'Consultas sobre datos o metodología',
   },
   en: {
@@ -516,14 +522,16 @@ const API_INDEX_COPY = {
     updatedLabel: 'Editorial cutoff',
     openLabel: 'Open JSON',
     schemaLabel: 'View schema',
+    publicationLabel: 'Publication',
+    rollingLabel: 'Rolling log',
     manifestTitle: 'API manifest',
     manifestText:
       'Use the manifest to discover every endpoint programmatically, together with counts and editorial dates.',
     infrastructureTitle: 'Validate, reproduce and download',
     infrastructureText:
-      'Public schemas, a dated release and checksum-backed downloads let readers reproduce an analysis without depending on the future state of the site.',
+      'Public schemas, the substantive release and checksum-backed downloads support reproducible analysis. The monitoring log is identified separately as rolling.',
     schemasTitle: 'Schema index',
-    releaseTitle: 'R9 release',
+    releaseTitle: 'R10 release',
     downloadsTitle: 'Downloads and CSV',
     downloadFilesLabel: 'Direct release files',
     bundleTitle: 'Complete JSON bundle',
@@ -571,7 +579,7 @@ const API_INDEX_COPY = {
       'The catalog includes verified adoptions, initiatives under review and ecosystem capabilities. The total number of documented initiatives is not the number of operational AI systems.',
     maintenanceTitle: 'Editorial maintenance',
     maintenanceText:
-      'Monitors generate signals. No scraper creates, reclassifies or verifies an initiative automatically; published changes require editorial review.',
+      'Monitors generate signals. No scraper creates, reclassifies or verifies an initiative automatically; the rolling log records approved reviews and substantive changes require a new release.',
     contact: 'Questions about data or methodology',
   },
 } as const;
@@ -608,7 +616,9 @@ function buildIndexHtml(endpoints: ApiIndexEndpoint[], locale: ApiIndexLocale): 
               <div><dt>${copy.countLabel}</dt><dd><strong>${endpoint.count}</strong> ${escapeHtml(endpoint.countUnit[locale])}</dd></div>
               <div><dt>${copy.updatedLabel}</dt><dd><time datetime="${endpoint.lastUpdate.slice(0, 10)}">${endpoint.lastUpdate.slice(0, 10)}</time></dd></div>
               <div><dt>Schema</dt><dd><a href="${endpoint.schemaUrl}">${copy.schemaLabel}</a></dd></div>
-              <div><dt>Release</dt><dd><a href="${endpoint.releaseUrl}">${DATA_RELEASE.id}</a></dd></div>
+              <div><dt>${copy.publicationLabel}</dt><dd>${endpoint.releaseUrl
+                ? `<a href="${endpoint.releaseUrl}">${DATA_RELEASE.id}</a>`
+                : escapeHtml(copy.rollingLabel)}</dd></div>
             </dl>
           </article>
         </li>`;
@@ -1008,6 +1018,20 @@ function applyAutoKpis(data: unknown, counters: Counters): unknown {
   return data;
 }
 
+function applyCodebookPublicationModes(data: unknown): unknown {
+  if (!data || typeof data !== 'object') return data;
+  const codebook = data as { datasets?: Array<{ endpoint?: string; publicationMode?: string }> };
+  if (!Array.isArray(codebook.datasets)) return data;
+  const modes = new Map(
+    DATASETS.map((dataset) => [dataset.endpoint, dataset.publicationMode ?? 'release']),
+  );
+  for (const dataset of codebook.datasets) {
+    const mode = dataset.endpoint ? modes.get(dataset.endpoint) : undefined;
+    if (mode) dataset.publicationMode = mode;
+  }
+  return data;
+}
+
 function writeCountersTs(counters: Counters): void {
   const lines = [
     '// AUTO-GENERATED by scripts/build-api.ts. Do not edit by hand.',
@@ -1139,7 +1163,7 @@ interface GeneratedDataset {
   dataSchemaOutputFilename: string;
   schemaUrl: string;
   dataSchemaUrl: string;
-  releaseUrl: string;
+  releaseUrl?: string;
   envelope: ApiEnvelope<unknown>;
   serialized: string;
   endpointSchemaSerialized: string;
@@ -1481,7 +1505,18 @@ function writeRelease(generated: GeneratedDataset[]): {
   const releaseSchemaDir = join(releaseDir, 'schemas');
   mkdirSync(releaseSchemaDir, { recursive: true });
 
-  const datasets = generated.map((dataset) => {
+  const releaseGenerated = generated.filter(
+    ({ config }) => (config.publicationMode ?? 'release') === 'release',
+  );
+  const rollingDatasets = generated
+    .filter(({ config }) => config.publicationMode === 'rolling')
+    .map((dataset) => ({
+      id: dataset.id,
+      url: dataset.config.endpoint,
+      schemaUrl: dataset.schemaUrl,
+      dataSchemaUrl: dataset.dataSchemaUrl,
+    }));
+  const datasets = releaseGenerated.map((dataset) => {
     writeImmutableText(join(releaseDir, dataset.outputFilename), dataset.serialized);
     writeImmutableText(
       join(releaseSchemaDir, dataset.schemaOutputFilename),
@@ -1493,7 +1528,7 @@ function writeRelease(generated: GeneratedDataset[]): {
     );
     return {
       id: dataset.id,
-      url: dataset.releaseUrl,
+      url: `/api/releases/${DATA_RELEASE.id}/${dataset.outputFilename}`,
       schemaUrl: `/api/releases/${DATA_RELEASE.id}/schemas/${dataset.schemaOutputFilename}`,
       dataSchemaUrl: `/api/releases/${DATA_RELEASE.id}/schemas/${dataset.dataSchemaOutputFilename}`,
       count: dataset.envelope.count,
@@ -1515,6 +1550,7 @@ function writeRelease(generated: GeneratedDataset[]): {
     license: 'CC BY 4.0',
     licenseUrl: 'https://creativecommons.org/licenses/by/4.0/',
     datasets,
+    rollingDatasets,
   };
   const releaseManifestPath = join(releaseDir, 'release.json');
   const releaseSerialized = writeImmutableJson(releaseManifestPath, releaseManifest);
@@ -1553,6 +1589,9 @@ function writeRelease(generated: GeneratedDataset[]): {
 
 function writeDownloads(generated: GeneratedDataset[]): string {
   mkdirSync(DOWNLOADS_OUT_DIR, { recursive: true });
+  const releaseGenerated = generated.filter(
+    ({ config }) => (config.publicationMode ?? 'release') === 'release',
+  );
   const bundle = {
     release: {
       id: DATA_RELEASE.id,
@@ -1562,7 +1601,7 @@ function writeDownloads(generated: GeneratedDataset[]): string {
       license: 'CC BY 4.0',
     },
     datasets: Object.fromEntries(
-      generated.map((dataset) => [dataset.id, dataset.envelope]),
+      releaseGenerated.map((dataset) => [dataset.id, dataset.envelope]),
     ),
   };
   const bundleFilename = `observatorio-ia-${DATA_RELEASE.id}.json`;
@@ -1581,7 +1620,7 @@ function writeDownloads(generated: GeneratedDataset[]): string {
         en: 'Complete bundle containing every dataset envelope in the release.',
       },
     },
-    ...buildCsvArtifacts(generated),
+    ...buildCsvArtifacts(releaseGenerated),
   ];
   writeJson(join(DOWNLOADS_OUT_DIR, 'index.json'), {
     releaseId: DATA_RELEASE.id,
@@ -1618,12 +1657,19 @@ function main(): void {
     if (ds.filename === 'indicadores.json') {
       data = applyAutoKpis(data, counters);
     }
+    if (ds.filename === 'apiCodebook.json') {
+      data = applyCodebookPublicationModes(data);
+    }
     const embeddedLastUpdate = findLatestEmbeddedEditorialDate(data);
-    if (embeddedLastUpdate && embeddedLastUpdate > ds.lastUpdate) {
+    const publicationMode = ds.publicationMode ?? 'release';
+    if (publicationMode === 'release' && embeddedLastUpdate && embeddedLastUpdate > ds.lastUpdate) {
       throw new Error(
         `${ds.filename}: lastUpdate=${ds.lastUpdate} quedó atrás de una fecha editorial interna (${embeddedLastUpdate})`,
       );
     }
+    const effectiveLastUpdate = publicationMode === 'rolling' && embeddedLastUpdate
+      ? [ds.lastUpdate, embeddedLastUpdate].sort().at(-1)!
+      : ds.lastUpdate;
 
     const id = datasetIdFor(ds);
     const outputFilename = outputFilenameFor(ds);
@@ -1631,8 +1677,10 @@ function main(): void {
     const dataSchemaOutputFilename = dataSchemaOutputFilenameFor(ds);
     const schemaUrl = `/api/schemas/${schemaOutputFilename}`;
     const dataSchemaUrl = `/api/schemas/${dataSchemaOutputFilename}`;
-    const releaseUrl = `/api/releases/${DATA_RELEASE.id}/${outputFilename}`;
-    const env = envelope(data, ds.lastUpdate, ds.getCount?.(data));
+    const releaseUrl = publicationMode === 'release'
+      ? `/api/releases/${DATA_RELEASE.id}/${outputFilename}`
+      : undefined;
+    const env = envelope(data, effectiveLastUpdate, ds.getCount?.(data));
     const serialized = JSON.stringify(env, null, 2);
     const dataSchemaSerialized = readFileSync(schemaSourcePath, 'utf8');
     const endpointSchemaSerialized = buildEndpointSchema(
@@ -1669,6 +1717,7 @@ function main(): void {
       lastUpdate: env.lastUpdate,
       schemaUrl,
       dataSchemaUrl,
+      publicationMode,
       releaseUrl,
     });
     console.log(`  ✓ ${ds.endpoint} (${env.count} items)`);
@@ -1718,7 +1767,8 @@ function main(): void {
       lastUpdate: e.lastUpdate,
       schemaUrl: e.schemaUrl,
       dataSchemaUrl: e.dataSchemaUrl,
-      releaseUrl: e.releaseUrl,
+      publicationMode: e.publicationMode,
+      ...(e.releaseUrl ? { releaseUrl: e.releaseUrl } : {}),
     })),
   };
   writeJson(join(OUT_DIR, 'index.json'), manifest);

@@ -6,6 +6,7 @@
  *
  * Uso:
  *   npm run check-monitoring-due
+ *   npm run check-monitoring-due -- --as-of 2026-08-27
  *   npm run check-monitoring-due -- --as-of 2026-08-21 --lead-days 7
  */
 
@@ -28,6 +29,8 @@ export interface MonitoringDueItem {
   fechaUltimaRevision: string;
   fechaProximaRevision: string;
   diasHastaVencimiento: number;
+  diasHabilesHastaVencimiento: number;
+  diasAnticipacionHabiles: number;
   estado: DueStatus;
   fuenteUrl: string;
 }
@@ -35,7 +38,8 @@ export interface MonitoringDueItem {
 export interface MonitoringDueReport {
   generatedAt: string;
   asOf: string;
-  leadDays: number;
+  leadDays: number | null;
+  leadPolicy: Record<string, number>;
   counts: {
     total: number;
     vencidos: number;
@@ -56,6 +60,30 @@ function parseDate(value: string): Date {
   return parsed;
 }
 
+function isBusinessDay(date: Date): boolean {
+  const day = date.getUTCDay();
+  return day !== 0 && day !== 6;
+}
+
+/**
+ * Días hábiles entre dos fechas civiles. Excluye la fecha de corte e incluye
+ * la fecha de vencimiento. Un resultado negativo indica atraso.
+ */
+export function businessDaysUntil(asOf: string, due: string): number {
+  const start = parseDate(asOf);
+  const end = parseDate(due);
+  if (start.valueOf() === end.valueOf()) return 0;
+
+  const direction = end > start ? 1 : -1;
+  const cursor = new Date(start);
+  let count = 0;
+  while (cursor.valueOf() !== end.valueOf()) {
+    cursor.setUTCDate(cursor.getUTCDate() + direction);
+    if (isBusinessDay(cursor)) count += direction;
+  }
+  return count;
+}
+
 export function todayInCostaRica(now = new Date()): string {
   const parts = new Intl.DateTimeFormat('en-US', {
     timeZone: 'America/Costa_Rica',
@@ -70,19 +98,34 @@ export function todayInCostaRica(now = new Date()): string {
 export function buildMonitoringDueReport(
   inventory: InventarioMonitoreo,
   asOf: string,
-  leadDays = 7,
+  leadDays?: number,
   generatedAt = new Date().toISOString(),
 ): MonitoringDueReport {
   const asOfDate = parseDate(asOf);
-  if (!Number.isInteger(leadDays) || leadDays < 0 || leadDays > 365) {
+  if (leadDays !== undefined && (!Number.isInteger(leadDays) || leadDays < 0 || leadDays > 365)) {
     throw new Error('leadDays debe ser un entero entre 0 y 365.');
   }
+
+  const leadPolicy = Object.fromEntries(
+    inventory.politica.cadencias.map((cadencia) => [
+      cadencia.id,
+      leadDays ?? cadencia.diasAnticipacionHabiles,
+    ]),
+  );
 
   const items = inventory.frentes
     .map((front): MonitoringDueItem | null => {
       const dueDate = parseDate(front.fechaProximaRevision);
       const daysUntil = Math.round((dueDate.valueOf() - asOfDate.valueOf()) / DAY_MS);
-      if (daysUntil > leadDays) return null;
+      const businessDays = businessDaysUntil(asOf, front.fechaProximaRevision);
+      const leadForCadence = leadPolicy[front.cadenciaId];
+      if (leadForCadence === undefined) {
+        throw new Error(`No existe anticipación configurada para ${front.cadenciaId}.`);
+      }
+      const outsideWindow = leadDays === undefined
+        ? businessDays > leadForCadence
+        : daysUntil > leadDays;
+      if (daysUntil > 0 && outsideWindow) return null;
       const estado: DueStatus = daysUntil < 0
         ? 'vencido'
         : daysUntil === 0
@@ -96,6 +139,8 @@ export function buildMonitoringDueReport(
         fechaUltimaRevision: front.fechaUltimaRevision,
         fechaProximaRevision: front.fechaProximaRevision,
         diasHastaVencimiento: daysUntil,
+        diasHabilesHastaVencimiento: businessDays,
+        diasAnticipacionHabiles: leadForCadence,
         estado,
         fuenteUrl: front.fuenteUrl,
       };
@@ -108,7 +153,8 @@ export function buildMonitoringDueReport(
   return {
     generatedAt,
     asOf,
-    leadDays,
+    leadDays: leadDays ?? null,
+    leadPolicy,
     counts: {
       total: items.length,
       vencidos: items.filter(({ estado }) => estado === 'vencido').length,
@@ -121,7 +167,7 @@ export function buildMonitoringDueReport(
 
 interface CliArgs {
   asOf: string;
-  leadDays: number;
+  leadDays?: number;
   output: string;
 }
 
@@ -132,8 +178,8 @@ function valueAfter(argv: string[], flag: string): string | undefined {
 
 function parseArgs(argv: string[]): CliArgs {
   const asOf = valueAfter(argv, '--as-of') ?? todayInCostaRica();
-  const leadRaw = valueAfter(argv, '--lead-days') ?? '7';
-  const leadDays = Number(leadRaw);
+  const leadRaw = valueAfter(argv, '--lead-days');
+  const leadDays = leadRaw === undefined ? undefined : Number(leadRaw);
   const output = resolve(process.cwd(), valueAfter(argv, '--output') ?? DEFAULT_OUTPUT_PATH);
   return { asOf, leadDays, output };
 }

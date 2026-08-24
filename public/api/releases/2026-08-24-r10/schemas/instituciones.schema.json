@@ -1,0 +1,117 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://observatorioia.org/api/schemas/instituciones.schema.json",
+  "title": "Instituciones / Institutions",
+  "description": "Schema de la respuesta pública completa; el campo data también se publica por separado. / Full public-response schema; the data field schema is also published separately.",
+  "type": "object",
+  "required": [
+    "version",
+    "lastUpdate",
+    "count",
+    "source",
+    "license",
+    "data"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "lastUpdate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "source": {
+      "const": "https://observatorioia.org"
+    },
+    "license": {
+      "const": "CC BY 4.0"
+    },
+    "data": {
+      "$ref": "#/definitions/_dataset"
+    }
+  },
+  "definitions": {
+    "bilingual": {
+      "type": "object",
+      "required": [
+        "es",
+        "en"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "es": {
+          "type": "string",
+          "minLength": 1
+        },
+        "en": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "_dataset": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "nombre",
+          "nombreCorto",
+          "tipo",
+          "url",
+          "proyectosActivos",
+          "resumen"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "nombre": {
+            "$ref": "#/definitions/bilingual"
+          },
+          "nombreCorto": {
+            "$ref": "#/definitions/bilingual"
+          },
+          "tipo": {
+            "type": "string",
+            "enum": [
+              "ministerio",
+              "asamblea",
+              "judicial",
+              "autonoma",
+              "universidad",
+              "investigacion",
+              "camara"
+            ]
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "proyectosActivos": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "resumen": {
+            "$ref": "#/definitions/bilingual"
+          },
+          "descripcion": {
+            "$ref": "#/definitions/bilingual"
+          },
+          "lecciones": {
+            "$ref": "#/definitions/bilingual"
+          }
+        }
+      }
+    }
+  },
+  "x-observatorio-data-schema": "/api/schemas/instituciones-data.schema.json"
+}

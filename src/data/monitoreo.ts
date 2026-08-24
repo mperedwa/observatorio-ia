@@ -36,6 +36,7 @@ export type EstadoAgenda = 'al-dia' | 'vence-hoy' | 'vencida';
 export interface PoliticaCadencia {
   id: CadenciaMonitoreo;
   dias: number;
+  diasAnticipacionHabiles: number;
   nombre: Bilingual;
   aplicaA: Bilingual;
 }
@@ -77,6 +78,7 @@ export interface RevisionMonitoreo {
   resultado: ResultadoRevision;
   resumen: Bilingual;
   fuenteUrl: string;
+  issueUrl?: string;
   commitSha?: string;
   transiciones: TransicionRevision[];
 }

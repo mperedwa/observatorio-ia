@@ -50,17 +50,19 @@ La corrida real de aceptación recuperó seis enlaces oficiales. Este respaldo d
 
 ### Agenda editorial accionable
 
-`check-monitoring-due` compara la fecha civil de Costa Rica con `fechaProximaRevision` y selecciona frentes vencidos, que vencen hoy o que entran en una ventana de siete días.
+`check-monitoring-due` compara la fecha civil de Costa Rica con `fechaProximaRevision` y selecciona frentes vencidos, que vencen hoy o que entran en la anticipación hábil de su cadencia: un día para semanal, tres para mensual y cinco para trimestral o semestral.
 
 El workflow `monitoring-due.yml` corre en días hábiles a las 07:00 de Costa Rica. Para cada combinación de frente y fecha:
 
 - abre como máximo un issue `monitoring-review` mientras siga abierto;
 - incluye fuente base, cadencia, última y próxima revisión;
-- envía un único aviso de Telegram cuando crea la tarea;
+- no envía Telegram cuando crea la tarea; el watcher avisa una vez cuando existe un veredicto listo para decisión;
 - no registra automáticamente un resultado `sin-cambios`;
 - no modifica ninguna fecha ni dataset.
 
-La próxima fecha solo se mueve cuando una persona prepara una revisión bilingüe y ejecuta `record-review --apply` después de revisar su dry-run.
+La próxima fecha solo se mueve cuando una persona aprueba una revisión bilingüe con `issueUrl` y se ejecuta `record-review --apply` después de revisar su dry-run. El issue permanece abierto hasta que la revisión llega a `main` y CI aprueba el commit; entonces `close-monitoring-review.yml` comprueba el resultado final y el avance de fecha antes de cerrarlo.
+
+Desde R10, `monitoreo` es una bitácora pública rodante y no se duplica en cada release sustantiva. Los otros once endpoints continúan dentro de releases inmutables. Así una revisión periódica sin cambios conserva trazabilidad sin crear un corte completo de datos cada semana.
 
 ### Revisor y permisos
 
@@ -102,9 +104,10 @@ npm run create-legislacion-update-issue -- --dry-run
 npm run record-review -- --input /ruta/revision.json
 npm run record-review -- --input /ruta/revision.json --apply
 npm run validate-data
+npm run close-monitoring-review # CI después del push; localmente hace skip sin token
 ```
 
-El primer comando es una simulación obligatoria. El segundo solo se ejecuta después de revisar la fuente y el contenido bilingüe.
+El primer comando es una simulación obligatoria. El segundo solo se ejecuta después de revisar la fuente, el contenido bilingüe y el `issueUrl`. El cierre remoto ocurre únicamente después de un push autorizado.
 
 ## Límites conocidos
 

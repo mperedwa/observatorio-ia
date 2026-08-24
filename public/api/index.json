@@ -1,15 +1,15 @@
 {
   "version": "0.1.0",
   "dataRelease": {
-    "id": "2026-08-23-r9",
-    "date": "2026-08-23",
+    "id": "2026-08-24-r10",
+    "date": "2026-08-24",
     "title": {
-      "es": "Corte R9 de consistencia metodológica",
-      "en": "R9 methodological consistency release"
+      "es": "Corte R10 de operación editorial",
+      "en": "R10 editorial operations release"
     },
-    "manifestUrl": "/api/releases/2026-08-23-r9/release.json"
+    "manifestUrl": "/api/releases/2026-08-24-r10/release.json"
   },
-  "lastUpdate": "2026-08-23T00:00:00.000Z",
+  "lastUpdate": "2026-08-24T00:00:00.000Z",
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
@@ -42,7 +42,8 @@
       "lastUpdate": "2026-08-23T00:00:00.000Z",
       "schemaUrl": "/api/schemas/proyectos.schema.json",
       "dataSchemaUrl": "/api/schemas/proyectos-data.schema.json",
-      "releaseUrl": "/api/releases/2026-08-23-r9/proyectos.json"
+      "publicationMode": "release",
+      "releaseUrl": "/api/releases/2026-08-24-r10/proyectos.json"
     },
     {
       "id": "instituciones",
@@ -60,7 +61,8 @@
       "lastUpdate": "2026-08-21T00:00:00.000Z",
       "schemaUrl": "/api/schemas/instituciones.schema.json",
       "dataSchemaUrl": "/api/schemas/instituciones-data.schema.json",
-      "releaseUrl": "/api/releases/2026-08-23-r9/instituciones.json"
+      "publicationMode": "release",
+      "releaseUrl": "/api/releases/2026-08-24-r10/instituciones.json"
     },
     {
       "id": "legislacion",
@@ -78,7 +80,8 @@
       "lastUpdate": "2026-08-21T00:00:00.000Z",
       "schemaUrl": "/api/schemas/legislacion.schema.json",
       "dataSchemaUrl": "/api/schemas/legislacion-data.schema.json",
-      "releaseUrl": "/api/releases/2026-08-23-r9/legislacion.json"
+      "publicationMode": "release",
+      "releaseUrl": "/api/releases/2026-08-24-r10/legislacion.json"
     },
     {
       "id": "indicadores",
@@ -96,7 +99,8 @@
       "lastUpdate": "2026-08-23T00:00:00.000Z",
       "schemaUrl": "/api/schemas/indicadores.schema.json",
       "dataSchemaUrl": "/api/schemas/indicadores-data.schema.json",
-      "releaseUrl": "/api/releases/2026-08-23-r9/indicadores.json"
+      "publicationMode": "release",
+      "releaseUrl": "/api/releases/2026-08-24-r10/indicadores.json"
     },
     {
       "id": "brechas",
@@ -114,7 +118,8 @@
       "lastUpdate": "2026-08-22T00:00:00.000Z",
       "schemaUrl": "/api/schemas/brechas.schema.json",
       "dataSchemaUrl": "/api/schemas/brechas-data.schema.json",
-      "releaseUrl": "/api/releases/2026-08-23-r9/brechas.json"
+      "publicationMode": "release",
+      "releaseUrl": "/api/releases/2026-08-24-r10/brechas.json"
     },
     {
       "id": "enia-acciones",
@@ -132,7 +137,8 @@
       "lastUpdate": "2026-08-21T00:00:00.000Z",
       "schemaUrl": "/api/schemas/enia-acciones.schema.json",
       "dataSchemaUrl": "/api/schemas/enia-acciones-data.schema.json",
-      "releaseUrl": "/api/releases/2026-08-23-r9/enia-acciones.json"
+      "publicationMode": "release",
+      "releaseUrl": "/api/releases/2026-08-24-r10/enia-acciones.json"
     },
     {
       "id": "monitoreo",
@@ -147,10 +153,10 @@
         "es": "frentes",
         "en": "monitoring fronts"
       },
-      "lastUpdate": "2026-08-21T00:00:00.000Z",
+      "lastUpdate": "2026-08-24T00:00:00.000Z",
       "schemaUrl": "/api/schemas/monitoreo.schema.json",
       "dataSchemaUrl": "/api/schemas/monitoreo-data.schema.json",
-      "releaseUrl": "/api/releases/2026-08-23-r9/monitoreo.json"
+      "publicationMode": "rolling"
     },
     {
       "id": "marco-pais",
@@ -168,7 +174,8 @@
       "lastUpdate": "2026-08-22T00:00:00.000Z",
       "schemaUrl": "/api/schemas/marco-pais.schema.json",
       "dataSchemaUrl": "/api/schemas/marco-pais-data.schema.json",
-      "releaseUrl": "/api/releases/2026-08-23-r9/marco-pais.json"
+      "publicationMode": "release",
+      "releaseUrl": "/api/releases/2026-08-24-r10/marco-pais.json"
     },
     {
       "id": "historial",
@@ -178,15 +185,16 @@
         "es": "Bitácora pública y bilingüe de cambios editoriales, con fecha, tipo, fuente y commit cuando está disponible.",
         "en": "Public bilingual log of editorial changes, with date, type, source and commit when available."
       },
-      "count": 44,
+      "count": 45,
       "countUnit": {
         "es": "cambios publicados",
         "en": "published changes"
       },
-      "lastUpdate": "2026-08-23T00:00:00.000Z",
+      "lastUpdate": "2026-08-24T00:00:00.000Z",
       "schemaUrl": "/api/schemas/historial.schema.json",
       "dataSchemaUrl": "/api/schemas/historial-data.schema.json",
-      "releaseUrl": "/api/releases/2026-08-23-r9/historial.json"
+      "publicationMode": "release",
+      "releaseUrl": "/api/releases/2026-08-24-r10/historial.json"
     },
     {
       "id": "coyuntura",
@@ -204,7 +212,8 @@
       "lastUpdate": "2026-08-23T00:00:00.000Z",
       "schemaUrl": "/api/schemas/coyuntura.schema.json",
       "dataSchemaUrl": "/api/schemas/coyuntura-data.schema.json",
-      "releaseUrl": "/api/releases/2026-08-23-r9/coyuntura.json"
+      "publicationMode": "release",
+      "releaseUrl": "/api/releases/2026-08-24-r10/coyuntura.json"
     },
     {
       "id": "recursos",
@@ -222,7 +231,8 @@
       "lastUpdate": "2026-08-22T00:00:00.000Z",
       "schemaUrl": "/api/schemas/recursos.schema.json",
       "dataSchemaUrl": "/api/schemas/recursos-data.schema.json",
-      "releaseUrl": "/api/releases/2026-08-23-r9/recursos.json"
+      "publicationMode": "release",
+      "releaseUrl": "/api/releases/2026-08-24-r10/recursos.json"
     },
     {
       "id": "codebook",
@@ -237,10 +247,11 @@
         "es": "datasets documentados",
         "en": "documented datasets"
       },
-      "lastUpdate": "2026-08-23T00:00:00.000Z",
+      "lastUpdate": "2026-08-24T00:00:00.000Z",
       "schemaUrl": "/api/schemas/codebook.schema.json",
       "dataSchemaUrl": "/api/schemas/codebook-data.schema.json",
-      "releaseUrl": "/api/releases/2026-08-23-r9/codebook.json"
+      "publicationMode": "release",
+      "releaseUrl": "/api/releases/2026-08-24-r10/codebook.json"
     }
   ]
 }

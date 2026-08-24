@@ -13,6 +13,7 @@
     "create-scrape-review-issue": "tsx scripts/create-scrape-review-issue.ts",
     "create-legislacion-update-issue": "tsx scripts/create-legislacion-update-issue.ts",
     "create-monitoring-review-issue": "tsx scripts/create-monitoring-review-issue.ts",
+    "close-monitoring-review": "tsx scripts/close-resolved-monitoring-issues.ts",
     "dev": "next dev",
     "generate-assets": "tsx scripts/generate-share-assets.ts",
     "lint": "next lint",

@@ -1,12 +1,14 @@
 name: Agenda de revisión editorial
 
 # Convierte las fechas públicas de monitoreo en tareas accionables. El chequeo
-# abre un issue una sola vez por frente/fecha y avisa por Telegram; nunca cambia
-# el catálogo ni registra automáticamente una revisión "sin cambios".
+# abre un issue una sola vez por frente/fecha. El watcher avisa a Mario solo
+# después de preparar un veredicto; nunca cambia el catálogo ni registra
+# automáticamente una revisión "sin cambios".
 
 on:
   schedule:
-    # Días hábiles a las 13:00 UTC (07:00 CR). La ventana anticipa 7 días.
+    # Días hábiles a las 13:00 UTC (07:00 CR). Cada cadencia define su propia
+    # anticipación hábil: semanal 1, mensual 3, trimestral/semestral 5.
     - cron: '0 13 * * 1-5'
   workflow_dispatch:
 
@@ -39,8 +41,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: npm run create-monitoring-review-issue
 
       - name: Upload agenda artifact

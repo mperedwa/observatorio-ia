@@ -13,6 +13,7 @@ function revision(overrides: Partial<RevisionMonitoreo> = {}): RevisionMonitoreo
     resultado: 'sin-cambios',
     resumen: { es: 'Sin cambios.', en: 'No changes.' },
     fuenteUrl: 'https://example.org/source',
+    issueUrl: 'https://github.com/mperedwa/observatorio-ia/issues/42',
     transiciones: [],
     ...overrides,
   };
@@ -64,5 +65,21 @@ describe('registro editorial de monitoreo', () => {
         revision({ resultado: 'cambio-publicado' }),
       ),
     ).toThrow(/debe incluir transiciones/);
+  });
+
+  it('exige un issue del repositorio para trazar la decisión', () => {
+    expect(() =>
+      prepararRevision(
+        structuredClone(monitoreo),
+        revision({ issueUrl: undefined }),
+      ),
+    ).toThrow(/requiere issueUrl/);
+
+    expect(() =>
+      prepararRevision(
+        structuredClone(monitoreo),
+        revision({ issueUrl: 'https://github.com/otro/repo/issues/1' }),
+      ),
+    ).toThrow(/mperedwa\/observatorio-ia/);
   });
 });

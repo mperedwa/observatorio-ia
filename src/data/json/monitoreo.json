@@ -14,6 +14,7 @@
       {
         "id": "semanal",
         "dias": 7,
+        "diasAnticipacionHabiles": 1,
         "nombre": { "es": "Semanal", "en": "Weekly" },
         "aplicaA": {
           "es": "Expedientes legislativos y otros frentes con cambios de estado frecuentes.",
@@ -23,6 +24,7 @@
       {
         "id": "mensual",
         "dias": 31,
+        "diasAnticipacionHabiles": 3,
         "nombre": { "es": "Mensual", "en": "Monthly" },
         "aplicaA": {
           "es": "ENIA, iniciativas en seguimiento e indicadores cercanos a una nueva edición.",
@@ -32,6 +34,7 @@
       {
         "id": "trimestral",
         "dias": 92,
+        "diasAnticipacionHabiles": 5,
         "nombre": { "es": "Trimestral", "en": "Quarterly" },
         "aplicaA": {
           "es": "Adopciones verificadas y arquitectura general del Marco país.",
@@ -41,6 +44,7 @@
       {
         "id": "semestral",
         "dias": 184,
+        "diasAnticipacionHabiles": 5,
         "nombre": { "es": "Semestral", "en": "Semiannual" },
         "aplicaA": {
           "es": "Ecosistema, capacidades e indicadores estructurales de publicación menos frecuente.",

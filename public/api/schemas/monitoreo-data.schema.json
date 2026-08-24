@@ -47,11 +47,12 @@
     },
     "cadencia": {
       "type": "object",
-      "required": ["id", "dias", "nombre", "aplicaA"],
+      "required": ["id", "dias", "diasAnticipacionHabiles", "nombre", "aplicaA"],
       "additionalProperties": false,
       "properties": {
         "id": { "$ref": "#/definitions/cadenciaId" },
         "dias": { "type": "integer", "minimum": 1 },
+        "diasAnticipacionHabiles": { "type": "integer", "minimum": 0, "maximum": 30 },
         "nombre": { "$ref": "#/definitions/bilingual" },
         "aplicaA": { "$ref": "#/definitions/bilingual" }
       }
@@ -130,6 +131,11 @@
         },
         "resumen": { "$ref": "#/definitions/bilingual" },
         "fuenteUrl": { "type": "string", "format": "uri" },
+        "issueUrl": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://github\\.com/mperedwa/observatorio-ia/issues/[0-9]+$"
+        },
         "commitSha": { "type": "string", "pattern": "^[a-f0-9]{7,40}$" },
         "transiciones": {
           "type": "array",

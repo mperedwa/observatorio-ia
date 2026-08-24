@@ -86,6 +86,16 @@ export function prepararRevision(
     throw new Error('La revisión requiere resumen bilingüe.');
   }
   new URL(revision.fuenteUrl);
+  if (!revision.issueUrl) {
+    throw new Error('La revisión requiere issueUrl para conservar la trazabilidad de la decisión.');
+  }
+  const issueUrl = new URL(revision.issueUrl);
+  if (
+    issueUrl.origin !== 'https://github.com' ||
+    !/^\/mperedwa\/observatorio-ia\/issues\/[0-9]+$/.test(issueUrl.pathname)
+  ) {
+    throw new Error('issueUrl debe apuntar a un issue de mperedwa/observatorio-ia.');
+  }
 
   frente.fechaUltimaRevision = revision.fecha;
   frente.fechaProximaRevision = calcularProximaRevision(

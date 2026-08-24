@@ -76,6 +76,9 @@ npm run create-monitoring-review-issue -- --dry-run
 # Registrar una revisión editorial; dry-run por defecto
 npm run record-review -- --input /ruta/revision.json
 npm run record-review -- --input /ruta/revision.json --apply
+
+# Tras un push autorizado, verifica y cierra issues resueltos (CI lo ejecuta)
+npm run close-monitoring-review
 ```
 
 Si Playwright no está instalado localmente, los scripts caen a `fetch` directo cuando es posible. Para instalar browsers:
@@ -125,7 +128,8 @@ Los monitores dedicados tienen su propia cadencia:
 - `enia-watch.yml`: mensual; compara página oficial y PDF.
 - `ilia-watch.yml`: mensual, con vigilancia semanal entre septiembre y noviembre.
 - `oecd-watch.yml`: semestral, acorde con la publicación histórica de DGI/OURdata.
-- `monitoring-due.yml`: días hábiles; anticipa siete días las revisiones, abre un issue idempotente y solo avisa cuando crea una tarea nueva.
+- `monitoring-due.yml`: días hábiles; usa anticipación por cadencia, abre un issue idempotente y silencioso, y deja el aviso para cuando el watcher tenga un veredicto.
+- `close-monitoring-review.yml`: después de que CI aprueba `main`, cierra únicamente issues con `issueUrl`, resultado final y próxima fecha avanzada.
 
 Para correr manualmente desde GitHub: Actions → "Scrape fuentes oficiales" → Run workflow.
 

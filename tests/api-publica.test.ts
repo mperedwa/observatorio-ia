@@ -10,8 +10,9 @@ const ROOT = process.cwd();
 const API_DIR = join(ROOT, 'public', 'api');
 const SOURCE_SCHEMA_DIR = join(ROOT, 'src', 'data', 'schemas');
 const SOURCE_DATA_DIR = join(ROOT, 'src', 'data', 'json');
-const RELEASE_ID = '2026-08-23-r9';
-const PREVIOUS_RELEASE_ID = '2026-08-22-r8';
+const RELEASE_ID = '2026-08-24-r10';
+const PREVIOUS_RELEASE_ID = '2026-08-23-r9';
+const HISTORICAL_RELEASE_ID = '2026-08-22-r8';
 
 const ORIGINAL_ENDPOINTS = [
   '/api/proyectos.json',
@@ -57,7 +58,8 @@ interface EndpointMeta {
   lastUpdate: string;
   schemaUrl: string;
   dataSchemaUrl: string;
-  releaseUrl: string;
+  publicationMode: 'release' | 'rolling';
+  releaseUrl?: string;
 }
 
 interface Manifest {
@@ -112,6 +114,12 @@ interface ReleaseManifest {
     schemaSha256: string;
     dataSchemaSha256: string;
   }>;
+  rollingDatasets: Array<{
+    id: string;
+    url: string;
+    schemaUrl: string;
+    dataSchemaUrl: string;
+  }>;
 }
 
 function readJson<T>(filename: string): T {
@@ -162,7 +170,7 @@ function readIndexHtml(locale: 'es' | 'en') {
   return load(readFileSync(filename, 'utf8'));
 }
 
-describe('API pública estática R9', () => {
+describe('API pública estática R10', () => {
   it('conserva las siete rutas originales y suma cinco rutas complementarias', () => {
     const manifest = readJson<Manifest>('index.json');
     const urls = manifest.endpoints.map(({ url }) => url);
@@ -206,7 +214,7 @@ describe('API pública estática R9', () => {
       'enia-acciones': 129,
       monitoreo: 8,
       'marco-pais': 4,
-      historial: 44,
+      historial: 45,
       coyuntura: 2,
       recursos: 16,
       codebook: 11,
@@ -226,7 +234,7 @@ describe('API pública estática R9', () => {
 
     expect(manifest.dataRelease).toMatchObject({
       id: RELEASE_ID,
-      date: '2026-08-23',
+      date: '2026-08-24',
       manifestUrl: `/api/releases/${RELEASE_ID}/release.json`,
     });
     expect(manifest.documentation).toEqual({ es: '/api/', en: '/api/en/' });
@@ -241,7 +249,13 @@ describe('API pública estática R9', () => {
       expect(endpoint.descriptionI18n.en).toBeTruthy();
       expect(endpoint.schemaUrl).toBe(`/api/schemas/${endpoint.id}.schema.json`);
       expect(endpoint.dataSchemaUrl).toBe(`/api/schemas/${endpoint.id}-data.schema.json`);
-      expect(endpoint.releaseUrl).toBe(`/api/releases/${RELEASE_ID}/${endpoint.id}.json`);
+      if (endpoint.id === 'monitoreo') {
+        expect(endpoint.publicationMode).toBe('rolling');
+        expect(endpoint.releaseUrl).toBeUndefined();
+      } else {
+        expect(endpoint.publicationMode).toBe('release');
+        expect(endpoint.releaseUrl).toBe(`/api/releases/${RELEASE_ID}/${endpoint.id}.json`);
+      }
     }
   });
 
@@ -288,13 +302,13 @@ describe('API pública estática R9', () => {
     }>('releases/index.json');
 
     expect(release.id).toBe(RELEASE_ID);
-    expect(release.date).toBe('2026-08-23');
+    expect(release.date).toBe('2026-08-24');
     expect(release.immutable).toBe(true);
     expect(readFileSync(join(API_DIR, 'releases', RELEASE_ID, 'release.lock'), 'utf8')).toContain(
       `release=${RELEASE_ID}`,
     );
     expect(releaseIndex.latest).toBe(RELEASE_ID);
-    expect(releaseIndex.releases).toHaveLength(2);
+    expect(releaseIndex.releases).toHaveLength(3);
     expect(releaseIndex.releases.find(({ id }) => id === RELEASE_ID)).toMatchObject({
       bytes: byteLength(releaseText),
       sha256: digest(releaseText),
@@ -310,7 +324,17 @@ describe('API pública estática R9', () => {
       bytes: byteLength(previousReleaseText),
       sha256: digest(previousReleaseText),
     });
-    expect(release.datasets).toHaveLength(12);
+    expect(releaseIndex.releases.some(({ id }) => id === HISTORICAL_RELEASE_ID)).toBe(true);
+    expect(release.datasets).toHaveLength(11);
+    expect(release.datasets.some(({ id }) => id === 'monitoreo')).toBe(false);
+    expect(release.rollingDatasets).toEqual([
+      {
+        id: 'monitoreo',
+        url: '/api/monitoreo.json',
+        schemaUrl: '/api/schemas/monitoreo.schema.json',
+        dataSchemaUrl: '/api/schemas/monitoreo-data.schema.json',
+      },
+    ]);
     for (const dataset of release.datasets) {
       const current = currentManifest.endpoints.find(({ id }) => id === dataset.id)!;
       const snapshotText = readApiUrl(dataset.url);
@@ -355,7 +379,8 @@ describe('API pública estática R9', () => {
       datasets: Record<string, ApiEnvelope>;
     }>(bundleFile.url);
     expect(bundle.release.id).toBe(RELEASE_ID);
-    expect(Object.keys(bundle.datasets)).toHaveLength(12);
+    expect(Object.keys(bundle.datasets)).toHaveLength(11);
+    expect(bundle.datasets.monitoreo).toBeUndefined();
     expect(bundle.datasets.proyectos.count).toBe(29);
     expect(bundle.datasets['enia-acciones'].count).toBe(129);
 
@@ -403,8 +428,12 @@ describe('API pública estática R9', () => {
       vocabularios: unknown[];
       datasets: Array<{
         id: string;
+        publicationMode: 'release' | 'rolling';
         notaInterpretacion?: { es: string; en: string };
       }>;
+      politicaPublicacion: {
+        datasetsRodantes: string[];
+      };
       procedencia: {
         corpusCostaRicaRecursoIds: string[];
         corpusCostaRicaEndpoints: string[];
@@ -422,7 +451,7 @@ describe('API pública estática R9', () => {
       nota?: { es: string; en: string };
     }>>>('recursos.json');
 
-    expect(codebook.data.schemaVersion).toBe(2);
+    expect(codebook.data.schemaVersion).toBe(3);
     expect(codebook.data.contrato.noAplica.es).toContain('no corresponde');
     expect(codebook.data.reglaAdopcionVerificada.condiciones).toHaveLength(9);
     expect(codebook.data.reglaAdopcionVerificada.condiciones[0]).toEqual({
@@ -442,6 +471,9 @@ describe('API pública estática R9', () => {
       valores: [true],
     });
     expect(codebook.data.datasets).toHaveLength(11);
+    expect(codebook.data.politicaPublicacion.datasetsRodantes).toEqual(['monitoreo']);
+    expect(codebook.data.datasets.find(({ id }) => id === 'monitoreo')?.publicationMode).toBe('rolling');
+    expect(codebook.data.datasets.filter(({ publicationMode }) => publicationMode === 'release')).toHaveLength(10);
     for (const id of ['instituciones', 'indicadores', 'brechas', 'enia-acciones', 'marco-pais', 'coyuntura', 'recursos']) {
       expect(codebook.data.datasets.find((dataset) => dataset.id === id)?.notaInterpretacion).toBeDefined();
     }
@@ -481,7 +513,7 @@ describe('API pública estática R9', () => {
       for (const endpoint of manifest.endpoints) {
         expect(links.has(endpoint.url)).toBe(true);
         expect(links.has(endpoint.schemaUrl)).toBe(true);
-        expect(links.has(endpoint.releaseUrl)).toBe(true);
+        if (endpoint.releaseUrl) expect(links.has(endpoint.releaseUrl)).toBe(true);
       }
       expect(links.has('/api/index.json')).toBe(true);
       expect(links.has('/api/schemas/index.json')).toBe(true);

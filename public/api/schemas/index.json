@@ -1,7 +1,7 @@
 {
   "version": "0.1.0",
-  "releaseId": "2026-08-23-r9",
-  "lastUpdate": "2026-08-23T00:00:00.000Z",
+  "releaseId": "2026-08-24-r10",
+  "lastUpdate": "2026-08-24T00:00:00.000Z",
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "schemas": [
@@ -70,10 +70,10 @@
       "url": "/api/schemas/monitoreo.schema.json",
       "dataSchemaUrl": "/api/schemas/monitoreo-data.schema.json",
       "draft": "http://json-schema.org/draft-07/schema#",
-      "bytes": 8029,
-      "sha256": "42cd5d7df0170cfe9c5b08f10fecd2861eda5091cd0288981f1bf28d0349d15e",
-      "dataSchemaBytes": 5392,
-      "dataSchemaSha256": "a26d28eab161a472cc1264cc76a09c443e2a1e8df257eb12dc7b3022936f52f8"
+      "bytes": 8362,
+      "sha256": "2b4b2ed0bf12dd6e8cd7aa487b30b54c312610176a32b25fb1fef0eeff19105b",
+      "dataSchemaBytes": 5679,
+      "dataSchemaSha256": "c58b8930006b644f50cbb9f87379c4f1d58d7eca1dc1c3f22a728684637eaa50"
     },
     {
       "datasetId": "marco-pais",
@@ -120,10 +120,10 @@
       "url": "/api/schemas/codebook.schema.json",
       "dataSchemaUrl": "/api/schemas/codebook-data.schema.json",
       "draft": "http://json-schema.org/draft-07/schema#",
-      "bytes": 9343,
-      "sha256": "92f4efd89fd0da3f81a764bc3fe56ddd9a1f9c5568e6e7dd48da89e83bbb4209",
-      "dataSchemaBytes": 5496,
-      "dataSchemaSha256": "839fc981313273f14d4d3bc7808e578b79c443f6967d7354c7a31f2c939051c4"
+      "bytes": 10228,
+      "sha256": "d1103afd89a50797a0701fecd4f10271ff62664a507c5d29f3761cf8fd2aff2a",
+      "dataSchemaBytes": 6079,
+      "dataSchemaSha256": "c97679f3ec31b90ef8601759d85546f9c0b4fcd13ea9b282382fc168679211f2"
     }
   ]
 }

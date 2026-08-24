@@ -4,10 +4,10 @@
   "title": "Codebook de la API pública",
   "description": "Contrato, vocabularios, reglas derivadas, datasets y límites de interpretación.",
   "type": "object",
-  "required": ["schemaVersion", "fechaCorte", "alcance", "contrato", "reglaAdopcionVerificada", "vocabularios", "datasets", "procedencia", "licencia", "fueraDeAlcance"],
+  "required": ["schemaVersion", "fechaCorte", "alcance", "contrato", "politicaPublicacion", "reglaAdopcionVerificada", "vocabularios", "datasets", "procedencia", "licencia", "fueraDeAlcance"],
   "additionalProperties": false,
   "properties": {
-    "schemaVersion": { "const": 2 },
+    "schemaVersion": { "const": 3 },
     "fechaCorte": { "type": "string", "format": "date" },
     "alcance": { "$ref": "#/definitions/bilingual" },
     "contrato": {
@@ -20,6 +20,21 @@
         "noDeterminado": { "$ref": "#/definitions/bilingual" },
         "noAplica": { "$ref": "#/definitions/bilingual" },
         "trazabilidad": { "$ref": "#/definitions/bilingual" }
+      }
+    },
+    "politicaPublicacion": {
+      "type": "object",
+      "required": ["release", "rolling", "datasetsRodantes"],
+      "additionalProperties": false,
+      "properties": {
+        "release": { "$ref": "#/definitions/bilingual" },
+        "rolling": { "$ref": "#/definitions/bilingual" },
+        "datasetsRodantes": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[a-z0-9-]+$" }
+        }
       }
     },
     "reglaAdopcionVerificada": {
@@ -85,6 +100,7 @@
           "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
           "endpoint": { "type": "string", "pattern": "^/api/[a-z0-9-]+\\.json$" },
           "schemaUrl": { "type": "string", "pattern": "^/api/schemas/[a-z0-9-]+\\.schema\\.json$" },
+          "publicationMode": { "enum": ["release", "rolling"] },
           "unidadConteo": { "$ref": "#/definitions/bilingual" },
           "camposClave": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
           "notaInterpretacion": { "$ref": "#/definitions/bilingual" },

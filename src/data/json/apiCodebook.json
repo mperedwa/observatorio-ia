@@ -1,6 +1,6 @@
 {
-  "schemaVersion": 2,
-  "fechaCorte": "2026-08-23",
+  "schemaVersion": 3,
+  "fechaCorte": "2026-08-24",
   "alcance": {
     "es": "Diccionario público del contrato, los vocabularios y las reglas editoriales usadas para interpretar los datos del Observatorio IA Costa Rica.",
     "en": "Public dictionary for the contract, vocabularies and editorial rules used to interpret AI Observatory Costa Rica data."
@@ -30,6 +30,17 @@
       "es": "Sin errores de trazabilidad significa que no hay IDs de fuente duplicados; toda evaluación afirmativa referencia una fuente existente que respalda esa dimensión; y todo resultado verificado referencia una fuente declarada para resultados. Una adopción verificada exige además que una fuente primaria oficial o de acceso a información respalde la ejecución. Las relaciones entre iniciativas también se validan contra IDs existentes y no pueden apuntar al mismo registro.",
       "en": "No traceability errors means there are no duplicate source IDs; every affirmative assessment references an existing source that supports that dimension; and every verified result references a source declared for results. Verified adoption also requires an official primary or access-to-information source supporting execution. Initiative relationships are also checked against existing IDs and cannot point to the same record."
     }
+  },
+  "politicaPublicacion": {
+    "release": {
+      "es": "Los datasets sustantivos se congelan en cortes inmutables con manifest, schemas y checksums. Una modificación exige una nueva release.",
+      "en": "Substantive datasets are frozen in immutable releases with a manifest, schemas and checksums. Any modification requires a new release."
+    },
+    "rolling": {
+      "es": "Las bitácoras operativas append-only se sirven en su endpoint vivo y conservan fecha editorial, schema, issue y commit cuando corresponde. No se duplican en cada corte sustantivo.",
+      "en": "Append-only operational logs are served from their live endpoint and retain editorial date, schema, issue and commit when applicable. They are not duplicated in every substantive release."
+    },
+    "datasetsRodantes": ["monitoreo"]
   },
   "reglaAdopcionVerificada": {
     "descripcion": {

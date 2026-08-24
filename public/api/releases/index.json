@@ -1,8 +1,20 @@
 {
-  "latest": "2026-08-23-r9",
+  "latest": "2026-08-24-r10",
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "releases": [
+    {
+      "id": "2026-08-24-r10",
+      "date": "2026-08-24",
+      "title": {
+        "es": "Corte R10 de operación editorial",
+        "en": "R10 editorial operations release"
+      },
+      "manifestUrl": "/api/releases/2026-08-24-r10/release.json",
+      "datasets": 11,
+      "bytes": 7498,
+      "sha256": "26788322c084b665051c58d8cedc62dddd0c44426ffc3a85a3f0c7fd7fd0febc"
+    },
     {
       "id": "2026-08-23-r9",
       "date": "2026-08-23",

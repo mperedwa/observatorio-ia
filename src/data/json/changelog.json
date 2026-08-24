@@ -1,5 +1,17 @@
 [
   {
+    "fecha": "2026-08-24",
+    "tipo": "recurso",
+    "actualizacion": {
+      "es": "Se corrige el flujo de agenda editorial: la anticipación se ajusta por cadencia y días hábiles; los issues se crean sin aviso inicial y el watcher notifica solo cuando existe un veredicto; cada revisión exige la URL del issue y el cierre ocurre después de que CI valida el cambio en main. La API R10 separa la bitácora rodante de monitoreo de los once datasets sustantivos congelados y preserva R8 y R9 sin cambios.",
+      "en": "The editorial schedule workflow is corrected: lead time now follows cadence and business days; issues are created without an initial alert and the watcher notifies only after reaching a verdict; every review requires its issue URL, and closure occurs after CI validates the change on main. API release R10 separates the rolling monitoring log from the eleven frozen substantive datasets and preserves R8 and R9 unchanged."
+    },
+    "fuente": {
+      "es": "Plan de flujo de agenda editorial de bajo ruido, corte 24-ago-2026",
+      "en": "Low-noise editorial schedule workflow plan, cutoff Aug 24, 2026"
+    }
+  },
+  {
     "fecha": "2026-08-23",
     "tipo": "recurso",
     "actualizacion": {

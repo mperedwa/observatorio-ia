@@ -1,21 +1,21 @@
 {
-  "releaseId": "2026-08-23-r9",
-  "date": "2026-08-23",
+  "releaseId": "2026-08-24-r10",
+  "date": "2026-08-24",
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "files": [
     {
-      "url": "/api/downloads/observatorio-ia-2026-08-23-r9.json",
+      "url": "/api/downloads/observatorio-ia-2026-08-24-r10.json",
       "format": "json",
-      "bytes": 669162,
-      "sha256": "422022cfce1ac219527611c3e963a73f7783b837052f2c4c3316e144229d3fed",
+      "bytes": 652788,
+      "sha256": "9d87d57137a807d96e7f542bb65d7103f1b124e59c9e0a811584b52ae8717ecd",
       "description": {
         "es": "Bundle completo con las envolturas de todos los datasets de la release.",
         "en": "Complete bundle containing every dataset envelope in the release."
       }
     },
     {
-      "url": "/api/downloads/proyectos-2026-08-23-r9.csv",
+      "url": "/api/downloads/proyectos-2026-08-24-r10.csv",
       "format": "csv",
       "bytes": 9572,
       "sha256": "cd87485ddf594dce0339b35d709b9aa3fe3e29c4d78b6d79d3d25fb0086c7311",
@@ -26,7 +26,7 @@
       }
     },
     {
-      "url": "/api/downloads/legislacion-2026-08-23-r9.csv",
+      "url": "/api/downloads/legislacion-2026-08-24-r10.csv",
       "format": "csv",
       "bytes": 11311,
       "sha256": "ba66f0a2fa0d6418524017a70b068796b5aa68459ecc4f5585347f99a82de8b4",
@@ -37,7 +37,7 @@
       }
     },
     {
-      "url": "/api/downloads/enia-intervenciones-2026-08-23-r9.csv",
+      "url": "/api/downloads/enia-intervenciones-2026-08-24-r10.csv",
       "format": "csv",
       "bytes": 96708,
       "sha256": "1478bdd0d72be0be56529f98faf265791fcea55ca2dca05fb9ee0d1a2248de3f",
