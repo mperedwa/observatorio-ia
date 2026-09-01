@@ -5,15 +5,15 @@ import { getDictionary } from '../src/i18n/dictionaries';
 import indicadores from '../src/data/json/indicadores.json';
 
 const counters: Counters = {
-  proyectos: 29,
-  iniciativasDocumentadas: 29,
-  adopcionVerificada: 6,
-  verificadasCatalogo: 6,
-  seguimiento: 7,
+  proyectos: 31,
+  iniciativasDocumentadas: 31,
+  adopcionVerificada: 7,
+  verificadasCatalogo: 7,
+  seguimiento: 8,
   ecosistema: 16,
   descartadas: 0,
   pendientesMigracion: 0,
-  instituciones: 9,
+  instituciones: 11,
   legislacion: 7,
 };
 
@@ -24,11 +24,11 @@ describe('applyCounters', () => {
         '{adopcionVerificada} verificadas, {seguimiento} en seguimiento y {ecosistema} de {iniciativasDocumentadas}',
         counters,
       ),
-    ).toBe('6 verificadas, 7 en seguimiento y 16 de 29');
+    ).toBe('7 verificadas, 8 en seguimiento y 16 de 31');
   });
 
   it('reemplaza todas las apariciones de una misma clave', () => {
-    expect(applyCounters('{proyectos}/{proyectos}', counters)).toBe('29/29');
+    expect(applyCounters('{proyectos}/{proyectos}', counters)).toBe('31/31');
   });
 
   it.each(['es', 'en'] as const)(
@@ -44,14 +44,14 @@ describe('applyCounters', () => {
 });
 
 describe('detalle institucional de portada', () => {
-  it('enumera las nueve instituciones en ambos idiomas', () => {
+  it('enumera las once instituciones en ambos idiomas', () => {
     const kpi = indicadores.kpisHero.find(
       ({ label }) => label.es === 'Instituciones con iniciativas documentadas',
     );
 
     expect(kpi?.detalle).toEqual({
-      es: 'Poder Judicial, CCSS, Hacienda, MEP, MICITT, CENAT, UCR, INAMU e INS',
-      en: 'Judicial Branch, CCSS, Finance, MEP, MICITT, CENAT, UCR, INAMU and INS',
+      es: 'Poder Judicial, CCSS, Hacienda, MEP, MICITT, CENAT, UCR, INAMU, INS, ARESEP e INVU',
+      en: 'Judicial Branch, CCSS, Finance, MEP, MICITT, CENAT, UCR, INAMU, INS, ARESEP and INVU',
     });
   });
 });

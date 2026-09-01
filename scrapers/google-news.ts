@@ -7,7 +7,7 @@
  *  - CCSS: firewall geográfico bloquea IPs no-CR.
  *  - Hacienda: WAF estricto rechaza fetch/curl.
  *  - CENAT/LaNIA: sitio sin feed ni sección de noticias.
- *  - Las nueve instituciones catalogadas y señales de nuevas instituciones.
+ *  - Las once instituciones catalogadas y señales de nuevas instituciones.
  *
  * Google News agrega prensa CR (La Nación, El Financiero, crhoy, El Observador,
  * Diario Extra, Semanario Universidad, La Teja, monumental.co.cr, Revista SUMMA,
@@ -36,6 +36,8 @@ export const GOOGLE_NEWS_QUERIES: NewsQuery[] = [
   { institucion: 'ucr', query: '("Universidad de Costa Rica" OR site:ucr.ac.cr) ("inteligencia artificial" OR "machine learning") Costa Rica when:90d' },
   { institucion: 'inamu', query: '(INAMU OR "Instituto Nacional de las Mujeres") ("inteligencia artificial" OR algoritmo) Costa Rica when:90d' },
   { institucion: 'ins', query: '(INS OR "Instituto Nacional de Seguros") ("inteligencia artificial" OR algoritmo OR modelo predictivo) Costa Rica when:90d' },
+  { institucion: 'aresep', query: '(ARESEP OR "Autoridad Reguladora de los Servicios Públicos") ("inteligencia artificial" OR algoritmo OR asistente virtual) Costa Rica when:90d' },
+  { institucion: 'invu', query: '(INVU OR "Instituto Nacional de Vivienda y Urbanismo") ("inteligencia artificial" OR algoritmo OR automatización) Costa Rica when:90d' },
   { institucion: 'sector-publico', query: '"sector público" ("inteligencia artificial" OR "machine learning" OR algoritmo) Costa Rica when:90d' },
 ];
 

@@ -3614,5 +3614,275 @@
         "en": "What quality, bias, human-review and traceability controls will apply before any investigative use?"
       }
     ]
+  },
+  {
+    "id": "aresep-clara",
+    "titulo": {
+      "es": "Clara: asistente virtual de ARESEP",
+      "en": "Clara: ARESEP virtual assistant"
+    },
+    "institucionId": "aresep",
+    "categoria": "infraestructura",
+    "estado": "operativo",
+    "desde": "2026",
+    "descripcion": {
+      "es": "Asistente virtual de inteligencia artificial generativa disponible en el sitio web de ARESEP para responder consultas sobre información pública regulatoria y orientar a las personas usuarias.",
+      "en": "Generative AI virtual assistant available on ARESEP's website to answer questions about public regulatory information and guide users."
+    },
+    "contexto": {
+      "es": "Las fuentes oficiales confirman operación, Microsoft Copilot Studio, procesamiento de lenguaje natural generativo y una base de conocimiento institucional. No publican métricas de uso, precisión, correcciones o derivaciones a atención humana.",
+      "en": "Official sources confirm operation, Microsoft Copilot Studio, generative natural language processing and an institutional knowledge base. They do not publish usage, accuracy, correction or human-escalation metrics."
+    },
+    "fuenteUrl": "https://aresep.go.cr/noticias/aresep-lanza-asistente-virtual-para-sitio-web/",
+    "modeloVersion": 2,
+    "tipoIniciativa": "sistema-ia",
+    "estadoCatalogo": "verificado",
+    "faseImplementacion": "operativo",
+    "estadoIA": "confirmada",
+    "evaluacion": {
+      "existencia": {
+        "estado": "confirmado",
+        "fuenteIds": [
+          "aresep-clara-lanzamiento",
+          "aresep-clara-declaracion-ia"
+        ]
+      },
+      "ejecucion": {
+        "estado": "confirmado",
+        "fuenteIds": [
+          "aresep-clara-lanzamiento",
+          "aresep-clara-declaracion-ia"
+        ]
+      },
+      "tecnicaIA": {
+        "estado": "confirmado",
+        "fuenteIds": [
+          "aresep-clara-declaracion-ia"
+        ]
+      },
+      "usoOperativo": {
+        "estado": "confirmado",
+        "fuenteIds": [
+          "aresep-clara-lanzamiento",
+          "aresep-clara-declaracion-ia"
+        ]
+      },
+      "resultados": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      },
+      "gobernanza": {
+        "estado": "parcialmente-confirmado",
+        "fuenteIds": [
+          "aresep-clara-declaracion-ia"
+        ]
+      }
+    },
+    "fuentes": [
+      {
+        "id": "aresep-clara-lanzamiento",
+        "titulo": {
+          "es": "ARESEP lanza asistente virtual para sitio web",
+          "en": "ARESEP launches virtual assistant for its website"
+        },
+        "url": "https://aresep.go.cr/noticias/aresep-lanza-asistente-virtual-para-sitio-web/",
+        "publicador": "Autoridad Reguladora de los Servicios Públicos",
+        "tipoFuente": "primaria-oficial",
+        "fechaPublicacion": "2026-06-01",
+        "fechaConsulta": "2026-09-01",
+        "respalda": [
+          "existencia",
+          "objetivo-declarado",
+          "ejecucion",
+          "uso-operativo"
+        ],
+        "naturalezaAfirmacion": [
+          "hecho",
+          "objetivo-declarado"
+        ]
+      },
+      {
+        "id": "aresep-clara-declaracion-ia",
+        "titulo": {
+          "es": "Declaración de uso de inteligencia artificial de ARESEP",
+          "en": "ARESEP artificial intelligence use statement"
+        },
+        "url": "https://aresep.go.cr/transparencia/informacion-institucional/condiciones-especiales/",
+        "publicador": "Autoridad Reguladora de los Servicios Públicos",
+        "tipoFuente": "primaria-oficial",
+        "fechaPublicacion": "2026-08-14",
+        "fechaConsulta": "2026-09-01",
+        "respalda": [
+          "existencia",
+          "ejecucion",
+          "tecnica-ia",
+          "uso-operativo",
+          "gobernanza"
+        ],
+        "naturalezaAfirmacion": [
+          "hecho"
+        ]
+      }
+    ],
+    "fechaPrimeraEvidencia": "2026-06-01",
+    "fechaAnuncio": "2026-06-01",
+    "fechaInicioOperacion": "2026-06-01",
+    "fechaUltimaVerificacion": "2026-09-01",
+    "fechaProximaRevision": "2026-12-01",
+    "objetivoDeclarado": {
+      "es": "Facilitar el acceso ágil a información pública regulatoria, reducir tiempos de respuesta en consultas frecuentes y ofrecer un canal automatizado disponible 24/7.",
+      "en": "Provide timely access to public regulatory information, reduce response times for frequent questions and offer an automated channel available around the clock."
+    },
+    "datosConocidos": [
+      {
+        "es": "ARESEP identifica Microsoft Copilot Studio y modelos de procesamiento de lenguaje natural basados en IA generativa.",
+        "en": "ARESEP identifies Microsoft Copilot Studio and natural language processing models based on generative AI."
+      },
+      {
+        "es": "La base de conocimiento reúne información pública institucional y más de 730 archivos, entre ellos resoluciones, circulares, informes, normas y procedimientos.",
+        "en": "The knowledge base contains public institutional information and more than 730 files, including resolutions, circulars, reports, regulations and procedures."
+      },
+      {
+        "es": "La declaración institucional indica que no se usan datos personales para entrenar modelos ni realizar perfilamiento y que los casos especializados se orientan a canales humanos.",
+        "en": "The institutional statement says personal data is not used to train models or create profiles and that specialized cases are directed to human service channels."
+      }
+    ],
+    "datosNoDeterminados": [
+      {
+        "es": "No se publican el modelo subyacente, su versión, la frecuencia de actualización ni el procedimiento de evaluación antes de incorporar contenidos.",
+        "en": "The underlying model, version, update frequency and evaluation process before adding content are not published."
+      },
+      {
+        "es": "No se localizaron métricas públicas de consultas, respuestas correctas, errores, correcciones, abandonos o derivaciones a atención humana.",
+        "en": "No public metrics were found for queries, correct answers, errors, corrections, abandonment or escalation to human service."
+      }
+    ],
+    "preguntasAbiertas": [
+      {
+        "es": "¿Qué proceso de revisión, corrección y registro aplica ARESEP cuando Clara genera una respuesta incompleta o incorrecta?",
+        "en": "What review, correction and logging process does ARESEP apply when Clara generates an incomplete or incorrect answer?"
+      },
+      {
+        "es": "¿Qué indicadores de uso, calidad y derivación humana reportará ARESEP para evaluar el servicio?",
+        "en": "What usage, quality and human-escalation indicators will ARESEP report to evaluate the service?"
+      }
+    ]
+  },
+  {
+    "id": "invu-ia-planificacion-territorial",
+    "titulo": {
+      "es": "Aplicaciones de IA para planificación territorial",
+      "en": "AI applications for territorial planning"
+    },
+    "institucionId": "invu",
+    "categoria": "infraestructura",
+    "estado": "planificado",
+    "desde": "2026",
+    "descripcion": {
+      "es": "Línea anunciada por el INVU para fortalecer la planificación territorial mediante aplicaciones con inteligencia artificial, presentada como parte de la etapa institucional INVU Evoluciona.",
+      "en": "INVU-announced effort to strengthen territorial planning through artificial intelligence applications, presented as part of the institution's INVU Evoluciona phase."
+    },
+    "contexto": {
+      "es": "El comunicado no identifica aplicaciones, funciones, datos, técnica, proveedor, contratación, piloto ni fecha de uso. La mención separada a 23 planes reguladores y a cuatro instituciones colaboradoras no permite atribuirles el componente de IA.",
+      "en": "The release does not identify applications, functions, data, technique, vendor, procurement, pilot or date of use. Its separate reference to 23 regulatory plans and four collaborating institutions does not establish that the AI component applies to them."
+    },
+    "fuenteUrl": "https://www.invu.go.cr/-/72-aniversario?inheritRedirect=true&redirect=%2Fhome",
+    "modeloVersion": 2,
+    "tipoIniciativa": "componente-ia",
+    "estadoCatalogo": "seguimiento",
+    "faseImplementacion": "anunciado",
+    "estadoIA": "declarada-sin-tecnica",
+    "evaluacion": {
+      "existencia": {
+        "estado": "confirmado",
+        "fuenteIds": [
+          "invu-evoluciona-planificacion-ia"
+        ]
+      },
+      "ejecucion": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      },
+      "tecnicaIA": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      },
+      "usoOperativo": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      },
+      "resultados": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      },
+      "gobernanza": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      }
+    },
+    "fuentes": [
+      {
+        "id": "invu-evoluciona-planificacion-ia",
+        "titulo": {
+          "es": "INVU Evoluciona y presenta nueva etapa institucional",
+          "en": "INVU Evoluciona presents a new institutional phase"
+        },
+        "url": "https://www.invu.go.cr/-/72-aniversario?inheritRedirect=true&redirect=%2Fhome",
+        "publicador": "Instituto Nacional de Vivienda y Urbanismo",
+        "tipoFuente": "primaria-oficial",
+        "fechaPublicacion": "2026-08",
+        "fechaConsulta": "2026-09-01",
+        "respalda": [
+          "existencia",
+          "objetivo-declarado"
+        ],
+        "naturalezaAfirmacion": [
+          "hecho",
+          "objetivo-declarado"
+        ]
+      }
+    ],
+    "fechaPrimeraEvidencia": "2026-08",
+    "fechaAnuncio": "2026-08",
+    "fechaUltimaVerificacion": "2026-09-01",
+    "fechaProximaRevision": "2026-10-01",
+    "objetivoDeclarado": {
+      "es": "Fortalecer la planificación territorial mediante el uso de aplicaciones con inteligencia artificial.",
+      "en": "Strengthen territorial planning through the use of artificial intelligence applications."
+    },
+    "datosConocidos": [
+      {
+        "es": "El INVU incluyó públicamente el uso de aplicaciones con IA dentro de una de las líneas de transformación de INVU Evoluciona.",
+        "en": "INVU publicly included the use of AI applications in one of the INVU Evoluciona transformation areas."
+      }
+    ],
+    "datosNoDeterminados": [
+      {
+        "es": "No se conocen la función de las aplicaciones, las fuentes de datos, el proveedor, la técnica ni el grado de intervención humana.",
+        "en": "The application functions, data sources, vendor, technique and degree of human involvement are unknown."
+      },
+      {
+        "es": "No se determinó si existe contratación, desarrollo, prueba de concepto, piloto o uso operativo.",
+        "en": "No procurement, development, proof of concept, pilot or operational use was established."
+      },
+      {
+        "es": "No está acreditado que la IA se utilice en los 23 planes reguladores mencionados posteriormente en el mismo comunicado.",
+        "en": "It is not established that AI is used in the 23 regulatory plans mentioned later in the same release."
+      }
+    ],
+    "preguntasAbiertas": [
+      {
+        "es": "¿Qué tareas concretas de planificación territorial realizarán o apoyarán las aplicaciones de IA?",
+        "en": "What specific territorial-planning tasks will the AI applications perform or support?"
+      },
+      {
+        "es": "¿Existe un expediente de contratación, piloto o documento técnico que permita verificar su fase y alcance?",
+        "en": "Is there a procurement record, pilot or technical document that can establish its phase and scope?"
+      },
+      {
+        "es": "¿La línea de IA se relaciona con alguno de los 23 planes reguladores o con las instituciones citadas en el comunicado?",
+        "en": "Is the AI effort related to any of the 23 regulatory plans or the institutions cited in the release?"
+      }
+    ]
   }
 ]

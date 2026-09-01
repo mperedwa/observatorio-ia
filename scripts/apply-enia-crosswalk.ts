@@ -43,6 +43,7 @@ interface DecisionCruce {
   notasEditoriales?: Bilingual;
   tipoIntervencion?: TipoIntervencionEnia;
   recomendacionEditorial?: RecomendacionEditorialEnia;
+  fechaUltimaRevision?: string;
 }
 
 interface Duplicado {
@@ -162,6 +163,84 @@ const decisionesEspecificas: Record<string, DecisionCruce> = {
         'The institutional technical page identifies GPT-4 Turbo and file search. The application processes registration and socioeconomic data and can share geolocation with emergency services when the user activates that function. No public usage, accuracy or referral metrics were found.',
       ),
       recomendacionEditorial: 'revisar',
+    },
+  ),
+  'enia-4-1-3-08': decision(
+    'enia-solamente',
+    [],
+    'El registro declara una solución o componente de IA, pero no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución. La documentación institucional localizada acredita planificación precontractual y presupuestaria adyacente, sin demostrar correspondencia específica con este chatbot.',
+    'The record declares an AI solution or component but has neither a sufficient catalogue match nor external execution evidence. The institutional documentation found supports adjacent pre-procurement and budget planning without establishing a specific link to this chatbot.',
+    {
+      estadoEjecucion: 'no-verificado',
+      evidenciasExternas: [
+        {
+          id: 'invu-poi-automatizacion-ia-2025',
+          titulo: bilingue(
+            'Informe de seguimiento semestral del Plan Presupuesto 2025',
+            '2025 Plan and Budget midyear monitoring report',
+          ),
+          url: 'https://www.invu.go.cr/documents/20181/621840/Informe%2BSemestral%2BEvaluaci%C3%B3n%2BPOI%2Ba%2Bjunio%2B2025',
+          publicador: 'Instituto Nacional de Vivienda y Urbanismo',
+          fechaConsulta: '2026-09-01',
+          respalda: ['existencia'],
+        },
+        {
+          id: 'invu-presupuesto-ia-bots-2026',
+          titulo: bilingue(
+            'Presupuesto Inicial 2026 del INVU',
+            'INVU 2026 Initial Budget',
+          ),
+          url: 'https://www.invu.go.cr/documents/20181/780438/Presupuesto%2BInicial%2B2026',
+          publicador: 'Instituto Nacional de Vivienda y Urbanismo',
+          fechaConsulta: '2026-09-01',
+          respalda: ['existencia'],
+        },
+      ],
+      notasEditoriales: bilingue(
+        'Se localizó evidencia institucional adyacente de planificación precontractual y presupuestaria para automatización mediante IA y bots. El seguimiento semestral del POI 2025 reportó ajustes al pliego de condiciones y el Presupuesto 2026 mantuvo esa línea dentro del conjunto de bienes intangibles. Las fuentes no permiten establecer que corresponda específicamente al chatbot de este registro ni confirman que esté en operación; el monto total de bienes intangibles no es un presupuesto atribuible a IA.',
+        'Adjacent institutional evidence was found for pre-procurement and budget planning for automation using AI and bots. The 2025 midyear POI monitoring report recorded adjustments to the tender documents, and the 2026 Budget retained that workstream within the broader intangible-assets category. The sources do not establish that it specifically corresponds to this chatbot or confirm that it is operating; the total intangible-assets amount cannot be attributed to AI.',
+      ),
+      recomendacionEditorial: 'investigar-como-seguimiento',
+      fechaUltimaRevision: '2026-09-01',
+    },
+  ),
+  'enia-4-1-3-09': decision(
+    'enia-solamente',
+    [],
+    'El registro declara una solución o componente de IA, pero no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución. La documentación institucional localizada acredita planificación precontractual y presupuestaria adyacente, sin demostrar correspondencia específica con los 30 agentes virtuales.',
+    'The record declares an AI solution or component but has neither a sufficient catalogue match nor external execution evidence. The institutional documentation found supports adjacent pre-procurement and budget planning without establishing a specific link to the 30 virtual agents.',
+    {
+      estadoEjecucion: 'no-verificado',
+      evidenciasExternas: [
+        {
+          id: 'invu-poi-automatizacion-ia-2025',
+          titulo: bilingue(
+            'Informe de seguimiento semestral del Plan Presupuesto 2025',
+            '2025 Plan and Budget midyear monitoring report',
+          ),
+          url: 'https://www.invu.go.cr/documents/20181/621840/Informe%2BSemestral%2BEvaluaci%C3%B3n%2BPOI%2Ba%2Bjunio%2B2025',
+          publicador: 'Instituto Nacional de Vivienda y Urbanismo',
+          fechaConsulta: '2026-09-01',
+          respalda: ['existencia'],
+        },
+        {
+          id: 'invu-presupuesto-ia-bots-2026',
+          titulo: bilingue(
+            'Presupuesto Inicial 2026 del INVU',
+            'INVU 2026 Initial Budget',
+          ),
+          url: 'https://www.invu.go.cr/documents/20181/780438/Presupuesto%2BInicial%2B2026',
+          publicador: 'Instituto Nacional de Vivienda y Urbanismo',
+          fechaConsulta: '2026-09-01',
+          respalda: ['existencia'],
+        },
+      ],
+      notasEditoriales: bilingue(
+        'Se localizó evidencia institucional adyacente de planificación precontractual y presupuestaria para automatización mediante IA y bots. El seguimiento semestral del POI 2025 reportó ajustes al pliego de condiciones y el Presupuesto 2026 mantuvo esa línea dentro del conjunto de bienes intangibles. Las fuentes no permiten establecer que corresponda específicamente a los 30 agentes virtuales de este registro ni confirman que estén en operación; el monto total de bienes intangibles no es un presupuesto atribuible a IA.',
+        'Adjacent institutional evidence was found for pre-procurement and budget planning for automation using AI and bots. The 2025 midyear POI monitoring report recorded adjustments to the tender documents, and the 2026 Budget retained that workstream within the broader intangible-assets category. The sources do not establish that it specifically corresponds to the 30 virtual agents in this record or confirm that they are operating; the total intangible-assets amount cannot be attributed to AI.',
+      ),
+      recomendacionEditorial: 'investigar-como-seguimiento',
+      fechaUltimaRevision: '2026-09-01',
     },
   ),
   'enia-4-1-3-10': decision(
@@ -550,7 +629,7 @@ const resultados = inventario.resultados.map((resultado) => ({
         excepcionesEniaSolamente.has(intervencion.id)
           ? 'investigar-como-seguimiento'
           : base.recomendacionEditorial),
-      fechaUltimaRevision: FECHA_REVISION,
+      fechaUltimaRevision: decisionFinal.fechaUltimaRevision ?? FECHA_REVISION,
     };
   }),
 }));

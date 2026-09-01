@@ -1,5 +1,44 @@
 [
   {
+    "fecha": "2026-09-01",
+    "tipo": "proyecto",
+    "actualizacion": {
+      "es": "Se incorpora Clara, el asistente virtual de ARESEP, como adopción verificada. Las fuentes oficiales confirman que opera en el sitio institucional con IA generativa, Microsoft Copilot Studio y una base de conocimiento de más de 730 archivos públicos; los resultados y métricas de calidad permanecen no determinados.",
+      "en": "Clara, ARESEP's virtual assistant, is added as a verified adoption. Official sources confirm that it operates on the institutional website using generative AI, Microsoft Copilot Studio and a knowledge base of more than 730 public files; outcomes and quality metrics remain undetermined."
+    },
+    "fuente": {
+      "es": "ARESEP, lanzamiento oficial y declaración de uso de IA",
+      "en": "ARESEP, official launch and AI use statement"
+    },
+    "fuente_url": "https://aresep.go.cr/noticias/aresep-lanza-asistente-virtual-para-sitio-web/"
+  },
+  {
+    "fecha": "2026-09-01",
+    "tipo": "proyecto",
+    "actualizacion": {
+      "es": "Se incorpora en seguimiento la línea del INVU para usar aplicaciones de IA en planificación territorial. El comunicado oficial confirma el objetivo, pero no permite determinar aplicaciones, técnica, proveedor, contratación, piloto o uso operativo, ni relacionar por inferencia la IA con los 23 planes reguladores mencionados por separado.",
+      "en": "INVU's effort to use AI applications in territorial planning is added under review. The official release confirms the objective but does not establish the applications, technique, vendor, procurement, pilot or operational use, nor does it support inferring a link between AI and the 23 regulatory plans mentioned separately."
+    },
+    "fuente": {
+      "es": "INVU, comunicado oficial sobre INVU Evoluciona",
+      "en": "INVU, official INVU Evoluciona release"
+    },
+    "fuente_url": "https://www.invu.go.cr/-/72-aniversario?inheritRedirect=true&redirect=%2Fhome"
+  },
+  {
+    "fecha": "2026-09-01",
+    "tipo": "recurso",
+    "actualizacion": {
+      "es": "Se actualizan las notas de las dos intervenciones ENIA del INVU con evidencia institucional adyacente: el POI 2025 documenta ajustes al pliego de una contratación para automatización mediante IA y el Presupuesto Inicial 2026 mantiene IA y bots dentro de bienes intangibles. Ambas acciones conservan ejecución no verificada y el monto total de esa partida no se atribuye a IA.",
+      "en": "Notes for the two INVU ENIA interventions are updated with adjacent institutional evidence: the 2025 POI documents tender-document adjustments for AI-enabled automation, and the 2026 Initial Budget retains AI and bots within intangible assets. Both actions remain unverified for execution, and the total amount of that budget category is not attributed to AI."
+    },
+    "fuente": {
+      "es": "INVU, seguimiento semestral del POI 2025 y Presupuesto Inicial 2026",
+      "en": "INVU, 2025 POI midyear monitoring and 2026 Initial Budget"
+    },
+    "fuente_url": "https://www.invu.go.cr/documents/20181/621840/Informe%2BSemestral%2BEvaluaci%C3%B3n%2BPOI%2Ba%2Bjunio%2B2025"
+  },
+  {
     "fecha": "2026-08-24",
     "tipo": "recurso",
     "actualizacion": {

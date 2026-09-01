@@ -36,7 +36,7 @@ describe('registro editorial de monitoreo', () => {
     expect(frente?.fechaProximaRevision).toBe('2026-10-21');
     expect(actualizado.fechaCorte).toBe('2026-09-21');
     expect(actualizado.revisiones[0].id).toBe('revision-prueba-2026-09-21');
-    expect(monitoreo.fechaCorte).toBe('2026-08-21');
+    expect(monitoreo.fechaCorte).toBe('2026-09-01');
   });
 
   it('rechaza una revisión sin cambios que incluye una transición', () => {

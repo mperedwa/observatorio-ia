@@ -56,7 +56,7 @@ npm run scrape:asamblea  # Asamblea Legislativa (7 expedientes relacionados con 
 npm run scrape:pj           # Poder Judicial Sala de Prensa (Joomla, paginado)
 npm run scrape:delfino      # Delfino.cr RSS (prensa editorial)
 npm run scrape:citic        # CITIC-UCR RSS (académico, IA software + ético-IA)
-npm run scrape:google-news  # Tier B: 9 instituciones + búsqueda transversal del sector público
+npm run scrape:google-news  # Tier B: 11 instituciones + búsqueda transversal del sector público
 npm run scrape:hacienda     # Tier B: Hacienda con Playwright (best-effort)
 npm run scrape:cgr          # Tier C: Contraloría General (RSS noticias + RSS informes DFOE)
 npm run scrape:mideplan     # Tier C: listado oficial + respaldo restringido a URLs MIDEPLAN
@@ -105,7 +105,7 @@ scrapers/
 ├── pj.ts               # Poder Judicial Sala de Prensa (Joomla, paginado)
 ├── delfino.ts          # Delfino.cr RSS (prensa editorial CR)
 ├── citic.ts            # CITIC-UCR RSS (académico, IA software + ético-IA)
-├── google-news.ts      # Tier B: 9 instituciones + frente transversal
+├── google-news.ts      # Tier B: 11 instituciones + frente transversal
 ├── hacienda.ts         # Tier B: Hacienda con Playwright (best-effort)
 ├── cgr.ts              # Tier C: Contraloría (RSS noticias + RSS informes DFOE)
 ├── mideplan.ts         # Tier C: MIDEPLAN directo + respaldo con dominio oficial
@@ -152,7 +152,7 @@ Selectores actuales (mantener al día):
 | Poder Judicial | `parseListing` en `pj.ts` | Joomla, categoría 8 Sala de Prensa. URL: `/index.php/component/content/category/8-sala-de-prensa?Itemid=409&start=N`. Pagina 4 páginas (≈20 notas). Extrae IDs+slugs de URLs `/article/<id>-<slug>`; el RSS de Joomla devuelve `<title>` vacío. |
 | Delfino.cr | `parseFeed` en `delfino.ts` | RSS oficial: `https://delfino.cr/feed`. Filtra por keywords IA + nombres instituciones gov (CCSS, MICITT, Hacienda, Asamblea, ENIA, etc.). Prensa editorial — los candidatos exigen validación contra fuente primaria antes de cualquier `add`/`update`. |
 | CITIC-UCR | `parseFeed` en `citic.ts` | RSS oficial: `https://citic.ucr.ac.cr/rss.xml`. Centro académico ya catalogado (proyecto ucr-citic-ia-software + Erasmus+ CIOdD). Filtra IA, ética IA, machine learning, computación cuántica, alianzas Erasmus. |
-| Google News (Tier B) | `parseGoogleNewsFeed` en `google-news.ts` | RSS público `news.google.com/rss/search?q=<query>&hl=es-419&gl=CR&ceid=CR:es-419`. Diez consultas con ventana de 90 días cubren las nueve instituciones catalogadas y un frente transversal del sector público. Política: prensa, no fuente oficial; cada candidato exige validación primaria antes de cualquier cambio. |
+| Google News (Tier B) | `parseGoogleNewsFeed` en `google-news.ts` | RSS público `news.google.com/rss/search?q=<query>&hl=es-419&gl=CR&ceid=CR:es-419`. Doce consultas con ventana de 90 días cubren las once instituciones catalogadas y un frente transversal del sector público. Política: prensa, no fuente oficial; cada candidato exige validación primaria antes de cualquier cambio. |
 | Hacienda (Tier B, best-effort) | `extractLinks` en `hacienda.ts` | Playwright headless contra `/noticias` y `/`. Pasa el WAF que rechaza fetch/curl, pero las noticias cargan vía AJAX no-detectable en HTML inicial. Cobertura real de Hacienda viene por `google-news.ts`. Si el sitio expone un endpoint listable en el futuro, este scraper queda listo. |
 | CGR / Contraloría (Tier C) | `parseFeed` en `cgr.ts` | 2 RSS feeds oficiales: `noticias_rss.xml` (14 items) + `informes_recientes.xml` (27 items, informes DFOE PDF). Filtra por keywords IA + sistemas digitales + ciberseguridad. Útil para detectar auditorías a proyectos catalogados (Poder Judicial, CCSS, Hacienda) — los informes DFOE son evidencia oficial de alta credibilidad. |
 | MIDEPLAN (Tier C) | `parseMideplanListing` en `mideplan.ts` | Intenta primero Drupal Views en `/listado-noticias`. Si el WAF devuelve 403 o cero ítems, Google News descubre candidatos mediante consultas acotadas y solo se conservan URLs finales de `mideplan.go.cr` o sus subdominios. La indexación puede tener retraso y no sustituye la revisión manual del Marco país. |

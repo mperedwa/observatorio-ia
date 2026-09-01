@@ -223,6 +223,8 @@ describe('inventario del Plan de Acción ENIA', () => {
     const ice = porId.get('enia-4-1-3-25');
     const ayaCompras = porId.get('enia-4-1-3-27');
     const rpa = porId.get('enia-4-1-3-29');
+    const invuChatbot = porId.get('enia-4-1-3-08');
+    const invuAgentes = porId.get('enia-4-1-3-09');
 
     expect(ins?.cruceCatalogo.estado).toBe('mapeado-exacto');
     expect(ins?.cruceCatalogo.proyectoIds).toEqual([
@@ -255,6 +257,19 @@ describe('inventario del Plan de Acción ENIA', () => {
     expect(ayaCompras?.cruceCatalogo.estado).toBe('enia-solamente');
     expect(ayaCompras?.notasEditoriales?.es).toContain('no delega');
     expect(rpa?.cruceCatalogo.estado).toBe('no-es-sistema-ia');
+
+    for (const invu of [invuChatbot, invuAgentes]) {
+      expect(invu?.cruceCatalogo.estado).toBe('enia-solamente');
+      expect(invu?.cruceCatalogo.proyectoIds).toEqual([]);
+      expect(invu?.estadoEjecucion).toBe('no-verificado');
+      expect(invu?.fechaUltimaRevision).toBe('2026-09-01');
+      expect(invu?.evidenciasExternas?.map(({ id }) => id)).toEqual([
+        'invu-poi-automatizacion-ia-2025',
+        'invu-presupuesto-ia-bots-2026',
+      ]);
+      expect(invu?.notasEditoriales?.es).toContain('evidencia institucional adyacente');
+      expect(invu?.notasEditoriales?.es).toContain('no es un presupuesto atribuible a IA');
+    }
   });
 
   it('mantiene IDs únicos y trazabilidad a la página fuente', () => {

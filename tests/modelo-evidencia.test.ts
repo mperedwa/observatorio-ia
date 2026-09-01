@@ -157,14 +157,14 @@ describe('schema de proyectos v2', () => {
     expect(validate([proyectoJsonV2()]), JSON.stringify(validate.errors)).toBe(true);
   });
 
-  it('valida las 29 fichas reales ya migradas', () => {
+  it('valida las 31 fichas reales ya migradas', () => {
     expect(validate(proyectos), JSON.stringify(validate.errors)).toBe(true);
   });
 });
 
 describe('catálogo real migrado', () => {
   it('mantiene cobertura v2 completa, trazabilidad limpia y seguimiento de vacíos', () => {
-    expect(proyectos).toHaveLength(29);
+    expect(proyectos).toHaveLength(31);
 
     for (const proyecto of proyectos) {
       expect(proyecto.modeloVersion, proyecto.id).toBe(MODELO_EVIDENCIA_VERSION);
@@ -177,12 +177,12 @@ describe('catálogo real migrado', () => {
     }
   });
 
-  it('fija el corte editorial derivado del 23 de agosto de 2026', () => {
+  it('fija el corte editorial derivado del 1 de septiembre de 2026', () => {
     expect(resumirCatalogo(proyectos)).toEqual({
-      iniciativasDocumentadas: 29,
-      adopcionVerificada: 6,
-      verificadasCatalogo: 6,
-      seguimiento: 7,
+      iniciativasDocumentadas: 31,
+      adopcionVerificada: 7,
+      verificadasCatalogo: 7,
+      seguimiento: 8,
       ecosistema: 16,
       descartadas: 0,
       pendientesMigracion: 0,
@@ -197,10 +197,11 @@ describe('catálogo real migrado', () => {
       'ccss-lidia',
       'hacienda-anomaly',
       'inamu-ela',
+      'aresep-clara',
     ]);
   });
 
-  it('mantiene clasificaciones distintas para las tres fichas de la Fase 4C', () => {
+  it('mantiene clasificaciones metodológicas distintas en las altas recientes', () => {
     const porId = new Map(proyectos.map((proyecto) => [proyecto.id, proyecto]));
 
     expect(porId.get('inamu-ela')).toMatchObject({
@@ -220,6 +221,18 @@ describe('catálogo real migrado', () => {
       tipoIniciativa: 'investigacion',
       faseImplementacion: 'desarrollo',
       estadoIA: 'confirmada',
+    });
+    expect(porId.get('aresep-clara')).toMatchObject({
+      estadoCatalogo: 'verificado',
+      tipoIniciativa: 'sistema-ia',
+      faseImplementacion: 'operativo',
+      estadoIA: 'confirmada',
+    });
+    expect(porId.get('invu-ia-planificacion-territorial')).toMatchObject({
+      estadoCatalogo: 'seguimiento',
+      tipoIniciativa: 'componente-ia',
+      faseImplementacion: 'anunciado',
+      estadoIA: 'declarada-sin-tecnica',
     });
   });
 });

@@ -38,7 +38,7 @@ describe('Google News RSS', () => {
     });
   });
 
-  it('vigila las nueve instituciones catalogadas y un frente transversal', () => {
+  it('vigila las once instituciones catalogadas y un frente transversal', () => {
     const ids = new Set(GOOGLE_NEWS_QUERIES.map((item) => item.institucion));
 
     expect(ids).toEqual(new Set([
@@ -51,6 +51,8 @@ describe('Google News RSS', () => {
       'cenat',
       'inamu',
       'ins',
+      'aresep',
+      'invu',
       'sector-publico',
     ]));
     expect(GOOGLE_NEWS_QUERIES.every((item) => item.query.includes('when:90d'))).toBe(true);

@@ -232,5 +232,57 @@
       "es": "Un resultado institucional puede documentarse sin convertirlo en evaluación independiente. Publicar la naturaleza de la fuente y los campos no determinados mantiene visible ese límite.",
       "en": "An institution-reported result can be documented without treating it as an independent evaluation. Publishing source nature and undetermined fields keeps that boundary visible."
     }
+  },
+  {
+    "id": "aresep",
+    "nombre": {
+      "es": "Autoridad Reguladora de los Servicios Públicos",
+      "en": "Public Services Regulatory Authority"
+    },
+    "nombreCorto": {
+      "es": "ARESEP",
+      "en": "ARESEP"
+    },
+    "tipo": "autonoma",
+    "url": "https://aresep.go.cr/",
+    "proyectosActivos": 1,
+    "resumen": {
+      "es": "Una adopción verificada: Clara, asistente virtual generativo para consultar información pública regulatoria en el sitio web institucional.",
+      "en": "One verified adoption: Clara, a generative virtual assistant for public regulatory information on the institution's website."
+    },
+    "descripcion": {
+      "es": "ARESEP confirma que Clara está disponible 24/7 y documenta Microsoft Copilot Studio, procesamiento de lenguaje natural generativo, fuentes institucionales públicas y límites de uso. Todavía no publica métricas de calidad, error, corrección o derivación humana.",
+      "en": "ARESEP confirms that Clara is available around the clock and documents Microsoft Copilot Studio, generative natural language processing, public institutional sources and use limitations. It has not yet published quality, error, correction or human-escalation metrics."
+    },
+    "lecciones": {
+      "es": "La publicación de plataforma, datos y límites permite verificar la técnica y una parte de la gobernanza. Esa transparencia no sustituye la medición pública del desempeño del servicio.",
+      "en": "Publishing the platform, data and limitations makes it possible to verify the technique and part of the governance framework. That transparency does not replace public measurement of service performance."
+    }
+  },
+  {
+    "id": "invu",
+    "nombre": {
+      "es": "Instituto Nacional de Vivienda y Urbanismo",
+      "en": "National Institute of Housing and Urban Development"
+    },
+    "nombreCorto": {
+      "es": "INVU",
+      "en": "INVU"
+    },
+    "tipo": "autonoma",
+    "url": "https://www.invu.go.cr/",
+    "proyectosActivos": 1,
+    "resumen": {
+      "es": "Una iniciativa en seguimiento: aplicaciones de IA anunciadas para fortalecer la planificación territorial.",
+      "en": "One initiative under review: AI applications announced to strengthen territorial planning."
+    },
+    "descripcion": {
+      "es": "El comunicado de INVU Evoluciona declara el uso de aplicaciones con IA, pero no identifica funciones, datos, técnica, proveedor, contratación o fase de ejecución. Tampoco acredita que el componente se aplique a los 23 planes reguladores citados separadamente.",
+      "en": "The INVU Evoluciona release states that AI applications will be used but does not identify functions, data, technique, vendor, procurement or implementation phase. It also does not establish that the component applies to the 23 regulatory plans cited separately."
+    },
+    "lecciones": {
+      "es": "Un anuncio institucional confirma la existencia de una línea de trabajo, no su ejecución. Mantener separadas las menciones del mismo comunicado evita atribuir aliados, alcance o resultados por proximidad textual.",
+      "en": "An institutional announcement confirms the existence of a workstream, not its execution. Keeping separate references within the same release apart avoids attributing partners, scope or results through textual proximity."
+    }
   }
 ]

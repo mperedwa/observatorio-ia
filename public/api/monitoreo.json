@@ -1,12 +1,12 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-08-24T00:00:00.000Z",
+  "lastUpdate": "2026-09-01T00:00:00.000Z",
   "count": 8,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "data": {
     "schemaVersion": 1,
-    "fechaCorte": "2026-08-21",
+    "fechaCorte": "2026-09-01",
     "politica": {
       "descripcion": {
         "es": "La agenda de revisión separa la vigilancia automática de la decisión editorial. Una alerta abre una revisión; no cambia por sí sola el catálogo, el estado de un expediente ni la evidencia de ejecución.",
@@ -109,8 +109,8 @@
           "en": "Version monitoring for the strategy, the Action Plan PDF and external evidence on its 120 unique interventions. All 129 source records remain available for audit."
         },
         "cadenciaId": "mensual",
-        "fechaUltimaRevision": "2026-08-21",
-        "fechaProximaRevision": "2026-09-21",
+        "fechaUltimaRevision": "2026-09-01",
+        "fechaProximaRevision": "2026-10-01",
         "alcance": {
           "cantidad": 120,
           "unidad": {
@@ -133,10 +133,10 @@
           "en": "Priority search for evidence on execution, AI technique, operational use, results and governance."
         },
         "cadenciaId": "mensual",
-        "fechaUltimaRevision": "2026-08-21",
-        "fechaProximaRevision": "2026-09-21",
+        "fechaUltimaRevision": "2026-09-01",
+        "fechaProximaRevision": "2026-10-01",
         "alcance": {
-          "cantidad": 7,
+          "cantidad": 8,
           "unidad": {
             "es": "iniciativas",
             "en": "initiatives"
@@ -185,10 +185,10 @@
           "en": "Review of operational continuity, new outcomes, scope changes and public safeguards."
         },
         "cadenciaId": "trimestral",
-        "fechaUltimaRevision": "2026-08-21",
-        "fechaProximaRevision": "2026-11-21",
+        "fechaUltimaRevision": "2026-09-01",
+        "fechaProximaRevision": "2026-12-01",
         "alcance": {
-          "cantidad": 6,
+          "cantidad": 7,
           "unidad": {
             "es": "adopciones",
             "en": "adoptions"
@@ -270,6 +270,73 @@
       }
     ],
     "revisiones": [
+      {
+        "id": "revision-invu-enia-2026-09-01",
+        "fecha": "2026-09-01",
+        "frenteId": "enia-plan-accion",
+        "resultado": "cambio-publicado",
+        "resumen": {
+          "es": "Las dos intervenciones ENIA del INVU conservan ejecución no verificada. Se incorporaron como evidencia adyacente el seguimiento del POI 2025 y el Presupuesto Inicial 2026, sin atribuirlos específicamente al chatbot ni a los 30 agentes virtuales.",
+          "en": "The two INVU ENIA interventions remain unverified for execution. The 2025 POI monitoring report and 2026 Initial Budget were added as adjacent evidence without specifically attributing them to the chatbot or the 30 virtual agents."
+        },
+        "fuenteUrl": "https://www.invu.go.cr/documents/20181/621840/Informe%2BSemestral%2BEvaluaci%C3%B3n%2BPOI%2Ba%2Bjunio%2B2025",
+        "transiciones": [
+          {
+            "objetoTipo": "intervencion-enia",
+            "objetoId": "enia-4-1-3-08",
+            "campo": "evidenciasExternas",
+            "antes": null,
+            "despues": "2 fuentes institucionales adyacentes"
+          },
+          {
+            "objetoTipo": "intervencion-enia",
+            "objetoId": "enia-4-1-3-09",
+            "campo": "evidenciasExternas",
+            "antes": null,
+            "despues": "2 fuentes institucionales adyacentes"
+          }
+        ]
+      },
+      {
+        "id": "revision-aresep-clara-2026-09-01",
+        "fecha": "2026-09-01",
+        "frenteId": "catalogo-verificado",
+        "resultado": "cambio-publicado",
+        "resumen": {
+          "es": "Clara se incorporó como adopción verificada de ARESEP. Las fuentes oficiales confirman operación, IA generativa, Microsoft Copilot Studio y reglas básicas de datos; no publican métricas de desempeño.",
+          "en": "Clara was added as a verified ARESEP adoption. Official sources confirm operation, generative AI, Microsoft Copilot Studio and basic data rules; they do not publish performance metrics."
+        },
+        "fuenteUrl": "https://aresep.go.cr/noticias/aresep-lanza-asistente-virtual-para-sitio-web/",
+        "transiciones": [
+          {
+            "objetoTipo": "proyecto",
+            "objetoId": "aresep-clara",
+            "campo": "estadoCatalogo",
+            "antes": null,
+            "despues": "verificado"
+          }
+        ]
+      },
+      {
+        "id": "revision-invu-territorial-2026-09-01",
+        "fecha": "2026-09-01",
+        "frenteId": "catalogo-seguimiento",
+        "resultado": "cambio-publicado",
+        "resumen": {
+          "es": "La línea de aplicaciones de IA para planificación territorial del INVU se incorporó en seguimiento. El anuncio confirma el objetivo, pero no identifica técnica, contratación, piloto ni uso operativo.",
+          "en": "INVU's AI applications for territorial planning were added under review. The announcement confirms the objective but identifies no technique, procurement, pilot or operational use."
+        },
+        "fuenteUrl": "https://www.invu.go.cr/-/72-aniversario?inheritRedirect=true&redirect=%2Fhome",
+        "transiciones": [
+          {
+            "objetoTipo": "proyecto",
+            "objetoId": "invu-ia-planificacion-territorial",
+            "campo": "estadoCatalogo",
+            "antes": null,
+            "despues": "seguimiento"
+          }
+        ]
+      },
       {
         "id": "revision-enia-crosswalk-2026-08-21",
         "fecha": "2026-08-21",

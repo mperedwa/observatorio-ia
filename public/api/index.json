@@ -1,15 +1,15 @@
 {
   "version": "0.1.0",
   "dataRelease": {
-    "id": "2026-08-24-r10",
-    "date": "2026-08-24",
+    "id": "2026-09-01-r11",
+    "date": "2026-09-01",
     "title": {
-      "es": "Corte R10 de operación editorial",
-      "en": "R10 editorial operations release"
+      "es": "Corte R11 de actualización del catálogo",
+      "en": "R11 catalog update release"
     },
-    "manifestUrl": "/api/releases/2026-08-24-r10/release.json"
+    "manifestUrl": "/api/releases/2026-09-01-r11/release.json"
   },
-  "lastUpdate": "2026-08-24T00:00:00.000Z",
+  "lastUpdate": "2026-09-01T00:00:00.000Z",
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
@@ -34,16 +34,16 @@
         "es": "Catálogo de iniciativas relacionadas con IA en el sector público costarricense. Incluye sistemas, pilotos, planes y capacidades con textos bilingües y fuentes públicas trazables.",
         "en": "Catalog of AI-related initiatives in Costa Rica’s public sector. It includes systems, pilots, plans and capabilities with bilingual ES/EN descriptions and traceable public sources."
       },
-      "count": 29,
+      "count": 31,
       "countUnit": {
         "es": "iniciativas",
         "en": "initiatives"
       },
-      "lastUpdate": "2026-08-23T00:00:00.000Z",
+      "lastUpdate": "2026-09-01T00:00:00.000Z",
       "schemaUrl": "/api/schemas/proyectos.schema.json",
       "dataSchemaUrl": "/api/schemas/proyectos-data.schema.json",
       "publicationMode": "release",
-      "releaseUrl": "/api/releases/2026-08-24-r10/proyectos.json"
+      "releaseUrl": "/api/releases/2026-09-01-r11/proyectos.json"
     },
     {
       "id": "instituciones",
@@ -53,16 +53,16 @@
         "es": "Instituciones públicas con iniciativas relacionadas con IA documentadas, incluidos ministerios, instituciones autónomas, Poder Judicial, universidades y organismos de investigación.",
         "en": "Public institutions with documented AI-related initiatives, including ministries, autonomous institutions, the judiciary, universities and research bodies."
       },
-      "count": 9,
+      "count": 11,
       "countUnit": {
         "es": "instituciones",
         "en": "institutions"
       },
-      "lastUpdate": "2026-08-21T00:00:00.000Z",
+      "lastUpdate": "2026-09-01T00:00:00.000Z",
       "schemaUrl": "/api/schemas/instituciones.schema.json",
       "dataSchemaUrl": "/api/schemas/instituciones-data.schema.json",
       "publicationMode": "release",
-      "releaseUrl": "/api/releases/2026-08-24-r10/instituciones.json"
+      "releaseUrl": "/api/releases/2026-09-01-r11/instituciones.json"
     },
     {
       "id": "legislacion",
@@ -81,7 +81,7 @@
       "schemaUrl": "/api/schemas/legislacion.schema.json",
       "dataSchemaUrl": "/api/schemas/legislacion-data.schema.json",
       "publicationMode": "release",
-      "releaseUrl": "/api/releases/2026-08-24-r10/legislacion.json"
+      "releaseUrl": "/api/releases/2026-09-01-r11/legislacion.json"
     },
     {
       "id": "indicadores",
@@ -96,11 +96,11 @@
         "es": "bloques",
         "en": "groups"
       },
-      "lastUpdate": "2026-08-23T00:00:00.000Z",
+      "lastUpdate": "2026-09-01T00:00:00.000Z",
       "schemaUrl": "/api/schemas/indicadores.schema.json",
       "dataSchemaUrl": "/api/schemas/indicadores-data.schema.json",
       "publicationMode": "release",
-      "releaseUrl": "/api/releases/2026-08-24-r10/indicadores.json"
+      "releaseUrl": "/api/releases/2026-09-01-r11/indicadores.json"
     },
     {
       "id": "brechas",
@@ -119,7 +119,7 @@
       "schemaUrl": "/api/schemas/brechas.schema.json",
       "dataSchemaUrl": "/api/schemas/brechas-data.schema.json",
       "publicationMode": "release",
-      "releaseUrl": "/api/releases/2026-08-24-r10/brechas.json"
+      "releaseUrl": "/api/releases/2026-09-01-r11/brechas.json"
     },
     {
       "id": "enia-acciones",
@@ -134,11 +134,11 @@
         "es": "registros fuente",
         "en": "source records"
       },
-      "lastUpdate": "2026-08-21T00:00:00.000Z",
+      "lastUpdate": "2026-09-01T00:00:00.000Z",
       "schemaUrl": "/api/schemas/enia-acciones.schema.json",
       "dataSchemaUrl": "/api/schemas/enia-acciones-data.schema.json",
       "publicationMode": "release",
-      "releaseUrl": "/api/releases/2026-08-24-r10/enia-acciones.json"
+      "releaseUrl": "/api/releases/2026-09-01-r11/enia-acciones.json"
     },
     {
       "id": "monitoreo",
@@ -153,7 +153,7 @@
         "es": "frentes",
         "en": "monitoring fronts"
       },
-      "lastUpdate": "2026-08-24T00:00:00.000Z",
+      "lastUpdate": "2026-09-01T00:00:00.000Z",
       "schemaUrl": "/api/schemas/monitoreo.schema.json",
       "dataSchemaUrl": "/api/schemas/monitoreo-data.schema.json",
       "publicationMode": "rolling"
@@ -171,11 +171,11 @@
         "es": "secciones",
         "en": "sections"
       },
-      "lastUpdate": "2026-08-22T00:00:00.000Z",
+      "lastUpdate": "2026-09-01T00:00:00.000Z",
       "schemaUrl": "/api/schemas/marco-pais.schema.json",
       "dataSchemaUrl": "/api/schemas/marco-pais-data.schema.json",
       "publicationMode": "release",
-      "releaseUrl": "/api/releases/2026-08-24-r10/marco-pais.json"
+      "releaseUrl": "/api/releases/2026-09-01-r11/marco-pais.json"
     },
     {
       "id": "historial",
@@ -185,16 +185,16 @@
         "es": "Bitácora pública y bilingüe de cambios editoriales, con fecha, tipo, fuente y commit cuando está disponible.",
         "en": "Public bilingual log of editorial changes, with date, type, source and commit when available."
       },
-      "count": 45,
+      "count": 48,
       "countUnit": {
         "es": "cambios publicados",
         "en": "published changes"
       },
-      "lastUpdate": "2026-08-24T00:00:00.000Z",
+      "lastUpdate": "2026-09-01T00:00:00.000Z",
       "schemaUrl": "/api/schemas/historial.schema.json",
       "dataSchemaUrl": "/api/schemas/historial-data.schema.json",
       "publicationMode": "release",
-      "releaseUrl": "/api/releases/2026-08-24-r10/historial.json"
+      "releaseUrl": "/api/releases/2026-09-01-r11/historial.json"
     },
     {
       "id": "coyuntura",
@@ -213,7 +213,7 @@
       "schemaUrl": "/api/schemas/coyuntura.schema.json",
       "dataSchemaUrl": "/api/schemas/coyuntura-data.schema.json",
       "publicationMode": "release",
-      "releaseUrl": "/api/releases/2026-08-24-r10/coyuntura.json"
+      "releaseUrl": "/api/releases/2026-09-01-r11/coyuntura.json"
     },
     {
       "id": "recursos",
@@ -232,7 +232,7 @@
       "schemaUrl": "/api/schemas/recursos.schema.json",
       "dataSchemaUrl": "/api/schemas/recursos-data.schema.json",
       "publicationMode": "release",
-      "releaseUrl": "/api/releases/2026-08-24-r10/recursos.json"
+      "releaseUrl": "/api/releases/2026-09-01-r11/recursos.json"
     },
     {
       "id": "codebook",
@@ -251,7 +251,7 @@
       "schemaUrl": "/api/schemas/codebook.schema.json",
       "dataSchemaUrl": "/api/schemas/codebook-data.schema.json",
       "publicationMode": "release",
-      "releaseUrl": "/api/releases/2026-08-24-r10/codebook.json"
+      "releaseUrl": "/api/releases/2026-09-01-r11/codebook.json"
     }
   ]
 }
