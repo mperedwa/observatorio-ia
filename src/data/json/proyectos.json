@@ -2,65 +2,74 @@
   {
     "id": "pj-clasificacion-cobros",
     "titulo": {
-      "es": "Clasificación documental de cobros",
-      "en": "Document classification for debt collection"
+      "es": "Tipificador de Escritos",
+      "en": "Filing Classifier"
     },
     "institucionId": "poder-judicial",
     "categoria": "judicial",
-    "estado": "piloto",
-    "desde": "2023",
+    "estado": "operativo",
+    "desde": "2020",
     "descripcion": {
-      "es": "Plan piloto del Poder Judicial para clasificar automáticamente los documentos que ingresan al Juzgado Especializado de Cobro Judicial de Pérez Zeledón. La fuente oficial confirma el uso de inteligencia artificial y reporta mejoras en la agilidad de la tramitación.",
-      "en": "Judicial Branch pilot plan to automatically classify documents received by the Specialized Debt Collection Court of Pérez Zeledón. The official source confirms the use of artificial intelligence and reports faster case processing."
+      "es": "Sistema de inteligencia artificial del Poder Judicial que usa aprendizaje automático y reconocimiento óptico de caracteres para leer y clasificar automáticamente los escritos presentados en los juzgados especializados de cobro judicial. La institución documenta su implantación en toda la jurisdicción cobratoria.",
+      "en": "Judicial Branch AI system that uses machine learning and optical character recognition to read and automatically classify filings submitted to specialized debt collection courts. The institution documents its deployment across the entire debt collection jurisdiction."
     },
     "resultado": {
-      "es": "El Poder Judicial reporta mayor agilidad de procesamiento y una reducción del circulante tras dos años del piloto; no publica un volumen atribuible de documentos procesados.",
-      "en": "The Judicial Branch reports faster processing and a lower caseload after two years of the pilot; it does not publish an attributable document volume."
+      "es": "Entre el 1 de enero y el 29 de noviembre de 2024 procesó 1.302.899 escritos, según el Poder Judicial. La institución vincula su uso estandarizado con mejores tiempos de respuesta, pero la fuente no aísla el efecto causal del Tipificador frente a otras medidas de gestión.",
+      "en": "According to the Judicial Branch, it processed 1,302,899 filings from January 1 through November 29, 2024. The institution links its standardized use to improved response times, but the source does not isolate the Classifier's causal effect from other management measures."
     },
     "contexto": {
-      "es": "Se cataloga como piloto porque así lo denomina la fuente institucional. La cifra anterior de 1,302,899 documentos se retiró al no encontrarse respaldo atribuible a este sistema.",
-      "en": "It is catalogued as a pilot because that is how the institutional source describes it. The previous figure of 1,302,899 documents was removed because no source attributable to this system was found."
+      "es": "El piloto comenzó en Pérez Zeledón en marzo de 2020; el Consejo Superior aprobó la expansión en diciembre de 2022 y una fuente institucional confirmó operación nacional en 2024. La Circular 241-2025 exige retroalimentar el sistema y mantener la clasificación manual cuando corresponda. En 2026, el Poder Judicial documentó dentro de SIGMA una mejora denominada Depurador de Escritos; esto no implica que todo el Tipificador esté alojado en SIGMA.",
+      "en": "The pilot began in Pérez Zeledón in March 2020; the Superior Council approved expansion in December 2022, and an institutional source confirmed nationwide operation in 2024. Circular 241-2025 requires feedback to the system and manual classification when needed. In 2026, the Judicial Branch documented an enhancement called Depurador de Escritos within SIGMA; this does not imply that the entire Classifier is hosted in SIGMA."
     },
     "fuenteUrl": "https://pj.poder-judicial.go.cr/index.php/component/content/article/760-poder-judicial-implementa-inteligencia-artificial-para-disminuir-circulante-en-materia-cobratoria",
     "modeloVersion": 2,
     "tipoIniciativa": "sistema-ia",
     "estadoCatalogo": "verificado",
-    "faseImplementacion": "piloto",
+    "faseImplementacion": "operativo",
     "estadoIA": "confirmada",
     "evaluacion": {
       "existencia": {
         "estado": "confirmado",
         "fuenteIds": [
-          "pj-clasificador-oficial"
+          "pj-tipificador-expansion-2023",
+          "pj-tipificador-operacion-2024"
         ]
       },
       "ejecucion": {
         "estado": "confirmado",
         "fuenteIds": [
-          "pj-clasificador-oficial"
+          "pj-tipificador-operacion-2024",
+          "pj-tipificador-boletin-165-2026"
         ]
       },
       "tecnicaIA": {
         "estado": "confirmado",
         "fuenteIds": [
-          "pj-clasificador-oficial"
+          "pj-tipificador-expansion-2023",
+          "pj-tipificador-premio-2023"
         ]
       },
       "usoOperativo": {
         "estado": "confirmado",
         "fuenteIds": [
-          "pj-clasificador-oficial"
+          "pj-tipificador-operacion-2024",
+          "pj-tipificador-circular-241-2025",
+          "pj-tipificador-boletin-165-2026"
         ]
       },
       "resultados": {
         "estado": "confirmado",
         "fuenteIds": [
-          "pj-clasificador-oficial"
+          "pj-tipificador-premio-2023",
+          "pj-tipificador-operacion-2024"
         ]
       },
       "gobernanza": {
-        "estado": "no-determinado",
-        "fuenteIds": []
+        "estado": "parcialmente-confirmado",
+        "fuenteIds": [
+          "pj-tipificador-expansion-2023",
+          "pj-tipificador-circular-241-2025"
+        ]
       }
     },
     "fuentes": [
@@ -85,45 +94,185 @@
           "es": "Poder Judicial implementa inteligencia artificial para disminuir circulante en materia cobratoria",
           "en": "Judicial Branch implements artificial intelligence to reduce the debt-collection caseload"
         },
-        "fechaConsulta": "2026-08-19"
+        "fechaConsulta": "2026-09-08"
+      },
+      {
+        "id": "pj-tipificador-expansion-2023",
+        "url": "https://actualidadjudicial.poder-judicial.go.cr/vol285/index.html",
+        "publicador": "Poder Judicial de Costa Rica",
+        "tipoFuente": "primaria-oficial",
+        "fechaPublicacion": "2023-05-10",
+        "respalda": [
+          "existencia",
+          "objetivo-declarado",
+          "ejecucion",
+          "tecnica-ia",
+          "uso-operativo",
+          "resultado-reportado",
+          "gobernanza"
+        ],
+        "naturalezaAfirmacion": [
+          "hecho",
+          "resultado-reportado"
+        ],
+        "titulo": {
+          "es": "Poder Judicial abre camino a la Inteligencia Artificial en sus despachos de cobro judicial",
+          "en": "Judicial Branch advances artificial intelligence in its debt collection courts"
+        },
+        "fechaConsulta": "2026-09-08"
+      },
+      {
+        "id": "pj-tipificador-premio-2023",
+        "url": "https://pj.poder-judicial.go.cr/index.php/component/content/article/1044-en-xxi-asamblea-plenaria-de-la-cumbre-judicial-iberoamericana-poder-judicial-recibe-distincion-internacional-por-avances-tecnologicos-y-compromiso-de-genero?Itemid=409&catid=8",
+        "publicador": "Poder Judicial de Costa Rica",
+        "tipoFuente": "primaria-oficial",
+        "fechaPublicacion": "2023",
+        "respalda": [
+          "existencia",
+          "tecnica-ia",
+          "resultado-reportado"
+        ],
+        "naturalezaAfirmacion": [
+          "hecho",
+          "resultado-reportado"
+        ],
+        "titulo": {
+          "es": "Poder Judicial recibe distinción internacional por avances tecnológicos y compromiso de género",
+          "en": "Judicial Branch receives international recognition for technological progress and gender commitment"
+        },
+        "fechaConsulta": "2026-09-08"
+      },
+      {
+        "id": "pj-tipificador-operacion-2024",
+        "url": "https://actualidadjudicial.poder-judicial.go.cr/vol294/noticias_judiciales/nj4-294.html",
+        "publicador": "Poder Judicial de Costa Rica",
+        "tipoFuente": "primaria-oficial",
+        "fechaPublicacion": "2025",
+        "respalda": [
+          "existencia",
+          "ejecucion",
+          "uso-operativo",
+          "resultado-reportado"
+        ],
+        "naturalezaAfirmacion": [
+          "hecho",
+          "resultado-reportado"
+        ],
+        "titulo": {
+          "es": "Juzgados de Cobro Judicial alcanzan en 2024 el circulante más bajo en los últimos cuatro años",
+          "en": "Debt collection courts reach their lowest caseload in four years in 2024"
+        },
+        "fechaConsulta": "2026-09-08"
+      },
+      {
+        "id": "pj-tipificador-circular-241-2025",
+        "url": "https://nexuspj.poder-judicial.go.cr/document/avi-1-0003-14292",
+        "publicador": "Poder Judicial de Costa Rica",
+        "tipoFuente": "primaria-oficial",
+        "fechaPublicacion": "2026-01-07",
+        "respalda": [
+          "ejecucion",
+          "uso-operativo",
+          "gobernanza"
+        ],
+        "naturalezaAfirmacion": [
+          "hecho"
+        ],
+        "titulo": {
+          "es": "Circular 241-2025: obligatoriedad de retroalimentar al sistema de inteligencia artificial Tipificador de Escritos",
+          "en": "Circular 241-2025: mandatory feedback for the Filing Classifier artificial intelligence system"
+        },
+        "fechaConsulta": "2026-09-08"
+      },
+      {
+        "id": "pj-tipificador-boletin-165-2026",
+        "url": "https://nexuspj.poder-judicial.go.cr/document/avi-1-0155-15756",
+        "publicador": "Poder Judicial de Costa Rica",
+        "tipoFuente": "primaria-oficial",
+        "fechaPublicacion": "2026-09-02",
+        "respalda": [
+          "ejecucion",
+          "uso-operativo",
+          "gobernanza"
+        ],
+        "naturalezaAfirmacion": [
+          "hecho"
+        ],
+        "titulo": {
+          "es": "Boletín Judicial 165-2026: uso del Depurador de Escritos asociado al Tipificador",
+          "en": "Judicial Bulletin 165-2026: use of Depurador de Escritos associated with the Classifier"
+        },
+        "fechaConsulta": "2026-09-08"
       }
     ],
-    "fechaPrimeraEvidencia": "2023",
-    "fechaInicioPiloto": "2023",
-    "fechaUltimaVerificacion": "2026-08-19",
-    "fechaProximaRevision": "2026-11-19",
+    "fechaPrimeraEvidencia": "2020-03",
+    "fechaInicioPiloto": "2020-03",
+    "fechaUltimaVerificacion": "2026-09-08",
+    "fechaProximaRevision": "2026-12-08",
     "objetivoDeclarado": {
-      "es": "Clasificar documentos que ingresan al Juzgado Especializado de Cobro Judicial de Pérez Zeledón para agilizar su tramitación.",
-      "en": "Classify documents received by the Specialized Debt Collection Court of Pérez Zeledón to speed up processing."
+      "es": "Asignar automáticamente un tipo a los escritos presentados en los juzgados especializados de cobro judicial para organizar el trabajo y agilizar la tramitación.",
+      "en": "Automatically assign a type to filings submitted to specialized debt collection courts in order to organize work and speed up case processing."
     },
     "resultadosVerificados": [
       {
-        "id": "mejora-tramitacion-reportada",
+        "id": "efectividad-reportada-2021-2023",
         "texto": {
-          "es": "El Poder Judicial reporta mayor agilidad de procesamiento y una reducción del circulante tras dos años del piloto.",
-          "en": "The Judicial Branch reports faster processing and a lower caseload after two years of the pilot."
+          "es": "El Poder Judicial reportó 223.689 escritos procesados y 89% de efectividad entre marzo de 2021 y agosto de 2023, durante las etapas de piloto, entrenamiento y afinamiento.",
+          "en": "The Judicial Branch reported 223,689 filings processed and 89% effectiveness from March 2021 through August 2023, during the pilot, training and refinement stages."
         },
         "fuenteIds": [
-          "pj-clasificador-oficial"
-        ]
+          "pj-tipificador-premio-2023"
+        ],
+        "fecha": "2023-08"
+      },
+      {
+        "id": "volumen-procesado-2024",
+        "texto": {
+          "es": "El Tipificador procesó 1.302.899 escritos en toda la jurisdicción cobratoria entre el 1 de enero y el 29 de noviembre de 2024, según el Poder Judicial.",
+          "en": "According to the Judicial Branch, the Classifier processed 1,302,899 filings across the debt collection jurisdiction from January 1 through November 29, 2024."
+        },
+        "fuenteIds": [
+          "pj-tipificador-operacion-2024"
+        ],
+        "fecha": "2024-11-29"
       }
     ],
     "datosConocidos": [
       {
-        "es": "La fuente institucional denomina la iniciativa como plan piloto y confirma el uso de inteligencia artificial.",
-        "en": "The institutional source calls the initiative a pilot plan and confirms the use of artificial intelligence."
+        "es": "El piloto comenzó en Pérez Zeledón en marzo de 2020 y el Consejo Superior aprobó su expansión nacional en diciembre de 2022.",
+        "en": "The pilot began in Pérez Zeledón in March 2020, and the Superior Council approved its nationwide expansion in December 2022."
+      },
+      {
+        "es": "El sistema usa aprendizaje automático y reconocimiento óptico de caracteres para extraer texto e identificar el tipo de escrito.",
+        "en": "The system uses machine learning and optical character recognition to extract text and identify the type of filing."
+      },
+      {
+        "es": "La Circular 241-2025 exige retroalimentar el Tipificador y recurrir a la clasificación manual cuando el sistema no resuelve el escrito.",
+        "en": "Circular 241-2025 requires feedback to the Classifier and manual classification when the system does not resolve a filing."
+      },
+      {
+        "es": "El Boletín Judicial 165-2026 ubica dentro de SIGMA el Depurador de Escritos, una mejora asociada al Tipificador; no ubica allí al sistema completo.",
+        "en": "Judicial Bulletin 165-2026 places Depurador de Escritos, an enhancement associated with the Classifier, within SIGMA; it does not place the entire system there."
       }
     ],
     "datosNoDeterminados": [
       {
-        "es": "No se localizaron métricas públicas del volumen de documentos procesados atribuibles a este clasificador.",
-        "en": "No public metrics were found for the volume of documents processed by this classifier."
+        "es": "No se localizó una medición pública e independiente de la precisión actual después del despliegue nacional.",
+        "en": "No public independent measurement of current accuracy after nationwide deployment was found."
+      },
+      {
+        "es": "Las fuentes no aíslan el efecto del Tipificador sobre tiempos de respuesta o circulante frente a otras herramientas y medidas de gestión.",
+        "en": "The sources do not isolate the Classifier's effect on response times or caseload from other tools and management measures."
       }
     ],
     "preguntasAbiertas": [
       {
-        "es": "¿Qué protocolo de revisión humana, registro de errores e impugnación rige las clasificaciones producidas durante el piloto?",
-        "en": "What human-review, error-logging and appeal protocol governs classifications produced during the pilot?"
+        "es": "¿Cuál es la precisión, tasa de error y volumen de correcciones manuales después del despliegue nacional?",
+        "en": "What are the accuracy, error rate and volume of manual corrections after nationwide deployment?"
+      },
+      {
+        "es": "¿Qué mecanismos documentados de auditoría, trazabilidad, notificación e impugnación complementan la retroalimentación y la clasificación manual de respaldo?",
+        "en": "What documented audit, traceability, notice and appeal mechanisms complement feedback and manual fallback?"
       }
     ]
   },

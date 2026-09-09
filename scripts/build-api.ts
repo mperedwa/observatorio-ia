@@ -37,11 +37,11 @@ const COUNTERS_TS = join(ROOT, 'src', 'data', 'counters.ts');
 const PKG = JSON.parse(readFileSync(join(ROOT, 'package.json'), 'utf8')) as { version: string };
 
 const DATA_RELEASE = {
-  id: '2026-09-01-r11',
-  date: '2026-09-01',
+  id: '2026-09-08-r12',
+  date: '2026-09-08',
   title: {
-    es: 'Corte R11 de actualización del catálogo',
-    en: 'R11 catalog update release',
+    es: 'Corte R12 de actualización del catálogo',
+    en: 'R12 catalog update release',
   },
 } as const;
 const RELEASE_LOCK_PATH = join(RELEASES_OUT_DIR, DATA_RELEASE.id, 'release.lock');
@@ -143,7 +143,7 @@ const DATASETS: Dataset[] = [
     endpoint: '/api/proyectos.json',
     title: { es: 'Iniciativas', en: 'Initiatives' },
     countUnit: { es: 'iniciativas', en: 'initiatives' },
-    lastUpdate: '2026-09-01',
+    lastUpdate: '2026-09-08',
     description:
       'Catálogo de iniciativas relacionadas con IA en el sector público costarricense. Incluye sistemas, pilotos, planes y capacidades con descripción bilingüe ES/EN y una fuente pública consultada.',
     descriptionEs:
@@ -156,7 +156,7 @@ const DATASETS: Dataset[] = [
     endpoint: '/api/instituciones.json',
     title: { es: 'Instituciones', en: 'Institutions' },
     countUnit: { es: 'instituciones', en: 'institutions' },
-    lastUpdate: '2026-09-01',
+    lastUpdate: '2026-09-08',
     description:
       'Instituciones públicas con iniciativas relacionadas con IA documentadas (ministerios, autónomas, judicial, universidades e investigación).',
     descriptionEs:
@@ -227,7 +227,7 @@ const DATASETS: Dataset[] = [
     endpoint: '/api/monitoreo.json',
     title: { es: 'Monitoreo editorial', en: 'Editorial monitoring' },
     countUnit: { es: 'frentes', en: 'monitoring fronts' },
-    lastUpdate: '2026-09-01',
+    lastUpdate: '2026-09-08',
     publicationMode: 'rolling',
     description:
       'Agenda y bitácora editorial: cadencias por frente, próximas revisiones, cambios de estado y revisiones documentadas sin cambios.',
@@ -260,7 +260,7 @@ const DATASETS: Dataset[] = [
     endpoint: '/api/historial.json',
     title: { es: 'Historial editorial', en: 'Editorial history' },
     countUnit: { es: 'cambios publicados', en: 'published changes' },
-    lastUpdate: '2026-09-01',
+    lastUpdate: '2026-09-08',
     description:
       'Bitácora pública y bilingüe de cambios editoriales con fecha, tipo, fuente y commit cuando está disponible.',
     descriptionEs:
@@ -440,7 +440,7 @@ const API_INDEX_COPY = {
     infrastructureText:
       'Los schemas públicos, la release sustantiva y las descargas con checksum permiten repetir un análisis. La bitácora de monitoreo se identifica aparte como rodante.',
     schemasTitle: 'Índice de schemas',
-    releaseTitle: 'Release R11',
+    releaseTitle: 'Release R12',
     downloadsTitle: 'Descargas y CSV',
     downloadFilesLabel: 'Archivos directos de la release',
     bundleTitle: 'Bundle JSON completo',
@@ -531,7 +531,7 @@ const API_INDEX_COPY = {
     infrastructureText:
       'Public schemas, the substantive release and checksum-backed downloads support reproducible analysis. The monitoring log is identified separately as rolling.',
     schemasTitle: 'Schema index',
-    releaseTitle: 'R11 release',
+    releaseTitle: 'R12 release',
     downloadsTitle: 'Downloads and CSV',
     downloadFilesLabel: 'Direct release files',
     bundleTitle: 'Complete JSON bundle',

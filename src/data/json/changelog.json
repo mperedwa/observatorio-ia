@@ -1,5 +1,18 @@
 [
   {
+    "fecha": "2026-09-08",
+    "tipo": "proyecto",
+    "actualizacion": {
+      "es": "La ficha Clasificación documental de cobros adopta el nombre institucional Tipificador de Escritos y pasa de piloto a operativo. Fuentes oficiales confirman aprendizaje automático y reconocimiento óptico de caracteres, implantación en toda la jurisdicción cobratoria, 1.302.899 escritos procesados en 2024 y reglas de retroalimentación y clasificación manual de respaldo vigentes en 2026.",
+      "en": "The Document Classification for Debt Collection record adopts the institutional name Filing Classifier and moves from pilot to operational. Official sources confirm machine learning and optical character recognition, deployment across the entire debt collection jurisdiction, 1,302,899 filings processed in 2024, and feedback and manual-fallback rules in force in 2026."
+    },
+    "fuente": {
+      "es": "Poder Judicial, evidencia institucional del Tipificador de Escritos",
+      "en": "Judicial Branch, institutional evidence for the Filing Classifier"
+    },
+    "fuente_url": "https://actualidadjudicial.poder-judicial.go.cr/vol294/noticias_judiciales/nj4-294.html"
+  },
+  {
     "fecha": "2026-09-01",
     "tipo": "proyecto",
     "actualizacion": {

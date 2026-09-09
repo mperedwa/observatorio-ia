@@ -177,7 +177,7 @@ describe('catálogo real migrado', () => {
     }
   });
 
-  it('fija el corte editorial derivado del 1 de septiembre de 2026', () => {
+  it('fija el corte editorial derivado del 8 de septiembre de 2026', () => {
     expect(resumirCatalogo(proyectos)).toEqual({
       iniciativasDocumentadas: 31,
       adopcionVerificada: 7,
@@ -199,6 +199,26 @@ describe('catálogo real migrado', () => {
       'inamu-ela',
       'aresep-clara',
     ]);
+  });
+
+  it('documenta el Tipificador como operación nacional con técnica y gobernanza trazables', () => {
+    const tipificador = proyectos.find(({ id }) => id === 'pj-clasificacion-cobros');
+
+    expect(tipificador).toMatchObject({
+      titulo: { es: 'Tipificador de Escritos', en: 'Filing Classifier' },
+      estado: 'operativo',
+      faseImplementacion: 'operativo',
+      fechaInicioPiloto: '2020-03',
+      fechaUltimaVerificacion: '2026-09-08',
+      evaluacion: {
+        tecnicaIA: { estado: 'confirmado' },
+        usoOperativo: { estado: 'confirmado' },
+        gobernanza: { estado: 'parcialmente-confirmado' },
+      },
+    });
+    expect(tipificador?.resultadosVerificados?.some(
+      ({ id }) => id === 'volumen-procesado-2024',
+    )).toBe(true);
   });
 
   it('mantiene clasificaciones metodológicas distintas en las altas recientes', () => {

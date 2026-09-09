@@ -1,12 +1,12 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-09-01T00:00:00.000Z",
+  "lastUpdate": "2026-09-08T00:00:00.000Z",
   "count": 8,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "data": {
     "schemaVersion": 1,
-    "fechaCorte": "2026-09-01",
+    "fechaCorte": "2026-09-08",
     "politica": {
       "descripcion": {
         "es": "La agenda de revisión separa la vigilancia automática de la decisión editorial. Una alerta abre una revisión; no cambia por sí sola el catálogo, el estado de un expediente ni la evidencia de ejecución.",
@@ -185,8 +185,8 @@
           "en": "Review of operational continuity, new outcomes, scope changes and public safeguards."
         },
         "cadenciaId": "trimestral",
-        "fechaUltimaRevision": "2026-09-01",
-        "fechaProximaRevision": "2026-12-01",
+        "fechaUltimaRevision": "2026-09-08",
+        "fechaProximaRevision": "2026-12-08",
         "alcance": {
           "cantidad": 7,
           "unidad": {
@@ -270,6 +270,40 @@
       }
     ],
     "revisiones": [
+      {
+        "id": "revision-pj-tipificador-2026-09-08",
+        "fecha": "2026-09-08",
+        "frenteId": "catalogo-verificado",
+        "resultado": "cambio-publicado",
+        "resumen": {
+          "es": "El Tipificador de Escritos del Poder Judicial se reclasificó de piloto a operativo. Fuentes oficiales confirman su implantación en toda la jurisdicción cobratoria, 1.302.899 escritos procesados en 2024 y reglas de retroalimentación y clasificación manual de respaldo vigentes en 2026.",
+          "en": "The Judicial Branch Filing Classifier was reclassified from pilot to operational. Official sources confirm deployment across the entire debt collection jurisdiction, 1,302,899 filings processed in 2024, and feedback and manual-fallback rules in force in 2026."
+        },
+        "fuenteUrl": "https://actualidadjudicial.poder-judicial.go.cr/vol294/noticias_judiciales/nj4-294.html",
+        "transiciones": [
+          {
+            "objetoTipo": "proyecto",
+            "objetoId": "pj-clasificacion-cobros",
+            "campo": "titulo.es",
+            "antes": "Clasificación documental de cobros",
+            "despues": "Tipificador de Escritos"
+          },
+          {
+            "objetoTipo": "proyecto",
+            "objetoId": "pj-clasificacion-cobros",
+            "campo": "faseImplementacion",
+            "antes": "piloto",
+            "despues": "operativo"
+          },
+          {
+            "objetoTipo": "proyecto",
+            "objetoId": "pj-clasificacion-cobros",
+            "campo": "evaluacion.gobernanza.estado",
+            "antes": "no-determinado",
+            "despues": "parcialmente-confirmado"
+          }
+        ]
+      },
       {
         "id": "revision-invu-enia-2026-09-01",
         "fecha": "2026-09-01",

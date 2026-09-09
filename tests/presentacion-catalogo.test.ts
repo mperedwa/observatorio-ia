@@ -59,7 +59,7 @@ describe('presentación del catálogo', () => {
     const poderJudicial = proyectos.filter(
       (proyecto) => proyecto.institucionId === 'poder-judicial',
     );
-    expect(obtenerUltimaVerificacion(poderJudicial)).toBe('2026-08-21');
+    expect(obtenerUltimaVerificacion(poderJudicial)).toBe('2026-09-08');
     expect(obtenerCapaCatalogo(ordenarProyectosExpediente(poderJudicial, 'es')[0])).toBe(
       'verificado',
     );
