@@ -28,6 +28,7 @@ describe('registro editorial de monitoreo', () => {
   });
 
   it('añade una revisión y mueve solo el frente correspondiente', () => {
+    const fechaCorteOriginal = monitoreo.fechaCorte;
     const original = structuredClone(monitoreo);
     const actualizado = prepararRevision(original, revision());
     const frente = actualizado.frentes.find(({ id }) => id === 'enia-plan-accion');
@@ -36,7 +37,7 @@ describe('registro editorial de monitoreo', () => {
     expect(frente?.fechaProximaRevision).toBe('2026-10-21');
     expect(actualizado.fechaCorte).toBe('2026-09-21');
     expect(actualizado.revisiones[0].id).toBe('revision-prueba-2026-09-21');
-    expect(monitoreo.fechaCorte).toBe('2026-09-15');
+    expect(monitoreo.fechaCorte).toBe(fechaCorteOriginal);
   });
 
   it('rechaza una revisión sin cambios que incluye una transición', () => {

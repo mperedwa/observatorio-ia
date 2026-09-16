@@ -99,8 +99,12 @@ describe('pipeline operativo completo sin mutaciones automáticas', () => {
   });
 
   it('convierte la fecha editorial en recordatorio sin registrar una revisión', () => {
+    const monitoringFixture = structuredClone(inventoryJson) as InventarioMonitoreo;
+    const legislacion = monitoringFixture.frentes.find(({ id }) => id === 'legislacion-ia')!;
+    legislacion.fechaUltimaRevision = '2026-08-21';
+    legislacion.fechaProximaRevision = '2026-08-28';
     const report = buildMonitoringDueReport(
-      inventoryJson as InventarioMonitoreo,
+      monitoringFixture,
       '2026-08-21',
       7,
     );

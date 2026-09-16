@@ -16,7 +16,8 @@ Convertir la agenda editorial en un flujo donde la automatización prepare una r
 4. Telegram se reserva para el veredicto listo para decisión: `SIN CAMBIOS`, `CAMBIO` o `INVESTIGAR`.
 5. Un GO autoriza el cambio local exacto y su validación. Push y despliegue requieren autorización separada, salvo que Mario los incluya expresamente en el mismo mensaje.
 6. El issue se cierra únicamente después de comprobar que `main` contiene la revisión aprobada y que la próxima fecha avanzó.
-7. El issue #42 permanece abierto y sin procesar durante esta implementación.
+7. Los markers legacy, incluido el issue #42, solo se procesan después de una petición explícita de Mario; el GO del 16 de septiembre de 2026 autorizó su cierre editorial.
+8. Una revisión vencida con 48 horas sin actividad recibe una única alerta `monitoring-stale`; el watcher debe retomar cualquier estado `developer-investigating` estancado o explicar el bloqueo, en vez de omitirlo indefinidamente.
 
 ## Arquitectura
 

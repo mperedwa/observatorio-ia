@@ -57,6 +57,7 @@ El workflow `monitoring-due.yml` corre en días hábiles a las 07:00 de Costa Ri
 - abre como máximo un issue `monitoring-review` mientras siga abierto;
 - incluye fuente base, cadencia, última y próxima revisión;
 - no envía Telegram cuando crea la tarea; el watcher avisa una vez cuando existe un veredicto listo para decisión;
+- si una revisión ya vencida acumula al menos 48 horas sin actividad, agrega una sola alerta y la etiqueta `monitoring-stale`; una investigación marcada como iniciada deja de omitirse indefinidamente;
 - no registra automáticamente un resultado `sin-cambios`;
 - no modifica ninguna fecha ni dataset.
 

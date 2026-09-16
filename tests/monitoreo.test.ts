@@ -62,8 +62,9 @@ describe('agenda de monitoreo editorial', () => {
       }
     }
 
-    expect(resumenMonitoreo.revisionesSinCambios).toBe(4);
+    expect(resumenMonitoreo.revisionesSinCambios).toBe(6);
     expect(resumenMonitoreo.cambiosPublicados).toBe(10);
+    expect(resumenMonitoreo.vencidas).toBe(0);
   });
 
   it('calcula el estado contra el corte publicado y no contra el reloj local', () => {

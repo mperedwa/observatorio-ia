@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "fechaCorte": "2026-09-15",
+  "fechaCorte": "2026-09-16",
   "politica": {
     "descripcion": {
       "es": "La agenda de revisión separa la vigilancia automática de la decisión editorial. Una alerta abre una revisión; no cambia por sí sola el catálogo, el estado de un expediente ni la evidencia de ejecución.",
@@ -15,7 +15,10 @@
         "id": "semanal",
         "dias": 7,
         "diasAnticipacionHabiles": 1,
-        "nombre": { "es": "Semanal", "en": "Weekly" },
+        "nombre": {
+          "es": "Semanal",
+          "en": "Weekly"
+        },
         "aplicaA": {
           "es": "Expedientes legislativos y otros frentes con cambios de estado frecuentes.",
           "en": "Legislative bills and other areas with frequent status changes."
@@ -25,7 +28,10 @@
         "id": "mensual",
         "dias": 31,
         "diasAnticipacionHabiles": 3,
-        "nombre": { "es": "Mensual", "en": "Monthly" },
+        "nombre": {
+          "es": "Mensual",
+          "en": "Monthly"
+        },
         "aplicaA": {
           "es": "ENIA, iniciativas en seguimiento e indicadores cercanos a una nueva edición.",
           "en": "ENIA, initiatives under review and indicators approaching a new edition."
@@ -35,7 +41,10 @@
         "id": "trimestral",
         "dias": 92,
         "diasAnticipacionHabiles": 5,
-        "nombre": { "es": "Trimestral", "en": "Quarterly" },
+        "nombre": {
+          "es": "Trimestral",
+          "en": "Quarterly"
+        },
         "aplicaA": {
           "es": "Adopciones verificadas y arquitectura general del Marco país.",
           "en": "Verified adoption and the overall Country Framework architecture."
@@ -45,7 +54,10 @@
         "id": "semestral",
         "dias": 184,
         "diasAnticipacionHabiles": 5,
-        "nombre": { "es": "Semestral", "en": "Semiannual" },
+        "nombre": {
+          "es": "Semestral",
+          "en": "Semiannual"
+        },
         "aplicaA": {
           "es": "Ecosistema, capacidades e indicadores estructurales de publicación menos frecuente.",
           "en": "Ecosystem, capabilities and structural indicators published less frequently."
@@ -58,17 +70,23 @@
       "id": "legislacion-ia",
       "ambito": "legislacion",
       "metrica": "legislacion-expedientes",
-      "nombre": { "es": "Expedientes relacionados con IA", "en": "AI-related bills" },
+      "nombre": {
+        "es": "Expedientes relacionados con IA",
+        "en": "AI-related bills"
+      },
       "descripcion": {
         "es": "Revisión del estado, comisión y nueva actividad oficial de los siete expedientes catalogados.",
         "en": "Review of status, committee and new official activity for the seven cataloged bills."
       },
       "cadenciaId": "semanal",
-      "fechaUltimaRevision": "2026-08-21",
-      "fechaProximaRevision": "2026-08-28",
+      "fechaUltimaRevision": "2026-09-16",
+      "fechaProximaRevision": "2026-09-23",
       "alcance": {
         "cantidad": 7,
-        "unidad": { "es": "expedientes", "en": "bills" }
+        "unidad": {
+          "es": "expedientes",
+          "en": "bills"
+        }
       },
       "fuenteUrl": "https://www.asamblea.go.cr/ca/Lists/cp/DispForm.aspx?ContentTypeId=0x01008922D325D4FE564292B03FD67DF003A7&ID=22860"
     },
@@ -76,7 +94,10 @@
       "id": "enia-plan-accion",
       "ambito": "enia",
       "metrica": "enia-intervenciones-unicas",
-      "nombre": { "es": "ENIA y Plan de Acción", "en": "ENIA and Action Plan" },
+      "nombre": {
+        "es": "ENIA y Plan de Acción",
+        "en": "ENIA and Action Plan"
+      },
       "descripcion": {
         "es": "Control de versión de la estrategia, el PDF del Plan y evidencia externa sobre sus 120 intervenciones únicas. Los 129 registros fuente se conservan para auditoría.",
         "en": "Version monitoring for the strategy, the Action Plan PDF and external evidence on its 120 unique interventions. All 129 source records remain available for audit."
@@ -86,7 +107,10 @@
       "fechaProximaRevision": "2026-10-15",
       "alcance": {
         "cantidad": 120,
-        "unidad": { "es": "intervenciones únicas", "en": "unique interventions" }
+        "unidad": {
+          "es": "intervenciones únicas",
+          "en": "unique interventions"
+        }
       },
       "fuenteUrl": "https://www.micitt.go.cr/gobierno_digital/inteligencia_artificial"
     },
@@ -94,7 +118,10 @@
       "id": "catalogo-seguimiento",
       "ambito": "catalogo",
       "metrica": "catalogo-seguimiento",
-      "nombre": { "es": "Iniciativas en seguimiento", "en": "Initiatives under review" },
+      "nombre": {
+        "es": "Iniciativas en seguimiento",
+        "en": "Initiatives under review"
+      },
       "descripcion": {
         "es": "Búsqueda prioritaria de evidencia sobre ejecución, técnica de IA, uso operativo, resultados y gobernanza.",
         "en": "Priority search for evidence on execution, AI technique, operational use, results and governance."
@@ -104,7 +131,10 @@
       "fechaProximaRevision": "2026-10-15",
       "alcance": {
         "cantidad": 9,
-        "unidad": { "es": "iniciativas", "en": "initiatives" }
+        "unidad": {
+          "es": "iniciativas",
+          "en": "initiatives"
+        }
       },
       "fuenteUrl": "https://observatorioia.org/es/proyectos/"
     },
@@ -112,7 +142,10 @@
       "id": "indicador-ilia",
       "ambito": "indicador",
       "metrica": "indicador-ilia",
-      "nombre": { "es": "Índice Latinoamericano de IA", "en": "Latin American AI Index" },
+      "nombre": {
+        "es": "Índice Latinoamericano de IA",
+        "en": "Latin American AI Index"
+      },
       "descripcion": {
         "es": "Detección de una nueva edición o de cambios en el documento oficial del ILIA.",
         "en": "Detection of a new edition or changes to the official ILIA document."
@@ -122,11 +155,14 @@
         "es": "La vigilancia aumenta a semanal entre septiembre y noviembre, cuando suelen publicarse nuevas ediciones.",
         "en": "Monitoring increases to weekly from September through November, when new editions are typically released."
       },
-      "fechaUltimaRevision": "2026-08-21",
-      "fechaProximaRevision": "2026-09-01",
+      "fechaUltimaRevision": "2026-09-16",
+      "fechaProximaRevision": "2026-10-16",
       "alcance": {
         "cantidad": 1,
-        "unidad": { "es": "índice", "en": "index" }
+        "unidad": {
+          "es": "índice",
+          "en": "index"
+        }
       },
       "fuenteUrl": "https://indicelatam.cl/"
     },
@@ -134,7 +170,10 @@
       "id": "catalogo-verificado",
       "ambito": "catalogo",
       "metrica": "catalogo-verificado",
-      "nombre": { "es": "Adopciones verificadas", "en": "Verified adoption" },
+      "nombre": {
+        "es": "Adopciones verificadas",
+        "en": "Verified adoption"
+      },
       "descripcion": {
         "es": "Revisión de continuidad operativa, nuevos resultados, cambios de alcance y salvaguardas públicas.",
         "en": "Review of operational continuity, new outcomes, scope changes and public safeguards."
@@ -144,7 +183,10 @@
       "fechaProximaRevision": "2026-12-08",
       "alcance": {
         "cantidad": 7,
-        "unidad": { "es": "adopciones", "en": "adoptions" }
+        "unidad": {
+          "es": "adopciones",
+          "en": "adoptions"
+        }
       },
       "fuenteUrl": "https://observatorioia.org/es/proyectos/"
     },
@@ -152,7 +194,10 @@
       "id": "marco-pais",
       "ambito": "marco-pais",
       "metrica": "marco-pais-instrumentos",
-      "nombre": { "es": "Marco país", "en": "Country Framework" },
+      "nombre": {
+        "es": "Marco país",
+        "en": "Country Framework"
+      },
       "descripcion": {
         "es": "Revisión de vigencia, nuevas versiones y cambios institucionales en los instrumentos de política y gobernanza.",
         "en": "Review of validity, new versions and institutional changes across policy and governance instruments."
@@ -162,7 +207,10 @@
       "fechaProximaRevision": "2026-11-21",
       "alcance": {
         "cantidad": 6,
-        "unidad": { "es": "instrumentos", "en": "instruments" }
+        "unidad": {
+          "es": "instrumentos",
+          "en": "instruments"
+        }
       },
       "fuenteUrl": "https://www.micitt.go.cr/gobierno_digital/inteligencia_artificial"
     },
@@ -170,7 +218,10 @@
       "id": "catalogo-ecosistema",
       "ambito": "catalogo",
       "metrica": "catalogo-ecosistema",
-      "nombre": { "es": "Ecosistema y capacidades", "en": "Ecosystem and capabilities" },
+      "nombre": {
+        "es": "Ecosistema y capacidades",
+        "en": "Ecosystem and capabilities"
+      },
       "descripcion": {
         "es": "Revisión de continuidad, productos de investigación y posibles pasos hacia piloto u operación.",
         "en": "Review of continuity, research outputs and possible movement toward pilot or operation."
@@ -180,7 +231,10 @@
       "fechaProximaRevision": "2027-02-21",
       "alcance": {
         "cantidad": 16,
-        "unidad": { "es": "iniciativas", "en": "initiatives" }
+        "unidad": {
+          "es": "iniciativas",
+          "en": "initiatives"
+        }
       },
       "fuenteUrl": "https://observatorioia.org/es/proyectos/"
     },
@@ -188,7 +242,10 @@
       "id": "indicadores-oecd",
       "ambito": "indicador",
       "metrica": "indicador-oecd",
-      "nombre": { "es": "DGI y OURdata de la OCDE", "en": "OECD DGI and OURdata" },
+      "nombre": {
+        "es": "DGI y OURdata de la OCDE",
+        "en": "OECD DGI and OURdata"
+      },
       "descripcion": {
         "es": "Control de nuevas ediciones, notas país, documentos de trabajo y correcciones de los indicadores.",
         "en": "Monitoring of new editions, country notes, working papers and corrections to the indicators."
@@ -198,12 +255,41 @@
       "fechaProximaRevision": "2027-01-01",
       "alcance": {
         "cantidad": 2,
-        "unidad": { "es": "índices", "en": "indexes" }
+        "unidad": {
+          "es": "índices",
+          "en": "indexes"
+        }
       },
       "fuenteUrl": "https://www.oecd.org/en/publications/digital-government-outlook-2026_d46c0555-en/costa-rica_c3064731-en.html"
     }
   ],
   "revisiones": [
+    {
+      "id": "revision-legislacion-ia-2026-09-16",
+      "fecha": "2026-09-16",
+      "frenteId": "legislacion-ia",
+      "resultado": "sin-cambios",
+      "resumen": {
+        "es": "La revisión de los siete expedientes relacionados con IA no localizó evidencia oficial de aprobación, archivo ni cambio de fase. Se mantienen cuatro expedientes dictaminados y tres en comisión.",
+        "en": "The review of the seven AI-related bills found no official evidence of enactment, archival or a phase change. Four bills remain reported out of committee and three remain in committee."
+      },
+      "fuenteUrl": "https://www.asamblea.go.cr/ca/Lists/cp/DispForm.aspx?ContentTypeId=0x01008922D325D4FE564292B03FD67DF003A7&ID=22860",
+      "issueUrl": "https://github.com/mperedwa/observatorio-ia/issues/42",
+      "transiciones": []
+    },
+    {
+      "id": "revision-indicador-ilia-2026-09-16",
+      "fecha": "2026-09-16",
+      "frenteId": "indicador-ilia",
+      "resultado": "sin-cambios",
+      "resumen": {
+        "es": "El portal oficial continúa publicando el ILIA 2025 como tercera edición y no muestra una edición 2026. El puntaje y la posición de Costa Rica permanecen sin cambios.",
+        "en": "The official portal continues to publish ILIA 2025 as its third edition and shows no 2026 edition. Costa Rica's score and position remain unchanged."
+      },
+      "fuenteUrl": "https://indicelatam.cl/",
+      "issueUrl": "https://github.com/mperedwa/observatorio-ia/issues/43",
+      "transiciones": []
+    },
     {
       "id": "revision-ina-sne-brete-2026-09-15",
       "fecha": "2026-09-15",
@@ -278,6 +364,26 @@
       ]
     },
     {
+      "id": "revision-invu-territorial-2026-09-01",
+      "fecha": "2026-09-01",
+      "frenteId": "catalogo-seguimiento",
+      "resultado": "cambio-publicado",
+      "resumen": {
+        "es": "La línea de aplicaciones de IA para planificación territorial del INVU se incorporó en seguimiento. El anuncio confirma el objetivo, pero no identifica técnica, contratación, piloto ni uso operativo.",
+        "en": "INVU's AI applications for territorial planning were added under review. The announcement confirms the objective but identifies no technique, procurement, pilot or operational use."
+      },
+      "fuenteUrl": "https://www.invu.go.cr/-/72-aniversario?inheritRedirect=true&redirect=%2Fhome",
+      "transiciones": [
+        {
+          "objetoTipo": "proyecto",
+          "objetoId": "invu-ia-planificacion-territorial",
+          "campo": "estadoCatalogo",
+          "antes": null,
+          "despues": "seguimiento"
+        }
+      ]
+    },
+    {
       "id": "revision-invu-enia-2026-09-01",
       "fecha": "2026-09-01",
       "frenteId": "enia-plan-accion",
@@ -325,96 +431,6 @@
       ]
     },
     {
-      "id": "revision-invu-territorial-2026-09-01",
-      "fecha": "2026-09-01",
-      "frenteId": "catalogo-seguimiento",
-      "resultado": "cambio-publicado",
-      "resumen": {
-        "es": "La línea de aplicaciones de IA para planificación territorial del INVU se incorporó en seguimiento. El anuncio confirma el objetivo, pero no identifica técnica, contratación, piloto ni uso operativo.",
-        "en": "INVU's AI applications for territorial planning were added under review. The announcement confirms the objective but identifies no technique, procurement, pilot or operational use."
-      },
-      "fuenteUrl": "https://www.invu.go.cr/-/72-aniversario?inheritRedirect=true&redirect=%2Fhome",
-      "transiciones": [
-        {
-          "objetoTipo": "proyecto",
-          "objetoId": "invu-ia-planificacion-territorial",
-          "campo": "estadoCatalogo",
-          "antes": null,
-          "despues": "seguimiento"
-        }
-      ]
-    },
-    {
-      "id": "revision-enia-crosswalk-2026-08-21",
-      "fecha": "2026-08-21",
-      "frenteId": "enia-plan-accion",
-      "resultado": "cambio-publicado",
-      "resumen": {
-        "es": "Se completó el cruce del Plan de Acción con el catálogo y se publicó el explorador. Dos hallazgos con evidencia pasaron a coincidencia exacta después de crear sus fichas completas.",
-        "en": "The Action Plan crosswalk was completed and the explorer was published. Two evidence-backed findings became exact matches after their full records were created."
-      },
-      "fuenteUrl": "https://www.micitt.go.cr/sites/default/files/2025-10/Plan%20de%20Acci%C3%B3n%20ENIA%20-%20Versi%C3%B3n%2011%20agosto%202025%20Versi%C3%B3n%20Publicaci%C3%B3n.pdf",
-      "commitSha": "18596de",
-      "transiciones": [
-        {
-          "objetoTipo": "intervencion-enia",
-          "objetoId": "enia-4-1-3-05",
-          "campo": "cruceCatalogo.estado",
-          "antes": "nuevo-con-evidencia",
-          "despues": "mapeado-exacto"
-        },
-        {
-          "objetoTipo": "intervencion-enia",
-          "objetoId": "enia-4-1-3-24",
-          "campo": "cruceCatalogo.estado",
-          "antes": "nuevo-con-evidencia",
-          "despues": "mapeado-exacto"
-        }
-      ]
-    },
-    {
-      "id": "revision-inamu-ela-2026-08-21",
-      "fecha": "2026-08-21",
-      "frenteId": "catalogo-verificado",
-      "resultado": "cambio-publicado",
-      "resumen": {
-        "es": "Ela se incorporó como adopción verificada. La disponibilidad y la técnica están confirmadas; los resultados de uso, seguridad y revisión humana siguen no determinados.",
-        "en": "Ela was added as verified adoption. Availability and technique are confirmed; usage, safety and human-review outcomes remain undetermined."
-      },
-      "fuenteUrl": "https://www.inamu.go.cr/inteligencia-artificial",
-      "commitSha": "18596de",
-      "transiciones": [
-        {
-          "objetoTipo": "proyecto",
-          "objetoId": "inamu-ela",
-          "campo": "estadoCatalogo",
-          "antes": null,
-          "despues": "verificado"
-        }
-      ]
-    },
-    {
-      "id": "revision-ins-reclamos-2026-08-21",
-      "fecha": "2026-08-21",
-      "frenteId": "catalogo-seguimiento",
-      "resultado": "cambio-publicado",
-      "resumen": {
-        "es": "La automatización de reclamos médicos del INS se incorporó en seguimiento. La operación y resultados reportados no bastan para confirmar la técnica de IA ni sus salvaguardas.",
-        "en": "INS medical-claims automation was added under review. Reported operation and results are not enough to confirm the AI technique or its safeguards."
-      },
-      "fuenteUrl": "https://www.grupoins.com/media/pyfkpyjz/bolet%C3%ADn-insignia-diciembre-2024.pdf",
-      "commitSha": "18596de",
-      "transiciones": [
-        {
-          "objetoTipo": "proyecto",
-          "objetoId": "ins-reclamos-medicos-ia",
-          "campo": "estadoCatalogo",
-          "antes": null,
-          "despues": "seguimiento"
-        }
-      ]
-    },
-    {
       "id": "revision-oij-tec-2026-08-21",
       "fecha": "2026-08-21",
       "frenteId": "catalogo-ecosistema",
@@ -434,6 +450,30 @@
           "despues": "ecosistema"
         }
       ]
+    },
+    {
+      "id": "revision-oecd-2026-08-21",
+      "fecha": "2026-08-21",
+      "frenteId": "indicadores-oecd",
+      "resultado": "sin-cambios",
+      "resumen": {
+        "es": "La nota país de la OCDE mantiene DGI 2025 en 0,45 y OURdata 2025 en 0,14. No se localizaron valores posteriores para Costa Rica.",
+        "en": "The OECD country note keeps DGI 2025 at 0.45 and OURdata 2025 at 0.14. No later values for Costa Rica were found."
+      },
+      "fuenteUrl": "https://www.oecd.org/en/publications/digital-government-outlook-2026_d46c0555-en/costa-rica_c3064731-en.html",
+      "transiciones": []
+    },
+    {
+      "id": "revision-marco-pais-2026-08-21",
+      "fecha": "2026-08-21",
+      "frenteId": "marco-pais",
+      "resultado": "sin-cambios",
+      "resumen": {
+        "es": "MICITT continúa publicando la ENIA 2024-2027 y el Plan de Acción del 11 de agosto de 2025. No se localizó una estrategia ni una versión posterior del Plan.",
+        "en": "MICITT continues to publish ENIA 2024-2027 and the August 11, 2025 Action Plan. No later strategy or Action Plan version was found."
+      },
+      "fuenteUrl": "https://www.micitt.go.cr/gobierno_digital/inteligencia_artificial",
+      "transiciones": []
     },
     {
       "id": "revision-legislacion-2026-08-21",
@@ -464,16 +504,46 @@
       ]
     },
     {
-      "id": "revision-marco-pais-2026-08-21",
+      "id": "revision-ins-reclamos-2026-08-21",
       "fecha": "2026-08-21",
-      "frenteId": "marco-pais",
-      "resultado": "sin-cambios",
+      "frenteId": "catalogo-seguimiento",
+      "resultado": "cambio-publicado",
       "resumen": {
-        "es": "MICITT continúa publicando la ENIA 2024-2027 y el Plan de Acción del 11 de agosto de 2025. No se localizó una estrategia ni una versión posterior del Plan.",
-        "en": "MICITT continues to publish ENIA 2024-2027 and the August 11, 2025 Action Plan. No later strategy or Action Plan version was found."
+        "es": "La automatización de reclamos médicos del INS se incorporó en seguimiento. La operación y resultados reportados no bastan para confirmar la técnica de IA ni sus salvaguardas.",
+        "en": "INS medical-claims automation was added under review. Reported operation and results are not enough to confirm the AI technique or its safeguards."
       },
-      "fuenteUrl": "https://www.micitt.go.cr/gobierno_digital/inteligencia_artificial",
-      "transiciones": []
+      "fuenteUrl": "https://www.grupoins.com/media/pyfkpyjz/bolet%C3%ADn-insignia-diciembre-2024.pdf",
+      "commitSha": "18596de",
+      "transiciones": [
+        {
+          "objetoTipo": "proyecto",
+          "objetoId": "ins-reclamos-medicos-ia",
+          "campo": "estadoCatalogo",
+          "antes": null,
+          "despues": "seguimiento"
+        }
+      ]
+    },
+    {
+      "id": "revision-inamu-ela-2026-08-21",
+      "fecha": "2026-08-21",
+      "frenteId": "catalogo-verificado",
+      "resultado": "cambio-publicado",
+      "resumen": {
+        "es": "Ela se incorporó como adopción verificada. La disponibilidad y la técnica están confirmadas; los resultados de uso, seguridad y revisión humana siguen no determinados.",
+        "en": "Ela was added as verified adoption. Availability and technique are confirmed; usage, safety and human-review outcomes remain undetermined."
+      },
+      "fuenteUrl": "https://www.inamu.go.cr/inteligencia-artificial",
+      "commitSha": "18596de",
+      "transiciones": [
+        {
+          "objetoTipo": "proyecto",
+          "objetoId": "inamu-ela",
+          "campo": "estadoCatalogo",
+          "antes": null,
+          "despues": "verificado"
+        }
+      ]
     },
     {
       "id": "revision-ilia-2026-08-21",
@@ -488,16 +558,32 @@
       "transiciones": []
     },
     {
-      "id": "revision-oecd-2026-08-21",
+      "id": "revision-enia-crosswalk-2026-08-21",
       "fecha": "2026-08-21",
-      "frenteId": "indicadores-oecd",
-      "resultado": "sin-cambios",
+      "frenteId": "enia-plan-accion",
+      "resultado": "cambio-publicado",
       "resumen": {
-        "es": "La nota país de la OCDE mantiene DGI 2025 en 0,45 y OURdata 2025 en 0,14. No se localizaron valores posteriores para Costa Rica.",
-        "en": "The OECD country note keeps DGI 2025 at 0.45 and OURdata 2025 at 0.14. No later values for Costa Rica were found."
+        "es": "Se completó el cruce del Plan de Acción con el catálogo y se publicó el explorador. Dos hallazgos con evidencia pasaron a coincidencia exacta después de crear sus fichas completas.",
+        "en": "The Action Plan crosswalk was completed and the explorer was published. Two evidence-backed findings became exact matches after their full records were created."
       },
-      "fuenteUrl": "https://www.oecd.org/en/publications/digital-government-outlook-2026_d46c0555-en/costa-rica_c3064731-en.html",
-      "transiciones": []
+      "fuenteUrl": "https://www.micitt.go.cr/sites/default/files/2025-10/Plan%20de%20Acci%C3%B3n%20ENIA%20-%20Versi%C3%B3n%2011%20agosto%202025%20Versi%C3%B3n%20Publicaci%C3%B3n.pdf",
+      "commitSha": "18596de",
+      "transiciones": [
+        {
+          "objetoTipo": "intervencion-enia",
+          "objetoId": "enia-4-1-3-05",
+          "campo": "cruceCatalogo.estado",
+          "antes": "nuevo-con-evidencia",
+          "despues": "mapeado-exacto"
+        },
+        {
+          "objetoTipo": "intervencion-enia",
+          "objetoId": "enia-4-1-3-24",
+          "campo": "cruceCatalogo.estado",
+          "antes": "nuevo-con-evidencia",
+          "despues": "mapeado-exacto"
+        }
+      ]
     }
   ]
 }

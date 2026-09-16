@@ -19,10 +19,20 @@ import type {
 } from './check-monitoring-due';
 
 const REPORT_PATH = resolve(process.cwd(), 'scraper-runs/monitoring-due.json');
+const STALE_REVIEW_LABEL = 'monitoring-stale';
+const DEFAULT_STALE_DAYS = 2;
 
 interface IssueSummary {
   number: number;
   body: string | null;
+  updated_at?: string;
+  labels?: Array<{ name?: string } | string>;
+}
+
+export interface StaleMonitoringIssue {
+  issueNumber: number;
+  item: MonitoringDueItem;
+  inactiveDays: number;
 }
 
 export function monitoringMarker(item: MonitoringDueItem): string {
@@ -33,15 +43,50 @@ export function legacyMonitoringMarker(item: MonitoringDueItem): string {
   return `<!-- monitoring-review:${item.id}:${item.fechaProximaRevision} -->`;
 }
 
+export function staleMonitoringMarker(item: MonitoringDueItem): string {
+  return `<!-- monitoring-review-stale:v1:${item.id}:${item.fechaProximaRevision} -->`;
+}
+
+function issueRepresentsItem(issue: IssueSummary, item: MonitoringDueItem): boolean {
+  const body = issue.body ?? '';
+  return body.includes(monitoringMarker(item)) || body.includes(legacyMonitoringMarker(item));
+}
+
+function issueHasLabel(issue: IssueSummary, label: string): boolean {
+  return (issue.labels ?? []).some((value) => (
+    typeof value === 'string' ? value === label : value.name === label
+  ));
+}
+
 export function selectUnrepresentedItems(
   items: MonitoringDueItem[],
   openIssues: IssueSummary[],
 ): MonitoringDueItem[] {
-  const existingBodies = openIssues.map(({ body }) => body ?? '').join('\n');
-  return items.filter((item) => (
-    !existingBodies.includes(monitoringMarker(item)) &&
-    !existingBodies.includes(legacyMonitoringMarker(item))
-  ));
+  return items.filter((item) => !openIssues.some((issue) => issueRepresentsItem(issue, item)));
+}
+
+export function selectStaleMonitoringIssues(
+  items: MonitoringDueItem[],
+  openIssues: IssueSummary[],
+  asOf: string,
+  staleDays = DEFAULT_STALE_DAYS,
+): StaleMonitoringIssue[] {
+  const asOfTime = Date.parse(`${asOf}T00:00:00Z`);
+  if (Number.isNaN(asOfTime)) throw new Error(`Fecha de corte inválida: ${asOf}`);
+  if (!Number.isInteger(staleDays) || staleDays < 1) {
+    throw new Error('staleDays debe ser un entero positivo.');
+  }
+
+  return items.flatMap((item) => {
+    if (item.estado === 'proximo') return [];
+    const issue = openIssues.find((candidate) => issueRepresentsItem(candidate, item));
+    if (!issue?.updated_at || issueHasLabel(issue, STALE_REVIEW_LABEL)) return [];
+    const updatedTime = Date.parse(issue.updated_at);
+    if (Number.isNaN(updatedTime)) return [];
+    const inactiveDays = Math.floor((asOfTime - updatedTime) / 86_400_000);
+    if (inactiveDays < staleDays) return [];
+    return [{ issueNumber: issue.number, item, inactiveDays }];
+  });
 }
 
 function statusLabel(item: MonitoringDueItem): string {
@@ -89,6 +134,17 @@ export function buildMonitoringIssueBody(
   return lines.join('\n');
 }
 
+export function buildStaleMonitoringComment(stale: StaleMonitoringIssue): string {
+  return [
+    staleMonitoringMarker(stale.item),
+    '⚠️ **Revisión editorial estancada**',
+    '',
+    `Este issue lleva ${stale.inactiveDays} día(s) sin actividad y la revisión de \`${stale.item.id}\` continúa vencida desde ${stale.item.fechaProximaRevision}.`,
+    '',
+    'El revisor debe retomar el contraste de fuentes y producir un veredicto `SIN CAMBIOS`, `CAMBIO` o `INVESTIGAR`. Esta alerta no modifica datos ni fechas y se emite una sola vez por issue.',
+  ].join('\n');
+}
+
 async function ghApi<T>(
   token: string,
   repo: string,
@@ -112,14 +168,20 @@ async function ghApi<T>(
   return response.json() as Promise<T>;
 }
 
-async function ensureLabel(token: string, repo: string): Promise<void> {
+async function ensureLabel(
+  token: string,
+  repo: string,
+  name: string,
+  color: string,
+  description: string,
+): Promise<void> {
   try {
-    await ghApi(token, repo, '/labels/monitoring-review');
+    await ghApi(token, repo, `/labels/${name}`);
   } catch {
     await ghApi(token, repo, '/labels', 'POST', {
-      name: 'monitoring-review',
-      color: '1d76db',
-      description: 'Agenda periódica: requiere revisión editorial humana',
+      name,
+      color,
+      description,
     });
   }
 }
@@ -153,26 +215,56 @@ async function main(argv: string[]): Promise<void> {
     '/issues?state=open&labels=monitoring-review&per_page=100',
   );
   const pending = selectUnrepresentedItems(report.items, openIssues);
-  if (pending.length === 0) {
+  const stale = selectStaleMonitoringIssues(report.items, openIssues, report.asOf);
+  if (pending.length === 0 && stale.length === 0) {
     console.log('create-monitoring-review-issue: todas las revisiones ya tienen un issue abierto, skip.');
     return;
   }
 
-  await ensureLabel(token, repo);
-  const overdue = pending.filter(({ estado }) => estado !== 'proximo').length;
-  const title = `[agenda editorial ${report.asOf}] ${pending.length} revisión(es)${overdue ? `, ${overdue} vencida(s)` : ''}`;
-  const created = await ghApi<{ number: number; html_url: string }>(
-    token,
-    repo,
-    '/issues',
-    'POST',
-    {
-      title,
-      body: buildMonitoringIssueBody(report, pending),
-      labels: ['monitoring-review'],
-    },
-  );
-  console.log(`create-monitoring-review-issue: issue #${created.number} creado → ${created.html_url}`);
+  if (pending.length > 0) {
+    await ensureLabel(
+      token,
+      repo,
+      'monitoring-review',
+      '1d76db',
+      'Agenda periódica: requiere revisión editorial humana',
+    );
+    const overdue = pending.filter(({ estado }) => estado !== 'proximo').length;
+    const title = `[agenda editorial ${report.asOf}] ${pending.length} revisión(es)${overdue ? `, ${overdue} vencida(s)` : ''}`;
+    const created = await ghApi<{ number: number; html_url: string }>(
+      token,
+      repo,
+      '/issues',
+      'POST',
+      {
+        title,
+        body: buildMonitoringIssueBody(report, pending),
+        labels: ['monitoring-review'],
+      },
+    );
+    console.log(`create-monitoring-review-issue: issue #${created.number} creado → ${created.html_url}`);
+  }
+
+  if (stale.length > 0) {
+    await ensureLabel(
+      token,
+      repo,
+      STALE_REVIEW_LABEL,
+      'd93f0b',
+      'Revisión editorial vencida sin actividad durante al menos 48 horas',
+    );
+    for (const stalled of stale) {
+      await ghApi(token, repo, `/issues/${stalled.issueNumber}/labels`, 'POST', {
+        labels: [STALE_REVIEW_LABEL],
+      });
+      await ghApi(token, repo, `/issues/${stalled.issueNumber}/comments`, 'POST', {
+        body: buildStaleMonitoringComment(stalled),
+      });
+      console.log(
+        `create-monitoring-review-issue: issue #${stalled.issueNumber} marcado como estancado (${stalled.inactiveDays} días).`,
+      );
+    }
+  }
 }
 
 const isDirectInvocation =

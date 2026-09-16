@@ -17,6 +17,7 @@ const issue: MonitoringIssue = {
 
 function resolvedInventory(resultado: 'sin-cambios' | 'cambio-detectado' | 'cambio-publicado') {
   const inventory = structuredClone(inventoryJson) as InventarioMonitoreo;
+  inventory.revisiones = inventory.revisiones.filter(({ issueUrl }) => issueUrl !== ISSUE_URL);
   const front = inventory.frentes.find(({ id }) => id === 'legislacion-ia')!;
   front.fechaUltimaRevision = '2026-08-28';
   front.fechaProximaRevision = '2026-09-04';

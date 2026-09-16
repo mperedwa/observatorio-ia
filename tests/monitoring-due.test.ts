@@ -8,12 +8,17 @@ import {
 } from '../scripts/check-monitoring-due';
 import {
   buildMonitoringIssueBody,
+  buildStaleMonitoringComment,
   monitoringMarker,
   legacyMonitoringMarker,
+  selectStaleMonitoringIssues,
   selectUnrepresentedItems,
 } from '../scripts/create-monitoring-review-issue';
 
-const inventory = inventoryJson as InventarioMonitoreo;
+const inventory = structuredClone(inventoryJson) as InventarioMonitoreo;
+const legislacion = inventory.frentes.find(({ id }) => id === 'legislacion-ia')!;
+legislacion.fechaUltimaRevision = '2026-08-21';
+legislacion.fechaProximaRevision = '2026-08-28';
 
 describe('agenda operativa de monitoreo', () => {
   it('usa anticipación hábil por cadencia y evita alertar demasiado pronto', () => {
@@ -86,6 +91,24 @@ describe('agenda operativa de monitoreo', () => {
     const issues = [{ number: 42, body: legacyMonitoringMarker(item) }];
 
     expect(selectUnrepresentedItems(report.items, issues)).toEqual([]);
+  });
+
+  it('marca una revisión vencida e inactiva por 48 horas una sola vez', () => {
+    const report = buildMonitoringDueReport(inventory, '2026-09-02');
+    const item = report.items.find(({ id }) => id === 'legislacion-ia')!;
+    const issues = [{
+      number: 42,
+      body: legacyMonitoringMarker(item),
+      updated_at: '2026-08-30T12:00:00.000Z',
+      labels: [{ name: 'monitoring-review' }],
+    }];
+
+    const stale = selectStaleMonitoringIssues(report.items, issues, report.asOf);
+    expect(stale).toEqual([{ issueNumber: 42, item, inactiveDays: 2 }]);
+    expect(buildStaleMonitoringComment(stale[0])).toContain('Revisión editorial estancada');
+
+    issues[0].labels.push({ name: 'monitoring-stale' });
+    expect(selectStaleMonitoringIssues(report.items, issues, report.asOf)).toEqual([]);
   });
 
   it('el issue explica el proceso y nunca autoriza cambios automáticos', () => {

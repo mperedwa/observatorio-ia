@@ -128,7 +128,7 @@ Los monitores dedicados tienen su propia cadencia:
 - `enia-watch.yml`: mensual; compara página oficial y PDF.
 - `ilia-watch.yml`: mensual, con vigilancia semanal entre septiembre y noviembre.
 - `oecd-watch.yml`: semestral, acorde con la publicación histórica de DGI/OURdata.
-- `monitoring-due.yml`: días hábiles; usa anticipación por cadencia, abre un issue idempotente y silencioso, y deja el aviso para cuando el watcher tenga un veredicto.
+- `monitoring-due.yml`: días hábiles; usa anticipación por cadencia, abre un issue idempotente y silencioso, y marca con `monitoring-stale` una revisión vencida que lleve al menos 48 horas sin actividad. El watcher retoma esas investigaciones o comunica un bloqueo concreto.
 - `close-monitoring-review.yml`: después de que CI aprueba `main`, cierra únicamente issues con `issueUrl`, resultado final y próxima fecha avanzada.
 
 Para correr manualmente desde GitHub: Actions → "Scrape fuentes oficiales" → Run workflow.
