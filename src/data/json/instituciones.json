@@ -284,5 +284,31 @@
       "es": "Un anuncio institucional confirma la existencia de una línea de trabajo, no su ejecución. Mantener separadas las menciones del mismo comunicado evita atribuir aliados, alcance o resultados por proximidad textual.",
       "en": "An institutional announcement confirms the existence of a workstream, not its execution. Keeping separate references within the same release apart avoids attributing partners, scope or results through textual proximity."
     }
+  },
+  {
+    "id": "ina",
+    "nombre": {
+      "es": "Instituto Nacional de Aprendizaje",
+      "en": "National Learning Institute"
+    },
+    "nombreCorto": {
+      "es": "INA",
+      "en": "INA"
+    },
+    "tipo": "autonoma",
+    "url": "https://www.ina.ac.cr/",
+    "proyectosActivos": 1,
+    "resumen": {
+      "es": "Una iniciativa en seguimiento: diseño y planificación para fortalecer la plataforma del Sistema Nacional de Empleo mediante IA.",
+      "en": "One initiative under review: design and planning to strengthen the National Employment System platform with AI."
+    },
+    "descripcion": {
+      "es": "El proyecto interinstitucional con MICITT y MTSS tiene convenio, contratación y financiamiento documentados para su primera etapa. Las fuentes oficiales indican que esa etapa corresponde a diseño y planificación; no acreditan todavía el desarrollo, la técnica ni la operación de un motor de IA.",
+      "en": "The inter-institutional project with MICITT and MTSS has a documented agreement, procurement and funding for its first stage. Official sources show that this stage covers design and planning; they do not yet establish the development, technique or operation of an AI engine."
+    },
+    "lecciones": {
+      "es": "Una contratación preparatoria puede confirmar ejecución institucional sin demostrar adopción técnica. Distinguir las etapas evita presentar al proveedor del diagnóstico como proveedor del futuro motor de IA.",
+      "en": "Preparatory procurement can confirm institutional execution without demonstrating technical adoption. Distinguishing the stages avoids presenting the diagnostic-stage contractor as the vendor of a future AI engine."
+    }
   }
 ]

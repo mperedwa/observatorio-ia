@@ -4033,5 +4033,288 @@
         "en": "Is the AI effort related to any of the 23 regulatory plans or the institutions cited in the release?"
       }
     ]
+  },
+  {
+    "id": "ina-sne-brete-ia",
+    "titulo": {
+      "es": "Fortalecimiento de la plataforma del Sistema Nacional de Empleo mediante IA",
+      "en": "AI-enabled strengthening of the National Employment System platform"
+    },
+    "institucionId": "ina",
+    "categoria": "social",
+    "estado": "planificado",
+    "desde": "2023",
+    "descripcion": {
+      "es": "Proyecto interinstitucional de MICITT, MTSS e INA para fortalecer la plataforma del Sistema Nacional de Empleo y preparar la integración de uno o más motores de inteligencia artificial. El objetivo declarado incluye mejorar el perfilamiento y la vinculación de personas, empresas y vacantes mediante ocupaciones, habilidades y competencias.",
+      "en": "An inter-institutional MICITT, MTSS and INA project to strengthen the National Employment System platform and prepare the integration of one or more artificial intelligence engines. Its stated objective includes improving the profiling and matching of people, employers and vacancies through occupations, skills and competencies."
+    },
+    "contexto": {
+      "es": "El proyecto se divide en tres etapas. La contratación adjudicada a WCC Group B.V. cubre solo la etapa I de diseño y planificación; las etapas II y III contemplan desarrollo, implementación, operación y sostenibilidad. En junio de 2025 el INA indicó expresamente que la plataforma todavía no tenía el motor de IA. Un informe del MTSS publicado en 2026 señala que la primera etapa estaba en proceso de conclusión. La transición pública de ANE.cr a Brete.cr no demuestra por sí sola que exista una funcionalidad de IA operativa.",
+      "en": "The project is divided into three stages. The procurement awarded to WCC Group B.V. covers only stage I design and planning; stages II and III cover development, implementation, operation and sustainability. In June 2025, INA expressly stated that the platform did not yet have the AI engine. An MTSS report published in 2026 says that the first stage was nearing completion. The public transition from ANE.cr to Brete.cr does not by itself demonstrate an operational AI feature."
+    },
+    "fuenteUrl": "https://www.ina.ac.cr/transparencia/Documentos%20compartidos/Informes%20Institucionales/Hist%C3%B3rico%20de%20los%20informes%20anuales%20de%20auditor%C3%ADa%20interna/2025/Informes_AS/AI-ASE-03-2025-Adenda_Convenio_MICITT-INA-MTSS-JD.pdf",
+    "modeloVersion": 2,
+    "tipoIniciativa": "componente-ia",
+    "estadoCatalogo": "seguimiento",
+    "faseImplementacion": "desarrollo",
+    "estadoIA": "declarada-sin-tecnica",
+    "evaluacion": {
+      "existencia": {
+        "estado": "confirmado",
+        "fuenteIds": [
+          "micitt-etd-sne-ia-2023",
+          "ina-acta-sne-ia-2025",
+          "ina-auditoria-sne-ia-2025",
+          "mtss-brete-sne-ia-2026"
+        ]
+      },
+      "ejecucion": {
+        "estado": "parcialmente-confirmado",
+        "fuenteIds": [
+          "micitt-sne-ia-pliego-2024",
+          "micitt-sne-ia-adjudicacion-2024",
+          "ina-auditoria-sne-ia-2025",
+          "mtss-brete-sne-ia-2026"
+        ]
+      },
+      "tecnicaIA": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      },
+      "usoOperativo": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      },
+      "resultados": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      },
+      "gobernanza": {
+        "estado": "parcialmente-confirmado",
+        "fuenteIds": [
+          "micitt-etd-sne-ia-2023",
+          "ina-acta-sne-ia-2025",
+          "ina-auditoria-sne-ia-2025"
+        ]
+      }
+    },
+    "fuentes": [
+      {
+        "id": "micitt-etd-sne-ia-2023",
+        "titulo": {
+          "es": "Estrategia de Transformación Digital 2023-2027",
+          "en": "Digital Transformation Strategy 2023-2027"
+        },
+        "url": "https://www.micitt.go.cr/sites/default/files/documentos-enlaces-directos/ETD%202023-2027%20V%20FINAL%2030-08-2023_v2.pdf",
+        "publicador": "Ministerio de Ciencia, Innovación, Tecnología y Telecomunicaciones",
+        "tipoFuente": "primaria-oficial",
+        "fechaPublicacion": "2023-08-30",
+        "fechaConsulta": "2026-09-15",
+        "respalda": [
+          "existencia",
+          "objetivo-declarado",
+          "meta",
+          "gobernanza"
+        ],
+        "naturalezaAfirmacion": [
+          "hecho",
+          "objetivo-declarado",
+          "meta"
+        ]
+      },
+      {
+        "id": "micitt-sne-ia-pliego-2024",
+        "titulo": {
+          "es": "Pliego de condiciones para la etapa I de diseño y planificación",
+          "en": "Tender specifications for stage I design and planning"
+        },
+        "url": "https://micitt.go.cr/sites/default/files/datos_abiertos/c-Publicaci%C3%B3n%20del%20pliego%20de%20condiciones%202024.pdf",
+        "publicador": "Ministerio de Ciencia, Innovación, Tecnología y Telecomunicaciones",
+        "tipoFuente": "primaria-oficial",
+        "fechaPublicacion": "2024",
+        "fechaConsulta": "2026-09-15",
+        "respalda": [
+          "existencia",
+          "objetivo-declarado",
+          "ejecucion",
+          "gobernanza"
+        ],
+        "naturalezaAfirmacion": [
+          "hecho",
+          "objetivo-declarado"
+        ]
+      },
+      {
+        "id": "micitt-sne-ia-adjudicacion-2024",
+        "titulo": {
+          "es": "Registro oficial de adjudicación de la etapa I",
+          "en": "Official stage I award record"
+        },
+        "url": "https://micitt.go.cr/sites/default/files/datos_abiertos/d-Publicaci%C3%B3n%20de%20ofertas%20y%20adjudicaci%C3%B3n%202024.pdf",
+        "publicador": "Ministerio de Ciencia, Innovación, Tecnología y Telecomunicaciones",
+        "tipoFuente": "primaria-oficial",
+        "fechaPublicacion": "2024-10-30",
+        "fechaConsulta": "2026-09-15",
+        "respalda": [
+          "ejecucion"
+        ],
+        "naturalezaAfirmacion": [
+          "hecho"
+        ]
+      },
+      {
+        "id": "ina-acta-sne-ia-2025",
+        "titulo": {
+          "es": "Acta de la sesión ordinaria 13-2025 de la Junta Directiva",
+          "en": "Board of Directors ordinary session 13-2025 minutes"
+        },
+        "url": "https://www.ina.ac.cr/transparencia/Decisiones%20tomadas%20directrices%20actas%20y%20circulares/2025/Acta_Sesion_Ordinaria-13-2025.pdf",
+        "publicador": "Instituto Nacional de Aprendizaje",
+        "tipoFuente": "primaria-oficial",
+        "fechaPublicacion": "2025-06-02",
+        "fechaConsulta": "2026-09-15",
+        "respalda": [
+          "existencia",
+          "objetivo-declarado",
+          "ejecucion",
+          "gobernanza"
+        ],
+        "naturalezaAfirmacion": [
+          "hecho",
+          "objetivo-declarado"
+        ]
+      },
+      {
+        "id": "ina-auditoria-sne-ia-2025",
+        "titulo": {
+          "es": "Asesoría AI-ASE-03-2025 sobre la adenda al convenio MICITT-INA-MTSS",
+          "en": "AI-ASE-03-2025 advisory on the MICITT-INA-MTSS agreement addendum"
+        },
+        "url": "https://www.ina.ac.cr/transparencia/Documentos%20compartidos/Informes%20Institucionales/Hist%C3%B3rico%20de%20los%20informes%20anuales%20de%20auditor%C3%ADa%20interna/2025/Informes_AS/AI-ASE-03-2025-Adenda_Convenio_MICITT-INA-MTSS-JD.pdf",
+        "publicador": "Instituto Nacional de Aprendizaje",
+        "tipoFuente": "primaria-oficial",
+        "fechaPublicacion": "2025",
+        "fechaConsulta": "2026-09-15",
+        "respalda": [
+          "existencia",
+          "ejecucion",
+          "gobernanza"
+        ],
+        "naturalezaAfirmacion": [
+          "hecho"
+        ]
+      },
+      {
+        "id": "micitt-memoria-sne-ia-2025",
+        "titulo": {
+          "es": "Memoria institucional 2024-2025",
+          "en": "2024-2025 institutional report"
+        },
+        "url": "https://www.micitt.go.cr/sites/default/files/publicaciones/memorias/Memoria%202024-2025.pdf",
+        "publicador": "Ministerio de Ciencia, Innovación, Tecnología y Telecomunicaciones",
+        "tipoFuente": "primaria-oficial",
+        "fechaPublicacion": "2025",
+        "fechaConsulta": "2026-09-15",
+        "respalda": [
+          "ejecucion",
+          "gobernanza"
+        ],
+        "naturalezaAfirmacion": [
+          "hecho"
+        ]
+      },
+      {
+        "id": "mtss-brete-sne-ia-2026",
+        "titulo": {
+          "es": "Informe de seguimiento de la Estrategia Brete, anual 2025",
+          "en": "2025 annual Brete Strategy monitoring report"
+        },
+        "url": "https://www.mtss.go.cr/elministerio/biblioteca/documentos/978-9968-40-051-0-.pdf",
+        "publicador": "Ministerio de Trabajo y Seguridad Social",
+        "tipoFuente": "primaria-oficial",
+        "fechaPublicacion": "2026",
+        "fechaConsulta": "2026-09-15",
+        "respalda": [
+          "existencia",
+          "objetivo-declarado",
+          "ejecucion"
+        ],
+        "naturalezaAfirmacion": [
+          "hecho",
+          "objetivo-declarado"
+        ]
+      },
+      {
+        "id": "ane-transicion-brete-2026",
+        "titulo": {
+          "es": "Plataforma oficial del Sistema Nacional de Empleo",
+          "en": "Official National Employment System platform"
+        },
+        "url": "https://www.ane.cr/",
+        "publicador": "Agencia Nacional de Empleo",
+        "tipoFuente": "primaria-oficial",
+        "fechaConsulta": "2026-09-15",
+        "respalda": [
+          "existencia"
+        ],
+        "naturalezaAfirmacion": [
+          "hecho"
+        ]
+      }
+    ],
+    "fechaPrimeraEvidencia": "2023-08-30",
+    "fechaAnuncio": "2023-08-30",
+    "fechaUltimaVerificacion": "2026-09-15",
+    "fechaProximaRevision": "2026-10-15",
+    "objetivoDeclarado": {
+      "es": "Integrar inteligencia artificial y una ventanilla única interoperable para mejorar el perfilamiento de personas, empresas y vacantes, optimizar la vinculación laboral y apoyar la orientación para el empleo.",
+      "en": "Integrate artificial intelligence and an interoperable one-stop service to improve the profiling of people, employers and vacancies, optimize job matching and support employment guidance."
+    },
+    "datosConocidos": [
+      {
+        "es": "El convenio interinstitucional fue suscrito por MICITT, MTSS e INA el 12 de febrero de 2025 y organiza el proyecto en tres etapas; MICITT lidera la primera y el INA asume un papel central en las dos posteriores.",
+        "en": "MICITT, MTSS and INA signed the inter-institutional agreement on February 12, 2025. It organizes the project into three stages; MICITT leads the first and INA takes a central role in the following two."
+      },
+      {
+        "es": "El procedimiento 2024LE-000011-0009300001 fue adjudicado a WCC Group B.V. por ₡169.952.000 para la etapa I de diseño y planificación, no para desarrollar u operar el motor de IA.",
+        "en": "Procedure 2024LE-000011-0009300001 was awarded to WCC Group B.V. for CRC 169,952,000 for stage I design and planning, not to develop or operate the AI engine."
+      },
+      {
+        "es": "La Junta Directiva del INA aprobó una adenda para financiar aproximadamente ₡115,3 millones de la primera etapa; las fuentes revisadas no acreditan la ejecución completa de esa transferencia.",
+        "en": "INA's Board approved an addendum to fund approximately CRC 115.3 million of the first stage; the reviewed sources do not establish that the full transfer was executed."
+      },
+      {
+        "es": "El informe anual 2025 de la Estrategia Brete, publicado en 2026, reporta que la primera etapa estaba en proceso de conclusión y había establecido bases técnicas y conceptuales.",
+        "en": "The 2025 Brete Strategy annual report, published in 2026, reports that the first stage was nearing completion and had established technical and conceptual foundations."
+      }
+    ],
+    "datosNoDeterminados": [
+      {
+        "es": "No se identificaron el modelo, algoritmo, proveedor, arquitectura final ni fuentes de datos del eventual motor de IA de la etapa II.",
+        "en": "The model, algorithm, vendor, final architecture and data sources for the eventual stage II AI engine were not identified."
+      },
+      {
+        "es": "No se determinó que la etapa II haya sido contratada o iniciada, ni que ANE.cr o Brete.cr ofrezcan actualmente perfilamiento o vinculación laboral mediante IA.",
+        "en": "No stage II procurement or start was established, nor was current AI-based profiling or job matching on ANE.cr or Brete.cr."
+      },
+      {
+        "es": "No se publicaron criterios de aceptación, métricas de calidad, auditorías de sesgo, reglas de revisión humana, resultados o salvaguardas completas para datos personales.",
+        "en": "No acceptance criteria, quality metrics, bias audits, human-review rules, outcomes or complete personal-data safeguards were published."
+      }
+    ],
+    "preguntasAbiertas": [
+      {
+        "es": "¿Fueron recibidos y aceptados todos los entregables de la etapa I y qué arquitectura o hoja de ruta resultó del diagnóstico?",
+        "en": "Were all stage I deliverables received and accepted, and what architecture or roadmap resulted from the diagnostic work?"
+      },
+      {
+        "es": "¿Existe una contratación de la etapa II que identifique el motor de IA, su proveedor, datos, pruebas de calidad y auditoría de sesgos?",
+        "en": "Is there a stage II procurement identifying the AI engine, its vendor, data, quality testing and bias audit?"
+      },
+      {
+        "es": "¿Qué funciones de IA, si alguna, están actualmente disponibles para personas y empresas en ANE.cr o Brete.cr?",
+        "en": "What AI functions, if any, are currently available to people and employers on ANE.cr or Brete.cr?"
+      }
+    ]
   }
 ]

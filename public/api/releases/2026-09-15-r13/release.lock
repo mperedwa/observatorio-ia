@@ -1,0 +1,3 @@
+release=2026-09-15-r13
+locked=2026-09-15
+policy=Substantive dataset changes require a new DATA_RELEASE.id; rolling logs are excluded.

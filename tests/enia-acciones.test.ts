@@ -86,10 +86,10 @@ describe('inventario del Plan de Acción ENIA', () => {
     expect(inventarioEnia.schemaVersion).toBe(2);
     expect(contarIntervencionesEniaPorCruce()).toEqual({
       'mapeado-exacto': 6,
-      'coincidencia-parcial': 9,
+      'coincidencia-parcial': 10,
       'posible-duplicado': 9,
       'nuevo-con-evidencia': 0,
-      'enia-solamente': 22,
+      'enia-solamente': 21,
       'no-es-sistema-ia': 83,
       'no-determinado': 0,
     });
@@ -147,6 +147,7 @@ describe('inventario del Plan de Acción ENIA', () => {
       'cenat-lania',
       'hacienda-anomaly',
       'hacienda-asistente',
+      'ina-sne-brete-ia',
       'inamu-ela',
       'ins-reclamos-medicos-ia',
       'mep-intel',
@@ -218,6 +219,7 @@ describe('inventario del Plan de Acción ENIA', () => {
     const porId = new Map(
       intervencionesEnia.map((intervencion) => [intervencion.id, intervencion]),
     );
+    const ina = porId.get('enia-4-1-3-01');
     const ins = porId.get('enia-4-1-3-24');
     const inamu = porId.get('enia-4-1-3-05');
     const ice = porId.get('enia-4-1-3-25');
@@ -225,6 +227,18 @@ describe('inventario del Plan de Acción ENIA', () => {
     const rpa = porId.get('enia-4-1-3-29');
     const invuChatbot = porId.get('enia-4-1-3-08');
     const invuAgentes = porId.get('enia-4-1-3-09');
+
+    expect(ina?.cruceCatalogo.estado).toBe('coincidencia-parcial');
+    expect(ina?.cruceCatalogo.proyectoIds).toEqual(['ina-sne-brete-ia']);
+    expect(ina?.estadoEjecucion).toBe('no-verificado');
+    expect(ina?.faseRealVerificada).toBeUndefined();
+    expect(ina?.evidenciasExternas?.map(({ id }) => id)).toEqual([
+      'ina-acta-sne-ia-2025',
+      'micitt-sne-ia-adjudicacion-2024',
+      'ina-auditoria-sne-ia-2025',
+      'mtss-brete-sne-ia-2026',
+    ]);
+    expect(ina?.notasEditoriales?.es).toContain('etapa I de diseño y planificación');
 
     expect(ins?.cruceCatalogo.estado).toBe('mapeado-exacto');
     expect(ins?.cruceCatalogo.proyectoIds).toEqual([

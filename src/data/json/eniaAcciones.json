@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "fechaCorte": "2026-08-21",
+  "fechaCorte": "2026-09-15",
   "fuente": {
     "titulo": {
       "es": "Plan de Acción de la Estrategia Nacional de Inteligencia Artificial de Costa Rica",
@@ -9,7 +9,7 @@
     "publicador": "MICITT",
     "url": "https://www.micitt.go.cr/sites/default/files/2025-10/Plan%20de%20Acci%C3%B3n%20ENIA%20-%20Versi%C3%B3n%2011%20agosto%202025%20Versi%C3%B3n%20Publicaci%C3%B3n.pdf",
     "fechaVersion": "2025-08-11",
-    "fechaConsulta": "2026-08-21",
+    "fechaConsulta": "2026-09-15",
     "idiomaFuente": "es"
   },
   "resumen": {
@@ -2353,15 +2353,82 @@
           "tipoIntervencion": "solucion-ia-declarada",
           "estadoEjecucion": "no-verificado",
           "cruceCatalogo": {
-            "estado": "enia-solamente",
-            "proyectoIds": [],
+            "estado": "coincidencia-parcial",
+            "proyectoIds": [
+              "ina-sne-brete-ia"
+            ],
             "fundamento": {
-              "es": "El registro declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
-              "en": "The record declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+              "es": "Existe un proyecto interinstitucional formal de MICITT, MTSS e INA para fortalecer la plataforma del Sistema Nacional de Empleo mediante IA. El proyecto aporta evidencia externa de diseño y planificación, pero el Plan ENIA no identifica ANE o Brete.cr y no se ha acreditado que este sea el sistema que el INA contabilizará para la meta 2026.",
+              "en": "A formal MICITT, MTSS and INA project exists to strengthen the National Employment System platform with AI. The project provides external evidence of design and planning, but the ENIA Action Plan does not identify ANE or Brete.cr, and it has not been established that this is the system INA will count toward its 2026 target."
             }
           },
+          "evidenciasExternas": [
+            {
+              "id": "ina-acta-sne-ia-2025",
+              "titulo": {
+                "es": "Acta de la sesión ordinaria 13-2025 de la Junta Directiva",
+                "en": "Board of Directors ordinary session 13-2025 minutes"
+              },
+              "url": "https://www.ina.ac.cr/transparencia/Decisiones%20tomadas%20directrices%20actas%20y%20circulares/2025/Acta_Sesion_Ordinaria-13-2025.pdf",
+              "publicador": "Instituto Nacional de Aprendizaje",
+              "fechaPublicacion": "2025-06-02",
+              "fechaConsulta": "2026-09-15",
+              "respalda": [
+                "existencia",
+                "ejecucion",
+                "gobernanza"
+              ]
+            },
+            {
+              "id": "micitt-sne-ia-adjudicacion-2024",
+              "titulo": {
+                "es": "Registro oficial de adjudicación de la etapa I",
+                "en": "Official stage I award record"
+              },
+              "url": "https://micitt.go.cr/sites/default/files/datos_abiertos/d-Publicaci%C3%B3n%20de%20ofertas%20y%20adjudicaci%C3%B3n%202024.pdf",
+              "publicador": "Ministerio de Ciencia, Innovación, Tecnología y Telecomunicaciones",
+              "fechaPublicacion": "2024-10-30",
+              "fechaConsulta": "2026-09-15",
+              "respalda": [
+                "ejecucion"
+              ]
+            },
+            {
+              "id": "ina-auditoria-sne-ia-2025",
+              "titulo": {
+                "es": "Asesoría AI-ASE-03-2025 sobre la adenda al convenio MICITT-INA-MTSS",
+                "en": "AI-ASE-03-2025 advisory on the MICITT-INA-MTSS agreement addendum"
+              },
+              "url": "https://www.ina.ac.cr/transparencia/Documentos%20compartidos/Informes%20Institucionales/Hist%C3%B3rico%20de%20los%20informes%20anuales%20de%20auditor%C3%ADa%20interna/2025/Informes_AS/AI-ASE-03-2025-Adenda_Convenio_MICITT-INA-MTSS-JD.pdf",
+              "publicador": "Instituto Nacional de Aprendizaje",
+              "fechaConsulta": "2026-09-15",
+              "respalda": [
+                "existencia",
+                "ejecucion",
+                "gobernanza"
+              ]
+            },
+            {
+              "id": "mtss-brete-sne-ia-2026",
+              "titulo": {
+                "es": "Informe de seguimiento de la Estrategia Brete, anual 2025",
+                "en": "2025 annual Brete Strategy monitoring report"
+              },
+              "url": "https://www.mtss.go.cr/elministerio/biblioteca/documentos/978-9968-40-051-0-.pdf",
+              "publicador": "Ministerio de Trabajo y Seguridad Social",
+              "fechaConsulta": "2026-09-15",
+              "respalda": [
+                "existencia",
+                "ejecucion"
+              ]
+            }
+          ],
           "recomendacionEditorial": "investigar-como-seguimiento",
-          "fechaUltimaRevision": "2026-08-21"
+          "notasEditoriales": {
+            "es": "La contratación localizada corresponde a la etapa I de diseño y planificación. Las etapas II y III abarcan el desarrollo, la implementación y la operación. La evidencia revisada no confirma un sistema de IA implementado ni permite atribuir este proyecto a la meta ENIA del INA sin reserva.",
+            "en": "The identified procurement covers stage I design and planning. Stages II and III cover development, implementation and operation. The reviewed evidence does not confirm an implemented AI system or allow this project to be attributed to INA's ENIA target without qualification."
+          },
+          "fechaUltimaRevision": "2026-09-15"
         },
         {
           "id": "enia-4-1-3-02",

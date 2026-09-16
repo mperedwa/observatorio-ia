@@ -37,11 +37,11 @@ const COUNTERS_TS = join(ROOT, 'src', 'data', 'counters.ts');
 const PKG = JSON.parse(readFileSync(join(ROOT, 'package.json'), 'utf8')) as { version: string };
 
 const DATA_RELEASE = {
-  id: '2026-09-08-r12',
-  date: '2026-09-08',
+  id: '2026-09-15-r13',
+  date: '2026-09-15',
   title: {
-    es: 'Corte R12 de actualización del catálogo',
-    en: 'R12 catalog update release',
+    es: 'Corte R13 de actualización del catálogo',
+    en: 'R13 catalog update release',
   },
 } as const;
 const RELEASE_LOCK_PATH = join(RELEASES_OUT_DIR, DATA_RELEASE.id, 'release.lock');
@@ -143,7 +143,7 @@ const DATASETS: Dataset[] = [
     endpoint: '/api/proyectos.json',
     title: { es: 'Iniciativas', en: 'Initiatives' },
     countUnit: { es: 'iniciativas', en: 'initiatives' },
-    lastUpdate: '2026-09-08',
+    lastUpdate: '2026-09-15',
     description:
       'Catálogo de iniciativas relacionadas con IA en el sector público costarricense. Incluye sistemas, pilotos, planes y capacidades con descripción bilingüe ES/EN y una fuente pública consultada.',
     descriptionEs:
@@ -156,7 +156,7 @@ const DATASETS: Dataset[] = [
     endpoint: '/api/instituciones.json',
     title: { es: 'Instituciones', en: 'Institutions' },
     countUnit: { es: 'instituciones', en: 'institutions' },
-    lastUpdate: '2026-09-08',
+    lastUpdate: '2026-09-15',
     description:
       'Instituciones públicas con iniciativas relacionadas con IA documentadas (ministerios, autónomas, judicial, universidades e investigación).',
     descriptionEs:
@@ -182,7 +182,7 @@ const DATASETS: Dataset[] = [
     endpoint: '/api/indicadores.json',
     title: { es: 'Indicadores', en: 'Indicators' },
     countUnit: { es: 'bloques', en: 'groups' },
-    lastUpdate: '2026-09-01',
+    lastUpdate: '2026-09-15',
     description:
       'Indicadores cuantitativos: ILIA 2025 (Índice Latinoamericano de IA), comparativa regional, KPIs hero del observatorio.',
     descriptionEs:
@@ -209,7 +209,7 @@ const DATASETS: Dataset[] = [
     endpoint: '/api/enia-acciones.json',
     title: { es: 'Plan de Acción ENIA', en: 'ENIA Action Plan' },
     countUnit: { es: 'registros fuente', en: 'source records' },
-    lastUpdate: '2026-09-01',
+    lastUpdate: '2026-09-15',
     description:
       'Inventario y crosswalk del Plan de Acción ENIA: 129 registros del documento oficial, 120 intervenciones únicas, clasificación por tipo, evidencia de ejecución y relaciones con el catálogo.',
     descriptionEs:
@@ -227,7 +227,7 @@ const DATASETS: Dataset[] = [
     endpoint: '/api/monitoreo.json',
     title: { es: 'Monitoreo editorial', en: 'Editorial monitoring' },
     countUnit: { es: 'frentes', en: 'monitoring fronts' },
-    lastUpdate: '2026-09-08',
+    lastUpdate: '2026-09-15',
     publicationMode: 'rolling',
     description:
       'Agenda y bitácora editorial: cadencias por frente, próximas revisiones, cambios de estado y revisiones documentadas sin cambios.',
@@ -246,7 +246,7 @@ const DATASETS: Dataset[] = [
     endpoint: '/api/marco-pais.json',
     title: { es: 'Marco país', en: 'Country framework' },
     countUnit: { es: 'secciones', en: 'sections' },
-    lastUpdate: '2026-09-01',
+    lastUpdate: '2026-09-15',
     description:
       'Arquitectura pública del marco de IA en Costa Rica: capas, hitos, instrumentos y brechas operativas.',
     descriptionEs:
@@ -260,7 +260,7 @@ const DATASETS: Dataset[] = [
     endpoint: '/api/historial.json',
     title: { es: 'Historial editorial', en: 'Editorial history' },
     countUnit: { es: 'cambios publicados', en: 'published changes' },
-    lastUpdate: '2026-09-08',
+    lastUpdate: '2026-09-15',
     description:
       'Bitácora pública y bilingüe de cambios editoriales con fecha, tipo, fuente y commit cuando está disponible.',
     descriptionEs:

@@ -1,5 +1,18 @@
 [
   {
+    "fecha": "2026-09-15",
+    "tipo": "proyecto",
+    "actualizacion": {
+      "es": "Se incorpora en seguimiento el proyecto interinstitucional de MICITT, MTSS e INA para fortalecer la plataforma del Sistema Nacional de Empleo mediante IA. La contratación adjudicada a WCC Group B.V. confirma la etapa I de diseño y planificación, pero no acredita todavía el desarrollo ni la operación del motor de IA. La intervención ENIA del INA pasa a coincidencia parcial y conserva ejecución no verificada.",
+      "en": "The inter-institutional MICITT, MTSS and INA project to strengthen the National Employment System platform with AI is added under review. The procurement awarded to WCC Group B.V. confirms stage I design and planning but does not yet establish development or operation of the AI engine. INA's ENIA intervention moves to a partial match and remains unverified for execution."
+    },
+    "fuente": {
+      "es": "INA, documentación institucional del proyecto SNE",
+      "en": "INA, institutional documentation for the SNE project"
+    },
+    "fuente_url": "https://www.ina.ac.cr/transparencia/Documentos%20compartidos/Informes%20Institucionales/Hist%C3%B3rico%20de%20los%20informes%20anuales%20de%20auditor%C3%ADa%20interna/2025/Informes_AS/AI-ASE-03-2025-Adenda_Convenio_MICITT-INA-MTSS-JD.pdf"
+  },
+  {
     "fecha": "2026-09-08",
     "tipo": "proyecto",
     "actualizacion": {
