@@ -551,6 +551,6 @@ describe('API pública estática R13', () => {
 
     expect(payload.count).toBe(8);
     expect(payload.data.frentes).toHaveLength(8);
-    expect(payload.data.revisiones).toHaveLength(14);
+    expect(payload.data.revisiones).toHaveLength(16);
   });
 });
