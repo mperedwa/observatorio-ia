@@ -1,12 +1,12 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-09-16T00:00:00.000Z",
+  "lastUpdate": "2026-10-01T00:00:00.000Z",
   "count": 8,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "data": {
     "schemaVersion": 1,
-    "fechaCorte": "2026-09-16",
+    "fechaCorte": "2026-10-01",
     "politica": {
       "descripcion": {
         "es": "La agenda de revisión separa la vigilancia automática de la decisión editorial. Una alerta abre una revisión; no cambia por sí sola el catálogo, el estado de un expediente ni la evidencia de ejecución.",
@@ -85,8 +85,8 @@
           "en": "Review of status, committee and new official activity for the seven cataloged bills."
         },
         "cadenciaId": "semanal",
-        "fechaUltimaRevision": "2026-09-16",
-        "fechaProximaRevision": "2026-09-23",
+        "fechaUltimaRevision": "2026-10-01",
+        "fechaProximaRevision": "2026-10-08",
         "alcance": {
           "cantidad": 7,
           "unidad": {
@@ -136,7 +136,7 @@
         "fechaUltimaRevision": "2026-09-15",
         "fechaProximaRevision": "2026-10-15",
         "alcance": {
-          "cantidad": 9,
+          "cantidad": 13,
           "unidad": {
             "es": "iniciativas",
             "en": "initiatives"
@@ -188,7 +188,7 @@
         "fechaUltimaRevision": "2026-09-08",
         "fechaProximaRevision": "2026-12-08",
         "alcance": {
-          "cantidad": 7,
+          "cantidad": 9,
           "unidad": {
             "es": "adopciones",
             "en": "adoptions"
@@ -270,6 +270,19 @@
       }
     ],
     "revisiones": [
+      {
+        "id": "revision-legislacion-ia-2026-10-01",
+        "fecha": "2026-10-01",
+        "frenteId": "legislacion-ia",
+        "resultado": "sin-cambios",
+        "resumen": {
+          "es": "Se revisaron los siete expedientes y las fuentes oficiales localizadas de Asamblea y TSE, con contraste secundario. No se obtuvo evidencia primaria nueva suficiente para modificar el catálogo: se conservan cuatro dictaminados y tres en comisión. La consulta oficial de Asamblea del 7 de abril y las actas del TSE son antecedentes, no una certificación actual; la agenda SIL no pudo recuperarse. Sin cambios significa que no se modifican los datos publicados, no que se haya demostrado ausencia de actividad legislativa. Se conservan las fechas de evidencia de las fichas y se programa otro control semanal.",
+          "en": "The seven bills and the identified official Assembly and TSE sources were reviewed, with a secondary cross-check. No sufficient new primary evidence was obtained to amend the catalog: four reported-out bills and three committee-stage bills are retained. The Assembly's April 7 response and TSE minutes are historical evidence, not current certification; the SIL agenda could not be retrieved. No changes means the published data were not amended, not that an absence of legislative activity was established. Record evidence dates are retained and another weekly check is scheduled."
+        },
+        "fuenteUrl": "https://www.asamblea.go.cr/ca/Lists/cp/DispForm.aspx?ContentTypeId=0x01008922D325D4FE564292B03FD67DF003A7&ID=22860",
+        "issueUrl": "https://github.com/mperedwa/observatorio-ia/issues/44",
+        "transiciones": []
+      },
       {
         "id": "revision-legislacion-ia-2026-09-16",
         "fecha": "2026-09-16",

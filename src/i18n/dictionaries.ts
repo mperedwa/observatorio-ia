@@ -92,6 +92,8 @@ export interface Dictionary {
     ultimaVerificacionLabel: string;
     tipoLabel: {
       ministerio: string;
+      municipalidad: string;
+      'organo-publico': string;
       judicial: string;
       autonoma: string;
       asamblea: string;
@@ -594,6 +596,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ultimaVerificacionLabel: 'Último corte',
       tipoLabel: {
         ministerio: 'Ministerio',
+        municipalidad: 'Municipalidad',
+        'organo-publico': 'Órgano público',
         judicial: 'Poder Judicial',
         autonoma: 'Institución autónoma',
         asamblea: 'Asamblea Legislativa',
@@ -1285,6 +1289,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ultimaVerificacionLabel: 'Latest review',
       tipoLabel: {
         ministerio: 'Ministry',
+        municipalidad: 'Municipality',
+        'organo-publico': 'Public body',
         judicial: 'Judicial Branch',
         autonoma: 'Autonomous institution',
         asamblea: 'Legislative Assembly',

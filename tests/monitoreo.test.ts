@@ -62,9 +62,13 @@ describe('agenda de monitoreo editorial', () => {
       }
     }
 
-    expect(resumenMonitoreo.revisionesSinCambios).toBe(6);
+    expect(resumenMonitoreo.revisionesSinCambios).toBe(7);
     expect(resumenMonitoreo.cambiosPublicados).toBe(10);
     expect(resumenMonitoreo.vencidas).toBe(0);
+    const legislacion = frentesMonitoreo.find(({ id }) => id === 'legislacion-ia')!;
+    expect(legislacion.fechaProximaRevision).toBe('2026-10-08');
+    expect(calcularEstadoAgenda(legislacion, monitoreo.fechaCorte)).toBe('al-dia');
+    expect(revisionesMonitoreo.find(({ id }) => id === 'revision-legislacion-ia-2026-10-01')?.resumen.es).toContain('no una certificación actual');
   });
 
   it('calcula el estado contra el corte publicado y no contra el reloj local', () => {

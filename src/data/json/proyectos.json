@@ -4316,5 +4316,648 @@
         "en": "What AI functions, if any, are currently available to people and employers on ANE.cr or Brete.cr?"
       }
     ]
+  },
+  {
+    "id": "invu-vincent-ai",
+    "titulo": {
+      "es": "Vincent AI para servicios jurídicos",
+      "en": "Vincent AI for legal services"
+    },
+    "institucionId": "invu",
+    "categoria": "judicial",
+    "estado": "planificado",
+    "descripcion": {
+      "es": "Contratación del servicio de inteligencia artificial Vincent asociado a la plataforma jurídica vLex. El expediente identifica un contrato en trámite de aprobación; no acredita todavía uso operativo.",
+      "en": "Procurement of the Vincent artificial intelligence service associated with the vLex legal platform. The dossier identifies a contract pending approval; it does not yet establish operational use."
+    },
+    "fuenteUrl": "https://www.sicop.go.cr/moduloPcont/pcont/ctract/es/CE_CEJ_ESQ002.jsp?cartelNo=20260902382&cartelSeq=00",
+    "modeloVersion": 2,
+    "tipoIniciativa": "componente-ia",
+    "estadoCatalogo": "seguimiento",
+    "faseImplementacion": "planificado",
+    "estadoIA": "declarada-sin-tecnica",
+    "evaluacion": {
+      "existencia": {
+        "estado": "confirmado",
+        "fuenteIds": [
+          "invu-vincent-sicop"
+        ]
+      },
+      "ejecucion": {
+        "estado": "parcialmente-confirmado",
+        "fuenteIds": [
+          "invu-vincent-sicop"
+        ]
+      },
+      "tecnicaIA": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      },
+      "usoOperativo": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      },
+      "resultados": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      },
+      "gobernanza": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      }
+    },
+    "fuentes": [
+      {
+        "id": "invu-vincent-sicop",
+        "titulo": {
+          "es": "Expediente 2026PX-000032-0005800001",
+          "en": "Procurement dossier 2026PX-000032-0005800001"
+        },
+        "url": "https://www.sicop.go.cr/moduloPcont/pcont/ctract/es/CE_CEJ_ESQ002.jsp?cartelNo=20260902382&cartelSeq=00",
+        "publicador": "INVU / SICOP",
+        "tipoFuente": "primaria-oficial",
+        "fechaConsulta": "2026-10-01",
+        "respalda": [
+          "existencia",
+          "objetivo-declarado",
+          "ejecucion"
+        ],
+        "naturalezaAfirmacion": [
+          "hecho",
+          "objetivo-declarado"
+        ]
+      }
+    ],
+    "desde": "2026",
+    "fechaPrimeraEvidencia": "2026-09-17",
+    "fechaUltimaVerificacion": "2026-10-01",
+    "fechaProximaRevision": "2026-10-15",
+    "datosConocidos": [
+      {
+        "es": "La solicitud está fechada el 17 de septiembre de 2026; el pliego se publicó el 18 de septiembre. El año de referencia 2026 corresponde a esa evidencia contractual, no al inicio de operación.",
+        "en": "The request is dated September 17, 2026; the procurement notice was published on September 18. The reference year 2026 corresponds to that procurement evidence, not the start of operations."
+      },
+      {
+        "es": "El contrato 0432026002600015-00 identifica a VLEX NETWORKS, S.L., USD 6.360 y un plazo de 12 meses. Al corte figura como aprobación de contrato en trámite, no como gasto ejecutado.",
+        "en": "Contract 0432026002600015-00 identifies VLEX NETWORKS, S.L., USD 6,360 and a 12-month term. At the review date, contract approval is pending; this is not evidence of expenditure."
+      }
+    ],
+    "preguntasAbiertas": [
+      {
+        "es": "¿Se aprobó el contrato y se activaron las licencias? ¿Qué técnica, controles y condiciones de tratamiento de datos se aplican al uso institucional?",
+        "en": "Was the contract approved and were the licenses activated? What technique, safeguards and data-processing terms apply to institutional use?"
+      }
+    ],
+    "relaciones": [
+      {
+        "iniciativaId": "invu-ia-planificacion-territorial",
+        "tipo": "distinto-de",
+        "nota": {
+          "es": "Uso jurídico distinto de la planificación territorial; tampoco acredita el chatbot ni los agentes virtuales de la ENIA.",
+          "en": "A legal use case distinct from territorial planning; it does not establish implementation of the ENIA chatbot or virtual agents either."
+        }
+      }
+    ]
+  },
+  {
+    "id": "sbd-ia-auditoria",
+    "titulo": {
+      "es": "Soluciones de IA para Auditoría Interna del SBD",
+      "en": "AI solutions for SBD Internal Audit"
+    },
+    "institucionId": "sbd",
+    "categoria": "fiscal",
+    "estado": "planificado",
+    "descripcion": {
+      "es": "Servicios especializados y licencias para implementar soluciones de IA en la Auditoría Interna del Consejo Rector del Sistema de Banca para el Desarrollo. Hay contrato notificado y comunicación de orden de inicio, sin evidencia de recepción o uso de una solución terminada.",
+      "en": "Specialized services and licenses to implement AI solutions in the Internal Audit unit of the Development Banking System's Governing Council. A notified contract and start-order communication are recorded, without evidence of acceptance or use of a completed solution."
+    },
+    "fuenteUrl": "https://www.sicop.go.cr/moduloPcont/pcont/ctract/es/CE_CEJ_ESQ002.jsp?cartelNo=20260803608&cartelSeq=00",
+    "modeloVersion": 2,
+    "tipoIniciativa": "componente-ia",
+    "estadoCatalogo": "seguimiento",
+    "faseImplementacion": "desarrollo",
+    "estadoIA": "declarada-sin-tecnica",
+    "evaluacion": {
+      "existencia": {
+        "estado": "confirmado",
+        "fuenteIds": [
+          "sbd-auditoria-sicop"
+        ]
+      },
+      "ejecucion": {
+        "estado": "parcialmente-confirmado",
+        "fuenteIds": [
+          "sbd-auditoria-sicop"
+        ]
+      },
+      "tecnicaIA": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      },
+      "usoOperativo": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      },
+      "resultados": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      },
+      "gobernanza": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      }
+    },
+    "fuentes": [
+      {
+        "id": "sbd-auditoria-sicop",
+        "titulo": {
+          "es": "Expediente 2026LD-000022-0002000001",
+          "en": "Procurement dossier 2026LD-000022-0002000001"
+        },
+        "url": "https://www.sicop.go.cr/moduloPcont/pcont/ctract/es/CE_CEJ_ESQ002.jsp?cartelNo=20260803608&cartelSeq=00",
+        "publicador": "Consejo Rector del Sistema de Banca para el Desarrollo / SICOP",
+        "tipoFuente": "primaria-oficial",
+        "fechaConsulta": "2026-10-01",
+        "respalda": [
+          "existencia",
+          "objetivo-declarado",
+          "ejecucion"
+        ],
+        "naturalezaAfirmacion": [
+          "hecho",
+          "objetivo-declarado"
+        ]
+      }
+    ],
+    "desde": "2026",
+    "fechaPrimeraEvidencia": "2026-08-28",
+    "fechaUltimaVerificacion": "2026-10-01",
+    "fechaProximaRevision": "2026-10-15",
+    "datosConocidos": [
+      {
+        "es": "El contrato 0432026000200056-00 figura notificado el 25 de septiembre de 2026, por ₡22.477.800,67 y tres meses, a nombre de 3-102-942326 Sociedad de Responsabilidad Limitada.",
+        "en": "Contract 0432026000200056-00 is recorded as notified on September 25, 2026, for CRC 22,477,800.67 and three months, to 3-102-942326 Sociedad de Responsabilidad Limitada."
+      },
+      {
+        "es": "El expediente registra una comunicación de Orden de Inicio del 25 de septiembre. El monto contractual no demuestra pago o entrega. El año de referencia 2026 corresponde a la contratación documentada, no al inicio de uso de IA.",
+        "en": "The dossier records a Start Order communication dated September 25. The contract amount does not establish payment or delivery. The reference year 2026 corresponds to documented procurement, not the start of AI use."
+      }
+    ],
+    "preguntasAbiertas": [
+      {
+        "es": "¿Qué herramientas, licencias y técnicas se entregarán? ¿Existe recepción conforme, uso efectivo, revisión humana y evaluación de calidad?",
+        "en": "What tools, licenses and techniques will be delivered? Is there acceptance, actual use, human review and quality evaluation?"
+      }
+    ]
+  },
+  {
+    "id": "la-union-rodu",
+    "titulo": {
+      "es": "R.O.D.U para trámites de uso de suelo",
+      "en": "R.O.D.U for land-use procedures"
+    },
+    "institucionId": "municipalidad-la-union",
+    "categoria": "infraestructura",
+    "estado": "operativo",
+    "descripcion": {
+      "es": "Servicio municipal de emisión automatizada de documentos de uso de suelo, con operación documentada por la Municipalidad, sin prueba funcional actual del Observatorio. La institución declara RPA e IA, pero las fuentes revisadas no permiten separar reglas de automatización de una técnica de IA identificable.",
+      "en": "Municipal service for automatically issuing land-use documents, with operation documented by the municipality but no current functional test by the Observatory. The institution declares RPA and AI, but the reviewed sources do not distinguish automation rules from an identifiable AI technique."
+    },
+    "fuenteUrl": "https://launion.go.cr/noticias/la-union-encabeza-informes-nacionales-en-infraestructura-y-desarrollo-urbano/",
+    "modeloVersion": 2,
+    "tipoIniciativa": "por-determinar",
+    "estadoCatalogo": "seguimiento",
+    "faseImplementacion": "operativo",
+    "estadoIA": "declarada-sin-tecnica",
+    "evaluacion": {
+      "existencia": {
+        "estado": "confirmado",
+        "fuenteIds": [
+          "la-union-rodu-oficial"
+        ]
+      },
+      "ejecucion": {
+        "estado": "confirmado",
+        "fuenteIds": [
+          "la-union-rodu-oficial"
+        ]
+      },
+      "tecnicaIA": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      },
+      "usoOperativo": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      },
+      "resultados": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      },
+      "gobernanza": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      }
+    },
+    "fuentes": [
+      {
+        "id": "la-union-rodu-oficial",
+        "titulo": {
+          "es": "La Unión encabeza informes nacionales en infraestructura y desarrollo urbano",
+          "en": "La Unión leads national infrastructure and urban development reports"
+        },
+        "url": "https://launion.go.cr/noticias/la-union-encabeza-informes-nacionales-en-infraestructura-y-desarrollo-urbano/",
+        "publicador": "Municipalidad de La Unión",
+        "tipoFuente": "primaria-oficial",
+        "fechaConsulta": "2026-10-01",
+        "respalda": [
+          "existencia",
+          "objetivo-declarado",
+          "ejecucion",
+          "uso-operativo"
+        ],
+        "naturalezaAfirmacion": [
+          "hecho",
+          "objetivo-declarado"
+        ]
+      }
+    ],
+    "desde": "2026",
+    "fechaPrimeraEvidencia": "2026-10-01",
+    "fechaUltimaVerificacion": "2026-10-01",
+    "fechaProximaRevision": "2026-11-01",
+    "datosNoDeterminados": [
+      {
+        "es": "No se identificaron modelo, técnica de inferencia, proveedor ni evaluación independiente. La fecha de primera evidencia y el año de referencia 2026 corresponden al registro en esta revisión, no a la fecha de publicación ni al lanzamiento, que no se determinaron.",
+        "en": "No model, inference technique, vendor or independent evaluation was identified. The first-evidence date and reference year 2026 record this review, not the publication date or launch, which were not determined."
+      }
+    ],
+    "preguntasAbiertas": [
+      {
+        "es": "¿Qué componente utiliza IA y cuál opera mediante RPA o reglas? ¿Qué controles humanos y vías de corrección se aplican a los documentos emitidos?",
+        "en": "Which component uses AI and which uses RPA or rules? What human safeguards and correction routes apply to issued documents?"
+      }
+    ]
+  },
+  {
+    "id": "salud-dejar-fumar-vapear",
+    "titulo": {
+      "es": "Asistente virtual Dejar de Fumar y Vapear",
+      "en": "Quit Smoking and Vaping virtual assistant"
+    },
+    "institucionId": "ministerio-salud",
+    "categoria": "salud",
+    "estado": "operativo",
+    "descripcion": {
+      "es": "Asistente del programa conjunto del Ministerio de Salud, CCSS e IAFA, lanzado en 2020. Las fuentes oficiales documentan el servicio y lo denominan IA; no identifican una técnica que permita distinguirlo de un chatbot basado en reglas. La operación está documentada, sin prueba funcional actual del Observatorio.",
+      "en": "Assistant for the joint Ministry of Health, CCSS and IAFA program, launched in 2020. Official sources document the service and call it AI; they do not identify a technique that distinguishes it from a rule-based chatbot. Operation is documented, without a current functional test by the Observatory."
+    },
+    "fuenteUrl": "https://iafa.go.cr/obtener-ayuda/chatbot/",
+    "modeloVersion": 2,
+    "tipoIniciativa": "por-determinar",
+    "estadoCatalogo": "seguimiento",
+    "faseImplementacion": "operativo",
+    "estadoIA": "declarada-sin-tecnica",
+    "evaluacion": {
+      "existencia": {
+        "estado": "confirmado",
+        "fuenteIds": [
+          "salud-bot-informe-2026",
+          "iafa-bot-programa"
+        ]
+      },
+      "ejecucion": {
+        "estado": "confirmado",
+        "fuenteIds": [
+          "salud-bot-informe-2026",
+          "iafa-bot-programa"
+        ]
+      },
+      "tecnicaIA": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      },
+      "usoOperativo": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      },
+      "resultados": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      },
+      "gobernanza": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      }
+    },
+    "fuentes": [
+      {
+        "id": "salud-bot-informe-2026",
+        "titulo": {
+          "es": "Informe final de gestión de Ana Priscilla Herrera García, DITS 2026",
+          "en": "Ana Priscilla Herrera García final management report, DITS 2026"
+        },
+        "url": "https://www.ministeriodesalud.go.cr/index.php/biblioteca-de-archivos-left/documentos-ministerio-de-salud/ministerio-de-salud/informes-institucionales/informes-de-gestion/nivel-central/10322-informe-final-de-gestion-ana-priscilla-herrera-garcia-dits-2026/file",
+        "publicador": "Ministerio de Salud",
+        "tipoFuente": "primaria-oficial",
+        "fechaPublicacion": "2026",
+        "fechaConsulta": "2026-10-01",
+        "respalda": [
+          "existencia",
+          "ejecucion",
+          "objetivo-declarado"
+        ],
+        "naturalezaAfirmacion": [
+          "hecho",
+          "objetivo-declarado"
+        ]
+      },
+      {
+        "id": "iafa-bot-programa",
+        "titulo": {
+          "es": "Programa Dejar de Fumar y Vapear: chatbot",
+          "en": "Quit Smoking and Vaping program: chatbot"
+        },
+        "url": "https://iafa.go.cr/obtener-ayuda/chatbot/",
+        "publicador": "IAFA",
+        "tipoFuente": "primaria-oficial",
+        "fechaConsulta": "2026-10-01",
+        "respalda": [
+          "existencia",
+          "ejecucion",
+          "uso-operativo"
+        ],
+        "naturalezaAfirmacion": [
+          "hecho"
+        ]
+      }
+    ],
+    "desde": "2020",
+    "fechaPrimeraEvidencia": "2020-04",
+    "fechaInicioOperacion": "2020-04",
+    "fechaUltimaVerificacion": "2026-10-01",
+    "fechaProximaRevision": "2026-11-01",
+    "datosConocidos": [
+      {
+        "es": "El informe de gestión, con corte al 21 de enero de 2026, registra ₡6 millones para mantenimiento. No demuestra ejecución de ese gasto ni el estado contractual de septiembre.",
+        "en": "The management report, covering through January 21, 2026, records CRC 6 million for maintenance. It does not establish expenditure or the contract status in September."
+      },
+      {
+        "es": "IAFA mantiene publicado el acceso al programa. No se realizó una prueba conversacional ni una evaluación clínica independiente.",
+        "en": "IAFA continues to publish access to the program. No conversational test or independent clinical evaluation was performed."
+      }
+    ],
+    "preguntasAbiertas": [
+      {
+        "es": "¿Qué técnica utiliza el asistente y qué protocolos de protección de datos, supervisión clínica y derivación humana están vigentes?",
+        "en": "What technique does the assistant use and what data-protection, clinical supervision and human-referral protocols are in place?"
+      }
+    ]
+  },
+  {
+    "id": "cartago-munibot",
+    "titulo": {
+      "es": "MuniBot de Cartago",
+      "en": "Cartago MuniBot"
+    },
+    "institucionId": "municipalidad-cartago",
+    "categoria": "social",
+    "estado": "operativo",
+    "descripcion": {
+      "es": "Asistente municipal cuya declaración oficial identifica IA generativa, tecnología GPT e integración mediante APIs. El acceso está integrado al portal y respondió una consulta de horario en la prueba puntual del 1 de octubre de 2026. Esa comprobación no mide su precisión general.",
+      "en": "Municipal assistant whose official disclosure identifies generative AI, GPT technology and API integration. Access is integrated into the portal and it answered an opening-hours inquiry in a spot check on October 1, 2026. This check does not measure overall accuracy."
+    },
+    "fuenteUrl": "https://www.muni-carta.go.cr/declaracion-de-uso-de-inteligencia-artificial/",
+    "modeloVersion": 2,
+    "tipoIniciativa": "sistema-ia",
+    "estadoCatalogo": "verificado",
+    "faseImplementacion": "operativo",
+    "estadoIA": "confirmada",
+    "evaluacion": {
+      "existencia": {
+        "estado": "confirmado",
+        "fuenteIds": [
+          "cartago-munibot-declaracion",
+          "cartago-munibot-acta"
+        ]
+      },
+      "ejecucion": {
+        "estado": "confirmado",
+        "fuenteIds": [
+          "cartago-munibot-acta",
+          "cartago-munibot-portal"
+        ]
+      },
+      "tecnicaIA": {
+        "estado": "confirmado",
+        "fuenteIds": [
+          "cartago-munibot-declaracion"
+        ]
+      },
+      "usoOperativo": {
+        "estado": "confirmado",
+        "fuenteIds": [
+          "cartago-munibot-portal"
+        ]
+      },
+      "resultados": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      },
+      "gobernanza": {
+        "estado": "parcialmente-confirmado",
+        "fuenteIds": [
+          "cartago-munibot-declaracion"
+        ]
+      }
+    },
+    "fuentes": [
+      {
+        "id": "cartago-munibot-declaracion",
+        "titulo": {
+          "es": "Declaración de uso de inteligencia artificial",
+          "en": "Artificial intelligence use disclosure"
+        },
+        "url": "https://www.muni-carta.go.cr/declaracion-de-uso-de-inteligencia-artificial/",
+        "publicador": "Municipalidad de Cartago",
+        "tipoFuente": "primaria-oficial",
+        "fechaConsulta": "2026-10-01",
+        "respalda": [
+          "existencia",
+          "tecnica-ia",
+          "gobernanza"
+        ],
+        "naturalezaAfirmacion": [
+          "hecho"
+        ]
+      },
+      {
+        "id": "cartago-munibot-acta",
+        "titulo": {
+          "es": "Acta municipal 145-2026",
+          "en": "Municipal minutes 145-2026"
+        },
+        "url": "https://www.muni-carta.go.cr/wp-content/uploads/2026/03/ACTA-No-145-2026-12-03-2026.pdf",
+        "publicador": "Municipalidad de Cartago",
+        "tipoFuente": "primaria-oficial",
+        "fechaPublicacion": "2026-03-12",
+        "fechaConsulta": "2026-10-01",
+        "respalda": [
+          "existencia",
+          "ejecucion"
+        ],
+        "naturalezaAfirmacion": [
+          "hecho"
+        ]
+      },
+      {
+        "id": "cartago-munibot-portal",
+        "titulo": {
+          "es": "Portal municipal con acceso a MuniBot",
+          "en": "Municipal portal with MuniBot access"
+        },
+        "url": "https://www.muni-carta.go.cr/",
+        "publicador": "Municipalidad de Cartago",
+        "tipoFuente": "primaria-oficial",
+        "fechaConsulta": "2026-10-01",
+        "respalda": [
+          "ejecucion",
+          "uso-operativo"
+        ],
+        "naturalezaAfirmacion": [
+          "hecho"
+        ]
+      }
+    ],
+    "desde": "2026",
+    "fechaPrimeraEvidencia": "2026-03-12",
+    "fechaUltimaVerificacion": "2026-10-01",
+    "fechaProximaRevision": "2026-10-15",
+    "datosNoDeterminados": [
+      {
+        "es": "No se determinaron el modelo exacto, proveedor contractual ni métricas de calidad. El año de referencia 2026 corresponde al acta documentada, no a una fecha exacta de lanzamiento. La prueba puntual no constituye una auditoría de exactitud, seguridad o disponibilidad continua. No hay vínculo acreditado con el indicador ENIA del IFAM.",
+        "en": "The exact model, contractual vendor and quality metrics were not determined. The reference year 2026 corresponds to the documented minutes, not an exact launch date. The spot check is not an audit of accuracy, safety or continuous availability. No link to IFAM's ENIA indicator was established."
+      }
+    ],
+    "preguntasAbiertas": [
+      {
+        "es": "¿Qué versión de modelo utiliza y qué evidencia pública existe sobre errores, tratamiento de datos personales y derivación humana? ¿Cómo se verifica la consistencia de sus respuestas con el portal municipal, dada la discrepancia de horario observada en la prueba puntual?",
+        "en": "Which model version does it use, and what public evidence exists on errors, personal-data handling and human escalation? How is consistency with the municipal portal checked, given the opening-hours discrepancy observed in the spot check?"
+      }
+    ]
+  },
+  {
+    "id": "micitt-asistente-virtual",
+    "titulo": {
+      "es": "Asistente Virtual del MICITT",
+      "en": "MICITT Virtual Assistant"
+    },
+    "institucionId": "micitt",
+    "categoria": "social",
+    "estado": "operativo",
+    "descripcion": {
+      "es": "Asistente institucional para atención ciudadana. Su política documenta modelos de lenguaje, generación aumentada por recuperación (RAG), clasificación y reglas. El chat integrado respondió una consulta sobre la ENIA con un enlace en la prueba puntual del 1 de octubre de 2026; esto no mide su precisión general.",
+      "en": "Institutional assistant for public inquiries. Its policy documents language models, retrieval-augmented generation (RAG), classification and rules. The integrated chat answered an ENIA inquiry with a link in a spot check on October 1, 2026; this does not measure overall accuracy."
+    },
+    "fuenteUrl": "https://micitt.go.cr/micitt/terminos-y-condiciones-de-uso",
+    "modeloVersion": 2,
+    "tipoIniciativa": "sistema-ia",
+    "estadoCatalogo": "verificado",
+    "faseImplementacion": "operativo",
+    "estadoIA": "confirmada",
+    "evaluacion": {
+      "existencia": {
+        "estado": "confirmado",
+        "fuenteIds": [
+          "micitt-asistente-politica"
+        ]
+      },
+      "ejecucion": {
+        "estado": "confirmado",
+        "fuenteIds": [
+          "micitt-asistente-politica",
+          "micitt-asistente-portal"
+        ]
+      },
+      "tecnicaIA": {
+        "estado": "confirmado",
+        "fuenteIds": [
+          "micitt-asistente-politica"
+        ]
+      },
+      "usoOperativo": {
+        "estado": "confirmado",
+        "fuenteIds": [
+          "micitt-asistente-portal"
+        ]
+      },
+      "resultados": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      },
+      "gobernanza": {
+        "estado": "parcialmente-confirmado",
+        "fuenteIds": [
+          "micitt-asistente-politica"
+        ]
+      }
+    },
+    "fuentes": [
+      {
+        "id": "micitt-asistente-politica",
+        "titulo": {
+          "es": "Política de Uso del Asistente Virtual del MICITT",
+          "en": "MICITT Virtual Assistant Use Policy"
+        },
+        "url": "https://micitt.go.cr/micitt/terminos-y-condiciones-de-uso",
+        "publicador": "MICITT",
+        "tipoFuente": "primaria-oficial",
+        "fechaConsulta": "2026-10-01",
+        "respalda": [
+          "existencia",
+          "ejecucion",
+          "tecnica-ia",
+          "gobernanza"
+        ],
+        "naturalezaAfirmacion": [
+          "hecho"
+        ]
+      },
+      {
+        "id": "micitt-asistente-portal",
+        "titulo": {
+          "es": "Página institucional con chat, comprobación funcional puntual",
+          "en": "Institutional page with chat, functional spot check"
+        },
+        "url": "https://micitt.go.cr/micitt/terminos-y-condiciones-de-uso",
+        "publicador": "MICITT",
+        "tipoFuente": "primaria-oficial",
+        "fechaConsulta": "2026-10-01",
+        "respalda": [
+          "ejecucion",
+          "uso-operativo"
+        ],
+        "naturalezaAfirmacion": [
+          "hecho"
+        ]
+      }
+    ],
+    "desde": "2026",
+    "fechaPrimeraEvidencia": "2026-10-01",
+    "fechaUltimaVerificacion": "2026-10-01",
+    "fechaProximaRevision": "2026-10-15",
+    "datosNoDeterminados": [
+      {
+        "es": "No se determinaron fecha de lanzamiento, modelo exacto, proveedor contractual ni métricas. La primera evidencia y el año de referencia 2026 indican el registro en esta revisión, no la publicación de la política ni el inicio del servicio, cuyas fechas no se determinaron.",
+        "en": "The launch date, exact model, contractual vendor and metrics were not determined. First evidence and the reference year 2026 indicate recording in this review, not publication of the policy or the start of the service, whose dates were not determined."
+      }
+    ],
+    "preguntasAbiertas": [
+      {
+        "es": "¿Qué modelos y versiones utiliza el asistente? ¿Qué evidencia acredita la calidad, el escalamiento humano y el cumplimiento de los controles descritos en la política?",
+        "en": "Which models and versions does the assistant use? What evidence establishes quality, human escalation and compliance with the safeguards described in the policy?"
+      }
+    ]
   }
 ]

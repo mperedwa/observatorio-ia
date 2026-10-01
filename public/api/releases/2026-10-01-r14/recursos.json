@@ -1,0 +1,245 @@
+{
+  "version": "0.1.0",
+  "lastUpdate": "2026-08-22T00:00:00.000Z",
+  "count": 16,
+  "source": "https://observatorioia.org",
+  "license": "CC BY 4.0",
+  "data": [
+    {
+      "id": "decreto-44507-micitt",
+      "titulo": {
+        "es": "Decreto 44507-MICITT, Código Nacional de Tecnologías Digitales",
+        "en": "Decree 44507-MICITT, National Code of Digital Technologies"
+      },
+      "fuente": "PGR-SCIJ",
+      "url": "https://pgrweb.go.cr/scij/Busqueda/Normativa/Normas/nrm_texto_completo.aspx?nValor1=1&nValor2=102229&nValor3=141218&param1=NRTC&strTipM=TC",
+      "tipo": {
+        "es": "Marco normativo",
+        "en": "Regulatory framework"
+      },
+      "tipoFuente": "primaria-oficial"
+    },
+    {
+      "id": "cntd-vigente",
+      "titulo": {
+        "es": "CNTD vigente, capítulos I al XIX",
+        "en": "Current CNTD, Chapters I through XIX"
+      },
+      "fuente": "MICITT",
+      "url": "https://www.micitt.go.cr/node/625",
+      "tipo": {
+        "es": "Marco normativo",
+        "en": "Regulatory framework"
+      },
+      "tipoFuente": "primaria-oficial"
+    },
+    {
+      "id": "enia-2024-2027",
+      "titulo": {
+        "es": "Estrategia Nacional de IA (ENIA) 2024-2027",
+        "en": "National AI Strategy (ENIA) 2024-2027"
+      },
+      "fuente": "MICITT",
+      "url": "https://www.micitt.go.cr/el-sector-informa/micitt-presento-estrategia-nacional-de-inteligencia-artificial-enia",
+      "tipo": {
+        "es": "Política pública",
+        "en": "Public policy"
+      },
+      "tipoFuente": "primaria-oficial"
+    },
+    {
+      "id": "plan-accion-enia-2025",
+      "titulo": {
+        "es": "Plan de Acción de la ENIA, versión del 11 de agosto de 2025",
+        "en": "ENIA Action Plan, August 11, 2025 version"
+      },
+      "fuente": "MICITT",
+      "url": "https://www.micitt.go.cr/sites/default/files/2025-10/Plan%20de%20Acci%C3%B3n%20ENIA%20-%20Versi%C3%B3n%2011%20agosto%202025%20Versi%C3%B3n%20Publicaci%C3%B3n.pdf",
+      "tipo": {
+        "es": "Implementación estratégica",
+        "en": "Strategic implementation"
+      },
+      "tipoFuente": "primaria-oficial"
+    },
+    {
+      "id": "principios-ocde-ia",
+      "titulo": {
+        "es": "Principios de la OCDE sobre Inteligencia Artificial",
+        "en": "OECD Principles on Artificial Intelligence"
+      },
+      "fuente": "OCDE",
+      "url": "https://oecd.ai/en/ai-principles",
+      "tipo": {
+        "es": "Referencia internacional",
+        "en": "International reference"
+      },
+      "tipoFuente": "multilateral"
+    },
+    {
+      "id": "dialogo-ai4lac-2026",
+      "titulo": {
+        "es": "Diálogo Regional AI4LAC sobre Gobernanza de IA",
+        "en": "AI4LAC Regional Dialogue on AI Governance"
+      },
+      "fuente": "MICITT / ONU Costa Rica / CEPAL",
+      "url": "https://www.micitt.go.cr/el-sector-informa/costa-rica-lidera-dialogo-regional-sobre-inteligencia-artificial",
+      "tipo": {
+        "es": "Hito regional / Gobernanza IA",
+        "en": "Regional milestone / AI governance"
+      },
+      "tipoFuente": "primaria-oficial",
+      "nota": {
+        "es": "Costa Rica lidera el proceso regional AI4LAC convocado en mayo de 2026 para consolidar prioridades de gobernanza de IA de América Latina y el Caribe rumbo al Diálogo Global de IA en Suiza.",
+        "en": "Costa Rica leads the AI4LAC regional process convened in May 2026 to consolidate Latin American and Caribbean AI governance priorities ahead of the Global AI Dialogue in Switzerland."
+      }
+    },
+    {
+      "id": "aila-costa-rica",
+      "titulo": {
+        "es": "AILA: Evaluación del Panorama de la Inteligencia Artificial",
+        "en": "AILA: Artificial Intelligence Landscape Assessment"
+      },
+      "fuente": "PNUD / MICITT",
+      "url": "https://www.undp.org/es/costa-rica/comunicados-de-prensa/costa-rica-inicia-evaluacion-nacional-en-inteligencia-artificial-para-impulsar-su-transformacion-digital-0",
+      "tipo": {
+        "es": "Evaluación diagnóstica",
+        "en": "Diagnostic assessment"
+      },
+      "tipoFuente": "multilateral"
+    },
+    {
+      "id": "disruptia-2026",
+      "titulo": {
+        "es": "DisruptIA 2026: Decisión empresarial aumentada con IA",
+        "en": "DisruptIA 2026: AI-Augmented Business Decision Making"
+      },
+      "fuente": "MICITT / INA",
+      "url": "https://www.innovar.pro",
+      "tipo": {
+        "es": "Programa de formación",
+        "en": "Training program"
+      },
+      "tipoFuente": "otra-secundaria"
+    },
+    {
+      "id": "lineamientos-ia-generativa-pj",
+      "titulo": {
+        "es": "Lineamientos Básicos para el uso de IA Generativa en el Poder Judicial",
+        "en": "Basic Guidelines for Generative AI use in the Judicial Branch"
+      },
+      "fuente": "Poder Judicial",
+      "url": "https://transparencia.poder-judicial.go.cr/index.php/declaracion-de-uso-de-inteligencia-artificial",
+      "tipo": {
+        "es": "Marco institucional",
+        "en": "Institutional framework"
+      },
+      "tipoFuente": "primaria-oficial"
+    },
+    {
+      "id": "programa-lidia-ccss",
+      "titulo": {
+        "es": "Programa LIDIA, IA predictiva en salud",
+        "en": "LIDIA Program, Predictive AI in healthcare"
+      },
+      "fuente": "CCSS / Teletica",
+      "url": "https://www.teletica.com/salud/lidia-el-programa-de-inteligencia-artificial-que-crece-en-la-ccss-en-medio-de-un-dilema-etico_376322",
+      "tipo": {
+        "es": "Cobertura",
+        "en": "Coverage"
+      },
+      "tipoFuente": "prensa"
+    },
+    {
+      "id": "reglamento-proteccion-datos-pj",
+      "titulo": {
+        "es": "Reglamento de Protección de Datos del Poder Judicial",
+        "en": "Judicial Branch Data Protection Regulation"
+      },
+      "fuente": "Poder Judicial",
+      "url": "https://cij.poder-judicial.go.cr/images/ProteccionDatos/REGLAMENTO_PROTECCIN_DE_DATOS-PODER_JUDICIAL.pdf",
+      "tipo": {
+        "es": "Reglamento",
+        "en": "Regulation"
+      },
+      "tipoFuente": "primaria-oficial"
+    },
+    {
+      "id": "ilia-2025",
+      "titulo": {
+        "es": "Índice Latinoamericano de Inteligencia Artificial 2025",
+        "en": "Latin American Artificial Intelligence Index 2025"
+      },
+      "fuente": "CENIA / CEPAL",
+      "url": "https://indicelatam.cl/wp-content/uploads/2025/10/Documento_ILIA_2025.pdf",
+      "tipo": {
+        "es": "Indicador regional",
+        "en": "Regional indicator"
+      },
+      "tipoFuente": "multilateral"
+    },
+    {
+      "id": "gtmi-2025",
+      "titulo": {
+        "es": "Índice de Madurez GovTech 2025 (GTMI)",
+        "en": "GovTech Maturity Index 2025 (GTMI)"
+      },
+      "fuente": "Banco Mundial",
+      "url": "https://www.worldbank.org/en/programs/govtech/gtmi-2025-update",
+      "tipo": {
+        "es": "Indicador internacional",
+        "en": "International indicator"
+      },
+      "tipoFuente": "multilateral",
+      "nota": {
+        "es": "El GTMI describe la madurez de la transformación digital del sector público. No es un ranking de preparación para IA.",
+        "en": "The GTMI describes public-sector digital-transformation maturity. It is not an AI-readiness ranking."
+      }
+    },
+    {
+      "id": "uruguay-decreto-sandboxes",
+      "titulo": {
+        "es": "Decreto 276/025, sandboxes regulatorios de IA en Uruguay",
+        "en": "Decree 276/025, AI regulatory sandboxes in Uruguay"
+      },
+      "fuente": "IMPO",
+      "url": "https://www.impo.com.uy/bases/decretos/276-2025",
+      "tipo": {
+        "es": "Gobernanza regional",
+        "en": "Regional governance"
+      },
+      "tipoFuente": "primaria-oficial"
+    },
+    {
+      "id": "uruguay-presidencia-sandboxes",
+      "titulo": {
+        "es": "Decreto 276/025, comunicado oficial de Presidencia de Uruguay",
+        "en": "Decree 276/025, official communication from Uruguay's Presidency"
+      },
+      "fuente": "Presidencia Uruguay",
+      "url": "https://www.gub.uy/presidencia/institucional/normativa/decreto-n-276025-se-establece-esquema-gobernanza-para-creacion-gestion",
+      "tipo": {
+        "es": "Gobernanza regional",
+        "en": "Regional governance"
+      },
+      "tipoFuente": "primaria-oficial"
+    },
+    {
+      "id": "ilia-2024-costa-rica",
+      "titulo": {
+        "es": "Índice Latinoamericano de IA 2024, Costa Rica",
+        "en": "Latin American AI Index 2024, Costa Rica"
+      },
+      "fuente": "CENIA Chile / UNESCO / CEPAL",
+      "url": "https://indicelatam.cl/wp-content/uploads/2025/01/ILIA_2024_020125_compressed.pdf",
+      "tipo": {
+        "es": "Benchmark regional",
+        "en": "Regional benchmark"
+      },
+      "tipoFuente": "multilateral",
+      "nota": {
+        "es": "Costa Rica ocupó el cuarto lugar en infraestructura con 53,09 puntos. En ILIA 2025 el puntaje total fue 53,83 y el país quedó en quinto lugar.",
+        "en": "Costa Rica ranked fourth in infrastructure with 53.09 points. In ILIA 2025 its overall score was 53.83 and the country ranked fifth."
+      }
+    }
+  ]
+}

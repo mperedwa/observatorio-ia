@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "fechaCorte": "2026-09-15",
+  "fechaCorte": "2026-10-01",
   "fuente": {
     "titulo": {
       "es": "Plan de Acción de la Estrategia Nacional de Inteligencia Artificial de Costa Rica",
@@ -2451,12 +2451,30 @@
             "estado": "enia-solamente",
             "proyectoIds": [],
             "fundamento": {
-              "es": "El registro declara una solución o componente de IA, pero al corte solo se verificó su inclusión en el Plan: no tiene coincidencia suficiente en el catálogo ni evidencia externa de ejecución.",
-              "en": "The record declares an AI solution or component, but at the cutoff only its inclusion in the Plan was verified: it has neither a sufficient catalogue match nor external execution evidence."
+              "es": "Se localizó evidencia primaria de soluciones municipales: MuniBot de Cartago, con IA generativa documentada, y R.O.D.U de La Unión, con IA declarada y técnica no determinada. Esta evidencia adyacente no acredita que IFAM haya promovido esas implementaciones ni que se contabilicen en su meta ENIA. La ejecución de esta intervención del IFAM continúa no verificada.",
+              "en": "Primary evidence was found for municipal solutions: Cartago's MuniBot, with documented generative AI, and La Unión's R.O.D.U, with declared AI and an undetermined technique. This adjacent evidence does not establish that IFAM promoted those implementations or counts them toward its ENIA target. Execution of this IFAM intervention remains unverified."
             }
           },
           "recomendacionEditorial": "investigar-como-seguimiento",
-          "fechaUltimaRevision": "2026-08-21"
+          "fechaUltimaRevision": "2026-10-01",
+          "evidenciasExternas": [
+            {
+              "id": "cartago-munibot-declaracion-2026",
+              "titulo": { "es": "Declaración municipal de uso de inteligencia artificial: MuniBot", "en": "Municipal AI use statement: MuniBot" },
+              "url": "https://www.muni-carta.go.cr/declaracion-de-uso-de-inteligencia-artificial/",
+              "publicador": "Municipalidad de Cartago",
+              "fechaConsulta": "2026-10-01",
+              "respalda": ["existencia"]
+            },
+            {
+              "id": "la-union-rodu-declaracion-2026",
+              "titulo": { "es": "Descripción municipal de R.O.D.U", "en": "Municipal description of R.O.D.U" },
+              "url": "https://launion.go.cr/noticias/que-es-r-o-d-u/",
+              "publicador": "Municipalidad de La Unión",
+              "fechaConsulta": "2026-10-01",
+              "respalda": ["existencia"]
+            }
+          ]
         },
         {
           "id": "enia-4-1-3-03",

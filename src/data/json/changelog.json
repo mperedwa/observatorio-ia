@@ -1,5 +1,35 @@
 [
   {
+    "fecha": "2026-10-01",
+    "tipo": "proyecto",
+    "actualizacion": {
+      "es": "Se incorporan MuniBot de Cartago y el asistente virtual del MICITT como adopciones verificadas: las fuentes oficiales identifican IA generativa y la comprobación funcional puntual obtuvo respuesta de ambos asistentes. Esta prueba no acredita precisión general, eficacia ni todos los controles declarados.",
+      "en": "Cartago's MuniBot and MICITT's virtual assistant are added as verified adoptions: official sources identify generative AI and a point-in-time functional check obtained responses from both assistants. This check does not establish general accuracy, effectiveness or all declared safeguards."
+    },
+    "fuente": { "es": "Declaraciones oficiales de Cartago y MICITT", "en": "Official statements by Cartago and MICITT" },
+    "fuente_url": "https://www.muni-carta.go.cr/declaracion-de-uso-de-inteligencia-artificial/"
+  },
+  {
+    "fecha": "2026-10-01",
+    "tipo": "proyecto",
+    "actualizacion": {
+      "es": "Se añaden cuatro iniciativas en seguimiento: Vincent AI del INVU, soluciones de IA para Auditoría Interna del SBD, R.O.D.U de La Unión y el asistente Dejar de Fumar y Vapear de Salud, CCSS e IAFA. Las dos primeras tienen evidencia contractual sin uso operativo acreditado; las otras dos documentan servicios existentes, pero no una técnica de IA determinada. El corte alcanza 38 iniciativas en 16 instituciones: 9 verificadas, 13 en seguimiento y 16 de ecosistema.",
+      "en": "Four initiatives are added under review: INVU's Vincent AI, SBD Internal Audit's AI solutions, La Unión's R.O.D.U and the Quit Smoking and Vaping assistant from Health, CCSS and IAFA. The first two have contractual evidence without verified operational use; the other two document existing services but not a determined AI technique. The release covers 38 initiatives across 16 institutions: 9 verified, 13 under review and 16 ecosystem initiatives."
+    },
+    "fuente": { "es": "SICOP y documentación institucional citada en cada ficha", "en": "SICOP and institutional documentation cited in each record" },
+    "fuente_url": "https://www.sicop.go.cr/moduloPcont/pcont/ctract/es/CE_CEJ_ESQ002.jsp?cartelNo=20260803608&cartelSeq=00"
+  },
+  {
+    "fecha": "2026-10-01",
+    "tipo": "recurso",
+    "actualizacion": {
+      "es": "La nota de la intervención ENIA del IFAM para gobiernos locales reconoce evidencia municipal adyacente de Cartago y La Unión. No se acredita vinculación con IFAM ni cumplimiento de su meta; el cruce y la ejecución permanecen sin verificar. No se reclasifican ICE/OIJ ni AyA, ni se renuevan fechas de frentes no revisados.",
+      "en": "The note on IFAM's ENIA intervention for local governments acknowledges adjacent municipal evidence from Cartago and La Unión. No link to IFAM or fulfillment of its target is established; the match and execution remain unverified. ICE/OIJ and AyA are not reclassified, and review dates for unreviewed areas are not renewed."
+    },
+    "fuente": { "es": "Declaración municipal de Cartago y documentación de La Unión", "en": "Cartago's municipal statement and La Unión documentation" },
+    "fuente_url": "https://launion.go.cr/noticias/que-es-r-o-d-u/"
+  },
+  {
     "fecha": "2026-09-15",
     "tipo": "proyecto",
     "actualizacion": {

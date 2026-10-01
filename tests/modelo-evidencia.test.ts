@@ -157,14 +157,14 @@ describe('schema de proyectos v2', () => {
     expect(validate([proyectoJsonV2()]), JSON.stringify(validate.errors)).toBe(true);
   });
 
-  it('valida las 32 fichas reales ya migradas', () => {
+  it('valida las 38 fichas reales ya migradas', () => {
     expect(validate(proyectos), JSON.stringify(validate.errors)).toBe(true);
   });
 });
 
 describe('catálogo real migrado', () => {
   it('mantiene cobertura v2 completa, trazabilidad limpia y seguimiento de vacíos', () => {
-    expect(proyectos).toHaveLength(32);
+    expect(proyectos).toHaveLength(38);
 
     for (const proyecto of proyectos) {
       expect(proyecto.modeloVersion, proyecto.id).toBe(MODELO_EVIDENCIA_VERSION);
@@ -177,12 +177,12 @@ describe('catálogo real migrado', () => {
     }
   });
 
-  it('fija el corte editorial derivado del 15 de septiembre de 2026', () => {
+  it('fija el corte editorial derivado del 1 de octubre de 2026', () => {
     expect(resumirCatalogo(proyectos)).toEqual({
-      iniciativasDocumentadas: 32,
-      adopcionVerificada: 7,
-      verificadasCatalogo: 7,
-      seguimiento: 9,
+      iniciativasDocumentadas: 38,
+      adopcionVerificada: 9,
+      verificadasCatalogo: 9,
+      seguimiento: 13,
       ecosistema: 16,
       descartadas: 0,
       pendientesMigracion: 0,
@@ -198,6 +198,8 @@ describe('catálogo real migrado', () => {
       'hacienda-anomaly',
       'inamu-ela',
       'aresep-clara',
+      'cartago-munibot',
+      'micitt-asistente-virtual',
     ]);
   });
 

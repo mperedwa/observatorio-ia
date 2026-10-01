@@ -3,6 +3,8 @@ import type { Bilingual } from '@/i18n/config';
 
 export type Tipo =
   | 'ministerio'
+  | 'municipalidad'
+  | 'organo-publico'
   | 'asamblea'
   | 'judicial'
   | 'autonoma'

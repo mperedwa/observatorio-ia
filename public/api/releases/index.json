@@ -1,8 +1,20 @@
 {
-  "latest": "2026-09-15-r13",
+  "latest": "2026-10-01-r14",
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "releases": [
+    {
+      "id": "2026-10-01-r14",
+      "date": "2026-10-01",
+      "title": {
+        "es": "Corte R14 de actualización del catálogo",
+        "en": "R14 catalog update release"
+      },
+      "manifestUrl": "/api/releases/2026-10-01-r14/release.json",
+      "datasets": 11,
+      "bytes": 7501,
+      "sha256": "242889de74d84cd3de96f3cdf208d72f76cf59d74eed3a41988c2246bc274509"
+    },
     {
       "id": "2026-09-15-r13",
       "date": "2026-09-15",

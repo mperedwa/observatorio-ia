@@ -35,8 +35,8 @@ describe('registro editorial de monitoreo', () => {
 
     expect(frente?.fechaUltimaRevision).toBe('2026-09-21');
     expect(frente?.fechaProximaRevision).toBe('2026-10-21');
-    expect(actualizado.fechaCorte).toBe('2026-09-21');
-    expect(actualizado.revisiones[0].id).toBe('revision-prueba-2026-09-21');
+    expect(actualizado.fechaCorte).toBe([fechaCorteOriginal, '2026-09-21'].sort().at(-1));
+    expect(actualizado.revisiones.some(({ id }) => id === 'revision-prueba-2026-09-21')).toBe(true);
     expect(monitoreo.fechaCorte).toBe(fechaCorteOriginal);
   });
 

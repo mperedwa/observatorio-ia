@@ -115,14 +115,14 @@
     },
     "tipo": "ministerio",
     "url": "https://www.micitt.go.cr/",
-    "proyectosActivos": 3,
+    "proyectosActivos": 4,
     "resumen": {
-      "es": "Tres registros de ecosistema y capacidades: la red de formación LINC, el proyecto de interoperabilidad CONECTA en desarrollo y el programa agrícola AgroBoost.",
-      "en": "Three ecosystem and capability records: the LINC training network, the CONECTA interoperability project under development, and the AgroBoost agricultural program."
+      "es": "Cuatro iniciativas: el Asistente Virtual como adopción verificada y tres registros de ecosistema y capacidades, LINC, CONECTA y AgroBoost.",
+      "en": "Four initiatives: the Virtual Assistant as a verified adoption and three ecosystem and capability records, LINC, CONECTA and AgroBoost."
     },
     "descripcion": {
-      "es": "Las tres fichas visibles documentan formación, infraestructura de interoperabilidad y transferencia tecnológica. LINC reporta personas capacitadas; CONECTA confirma un diagnóstico con 30 instituciones y una hoja de ruta, no integraciones operativas en esas 30 entidades; AgroBoost no publica un sistema de IA específico reproducible.",
-      "en": "The three visible records document training, interoperability infrastructure and technology transfer. LINC reports people trained; CONECTA confirms a diagnostic exercise with 30 institutions and a roadmap, not operational integrations across those 30 entities; AgroBoost does not publish a reproducible, specific AI system."
+      "es": "El asistente tiene política técnica, integración en el portal y respuesta comprobada en una prueba puntual; no una evaluación general de desempeño. LINC documenta formación; CONECTA confirma un diagnóstico con 30 instituciones y una hoja de ruta, no integraciones operativas en esas entidades; AgroBoost documenta transferencia tecnológica sin un sistema específico de IA reproducible.",
+      "en": "The assistant has a technical policy, portal integration and a verified response in a spot check, not an overall performance evaluation. LINC documents training; CONECTA confirms a diagnostic exercise with 30 institutions and a roadmap, not operational integrations across those entities; AgroBoost documents technology transfer without a reproducible, specific AI system."
     },
     "lecciones": {
       "es": "Una meta, una hoja de ruta o la participación en un diagnóstico no prueban ejecución completa. El catálogo conserva estos hitos sin convertirlos en sistemas operativos ni en integraciones ya realizadas.",
@@ -271,14 +271,14 @@
     },
     "tipo": "autonoma",
     "url": "https://www.invu.go.cr/",
-    "proyectosActivos": 1,
+    "proyectosActivos": 2,
     "resumen": {
-      "es": "Una iniciativa en seguimiento: aplicaciones de IA anunciadas para fortalecer la planificación territorial.",
-      "en": "One initiative under review: AI applications announced to strengthen territorial planning."
+      "es": "Dos iniciativas en seguimiento: aplicaciones de IA para planificación territorial y contratación de Vincent AI para servicios jurídicos.",
+      "en": "Two initiatives under review: AI applications for territorial planning and procurement of Vincent AI for legal services."
     },
     "descripcion": {
-      "es": "El comunicado de INVU Evoluciona declara el uso de aplicaciones con IA, pero no identifica funciones, datos, técnica, proveedor, contratación o fase de ejecución. Tampoco acredita que el componente se aplique a los 23 planes reguladores citados separadamente.",
-      "en": "The INVU Evoluciona release states that AI applications will be used but does not identify functions, data, technique, vendor, procurement or implementation phase. It also does not establish that the component applies to the 23 regulatory plans cited separately."
+      "es": "La planificación territorial conserva vacíos de técnica y ejecución. La contratación jurídica identifica Vincent, vLex y un contrato en trámite de aprobación, sin uso operativo acreditado. Ninguna de esas evidencias confirma el chatbot ni los agentes virtuales previstos en la ENIA.",
+      "en": "Territorial planning retains technical and implementation gaps. The legal procurement identifies Vincent, vLex and a contract pending approval, without established operational use. Neither set of evidence confirms the chatbot or virtual agents planned under ENIA."
     },
     "lecciones": {
       "es": "Un anuncio institucional confirma la existencia de una línea de trabajo, no su ejecución. Mantener separadas las menciones del mismo comunicado evita atribuir aliados, alcance o resultados por proximidad textual.",
@@ -309,6 +309,94 @@
     "lecciones": {
       "es": "Una contratación preparatoria puede confirmar ejecución institucional sin demostrar adopción técnica. Distinguir las etapas evita presentar al proveedor del diagnóstico como proveedor del futuro motor de IA.",
       "en": "Preparatory procurement can confirm institutional execution without demonstrating technical adoption. Distinguishing the stages avoids presenting the diagnostic-stage contractor as the vendor of a future AI engine."
+    }
+  },
+  {
+    "id": "sbd",
+    "nombre": {
+      "es": "Consejo Rector del Sistema de Banca para el Desarrollo",
+      "en": "Development Banking System Governing Council"
+    },
+    "nombreCorto": {
+      "es": "SBD",
+      "en": "SBD"
+    },
+    "tipo": "organo-publico",
+    "url": "https://www.sbdcr.com/",
+    "proyectosActivos": 1,
+    "resumen": {
+      "es": "Una iniciativa en seguimiento: contratación de servicios especializados y licencias de IA para Auditoría Interna.",
+      "en": "One initiative under review: procurement of specialized AI services and licenses for Internal Audit."
+    },
+    "descripcion": {
+      "es": "El expediente de contratación documenta contrato notificado y una orden de inicio en septiembre de 2026. No se ha acreditado recepción de la solución, técnica específica ni uso operativo.",
+      "en": "The procurement dossier documents a notified contract and a start order in September 2026. Acceptance of the solution, its specific technique and operational use have not been established."
+    }
+  },
+  {
+    "id": "municipalidad-la-union",
+    "nombre": {
+      "es": "Municipalidad de La Unión",
+      "en": "Municipality of La Unión"
+    },
+    "nombreCorto": {
+      "es": "La Unión",
+      "en": "La Unión"
+    },
+    "tipo": "municipalidad",
+    "url": "https://launion.go.cr/",
+    "proyectosActivos": 1,
+    "resumen": {
+      "es": "Una iniciativa en seguimiento: R.O.D.U, servicio automatizado de uso de suelo con IA declarada y técnica pendiente de determinar.",
+      "en": "One initiative under review: R.O.D.U, an automated land-use service with declared AI and an undetermined technique."
+    },
+    "descripcion": {
+      "es": "La Municipalidad documenta la operación del servicio y utiliza los términos RPA e IA. La evidencia revisada no separa ambos componentes ni acredita correspondencia con las metas del IFAM en la ENIA.",
+      "en": "The municipality documents operation of the service and uses the terms RPA and AI. The reviewed evidence does not separate those components or establish correspondence with IFAM's ENIA targets."
+    }
+  },
+  {
+    "id": "municipalidad-cartago",
+    "nombre": {
+      "es": "Municipalidad de Cartago",
+      "en": "Municipality of Cartago"
+    },
+    "nombreCorto": {
+      "es": "Cartago",
+      "en": "Cartago"
+    },
+    "tipo": "municipalidad",
+    "url": "https://www.muni-carta.go.cr/",
+    "proyectosActivos": 1,
+    "resumen": {
+      "es": "Una adopción verificada: MuniBot, asistente municipal con IA generativa y tecnología GPT documentadas.",
+      "en": "One verified adoption: MuniBot, a municipal assistant with documented generative AI and GPT technology."
+    },
+    "descripcion": {
+      "es": "La declaración de IA, un acta municipal, el acceso integrado al portal y una respuesta comprobada respaldan el asistente. La prueba puntual no equivale a una evaluación de calidad; no se atribuye su implementación al IFAM.",
+      "en": "The AI disclosure, municipal minutes, portal-integrated access and a verified response support the assistant. The spot check is not a quality evaluation; its implementation is not attributed to IFAM."
+    }
+  },
+  {
+    "id": "ministerio-salud",
+    "nombre": {
+      "es": "Ministerio de Salud",
+      "en": "Ministry of Health"
+    },
+    "nombreCorto": {
+      "es": "Salud",
+      "en": "Health"
+    },
+    "tipo": "ministerio",
+    "url": "https://www.ministeriodesalud.go.cr/",
+    "proyectosActivos": 1,
+    "resumen": {
+      "es": "Una iniciativa en seguimiento: el asistente Dejar de Fumar y Vapear, desarrollado con CCSS e IAFA y disponible desde 2020.",
+      "en": "One initiative under review: the Quit Smoking and Vaping assistant, developed with CCSS and IAFA and available since 2020."
+    },
+    "descripcion": {
+      "es": "Las fuentes oficiales denominan IA al asistente y documentan su continuidad institucional, pero no precisan la técnica. El registro no acredita ejecución de la intervención de adquisición de nuevas tecnologías del Plan ENIA.",
+      "en": "Official sources call the assistant AI and document institutional continuity but do not specify its technique. This record does not establish implementation of the ENIA action to acquire new technologies."
     }
   }
 ]

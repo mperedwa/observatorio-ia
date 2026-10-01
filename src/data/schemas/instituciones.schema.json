@@ -12,7 +12,7 @@
       "nombreCorto": { "$ref": "#/definitions/bilingual" },
       "tipo": {
         "type": "string",
-        "enum": ["ministerio", "asamblea", "judicial", "autonoma", "universidad", "investigacion", "camara"]
+        "enum": ["ministerio", "municipalidad", "organo-publico", "asamblea", "judicial", "autonoma", "universidad", "investigacion", "camara"]
       },
       "url": { "type": "string", "format": "uri" },
       "proyectosActivos": { "type": "integer", "minimum": 0 },
