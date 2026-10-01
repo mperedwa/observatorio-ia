@@ -72,6 +72,7 @@ export interface TransicionRevision {
 }
 
 export interface RevisionMonitoreo {
+  notaValidacion?: Bilingual;
   id: string;
   fecha: string;
   frenteId: string;

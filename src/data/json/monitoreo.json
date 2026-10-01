@@ -266,6 +266,10 @@
   "revisiones": [
     {
       "id": "revision-legislacion-ia-2026-10-01",
+      "notaValidacion": {
+        "es": "Revisado en Delfino · validación en Asamblea pendiente",
+        "en": "Reviewed via Delfino · Assembly verification pending"
+      },
       "fecha": "2026-10-01",
       "frenteId": "legislacion-ia",
       "resultado": "sin-cambios",

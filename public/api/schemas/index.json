@@ -70,10 +70,10 @@
       "url": "/api/schemas/monitoreo.schema.json",
       "dataSchemaUrl": "/api/schemas/monitoreo-data.schema.json",
       "draft": "http://json-schema.org/draft-07/schema#",
-      "bytes": 8362,
-      "sha256": "2b4b2ed0bf12dd6e8cd7aa487b30b54c312610176a32b25fb1fef0eeff19105b",
-      "dataSchemaBytes": 5679,
-      "dataSchemaSha256": "c58b8930006b644f50cbb9f87379c4f1d58d7eca1dc1c3f22a728684637eaa50"
+      "bytes": 8445,
+      "sha256": "f019599194b3b3ddf542c945ba07620d529c31837f464fadfcdc3488507823b8",
+      "dataSchemaBytes": 5744,
+      "dataSchemaSha256": "3c1b0dda37e513dc52504b13efcb346bd29df1158eb01efbd9bdfaab3f5b5fc8"
     },
     {
       "datasetId": "marco-pais",

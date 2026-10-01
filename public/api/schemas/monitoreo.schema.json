@@ -203,6 +203,9 @@
         "frenteId": {
           "$ref": "#/definitions/id"
         },
+        "notaValidacion": {
+          "$ref": "#/definitions/bilingual"
+        },
         "resultado": {
           "type": "string",
           "enum": [

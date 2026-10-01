@@ -125,6 +125,7 @@
         "id": { "$ref": "#/definitions/id" },
         "fecha": { "type": "string", "format": "date" },
         "frenteId": { "$ref": "#/definitions/id" },
+        "notaValidacion": { "$ref": "#/definitions/bilingual" },
         "resultado": {
           "type": "string",
           "enum": ["cambio-detectado", "cambio-publicado", "sin-cambios"]

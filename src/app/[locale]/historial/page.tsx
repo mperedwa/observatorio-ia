@@ -169,6 +169,7 @@ export default async function HistorialPage({
                 {frentesMonitoreo.map((frente) => {
                   const estado = calcularEstadoAgenda(frente);
                   const cadencia = cadenciasMonitoreo.get(frente.cadenciaId);
+                  const notaValidacion = revisionesMonitoreo.find((revision) => revision.frenteId === frente.id && revision.fecha === frente.fechaUltimaRevision)?.notaValidacion;
                   return (
                     <tr key={frente.id}>
                       <td className="max-w-[330px] px-4 py-4 align-top">
@@ -207,6 +208,11 @@ export default async function HistorialPage({
                       </td>
                       <td className="px-4 py-4 align-top">
                         <MarcaDocumental label={tx.estados[estado]} tone={agendaTone[estado]} />
+                        {notaValidacion && (
+                          <a href="#bitacora-revisiones" className="mt-2 block max-w-[13rem] text-xs leading-relaxed text-slate-600 underline decoration-slate-300 underline-offset-2">
+                            {notaValidacion[lc]}
+                          </a>
+                        )}
                       </td>
                     </tr>
                   );
@@ -219,6 +225,7 @@ export default async function HistorialPage({
             {frentesMonitoreo.map((frente, index) => {
               const estado = calcularEstadoAgenda(frente);
               const cadencia = cadenciasMonitoreo.get(frente.cadenciaId);
+              const notaValidacion = revisionesMonitoreo.find((revision) => revision.frenteId === frente.id && revision.fecha === frente.fechaUltimaRevision)?.notaValidacion;
               return (
                 <article
                   key={frente.id}
@@ -241,6 +248,11 @@ export default async function HistorialPage({
                     </p>
                     <div className="mt-4">
                       <MarcaDocumental label={tx.estados[estado]} tone={agendaTone[estado]} />
+                      {notaValidacion && (
+                        <a href="#bitacora-revisiones" className="mt-2 block text-xs leading-relaxed text-slate-600 underline decoration-slate-300 underline-offset-2">
+                          {notaValidacion[lc]}
+                        </a>
+                      )}
                     </div>
                     <dl className="mt-5 grid grid-cols-2 gap-x-5 gap-y-4 border-t border-editorial-rule pt-4 text-sm">
                       <MobileMeta
