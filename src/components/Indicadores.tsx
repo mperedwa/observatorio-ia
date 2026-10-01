@@ -1,4 +1,4 @@
-import { ilia2025, dgi2025, ourdata2025 } from '@/data/indicadores';
+import { ilia2025, dgi2025, ourdata2025, aila2026 } from '@/data/indicadores';
 import { ChartILIATabs } from './ChartILIATabs';
 import { IndicadorOecd } from './IndicadorOecd';
 import { EncabezadoSeccionExpediente } from './ExpedienteEditorial';
@@ -62,14 +62,41 @@ export function Indicadores({
           </div>
         </section>
 
+        <section className="border-b border-editorial-rule py-12 sm:py-16">
+          <EncabezadoSeccionExpediente
+            index="02"
+            title={t.indicadores.aila.titulo}
+            description={t.indicadores.aila.sub}
+          />
+          <div className="mt-8 sm:pl-[4.5rem]">
+            <p className="text-xs font-semibold uppercase tracking-[0.1em] text-institucional-700">
+              {t.indicadores.aila.etapaLabel}: <span className="text-editorial-ink">{aila2026.etapa[locale]}</span>
+            </p>
+            <div className="mt-6 grid gap-3 sm:grid-cols-3">
+              {aila2026.pilares.map((pilar) => (
+                <div key={pilar.nombre.es} className="border-t-2 border-institucional-700 bg-editorial-paper/60 px-4 py-5">
+                  <p className="text-sm font-medium text-editorial-muted">{pilar.nombre[locale]}</p>
+                  <p className="mt-3 font-editorial text-3xl font-semibold tabular-nums text-editorial-ink">
+                    {pilar.puntaje.toFixed(1)}<span className="ml-1 font-sans text-xs font-normal text-editorial-muted">/ {aila2026.escalaMaxima}</span>
+                  </p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-5 max-w-3xl text-sm leading-relaxed text-editorial-muted">{t.indicadores.aila.lectura}</p>
+            <a href={aila2026.fuenteUrl} target="_blank" rel="noopener noreferrer" className="mt-4 inline-block border-b border-institucional-700 pb-0.5 text-sm font-semibold text-institucional-700 hover:text-institucional-900">
+              {t.indicadores.aila.fuenteLabel} ↗
+            </a>
+          </div>
+        </section>
+
         <IndicadorOecd
-          index="02"
+          index="03"
           data={dgi2025}
           locale={locale}
           copy={t.indicadorDgi}
         />
         <IndicadorOecd
-          index="03"
+          index="04"
           data={ourdata2025}
           locale={locale}
           copy={t.indicadorOurdata}

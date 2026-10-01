@@ -31,8 +31,12 @@
         "en": "National strategy"
       },
       "instrumentos": {
-        "es": "ENIA 2024-2027, Plan de Acción y diagnósticos asociados como AILA.",
-        "en": "ENIA 2024-2027, Action Plan and associated diagnostics such as AILA."
+        "es": "ENIA 2024-2027 y su Plan de Acción.",
+        "en": "ENIA 2024-2027 and its Action Plan."
+      },
+      "nota": {
+        "es": "AILA 2026, publicado por PNUD y MICITT, es un diagnóstico de preparación del país. Informa esta lectura, pero no constituye una meta ejecutada ni un lineamiento obligatorio.",
+        "en": "AILA 2026, published by UNDP and MICITT, assesses national readiness. It informs this reading but is neither an implemented target nor a binding guideline."
       },
       "funcion": {
         "es": "Define prioridades, visión país, líneas de acción y compromisos interinstitucionales para el desarrollo y adopción de IA.",
@@ -50,7 +54,13 @@
       "vacio": {
         "es": "No establece por sí sola el procedimiento diario que debe seguir cada institución al adoptar, contratar, evaluar o escalar sistemas de IA.",
         "en": "Does not by itself set the daily procedure each institution must follow when adopting, procuring, evaluating or scaling AI systems."
-      }
+      },
+      "enlaces": [
+        {
+          "label": { "es": "Leer diagnóstico AILA 2026", "en": "Read AILA 2026 assessment" },
+          "url": "https://pnud-conocimiento.cr/wp-content/uploads/2026/09/AILA_2026_MICITT_digital-1.pdf"
+        }
+      ]
     },
     {
       "id": "lineamientos-tecnicos-obligatorios",
@@ -122,16 +132,16 @@
         "en": "Institutional initiatives"
       },
       "instrumentos": {
-        "es": "32 iniciativas relacionadas con IA en 12 instituciones: 7 adopciones verificadas, 9 en seguimiento y 16 registros de ecosistema y capacidades.",
-        "en": "32 AI-related initiatives across 12 institutions: 7 verified adoptions, 9 under review and 16 ecosystem and capacity records."
+        "es": "{proyectos} iniciativas relacionadas con IA en {instituciones} instituciones: {adopcionVerificada} adopciones verificadas, {seguimiento} en seguimiento y {ecosistema} registros de ecosistema y capacidades.",
+        "en": "{proyectos} AI-related initiatives across {instituciones} institutions: {adopcionVerificada} verified adoptions, {seguimiento} under review and {ecosistema} ecosystem and capacity records."
       },
       "nota": {
         "es": "Además de proyectos en producción, existen instrumentos sectoriales de gobernanza como los Lineamientos Básicos para el uso de IA Generativa Autorizada en el Poder Judicial. Estos son relevantes pero no equivalen a un marco nacional aplicable a todo el Estado.",
         "en": "In addition to production projects, there are sectoral governance instruments such as the Basic Guidelines for the use of Authorized Generative AI in the Judiciary. These are relevant but do not amount to a national framework applicable to the entire State."
       },
       "funcion": {
-        "es": "Documenta sistemas, pilotos, planes y capacidades relacionadas con IA dentro del sector público. El inventario actual reúne 32 iniciativas con distinta naturaleza y madurez; solo 7 cumplen la regla de adopción verificada.",
-        "en": "Documents AI-related systems, pilots, plans and capabilities in the public sector. The current inventory includes 32 initiatives of different types and maturity; only 7 meet the verified-adoption rule."
+        "es": "Documenta sistemas, pilotos, planes y capacidades relacionadas con IA dentro del sector público. El inventario actual reúne {proyectos} iniciativas con distinta naturaleza y madurez; solo {adopcionVerificada} cumplen la regla de adopción verificada.",
+        "en": "Documents AI-related systems, pilots, plans and capabilities in the public sector. The current inventory includes {proyectos} initiatives of different types and maturity; only {adopcionVerificada} meet the verified-adoption rule."
       },
       "alcance": {
         "es": "Institucional y sectorial",
@@ -233,6 +243,15 @@
     },
     {
       "anio": "2026",
+      "fecha": "2026-08-01",
+      "evento": {
+        "es": "PNUD y MICITT publican AILA 2026, diagnóstico nacional de preparación en tres pilares",
+        "en": "UNDP and MICITT publish AILA 2026, a national readiness assessment across three pillars"
+      },
+      "pendiente": false
+    },
+    {
+      "anio": "2026",
       "evento": {
         "es": "Consolidación del inventario público de proyectos de IA en el Estado",
         "en": "Consolidation of the public inventory of AI projects across the State"
@@ -316,6 +335,25 @@
       "estado": { "es": "Vigente", "en": "In force" },
       "fechaPublicacion": "2025-08-11",
       "recursoIds": ["plan-accion-enia-2025"]
+    },
+    {
+      "id": "aila-2026",
+      "nombre": { "es": "AILA 2026", "en": "AILA 2026" },
+      "tipo": { "es": "Diagnóstico", "en": "Assessment" },
+      "alcance": { "es": "País", "en": "Country" },
+      "fuerza": { "es": "Referencial", "en": "Referential" },
+      "fuerzaTipo": "referencial",
+      "queResuelve": {
+        "es": "Evalúa la preparación del país en ecosistema, IA para el Gobierno, y regulación y ética.",
+        "en": "Assesses national readiness across the ecosystem, AI for government, and regulation and ethics."
+      },
+      "queNoResuelve": {
+        "es": "No verifica la ejecución de cada proyecto ni crea obligaciones institucionales.",
+        "en": "Does not verify individual project implementation or create institutional obligations."
+      },
+      "estado": { "es": "Publicado", "en": "Published" },
+      "fechaPublicacion": "2026-08-01",
+      "recursoIds": ["aila-costa-rica"]
     },
     {
       "id": "cntd-cap7",

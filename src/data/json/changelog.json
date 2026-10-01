@@ -1,6 +1,16 @@
 [
   {
     "fecha": "2026-10-01",
+    "tipo": "indicador",
+    "actualizacion": {
+      "es": "Se incorpora AILA 2026 como diagnóstico nacional independiente del ILIA: etapa Sistemática y tres pilares de preparación en escala de 0 a 5. El recurso apunta al informe final de PNUD y MICITT. Marco país distingue el diagnóstico de los instrumentos obligatorios y sincroniza la prosa sobre iniciativas e instituciones con el catálogo.",
+      "en": "AILA 2026 is added as a national assessment separate from ILIA: Systematic stage and three readiness pillars on a 0–5 scale. The resource now points to the final UNDP and MICITT report. The country framework distinguishes the assessment from binding instruments and synchronizes initiative and institution counts with the catalog."
+    },
+    "fuente": { "es": "PNUD y MICITT, informe AILA 2026", "en": "UNDP and MICITT, AILA 2026 report" },
+    "fuente_url": "https://pnud-conocimiento.cr/wp-content/uploads/2026/09/AILA_2026_MICITT_digital-1.pdf"
+  },
+  {
+    "fecha": "2026-10-01",
     "tipo": "proyecto",
     "actualizacion": {
       "es": "Se incorporan MuniBot de Cartago y el asistente virtual del MICITT como adopciones verificadas: las fuentes oficiales identifican IA generativa y la comprobación funcional puntual obtuvo respuesta de ambos asistentes. Esta prueba no acredita precisión general, eficacia ni todos los controles declarados.",

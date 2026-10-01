@@ -240,6 +240,18 @@
       }
     ]
   },
+  "aila2026": {
+    "edicion": 2026,
+    "fechaPublicacion": "2026-08",
+    "etapa": { "es": "Sistemática", "en": "Systematic" },
+    "escalaMaxima": 5,
+    "pilares": [
+      { "nombre": { "es": "Ecosistema de IA", "en": "AI ecosystem" }, "puntaje": 2.7, "pagina": 18 },
+      { "nombre": { "es": "IA para el Gobierno", "en": "AI for government" }, "puntaje": 2.6, "pagina": 18 },
+      { "nombre": { "es": "Regulación y ética", "en": "Regulation and ethics" }, "puntaje": 2.4, "pagina": 18 }
+    ],
+    "fuenteUrl": "https://pnud-conocimiento.cr/wp-content/uploads/2026/09/AILA_2026_MICITT_digital-1.pdf"
+  },
   "ourdata2025": {
     "ranking": [
       { "pais": { "es": "Promedio OCDE", "en": "OECD average" }, "score": 0.53, "esPromedio": true },

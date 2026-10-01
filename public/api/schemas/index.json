@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "releaseId": "2026-10-01-r14",
+  "releaseId": "2026-10-01-r15",
   "lastUpdate": "2026-10-01T00:00:00.000Z",
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
@@ -40,10 +40,10 @@
       "url": "/api/schemas/indicadores.schema.json",
       "dataSchemaUrl": "/api/schemas/indicadores-data.schema.json",
       "draft": "http://json-schema.org/draft-07/schema#",
-      "bytes": 7418,
-      "sha256": "80f796aa55be5d822f50f3fa2be87a2134a6f337f4e742003ea06b46a77a348e",
-      "dataSchemaBytes": 4507,
-      "dataSchemaSha256": "f6d4dca7ef22462ec682be1011e0edba827df28e0a41dbac2c383644f0e74fb4"
+      "bytes": 9100,
+      "sha256": "e51dcea46d76ea87b11913f226bfbe2b1627ace70da05eb9d94e87496b671f77",
+      "dataSchemaBytes": 5557,
+      "dataSchemaSha256": "d021dcad686937607704b571d75192382e141e2677f7adf3e5685e9d33b09ec2"
     },
     {
       "datasetId": "brechas",

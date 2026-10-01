@@ -9,7 +9,7 @@ import {
 } from '@/components/ExpedienteEditorial';
 import { articulosOrdenados } from '@/data/articulos';
 import { brechas } from '@/data/brechas';
-import { comparativaRegional } from '@/data/indicadores';
+import { aila2026, comparativaRegional } from '@/data/indicadores';
 import {
   applyConteosLegislacion,
   expedientes,
@@ -161,6 +161,22 @@ export default async function AnalisisPage({
         <div className="mx-auto max-w-6xl px-6 py-14 sm:py-20">
           <EncabezadoSeccionExpediente
             index="02"
+            title={t.analisis.ailaTitulo}
+            description={t.analisis.ailaSub}
+          />
+          <div className="mt-8 max-w-3xl sm:pl-[4.5rem]">
+            <p className="text-sm leading-relaxed text-editorial-muted text-pretty">{t.analisis.ailaLectura}</p>
+            <a href={aila2026.fuenteUrl} target="_blank" rel="noopener noreferrer" className="mt-4 inline-block border-b border-institucional-700 pb-0.5 text-sm font-semibold text-institucional-700 hover:text-institucional-900">
+              {t.analisis.ailaFuenteLabel} ↗
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-editorial-rule bg-editorial-paper/55">
+        <div className="mx-auto max-w-6xl px-6 py-14 sm:py-20">
+          <EncabezadoSeccionExpediente
+            index="03"
             title={t.analisis.comparativaTitulo}
             description={t.analisis.comparativaSub}
           />
@@ -262,7 +278,7 @@ export default async function AnalisisPage({
 
       <section className="mx-auto max-w-6xl px-6 py-14 sm:py-20">
           <EncabezadoSeccionExpediente
-            index="03"
+            index="04"
             title={t.analisis.brechasTitulo}
             description={t.analisis.brechasSub}
           />
@@ -276,7 +292,7 @@ export default async function AnalisisPage({
       <section className="border-y border-editorial-rule bg-editorial-paper/55">
         <div className="mx-auto max-w-6xl px-6 py-14 sm:py-20">
           <EncabezadoSeccionExpediente
-            index="04"
+            index="05"
             title={applyConteosLegislacion(t.analisis.legislacionTitulo)}
             description={applyConteosLegislacion(t.analisis.legislacionSub)}
           />

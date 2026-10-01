@@ -1,5 +1,7 @@
 import data from './json/marcoPais.json';
 import type { Bilingual } from '@/i18n/config';
+import { COUNTERS } from './counters';
+import { resolveMarcoPaisCounters } from './resolveMarcoPais';
 
 /**
  * Tipos de "fuerza institucional" que un instrumento puede tener.
@@ -78,7 +80,7 @@ interface MarcoPaisData {
   brechas: Brecha[];
 }
 
-const typed = data as MarcoPaisData;
+const typed = resolveMarcoPaisCounters(data as MarcoPaisData, COUNTERS);
 
 export const capas: Capa[] = typed.capas;
 export const hitos: Hito[] = typed.hitos;

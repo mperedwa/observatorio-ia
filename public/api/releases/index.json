@@ -1,5 +1,5 @@
 {
-  "latest": "2026-10-01-r14",
+  "latest": "2026-10-01-r15",
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "releases": [
@@ -14,6 +14,18 @@
       "datasets": 11,
       "bytes": 7501,
       "sha256": "242889de74d84cd3de96f3cdf208d72f76cf59d74eed3a41988c2246bc274509"
+    },
+    {
+      "id": "2026-10-01-r15",
+      "date": "2026-10-01",
+      "title": {
+        "es": "Corte R15 de diagnóstico AILA y marco país",
+        "en": "R15 AILA assessment and country framework release"
+      },
+      "manifestUrl": "/api/releases/2026-10-01-r15/release.json",
+      "datasets": 11,
+      "bytes": 7527,
+      "sha256": "d546497f085ea504ccc748f2b7e7f1da9fb0bc87df95b44834c6f76da696cd65"
     },
     {
       "id": "2026-09-15-r13",

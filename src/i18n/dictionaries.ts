@@ -144,6 +144,14 @@ export interface Dictionary {
     brechaPuntos: string;
     brechaPost: string;
     lecturaObservatorioLabel: string;
+    aila: {
+      titulo: string;
+      sub: string;
+      etapaLabel: string;
+      escalaLabel: string;
+      lectura: string;
+      fuenteLabel: string;
+    };
   };
   recursos: { kicker: string; titulo: string; abrir: string; metaDescripcion: string };
   acerca: {
@@ -370,6 +378,10 @@ export interface Dictionary {
     articulosSub: string;
     articulosLeerMas: string;
     articulosVacio: string;
+    ailaTitulo: string;
+    ailaSub: string;
+    ailaLectura: string;
+    ailaFuenteLabel: string;
     comparativaTitulo: string;
     comparativaSub: string;
     comparativaCols: {
@@ -579,7 +591,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           instituciones: '{instituciones} carteras institucionales con sus conteos derivados del catálogo.',
           enia: 'La matriz oficial del Plan, sus intervenciones únicas y el cruce con evidencia pública.',
           legislacion: '{legislacion} expedientes con estado, comisión, fuente oficial y fecha de verificación.',
-          indicadores: 'Series ILIA, DGI y OURdata para ubicar a Costa Rica en contexto regional.',
+          indicadores: 'ILIA, AILA, DGI y OURdata: posición regional y diagnóstico nacional.',
           metodologia: 'Criterios de inclusión, trazabilidad, autoría y canales para corregir datos.',
         },
       },
@@ -642,8 +654,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     indicadores: {
       kicker: '03 / Indicadores',
-      titulo: 'Costa Rica en el contexto regional',
-      sub: 'Posición en el Índice Latinoamericano de IA (ILIA), publicado anualmente por CEPAL. Datos 2025.',
+      titulo: 'Indicadores y diagnóstico de IA',
+      sub: 'El ILIA compara la región; AILA 2026 evalúa la preparación del país. DGI y OURdata miden gobierno digital y datos abiertos. Son instrumentos distintos y sus escalas no son intercambiables.',
       cardTitulo: 'ILIA 2025 / 100 puntos',
       fuente: 'Fuente: CEPAL',
       brechaPre: 'La brecha de Costa Rica con Chile (líder regional) es de',
@@ -651,6 +663,14 @@ export const dictionaries: Record<Locale, Dictionary> = {
       brechaPost:
         'Cerrar la brecha requiere implementación de la ENIA con metas medibles, presupuesto asignado y un marco regulatorio aprobado.',
       lecturaObservatorioLabel: 'Lectura del Observatorio',
+      aila: {
+        titulo: 'AILA 2026 / Preparación nacional',
+        sub: 'Evaluación del Panorama de la Inteligencia Artificial de Costa Rica, publicada por PNUD y MICITT en agosto de 2026.',
+        etapaLabel: 'Etapa de preparación',
+        escalaLabel: 'de 5 puntos',
+        lectura: 'Los puntajes describen condiciones del país; no son un ranking regional ni prueban que las iniciativas de la ENIA estén ejecutadas.',
+        fuenteLabel: 'Leer el informe oficial AILA 2026',
+      },
     },
     recursos: {
       kicker: '04 / Recursos',
@@ -672,7 +692,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     footer: {
       titulo: 'Observatorio IA Costa Rica',
       tagline: 'Datos públicos. Iniciativa independiente.',
-      ultimaActualizacion: 'Última actualización: agosto 2026',
+      ultimaActualizacion: 'Última actualización: octubre 2026',
       fuentes: 'Fuentes públicas: instituciones de Costa Rica, organismos multilaterales, academia y prensa.',
       quienMantiene: 'Quién mantiene el observatorio',
       historialMonitoreo: 'Historial y monitoreo editorial',
@@ -994,6 +1014,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
       articulosSub: 'Serie quincenal de análisis sobre IA en el Estado costarricense. Cada número desempaca una pieza del inventario: lo que funciona, lo que está detenido, y las preguntas abiertas.',
       articulosLeerMas: 'Leer artículo',
       articulosVacio: 'Próximamente.',
+      ailaTitulo: 'Lo que aporta AILA 2026',
+      ailaSub: 'Un diagnóstico nacional complementario a la comparación regional del ILIA.',
+      ailaLectura: 'PNUD y MICITT sitúan a Costa Rica en la etapa «Sistemática». El diagnóstico identifica diferencias entre la gobernanza de IA para el Gobierno y la capacidad para aplicarla, así como retos de confianza y seguridad. Sus recomendaciones son líneas de acción, no prueba de que proyectos o metas de la ENIA ya se hayan ejecutado.',
+      ailaFuenteLabel: 'Informe oficial AILA 2026',
       comparativaTitulo: 'Comparativa regional',
       comparativaSub: 'Posición ILIA, inversión y ente ejecutor en los cinco países latinoamericanos del ranking 2025.',
       comparativaCols: {
@@ -1084,7 +1108,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       titulo: 'Marco país de IA en Costa Rica',
       sub: 'Arquitectura de política pública, regulación, lineamientos técnicos y adopción institucional de IA en el Estado costarricense.',
       tesis: 'Costa Rica ya tiene principios, estrategia, lineamientos técnicos y adopción institucional. La brecha pendiente está en convertir ese marco en procedimientos comunes, verificables y aplicables por las instituciones públicas.',
-      ultimaActualizacion: 'Última actualización: agosto 2026',
+      ultimaActualizacion: 'Última actualización: octubre 2026',
       metaTitle: 'Marco país de inteligencia artificial en Costa Rica',
       metaDescripcion:
         'Arquitectura de política pública, regulación, lineamientos técnicos y adopción institucional de IA en Costa Rica: principios OCDE, ENIA, CNTD, expedientes legislativos, implementación institucional y brechas pendientes.',
@@ -1147,15 +1171,15 @@ export const dictionaries: Record<Locale, Dictionary> = {
       },
       matriz: {
         kicker: 'Matriz comparativa',
-        titulo: 'Qué resuelve cada instrumento',
-        sub: 'No todos los instrumentos cumplen la misma función. Algunos definen principios, otros establecen dirección estratégica, otros fijan lineamientos técnicos, y otros buscan crear obligaciones legales. Esta matriz permite ver qué existe, a quién aplica y qué vacío deja.',
+        titulo: 'Qué aporta cada documento o instrumento',
+        sub: 'Un diagnóstico no tiene la misma fuerza que una estrategia, un lineamiento técnico o una ley. Esta matriz distingue qué existe, a quién aplica, qué aporta y qué no demuestra.',
         cols: {
           instrumento: 'Instrumento',
           tipo: 'Tipo',
           alcance: 'Alcance',
           fuerza: 'Fuerza',
-          queResuelve: 'Qué resuelve',
-          queNoResuelve: 'Qué no resuelve',
+          queResuelve: 'Qué aporta',
+          queNoResuelve: 'Qué no demuestra o resuelve',
           estado: 'Estado',
           publicado: 'Publicado',
         },
@@ -1272,7 +1296,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           instituciones: '{instituciones} institutional portfolios with counts derived from the catalog.',
           enia: 'The Plan’s official matrix, its unique interventions and its crosswalk to public evidence.',
           legislacion: '{legislacion} bills with status, committee, official source and verification date.',
-          indicadores: 'ILIA, DGI and OURdata series placing Costa Rica in regional context.',
+          indicadores: 'ILIA, AILA, DGI and OURdata: regional position and national assessment.',
           metodologia: 'Inclusion criteria, traceability, authorship and channels for correcting data.',
         },
       },
@@ -1335,8 +1359,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     indicadores: {
       kicker: '03 / Indicators',
-      titulo: 'Costa Rica in the regional context',
-      sub: 'Ranking in the Latin American AI Index (ILIA), published annually by CEPAL. 2025 data.',
+      titulo: 'AI indicators and assessment',
+      sub: 'ILIA compares the region; AILA 2026 assesses national readiness. DGI and OURdata measure digital government and open data. These are distinct instruments with non-interchangeable scales.',
       cardTitulo: 'ILIA 2025 / 100 points',
       fuente: 'Source: CEPAL',
       brechaPre: 'Costa Rica\u2019s gap behind Chile (regional leader) is',
@@ -1344,6 +1368,14 @@ export const dictionaries: Record<Locale, Dictionary> = {
       brechaPost:
         'Closing the gap requires implementing ENIA with measurable targets, allocated budget and an approved regulatory framework.',
       lecturaObservatorioLabel: 'Observatory interpretation',
+      aila: {
+        titulo: 'AILA 2026 / National readiness',
+        sub: 'Costa Rica Artificial Intelligence Landscape Assessment, published by UNDP and MICITT in August 2026.',
+        etapaLabel: 'Readiness stage',
+        escalaLabel: 'out of 5 points',
+        lectura: 'Scores describe national conditions; they are neither a regional ranking nor proof that ENIA initiatives have been implemented.',
+        fuenteLabel: 'Read the official AILA 2026 report',
+      },
     },
     recursos: {
       kicker: '04 / Resources',
@@ -1364,7 +1396,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     footer: {
       titulo: 'AI Observatory Costa Rica',
       tagline: 'Public data. Independent initiative.',
-      ultimaActualizacion: 'Last updated: August 2026',
+      ultimaActualizacion: 'Last updated: October 2026',
       fuentes: 'Public sources: Costa Rican institutions, multilateral organizations, academia and the press.',
       quienMantiene: 'Who maintains the observatory',
       historialMonitoreo: 'Editorial history and monitoring',
@@ -1686,6 +1718,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
       articulosSub: 'Biweekly series of analyses on AI in the Costa Rican state. Each issue unpacks a piece of the inventory: what works, what is stalled, and the open questions.',
       articulosLeerMas: 'Read article',
       articulosVacio: 'Coming soon.',
+      ailaTitulo: 'What AILA 2026 adds',
+      ailaSub: 'A national assessment that complements ILIA’s regional comparison.',
+      ailaLectura: 'UNDP and MICITT place Costa Rica at the “Systematic” stage. The assessment identifies a gap between AI governance for government and the capacity to apply it, as well as trust and safety challenges. Its recommendations are action pathways, not evidence that ENIA projects or targets have been implemented.',
+      ailaFuenteLabel: 'Official AILA 2026 report',
       comparativaTitulo: 'Regional benchmark',
       comparativaSub: 'ILIA score, investment and executing body for the five Latin American countries in the 2025 ranking.',
       comparativaCols: {
@@ -1776,7 +1812,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       titulo: 'Costa Rica AI country framework',
       sub: 'Architecture of public policy, regulation, technical guidelines and institutional adoption of AI within the Costa Rican State.',
       tesis: 'Costa Rica already has principles, strategy, technical guidelines and institutional adoption. The pending gap is turning that framework into shared, verifiable and actionable procedures for public institutions.',
-      ultimaActualizacion: 'Last update: August 2026',
+      ultimaActualizacion: 'Last update: October 2026',
       metaTitle: 'Costa Rica artificial intelligence country framework',
       metaDescripcion:
         'Architecture of public policy, regulation, technical guidelines and institutional AI adoption in Costa Rica: OECD principles, ENIA, CNTD, legislative files, institutional implementation and pending gaps.',
@@ -1839,15 +1875,15 @@ export const dictionaries: Record<Locale, Dictionary> = {
       },
       matriz: {
         kicker: 'Comparative matrix',
-        titulo: 'What each instrument solves',
-        sub: 'Not all instruments play the same role. Some define principles, others set strategic direction, others fix technical guidelines, and others seek to create legal obligations. This matrix shows what exists, who it applies to and what gap it leaves.',
+        titulo: 'What each document or instrument contributes',
+        sub: 'An assessment does not carry the same force as a strategy, technical guideline or law. This matrix distinguishes what exists, who it applies to, what it contributes and what it does not establish.',
         cols: {
           instrumento: 'Instrument',
           tipo: 'Type',
           alcance: 'Scope',
           fuerza: 'Force',
-          queResuelve: 'What it solves',
-          queNoResuelve: 'What it does not solve',
+          queResuelve: 'What it contributes',
+          queNoResuelve: 'What it does not establish or solve',
           estado: 'Status',
           publicado: 'Published',
         },

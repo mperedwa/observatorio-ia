@@ -1,13 +1,13 @@
 {
   "version": "0.1.0",
   "dataRelease": {
-    "id": "2026-10-01-r14",
+    "id": "2026-10-01-r15",
     "date": "2026-10-01",
     "title": {
-      "es": "Corte R14 de actualización del catálogo",
-      "en": "R14 catalog update release"
+      "es": "Corte R15 de diagnóstico AILA y marco país",
+      "en": "R15 AILA assessment and country framework release"
     },
-    "manifestUrl": "/api/releases/2026-10-01-r14/release.json"
+    "manifestUrl": "/api/releases/2026-10-01-r15/release.json"
   },
   "lastUpdate": "2026-10-01T00:00:00.000Z",
   "source": "https://observatorioia.org",
@@ -43,7 +43,7 @@
       "schemaUrl": "/api/schemas/proyectos.schema.json",
       "dataSchemaUrl": "/api/schemas/proyectos-data.schema.json",
       "publicationMode": "release",
-      "releaseUrl": "/api/releases/2026-10-01-r14/proyectos.json"
+      "releaseUrl": "/api/releases/2026-10-01-r15/proyectos.json"
     },
     {
       "id": "instituciones",
@@ -62,7 +62,7 @@
       "schemaUrl": "/api/schemas/instituciones.schema.json",
       "dataSchemaUrl": "/api/schemas/instituciones-data.schema.json",
       "publicationMode": "release",
-      "releaseUrl": "/api/releases/2026-10-01-r14/instituciones.json"
+      "releaseUrl": "/api/releases/2026-10-01-r15/instituciones.json"
     },
     {
       "id": "legislacion",
@@ -81,17 +81,17 @@
       "schemaUrl": "/api/schemas/legislacion.schema.json",
       "dataSchemaUrl": "/api/schemas/legislacion-data.schema.json",
       "publicationMode": "release",
-      "releaseUrl": "/api/releases/2026-10-01-r14/legislacion.json"
+      "releaseUrl": "/api/releases/2026-10-01-r15/legislacion.json"
     },
     {
       "id": "indicadores",
       "url": "/api/indicadores.json",
-      "description": "Indicadores cuantitativos: ILIA 2025 (Índice Latinoamericano de IA), comparativa regional, KPIs hero del observatorio.",
+      "description": "Indicadores cuantitativos y diagnóstico nacional: ILIA 2025, AILA 2026, DGI, OURdata y cifras principales del observatorio.",
       "descriptionI18n": {
-        "es": "Indicadores cuantitativos, incluidos ILIA 2025, comparativas regionales y las cifras principales del observatorio.",
-        "en": "Quantitative indicators, including ILIA 2025, regional comparisons and the observatory’s headline metrics."
+        "es": "ILIA 2025, AILA 2026, DGI, OURdata y cifras principales del observatorio, con escalas y fuentes diferenciadas.",
+        "en": "ILIA 2025, AILA 2026, DGI, OURdata and headline metrics, with distinct scales and sources."
       },
-      "count": 5,
+      "count": 6,
       "countUnit": {
         "es": "bloques",
         "en": "groups"
@@ -100,7 +100,7 @@
       "schemaUrl": "/api/schemas/indicadores.schema.json",
       "dataSchemaUrl": "/api/schemas/indicadores-data.schema.json",
       "publicationMode": "release",
-      "releaseUrl": "/api/releases/2026-10-01-r14/indicadores.json"
+      "releaseUrl": "/api/releases/2026-10-01-r15/indicadores.json"
     },
     {
       "id": "brechas",
@@ -119,7 +119,7 @@
       "schemaUrl": "/api/schemas/brechas.schema.json",
       "dataSchemaUrl": "/api/schemas/brechas-data.schema.json",
       "publicationMode": "release",
-      "releaseUrl": "/api/releases/2026-10-01-r14/brechas.json"
+      "releaseUrl": "/api/releases/2026-10-01-r15/brechas.json"
     },
     {
       "id": "enia-acciones",
@@ -138,7 +138,7 @@
       "schemaUrl": "/api/schemas/enia-acciones.schema.json",
       "dataSchemaUrl": "/api/schemas/enia-acciones-data.schema.json",
       "publicationMode": "release",
-      "releaseUrl": "/api/releases/2026-10-01-r14/enia-acciones.json"
+      "releaseUrl": "/api/releases/2026-10-01-r15/enia-acciones.json"
     },
     {
       "id": "monitoreo",
@@ -171,11 +171,11 @@
         "es": "secciones",
         "en": "sections"
       },
-      "lastUpdate": "2026-09-15T00:00:00.000Z",
+      "lastUpdate": "2026-10-01T00:00:00.000Z",
       "schemaUrl": "/api/schemas/marco-pais.schema.json",
       "dataSchemaUrl": "/api/schemas/marco-pais-data.schema.json",
       "publicationMode": "release",
-      "releaseUrl": "/api/releases/2026-10-01-r14/marco-pais.json"
+      "releaseUrl": "/api/releases/2026-10-01-r15/marco-pais.json"
     },
     {
       "id": "historial",
@@ -185,7 +185,7 @@
         "es": "Bitácora pública y bilingüe de cambios editoriales, con fecha, tipo, fuente y commit cuando está disponible.",
         "en": "Public bilingual log of editorial changes, with date, type, source and commit when available."
       },
-      "count": 53,
+      "count": 54,
       "countUnit": {
         "es": "cambios publicados",
         "en": "published changes"
@@ -194,7 +194,7 @@
       "schemaUrl": "/api/schemas/historial.schema.json",
       "dataSchemaUrl": "/api/schemas/historial-data.schema.json",
       "publicationMode": "release",
-      "releaseUrl": "/api/releases/2026-10-01-r14/historial.json"
+      "releaseUrl": "/api/releases/2026-10-01-r15/historial.json"
     },
     {
       "id": "coyuntura",
@@ -213,7 +213,7 @@
       "schemaUrl": "/api/schemas/coyuntura.schema.json",
       "dataSchemaUrl": "/api/schemas/coyuntura-data.schema.json",
       "publicationMode": "release",
-      "releaseUrl": "/api/releases/2026-10-01-r14/coyuntura.json"
+      "releaseUrl": "/api/releases/2026-10-01-r15/coyuntura.json"
     },
     {
       "id": "recursos",
@@ -228,11 +228,11 @@
         "es": "recursos",
         "en": "resources"
       },
-      "lastUpdate": "2026-08-22T00:00:00.000Z",
+      "lastUpdate": "2026-10-01T00:00:00.000Z",
       "schemaUrl": "/api/schemas/recursos.schema.json",
       "dataSchemaUrl": "/api/schemas/recursos-data.schema.json",
       "publicationMode": "release",
-      "releaseUrl": "/api/releases/2026-10-01-r14/recursos.json"
+      "releaseUrl": "/api/releases/2026-10-01-r15/recursos.json"
     },
     {
       "id": "codebook",
@@ -247,11 +247,11 @@
         "es": "datasets documentados",
         "en": "documented datasets"
       },
-      "lastUpdate": "2026-08-24T00:00:00.000Z",
+      "lastUpdate": "2026-10-01T00:00:00.000Z",
       "schemaUrl": "/api/schemas/codebook.schema.json",
       "dataSchemaUrl": "/api/schemas/codebook-data.schema.json",
       "publicationMode": "release",
-      "releaseUrl": "/api/releases/2026-10-01-r14/codebook.json"
+      "releaseUrl": "/api/releases/2026-10-01-r15/codebook.json"
     }
   ]
 }

@@ -212,7 +212,7 @@
         "fechaUltimaRevision": "2026-08-21",
         "fechaProximaRevision": "2026-11-21",
         "alcance": {
-          "cantidad": 6,
+          "cantidad": 7,
           "unidad": {
             "es": "instrumentos",
             "en": "instruments"

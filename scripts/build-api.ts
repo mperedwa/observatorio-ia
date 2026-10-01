@@ -19,6 +19,7 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { join } from 'node:path';
 import { computeCounters, type Counters } from './lib/counters';
+import { resolveMarcoPaisCounters } from '../src/data/resolveMarcoPais';
 import {
   encontrarErroresCompletitudMetodologica,
   encontrarErroresTrazabilidad,
@@ -37,11 +38,11 @@ const COUNTERS_TS = join(ROOT, 'src', 'data', 'counters.ts');
 const PKG = JSON.parse(readFileSync(join(ROOT, 'package.json'), 'utf8')) as { version: string };
 
 const DATA_RELEASE = {
-  id: '2026-10-01-r14',
+  id: '2026-10-01-r15',
   date: '2026-10-01',
   title: {
-    es: 'Corte R14 de actualización del catálogo',
-    en: 'R14 catalog update release',
+    es: 'Corte R15 de diagnóstico AILA y marco país',
+    en: 'R15 AILA assessment and country framework release',
   },
 } as const;
 const RELEASE_LOCK_PATH = join(RELEASES_OUT_DIR, DATA_RELEASE.id, 'release.lock');
@@ -184,11 +185,11 @@ const DATASETS: Dataset[] = [
     countUnit: { es: 'bloques', en: 'groups' },
     lastUpdate: '2026-10-01',
     description:
-      'Indicadores cuantitativos: ILIA 2025 (Índice Latinoamericano de IA), comparativa regional, KPIs hero del observatorio.',
+      'Indicadores cuantitativos y diagnóstico nacional: ILIA 2025, AILA 2026, DGI, OURdata y cifras principales del observatorio.',
     descriptionEs:
-      'Indicadores cuantitativos, incluidos ILIA 2025, comparativas regionales y las cifras principales del observatorio.',
+      'ILIA 2025, AILA 2026, DGI, OURdata y cifras principales del observatorio, con escalas y fuentes diferenciadas.',
     descriptionEn:
-      'Quantitative indicators, including ILIA 2025, regional comparisons and the observatory\u2019s headline metrics.',
+      'ILIA 2025, AILA 2026, DGI, OURdata and headline metrics, with distinct scales and sources.',
   },
   {
     filename: 'brechas.json',
@@ -246,7 +247,7 @@ const DATASETS: Dataset[] = [
     endpoint: '/api/marco-pais.json',
     title: { es: 'Marco país', en: 'Country framework' },
     countUnit: { es: 'secciones', en: 'sections' },
-    lastUpdate: '2026-09-15',
+    lastUpdate: '2026-10-01',
     description:
       'Arquitectura pública del marco de IA en Costa Rica: capas, hitos, instrumentos y brechas operativas.',
     descriptionEs:
@@ -286,7 +287,7 @@ const DATASETS: Dataset[] = [
     endpoint: '/api/recursos.json',
     title: { es: 'Recursos y fuentes', en: 'Resources and sources' },
     countUnit: { es: 'recursos', en: 'resources' },
-    lastUpdate: '2026-08-22',
+    lastUpdate: '2026-10-01',
     description:
       'Directorio con IDs estables de documentos, normas, indicadores y fuentes utilizados por el observatorio.',
     descriptionEs:
@@ -300,7 +301,7 @@ const DATASETS: Dataset[] = [
     endpoint: '/api/codebook.json',
     title: { es: 'Codebook y metodología', en: 'Codebook and methodology' },
     countUnit: { es: 'datasets documentados', en: 'documented datasets' },
-    lastUpdate: '2026-08-24',
+    lastUpdate: '2026-10-01',
     description:
       'Diccionario bilingüe del contrato, vocabularios, regla de adopción verificada, procedencia y límites de interpretación.',
     descriptionEs:
@@ -440,7 +441,7 @@ const API_INDEX_COPY = {
     infrastructureText:
       'Los schemas públicos, la release sustantiva y las descargas con checksum permiten repetir un análisis. La bitácora de monitoreo se identifica aparte como rodante.',
     schemasTitle: 'Índice de schemas',
-    releaseTitle: 'Release R14',
+    releaseTitle: 'Release R15',
     downloadsTitle: 'Descargas y CSV',
     downloadFilesLabel: 'Archivos directos de la release',
     bundleTitle: 'Bundle JSON completo',
@@ -531,7 +532,7 @@ const API_INDEX_COPY = {
     infrastructureText:
       'Public schemas, the substantive release and checksum-backed downloads support reproducible analysis. The monitoring log is identified separately as rolling.',
     schemasTitle: 'Schema index',
-    releaseTitle: 'R14 release',
+    releaseTitle: 'R15 release',
     downloadsTitle: 'Downloads and CSV',
     downloadFilesLabel: 'Direct release files',
     bundleTitle: 'Complete JSON bundle',
@@ -1656,6 +1657,9 @@ function main(): void {
     let data = JSON.parse(readFileSync(srcPath, 'utf8')) as unknown;
     if (ds.filename === 'indicadores.json') {
       data = applyAutoKpis(data, counters);
+    }
+    if (ds.filename === 'marcoPais.json') {
+      data = resolveMarcoPaisCounters(data as { capas: Array<{ instrumentos: { es: string; en: string }; funcion: { es: string; en: string } }> }, counters);
     }
     if (ds.filename === 'apiCodebook.json') {
       data = applyCodebookPublicationModes(data);

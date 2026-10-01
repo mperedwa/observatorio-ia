@@ -134,3 +134,14 @@ export interface OecdIndex {
 
 export const dgi2025: OecdIndex = data.dgi2025 as OecdIndex;
 export const ourdata2025: OecdIndex = data.ourdata2025 as OecdIndex;
+
+export interface Aila2026 {
+  edicion: number;
+  fechaPublicacion: string;
+  etapa: Bilingual;
+  escalaMaxima: number;
+  pilares: Array<{ nombre: Bilingual; puntaje: number; pagina: number }>;
+  fuenteUrl: string;
+}
+
+export const aila2026: Aila2026 = data.aila2026 as Aila2026;

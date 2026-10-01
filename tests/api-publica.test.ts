@@ -10,8 +10,8 @@ const ROOT = process.cwd();
 const API_DIR = join(ROOT, 'public', 'api');
 const SOURCE_SCHEMA_DIR = join(ROOT, 'src', 'data', 'schemas');
 const SOURCE_DATA_DIR = join(ROOT, 'src', 'data', 'json');
-const RELEASE_ID = '2026-10-01-r14';
-const PREVIOUS_RELEASE_ID = '2026-09-15-r13';
+const RELEASE_ID = '2026-10-01-r15';
+const PREVIOUS_RELEASE_ID = '2026-10-01-r14';
 const HISTORICAL_RELEASE_ID = '2026-08-22-r8';
 
 const ORIGINAL_ENDPOINTS = [
@@ -170,7 +170,7 @@ function readIndexHtml(locale: 'es' | 'en') {
   return load(readFileSync(filename, 'utf8'));
 }
 
-describe('API pública estática R14', () => {
+describe('API pública estática R15', () => {
   it('conserva las siete rutas originales y suma cinco rutas complementarias', () => {
     const manifest = readJson<Manifest>('index.json');
     const urls = manifest.endpoints.map(({ url }) => url);
@@ -209,12 +209,12 @@ describe('API pública estática R14', () => {
       proyectos: 38,
       instituciones: 16,
       legislacion: 7,
-      indicadores: 5,
+      indicadores: 6,
       brechas: 7,
       'enia-acciones': 129,
       monitoreo: 8,
       'marco-pais': 4,
-      historial: 53,
+      historial: 54,
       coyuntura: 2,
       recursos: 16,
       codebook: 11,
@@ -308,7 +308,7 @@ describe('API pública estática R14', () => {
       `release=${RELEASE_ID}`,
     );
     expect(releaseIndex.latest).toBe(RELEASE_ID);
-    expect(releaseIndex.releases).toHaveLength(7);
+    expect(releaseIndex.releases).toHaveLength(8);
     expect(releaseIndex.releases.find(({ id }) => id === RELEASE_ID)).toMatchObject({
       bytes: byteLength(releaseText),
       sha256: digest(releaseText),
@@ -490,6 +490,32 @@ describe('API pública estática R14', () => {
     const gtmi = recursos.data.find(({ id }) => id === 'gtmi-2025')!;
     expect(gtmi.titulo.es).toContain('Madurez GovTech');
     expect(gtmi.nota?.es).toContain('No es un ranking de preparación para IA');
+  });
+
+  it('separa AILA del ILIA y mantiene el texto del Marco país sincronizado con el catálogo', () => {
+    const indicadores = readJson<ApiEnvelope<{
+      aila2026: {
+        etapa: { es: string; en: string };
+        escalaMaxima: number;
+        pilares: Array<{ puntaje: number }>;
+        fuenteUrl: string;
+      };
+    }>>('indicadores.json');
+    const marco = readJson<ApiEnvelope<{
+      capas: Array<{ id: string; instrumentos: { es: string; en: string } }>;
+    }>>('marco-pais.json');
+    const proyectos = readJson<ApiEnvelope<unknown[]>>('proyectos.json');
+    const instituciones = readJson<ApiEnvelope<unknown[]>>('instituciones.json');
+
+    expect(indicadores.data.aila2026.etapa.es).toBe('Sistemática');
+    expect(indicadores.data.aila2026.escalaMaxima).toBe(5);
+    expect(indicadores.data.aila2026.pilares.map(({ puntaje }) => puntaje)).toEqual([2.7, 2.6, 2.4]);
+    expect(indicadores.data.aila2026.fuenteUrl).toContain('AILA_2026_MICITT_digital-1.pdf');
+
+    const inventario = marco.data.capas.find(({ id }) => id === 'implementacion-institucional')!;
+    expect(inventario.instrumentos.es).toContain(`${proyectos.data.length} iniciativas`);
+    expect(inventario.instrumentos.es).toContain(`${instituciones.data.length} instituciones`);
+    expect(inventario.instrumentos.en).not.toMatch(/\{\w+\}/);
   });
 
   it('publica documentación humana equivalente en español e inglés', () => {
