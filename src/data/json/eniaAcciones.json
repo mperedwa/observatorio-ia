@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "fechaCorte": "2026-10-01",
+  "fechaCorte": "2026-10-05",
   "fuente": {
     "titulo": {
       "es": "Plan de Acción de la Estrategia Nacional de Inteligencia Artificial de Costa Rica",
@@ -2358,8 +2358,8 @@
               "ina-sne-brete-ia"
             ],
             "fundamento": {
-              "es": "Existe un proyecto interinstitucional formal de MICITT, MTSS e INA para fortalecer la plataforma del Sistema Nacional de Empleo mediante IA. El proyecto aporta evidencia externa de diseño y planificación, pero el Plan ENIA no identifica ANE o Brete.cr y no se ha acreditado que este sea el sistema que el INA contabilizará para la meta 2026.",
-              "en": "A formal MICITT, MTSS and INA project exists to strengthen the National Employment System platform with AI. The project provides external evidence of design and planning, but the ENIA Action Plan does not identify ANE or Brete.cr, and it has not been established that this is the system INA will count toward its 2026 target."
+              "es": "SNE/Brete aporta evidencia externa de diseño y planificación para la plataforma de empleo. Existe además Hello Brete, un servicio distinto de enseñanza de inglés mediante Open English, operativo y con IA declarada. Ambas iniciativas son evidencia institucional adyacente: no se acreditó cuál, si alguna, corresponde al sistema contabilizado en la meta ENIA del INA. El cruce parcial de SNE/Brete y la ejecución no verificada de la intervención se mantienen; Hello Brete no se añade como correspondencia acreditada.",
+              "en": "SNE/Brete provides external evidence of design and planning for the employment platform. Hello Brete also exists as a distinct English-learning service through Open English, operating with declared AI. Both initiatives are adjacent institutional evidence: it was not established which, if either, corresponds to the system counted toward INA's ENIA target. SNE/Brete's partial match and the intervention's unverified execution are retained; Hello Brete is not added as an established match."
             }
           },
           "evidenciasExternas": [
@@ -2409,6 +2409,18 @@
               ]
             },
             {
+              "id": "micitt-hello-brete-lanzamiento-2026",
+              "titulo": {
+                "es": "Hello Brete: entrada en funcionamiento y funciones declaradas",
+                "en": "Hello Brete: service launch and declared features"
+              },
+              "url": "https://www.micitt.go.cr/el-sector-informa/plataforma-gratuita-hello-brete-permitira-capacitar-hasta-2-millones-de-personas",
+              "publicador": "Ministerio de Ciencia, Innovación, Tecnología y Telecomunicaciones",
+              "fechaPublicacion": "2026-04-13",
+              "fechaConsulta": "2026-10-05",
+              "respalda": ["existencia"]
+            },
+            {
               "id": "mtss-brete-sne-ia-2026",
               "titulo": {
                 "es": "Informe de seguimiento de la Estrategia Brete, anual 2025",
@@ -2425,10 +2437,10 @@
           ],
           "recomendacionEditorial": "investigar-como-seguimiento",
           "notasEditoriales": {
-            "es": "La contratación localizada corresponde a la etapa I de diseño y planificación. Las etapas II y III abarcan el desarrollo, la implementación y la operación. La evidencia revisada no confirma un sistema de IA implementado ni permite atribuir este proyecto a la meta ENIA del INA sin reserva.",
-            "en": "The identified procurement covers stage I design and planning. Stages II and III cover development, implementation and operation. The reviewed evidence does not confirm an implemented AI system or allow this project to be attributed to INA's ENIA target without qualification."
+            "es": "La contratación de SNE/Brete corresponde a la etapa I de diseño y planificación, no a la operación de su motor de IA. Hello Brete se registra por separado en seguimiento: la operación de su servicio educativo no acredita aún el uso específico de IA ni su atribución al indicador. No se suman estas iniciativas a la meta 2026 o 2027 ni se modifica el indicador oficial.",
+            "en": "SNE/Brete's procurement covers stage I design and planning, not operation of its AI engine. Hello Brete is recorded separately under review: operation of its educational service does not yet establish specific AI use or attribution to the indicator. These initiatives are not counted toward the 2026 or 2027 target, and the official indicator is not changed."
           },
-          "fechaUltimaRevision": "2026-09-15"
+          "fechaUltimaRevision": "2026-10-05"
         },
         {
           "id": "enia-4-1-3-02",

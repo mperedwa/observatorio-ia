@@ -1,32 +1,32 @@
 {
-  "releaseId": "2026-10-01-r15",
-  "date": "2026-10-01",
+  "releaseId": "2026-10-05-r16",
+  "date": "2026-10-05",
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "files": [
     {
-      "url": "/api/downloads/observatorio-ia-2026-10-01-r15.json",
+      "url": "/api/downloads/observatorio-ia-2026-10-05-r16.json",
       "format": "json",
-      "bytes": 756563,
-      "sha256": "4eba77e67ad116f0065ac1f4d94eb2248384a03b4a996eca8c191d19049c71e2",
+      "bytes": 772969,
+      "sha256": "67952a5115605e8eaf634a146bff6d56f8f6ed9c0a4f900d1403709be876055e",
       "description": {
         "es": "Bundle completo con las envolturas de todos los datasets de la release.",
         "en": "Complete bundle containing every dataset envelope in the release."
       }
     },
     {
-      "url": "/api/downloads/proyectos-2026-10-01-r15.csv",
+      "url": "/api/downloads/proyectos-2026-10-05-r16.csv",
       "format": "csv",
-      "bytes": 12449,
-      "sha256": "5245e206752a682518089f4ce4829e93828d73cfac8a366b37edbc2b4ab431f6",
-      "rows": 38,
+      "bytes": 12788,
+      "sha256": "cb14ff68068d2770be0adc546d943e8ac2669e0d03771957a94b8901455295a9",
+      "rows": 39,
       "description": {
         "es": "Catálogo de iniciativas aplanado para hojas de cálculo.",
         "en": "Flattened initiative catalog for spreadsheets."
       }
     },
     {
-      "url": "/api/downloads/legislacion-2026-10-01-r15.csv",
+      "url": "/api/downloads/legislacion-2026-10-05-r16.csv",
       "format": "csv",
       "bytes": 11311,
       "sha256": "ba66f0a2fa0d6418524017a70b068796b5aa68459ecc4f5585347f99a82de8b4",
@@ -37,10 +37,10 @@
       }
     },
     {
-      "url": "/api/downloads/enia-intervenciones-2026-10-01-r15.csv",
+      "url": "/api/downloads/enia-intervenciones-2026-10-05-r16.csv",
       "format": "csv",
       "bytes": 96730,
-      "sha256": "04841bcd4b6d8d3bd22d30b1e4d2ba422891ff9d72bf04aaa6b243f987aef9de",
+      "sha256": "5007cf6b06a0c92304002503516f427704721b2ddd4a907a75ce08fa87fcfcb4",
       "rows": 129,
       "description": {
         "es": "Los 129 registros del Plan de Acción ENIA aplanados para análisis tabular.",

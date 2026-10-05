@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { EncabezadoSeccionExpediente } from '@/components/ExpedienteEditorial';
 import { ExploradorEnia } from '@/components/ExploradorEnia';
+import { formatearFechaCatalogo } from '@/data/presentacion-catalogo';
 import {
   contarIntervencionesEniaPorCruce,
   contarIntervencionesEniaPorTipo,
@@ -109,7 +110,9 @@ export default async function EniaPage({
               </p>
             </div>
             <div className="border-t border-editorial-rule pt-5 text-sm lg:border-l lg:border-t-0 lg:pl-6 lg:pt-0">
-              <p className="text-slate-500">{t.updated}</p>
+              <p className="text-slate-500">
+                {t.updated.replace('{date}', formatearFechaCatalogo(inventarioEnia.fechaCorte, lc))}
+              </p>
               <a
                 href={inventarioEnia.fuente.url}
                 target="_blank"

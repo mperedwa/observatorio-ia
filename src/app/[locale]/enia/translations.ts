@@ -98,7 +98,7 @@ export const eniaTranslations: Record<Locale, EniaTranslations> = {
       'El Plan contiene 129 registros en su matriz oficial. De esos, 9 registros repiten una acción que ya aparece en otra parte del documento, por lo que el observatorio distingue 120 intervenciones únicas. Conservamos los 129 registros para que la transcripción sea auditable y mostramos cuáles tienen correspondencia con el catálogo o evidencia pública de ejecución.',
     thesis:
       'Una meta oficial prueba que existe un compromiso. No prueba por sí sola que el sistema se haya construido, que use IA verificable o que produzca resultados.',
-    updated: 'Corte editorial: 21 de agosto de 2026',
+    updated: 'Corte editorial: {date}',
     sourceLink: 'Abrir el Plan de Acción oficial',
     sourceLanguage: 'El texto fuente del Plan se conserva en español, incluso en la versión en inglés del sitio.',
     stats: {
@@ -227,7 +227,7 @@ export const eniaTranslations: Record<Locale, EniaTranslations> = {
       'The Plan contains 129 records in its official matrix. Of these, 9 records repeat an action that appears elsewhere in the document, so the observatory distinguishes 120 unique interventions. We preserve all 129 records for an auditable transcription and show which ones match the catalog or have public execution evidence.',
     thesis:
       'An official target proves that a commitment exists. By itself, it does not prove that a system was built, uses verifiable AI or produced results.',
-    updated: 'Editorial cutoff: August 21, 2026',
+    updated: 'Editorial cutoff: {date}',
     sourceLink: 'Open the official Action Plan',
     sourceLanguage: 'The Plan’s source wording remains in Spanish, including on the English version of this site.',
     stats: {

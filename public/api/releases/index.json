@@ -1,8 +1,20 @@
 {
-  "latest": "2026-10-01-r15",
+  "latest": "2026-10-05-r16",
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "releases": [
+    {
+      "id": "2026-10-05-r16",
+      "date": "2026-10-05",
+      "title": {
+        "es": "Corte R16 de Hello Brete y evidencia adyacente del INA",
+        "en": "R16 Hello Brete and adjacent INA evidence release"
+      },
+      "manifestUrl": "/api/releases/2026-10-05-r16/release.json",
+      "datasets": 11,
+      "bytes": 7537,
+      "sha256": "fd6fff32f210dd2e1df46900692a00f5767be5c0c009bfd2b49f9dc8aa842932"
+    },
     {
       "id": "2026-10-01-r14",
       "date": "2026-10-01",

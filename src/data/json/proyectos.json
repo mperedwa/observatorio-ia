@@ -4959,5 +4959,175 @@
         "en": "Which models and versions does the assistant use? What evidence establishes quality, human escalation and compliance with the safeguards described in the policy?"
       }
     ]
+  },
+  {
+    "id": "ina-hello-brete",
+    "titulo": {
+      "es": "Hello Brete: enseñanza de inglés con componentes de IA",
+      "en": "Hello Brete: English learning with AI components"
+    },
+    "institucionId": "ina",
+    "categoria": "educacion",
+    "estado": "operativo",
+    "desde": "2026",
+    "descripcion": {
+      "es": "Servicio de enseñanza de inglés del INA mediante Open English, con apoyo de MTSS y MICITT. El anuncio institucional de abril de 2026 acredita el inicio del servicio y declara reconocimiento de voz y asistencia mediante IA. Se mantiene en seguimiento porque no se comprobó directamente la configuración ni el uso de los componentes de IA disponibles para las personas beneficiarias.",
+      "en": "INA English-learning service delivered through Open English, with support from MTSS and MICITT. The April 2026 institutional announcement establishes the service launch and declares voice recognition and AI assistance. It remains under review because the configuration and use of the AI components available to beneficiaries were not directly checked."
+    },
+    "contexto": {
+      "es": "Es distinto del proyecto SNE/Brete de vinculación laboral y de su contratación con WCC Group B.V. El proveedor relaciona Hello Brete con FluentIA, la tutora Jenny y AI+Teacher Class; esta descripción no acredita por sí sola la configuración local ni resultados de aprendizaje atribuibles a IA. La Defensoría solicitó información sobre los datos sensibles de inscripción; la solicitud no es una resolución que determine una infracción.",
+      "en": "It is distinct from the SNE/Brete employment-matching project and its procurement with WCC Group B.V. The vendor links Hello Brete to FluentIA, the Jenny tutor and AI+Teacher Class; this description alone does not establish the local configuration or learning outcomes attributable to AI. The Ombudsman's Office requested information about sensitive enrollment data; the request is not a ruling establishing a violation."
+    },
+    "fuenteUrl": "https://www.micitt.go.cr/el-sector-informa/plataforma-gratuita-hello-brete-permitira-capacitar-hasta-2-millones-de-personas",
+    "modeloVersion": 2,
+    "tipoIniciativa": "componente-ia",
+    "estadoCatalogo": "seguimiento",
+    "faseImplementacion": "operativo",
+    "estadoIA": "declarada-sin-tecnica",
+    "evaluacion": {
+      "existencia": {
+        "estado": "confirmado",
+        "fuenteIds": ["micitt-hello-brete-lanzamiento-2026", "ina-hello-brete-adjudicacion-2025"]
+      },
+      "ejecucion": {
+        "estado": "confirmado",
+        "fuenteIds": ["micitt-hello-brete-lanzamiento-2026"]
+      },
+      "tecnicaIA": {
+        "estado": "parcialmente-confirmado",
+        "fuenteIds": ["micitt-hello-brete-lanzamiento-2026", "open-english-hello-brete-fluentia-2026"]
+      },
+      "usoOperativo": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      },
+      "resultados": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      },
+      "gobernanza": {
+        "estado": "parcialmente-confirmado",
+        "fuenteIds": ["ina-hello-brete-adjudicacion-2025", "defensoria-hello-brete-datos-2026"]
+      }
+    },
+    "fuentes": [
+      {
+        "id": "micitt-hello-brete-lanzamiento-2026",
+        "titulo": {
+          "es": "Hello Brete: entrada en funcionamiento y funciones declaradas",
+          "en": "Hello Brete: service launch and declared features"
+        },
+        "url": "https://www.micitt.go.cr/el-sector-informa/plataforma-gratuita-hello-brete-permitira-capacitar-hasta-2-millones-de-personas",
+        "publicador": "Ministerio de Ciencia, Innovación, Tecnología y Telecomunicaciones",
+        "tipoFuente": "primaria-oficial",
+        "fechaPublicacion": "2026-04-13",
+        "fechaConsulta": "2026-10-05",
+        "respalda": ["existencia", "objetivo-declarado", "ejecucion", "tecnica-ia", "meta"],
+        "naturalezaAfirmacion": ["hecho", "objetivo-declarado", "meta"]
+      },
+      {
+        "id": "ina-hello-brete-adjudicacion-2025",
+        "titulo": {
+          "es": "Acta 31-2025 del INA: adjudicación de la plataforma de inglés, páginas 29–30",
+          "en": "INA minutes 31-2025: English-platform procurement award, pages 29–30"
+        },
+        "url": "https://www.ina.ac.cr/transparencia/Decisiones%20tomadas%20directrices%20actas%20y%20circulares/2025/Acta_Sesion_Ordinaria-31-2025.pdf",
+        "publicador": "Instituto Nacional de Aprendizaje",
+        "tipoFuente": "primaria-oficial",
+        "fechaPublicacion": "2025-11-10",
+        "fechaConsulta": "2026-10-05",
+        "respalda": ["existencia", "ejecucion", "gobernanza"],
+        "naturalezaAfirmacion": ["hecho"]
+      },
+      {
+        "id": "open-english-hello-brete-fluentia-2026",
+        "titulo": {
+          "es": "Descripción del proveedor de FluentIA para la alianza costarricense",
+          "en": "Vendor description of FluentIA for the Costa Rican partnership"
+        },
+        "url": "https://www.openenglish.com/blog/es/open-english-impulsa-la-meta-de-bilinguismo-de-costa-rica/",
+        "publicador": "Open English, proveedor de la plataforma",
+        "tipoFuente": "otra-secundaria",
+        "fechaPublicacion": "2026-04-16",
+        "fechaConsulta": "2026-10-05",
+        "respalda": ["tecnica-ia", "objetivo-declarado"],
+        "naturalezaAfirmacion": ["objetivo-declarado"]
+      },
+      {
+        "id": "defensoria-hello-brete-datos-2026",
+        "titulo": {
+          "es": "Defensoría pide informe al INA sobre datos de inscripción en Hello Brete",
+          "en": "Ombudsman's Office requests an INA report on Hello Brete enrollment data"
+        },
+        "url": "https://www.dhr.go.cr/informacion_relevante/comunicados/2026/Abril/017_Defensoria_pide_informe_INA.pdf",
+        "publicador": "Defensoría de los Habitantes",
+        "tipoFuente": "primaria-oficial",
+        "fechaPublicacion": "2026-04-23",
+        "fechaConsulta": "2026-10-05",
+        "respalda": ["gobernanza"],
+        "naturalezaAfirmacion": ["hecho"]
+      }
+    ],
+    "fechaPrimeraEvidencia": "2026-04-13",
+    "fechaAnuncio": "2026-04-13",
+    "fechaInicioOperacion": "2026-04-13",
+    "fechaUltimaVerificacion": "2026-10-05",
+    "fechaProximaRevision": "2026-11-05",
+    "objetivoDeclarado": {
+      "es": "Ampliar el acceso al aprendizaje de inglés para fortalecer la empleabilidad mediante formación virtual, docentes y herramientas tecnológicas.",
+      "en": "Expand access to English learning to strengthen employability through online education, teachers and technological tools."
+    },
+    "datosConocidos": [
+      {
+        "es": "El procedimiento 2025LY-000011-0002100001 fue adjudicado al consorcio Say Pura Vida! by Open Education & RACSA, integrado por Open Education LLC (93,18%) y Radiográfica Costarricense S. A. (6,82%).",
+        "en": "Procedure 2025LY-000011-0002100001 was awarded to the Say Pura Vida! by Open Education & RACSA consortium, comprising Open Education LLC (93.18%) and Radiográfica Costarricense S. A. (6.82%)."
+      },
+      {
+        "es": "El acuerdo establece USD 82,99 por licencia anual y USD 77,99 cuando se superen 71.023 licencias, con IVA y plazo de cuatro años. Son precios unitarios según demanda, no gasto total ejecutado ni presupuesto exclusivo de IA.",
+        "en": "The award sets USD 82.99 per annual license and USD 77.99 above 71,023 licenses, including VAT, over a four-year term. These are on-demand unit prices, not total executed spending or a dedicated AI budget."
+      },
+      {
+        "es": "El inicio operativo corresponde al servicio educativo. Las cifras de matrícula o cuentas activas de la plataforma no permiten medir por sí solas uso o eficacia de su IA.",
+        "en": "The operational start refers to the educational service. Platform enrollment or active-account figures do not by themselves measure AI use or effectiveness."
+      }
+    ],
+    "datosNoDeterminados": [
+      {
+        "es": "No se comprobó la configuración local de Jenny, FluentIA o AI+Teacher Class, ni su uso efectivo por las personas beneficiarias. La documentación identifica funciones declaradas, pero no confirma de forma completa la técnica desplegada.",
+        "en": "The local configuration of Jenny, FluentIA or AI+Teacher Class, and beneficiaries' actual use, were not checked. Documentation identifies declared features but does not fully confirm the deployed technique."
+      },
+      {
+        "es": "No se localizaron resultados de aprendizaje atribuibles al componente de IA, evaluaciones independientes ni la respuesta o conclusión de la solicitud de la Defensoría.",
+        "en": "No learning outcomes attributable to the AI component, independent evaluations or response or conclusion to the Ombudsman's request were located."
+      },
+      {
+        "es": "No se acreditó que Hello Brete sea el sistema contabilizado por la meta ENIA del INA para 2026 o 2027.",
+        "en": "It was not established that Hello Brete is the system counted toward INA's 2026 or 2027 ENIA target."
+      }
+    ],
+    "preguntasAbiertas": [
+      {
+        "es": "¿Qué componentes de IA incluye la contratación y cuáles están habilitados y utilizados en las cuentas de Hello Brete?",
+        "en": "Which AI components are included in the procurement, and which are enabled and used in Hello Brete accounts?"
+      },
+      {
+        "es": "¿Qué controles y respuesta institucional documentan la protección de datos de inscripción y de las interacciones con IA?",
+        "en": "What safeguards and institutional response document protection of enrollment data and AI interactions?"
+      },
+      {
+        "es": "¿El INA vincula formalmente Hello Brete o SNE/Brete con su indicador ENIA y cómo evita contabilizar dos veces una misma implementación?",
+        "en": "Does INA formally link Hello Brete or SNE/Brete to its ENIA indicator, and how does it avoid double-counting an implementation?"
+      }
+    ],
+    "relaciones": [
+      {
+        "iniciativaId": "ina-sne-brete-ia",
+        "tipo": "distinto-de",
+        "nota": {
+          "es": "Comparten la estrategia Brete, pero Hello Brete presta enseñanza de inglés mediante Open English; SNE/Brete prepara la modernización de la plataforma de empleo y tiene una contratación de etapa I con WCC Group B.V.",
+          "en": "They share the Brete strategy, but Hello Brete delivers English learning through Open English; SNE/Brete prepares modernization of the employment platform and has a stage I procurement with WCC Group B.V."
+        }
+      }
+    ]
   }
 ]

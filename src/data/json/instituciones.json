@@ -297,18 +297,18 @@
     },
     "tipo": "autonoma",
     "url": "https://www.ina.ac.cr/",
-    "proyectosActivos": 1,
+    "proyectosActivos": 2,
     "resumen": {
-      "es": "Una iniciativa en seguimiento: diseño y planificación para fortalecer la plataforma del Sistema Nacional de Empleo mediante IA.",
-      "en": "One initiative under review: design and planning to strengthen the National Employment System platform with AI."
+      "es": "Dos iniciativas en seguimiento: modernización del Sistema Nacional de Empleo y enseñanza de inglés mediante Hello Brete/Open English.",
+      "en": "Two initiatives under review: National Employment System modernization and English learning through Hello Brete/Open English."
     },
     "descripcion": {
-      "es": "El proyecto interinstitucional con MICITT y MTSS tiene convenio, contratación y financiamiento documentados para su primera etapa. Las fuentes oficiales indican que esa etapa corresponde a diseño y planificación; no acreditan todavía el desarrollo, la técnica ni la operación de un motor de IA.",
-      "en": "The inter-institutional project with MICITT and MTSS has a documented agreement, procurement and funding for its first stage. Official sources show that this stage covers design and planning; they do not yet establish the development, technique or operation of an AI engine."
+      "es": "SNE/Brete tiene convenio, contratación y financiamiento documentados para diseño y planificación, sin operación del motor de IA acreditada. Hello Brete es un servicio educativo distinto, contratado al consorcio Open Education & RACSA: su operación está documentada y declara funciones de IA, cuya configuración y uso específico requieren comprobación.",
+      "en": "SNE/Brete has a documented agreement, procurement and funding for design and planning, without verified AI-engine operation. Hello Brete is a separate educational service procured from the Open Education & RACSA consortium: its operation is documented and it declares AI features whose configuration and specific use require checking."
     },
     "lecciones": {
-      "es": "Una contratación preparatoria puede confirmar ejecución institucional sin demostrar adopción técnica. Distinguir las etapas evita presentar al proveedor del diagnóstico como proveedor del futuro motor de IA.",
-      "en": "Preparatory procurement can confirm institutional execution without demonstrating technical adoption. Distinguishing the stages avoids presenting the diagnostic-stage contractor as the vendor of a future AI engine."
+      "es": "Compartir una marca no convierte dos servicios en una sola iniciativa. La operación de una plataforma educativa no demuestra por sí sola el uso de cada componente de IA; tampoco acredita cumplimiento de una meta ENIA sin vinculación institucional explícita.",
+      "en": "Sharing a brand does not turn two services into a single initiative. Operation of an educational platform does not by itself demonstrate use of each AI component, nor does it establish fulfillment of an ENIA target without an explicit institutional link."
     }
   },
   {

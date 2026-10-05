@@ -38,11 +38,11 @@ const COUNTERS_TS = join(ROOT, 'src', 'data', 'counters.ts');
 const PKG = JSON.parse(readFileSync(join(ROOT, 'package.json'), 'utf8')) as { version: string };
 
 const DATA_RELEASE = {
-  id: '2026-10-01-r15',
-  date: '2026-10-01',
+  id: '2026-10-05-r16',
+  date: '2026-10-05',
   title: {
-    es: 'Corte R15 de diagnóstico AILA y marco país',
-    en: 'R15 AILA assessment and country framework release',
+    es: 'Corte R16 de Hello Brete y evidencia adyacente del INA',
+    en: 'R16 Hello Brete and adjacent INA evidence release',
   },
 } as const;
 const RELEASE_LOCK_PATH = join(RELEASES_OUT_DIR, DATA_RELEASE.id, 'release.lock');
@@ -144,7 +144,7 @@ const DATASETS: Dataset[] = [
     endpoint: '/api/proyectos.json',
     title: { es: 'Iniciativas', en: 'Initiatives' },
     countUnit: { es: 'iniciativas', en: 'initiatives' },
-    lastUpdate: '2026-10-01',
+    lastUpdate: '2026-10-05',
     description:
       'Catálogo de iniciativas relacionadas con IA en el sector público costarricense. Incluye sistemas, pilotos, planes y capacidades con descripción bilingüe ES/EN y una fuente pública consultada.',
     descriptionEs:
@@ -157,7 +157,7 @@ const DATASETS: Dataset[] = [
     endpoint: '/api/instituciones.json',
     title: { es: 'Instituciones', en: 'Institutions' },
     countUnit: { es: 'instituciones', en: 'institutions' },
-    lastUpdate: '2026-10-01',
+    lastUpdate: '2026-10-05',
     description:
       'Instituciones públicas con iniciativas relacionadas con IA documentadas, incluidas municipalidades y órganos públicos.',
     descriptionEs:
@@ -183,7 +183,7 @@ const DATASETS: Dataset[] = [
     endpoint: '/api/indicadores.json',
     title: { es: 'Indicadores', en: 'Indicators' },
     countUnit: { es: 'bloques', en: 'groups' },
-    lastUpdate: '2026-10-01',
+    lastUpdate: '2026-10-05',
     description:
       'Indicadores cuantitativos y diagnóstico nacional: ILIA 2025, AILA 2026, DGI, OURdata y cifras principales del observatorio.',
     descriptionEs:
@@ -210,7 +210,7 @@ const DATASETS: Dataset[] = [
     endpoint: '/api/enia-acciones.json',
     title: { es: 'Plan de Acción ENIA', en: 'ENIA Action Plan' },
     countUnit: { es: 'registros fuente', en: 'source records' },
-    lastUpdate: '2026-10-01',
+    lastUpdate: '2026-10-05',
     description:
       'Inventario y crosswalk del Plan de Acción ENIA: 129 registros del documento oficial, 120 intervenciones únicas, clasificación por tipo, evidencia de ejecución y relaciones con el catálogo.',
     descriptionEs:
@@ -228,7 +228,7 @@ const DATASETS: Dataset[] = [
     endpoint: '/api/monitoreo.json',
     title: { es: 'Monitoreo editorial', en: 'Editorial monitoring' },
     countUnit: { es: 'frentes', en: 'monitoring fronts' },
-    lastUpdate: '2026-10-01',
+    lastUpdate: '2026-10-05',
     publicationMode: 'rolling',
     description:
       'Agenda y bitácora editorial: cadencias por frente, próximas revisiones, cambios de estado y revisiones documentadas sin cambios.',
@@ -247,7 +247,7 @@ const DATASETS: Dataset[] = [
     endpoint: '/api/marco-pais.json',
     title: { es: 'Marco país', en: 'Country framework' },
     countUnit: { es: 'secciones', en: 'sections' },
-    lastUpdate: '2026-10-01',
+    lastUpdate: '2026-10-05',
     description:
       'Arquitectura pública del marco de IA en Costa Rica: capas, hitos, instrumentos y brechas operativas.',
     descriptionEs:
@@ -261,7 +261,7 @@ const DATASETS: Dataset[] = [
     endpoint: '/api/historial.json',
     title: { es: 'Historial editorial', en: 'Editorial history' },
     countUnit: { es: 'cambios publicados', en: 'published changes' },
-    lastUpdate: '2026-10-01',
+    lastUpdate: '2026-10-05',
     description:
       'Bitácora pública y bilingüe de cambios editoriales con fecha, tipo, fuente y commit cuando está disponible.',
     descriptionEs:
@@ -441,7 +441,7 @@ const API_INDEX_COPY = {
     infrastructureText:
       'Los schemas públicos, la release sustantiva y las descargas con checksum permiten repetir un análisis. La bitácora de monitoreo se identifica aparte como rodante.',
     schemasTitle: 'Índice de schemas',
-    releaseTitle: 'Release R15',
+    releaseTitle: 'Release R16',
     downloadsTitle: 'Descargas y CSV',
     downloadFilesLabel: 'Archivos directos de la release',
     bundleTitle: 'Bundle JSON completo',
@@ -532,7 +532,7 @@ const API_INDEX_COPY = {
     infrastructureText:
       'Public schemas, the substantive release and checksum-backed downloads support reproducible analysis. The monitoring log is identified separately as rolling.',
     schemasTitle: 'Schema index',
-    releaseTitle: 'R15 release',
+    releaseTitle: 'R16 release',
     downloadsTitle: 'Downloads and CSV',
     downloadFilesLabel: 'Direct release files',
     bundleTitle: 'Complete JSON bundle',

@@ -236,6 +236,7 @@ describe('inventario del Plan de Acción ENIA', () => {
       'ina-acta-sne-ia-2025',
       'micitt-sne-ia-adjudicacion-2024',
       'ina-auditoria-sne-ia-2025',
+      'micitt-hello-brete-lanzamiento-2026',
       'mtss-brete-sne-ia-2026',
     ]);
     expect(ina?.notasEditoriales?.es).toContain('etapa I de diseño y planificación');

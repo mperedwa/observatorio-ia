@@ -1,5 +1,25 @@
 [
   {
+    "fecha": "2026-10-05",
+    "tipo": "proyecto",
+    "actualizacion": {
+      "es": "Se incorpora Hello Brete del INA en seguimiento, separado del proyecto SNE/Brete. La operación del servicio educativo está documentada; la configuración y el uso específico de sus componentes de IA permanecen por comprobar. La ficha identifica el consorcio adjudicatario y la solicitud de información de la Defensoría sobre datos de inscripción, sin presentarla como una infracción determinada. El catálogo alcanza 39 iniciativas: 9 verificadas, 14 en seguimiento y 16 de ecosistema, en 16 instituciones.",
+      "en": "INA's Hello Brete is added under review, separately from SNE/Brete. Operation of the educational service is documented; the configuration and specific use of its AI components remain to be checked. The record identifies the awarded consortium and the Ombudsman's information request about enrollment data, without presenting it as an established violation. The catalog reaches 39 initiatives: 9 verified, 14 under review and 16 ecosystem initiatives across 16 institutions."
+    },
+    "fuente": { "es": "MICITT, INA, Open English y Defensoría de los Habitantes", "en": "MICITT, INA, Open English and the Ombudsman's Office" },
+    "fuente_url": "https://www.micitt.go.cr/el-sector-informa/plataforma-gratuita-hello-brete-permitira-capacitar-hasta-2-millones-de-personas"
+  },
+  {
+    "fecha": "2026-10-05",
+    "tipo": "recurso",
+    "actualizacion": {
+      "es": "La nota ENIA del INA reconoce Hello Brete como evidencia adyacente, sin atribuirlo a la meta oficial ni añadir una correspondencia acreditada. Se mantiene el cruce parcial de SNE/Brete y la ejecución no verificada de la intervención. El lote no reclasifica ICE/OIJ, AyA, Vincent o SBD Auditoría, ni renueva fechas de agenda de frentes no revisados íntegramente.",
+      "en": "INA's ENIA note acknowledges Hello Brete as adjacent evidence, without attributing it to the official target or adding an established match. SNE/Brete's partial match and the intervention's unverified execution are retained. The update does not reclassify ICE/OIJ, AyA, Vincent or SBD Internal Audit, nor does it renew schedule dates for areas not reviewed in full."
+    },
+    "fuente": { "es": "Plan de Acción ENIA y anuncio institucional de Hello Brete", "en": "ENIA Action Plan and the Hello Brete institutional announcement" },
+    "fuente_url": "https://www.micitt.go.cr/gobierno_digital/inteligencia_artificial"
+  },
+  {
     "fecha": "2026-10-01",
     "tipo": "indicador",
     "actualizacion": {
