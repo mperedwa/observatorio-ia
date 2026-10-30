@@ -1,12 +1,12 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-10-05T00:00:00.000Z",
+  "lastUpdate": "2026-10-29T00:00:00.000Z",
   "count": 129,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "data": {
     "schemaVersion": 2,
-    "fechaCorte": "2026-10-05",
+    "fechaCorte": "2026-10-29",
     "fuente": {
       "titulo": {
         "es": "Plan de Acción de la Estrategia Nacional de Inteligencia Artificial de Costa Rica",
@@ -2471,12 +2471,12 @@
               "estado": "enia-solamente",
               "proyectoIds": [],
               "fundamento": {
-                "es": "Se localizó evidencia primaria de soluciones municipales: MuniBot de Cartago, con IA generativa documentada, y R.O.D.U de La Unión, con IA declarada y técnica no determinada. Esta evidencia adyacente no acredita que IFAM haya promovido esas implementaciones ni que se contabilicen en su meta ENIA. La ejecución de esta intervención del IFAM continúa no verificada.",
-                "en": "Primary evidence was found for municipal solutions: Cartago's MuniBot, with documented generative AI, and La Unión's R.O.D.U, with declared AI and an undetermined technique. This adjacent evidence does not establish that IFAM promoted those implementations or counts them toward its ENIA target. Execution of this IFAM intervention remains unverified."
+                "es": "Existe evidencia adyacente de MuniBot de Cartago y R.O.D.U de La Unión. Además, un artículo de la UCR comunica que 88,4 % de los 43 gobiernos locales participantes en el Censo TIC 2026 reporta funcionarios que usan herramientas de IA. El uso por funcionarios no equivale a implementar un sistema institucional. Ninguna de estas fuentes acredita promoción del IFAM ni atribución a su meta de nueve gobiernos locales; la ejecución de esta intervención continúa no verificada.",
+                "en": "Adjacent evidence exists for Cartago's MuniBot and La Unión's R.O.D.U. A UCR article also reports that 88.4% of the 43 local governments participating in the 2026 ICT Census report staff using AI tools. Staff use is not equivalent to implementing an institutional system. None of these sources establishes IFAM promotion or attribution to its nine-local-government target; execution of this intervention remains unverified."
               }
             },
             "recomendacionEditorial": "investigar-como-seguimiento",
-            "fechaUltimaRevision": "2026-10-01",
+            "fechaUltimaRevision": "2026-10-29",
             "evidenciasExternas": [
               {
                 "id": "cartago-munibot-declaracion-2026",
@@ -2503,8 +2503,26 @@
                 "respalda": [
                   "existencia"
                 ]
+              },
+              {
+                "id": "ucr-censo-tic-municipal-2026",
+                "titulo": {
+                  "es": "UCR, Voz experta: resultados de uso de IA en 43 gobiernos locales participantes",
+                  "en": "UCR expert article: AI-use results in 43 participating local governments"
+                },
+                "url": "https://www.ucr.ac.cr/noticias/2026/10/15/voz-experta-las-municipalidades-en-la-era-de-la-inteligencia-artificial-ia.html",
+                "publicador": "Universidad de Costa Rica / CIOdD",
+                "fechaPublicacion": "2026-10-15",
+                "fechaConsulta": "2026-10-29",
+                "respalda": [
+                  "existencia"
+                ]
               }
-            ]
+            ],
+            "notasEditoriales": {
+              "es": "El censo fue respondido por 41 municipalidades y 2 concejos municipales de distrito. La fuente recuperada es un artículo que comunica resultados, no el informe metodológico completo. No se extrapola al país ni se convierten respuestas sobre herramientas en nuevas fichas o cumplimiento ENIA. Se conservan el indicador, las metas oficiales y el cruce sin proyectos atribuidos al IFAM.",
+              "en": "The census was answered by 41 municipalities and 2 district municipal councils. The recovered source is an article reporting results, not the full methodological report. Findings are not extrapolated nationwide, and responses about tools are not converted into new records or ENIA fulfillment. The indicator, official targets and crosswalk without projects attributed to IFAM are retained."
+            }
           },
           {
             "id": "enia-4-1-3-03",

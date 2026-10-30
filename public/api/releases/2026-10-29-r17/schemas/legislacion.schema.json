@@ -1,0 +1,128 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://observatorioia.org/api/schemas/legislacion.schema.json",
+  "title": "Legislación / Legislation",
+  "description": "Schema de la respuesta pública completa; el campo data también se publica por separado. / Full public-response schema; the data field schema is also published separately.",
+  "type": "object",
+  "required": [
+    "version",
+    "lastUpdate",
+    "count",
+    "source",
+    "license",
+    "data"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "lastUpdate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "source": {
+      "const": "https://observatorioia.org"
+    },
+    "license": {
+      "const": "CC BY 4.0"
+    },
+    "data": {
+      "$ref": "#/definitions/_dataset"
+    }
+  },
+  "definitions": {
+    "bilingual": {
+      "type": "object",
+      "required": [
+        "es",
+        "en"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "es": {
+          "type": "string",
+          "minLength": 1
+        },
+        "en": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "_dataset": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "numero",
+          "titulo",
+          "resumen",
+          "estado",
+          "alcanceIA",
+          "comision",
+          "presentado",
+          "fuenteUrl",
+          "fuenteEstadoUrl",
+          "fechaUltimaVerificacion"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "numero": {
+            "type": "string",
+            "pattern": "^[0-9]{2,3}\\.[0-9]{3}$"
+          },
+          "titulo": {
+            "$ref": "#/definitions/bilingual"
+          },
+          "resumen": {
+            "$ref": "#/definitions/bilingual"
+          },
+          "estado": {
+            "type": "string",
+            "enum": [
+              "en-comision",
+              "dictaminado",
+              "primer-debate",
+              "segundo-debate",
+              "archivado",
+              "aprobada"
+            ]
+          },
+          "alcanceIA": {
+            "type": "string",
+            "enum": [
+              "principal",
+              "relacionado"
+            ]
+          },
+          "comision": {
+            "$ref": "#/definitions/bilingual"
+          },
+          "presentado": {
+            "type": "string",
+            "pattern": "^[0-9]{4}$"
+          },
+          "fuenteUrl": {
+            "type": "string",
+            "format": "uri"
+          },
+          "fuenteEstadoUrl": {
+            "type": "string",
+            "format": "uri"
+          },
+          "fechaUltimaVerificacion": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      }
+    }
+  },
+  "x-observatorio-data-schema": "/api/schemas/legislacion-data.schema.json"
+}

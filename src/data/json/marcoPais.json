@@ -120,8 +120,8 @@
       },
       "fuerzaTipo": "no-vigente",
       "vacio": {
-        "es": "Al no existir una ley aprobada, Costa Rica opera sin marco legal específico de IA. Incluso con ley, seguirá siendo necesaria una capa operativa que traduzca obligaciones legales en procedimientos institucionales.",
-        "en": "With no approved law, Costa Rica operates without a specific AI legal framework. Even with a law, an operational layer translating legal duties into institutional procedures will still be necessary."
+        "es": "Los expedientes catalogados no acreditan una ley general de IA aprobada. Existen normas sectoriales, como el Decreto 45961-MSP sobre videoprotección; no equivalen a una ley general ni a un procedimiento operativo común para todo el Estado.",
+        "en": "The cataloged bills do not establish an approved general AI law. Sectoral rules exist, such as Decree 45961-MSP on video protection; they are not equivalent to a general law or a common operational procedure for the entire State."
       }
     },
     {
@@ -136,8 +136,8 @@
         "en": "{proyectos} AI-related initiatives across {instituciones} institutions: {adopcionVerificada} verified adoptions, {seguimiento} under review and {ecosistema} ecosystem and capacity records."
       },
       "nota": {
-        "es": "Además de proyectos en producción, existen instrumentos sectoriales de gobernanza como los Lineamientos Básicos para el uso de IA Generativa Autorizada en el Poder Judicial. Estos son relevantes pero no equivalen a un marco nacional aplicable a todo el Estado.",
-        "en": "In addition to production projects, there are sectoral governance instruments such as the Basic Guidelines for the use of Authorized Generative AI in the Judiciary. These are relevant but do not amount to a national framework applicable to the entire State."
+        "es": "Existen instrumentos sectoriales de gobernanza: los Lineamientos Básicos de IA Generativa del Poder Judicial y el Decreto 45961-MSP sobre videoprotección, IA y biometría. Su existencia no acredita ejecución tecnológica ni una regulación común para todo el Estado.",
+        "en": "Sectoral governance instruments exist: the Judiciary's Basic Generative AI Guidelines and Decree 45961-MSP on video protection, AI and biometrics. Their existence establishes neither technological implementation nor common regulation across the State."
       },
       "funcion": {
         "es": "Documenta sistemas, pilotos, planes y capacidades relacionadas con IA dentro del sector público. El inventario actual reúne {proyectos} iniciativas con distinta naturaleza y madurez; solo {adopcionVerificada} cumplen la regla de adopción verificada.",
@@ -259,10 +259,19 @@
       "pendiente": false
     },
     {
+      "anio": "2026",
+      "fecha": "2026-10-14",
+      "evento": {
+        "es": "Publicación del Decreto 45961-MSP: regulación sectorial de videoprotección, IA y reconocimiento biométrico",
+        "en": "Publication of Decree 45961-MSP: sectoral regulation of video protection, AI and biometric recognition"
+      },
+      "pendiente": false
+    },
+    {
       "anio": "",
       "evento": {
-        "es": "Ley general o marco regulatorio de IA aprobado",
-        "en": "General AI law or regulatory framework approved"
+        "es": "Ley general de IA aprobada",
+        "en": "General AI law approved"
       },
       "pendiente": true
     },
@@ -398,6 +407,25 @@
       "estado": { "es": "En trámite", "en": "In process" },
       "fechaPublicacion": "2023-05-30",
       "endpointRelacionado": "/api/legislacion.json"
+    },
+    {
+      "id": "snvpc-45961-msp",
+      "nombre": { "es": "Decreto 45961-MSP, videoprotección", "en": "Decree 45961-MSP, video protection" },
+      "tipo": { "es": "Decreto sectorial", "en": "Sectoral decree" },
+      "alcance": { "es": "Sistema de videoprotección del MSP", "en": "MSP video protection system" },
+      "fuerza": { "es": "Obligatorio en su ámbito", "en": "Mandatory within its scope" },
+      "fuerzaTipo": "obligatoria",
+      "queResuelve": {
+        "es": "Condiciones para análisis con IA, valoración humana y reconocimiento biométrico en videoprotección.",
+        "en": "Conditions for AI analysis, human assessment and biometric recognition in video protection."
+      },
+      "queNoResuelve": {
+        "es": "No acredita despliegue de IA ni cumplimiento de los plazos de manuales y protocolos. No es una ley general de IA.",
+        "en": "Establishes neither AI deployment nor compliance with deadlines for manuals and protocols. It is not a general AI law."
+      },
+      "estado": { "es": "Vigente desde su publicación", "en": "In force from publication" },
+      "fechaPublicacion": "2026-10-14",
+      "recursoIds": ["decreto-45961-msp"]
     },
     {
       "id": "lineamientos-pj",

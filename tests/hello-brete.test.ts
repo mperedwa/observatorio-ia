@@ -12,6 +12,9 @@ import { eniaTranslations } from '../src/app/[locale]/enia/translations';
 const previous = JSON.parse(readFileSync(
   join(process.cwd(), 'public/api/releases/2026-10-01-r15/proyectos.json'), 'utf8',
 )) as { data: Proyecto[] };
+const helloRelease = JSON.parse(readFileSync(
+  join(process.cwd(), 'public/api/releases/2026-10-05-r16/proyectos.json'), 'utf8',
+)) as { data: Proyecto[] };
 
 describe('Hello Brete y corte limitado del 5 de octubre', () => {
   it('deriva la fecha del encabezado ENIA desde el dataset en ambos idiomas', () => {
@@ -44,18 +47,21 @@ describe('Hello Brete y corte limitado del 5 de octubre', () => {
     }));
   });
 
-  it('conserva todas las fichas anteriores y no publica los candidatos pendientes', () => {
+  it('conserva las fichas anteriores y el alcance histórico del corte R16', () => {
     expect(previous.data).toHaveLength(38);
     for (const proyecto of previous.data) {
       expect(proyectos.find(({ id }) => id === proyecto.id), proyecto.id).toEqual(proyecto);
     }
-    expect(proyectos).toHaveLength(39);
-    expect(proyectos.some(({ institucionId }) => institucionId === 'cgr')).toBe(false);
-    expect(proyectos.filter(({ institucionId }) => institucionId === 'sbd')).toHaveLength(1);
-    expect(resumirCatalogo(proyectos)).toMatchObject({
+    expect(helloRelease.data).toHaveLength(39);
+    expect(helloRelease.data.some(({ institucionId }) => institucionId === 'cgr')).toBe(false);
+    expect(helloRelease.data.filter(({ institucionId }) => institucionId === 'sbd')).toHaveLength(1);
+    expect(resumirCatalogo(helloRelease.data)).toMatchObject({
       iniciativasDocumentadas: 39, adopcionVerificada: 9, seguimiento: 14, ecosistema: 16,
     });
-    expect(instituciones).toHaveLength(16);
+    const historicalInstitutions = JSON.parse(readFileSync(
+      join(process.cwd(), 'public/api/releases/2026-10-05-r16/instituciones.json'), 'utf8',
+    )) as { count: number };
+    expect(historicalInstitutions.count).toBe(16);
     expect(instituciones.find(({ id }) => id === 'ina')?.proyectosActivos).toBe(2);
   });
 
@@ -81,7 +87,7 @@ describe('Hello Brete y corte limitado del 5 de octubre', () => {
     expect(frentesMonitoreo.find(({ id }) => id === 'legislacion-ia')?.fechaProximaRevision)
       .toBe('2026-10-08');
     expect(frentesMonitoreo.find(({ id }) => id === 'catalogo-seguimiento')?.alcance.cantidad)
-      .toBe(14);
+      .toBe(resumirCatalogo(proyectos).seguimiento);
   });
 
   it('separa el anuncio del proveedor de la fuente oficial de ejecución', () => {

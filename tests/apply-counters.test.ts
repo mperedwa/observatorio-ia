@@ -44,14 +44,14 @@ describe('applyCounters', () => {
 });
 
 describe('detalle institucional de portada', () => {
-  it('enumera las dieciséis instituciones en ambos idiomas', () => {
+  it('enumera las diecinueve instituciones en ambos idiomas', () => {
     const kpi = indicadores.kpisHero.find(
       ({ label }) => label.es === 'Instituciones con iniciativas documentadas',
     );
 
     expect(kpi?.detalle).toEqual({
-      es: 'Poder Judicial, CCSS, Hacienda, MEP, MICITT, CENAT, UCR, INAMU, INS, ARESEP, INVU, INA, SBD, Municipalidad de Cartago, Municipalidad de La Unión y Ministerio de Salud',
-      en: 'Judicial Branch, CCSS, Finance, MEP, MICITT, CENAT, UCR, INAMU, INS, ARESEP, INVU, INA, SBD, Cartago Municipality, La Unión Municipality and Ministry of Health',
+      es: 'Poder Judicial, CCSS, Hacienda, MEP, MICITT, CENAT, UCR, INAMU, INS, ARESEP, INVU, INA, SBD, Municipalidad de Cartago, Municipalidad de La Unión, Ministerio de Salud, TEC, CGR y TSE',
+      en: 'Judicial Branch, CCSS, Finance, MEP, MICITT, CENAT, UCR, INAMU, INS, ARESEP, INVU, INA, SBD, Cartago Municipality, La Unión Municipality, Ministry of Health, TEC, CGR and TSE',
     });
   });
 });

@@ -398,5 +398,65 @@
       "es": "Las fuentes oficiales denominan IA al asistente y documentan su continuidad institucional, pero no precisan la técnica. El registro no acredita ejecución de la intervención de adquisición de nuevas tecnologías del Plan ENIA.",
       "en": "Official sources call the assistant AI and document institutional continuity but do not specify its technique. This record does not establish implementation of the ENIA action to acquire new technologies."
     }
+  },
+  {
+    "id": "tec",
+    "nombre": { "es": "Instituto Tecnológico de Costa Rica", "en": "Costa Rica Institute of Technology" },
+    "nombreCorto": { "es": "TEC", "en": "TEC" },
+    "tipo": "universidad",
+    "url": "https://www.tec.ac.cr/",
+    "proyectosActivos": 1,
+    "resumen": {
+      "es": "Una iniciativa propia en seguimiento: el Asistente de Auditoría con RAG, presentado en octubre de 2026, sin operación institucional verificada.",
+      "en": "One institution-led initiative under review: the RAG Audit Assistant, presented in October 2026, without verified institutional operation."
+    },
+    "descripcion": {
+      "es": "La fuente institucional identifica el desarrollo de un asistente para consultar e integrar información de auditoría. Las colaboraciones del TEC en formación médica y análisis criminal permanecen en sus fichas respectivas; no se suman como sistemas propios ni se fusionan con este asistente.",
+      "en": "The institutional source identifies development of an assistant for querying and integrating audit information. TEC collaborations in medical training and criminal analysis remain in their respective records; they are not counted as institution-led systems or merged with this assistant."
+    },
+    "lecciones": {
+      "es": "Una técnica identificada y una presentación pública acreditan un proyecto, pero no demuestran que sus destinatarios lo utilicen.",
+      "en": "An identified technique and a public presentation establish a project but do not demonstrate use by its intended users."
+    }
+  },
+  {
+    "id": "cgr",
+    "nombre": { "es": "Contraloría General de la República", "en": "Office of the Comptroller General of the Republic" },
+    "nombreCorto": { "es": "CGR", "en": "CGR" },
+    "tipo": "organo-publico",
+    "url": "https://www.cgr.go.cr/",
+    "proyectosActivos": 1,
+    "resumen": {
+      "es": "Una adopción verificada en fase piloto: dIAra, con código, arquitectura y resultados técnicos de detección de objetos publicados.",
+      "en": "One verified adoption at pilot stage: dIAra, with published code, architecture and object-detection results."
+    },
+    "descripcion": {
+      "es": "La verificación de dIAra se limita a la experiencia técnica documentada sobre una obra de Pococí. No acredita funcionamiento generalizado actual ni detección de irregularidades. La herramienta interna de planificación de Auditoría y la comunidad AuditAI+ son objetos distintos y no se incorporan como adopciones en este lote.",
+      "en": "dIAra verification is limited to the documented technical experience at a Pococí construction site. It does not establish current generalized operation or irregularity detection. The internal Audit planning tool and AuditAI+ community are distinct objects and are not added as adoptions in this batch."
+    },
+    "lecciones": {
+      "es": "El código y las inferencias documentadas permiten verificar un piloto, sin convertir métricas de detección en resultados de fiscalización ni presencia de cámaras en uso probado de IA.",
+      "en": "Code and documented inference can verify a pilot without converting detection metrics into oversight outcomes or camera presence into proven AI use."
+    }
+  },
+  {
+    "id": "tse",
+    "nombre": { "es": "Tribunal Supremo de Elecciones", "en": "Supreme Electoral Tribunal" },
+    "nombreCorto": { "es": "TSE", "en": "TSE" },
+    "tipo": "organo-publico",
+    "url": "https://www.tse.go.cr/",
+    "proyectosActivos": 1,
+    "resumen": {
+      "es": "Una iniciativa en seguimiento: el Chat Votante Informado, con operación histórica documentada para las elecciones de 2026 y técnica pendiente de determinar.",
+      "en": "One initiative under review: Votante Informado Chat, with historical operation documented for the 2026 elections and its technique still undetermined."
+    },
+    "descripcion": {
+      "es": "Las fuentes del TSE acreditan un chatbot declarado como IA para consultar programas de gobierno. Se conserva el componente específico como registro histórico, sin atribuir IA a todo Votante Informado ni afirmar disponibilidad o cierre actuales.",
+      "en": "TSE sources establish a chatbot declared as AI for querying election platforms. The specific component is retained as a historical record, without attributing AI to all of Votante Informado or asserting current availability or closure."
+    },
+    "lecciones": {
+      "es": "Conservar una experiencia temporal no exige suponer que sigue activa: existencia histórica, técnica y continuidad se verifican por separado.",
+      "en": "Preserving a temporary experience does not require assuming it remains active: historical existence, technique and continuity are verified separately."
+    }
   }
 ]

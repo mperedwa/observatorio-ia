@@ -4,6 +4,7 @@ import {
   type TonoDocumental,
 } from '@/components/ExpedienteEditorial';
 import { instrumentos, type FuerzaTipo } from '@/data/marcoPais';
+import { recursos } from '@/data/recursos';
 import type { Dictionary } from '@/i18n/dictionaries';
 import type { Locale } from '@/i18n/config';
 
@@ -83,6 +84,7 @@ export function MatrizInstrumentos({
                 <tr key={instrumento.id} className="border-b border-editorial-rule align-top last:border-b-0">
                   <th scope="row" className="py-4 pl-3 pr-4 text-left font-semibold leading-snug text-institucional-900 text-pretty">
                     {instrumento.nombre[locale]}
+                    <FuentesInstrumento ids={instrumento.recursoIds} locale={locale} label={t.marcoPais.fuentes.fuentesLabel} />
                   </th>
                   <td className="px-3 py-4 text-slate-700">{instrumento.tipo[locale]}</td>
                   <td className="px-3 py-4 text-slate-700">{instrumento.alcance[locale]}</td>
@@ -130,6 +132,7 @@ export function MatrizInstrumentos({
                 <h3 className="font-editorial text-2xl font-semibold leading-tight text-editorial-ink">
                   {instrumento.nombre[locale]}
                 </h3>
+                <FuentesInstrumento ids={instrumento.recursoIds} locale={locale} label={t.marcoPais.fuentes.fuentesLabel} />
                 <div className="mt-3">
                   <MarcaDocumental
                     label={fuerzaLabels[instrumento.fuerzaTipo]}
@@ -155,6 +158,39 @@ export function MatrizInstrumentos({
         </div>
       </div>
     </section>
+  );
+}
+
+function FuentesInstrumento({
+  ids = [],
+  locale,
+  label,
+}: {
+  ids?: string[];
+  locale: Locale;
+  label: string;
+}) {
+  const fuentes = recursos.filter(({ id }) => ids.includes(id));
+  if (fuentes.length === 0) return null;
+
+  return (
+    <div className="mt-3 text-xs font-normal leading-relaxed">
+      <span className="text-slate-500">{label}: </span>
+      {fuentes.map((fuente, index) => (
+        <span key={fuente.id}>
+          {index > 0 && ' · '}
+          <a
+            href={fuente.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={fuente.titulo[locale]}
+            className="text-institucional-700 underline underline-offset-2 hover:text-institucional-900"
+          >
+            {fuente.fuente} ↗
+          </a>
+        </span>
+      ))}
+    </div>
   );
 }
 

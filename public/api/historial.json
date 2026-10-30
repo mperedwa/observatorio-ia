@@ -1,10 +1,49 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-10-05T00:00:00.000Z",
-  "count": 56,
+  "lastUpdate": "2026-10-29T00:00:00.000Z",
+  "count": 59,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "data": [
+    {
+      "fecha": "2026-10-29",
+      "tipo": "proyecto",
+      "actualizacion": {
+        "es": "Se incorporan dIAra de la CGR como adopción verificada en fase piloto, el Asistente de Auditoría del TEC en seguimiento y el Chat Votante Informado del TSE con operación histórica y fase actual no determinada. La verificación de dIAra se limita a las inferencias documentadas en Pococí, no a cobertura generalizada o detección de irregularidades. El catálogo alcanza 42 iniciativas: 10 verificadas, 16 en seguimiento y 16 de ecosistema, en 19 instituciones. Las 39 fichas anteriores se conservan sin cambios.",
+        "en": "CGR's dIAra is added as a verified adoption at pilot stage, TEC's Audit Assistant under review and TSE's Votante Informado Chat with historical operation and an undetermined current phase. dIAra verification is limited to documented inference in Pococí, not generalized coverage or irregularity detection. The catalog reaches 42 initiatives: 10 verified, 16 under review and 16 ecosystem records across 19 institutions. The previous 39 records remain unchanged."
+      },
+      "fuente": {
+        "es": "CGR, Universidad Cenfotec, TEC y TSE",
+        "en": "CGR, Universidad Cenfotec, TEC and TSE"
+      },
+      "fuente_url": "https://github.com/cgrcostarica/dIAra/tree/26a53a7fe89032e56dde014674ac0b830034692d"
+    },
+    {
+      "fecha": "2026-10-29",
+      "tipo": "recurso",
+      "actualizacion": {
+        "es": "Se añade la publicación de la UCR sobre el Censo TIC 2026 como recurso estadístico y contexto de la intervención municipal del IFAM. Los resultados corresponden a 43 gobiernos locales participantes: no se extrapolan al país ni acreditan sistemas implementados o cumplimiento ENIA. El estado, las metas y los proyectos atribuidos al IFAM no cambian. Esta incorporación parcial no renueva las fechas de revisión integral de la agenda.",
+        "en": "UCR's publication on the 2026 ICT Census is added as a statistical resource and context for IFAM's municipal intervention. Results concern 43 participating local governments: they are not extrapolated nationwide and establish neither implemented systems nor ENIA fulfillment. IFAM's status, targets and attributed projects remain unchanged. This partial addition does not renew comprehensive review dates in the schedule."
+      },
+      "fuente": {
+        "es": "Universidad de Costa Rica / CIOdD",
+        "en": "University of Costa Rica / CIOdD"
+      },
+      "fuente_url": "https://www.ucr.ac.cr/noticias/2026/10/15/voz-experta-las-municipalidades-en-la-era-de-la-inteligencia-artificial-ia.html"
+    },
+    {
+      "fecha": "2026-10-29",
+      "tipo": "recurso",
+      "actualizacion": {
+        "es": "Se incorpora el Decreto 45961-MSP a Recursos y Marco país tras validar el texto oficial del Alcance 138 a La Gaceta 194, publicado el 14 de octubre de 2026. Se documentan sus condiciones sobre IA, valoración humana y biometría sin convertir una norma sectorial en adopción tecnológica, ley general de IA o cumplimiento de sus transitorios. Se mantienen separados los siete expedientes legislativos catalogados.",
+        "en": "Decree 45961-MSP is added to Resources and the Country Framework after validation against the official text in Supplement 138 to Official Gazette 194, published on October 14, 2026. Its conditions on AI, human assessment and biometrics are documented without treating a sectoral rule as technological adoption, a general AI law or compliance with transitional deadlines. The seven cataloged legislative bills remain separate."
+      },
+      "fuente": {
+        "es": "Imprenta Nacional / La Gaceta",
+        "en": "National Printing Office / Official Gazette"
+      },
+      "fuente_url": "https://www.imprentanacional.go.cr/pub/2026/10/14/ALCA138_14_10_2026.pdf"
+    },
     {
       "fecha": "2026-10-05",
       "tipo": "proyecto",

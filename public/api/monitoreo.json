@@ -1,12 +1,12 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-10-05T00:00:00.000Z",
+  "lastUpdate": "2026-10-29T00:00:00.000Z",
   "count": 8,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "data": {
     "schemaVersion": 1,
-    "fechaCorte": "2026-10-05",
+    "fechaCorte": "2026-10-29",
     "politica": {
       "descripcion": {
         "es": "La agenda de revisión separa la vigilancia automática de la decisión editorial. Una alerta abre una revisión; no cambia por sí sola el catálogo, el estado de un expediente ni la evidencia de ejecución.",
@@ -136,7 +136,7 @@
         "fechaUltimaRevision": "2026-09-15",
         "fechaProximaRevision": "2026-10-15",
         "alcance": {
-          "cantidad": 14,
+          "cantidad": 16,
           "unidad": {
             "es": "iniciativas",
             "en": "initiatives"
@@ -188,7 +188,7 @@
         "fechaUltimaRevision": "2026-09-08",
         "fechaProximaRevision": "2026-12-08",
         "alcance": {
-          "cantidad": 9,
+          "cantidad": 10,
           "unidad": {
             "es": "adopciones",
             "en": "adoptions"
@@ -212,7 +212,7 @@
         "fechaUltimaRevision": "2026-08-21",
         "fechaProximaRevision": "2026-11-21",
         "alcance": {
-          "cantidad": 7,
+          "cantidad": 8,
           "unidad": {
             "es": "instrumentos",
             "en": "instruments"

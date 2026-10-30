@@ -5129,5 +5129,328 @@
         }
       }
     ]
+  },
+  {
+    "id": "tec-asistente-auditoria-ia",
+    "titulo": {
+      "es": "Asistente de Auditoría con IA del TEC",
+      "en": "TEC AI Audit Assistant"
+    },
+    "institucionId": "tec",
+    "categoria": "fiscal",
+    "estado": "planificado",
+    "descripcion": {
+      "es": "Proyecto presentado por el TEC para apoyar consultas e integración de información de normativas, informes, riesgos, control interno y registros financieros. La institución declara el uso de generación aumentada por recuperación (RAG). El desarrollo está anunciado y descrito, pero no se verificó un prototipo funcional ni su utilización por auditores.",
+      "en": "Project presented by TEC to support queries and integration of information from regulations, reports, risks, internal controls and financial records. The institution declares the use of retrieval-augmented generation (RAG). Development is announced and described, but a functional prototype and use by auditors were not verified."
+    },
+    "contexto": {
+      "es": "La presentación institucional del 15 de octubre de 2026 acredita un proyecto con técnica identificable, no una adopción operativa. Es distinto de la investigación OIJ-TEC sobre análisis criminal, de Auditoría Interna del SBD y de dIAra de la CGR. No se atribuyen mejoras de eficiencia ni resultados de fiscalización sin evidencia.",
+      "en": "The institutional presentation on October 15, 2026 establishes a project with an identifiable technique, not an operational adoption. It is distinct from OIJ-TEC criminal-analysis research, SBD Internal Audit and CGR's dIAra. No efficiency improvements or audit outcomes are attributed without evidence."
+    },
+    "desde": "2026",
+    "fuenteUrl": "https://tec.ac.cr/medio-siglo-transparencia-control-auditoria-interna-tec-celebra-50-anos-trayectoria-servicio",
+    "modeloVersion": 2,
+    "tipoIniciativa": "sistema-ia",
+    "estadoCatalogo": "seguimiento",
+    "faseImplementacion": "desarrollo",
+    "estadoIA": "confirmada",
+    "evaluacion": {
+      "existencia": { "estado": "confirmado", "fuenteIds": ["tec-auditoria-presentacion-2026"] },
+      "ejecucion": { "estado": "parcialmente-confirmado", "fuenteIds": ["tec-auditoria-presentacion-2026"] },
+      "tecnicaIA": { "estado": "confirmado", "fuenteIds": ["tec-auditoria-presentacion-2026"] },
+      "usoOperativo": { "estado": "no-determinado", "fuenteIds": [] },
+      "resultados": { "estado": "no-determinado", "fuenteIds": [] },
+      "gobernanza": { "estado": "no-determinado", "fuenteIds": [] }
+    },
+    "fuentes": [
+      {
+        "id": "tec-auditoria-presentacion-2026",
+        "titulo": {
+          "es": "TEC presenta el proyecto Asistente de Auditoría basado en IA",
+          "en": "TEC presents its AI-based Audit Assistant project"
+        },
+        "url": "https://tec.ac.cr/medio-siglo-transparencia-control-auditoria-interna-tec-celebra-50-anos-trayectoria-servicio",
+        "publicador": "Tecnológico de Costa Rica",
+        "tipoFuente": "primaria-oficial",
+        "fechaPublicacion": "2026-10-15",
+        "fechaConsulta": "2026-10-29",
+        "respalda": ["existencia", "objetivo-declarado", "ejecucion", "tecnica-ia"],
+        "naturalezaAfirmacion": ["hecho", "objetivo-declarado"]
+      }
+    ],
+    "fechaPrimeraEvidencia": "2026-10-15",
+    "fechaAnuncio": "2026-10-15",
+    "fechaUltimaVerificacion": "2026-10-29",
+    "fechaProximaRevision": "2026-11-29",
+    "objetivoDeclarado": {
+      "es": "Facilitar la consulta e integración de grandes volúmenes de información para apoyar la planificación y los servicios de Auditoría Interna.",
+      "en": "Facilitate queries and integration of large volumes of information to support Internal Audit planning and services."
+    },
+    "datosConocidos": [
+      {
+        "es": "El proyecto fue presentado por Lorena Zúñiga Segura, profesora de Administración de Tecnologías de Información, y Moisés Calderón Mora, estudiante avanzado.",
+        "en": "The project was presented by Information Technology Management professor Lorena Zúñiga Segura and advanced student Moisés Calderón Mora."
+      },
+      {
+        "es": "RAG es la técnica identificada por el TEC. Esta identificación documental no equivale a una inspección independiente del sistema ni a prueba de uso institucional.",
+        "en": "RAG is the technique identified by TEC. This documentary identification is not an independent system inspection or evidence of institutional use."
+      }
+    ],
+    "datosNoDeterminados": [
+      {
+        "es": "No se verificaron prototipo funcional, modelos utilizados, datos realmente incorporados, controles de acceso, presupuesto ni uso efectivo por la Auditoría Interna.",
+        "en": "A functional prototype, underlying models, data actually ingested, access controls, budget and actual use by Internal Audit were not verified."
+      }
+    ],
+    "preguntasAbiertas": [
+      {
+        "es": "¿Existe un prototipo funcional y qué pruebas o recepción ha documentado la Auditoría Interna?",
+        "en": "Is there a functional prototype, and what testing or acceptance has Internal Audit documented?"
+      },
+      {
+        "es": "¿Qué modelos, corpus, permisos de acceso y mecanismos de revisión humana utiliza?",
+        "en": "What models, corpus, access permissions and human-review mechanisms does it use?"
+      }
+    ],
+    "relaciones": [
+      {
+        "iniciativaId": "pj-oij-tec-ia-investigacion",
+        "tipo": "distinto-de",
+        "nota": {
+          "es": "La participación del TEC no convierte el asistente de auditoría en parte de la investigación OIJ-TEC de análisis criminal.",
+          "en": "TEC's participation does not make the audit assistant part of OIJ-TEC criminal-analysis research."
+        }
+      }
+    ]
+  },
+  {
+    "id": "cgr-diara",
+    "titulo": {
+      "es": "dIAra: monitoreo de infraestructura pública mediante IA",
+      "en": "dIAra: AI-based public infrastructure monitoring"
+    },
+    "institucionId": "cgr",
+    "categoria": "infraestructura",
+    "estado": "piloto",
+    "descripcion": {
+      "es": "Piloto de la CGR con Universidad Cenfotec y cooperación alemana GIZ que combina captura de imágenes mediante dispositivos IoT y detección de personas y maquinaria con IA. El código y los informes técnicos documentan Faster R-CNN con ResNet50 e inferencias sobre imágenes reales de una obra en Pococí. La verificación se limita a esa experiencia, no a operación generalizada o continuidad actual.",
+      "en": "CGR pilot with Universidad Cenfotec and German cooperation agency GIZ combining IoT image capture with AI detection of people and machinery. Code and technical reports document Faster R-CNN with ResNet50 and inference on real images from a construction site in Pococí. Verification is limited to that experience, not generalized operation or current continuity."
+    },
+    "contexto": {
+      "es": "Es un hallazgo incorporado en octubre de 2026 sobre desarrollo y pruebas publicados en 2024, no un lanzamiento de este mes. La detección de la clase persona no identifica individuos ni acredita reconocimiento facial. No se presenta como sistema de detección de corrupción o irregularidades, ni se atribuye uso de IA a todas las obras que hayan recibido dispositivos. Es distinto de la herramienta interna de planificación de Auditoría de la CGR.",
+      "en": "This October 2026 addition concerns development and tests published in 2024, not a launch this month. Detecting the person class does not identify individuals or establish facial recognition. It is not presented as a corruption or irregularity detection system, and AI use is not attributed to every site receiving devices. It is distinct from CGR's internal Audit planning tool."
+    },
+    "desde": "2024",
+    "fuenteUrl": "https://github.com/cgrcostarica/dIAra/tree/26a53a7fe89032e56dde014674ac0b830034692d",
+    "modeloVersion": 2,
+    "tipoIniciativa": "sistema-ia",
+    "estadoCatalogo": "verificado",
+    "faseImplementacion": "piloto",
+    "estadoIA": "confirmada",
+    "evaluacion": {
+      "existencia": { "estado": "confirmado", "fuenteIds": ["cgr-diara-repositorio-2024"] },
+      "ejecucion": { "estado": "confirmado", "fuenteIds": ["cgr-diara-repositorio-2024", "cgr-diara-resultados-2024"] },
+      "tecnicaIA": { "estado": "confirmado", "fuenteIds": ["cgr-diara-arquitectura-2024"] },
+      "usoOperativo": { "estado": "parcialmente-confirmado", "fuenteIds": ["cgr-diara-resultados-2024"] },
+      "resultados": { "estado": "confirmado", "fuenteIds": ["cgr-diara-resultados-2024"] },
+      "gobernanza": { "estado": "parcialmente-confirmado", "fuenteIds": ["cgr-diara-ogp"] }
+    },
+    "fuentes": [
+      {
+        "id": "cgr-diara-repositorio-2024",
+        "titulo": {
+          "es": "Repositorio dIAra de la CGR: snapshot técnico de mayo de 2024",
+          "en": "CGR dIAra repository: May 2024 technical snapshot"
+        },
+        "url": "https://github.com/cgrcostarica/dIAra/tree/26a53a7fe89032e56dde014674ac0b830034692d",
+        "publicador": "Contraloría General de la República / Universidad Cenfotec",
+        "tipoFuente": "primaria-oficial",
+        "fechaPublicacion": "2024-05-10",
+        "fechaConsulta": "2026-10-29",
+        "respalda": ["existencia", "ejecucion", "tecnica-ia", "resultado-reportado"],
+        "naturalezaAfirmacion": ["hecho", "resultado-reportado"]
+      },
+      {
+        "id": "cgr-diara-arquitectura-2024",
+        "titulo": {
+          "es": "Documentación del sistema de detección: Faster R-CNN con ResNet50",
+          "en": "Detection system documentation: Faster R-CNN with ResNet50"
+        },
+        "url": "https://github.com/cgrcostarica/dIAra/blob/26a53a7fe89032e56dde014674ac0b830034692d/IA/Documentaci%C3%B3n/Documentaci%C3%B3n-IA-CGR.pdf",
+        "publicador": "Contraloría General de la República / Universidad Cenfotec",
+        "tipoFuente": "primaria-oficial",
+        "fechaConsulta": "2026-10-29",
+        "respalda": ["tecnica-ia", "ejecucion"],
+        "naturalezaAfirmacion": ["hecho"]
+      },
+      {
+        "id": "cgr-diara-resultados-2024",
+        "titulo": {
+          "es": "Resultados de la etapa IA: inferencias y archivos sobre imágenes de obra",
+          "en": "AI-stage results: inference and output files on construction images"
+        },
+        "url": "https://github.com/cgrcostarica/dIAra/blob/26a53a7fe89032e56dde014674ac0b830034692d/IA/Documentaci%C3%B3n/Proyecto%20CGR-GIZ-CENFOTEC%20Resultados.pdf",
+        "publicador": "Contraloría General de la República / Universidad Cenfotec",
+        "tipoFuente": "primaria-oficial",
+        "fechaConsulta": "2026-10-29",
+        "respalda": ["ejecucion", "tecnica-ia", "uso-operativo", "resultado-reportado"],
+        "naturalezaAfirmacion": ["hecho", "resultado-reportado"]
+      },
+      {
+        "id": "cgr-diara-ogp",
+        "titulo": {
+          "es": "Presentación de la CGR ante OGP: alertas de IA para control ciudadano de infraestructura",
+          "en": "CGR submission to OGP: AI alerts for citizen control of infrastructure"
+        },
+        "url": "https://www.opengovpartnership.org/the-open-gov-challenge/costa-rica-artificial-intelligence-alerts-citizen-control-public-infrastructure/",
+        "publicador": "Open Government Partnership, propuesta de la CGR",
+        "tipoFuente": "multilateral",
+        "fechaConsulta": "2026-10-29",
+        "respalda": ["existencia", "objetivo-declarado", "meta", "gobernanza"],
+        "naturalezaAfirmacion": ["hecho", "objetivo-declarado", "meta"]
+      }
+    ],
+    "fechaPrimeraEvidencia": "2024-05-10",
+    "fechaUltimaVerificacion": "2026-10-29",
+    "fechaProximaRevision": "2026-11-29",
+    "objetivoDeclarado": {
+      "es": "Apoyar el monitoreo y la fiscalización de obra pública mediante imágenes, indicadores de presencia de personas y maquinaria y eventuales alertas para revisión humana y participación ciudadana.",
+      "en": "Support public-works monitoring and oversight through images, indicators of people and machinery presence, and potential alerts for human review and citizen participation."
+    },
+    "resultadosVerificados": [
+      {
+        "id": "diara-metricas-modelo-2024",
+        "texto": {
+          "es": "El equipo reporta IoU promedio de 82,7 % y recall de 85,4 % para el modelo documentado. Son métricas técnicas de la experiencia en una obra específica, no una evaluación independiente ni evidencia de irregularidades detectadas o recursos públicos recuperados.",
+          "en": "The team reports mean IoU of 82.7% and recall of 85.4% for the documented model. These are technical metrics from a specific construction-site experience, not an independent evaluation or evidence of detected irregularities or recovered public funds."
+        },
+        "fuenteIds": ["cgr-diara-resultados-2024"]
+      }
+    ],
+    "datosConocidos": [
+      {
+        "es": "El repositorio contiene código, entrenamiento, documentación de arquitectura y ejemplos de inferencia y CSV producidos sobre imágenes reales de la obra de Pococí. La primera evidencia localizada corresponde al snapshot publicado el 10 de mayo de 2024, no a una fecha inicial de despliegue confirmada.",
+        "en": "The repository contains code, training, architecture documentation and inference and CSV examples produced on real images from the Pococí site. The first located evidence is the snapshot published on May 10, 2024, not a confirmed initial deployment date."
+      },
+      {
+        "es": "El propio equipo advierte que el modelo fue entrenado para esa obra y que su eficiencia puede cambiar en otras construcciones. La propuesta ante OGP identifica por separado un aplicativo pendiente para automatizar ejecución y reportes.",
+        "en": "The team itself warns that the model was trained for that site and its effectiveness may change on other construction projects. The OGP submission separately identifies an application still needed to automate execution and reporting."
+      }
+    ],
+    "datosNoDeterminados": [
+      {
+        "es": "No se acreditaron continuidad actual de las inferencias, cobertura de IA por obra, automatización integral, presupuesto total consolidado ni resultados independientes de fiscalización. La fase piloto describe la última experiencia técnica acreditada, no garantiza que continúe activa hoy.",
+        "en": "Current inference continuity, AI coverage by site, end-to-end automation, a consolidated total budget and independent oversight outcomes were not established. The pilot phase describes the latest substantiated technical experience, not a guarantee that it remains active today."
+      }
+    ],
+    "preguntasAbiertas": [
+      {
+        "es": "¿En qué obras y fechas se ejecutaron efectivamente los modelos de IA y cuáles mantienen inferencias activas?",
+        "en": "At which sites and dates were AI models actually run, and which still have active inference?"
+      },
+      {
+        "es": "¿Se completó el aplicativo de automatización y qué controles, validaciones fuera de muestra y resultados de fiscalización se documentaron?",
+        "en": "Was the automation application completed, and what controls, out-of-sample validation and oversight outcomes were documented?"
+      }
+    ]
+  },
+  {
+    "id": "tse-chat-votante-informado",
+    "titulo": {
+      "es": "Chat Votante Informado: consulta de programas de gobierno",
+      "en": "Votante Informado Chat: election-platform queries"
+    },
+    "institucionId": "tse",
+    "categoria": "social",
+    "estado": "operativo",
+    "descripcion": {
+      "es": "Componente chatbot que el TSE habilitó dentro de Votante Informado para consultar, mediante palabras clave, los programas de gobierno de las candidaturas presidenciales de 2026. Las fuentes oficiales acreditan operación histórica y declaran IA, pero no identifican su técnica ni permiten confirmar disponibilidad actual. Se registra solo el chat, no todo el programa electoral.",
+      "en": "Chatbot component enabled by TSE within Votante Informado to query 2026 presidential candidates' election platforms using keywords. Official sources establish historical operation and declare AI but do not identify its technique or confirm current availability. Only the chat is recorded, not the entire electoral program."
+    },
+    "contexto": {
+      "es": "Se conserva como registro histórico del servicio documentado en 2025–2026. La fase actual queda no determinada: un error de acceso o una protección antibot no prueban retiro, finalización ni cancelación. La herramienta de consulta no se presenta como recomendador de voto, sistema de escrutinio o decisor electoral.",
+      "en": "It is retained as a historical record of the service documented in 2025–2026. Its current phase is undetermined: an access error or anti-bot protection does not establish withdrawal, completion or cancellation. The query tool is not presented as a vote recommender, vote-counting system or electoral decision-maker."
+    },
+    "desde": "2025",
+    "fuenteUrl": "https://www.tse.go.cr/comunicado1120.html",
+    "modeloVersion": 2,
+    "tipoIniciativa": "componente-ia",
+    "estadoCatalogo": "seguimiento",
+    "faseImplementacion": "no-determinado",
+    "estadoIA": "declarada-sin-tecnica",
+    "evaluacion": {
+      "existencia": { "estado": "confirmado", "fuenteIds": ["tse-votante-lanzamiento-2025"] },
+      "ejecucion": { "estado": "confirmado", "fuenteIds": ["tse-votante-lanzamiento-2025", "tse-votante-disponibilidad-2026", "tse-votante-rendicion-2026"] },
+      "tecnicaIA": { "estado": "no-determinado", "fuenteIds": [] },
+      "usoOperativo": { "estado": "parcialmente-confirmado", "fuenteIds": ["tse-votante-disponibilidad-2026", "tse-votante-rendicion-2026"] },
+      "resultados": { "estado": "no-determinado", "fuenteIds": [] },
+      "gobernanza": { "estado": "no-determinado", "fuenteIds": [] }
+    },
+    "fuentes": [
+      {
+        "id": "tse-votante-lanzamiento-2025",
+        "titulo": { "es": "TSE habilita programa Votante Informado", "en": "TSE enables the Votante Informado program" },
+        "url": "https://www.tse.go.cr/comunicado1120.html",
+        "publicador": "Tribunal Supremo de Elecciones",
+        "tipoFuente": "primaria-oficial",
+        "fechaPublicacion": "2025-12-12",
+        "fechaConsulta": "2026-10-29",
+        "respalda": ["existencia", "ejecucion", "objetivo-declarado"],
+        "naturalezaAfirmacion": ["hecho", "objetivo-declarado"]
+      },
+      {
+        "id": "tse-votante-disponibilidad-2026",
+        "titulo": { "es": "TSE confirma disponibilidad de herramientas de Votante Informado", "en": "TSE confirms availability of Votante Informado tools" },
+        "url": "https://www.tse.go.cr/comunicado1131.html",
+        "publicador": "Tribunal Supremo de Elecciones",
+        "tipoFuente": "primaria-oficial",
+        "fechaPublicacion": "2026-01-05",
+        "fechaConsulta": "2026-10-29",
+        "respalda": ["existencia", "ejecucion", "uso-operativo"],
+        "naturalezaAfirmacion": ["hecho"]
+      },
+      {
+        "id": "tse-votante-rendicion-2026",
+        "titulo": { "es": "Rendición de cuentas del TSE: chatbot para comparar propuestas", "en": "TSE accountability report: chatbot for comparing proposals" },
+        "url": "https://www.tse.go.cr/comunicado1194.html",
+        "publicador": "Tribunal Supremo de Elecciones",
+        "tipoFuente": "primaria-oficial",
+        "fechaPublicacion": "2026-06-29",
+        "fechaConsulta": "2026-10-29",
+        "respalda": ["existencia", "ejecucion", "uso-operativo"],
+        "naturalezaAfirmacion": ["hecho"]
+      }
+    ],
+    "fechaPrimeraEvidencia": "2025-12-12",
+    "fechaAnuncio": "2025-12-12",
+    "fechaInicioOperacion": "2025-12-12",
+    "fechaUltimaVerificacion": "2026-10-29",
+    "fechaProximaRevision": "2026-11-29",
+    "objetivoDeclarado": {
+      "es": "Facilitar el acceso a información específica de los programas de gobierno de las candidaturas presidenciales para apoyar el voto informado.",
+      "en": "Facilitate access to specific information in presidential candidates' election platforms to support informed voting."
+    },
+    "datosConocidos": [
+      {
+        "es": "El TSE documentó la habilitación el 12 de diciembre de 2025, la disponibilidad en enero de 2026 y el servicio en su rendición de cuentas de junio. Estas fuentes acreditan operación histórica, no disponibilidad actual ni volumen de uso.",
+        "en": "TSE documented launch on December 12, 2025, availability in January 2026 and the service in its June accountability report. These sources establish historical operation, not current availability or usage volume."
+      }
+    ],
+    "datosNoDeterminados": [
+      {
+        "es": "No se verificaron modelo, arquitectura, proveedor, métricas de uso o calidad, controles técnicos ni continuidad del chatbot después del proceso electoral. No se localizó un acto de retiro o cierre.",
+        "en": "The model, architecture, provider, usage or quality metrics, technical safeguards and chatbot continuity after the election process were not verified. No withdrawal or closure decision was located."
+      }
+    ],
+    "preguntasAbiertas": [
+      {
+        "es": "¿Qué técnica, modelos, proveedor y controles de calidad utilizó el chat electoral?",
+        "en": "What technique, models, provider and quality controls did the electoral chat use?"
+      },
+      {
+        "es": "¿El servicio continúa disponible, fue archivado o existe una decisión oficial sobre su cierre?",
+        "en": "Does the service remain available, was it archived, or is there an official closure decision?"
+      }
+    ]
   }
 ]

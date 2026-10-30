@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-10-05T00:00:00.000Z",
+  "lastUpdate": "2026-10-29T00:00:00.000Z",
   "count": 6,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
@@ -238,7 +238,7 @@
           "es": "Iniciativas relacionadas con IA documentadas",
           "en": "Documented AI-related initiatives"
         },
-        "valor": "39",
+        "valor": "42",
         "detalle": {
           "es": "incluye sistemas, pilotos, planes y capacidades",
           "en": "includes systems, pilots, plans and capabilities"
@@ -249,10 +249,10 @@
           "es": "Instituciones con iniciativas documentadas",
           "en": "Institutions with documented initiatives"
         },
-        "valor": "16",
+        "valor": "19",
         "detalle": {
-          "es": "Poder Judicial, CCSS, Hacienda, MEP, MICITT, CENAT, UCR, INAMU, INS, ARESEP, INVU, INA, SBD, Municipalidad de Cartago, Municipalidad de La Unión y Ministerio de Salud",
-          "en": "Judicial Branch, CCSS, Finance, MEP, MICITT, CENAT, UCR, INAMU, INS, ARESEP, INVU, INA, SBD, Cartago Municipality, La Unión Municipality and Ministry of Health"
+          "es": "Poder Judicial, CCSS, Hacienda, MEP, MICITT, CENAT, UCR, INAMU, INS, ARESEP, INVU, INA, SBD, Municipalidad de Cartago, Municipalidad de La Unión, Ministerio de Salud, TEC, CGR y TSE",
+          "en": "Judicial Branch, CCSS, Finance, MEP, MICITT, CENAT, UCR, INAMU, INS, ARESEP, INVU, INA, SBD, Cartago Municipality, La Unión Municipality, Ministry of Health, TEC, CGR and TSE"
         }
       },
       {

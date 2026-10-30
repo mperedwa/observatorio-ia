@@ -1,0 +1,783 @@
+{
+  "version": "0.1.0",
+  "lastUpdate": "2026-10-29T00:00:00.000Z",
+  "count": 59,
+  "source": "https://observatorioia.org",
+  "license": "CC BY 4.0",
+  "data": [
+    {
+      "fecha": "2026-10-29",
+      "tipo": "proyecto",
+      "actualizacion": {
+        "es": "Se incorporan dIAra de la CGR como adopción verificada en fase piloto, el Asistente de Auditoría del TEC en seguimiento y el Chat Votante Informado del TSE con operación histórica y fase actual no determinada. La verificación de dIAra se limita a las inferencias documentadas en Pococí, no a cobertura generalizada o detección de irregularidades. El catálogo alcanza 42 iniciativas: 10 verificadas, 16 en seguimiento y 16 de ecosistema, en 19 instituciones. Las 39 fichas anteriores se conservan sin cambios.",
+        "en": "CGR's dIAra is added as a verified adoption at pilot stage, TEC's Audit Assistant under review and TSE's Votante Informado Chat with historical operation and an undetermined current phase. dIAra verification is limited to documented inference in Pococí, not generalized coverage or irregularity detection. The catalog reaches 42 initiatives: 10 verified, 16 under review and 16 ecosystem records across 19 institutions. The previous 39 records remain unchanged."
+      },
+      "fuente": {
+        "es": "CGR, Universidad Cenfotec, TEC y TSE",
+        "en": "CGR, Universidad Cenfotec, TEC and TSE"
+      },
+      "fuente_url": "https://github.com/cgrcostarica/dIAra/tree/26a53a7fe89032e56dde014674ac0b830034692d"
+    },
+    {
+      "fecha": "2026-10-29",
+      "tipo": "recurso",
+      "actualizacion": {
+        "es": "Se añade la publicación de la UCR sobre el Censo TIC 2026 como recurso estadístico y contexto de la intervención municipal del IFAM. Los resultados corresponden a 43 gobiernos locales participantes: no se extrapolan al país ni acreditan sistemas implementados o cumplimiento ENIA. El estado, las metas y los proyectos atribuidos al IFAM no cambian. Esta incorporación parcial no renueva las fechas de revisión integral de la agenda.",
+        "en": "UCR's publication on the 2026 ICT Census is added as a statistical resource and context for IFAM's municipal intervention. Results concern 43 participating local governments: they are not extrapolated nationwide and establish neither implemented systems nor ENIA fulfillment. IFAM's status, targets and attributed projects remain unchanged. This partial addition does not renew comprehensive review dates in the schedule."
+      },
+      "fuente": {
+        "es": "Universidad de Costa Rica / CIOdD",
+        "en": "University of Costa Rica / CIOdD"
+      },
+      "fuente_url": "https://www.ucr.ac.cr/noticias/2026/10/15/voz-experta-las-municipalidades-en-la-era-de-la-inteligencia-artificial-ia.html"
+    },
+    {
+      "fecha": "2026-10-29",
+      "tipo": "recurso",
+      "actualizacion": {
+        "es": "Se incorpora el Decreto 45961-MSP a Recursos y Marco país tras validar el texto oficial del Alcance 138 a La Gaceta 194, publicado el 14 de octubre de 2026. Se documentan sus condiciones sobre IA, valoración humana y biometría sin convertir una norma sectorial en adopción tecnológica, ley general de IA o cumplimiento de sus transitorios. Se mantienen separados los siete expedientes legislativos catalogados.",
+        "en": "Decree 45961-MSP is added to Resources and the Country Framework after validation against the official text in Supplement 138 to Official Gazette 194, published on October 14, 2026. Its conditions on AI, human assessment and biometrics are documented without treating a sectoral rule as technological adoption, a general AI law or compliance with transitional deadlines. The seven cataloged legislative bills remain separate."
+      },
+      "fuente": {
+        "es": "Imprenta Nacional / La Gaceta",
+        "en": "National Printing Office / Official Gazette"
+      },
+      "fuente_url": "https://www.imprentanacional.go.cr/pub/2026/10/14/ALCA138_14_10_2026.pdf"
+    },
+    {
+      "fecha": "2026-10-05",
+      "tipo": "proyecto",
+      "actualizacion": {
+        "es": "Se incorpora Hello Brete del INA en seguimiento, separado del proyecto SNE/Brete. La operación del servicio educativo está documentada; la configuración y el uso específico de sus componentes de IA permanecen por comprobar. La ficha identifica el consorcio adjudicatario y la solicitud de información de la Defensoría sobre datos de inscripción, sin presentarla como una infracción determinada. El catálogo alcanza 39 iniciativas: 9 verificadas, 14 en seguimiento y 16 de ecosistema, en 16 instituciones.",
+        "en": "INA's Hello Brete is added under review, separately from SNE/Brete. Operation of the educational service is documented; the configuration and specific use of its AI components remain to be checked. The record identifies the awarded consortium and the Ombudsman's information request about enrollment data, without presenting it as an established violation. The catalog reaches 39 initiatives: 9 verified, 14 under review and 16 ecosystem initiatives across 16 institutions."
+      },
+      "fuente": {
+        "es": "MICITT, INA, Open English y Defensoría de los Habitantes",
+        "en": "MICITT, INA, Open English and the Ombudsman's Office"
+      },
+      "fuente_url": "https://www.micitt.go.cr/el-sector-informa/plataforma-gratuita-hello-brete-permitira-capacitar-hasta-2-millones-de-personas"
+    },
+    {
+      "fecha": "2026-10-05",
+      "tipo": "recurso",
+      "actualizacion": {
+        "es": "La nota ENIA del INA reconoce Hello Brete como evidencia adyacente, sin atribuirlo a la meta oficial ni añadir una correspondencia acreditada. Se mantiene el cruce parcial de SNE/Brete y la ejecución no verificada de la intervención. El lote no reclasifica ICE/OIJ, AyA, Vincent o SBD Auditoría, ni renueva fechas de agenda de frentes no revisados íntegramente.",
+        "en": "INA's ENIA note acknowledges Hello Brete as adjacent evidence, without attributing it to the official target or adding an established match. SNE/Brete's partial match and the intervention's unverified execution are retained. The update does not reclassify ICE/OIJ, AyA, Vincent or SBD Internal Audit, nor does it renew schedule dates for areas not reviewed in full."
+      },
+      "fuente": {
+        "es": "Plan de Acción ENIA y anuncio institucional de Hello Brete",
+        "en": "ENIA Action Plan and the Hello Brete institutional announcement"
+      },
+      "fuente_url": "https://www.micitt.go.cr/gobierno_digital/inteligencia_artificial"
+    },
+    {
+      "fecha": "2026-10-01",
+      "tipo": "indicador",
+      "actualizacion": {
+        "es": "Se incorpora AILA 2026 como diagnóstico nacional independiente del ILIA: etapa Sistemática y tres pilares de preparación en escala de 0 a 5. El recurso apunta al informe final de PNUD y MICITT. Marco país distingue el diagnóstico de los instrumentos obligatorios y sincroniza la prosa sobre iniciativas e instituciones con el catálogo.",
+        "en": "AILA 2026 is added as a national assessment separate from ILIA: Systematic stage and three readiness pillars on a 0–5 scale. The resource now points to the final UNDP and MICITT report. The country framework distinguishes the assessment from binding instruments and synchronizes initiative and institution counts with the catalog."
+      },
+      "fuente": {
+        "es": "PNUD y MICITT, informe AILA 2026",
+        "en": "UNDP and MICITT, AILA 2026 report"
+      },
+      "fuente_url": "https://pnud-conocimiento.cr/wp-content/uploads/2026/09/AILA_2026_MICITT_digital-1.pdf"
+    },
+    {
+      "fecha": "2026-10-01",
+      "tipo": "proyecto",
+      "actualizacion": {
+        "es": "Se incorporan MuniBot de Cartago y el asistente virtual del MICITT como adopciones verificadas: las fuentes oficiales identifican IA generativa y la comprobación funcional puntual obtuvo respuesta de ambos asistentes. Esta prueba no acredita precisión general, eficacia ni todos los controles declarados.",
+        "en": "Cartago's MuniBot and MICITT's virtual assistant are added as verified adoptions: official sources identify generative AI and a point-in-time functional check obtained responses from both assistants. This check does not establish general accuracy, effectiveness or all declared safeguards."
+      },
+      "fuente": {
+        "es": "Declaraciones oficiales de Cartago y MICITT",
+        "en": "Official statements by Cartago and MICITT"
+      },
+      "fuente_url": "https://www.muni-carta.go.cr/declaracion-de-uso-de-inteligencia-artificial/"
+    },
+    {
+      "fecha": "2026-10-01",
+      "tipo": "proyecto",
+      "actualizacion": {
+        "es": "Se añaden cuatro iniciativas en seguimiento: Vincent AI del INVU, soluciones de IA para Auditoría Interna del SBD, R.O.D.U de La Unión y el asistente Dejar de Fumar y Vapear de Salud, CCSS e IAFA. Las dos primeras tienen evidencia contractual sin uso operativo acreditado; las otras dos documentan servicios existentes, pero no una técnica de IA determinada. El corte alcanza 38 iniciativas en 16 instituciones: 9 verificadas, 13 en seguimiento y 16 de ecosistema.",
+        "en": "Four initiatives are added under review: INVU's Vincent AI, SBD Internal Audit's AI solutions, La Unión's R.O.D.U and the Quit Smoking and Vaping assistant from Health, CCSS and IAFA. The first two have contractual evidence without verified operational use; the other two document existing services but not a determined AI technique. The release covers 38 initiatives across 16 institutions: 9 verified, 13 under review and 16 ecosystem initiatives."
+      },
+      "fuente": {
+        "es": "SICOP y documentación institucional citada en cada ficha",
+        "en": "SICOP and institutional documentation cited in each record"
+      },
+      "fuente_url": "https://www.sicop.go.cr/moduloPcont/pcont/ctract/es/CE_CEJ_ESQ002.jsp?cartelNo=20260803608&cartelSeq=00"
+    },
+    {
+      "fecha": "2026-10-01",
+      "tipo": "recurso",
+      "actualizacion": {
+        "es": "La nota de la intervención ENIA del IFAM para gobiernos locales reconoce evidencia municipal adyacente de Cartago y La Unión. No se acredita vinculación con IFAM ni cumplimiento de su meta; el cruce y la ejecución permanecen sin verificar. No se reclasifican ICE/OIJ ni AyA, ni se renuevan fechas de frentes no revisados.",
+        "en": "The note on IFAM's ENIA intervention for local governments acknowledges adjacent municipal evidence from Cartago and La Unión. No link to IFAM or fulfillment of its target is established; the match and execution remain unverified. ICE/OIJ and AyA are not reclassified, and review dates for unreviewed areas are not renewed."
+      },
+      "fuente": {
+        "es": "Declaración municipal de Cartago y documentación de La Unión",
+        "en": "Cartago's municipal statement and La Unión documentation"
+      },
+      "fuente_url": "https://launion.go.cr/noticias/que-es-r-o-d-u/"
+    },
+    {
+      "fecha": "2026-09-15",
+      "tipo": "proyecto",
+      "actualizacion": {
+        "es": "Se incorpora en seguimiento el proyecto interinstitucional de MICITT, MTSS e INA para fortalecer la plataforma del Sistema Nacional de Empleo mediante IA. La contratación adjudicada a WCC Group B.V. confirma la etapa I de diseño y planificación, pero no acredita todavía el desarrollo ni la operación del motor de IA. La intervención ENIA del INA pasa a coincidencia parcial y conserva ejecución no verificada.",
+        "en": "The inter-institutional MICITT, MTSS and INA project to strengthen the National Employment System platform with AI is added under review. The procurement awarded to WCC Group B.V. confirms stage I design and planning but does not yet establish development or operation of the AI engine. INA's ENIA intervention moves to a partial match and remains unverified for execution."
+      },
+      "fuente": {
+        "es": "INA, documentación institucional del proyecto SNE",
+        "en": "INA, institutional documentation for the SNE project"
+      },
+      "fuente_url": "https://www.ina.ac.cr/transparencia/Documentos%20compartidos/Informes%20Institucionales/Hist%C3%B3rico%20de%20los%20informes%20anuales%20de%20auditor%C3%ADa%20interna/2025/Informes_AS/AI-ASE-03-2025-Adenda_Convenio_MICITT-INA-MTSS-JD.pdf"
+    },
+    {
+      "fecha": "2026-09-08",
+      "tipo": "proyecto",
+      "actualizacion": {
+        "es": "La ficha Clasificación documental de cobros adopta el nombre institucional Tipificador de Escritos y pasa de piloto a operativo. Fuentes oficiales confirman aprendizaje automático y reconocimiento óptico de caracteres, implantación en toda la jurisdicción cobratoria, 1.302.899 escritos procesados en 2024 y reglas de retroalimentación y clasificación manual de respaldo vigentes en 2026.",
+        "en": "The Document Classification for Debt Collection record adopts the institutional name Filing Classifier and moves from pilot to operational. Official sources confirm machine learning and optical character recognition, deployment across the entire debt collection jurisdiction, 1,302,899 filings processed in 2024, and feedback and manual-fallback rules in force in 2026."
+      },
+      "fuente": {
+        "es": "Poder Judicial, evidencia institucional del Tipificador de Escritos",
+        "en": "Judicial Branch, institutional evidence for the Filing Classifier"
+      },
+      "fuente_url": "https://actualidadjudicial.poder-judicial.go.cr/vol294/noticias_judiciales/nj4-294.html"
+    },
+    {
+      "fecha": "2026-09-01",
+      "tipo": "proyecto",
+      "actualizacion": {
+        "es": "Se incorpora Clara, el asistente virtual de ARESEP, como adopción verificada. Las fuentes oficiales confirman que opera en el sitio institucional con IA generativa, Microsoft Copilot Studio y una base de conocimiento de más de 730 archivos públicos; los resultados y métricas de calidad permanecen no determinados.",
+        "en": "Clara, ARESEP's virtual assistant, is added as a verified adoption. Official sources confirm that it operates on the institutional website using generative AI, Microsoft Copilot Studio and a knowledge base of more than 730 public files; outcomes and quality metrics remain undetermined."
+      },
+      "fuente": {
+        "es": "ARESEP, lanzamiento oficial y declaración de uso de IA",
+        "en": "ARESEP, official launch and AI use statement"
+      },
+      "fuente_url": "https://aresep.go.cr/noticias/aresep-lanza-asistente-virtual-para-sitio-web/"
+    },
+    {
+      "fecha": "2026-09-01",
+      "tipo": "proyecto",
+      "actualizacion": {
+        "es": "Se incorpora en seguimiento la línea del INVU para usar aplicaciones de IA en planificación territorial. El comunicado oficial confirma el objetivo, pero no permite determinar aplicaciones, técnica, proveedor, contratación, piloto o uso operativo, ni relacionar por inferencia la IA con los 23 planes reguladores mencionados por separado.",
+        "en": "INVU's effort to use AI applications in territorial planning is added under review. The official release confirms the objective but does not establish the applications, technique, vendor, procurement, pilot or operational use, nor does it support inferring a link between AI and the 23 regulatory plans mentioned separately."
+      },
+      "fuente": {
+        "es": "INVU, comunicado oficial sobre INVU Evoluciona",
+        "en": "INVU, official INVU Evoluciona release"
+      },
+      "fuente_url": "https://www.invu.go.cr/-/72-aniversario?inheritRedirect=true&redirect=%2Fhome"
+    },
+    {
+      "fecha": "2026-09-01",
+      "tipo": "recurso",
+      "actualizacion": {
+        "es": "Se actualizan las notas de las dos intervenciones ENIA del INVU con evidencia institucional adyacente: el POI 2025 documenta ajustes al pliego de una contratación para automatización mediante IA y el Presupuesto Inicial 2026 mantiene IA y bots dentro de bienes intangibles. Ambas acciones conservan ejecución no verificada y el monto total de esa partida no se atribuye a IA.",
+        "en": "Notes for the two INVU ENIA interventions are updated with adjacent institutional evidence: the 2025 POI documents tender-document adjustments for AI-enabled automation, and the 2026 Initial Budget retains AI and bots within intangible assets. Both actions remain unverified for execution, and the total amount of that budget category is not attributed to AI."
+      },
+      "fuente": {
+        "es": "INVU, seguimiento semestral del POI 2025 y Presupuesto Inicial 2026",
+        "en": "INVU, 2025 POI midyear monitoring and 2026 Initial Budget"
+      },
+      "fuente_url": "https://www.invu.go.cr/documents/20181/621840/Informe%2BSemestral%2BEvaluaci%C3%B3n%2BPOI%2Ba%2Bjunio%2B2025"
+    },
+    {
+      "fecha": "2026-08-24",
+      "tipo": "recurso",
+      "actualizacion": {
+        "es": "Se corrige el flujo de agenda editorial: la anticipación se ajusta por cadencia y días hábiles; los issues se crean sin aviso inicial y el watcher notifica solo cuando existe un veredicto; cada revisión exige la URL del issue y el cierre ocurre después de que CI valida el cambio en main. La API R10 separa la bitácora rodante de monitoreo de los once datasets sustantivos congelados y preserva R8 y R9 sin cambios.",
+        "en": "The editorial schedule workflow is corrected: lead time now follows cadence and business days; issues are created without an initial alert and the watcher notifies only after reaching a verdict; every review requires its issue URL, and closure occurs after CI validates the change on main. API release R10 separates the rolling monitoring log from the eleven frozen substantive datasets and preserves R8 and R9 unchanged."
+      },
+      "fuente": {
+        "es": "Plan de flujo de agenda editorial de bajo ruido, corte 24-ago-2026",
+        "en": "Low-noise editorial schedule workflow plan, cutoff Aug 24, 2026"
+      }
+    },
+    {
+      "fecha": "2026-08-23",
+      "tipo": "recurso",
+      "actualizacion": {
+        "es": "Se cierra una auditoría de consistencia metodológica: la adopción verificada exige técnica confirmada y una fuente primaria para ejecución; Hacienda incorpora evidencia directa del uso continuo del E-IAD; la matriz distingue no determinado de no aplica; los vacíos relevantes requieren pregunta o próxima revisión; y se corrigen etiquetas de fuentes, producción, interpretación, instituciones e idioma del consentimiento. La API abre una release nueva y conserva R8 sin cambios.",
+        "en": "A methodological-consistency audit is completed: verified adoption requires a confirmed technique and a primary source for execution; the Finance Ministry record adds direct evidence of continued E-IAD use; the matrix separates undetermined from not applicable; material gaps require an open question or next review; and labels for sources, production, interpretation, institutions and consent language are corrected. The API opens a new release while preserving R8 unchanged."
+      },
+      "fuente": {
+        "es": "Plan de consistencia metodológica y editorial del Observatorio, corte 23-ago-2026",
+        "en": "Observatory methodological and editorial consistency plan, cutoff Aug 23, 2026"
+      }
+    },
+    {
+      "fecha": "2026-08-22",
+      "tipo": "recurso",
+      "actualizacion": {
+        "es": "La API pública pasa de siete exportaciones parciales a un producto de datos reproducible. Conserva las rutas y la envoltura existentes, suma Marco país, historial, coyuntura, recursos y un codebook metodológico, y publica schemas, una release fechada, checksums y descargas JSON/CSV. También explicita el alcance de las fuentes de brechas, agrega procedencia por fila a ILIA 2025 y corrige la identificación del GTMI como índice de madurez GovTech, no como ranking de preparación para IA.",
+        "en": "The public API moves from seven partial exports to a reproducible data product. It preserves the existing routes and envelope, adds the country framework, editorial history, current-affairs notes, resources and a methodological codebook, and publishes schemas, a dated release, checksums and JSON/CSV downloads. It also makes the source scope of comparative gaps explicit, adds row-level provenance to ILIA 2025 and corrects GTMI identification as a GovTech maturity index rather than an AI-readiness ranking."
+      },
+      "fuente": {
+        "es": "Contrato editorial R8 del Observatorio IA Costa Rica, corte 22-ago-2026",
+        "en": "AI Observatory Costa Rica R8 editorial contract, cutoff Aug 22, 2026"
+      },
+      "fuente_url": "https://observatorioia.org/api/"
+    },
+    {
+      "fecha": "2026-08-21",
+      "tipo": "recurso",
+      "actualizacion": {
+        "es": "Se publica la agenda y bitácora de monitoreo editorial. Ocho frentes muestran su alcance, última revisión, próxima fecha y cadencia; la bitácora registra transiciones concretas y también revisiones que concluyeron sin cambios. Los scrapers dejan de generar esqueletos de proyectos y producen propuestas de evidencia que no pueden actualizar el catálogo automáticamente.",
+        "en": "The editorial monitoring schedule and review log are released. Eight areas show their scope, last review, next date and cadence; the log records specific transitions as well as reviews that concluded with no changes. Scrapers no longer generate project stubs and instead produce evidence proposals that cannot update the catalog automatically."
+      },
+      "fuente": {
+        "es": "Política de monitoreo y trazabilidad editorial, corte 21-ago-2026",
+        "en": "Editorial monitoring and traceability policy, cutoff Aug 21, 2026"
+      }
+    },
+    {
+      "fecha": "2026-08-21",
+      "tipo": "recurso",
+      "actualizacion": {
+        "es": "Se publica el explorador bilingüe del Plan de Acción ENIA. La vista conserva los 129 registros oficiales, distingue 120 intervenciones únicas y señala 9 registros que repiten una acción. También separa 29 soluciones de IA declaradas de 83 acciones que no son sistemas. El crosswalk queda en 6 coincidencias exactas, 9 parciales y 22 compromisos de solución que permanecen solo en ENIA, con ejecución evaluada por separado.",
+        "en": "The bilingual ENIA Action Plan explorer is released. The view preserves all 129 official records, distinguishes 120 unique interventions and identifies 9 records that repeat an action. It also separates 29 declared AI solutions from 83 actions that are not systems. The crosswalk now contains 6 exact matches, 9 partial matches and 22 solution commitments that remain ENIA-only, with execution assessed separately."
+      },
+      "fuente": {
+        "es": "MICITT, Plan de Acción ENIA y crosswalk editorial, corte 21-ago-2026",
+        "en": "MICITT, ENIA Action Plan and editorial crosswalk, cutoff Aug 21, 2026"
+      },
+      "fuente_url": "https://www.micitt.go.cr/sites/default/files/2025-10/Plan%20de%20Acci%C3%B3n%20ENIA%20-%20Versi%C3%B3n%2011%20agosto%202025%20Versi%C3%B3n%20Publicaci%C3%B3n.pdf"
+    },
+    {
+      "fecha": "2026-08-21",
+      "tipo": "proyecto",
+      "actualizacion": {
+        "es": "Se incorpora inamu-ela como adopción verificada. Las fuentes oficiales confirman una aplicación disponible las 24 horas, con GPT-4 Turbo y búsqueda de archivos. La ficha publica como no determinados los resultados de uso, precisión, derivaciones, seguridad y revisión humana.",
+        "en": "inamu-ela is added as a verified adoption. Official sources confirm an around-the-clock application using GPT-4 Turbo and file search. The record publishes usage, accuracy, referral, safety and human-review outcomes as undetermined."
+      },
+      "fuente": {
+        "es": "INAMU, aplicación Ela y términos de uso, verificación 21-ago-2026",
+        "en": "INAMU, Ela application and terms of use, verified Aug 21, 2026"
+      },
+      "fuente_url": "https://www.inamu.go.cr/inteligencia-artificial"
+    },
+    {
+      "fecha": "2026-08-21",
+      "tipo": "proyecto",
+      "actualizacion": {
+        "es": "Se incorpora ins-reclamos-medicos-ia en seguimiento. El INS reporta operación, cerca de 10.000 solicitudes mensuales, reducción del pago promedio de 12–13 a 6–7 días y 72% de eficiencia. La técnica, clasificación, revisión humana, errores y vías de impugnación no están publicados, por lo que no suma a adopción verificada.",
+        "en": "ins-reclamos-medicos-ia is added under review. INS reports operation, about 10,000 monthly requests, a reduction in average payment time from 12–13 to 6–7 days and 72% efficiency. Technique, classification, human review, errors and appeal mechanisms are not published, so it does not count as verified adoption."
+      },
+      "fuente": {
+        "es": "INS, boletín INSignia de diciembre de 2024",
+        "en": "INS, December 2024 INSignia bulletin"
+      },
+      "fuente_url": "https://www.grupoins.com/media/pyfkpyjz/bolet%C3%ADn-insignia-diciembre-2024.pdf"
+    },
+    {
+      "fecha": "2026-08-21",
+      "tipo": "proyecto",
+      "actualizacion": {
+        "es": "Se incorpora pj-oij-tec-ia-investigacion como I+D del ecosistema. El proyecto 2024–2026 desarrolla reconocimiento de imágenes, categorización de casos y predicción de incidentes; una fuente judicial documenta el subcaso de tatuajes. No se afirma despliegue productivo y se mantiene separado del compromiso ICE de la ENIA y de SUPERCOP.",
+        "en": "pj-oij-tec-ia-investigacion is added as ecosystem R&D. The 2024–2026 project develops image recognition, case categorization and incident prediction; a Judiciary source documents the tattoo subcase. No production deployment is claimed, and it remains separate from the ENIA ICE commitment and SUPERCOP."
+      },
+      "fuente": {
+        "es": "Tecnológico de Costa Rica y Poder Judicial, verificación 21-ago-2026",
+        "en": "Costa Rica Institute of Technology and Judiciary, verified Aug 21, 2026"
+      },
+      "fuente_url": "https://orion.tec.ac.cr/es/projects/sistemas-basados-en-inteligencia-artificial-usando-machine-learni/"
+    },
+    {
+      "fecha": "2026-08-21",
+      "tipo": "legislacion",
+      "actualizacion": {
+        "es": "Se audita el inventario legislativo y se corrige el corte a 7 expedientes específicos o directamente relacionados con IA: 4 dictaminados y 3 en comisión, ninguno aprobado. Se incorporan el expediente 23.885 sobre nuevas formas de propaganda y el 25.379 o Ley Antitroll; el 25.171 se amplía para reflejar su alcance artístico, identitario y electoral y la objeción emitida por el TSE. Cada ficha distingue ahora regulación principal de IA de proyectos directamente relacionados, enlaza evidencia oficial del estado y muestra la fecha de verificación.",
+        "en": "The legislative inventory is audited and corrected to 7 bills specifically or directly related to AI: 4 with committee reports and 3 in committee, none passed. Bill 23.885 on new forms of advertising and Bill 25.379, the Anti-Troll Law, are added; Bill 25.171 is expanded to reflect its artistic, identity and electoral scope and the objection issued by the Supreme Electoral Tribunal. Each record now distinguishes core AI regulation from directly related bills, links official status evidence and displays its verification date."
+      },
+      "fuente": {
+        "es": "Asamblea Legislativa y Tribunal Supremo de Elecciones, verificación oficial al 21-ago-2026",
+        "en": "Legislative Assembly and Supreme Electoral Tribunal, official verification as of Aug 21, 2026"
+      },
+      "fuente_url": "https://www.asamblea.go.cr/ca/Lists/cp/DispForm.aspx?ContentTypeId=0x01008922D325D4FE564292B03FD67DF003A7&ID=22860"
+    },
+    {
+      "fecha": "2026-08-21",
+      "tipo": "recurso",
+      "actualizacion": {
+        "es": "Se estructura el inventario completo del Plan de Acción ENIA, versión 11 de agosto de 2025: 7 ejes, 13 líneas de acción, 36 resultados esperados, 129 intervenciones y 144 indicadores. Las metas del plan se conservan como declaraciones oficiales, no como evidencia de ejecución. Las 129 intervenciones comienzan con ejecución no verificada y cruce no determinado; el catálogo público no cambia hasta completar la investigación y el crosswalk.",
+        "en": "The complete inventory of the ENIA Action Plan, August 11, 2025 version, is structured: 7 axes, 13 action lines, 36 expected results, 129 interventions and 144 indicators. Plan targets remain official declarations, not evidence of execution. All 129 interventions start with unverified execution and an undetermined crosswalk; the public catalog does not change until research and matching are complete."
+      },
+      "fuente": {
+        "es": "MICITT, Plan de Acción de la ENIA, versión 11-ago-2025",
+        "en": "MICITT, ENIA Action Plan, Aug 11, 2025 version"
+      },
+      "fuente_url": "https://www.micitt.go.cr/sites/default/files/2025-10/Plan%20de%20Acci%C3%B3n%20ENIA%20-%20Versi%C3%B3n%2011%20agosto%202025%20Versi%C3%B3n%20Publicaci%C3%B3n.pdf"
+    },
+    {
+      "fecha": "2026-08-19",
+      "tipo": "proyecto",
+      "actualizacion": {
+        "es": "Se estrena la interfaz del catálogo basado en evidencia. La portada y el índice de iniciativas separan adopción verificada, seguimiento, y ecosistema y capacidades; las fichas publican tipo, fase, confirmación de IA, matriz por dimensión, campos no determinados, preguntas abiertas y metadatos de cada fuente. Los conteos institucionales ahora se derivan del catálogo y se corrigen resúmenes legados que confundían anuncios, infraestructura o automatización con sistemas de IA operativos.",
+        "en": "The evidence-based catalog interface is released. The home page and initiative index separate verified adoption, under review, and ecosystem and capabilities; records publish type, phase, AI confirmation, a dimension-level matrix, undetermined fields, open questions and source metadata. Institution counts are now derived from the catalog, and legacy summaries that conflated announcements, infrastructure or automation with operational AI systems are corrected."
+      },
+      "fuente": {
+        "es": "Modelo de evidencia v2 y auditoría editorial del catálogo, corte 19-ago-2026",
+        "en": "Evidence model v2 and catalog editorial audit, cutoff Aug 19, 2026"
+      }
+    },
+    {
+      "fecha": "2026-08-19",
+      "tipo": "proyecto",
+      "actualizacion": {
+        "es": "Se reclasifican las 26 iniciativas con el modelo de evidencia v2. El corte editorial queda en 5 sistemas o componentes de IA con piloto u operación verificados, 6 iniciativas en seguimiento y 15 registros de ecosistema y capacidades. Cada ficha distingue tipo, fase, confirmación de IA, evidencia por dimensión, fuentes y campos no determinados. También se corrigen afirmaciones sin respaldo en clasificación de cobros, Nymiz, EDUS, AIDA, detección fiscal de anomalías, CONECTA, AgroBoost y la investigación del CITIC.",
+        "en": "All 26 initiatives are reclassified under evidence model v2. The editorial cutoff is now 5 AI systems or components with verified pilot or operational execution, 6 initiatives under review, and 15 ecosystem and capacity records. Every entry distinguishes type, phase, AI confirmation, evidence by dimension, sources, and undetermined fields. Unsupported claims are also corrected in debt-collection classification, Nymiz, EDUS, AIDA, tax anomaly detection, CONECTA, AgroBoost, and CITIC research."
+      },
+      "fuente": {
+        "es": "Auditoría editorial del catálogo con fuentes trazables por ficha, corte 19-ago-2026",
+        "en": "Catalog editorial audit with traceable sources per entry, cutoff Aug 19, 2026"
+      }
+    },
+    {
+      "fecha": "2026-08-19",
+      "tipo": "proyecto",
+      "actualizacion": {
+        "es": "Se corrige la fuente de ccss-logistica-ia-abastecimiento. La URL anterior correspondía al proyecto de depuración de listas de espera; se sustituye por la cobertura que documenta el monitoreo de contratos e insumos, el uso de IA y el tablero Power BI de la Gerencia de Logística. La ficha mantiene confianza media mientras no exista una fuente primaria de la CCSS.",
+        "en": "The source for ccss-logistica-ia-abastecimiento is corrected. The previous URL covered the wait-list cleanup project; it is replaced with reporting that documents contract and supply monitoring, the use of AI, and the Logistics Management Power BI dashboard. The entry remains medium-confidence until a primary CCSS source is available."
+      },
+      "fuente": {
+        "es": "CRHoy — medidas de abastecimiento de la CCSS (8-abr-2026)",
+        "en": "CRHoy — CCSS supply-continuity measures (Apr 8, 2026)"
+      },
+      "fuente_url": "https://crhoy.com/nacionales/ccss-activa-medidas-por-conflicto-en-medio-oriente-pakistan-y-afganistan-son-clave-para-insumos/"
+    },
+    {
+      "fecha": "2026-08-14",
+      "tipo": "proyecto",
+      "actualizacion": {
+        "es": "Se cataloga un nuevo proyecto: pj-conamaj-chat-facilitadores. CONAMAJ impulsa un chat de IA tipo modelo de lenguaje para las personas facilitadoras judiciales, orientado a consultas jurídicas y orientación legal, distinto del ChatbotPJ de atención ciudadana. Se registra como piloto: la fuente oficial no reporta sistema, proveedor, cronograma ni resultados medidos. No se atribuye a Naciones Unidas desarrollo ni coejecución (solo apoyo técnico al encuentro).",
+        "en": "New project cataloged: pj-conamaj-chat-facilitadores. CONAMAJ drives a language-model AI chat for judicial facilitators, focused on legal consultations and guidance, distinct from the citizen-facing ChatbotPJ. Recorded as a pilot: the official source does not report a system, vendor, timeline, or measured results. The United Nations is not credited with development or co-execution (only technical support to the event)."
+      },
+      "fuente": {
+        "es": "Poder Judicial, artículo sobre CONAMAJ y Naciones Unidas (2026)",
+        "en": "Judiciary of Costa Rica, article on CONAMAJ and the United Nations (2026)"
+      },
+      "fuente_url": "https://pj.poder-judicial.go.cr/index.php/component/content/article/2550-instituciones-conamaj-y-naciones-unidas-fortalecen-sector-justicia-de-cara-a-la-inteligencia-artificial?catid=8&Itemid=409"
+    },
+    {
+      "fecha": "2026-07-23",
+      "tipo": "legislacion",
+      "actualizacion": {
+        "es": "Se actualizan los tres expedientes generales de regulación de IA (23.771, 23.919 y 24.484) contra los textos sustitutivos vigentes verificados en el SIL. 23.771: se corrige el estado a dictaminado y se elimina la referencia a una ARIA inexistente (el texto pone al MICITT como órgano rector, con apoyo de la SUTEL). 23.919: se sustituye la caracterización de sandboxes por la creación de la CIDIA, el comité asesor y la definición de alto riesgo. 24.484: se completa con las definiciones de IA generativa y falsificación profunda, la rectoría del MICITT coordinando siete instituciones, el alcance a actores extranjeros y el dictamen unánime.",
+        "en": "The three general AI-regulation bills (23.771, 23.919 and 24.484) are updated against the current substitute texts verified in the SIL. 23.771: status corrected to dictaminado and the reference to a non-existent ARIA removed (the text makes MICITT the governing authority, supported by SUTEL). 23.919: the sandbox characterization is replaced with the creation of CIDIA, the advisory committee and the high-risk definition. 24.484: completed with the definitions of generative AI and deep fakes, MICITT's governing role coordinating seven institutions, the reach over foreign actors, and the unanimous committee report."
+      },
+      "fuente": {
+        "es": "Sistema de Información Legislativa (SIL) + textos sustitutivos vigentes (verificación independiente)",
+        "en": "Legislative Information System (SIL) + current substitute texts (independent verification)"
+      },
+      "fuente_url": "https://www.asamblea.go.cr/Centro_de_informacion/Consultas_SIL/SitePages/ConsultaProyectos.aspx"
+    },
+    {
+      "fecha": "2026-07-20",
+      "tipo": "proyecto",
+      "actualizacion": {
+        "es": "Se cataloga un nuevo proyecto: pj-sala-primera-induccion-ia. La Sala Primera de la Corte Suprema declara estar en un proceso de inducción sobre el uso de prompts para que herramientas de IA apoyen la toma de decisiones. Se registra como planificado: la fuente oficial no anuncia sistema, proveedor, cronograma ni resultados. Se distingue del proyecto de la Sala Constitucional ya catalogado.",
+        "en": "A new project is catalogued: pj-sala-primera-induccion-ia. The Supreme Court's First Chamber states it is in an induction process on the use of prompts so that AI tools can support decision-making. It is recorded as planned: the official source announces no system, vendor, timeline or results. It is distinct from the already catalogued Constitutional Chamber project."
+      },
+      "fuente": {
+        "es": "Poder Judicial — comunicado oficial 17-jul-2026",
+        "en": "Judiciary of Costa Rica — official release Jul 17, 2026"
+      },
+      "fuente_url": "https://pj.poder-judicial.go.cr/index.php/component/content/article/2137-sala-primera-reduce-en-60-casos-pendientes-y-alcanza-cifra-record-de-resoluciones-de-fondo"
+    },
+    {
+      "fecha": "2026-07-17",
+      "tipo": "proyecto",
+      "actualizacion": {
+        "es": "Se cataloga un nuevo proyecto: cenat-cnca-clasificacion-arritmias-ecg. El CNCA del CeNAT desarrolla investigación de aprendizaje automático para clasificar arritmias a partir de señales de electrocardiograma (ECG), con un dispositivo prototipo. Verificado contra el repositorio institucional de CONARE y el sitio del CNCA. Alcance de investigación y prototipo; no se afirma uso clínico operativo.",
+        "en": "A new project is catalogued: cenat-cnca-clasificacion-arritmias-ecg. CeNAT's CNCA conducts machine-learning research to classify arrhythmias from electrocardiogram (ECG) signals, with a prototype device. Verified against CONARE's institutional repository and the CNCA site. Research and prototype scope; no operational clinical use is claimed."
+      },
+      "fuente": {
+        "es": "Repositorio institucional de CONARE + sitio del CNCA (CeNAT)",
+        "en": "CONARE institutional repository + CNCA site (CeNAT)"
+      },
+      "fuente_url": "https://repositorio.conare.ac.cr/items/b8bb3b55-cc3c-402a-9df4-6fe66159230d"
+    },
+    {
+      "fecha": "2026-07-15",
+      "tipo": "proyecto",
+      "actualizacion": {
+        "es": "Se actualiza el proyecto ccss-depuracion-listas para incorporar CLEO, la implementación nombrada del componente de contacto multicanal (correo, WhatsApp y llamada automatizada). En julio de 2026 la CCSS lo puso en marcha en un piloto de un mes en el Hospital Calderón Guardia, con capacidad declarada de hasta 1.500 registros/día (capacidad, no resultado), hasta tres intentos de contacto y validación humana de la información recopilada y de toda eventual baja. Se mantiene sin atribuir a la IA las cifras históricas de la línea base institucional.",
+        "en": "The ccss-depuracion-listas project is updated to incorporate CLEO, the named implementation of the multichannel contact component (email, WhatsApp and automated call). In July 2026 the CCSS launched it in a one-month pilot at Hospital Calderón Guardia, with a declared capacity of up to 1,500 records/day (capacity, not a result), up to three contact attempts, and human validation of the collected information and any eventual removal. The historical institutional baseline figures remain not attributed to the AI."
+      },
+      "fuente": {
+        "es": "CCSS — comunicado oficial 10-jul-2026",
+        "en": "CCSS — official announcement Jul 10, 2026"
+      },
+      "fuente_url": "https://www.ccss.sa.cr/noticias/noticia?v=122105706809"
+    },
+    {
+      "fecha": "2026-06-30",
+      "tipo": "recurso",
+      "actualizacion": {
+        "es": "Se agregan fechas de publicación verificadas a los 6 instrumentos de gobernanza IA en el Marco País: Principios OCDE 2019-05-22; ENIA 2024-2027 publicada el 2024-10-24; Decreto 44507-MICITT (CNTD Capítulo 7 IA) 2024-06-19; Plan de Acción ENIA 2025-08-11; Proyectos de ley IA 2023-05-30 (primer expediente); Lineamientos Básicos IA Generativa del Poder Judicial 2026-02-26. La matriz comparativa de instrumentos muestra ahora una columna 'Publicado' con formato mes-año. El timeline de hitos muestra la fecha exacta vía tooltip cuando se conoce. Schema marcoPais.json formalizado por primera vez (antes solo TypeScript types).",
+        "en": "Verified publication dates added to the 6 AI governance instruments in the Country Framework: OECD Principles 2019-05-22; ENIA 2024-2027 published 2024-10-24; Decree 44507-MICITT (CNTD Chapter 7 AI) 2024-06-19; ENIA Action Plan 2025-08-11; AI bills 2023-05-30 (first file); Judiciary Basic Guidelines for Generative AI 2026-02-26. The instruments comparison matrix now shows a 'Published' column with month-year format. The milestones timeline shows the exact date via tooltip when known. marcoPais.json schema formalized for the first time (previously only TypeScript types)."
+      },
+      "fuente": {
+        "es": "Investigación verificada del analista — observatorio-ia issue #26",
+        "en": "Verified analyst research — observatorio-ia issue #26"
+      },
+      "fuente_url": "https://github.com/mperedwa/observatorio-ia/issues/26"
+    },
+    {
+      "fecha": "2026-06-30",
+      "tipo": "recurso",
+      "actualizacion": {
+        "es": "El KPI Hero 'Posición ILIA Latinoamérica' ahora se autoresuelve desde el dataset ilia2025 en lugar de tener el valor hardcoded. Cuando se actualice editorialmente ilia2025 con la próxima edición del ILIA (estimada sept-oct 2026), la posición de Costa Rica (ej. '5°') y el detalle ('53.83/100, brecha de -17 vs Chile') quedarán al día automáticamente sin tocar el JSON del KPI. Cambio interno; sin diferencia visual en el sitio mientras el ranking sea el mismo.",
+        "en": "The 'ILIA Latin America rank' Hero KPI is now auto-resolved from the ilia2025 dataset instead of holding a hardcoded value. When ilia2025 is editorially updated with the next ILIA edition (expected Sept-Oct 2026), Costa Rica's rank (e.g. '5°') and the detail line ('53.83/100, -17 gap vs Chile') will stay current automatically with no need to touch the KPI JSON. Internal change; no visual difference on the site while the ranking stays the same."
+      },
+      "fuente": {
+        "es": "Mejora interna — observatorio-ia issue #23",
+        "en": "Internal improvement — observatorio-ia issue #23"
+      },
+      "fuente_url": "https://github.com/mperedwa/observatorio-ia/issues/23"
+    },
+    {
+      "fecha": "2026-06-26",
+      "tipo": "indicador",
+      "actualizacion": {
+        "es": "Se agregan dos nuevos indicadores OCDE 2025 al sitio: Digital Government Index (DGI) y OURdata Index. Costa Rica obtiene DGI 0.45 (vs promedio OCDE 0.70, mejora desde 0.22 en 2023) y OURdata 0.14 (vs promedio OCDE 0.53, retroceso desde 0.19 en 2023). Cada indicador incluye gráfico de barras comparativo con países OCDE/candidatos (DGI: Corea, Australia, Portugal, UK, Chile, Brasil, Colombia, México, CR) y desglose de subdimensiones para Costa Rica (DGI: Digital by Design, User-driven, Data-driven, Proactiveness, Government as a Platform, Open by Default; OURdata: Data availability, Data accessibility, Government support for data reuse).",
+        "en": "Added two new OECD 2025 indicators to the site: Digital Government Index (DGI) and OURdata Index. Costa Rica scores DGI 0.45 (vs OECD average 0.70, improvement from 0.22 in 2023) and OURdata 0.14 (vs OECD average 0.53, regression from 0.19 in 2023). Each indicator includes a comparative bar chart with OECD/candidate countries (DGI: South Korea, Australia, Portugal, UK, Chile, Brazil, Colombia, Mexico, CR) and Costa Rica subdimension breakdown (DGI: Digital by Design, User-driven, Data-driven, Proactiveness, Government as a Platform, Open by Default; OURdata: Data availability, Data accessibility, Government support for data reuse)."
+      },
+      "fuente": {
+        "es": "OCDE — Working Paper No. 90 (feb. 2026); Digital Government Outlook 2026 Country Note Costa Rica",
+        "en": "OECD — Working Paper No. 90 (Feb. 2026); Digital Government Outlook 2026 Country Note Costa Rica"
+      },
+      "fuente_url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2026/02/digital-government-index-and-open-useful-and-re-usable-data-index_dbe102ed/6347ec74-en.pdf"
+    },
+    {
+      "fecha": "2026-06-18",
+      "tipo": "recurso",
+      "actualizacion": {
+        "es": "Corrección factual en el ítem de Coyuntura del II Foro Nacional de IA en Salud: Marvin Palma es 'gerente médico interino' de la CCSS (nombrado a.i. el 8 de mayo de 2026 por seis meses), no titular. Se actualiza también el cargo de Massimo Manzi a 'director ejecutivo de la Cámara Costarricense de la Salud (CCS) / PROMED' para usar la forma institucional completa. Verificado contra páginas oficiales CCSS (nombramiento) y GlueUp/Promed (cargo de Manzi).",
+        "en": "Factual correction in the Current-Affairs item on the Second National Forum on AI in Health: Marvin Palma is the CCSS 'acting medical manager' (appointed a.i. on May 8, 2026 for six months), not the substantive holder. Massimo Manzi's title is also updated to 'executive director of the Costa Rican Chamber of Health (CCS) / PROMED' to use the full institutional form. Verified against official CCSS pages (appointment) and GlueUp/Promed (Manzi's title)."
+      },
+      "fuente": {
+        "es": "CCSS, Cámara Costarricense de la Salud (PROMED)",
+        "en": "CCSS, Costa Rican Chamber of Health (PROMED)"
+      },
+      "fuente_url": "https://www.ccss.sa.cr/noticias/noticia?v=012775226005"
+    },
+    {
+      "fecha": "2026-06-18",
+      "tipo": "recurso",
+      "actualizacion": {
+        "es": "Se enriquece el ítem de Coyuntura sobre el II Foro Nacional de IA en Salud con fuentes adicionales triangulando los datos publicados: Delfino.cr (convocatoria oficial con organizadores CCS + ULACIT + DHIT y declaración de Massimo Manzi) y Promed Costa Rica (sitio oficial del evento con ponentes y agenda). Se agrega al texto la mención del panel oficial 'La Agenda IA en Salud' con participación del Viceministro de Salud Allan Mora y de Elliott Garita (Colegio de Médicos y Cirujanos), el Connectathon HL7 FHIR R5 de resultados de laboratorio desarrollado en paralelo, y los organizadores institucionales del evento. La implicación se refuerza con la dimensión técnica de interoperabilidad clínica.",
+        "en": "Enriched the Current-Affairs item on the Second National Forum on AI in Health with additional sources triangulating the published data: Delfino.cr (official announcement listing organizers CCS + ULACIT + DHIT and a Massimo Manzi statement) and Promed Costa Rica (official event site with speakers and agenda). The text now mentions the official panel 'The AI in Health Agenda' featuring Deputy Minister of Health Allan Mora and Elliott Garita (Medical Association), the HL7 FHIR R5 Laboratory Results Connectathon held in parallel, and the event's institutional organizers. The implication is strengthened with the technical dimension of clinical-data interoperability."
+      },
+      "fuente": {
+        "es": "Delfino.cr, Promed Costa Rica",
+        "en": "Delfino.cr, Promed Costa Rica"
+      },
+      "fuente_url": "https://delfino.cr/2026/06/ii-foro-sobre-inteligencia-artificial-en-salud-impulsara-la-implementacion-responsable-de-la-ia-en-costa-rica"
+    },
+    {
+      "fecha": "2026-06-18",
+      "tipo": "recurso",
+      "actualizacion": {
+        "es": "Se agrega como ítem de Coyuntura el II Foro Nacional sobre IA en Salud (17 de junio de 2026) y el anuncio de la agenda nacional de IA en salud en construcción por el Ministerio de Salud y MICITT. Incluye declaraciones del gerente médico de la CCSS, Marvin Palma (15 áreas piloto de IA en atención primaria, mamografías y riesgo cardiovascular), y del director ejecutivo de la Cámara Costarricense de la Salud, Massimo Manzi (balance regulación-innovación y necesidad de capacitación). Los proyectos CCSS mencionados ya están catalogados (AIDA, LIDIA, REDIMED, depuración de listas).",
+        "en": "Added the Second National Forum on AI in Health (June 17, 2026) and the announcement of a national AI-in-health agenda under construction by the Ministry of Health and MICITT as a Current-Affairs item. Includes statements from CCSS medical manager Marvin Palma (15 primary-care AI pilot areas, mammography and cardiovascular risk) and from the executive director of the Costa Rican Chamber of Health, Massimo Manzi (balance between regulation and innovation, training need). The CCSS projects referenced are already catalogued (AIDA, LIDIA, REDIMED, waiting-list cleanup)."
+      },
+      "fuente": {
+        "es": "Observador.cr",
+        "en": "Observador.cr"
+      },
+      "fuente_url": "https://observador.cr/ccss-impulsa-uso-de-inteligencia-artificial-para-mamografias-listas-de-espera-y-atencion-medica/"
+    },
+    {
+      "fecha": "2026-06-17",
+      "tipo": "proyecto",
+      "actualizacion": {
+        "es": "Se actualiza la fuenteUrl del proyecto cenat-lania (LaNIA — Laboratorio Nacional de IA): de dplnews.com a la fuente primaria oficial MICITT que confirma la presentación del plan piloto de LANIA por parte del CENAT. La fuente institucional pesa más para auditoría que el sitio de noticias secundario; el cambio no afecta los datos sustantivos del proyecto.",
+        "en": "Updated fuenteUrl for project cenat-lania (LaNIA — National AI Laboratory): from dplnews.com to the primary MICITT institutional source confirming CENAT's presentation of the LANIA pilot plan. The institutional source carries more weight for audit purposes than the secondary news outlet; the change does not affect the project's substantive data."
+      },
+      "fuente": {
+        "es": "MICITT",
+        "en": "MICITT"
+      },
+      "fuente_url": "https://www.micitt.go.cr/el-sector-informa/micitt-inicia-formulacion-de-estrategia-de-inteligencia-artificial"
+    },
+    {
+      "fecha": "2026-06-15",
+      "tipo": "recurso",
+      "actualizacion": {
+        "es": "Se agrega Diálogo Regional AI4LAC sobre Gobernanza de IA como recurso/hito. Proceso regional convocado en mayo 2026 por MICITT, ONU Costa Rica y CEPAL; Costa Rica lidera la consolidación de prioridades AI de América Latina y el Caribe rumbo al Diálogo Global de IA en Suiza. Validado contra comunicado oficial MICITT del 29 de mayo de 2026.",
+        "en": "Added AI4LAC Regional Dialogue on AI Governance as a resource/milestone. Regional process convened in May 2026 by MICITT, UN Costa Rica and ECLAC; Costa Rica leads the consolidation of Latin American and Caribbean AI governance priorities ahead of the Global AI Dialogue in Switzerland. Verified against MICITT official press release of May 29, 2026."
+      },
+      "fuente": {
+        "es": "MICITT / ONU Costa Rica / CEPAL",
+        "en": "MICITT / UN Costa Rica / ECLAC"
+      },
+      "fuente_url": "https://www.micitt.go.cr/el-sector-informa/costa-rica-lidera-dialogo-regional-sobre-inteligencia-artificial"
+    },
+    {
+      "fecha": "2026-06-09",
+      "tipo": "recurso",
+      "actualizacion": {
+        "es": "Se corrigen los 2 enlaces de la capa CNTD en Marco País: Decreto 44507-MICITT ahora apunta al texto completo en PGR (SCIJ) y el CNTD vigente apunta a la página oficial del MICITT (node/625, versión 2026).",
+        "en": "Fixed 2 links in the CNTD layer on Marco País: Decree 44507-MICITT now points to the full text at PGR (SCIJ) and the current CNTD points to the official MICITT page (node/625, 2026 version)."
+      },
+      "fuente": {
+        "es": "PGR-SCIJ, MICITT",
+        "en": "PGR-SCIJ, MICITT"
+      },
+      "fuente_url": "https://www.micitt.go.cr/node/625"
+    },
+    {
+      "fecha": "2026-06-05",
+      "tipo": "recurso",
+      "actualizacion": {
+        "es": "Se agrega Índice Latinoamericano de IA (ILIA) 2024 como recurso/benchmark regional. CR ocupó el 4° lugar en infraestructura con 53,09 pts. Nota incluye comparación evolutiva con ILIA 2025 (5° lugar, 53,83 pts) para mostrar que el score absoluto creció aunque el ranking bajó por aceleración de otros países (México).",
+        "en": "Added Latin American AI Index (ILIA) 2024 as regional benchmark resource. CR ranked 4th in infrastructure with 53.09 pts. Note includes evolutionary comparison vs ILIA 2025 (5th, 53.83 pts) to show that absolute score grew even as ranking dropped due to other countries (Mexico) accelerating faster."
+      },
+      "fuente": {
+        "es": "CENIA Chile (Centro Nacional de IA) · UNESCO · CEPAL",
+        "en": "CENIA Chile (National AI Center) · UNESCO · CEPAL"
+      },
+      "fuente_url": "https://indicelatam.cl/wp-content/uploads/2025/01/ILIA_2024_020125_compressed.pdf"
+    },
+    {
+      "fecha": "2026-06-02",
+      "tipo": "proyecto",
+      "actualizacion": {
+        "es": "Se agrega proyecto AgroBoost (caficultura de precisión con IA y sensores) del MICITT en alianza con Municipalidad de Dota, INA y cinco cooperativas cafetaleras. 86 caficultores integrados en Los Santos. Operativo desde 2025, expansión del piloto Project One de Coopedota.",
+        "en": "Added AgroBoost project (precision coffee farming with AI and sensors) by MICITT in partnership with the Municipality of Dota, INA and five coffee cooperatives. 86 growers integrated in Los Santos. Operational since 2025, scale-up of Coopedota's Project One pilot."
+      },
+      "fuente": {
+        "es": "MICITT",
+        "en": "MICITT"
+      },
+      "fuente_url": "https://www.facebook.com/micitcr/videos/en-el-d%C3%ADa-de-las-personas-agricultoras-costarricenses-reconocemos-c%C3%B3mo-la-innova/1275865677966444/",
+      "commit_sha": "20437c0"
+    },
+    {
+      "fecha": "2026-06-02",
+      "tipo": "indicador",
+      "actualizacion": {
+        "es": "Se agrega DisruptIA 2026 como recurso del observatorio: programa de formación en decisión empresarial aumentada con IA, coordinado por MICITT con el INA.",
+        "en": "Added DisruptIA 2026 as an observatory resource: a training program on AI-augmented business decision making, coordinated by MICITT with INA."
+      },
+      "fuente": {
+        "es": "MICITT / INA",
+        "en": "MICITT / INA"
+      },
+      "fuente_url": "https://www.innovar.pro",
+      "commit_sha": "20437c0"
+    },
+    {
+      "fecha": "2026-06-02",
+      "tipo": "indicador",
+      "actualizacion": {
+        "es": "Se agrega AILA (Evaluación del Panorama de la Inteligencia Artificial) como recurso del observatorio. Es la evaluación de readiness del PNUD aplicada por MICITT a 75 instituciones costarricenses; iniciada en marzo 2026. No es un proyecto de aplicación de IA, es un diagnóstico institucional.",
+        "en": "Added AILA (Artificial Intelligence Landscape Assessment) as an observatory resource. It is the UNDP readiness assessment applied by MICITT to 75 Costa Rican institutions; initiated March 2026. Not an AI application project but an institutional diagnostic."
+      },
+      "fuente": {
+        "es": "PNUD Costa Rica",
+        "en": "UNDP Costa Rica"
+      },
+      "fuente_url": "https://www.undp.org/es/costa-rica/comunicados-de-prensa/costa-rica-inicia-evaluacion-nacional-en-inteligencia-artificial-para-impulsar-su-transformacion-digital-0",
+      "commit_sha": "8a4f6b0"
+    },
+    {
+      "fecha": "2026-05-27",
+      "tipo": "proyecto",
+      "actualizacion": {
+        "es": "CCSS AIDA: enriquecimiento operativo. Se documentan las 15 áreas de salud piloto por nombre (Tibás-Uruca-Merced, Alajuela Central, Mata Redonda-Hospital, Cartago, Los Chiles, Pital, Cóbano, Garabito, Limón, Talamanca, Pérez Zeledón, Buenos Aires, Coto Brus, Nicoya, Carrillo), 292 nuevas plazas para el despliegue, y la lista específica de medicamentos ampliados en EBAIS (rosuvastatina, montelukast, alendronato de calcio). Se incorporan datos epidemiológicos institucionales: HTA 36,6%, diabetes 14,8%, control insuficiente 4/10 y 6/10. Se corrige nombre del gerente médico a Dr. Alexánder León Sánchez Cabo.",
+        "en": "CCSS AIDA: operational enrichment. Documents the 15 pilot health areas by name (Tibás-Uruca-Merced, Alajuela Central, Mata Redonda-Hospital, Cartago, Los Chiles, Pital, Cóbano, Garabito, Limón, Talamanca, Pérez Zeledón, Buenos Aires, Coto Brus, Nicoya, Carrillo), 292 new positions for the deployment, and the specific list of expanded EBAIS medicines (rosuvastatin, montelukast, calcium alendronate). Adds institutional epidemiological data: hypertension 36.6%, diabetes 14.8%, insufficient control 4/10 and 6/10. Corrects medical manager's name to Dr. Alexánder León Sánchez Cabo."
+      },
+      "fuente": {
+        "es": "El Observador CR",
+        "en": "El Observador CR"
+      },
+      "fuente_url": "https://www.elobservador.cr/"
+    },
+    {
+      "fecha": "2026-05-27",
+      "tipo": "proyecto",
+      "actualizacion": {
+        "es": "CCSS depuración de listas de espera: corrección y enriquecimiento. Nombre completo verificado del gerente médico: Dr. Alexánder León Sánchez Cabo (alias en prensa Alexander Sánchez Cabo), conforme a Acta de Junta Directiva CCSS N.° 9589 del 10 de marzo de 2026. Se documenta la vocería técnica de UTLE en Enué Arrieta Espinoza y la fuente operativa de cifras en el Reporte LEQ marzo 2026. Se registra que Marvin Palma ejerce como gerente médico interino desde el 8 de mayo de 2026.",
+        "en": "CCSS wait-list cleanup: correction and enrichment. Verified full name of the medical manager: Dr. Alexánder León Sánchez Cabo (press alias Alexander Sánchez Cabo), per CCSS Board of Directors Minutes N.° 9589 of March 10, 2026. Documents UTLE technical spokesperson as Enué Arrieta Espinoza and the operational source of figures as the CCSS LEQ March 2026 Report. Records Marvin Palma as interim medical manager since May 8, 2026."
+      },
+      "fuente": {
+        "es": "Acta JD CCSS N.° 9589 · Reporte LEQ marzo 2026",
+        "en": "CCSS Board Minutes N.° 9589 · LEQ March 2026 Report"
+      },
+      "fuente_url": "https://www.ccss.sa.cr/"
+    },
+    {
+      "fecha": "2026-05-22",
+      "tipo": "proyecto",
+      "actualizacion": {
+        "es": "CCSS: nuevo proyecto incorporado al catálogo — monitoreo de abastecimiento con IA operado por la Gerencia de Logística. Cruza datos internos de adquisiciones con indicadores internacionales de riesgo de suministro y publica resultados en un tablero Power BI. Activo desde febrero de 2026.",
+        "en": "CCSS: new project added to the catalog — AI supply monitoring run by the Logistics Management. Cross-references internal procurement data with international supply-risk indicators and surfaces results through a Power BI dashboard. Active since February 2026."
+      },
+      "fuente": {
+        "es": "Infobae · Teletica",
+        "en": "Infobae · Teletica"
+      },
+      "fuente_url": "https://www.infobae.com/costa-rica/2026/05/08/caja-costarricense-de-seguro-social-incorpora-inteligencia-artificial-para-depuracion-de-listas-de-espera/"
+    },
+    {
+      "fecha": "2026-05-22",
+      "tipo": "proyecto",
+      "actualizacion": {
+        "es": "CCSS AIDA: enriquecimiento del registro existente. Se documenta la aprobación de la hoja de ruta por la Junta Directiva de la CCSS, el foco declarado en enfermedades crónicas (diabetes, hipertensión, obesidad) y el componente paralelo no-IA de ampliación de medicamentos disponibles en los EBAIS para esos pacientes.",
+        "en": "CCSS AIDA: enrichment of the existing record. Documents Board of Directors approval of the project roadmap, the stated focus on chronic conditions (diabetes, hypertension, obesity), and the parallel non-AI component expanding medicines available at EBAIS primary-care clinics for those patients."
+      },
+      "fuente": {
+        "es": "Monumental",
+        "en": "Monumental"
+      },
+      "fuente_url": "https://www.monumental.co.cr/2026/02/25/ccss-usara-inteligencia-artificial-y-ampliara-oferta-de-medicamentos-en-ebais/"
+    },
+    {
+      "fecha": "2026-05-22",
+      "tipo": "proyecto",
+      "actualizacion": {
+        "es": "UCR CITIC IA aplicada a software: se documenta nueva publicación académica «Machine Learning-Based Flood Prediction: A Tertiary Study», estudio terciario sobre predicción de inundaciones con machine learning. Extiende la línea hacia gestión de riesgo climático.",
+        "en": "UCR CITIC AI applied to software: documents a new academic publication, \"Machine Learning-Based Flood Prediction: A Tertiary Study\" — a tertiary study on flood prediction with machine learning. Extends the line toward climate-risk management."
+      },
+      "fuente": {
+        "es": "CITIC-UCR",
+        "en": "CITIC-UCR"
+      },
+      "fuente_url": "https://citic.ucr.ac.cr/publicaciones/machine-learning-based-flood-prediction-tertiary-study"
+    },
+    {
+      "fecha": "2026-05-19",
+      "tipo": "indicador",
+      "actualizacion": {
+        "es": "Uruguay: añade Decreto 276/025 (sandboxes regulatorios para IA y espacios de datos, diciembre 2025) como fuente oficial primaria en la fila de comparativa regional. Hito ampliado: ahora cubre ENIA 2024-2030, sandboxes 2025 y formación Parlamento+Ceibal abr 2026.",
+        "en": "Uruguay: adds Decree 276/025 (regulatory sandboxes for AI and data spaces, December 2025) as the primary official source in the regional comparison row. Milestone expanded to cover ENIA 2024-2030, 2025 sandboxes, and the Apr 2026 Parliament+Ceibal training cycle."
+      },
+      "fuente": {
+        "es": "IMPO (Diario Oficial de Uruguay) — Decreto 276/025",
+        "en": "IMPO (Uruguay's Official Gazette) — Decree 276/025"
+      },
+      "fuente_url": "https://www.impo.com.uy/bases/decretos/276-2025",
+      "commit_sha": "efbf887"
+    },
+    {
+      "fecha": "2026-05-16",
+      "tipo": "legislacion",
+      "actualizacion": {
+        "es": "Costa Rica: nueva nota de coyuntura sobre la convocatoria del Ejecutivo (Fernández, mayo 2026) — 62 proyectos llamados a sesiones extraordinarias, ninguno de los tres expedientes IA activos (23.771, 23.919, 24.484) incluido.",
+        "en": "Costa Rica: new current-affairs note on the executive call (Fernández, May 2026) — 62 bills called for extraordinary sessions, none of the three active AI bills (23.771, 23.919, 24.484) included."
+      },
+      "fuente": {
+        "es": "La Nación CR · Infobae CR",
+        "en": "La Nación CR · Infobae CR"
+      },
+      "fuente_url": "https://www.nacion.com/politica/laura-fernandez-fija-la-agenda-del-congreso-estos/W42PUA56JNEZFEM4LNFYGW7OLA/story/",
+      "commit_sha": "7ee6671"
+    },
+    {
+      "fecha": "2026-05-16",
+      "tipo": "indicador",
+      "actualizacion": {
+        "es": "Uruguay: hito ampliado con el ciclo de formación en IA del Parlamento + Plan Ceibal (abril 2026), dirigido a legisladores y funcionarios.",
+        "en": "Uruguay: milestone expanded to include the Parliament + Ceibal AI training cycle (April 2026), targeting legislators and public officials."
+      },
+      "fuente": {
+        "es": "Sociedad Uruguaya",
+        "en": "Sociedad Uruguaya"
+      },
+      "fuente_url": "https://www.sociedaduruguaya.org/2026/04/parlamento-y-ceibal-lanzan-ciclo-de-formacion-en-inteligencia-artificial-para-legisladores-y-funcionarios.html",
+      "commit_sha": "2e41dd0"
+    },
+    {
+      "fecha": "2026-05-12",
+      "tipo": "legislacion",
+      "actualizacion": {
+        "es": "Costa Rica: dos nuevos expedientes legislativos incorporados al catálogo — 24.875 y 25.171. Atribución de fuente oficial agregada a todos los expedientes existentes.",
+        "en": "Costa Rica: two new legislative bills added to the catalog — 24.875 and 25.171. Official source attribution added to all existing bills."
+      },
+      "fuente": {
+        "es": "Asamblea Legislativa de Costa Rica",
+        "en": "Costa Rica Legislative Assembly"
+      },
+      "fuente_url": "https://www.asamblea.go.cr/",
+      "commit_sha": "dae3d30"
+    },
+    {
+      "fecha": "2026-05-10",
+      "tipo": "proyecto",
+      "actualizacion": {
+        "es": "Catálogo de proyectos: agrega CONECTA — sistema de interoperabilidad nacional basado en X-Road (estonio). Plataforma para intercambio de datos entre instituciones públicas costarricenses.",
+        "en": "Project catalog: adds CONECTA — national interoperability system based on X-Road (Estonian model). Platform for data exchange between Costa Rican public institutions."
+      },
+      "fuente": {
+        "es": "MICITT · Gobierno Digital",
+        "en": "MICITT · Digital Government"
+      },
+      "fuente_url": "https://www.micitt.go.cr/",
+      "commit_sha": "defb47a"
+    },
+    {
+      "fecha": "2026-05-08",
+      "tipo": "proyecto",
+      "actualizacion": {
+        "es": "CCSS: nuevo proyecto incorporado — depuración de listas de espera con asistencia algorítmica. Adicionalmente, ampliación del stack de detección de anomalías de Hacienda con cifras 2026.",
+        "en": "CCSS (Costa Rican Social Security): new project added — waiting-list cleanup with algorithmic assistance. Additionally, expansion of Hacienda's anomaly-detection stack with 2026 figures."
+      },
+      "fuente": {
+        "es": "CCSS · Ministerio de Hacienda",
+        "en": "CCSS · Ministry of Finance"
+      },
+      "fuente_url": "https://www.ccss.sa.cr/",
+      "commit_sha": "8b3a312"
+    },
+    {
+      "fecha": "2026-05-06",
+      "tipo": "proyecto",
+      "actualizacion": {
+        "es": "Catálogo de proyectos: LINC actualizado con cifras 2026; agrega REDIMED como nuevo proyecto de la CCSS para registro digital interoperable.",
+        "en": "Project catalog: LINC updated with 2026 figures; adds REDIMED as a new CCSS project for interoperable digital records."
+      },
+      "fuente": {
+        "es": "CCSS · Semanario Universidad",
+        "en": "CCSS · Semanario Universidad"
+      },
+      "fuente_url": "https://semanariouniversidad.com/",
+      "commit_sha": "7790b6a"
+    },
+    {
+      "fecha": "2026-05-04",
+      "tipo": "indicador",
+      "actualizacion": {
+        "es": "Corrección de datos: ILIA 2025 actualizado, ajuste X-Road, conteos de instituciones revisados, datos Hacienda alineados, timeline depurado.",
+        "en": "Data corrections: ILIA 2025 updated, X-Road adjusted, institution counts revised, Hacienda data aligned, timeline cleanup."
+      },
+      "fuente": {
+        "es": "CEPAL · Índice ILIA",
+        "en": "ECLAC · ILIA Index"
+      },
+      "fuente_url": "https://www.indicelatam.cl/",
+      "commit_sha": "a564cd9"
+    },
+    {
+      "fecha": "2026-05-02",
+      "tipo": "proyecto",
+      "actualizacion": {
+        "es": "Enriquecimiento del catálogo: 9 proyectos con descripciones ampliadas y URLs oficiales de fuente agregadas a los expedientes legislativos.",
+        "en": "Catalog enrichment: 9 projects with expanded descriptions and official source URLs added to legislative bills."
+      },
+      "fuente": {
+        "es": "MICITT · Asamblea Legislativa",
+        "en": "MICITT · Legislative Assembly"
+      },
+      "fuente_url": "https://micitt.go.cr/",
+      "commit_sha": "8d3ed7f"
+    }
+  ]
+}

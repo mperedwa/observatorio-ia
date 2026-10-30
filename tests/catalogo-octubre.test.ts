@@ -25,8 +25,11 @@ describe('corte editorial del 1 de octubre de 2026', () => {
     expect(accion.estadoEjecucion).toBe('no-verificado');
     expect(accion.cruceCatalogo.estado).toBe('enia-solamente');
     expect(accion.cruceCatalogo.proyectoIds).toEqual([]);
-    expect(accion.evidenciasExternas).toHaveLength(2);
-    expect(accion.cruceCatalogo.fundamento.es).toContain('no acredita');
+    expect(accion.evidenciasExternas).toEqual(expect.arrayContaining([
+      expect.objectContaining({ id: 'cartago-munibot-declaracion-2026' }),
+      expect.objectContaining({ id: 'la-union-rodu-declaracion-2026' }),
+    ]));
+    expect(accion.cruceCatalogo.fundamento.es).toContain('no verificada');
   });
 
   it('presenta cada tipo institucional en ambos idiomas y no duplica IDs', () => {

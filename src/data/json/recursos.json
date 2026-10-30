@@ -1,5 +1,35 @@
 [
   {
+    "id": "ucr-censo-tic-municipal-2026",
+    "titulo": {
+      "es": "Censo TIC 2026: uso de IA en gobiernos locales participantes",
+      "en": "2026 ICT Census: AI use in participating local governments"
+    },
+    "fuente": "UCR / Centro de Investigación Observatorio del Desarrollo",
+    "url": "https://www.ucr.ac.cr/noticias/2026/10/15/voz-experta-las-municipalidades-en-la-era-de-la-inteligencia-artificial-ia.html",
+    "tipo": { "es": "Estadística municipal", "en": "Municipal statistics" },
+    "tipoFuente": "academica",
+    "nota": {
+      "es": "Voz experta comunica resultados de 43 participantes: 41 municipalidades y 2 concejos municipales de distrito. Un 88,4 % reporta funcionarios que usan IA; 4 realizaron capacitación y 15 la desarrollan; 67,4 % no tiene lineamientos ni los elabora y 1 reporta tenerlos. Es autorreporte, no una estimación nacional ni cumplimiento del IFAM. No se recuperó la metodología completa.",
+      "en": "An expert article reports results from 43 participants: 41 municipalities and 2 district municipal councils. Some 88.4% report staff using AI; 4 completed training and 15 are developing it; 67.4% lack guidelines and are not developing them, while 1 reports having them. These are self-reports, not a national estimate or IFAM fulfillment. The full methodology was not recovered."
+    }
+  },
+  {
+    "id": "decreto-45961-msp",
+    "titulo": {
+      "es": "Decreto 45961-MSP: videoprotección, IA y reconocimiento biométrico",
+      "en": "Decree 45961-MSP: video protection, AI and biometric recognition"
+    },
+    "fuente": "Imprenta Nacional, Alcance 138 a La Gaceta 194, 14/10/2026",
+    "url": "https://www.imprentanacional.go.cr/pub/2026/10/14/ALCA138_14_10_2026.pdf",
+    "tipo": { "es": "Regulación sectorial", "en": "Sectoral regulation" },
+    "tipoFuente": "primaria-oficial",
+    "nota": {
+      "es": "Texto oficial, páginas 101–113. El artículo 25 contempla análisis con IA y exige valoración humana para decisiones que afecten derechos; el 26 condiciona el reconocimiento biométrico y restringe el tratamiento indiscriminado, salvo habilitación legal expresa y garantías. Los transitorios fijan un mes para manuales y un año para protocolos desde publicación. No acredita despliegue ni cumplimiento de esos plazos.",
+      "en": "Official text, pages 101–113. Article 25 provides for AI analysis and requires human assessment for decisions affecting rights; Article 26 conditions biometric recognition and restricts indiscriminate processing unless expressly authorized by law with safeguards. Transitional provisions set one month for manuals and one year for protocols from publication. Deployment and compliance with those deadlines are not established."
+    }
+  },
+  {
     "id": "decreto-44507-micitt",
     "titulo": {
       "es": "Decreto 44507-MICITT, Código Nacional de Tecnologías Digitales",
