@@ -58,6 +58,7 @@ jobs:
         run: npm run classify-vs-repo
 
       - name: Notify Telegram (clasificación vs repo)
+        if: ${{ vars.OBSERVATORIO_TELEGRAM_ENABLED == 'true' }}
         # Mensaje único de la corrida: 0 nuevos → corto "cobertura al día";
         # ≥1 nuevo → lista numerada para priorizar investigación. Skip sin secrets.
         env:

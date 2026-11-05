@@ -36,8 +36,9 @@ jobs:
 
       - name: Run OCDE watcher
         env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          # Desactivado por Mario el 05/11/2026; el monitor sigue generando su estado.
+          TELEGRAM_BOT_TOKEN: ${{ vars.OBSERVATORIO_TELEGRAM_ENABLED == 'true' && secrets.TELEGRAM_BOT_TOKEN || '' }}
+          TELEGRAM_CHAT_ID: ${{ vars.OBSERVATORIO_TELEGRAM_ENABLED == 'true' && secrets.TELEGRAM_CHAT_ID || '' }}
         run: npm run watch:oecd
 
       - name: Commit state if changed
