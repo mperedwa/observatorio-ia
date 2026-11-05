@@ -41,6 +41,11 @@ function resolvedInventory(resultado: 'sin-cambios' | 'cambio-detectado' | 'camb
 }
 
 describe('cierre seguro de agenda editorial', () => {
+  it('no cierra un issue por una revisión parcial aunque otra acción haya movido su fecha', () => {
+    const inventory = resolvedInventory('sin-cambios');
+    inventory.revisiones[0].alcanceRevision = 'parcial';
+    expect(isMonitoringIssueResolved(inventory, issue)).toBe(false);
+  });
   it('reconoce markers v2 y legacy', () => {
     expect(parseMonitoringMarkers(issue.body)).toEqual([
       { frenteId: 'legislacion-ia', fechaRevision: '2026-08-28' },

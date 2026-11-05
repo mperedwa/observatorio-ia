@@ -1,5 +1,45 @@
 [
   {
+    "fecha": "2026-11-05",
+    "tipo": "indicador",
+    "actualizacion": {
+      "es": "ILIA pasa a la edición 2026: Costa Rica ocupa el quinto puesto de 20 países, con 56,0 puntos; Chile obtiene 71,4. Los valores proceden de la gráfica oficial de CENIA y CEPAL, con un decimal. Se conserva 2025 como archivo y no se calcula una mejora temporal por los cambios metodológicos. El informe completo de CEPAL no pudo recuperarse.",
+      "en": "ILIA moves to the 2026 edition: Costa Rica ranks fifth of 20 countries with 56.0 points; Chile scores 71.4. Values come from CENIA and ECLAC's official chart, with one decimal. The 2025 edition is preserved as an archive; no time improvement is calculated because of methodological changes. The full ECLAC report could not be retrieved."
+    },
+    "fuente": { "es": "CENIA y CEPAL", "en": "CENIA and ECLAC" },
+    "fuente_url": "https://indicelatam.cl/wp-content/uploads/2026/10/ilx-svg/ranking-ilia-2026.svg"
+  },
+  {
+    "fecha": "2026-11-05",
+    "tipo": "proyecto",
+    "actualizacion": {
+      "es": "ChatbotPJ pasa de seguimiento a adopción verificada: la declaración oficial identifica procesamiento de lenguaje natural y entrenamiento con preguntas frecuentes. Se comprobó acceso a su interfaz, sin evaluar respuestas ni precisión. Se conserva el inicio histórico y las métricas de 2019 como tales. No es una nueva iniciativa: el catálogo mantiene 42 registros, con 11 verificados, 15 en seguimiento y 16 de ecosistema, en 19 instituciones.",
+      "en": "ChatbotPJ moves from under review to verified adoption: the official statement identifies natural language processing and training on FAQs. Access to its interface was checked without evaluating responses or accuracy. The historical start and 2019 metrics are preserved as such. This is not a new initiative: the catalog retains 42 records, with 11 verified, 15 under review and 16 ecosystem initiatives across 19 institutions."
+    },
+    "fuente": { "es": "Poder Judicial, declaración de uso de IA", "en": "Judicial Branch, AI use statement" },
+    "fuente_url": "https://transparencia.poder-judicial.go.cr/index.php/declaracion-de-uso-de-inteligencia-artificial"
+  },
+  {
+    "fecha": "2026-11-05",
+    "tipo": "proyecto",
+    "actualizacion": {
+      "es": "La ficha Vincent del INVU incorpora el contrato notificado del 15 de octubre de 2026, confirmado directamente en SICOP: VLEX NETWORKS, S.L., USD 6.360 y 12 meses. Conserva seguimiento y fase planificada porque la notificación no demuestra activación de licencias, recepción conforme ni uso institucional.",
+      "en": "INVU's Vincent record incorporates the contract notified on October 15, 2026, confirmed directly in SICOP: VLEX NETWORKS, S.L., USD 6,360 and 12 months. It remains under review and planned because notification does not establish license activation, acceptance or institutional use."
+    },
+    "fuente": { "es": "INVU / SICOP", "en": "INVU / SICOP" },
+    "fuente_url": "https://www.sicop.go.cr/moduloPcont/pcont/ctract/es/CE_CEJ_ESQ002.jsp?cartelNo=20260902382&cartelSeq=00"
+  },
+  {
+    "fecha": "2026-11-05",
+    "tipo": "recurso",
+    "actualizacion": {
+      "es": "Se registra el control del catálogo en seguimiento e ILIA y se documentan controles parciales de legislación y ENIA. Los controles parciales no renuevan las fechas vencidas ni cierran issues. La señal secundaria del expediente 25.171 requiere acto oficial; no modifica su estado. El Plan conserva la huella de su versión de agosto de 2025 y no acredita ejecución de todas las intervenciones.",
+      "en": "Reviews of the follow-up catalog and ILIA are recorded, alongside partial checks of legislation and ENIA. Partial checks do not renew overdue dates or close issues. The secondary signal for bill 25.171 requires an official act and does not change its status. The Plan retains its August 2025 fingerprint and does not establish implementation of all interventions."
+    },
+    "fuente": { "es": "Bitácora editorial y Plan de Acción ENIA", "en": "Editorial log and ENIA Action Plan" },
+    "fuente_url": "https://www.micitt.go.cr/gobierno_digital/inteligencia_artificial"
+  },
+  {
     "fecha": "2026-10-29",
     "tipo": "proyecto",
     "actualizacion": {

@@ -169,7 +169,7 @@ export default async function HistorialPage({
                 {frentesMonitoreo.map((frente) => {
                   const estado = calcularEstadoAgenda(frente);
                   const cadencia = cadenciasMonitoreo.get(frente.cadenciaId);
-                  const notaValidacion = revisionesMonitoreo.find((revision) => revision.frenteId === frente.id && revision.fecha === frente.fechaUltimaRevision)?.notaValidacion;
+                  const notaValidacion = revisionesMonitoreo.find((revision) => revision.frenteId === frente.id)?.notaValidacion;
                   return (
                     <tr key={frente.id}>
                       <td className="max-w-[330px] px-4 py-4 align-top">
@@ -225,7 +225,7 @@ export default async function HistorialPage({
             {frentesMonitoreo.map((frente, index) => {
               const estado = calcularEstadoAgenda(frente);
               const cadencia = cadenciasMonitoreo.get(frente.cadenciaId);
-              const notaValidacion = revisionesMonitoreo.find((revision) => revision.frenteId === frente.id && revision.fecha === frente.fechaUltimaRevision)?.notaValidacion;
+              const notaValidacion = revisionesMonitoreo.find((revision) => revision.frenteId === frente.id)?.notaValidacion;
               return (
                 <article
                   key={frente.id}

@@ -38,7 +38,7 @@ function CustomTooltip({
   return (
     <div className="max-w-xs border border-editorial-rule bg-white p-3 text-xs shadow-lg">
       <div className="font-semibold text-slate-900 mb-1">
-        {row.pais} <span className="tabular-nums text-institucional-700">{row.ilia.toFixed(2)}</span>
+        {row.pais} <span className="tabular-nums text-institucional-700">{row.ilia.toFixed(1)}</span>
       </div>
       <div className="text-slate-600">
         <span className="text-slate-500">{t.chartIlia.inversionTooltip}: </span>
@@ -116,7 +116,7 @@ export function ChartILIA({ locale, t }: { locale: Locale; t: Dictionary }) {
                 dataKey="ilia"
                 position="right"
                 formatter={(value) =>
-                  typeof value === 'number' ? value.toFixed(2) : String(value ?? '')
+                  typeof value === 'number' ? value.toFixed(1) : String(value ?? '')
                 }
                 style={{ fontSize: 12, fill: '#0f172a', fontWeight: 600 }}
               />

@@ -1,10 +1,28 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-10-29T00:00:00.000Z",
-  "count": 18,
+  "lastUpdate": "2026-11-05T00:00:00.000Z",
+  "count": 19,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "data": [
+    {
+      "id": "ilia-2026",
+      "titulo": {
+        "es": "ILIA 2026: ranking regional oficial",
+        "en": "ILIA 2026: official regional ranking"
+      },
+      "fuente": "CENIA / CEPAL",
+      "url": "https://indicelatam.cl/wp-content/uploads/2026/10/ilx-svg/ranking-ilia-2026.svg",
+      "tipo": {
+        "es": "Índice regional",
+        "en": "Regional index"
+      },
+      "tipoFuente": "multilateral",
+      "nota": {
+        "es": "Gráfica oficial de la cuarta edición, presentada el 20 de octubre de 2026. Costa Rica ocupa el quinto puesto de 20 países con 56,0 puntos. El Observatorio muestra los cinco primeros y conserva 2025 como archivo. La metodología y la cobertura cambiaron: no se deriva una mejora temporal. Consulta: 5 de noviembre de 2026.",
+        "en": "Official chart from the fourth edition, presented on October 20, 2026. Costa Rica ranks fifth of 20 countries with 56.0 points. The Observatory shows the top five and preserves 2025 as an archive. Methodology and coverage changed: no time improvement is inferred. Accessed November 5, 2026."
+      }
+    },
     {
       "id": "ucr-censo-tic-municipal-2026",
       "titulo": {

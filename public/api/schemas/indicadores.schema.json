@@ -37,6 +37,40 @@
     }
   },
   "definitions": {
+    "iliaRanking": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "pais",
+          "ilia",
+          "edicion",
+          "fuenteUrl"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "pais": {
+            "$ref": "#/definitions/bilingual"
+          },
+          "ilia": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "edicion": {
+            "type": "integer",
+            "minimum": 2023
+          },
+          "fuenteUrl": {
+            "type": "string",
+            "format": "uri"
+          },
+          "destacado": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
     "bilingual": {
       "type": "object",
       "required": [
@@ -172,6 +206,7 @@
       "type": "object",
       "required": [
         "ilia2025",
+        "ilia2026",
         "comparativaRegional",
         "kpisHero",
         "dgi2025",
@@ -180,39 +215,11 @@
       ],
       "additionalProperties": false,
       "properties": {
+        "ilia2026": {
+          "$ref": "#/definitions/iliaRanking"
+        },
         "ilia2025": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "required": [
-              "pais",
-              "ilia",
-              "edicion",
-              "fuenteUrl"
-            ],
-            "additionalProperties": false,
-            "properties": {
-              "pais": {
-                "$ref": "#/definitions/bilingual"
-              },
-              "ilia": {
-                "type": "number",
-                "minimum": 0,
-                "maximum": 100
-              },
-              "edicion": {
-                "type": "integer",
-                "minimum": 2023
-              },
-              "fuenteUrl": {
-                "type": "string",
-                "format": "uri"
-              },
-              "destacado": {
-                "type": "boolean"
-              }
-            }
-          }
+          "$ref": "#/definitions/iliaRanking"
         },
         "comparativaRegional": {
           "type": "array",

@@ -656,12 +656,12 @@ export const dictionaries: Record<Locale, Dictionary> = {
       kicker: '03 / Indicadores',
       titulo: 'Indicadores y diagnóstico de IA',
       sub: 'El ILIA compara la región; AILA 2026 evalúa la preparación del país. DGI y OURdata miden gobierno digital y datos abiertos. Son instrumentos distintos y sus escalas no son intercambiables.',
-      cardTitulo: 'ILIA 2025 / 100 puntos',
-      fuente: 'Fuente: CEPAL',
+      cardTitulo: 'ILIA 2026 / 100 puntos',
+      fuente: 'Fuente: CENIA y CEPAL, gráfica oficial del ranking 2026',
       brechaPre: 'La brecha de Costa Rica con Chile (líder regional) es de',
       brechaPuntos: 'puntos',
       brechaPost:
-        'Cerrar la brecha requiere implementación de la ENIA con metas medibles, presupuesto asignado y un marco regulatorio aprobado.',
+        'Se muestran los cinco primeros de 20 países. Los puntajes siguen la gráfica oficial, con un decimal. Los cambios de metodología y cobertura impiden una comparación directa con 2025; este índice no mide cumplimiento de la ENIA.',
       lecturaObservatorioLabel: 'Lectura del Observatorio',
       aila: {
         titulo: 'AILA 2026 / Preparación nacional',
@@ -692,7 +692,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     footer: {
       titulo: 'Observatorio IA Costa Rica',
       tagline: 'Datos públicos. Iniciativa independiente.',
-      ultimaActualizacion: 'Última actualización: octubre 2026',
+      ultimaActualizacion: 'Última actualización: noviembre 2026',
       fuentes: 'Fuentes públicas: instituciones de Costa Rica, organismos multilaterales, academia y prensa.',
       quienMantiene: 'Quién mantiene el observatorio',
       historialMonitoreo: 'Historial y monitoreo editorial',
@@ -911,7 +911,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       assets: {
         kpiHeroTitulo: '{adopcionVerificada} verificadas · {seguimiento} en seguimiento · {ecosistema} de ecosistema',
         timelineTitulo: 'Adopción de IA verificada, 2019-2025',
-        iliaTitulo: 'Costa Rica vs América Latina (ILIA 2025)',
+        iliaTitulo: 'Costa Rica vs América Latina (ILIA 2026)',
         mapaTitulo: '{iniciativasDocumentadas} iniciativas en tres capas de evidencia',
         brechaXroad: 'Brecha 1 — Interoperabilidad nacional',
         brechaGobernanza: 'Brecha 2 — Marco formal de gobernanza',
@@ -924,7 +924,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         ogAnalisis: 'Link preview — Análisis',
         ogBrechas: 'Link preview — Brechas',
         storyTimeline: 'Story — Línea de tiempo',
-        storyBrecha: 'Story — 17 puntos abajo de Chile',
+        storyBrecha: 'Story — Brecha regional ILIA 2026',
       },
       notaUso: 'Atribución sugerida: "Observatorio IA Costa Rica · observatorioia.org". Las imágenes se pueden usar libremente en publicaciones, presentaciones y redes sociales.',
     },
@@ -1008,7 +1008,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     analisis: {
       kicker: 'Análisis',
-      titulo: 'Costa Rica perdió 17 puntos vs Chile en el ILIA 2025',
+      titulo: 'Costa Rica y la brecha regional en el ILIA 2026',
       sub: 'Comparativa regional, brechas de capacidad estructural y estado del marco regulatorio. Datos verificados de fuentes oficiales y reportes multilaterales.',
       articulosTitulo: 'Estado y Algoritmo',
       articulosSub: 'Serie quincenal de análisis sobre IA en el Estado costarricense. Cada número desempaca una pieza del inventario: lo que funciona, lo que está detenido, y las preguntas abiertas.',
@@ -1019,10 +1019,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ailaLectura: 'PNUD y MICITT sitúan a Costa Rica en la etapa «Sistemática». El diagnóstico identifica diferencias entre la gobernanza de IA para el Gobierno y la capacidad para aplicarla, así como retos de confianza y seguridad. Sus recomendaciones son líneas de acción, no prueba de que proyectos o metas de la ENIA ya se hayan ejecutado.',
       ailaFuenteLabel: 'Informe oficial AILA 2026',
       comparativaTitulo: 'Comparativa regional',
-      comparativaSub: 'Posición ILIA, inversión y ente ejecutor en los cinco países latinoamericanos del ranking 2025.',
+      comparativaSub: 'Los cinco primeros de 20 países en ILIA 2026. La inversión y los hitos conservan las fechas de sus propias fuentes; no representan presupuestos de 2026.',
       comparativaCols: {
         pais: 'País',
-        ilia: 'ILIA 2025',
+        ilia: 'ILIA 2026',
         inversion: 'Inversión IA',
         ente: 'Ente ejecutor',
         hito: 'Hito clave',
@@ -1035,7 +1035,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       porQueImporta: 'Por qué importa',
       legislacionTitulo: '{total} expedientes, cero leyes aprobadas',
       legislacionSub:
-        'El inventario reúne {principales} proyectos cuyo objeto principal es la IA y {relacionados} directamente relacionados, presentados entre 2023 y 2026. {dictaminados} ya cuentan con dictamen de comisión y {enComision} permanecen en comisión. Costa Rica sigue sin un marco regulatorio formal de IA.',
+        'El inventario reúne {principales} proyectos cuyo objeto principal es la IA y {relacionados} directamente relacionados, presentados entre 2023 y 2026. {dictaminados} ya cuentan con dictamen de comisión y {enComision} permanecen en comisión. El inventario no registra una ley general de IA aprobada; existen normas sectoriales documentadas en Marco país.',
       metaDescripcion:
         'Análisis de la brecha de Costa Rica frente a líderes regionales y globales en adopción de IA en gobierno.',
       notaCierre:
@@ -1108,7 +1108,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       titulo: 'Marco país de IA en Costa Rica',
       sub: 'Arquitectura de política pública, regulación, lineamientos técnicos y adopción institucional de IA en el Estado costarricense.',
       tesis: 'Costa Rica ya tiene principios, estrategia, lineamientos técnicos y adopción institucional. La brecha pendiente está en convertir ese marco en procedimientos comunes, verificables y aplicables por las instituciones públicas.',
-      ultimaActualizacion: 'Última actualización: octubre 2026',
+      ultimaActualizacion: 'Última actualización: noviembre 2026',
       metaTitle: 'Marco país de inteligencia artificial en Costa Rica',
       metaDescripcion:
         'Arquitectura de política pública, regulación, lineamientos técnicos y adopción institucional de IA en Costa Rica: principios OCDE, ENIA, CNTD, expedientes legislativos, implementación institucional y brechas pendientes.',
@@ -1361,12 +1361,12 @@ export const dictionaries: Record<Locale, Dictionary> = {
       kicker: '03 / Indicators',
       titulo: 'AI indicators and assessment',
       sub: 'ILIA compares the region; AILA 2026 assesses national readiness. DGI and OURdata measure digital government and open data. These are distinct instruments with non-interchangeable scales.',
-      cardTitulo: 'ILIA 2025 / 100 points',
-      fuente: 'Source: CEPAL',
+      cardTitulo: 'ILIA 2026 / 100 points',
+      fuente: 'Source: CENIA and ECLAC, official 2026 ranking chart',
       brechaPre: 'Costa Rica\u2019s gap behind Chile (regional leader) is',
       brechaPuntos: 'points',
       brechaPost:
-        'Closing the gap requires implementing ENIA with measurable targets, allocated budget and an approved regulatory framework.',
+        'The top five of 20 countries are shown. Scores follow the official chart, with one decimal. Changes in methodology and coverage preclude a direct comparison with 2025; this index does not measure ENIA fulfillment.',
       lecturaObservatorioLabel: 'Observatory interpretation',
       aila: {
         titulo: 'AILA 2026 / National readiness',
@@ -1396,7 +1396,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     footer: {
       titulo: 'AI Observatory Costa Rica',
       tagline: 'Public data. Independent initiative.',
-      ultimaActualizacion: 'Last updated: October 2026',
+      ultimaActualizacion: 'Last updated: November 2026',
       fuentes: 'Public sources: Costa Rican institutions, multilateral organizations, academia and the press.',
       quienMantiene: 'Who maintains the observatory',
       historialMonitoreo: 'Editorial history and monitoring',
@@ -1615,7 +1615,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       assets: {
         kpiHeroTitulo: '{adopcionVerificada} verified · {seguimiento} under review · {ecosistema} ecosystem',
         timelineTitulo: 'Verified AI adoption, 2019-2025',
-        iliaTitulo: 'Costa Rica vs Latin America (ILIA 2025)',
+        iliaTitulo: 'Costa Rica vs Latin America (ILIA 2026)',
         mapaTitulo: '{iniciativasDocumentadas} initiatives across three evidence layers',
         brechaXroad: 'Gap 1 — National interoperability',
         brechaGobernanza: 'Gap 2 — Formal governance framework',
@@ -1628,7 +1628,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         ogAnalisis: 'Link preview — Analysis',
         ogBrechas: 'Link preview — Gaps',
         storyTimeline: 'Story — Timeline',
-        storyBrecha: 'Story — 17 points behind Chile',
+        storyBrecha: 'Story — ILIA 2026 regional gap',
       },
       notaUso: 'Suggested attribution: "AI Observatory Costa Rica · observatorioia.org". Images may be freely used in publications, presentations and social media.',
     },
@@ -1712,7 +1712,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     analisis: {
       kicker: 'Analysis',
-      titulo: 'Costa Rica fell 17 points behind Chile in ILIA 2025',
+      titulo: 'Costa Rica and the regional gap in ILIA 2026',
       sub: 'Regional benchmarking, structural capability gaps and state of the regulatory framework. Verified data from official sources and multilateral reports.',
       articulosTitulo: 'State & Algorithm',
       articulosSub: 'Biweekly series of analyses on AI in the Costa Rican state. Each issue unpacks a piece of the inventory: what works, what is stalled, and the open questions.',
@@ -1723,10 +1723,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ailaLectura: 'UNDP and MICITT place Costa Rica at the “Systematic” stage. The assessment identifies a gap between AI governance for government and the capacity to apply it, as well as trust and safety challenges. Its recommendations are action pathways, not evidence that ENIA projects or targets have been implemented.',
       ailaFuenteLabel: 'Official AILA 2026 report',
       comparativaTitulo: 'Regional benchmark',
-      comparativaSub: 'ILIA score, investment and executing body for the five Latin American countries in the 2025 ranking.',
+      comparativaSub: 'The top five of 20 countries in ILIA 2026. Investment and milestones retain the dates of their own sources; they do not represent 2026 budgets.',
       comparativaCols: {
         pais: 'Country',
-        ilia: 'ILIA 2025',
+        ilia: 'ILIA 2026',
         inversion: 'AI investment',
         ente: 'Executing body',
         hito: 'Key milestone',
@@ -1739,7 +1739,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       porQueImporta: 'Why it matters',
       legislacionTitulo: '{total} bills, zero laws passed',
       legislacionSub:
-        'The inventory covers {principales} bills whose primary subject is AI and {relacionados} directly related bills, filed between 2023 and 2026. {dictaminados} have committee reports and {enComision} remain in committee. Costa Rica still has no formal AI regulatory framework.',
+        'The inventory covers {principales} bills whose primary subject is AI and {relacionados} directly related bills, filed between 2023 and 2026. {dictaminados} have committee reports and {enComision} remain in committee. The inventory records no enacted general AI law; sectoral rules are documented in the Country Framework.',
       metaDescripcion:
         'Analysis of Costa Rica\u2019s gap versus regional and global leaders in AI adoption inside government.',
       notaCierre:
@@ -1812,7 +1812,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       titulo: 'Costa Rica AI country framework',
       sub: 'Architecture of public policy, regulation, technical guidelines and institutional adoption of AI within the Costa Rican State.',
       tesis: 'Costa Rica already has principles, strategy, technical guidelines and institutional adoption. The pending gap is turning that framework into shared, verifiable and actionable procedures for public institutions.',
-      ultimaActualizacion: 'Last update: October 2026',
+      ultimaActualizacion: 'Last update: November 2026',
       metaTitle: 'Costa Rica artificial intelligence country framework',
       metaDescripcion:
         'Architecture of public policy, regulation, technical guidelines and institutional AI adoption in Costa Rica: OECD principles, ENIA, CNTD, legislative files, institutional implementation and pending gaps.',

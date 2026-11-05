@@ -126,6 +126,7 @@
         "fecha": { "type": "string", "format": "date" },
         "frenteId": { "$ref": "#/definitions/id" },
         "notaValidacion": { "$ref": "#/definitions/bilingual" },
+        "alcanceRevision": { "type": "string", "enum": ["integral", "parcial"] },
         "resultado": {
           "type": "string",
           "enum": ["cambio-detectado", "cambio-publicado", "sin-cambios"]

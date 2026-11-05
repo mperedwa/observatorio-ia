@@ -206,6 +206,13 @@
         "notaValidacion": {
           "$ref": "#/definitions/bilingual"
         },
+        "alcanceRevision": {
+          "type": "string",
+          "enum": [
+            "integral",
+            "parcial"
+          ]
+        },
         "resultado": {
           "type": "string",
           "enum": [

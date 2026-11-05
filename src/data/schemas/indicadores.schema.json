@@ -2,24 +2,11 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "indicadores.schema.json",
   "type": "object",
-  "required": ["ilia2025", "comparativaRegional", "kpisHero", "dgi2025", "ourdata2025", "aila2026"],
+  "required": ["ilia2025", "ilia2026", "comparativaRegional", "kpisHero", "dgi2025", "ourdata2025", "aila2026"],
   "additionalProperties": false,
   "properties": {
-    "ilia2025": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "required": ["pais", "ilia", "edicion", "fuenteUrl"],
-        "additionalProperties": false,
-        "properties": {
-          "pais": { "$ref": "#/definitions/bilingual" },
-          "ilia": { "type": "number", "minimum": 0, "maximum": 100 },
-          "edicion": { "type": "integer", "minimum": 2023 },
-          "fuenteUrl": { "type": "string", "format": "uri" },
-          "destacado": { "type": "boolean" }
-        }
-      }
-    },
+    "ilia2026": { "$ref": "#/definitions/iliaRanking" },
+    "ilia2025": { "$ref": "#/definitions/iliaRanking" },
     "comparativaRegional": {
       "type": "array",
       "items": {
@@ -87,6 +74,21 @@
     "ourdata2025": { "$ref": "#/definitions/oecdIndex" }
   },
   "definitions": {
+    "iliaRanking": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["pais", "ilia", "edicion", "fuenteUrl"],
+        "additionalProperties": false,
+        "properties": {
+          "pais": { "$ref": "#/definitions/bilingual" },
+          "ilia": { "type": "number", "minimum": 0, "maximum": 100 },
+          "edicion": { "type": "integer", "minimum": 2023 },
+          "fuenteUrl": { "type": "string", "format": "uri" },
+          "destacado": { "type": "boolean" }
+        }
+      }
+    },
     "bilingual": {
       "type": "object",
       "required": ["es", "en"],

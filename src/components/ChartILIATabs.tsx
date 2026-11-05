@@ -53,7 +53,7 @@ function TableView({ t, locale }: { t: Dictionary; locale: Locale }) {
                 <td className={`py-3 pr-4 ${r.destacado ? 'font-semibold text-institucional-900' : 'text-slate-900'}`}>
                   {r.pais}
                 </td>
-                <td className="py-3 pr-4 tabular-nums font-semibold text-slate-900">{r.ilia.toFixed(2)}</td>
+                <td className="py-3 pr-4 tabular-nums font-semibold text-slate-900">{r.ilia.toFixed(1)}</td>
                 <td className="py-3 min-w-[120px]">
                   <div className="h-1.5 overflow-hidden bg-slate-100">
                     <div
@@ -99,7 +99,7 @@ function RankingView({ locale }: { locale: Locale }) {
               {r.pais}
             </span>
             <span className="tabular-nums text-base sm:text-lg font-semibold text-slate-900">
-              {r.ilia.toFixed(2)}
+              {r.ilia.toFixed(1)}
             </span>
           </li>
         );

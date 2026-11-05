@@ -203,7 +203,7 @@ export default async function AnalisisPage({
                     {p.pais[lc]}
                   </td>
                   <td className="px-4 py-4 text-right tabular-nums font-semibold text-institucional-900">
-                    {p.ilia.toFixed(2)}
+                    {p.ilia.toFixed(1)}
                   </td>
                   <td className="px-4 py-4 text-slate-700">{p.inversion[lc]}</td>
                   <td className="px-4 py-4 text-slate-700">{p.enteEjecutor[lc]}</td>
@@ -247,7 +247,7 @@ export default async function AnalisisPage({
                     {p.pais[lc]}
                   </h3>
                   <span className="font-editorial text-2xl font-semibold tabular-nums text-institucional-800">
-                    {p.ilia.toFixed(2)}
+                    {p.ilia.toFixed(1)}
                   </span>
                 </div>
                 <dl className="mt-4 space-y-3 text-sm">

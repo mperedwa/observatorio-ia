@@ -72,6 +72,8 @@ export interface TransicionRevision {
 }
 
 export interface RevisionMonitoreo {
+  /** Una revisión parcial se registra, pero no renueva las fechas del frente. */
+  alcanceRevision?: 'integral' | 'parcial';
   notaValidacion?: Bilingual;
   id: string;
   fecha: string;

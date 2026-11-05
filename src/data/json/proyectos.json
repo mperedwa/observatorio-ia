@@ -779,44 +779,49 @@
     "estado": "operativo",
     "desde": "2018",
     "descripcion": {
-      "es": "Asistente virtual del Poder Judicial para responder preguntas frecuentes sobre trámites y servicios. Su operación y volumen de uso están documentados, pero las fuentes públicas no identifican la técnica utilizada.",
-      "en": "Judicial Branch virtual assistant for frequently asked questions about procedures and services. Its operation and usage volume are documented, but public sources do not identify the technique used."
+      "es": "Asistente ciudadano del Poder Judicial. La declaración institucional identifica procesamiento de lenguaje natural para reconocer intenciones y modelos entrenados con preguntas frecuentes de las oficinas. Su operación está documentada desde 2018.",
+      "en": "Judicial Branch citizen assistant. The institutional statement identifies natural language processing for intent recognition and models trained on office FAQs. Its operation has been documented since 2018."
     },
     "resultado": {
       "es": "La rendición de cuentas de 2019 reportó más de 5,000 consultas mensuales y un ahorro de USD 13,000.",
       "en": "The 2019 accountability report stated more than 5,000 monthly queries and USD 13,000 in savings."
     },
     "contexto": {
-      "es": "Permanece en seguimiento hasta que una fuente pública permita confirmar su técnica de IA. No se asume que todo chatbot utiliza aprendizaje automático.",
-      "en": "It remains under review until a public source confirms its AI technique. The catalog does not assume that every chatbot uses machine learning."
+      "es": "La declaración oficial permite confirmar la técnica antes no determinada. El portal institucional enlaza el servicio y su interfaz estuvo accesible en la consulta del 5 de noviembre de 2026; no se evaluaron conversaciones ni precisión. Las métricas de 2019 siguen siendo históricas.",
+      "en": "The official statement confirms the previously undetermined technique. The institutional portal links to the service and its interface was accessible on November 5, 2026; conversations and accuracy were not evaluated. The 2019 metrics remain historical."
     },
-    "fuenteUrl": "https://actualidadjudicial.poder-judicial.go.cr/vol251/discursos/dis3.html",
+    "fuenteUrl": "https://transparencia.poder-judicial.go.cr/index.php/declaracion-de-uso-de-inteligencia-artificial",
     "modeloVersion": 2,
     "tipoIniciativa": "sistema-ia",
-    "estadoCatalogo": "seguimiento",
+    "estadoCatalogo": "verificado",
     "faseImplementacion": "operativo",
-    "estadoIA": "declarada-sin-tecnica",
+    "estadoIA": "confirmada",
     "evaluacion": {
       "existencia": {
         "estado": "confirmado",
         "fuenteIds": [
-          "pj-chatbot-rendicion-2019"
+          "pj-chatbot-rendicion-2019",
+          "pj-chatbot-declaracion-ia"
         ]
       },
       "ejecucion": {
         "estado": "confirmado",
         "fuenteIds": [
-          "pj-chatbot-rendicion-2019"
+          "pj-chatbot-rendicion-2019",
+          "pj-chatbot-declaracion-ia"
         ]
       },
       "tecnicaIA": {
-        "estado": "no-determinado",
-        "fuenteIds": []
+        "estado": "confirmado",
+        "fuenteIds": [
+          "pj-chatbot-declaracion-ia"
+        ]
       },
       "usoOperativo": {
         "estado": "confirmado",
         "fuenteIds": [
-          "pj-chatbot-rendicion-2019"
+          "pj-chatbot-rendicion-2019",
+          "pj-chatbot-declaracion-ia"
         ]
       },
       "resultados": {
@@ -852,12 +857,49 @@
           "en": "Judicial Branch 2019 accountability report"
         },
         "fechaConsulta": "2026-08-19"
+      },
+      {
+        "id": "pj-chatbot-declaracion-ia",
+        "titulo": {
+          "es": "Declaración de uso de IA, sección Chatbot Institucional",
+          "en": "AI use statement, Institutional Chatbot section"
+        },
+        "url": "https://transparencia.poder-judicial.go.cr/index.php/declaracion-de-uso-de-inteligencia-artificial",
+        "publicador": "Poder Judicial de Costa Rica",
+        "tipoFuente": "primaria-oficial",
+        "fechaConsulta": "2026-11-05",
+        "respalda": [
+          "existencia",
+          "ejecucion",
+          "tecnica-ia",
+          "uso-operativo"
+        ],
+        "naturalezaAfirmacion": [
+          "hecho"
+        ]
+      },
+      {
+        "id": "pj-chatbot-acceso-institucional",
+        "titulo": {
+          "es": "Portal institucional, acceso al ChatbotPJ",
+          "en": "Institutional portal, ChatbotPJ access"
+        },
+        "url": "https://pj.poder-judicial.go.cr/",
+        "publicador": "Poder Judicial de Costa Rica",
+        "tipoFuente": "primaria-oficial",
+        "fechaConsulta": "2026-11-05",
+        "respalda": [
+          "existencia"
+        ],
+        "naturalezaAfirmacion": [
+          "hecho"
+        ]
       }
     ],
     "fechaPrimeraEvidencia": "2018",
     "fechaInicioOperacion": "2018",
-    "fechaUltimaVerificacion": "2026-08-19",
-    "fechaProximaRevision": "2026-11-19",
+    "fechaUltimaVerificacion": "2026-11-05",
+    "fechaProximaRevision": "2027-02-05",
     "objetivoDeclarado": {
       "es": "Responder consultas frecuentes sobre trámites y reducir la carga de la central telefónica.",
       "en": "Answer frequently asked questions about procedures and reduce pressure on the call center."
@@ -877,8 +919,8 @@
     ],
     "datosNoDeterminados": [
       {
-        "es": "Las fuentes consultadas no publican la arquitectura, el proveedor ni la técnica utilizada.",
-        "en": "The sources reviewed do not publish the architecture, vendor or technique used."
+        "es": "Modelo, proveedor, arquitectura detallada, controles de datos y métricas actuales de calidad. La declaración no presenta fecha de publicación.",
+        "en": "Model, vendor, detailed architecture, data safeguards and current quality metrics. The statement provides no publication date."
       }
     ]
   },
@@ -4327,8 +4369,8 @@
     "categoria": "judicial",
     "estado": "planificado",
     "descripcion": {
-      "es": "Contratación del servicio de inteligencia artificial Vincent asociado a la plataforma jurídica vLex. El expediente identifica un contrato en trámite de aprobación; no acredita todavía uso operativo.",
-      "en": "Procurement of the Vincent artificial intelligence service associated with the vLex legal platform. The dossier identifies a contract pending approval; it does not yet establish operational use."
+      "es": "Contratación de Vincent para servicios jurídicos del INVU. SICOP registra el contrato notificado el 15 de octubre de 2026; esto no demuestra activación de licencias ni uso operativo.",
+      "en": "Procurement of Vincent for INVU legal services. SICOP records the contract as notified on October 15, 2026; this does not establish license activation or operational use."
     },
     "fuenteUrl": "https://www.sicop.go.cr/moduloPcont/pcont/ctract/es/CE_CEJ_ESQ002.jsp?cartelNo=20260902382&cartelSeq=00",
     "modeloVersion": 2,
@@ -4376,7 +4418,7 @@
         "url": "https://www.sicop.go.cr/moduloPcont/pcont/ctract/es/CE_CEJ_ESQ002.jsp?cartelNo=20260902382&cartelSeq=00",
         "publicador": "INVU / SICOP",
         "tipoFuente": "primaria-oficial",
-        "fechaConsulta": "2026-10-01",
+        "fechaConsulta": "2026-11-05",
         "respalda": [
           "existencia",
           "objetivo-declarado",
@@ -4390,22 +4432,22 @@
     ],
     "desde": "2026",
     "fechaPrimeraEvidencia": "2026-09-17",
-    "fechaUltimaVerificacion": "2026-10-01",
-    "fechaProximaRevision": "2026-10-15",
+    "fechaUltimaVerificacion": "2026-11-05",
+    "fechaProximaRevision": "2026-12-05",
     "datosConocidos": [
       {
         "es": "La solicitud está fechada el 17 de septiembre de 2026; el pliego se publicó el 18 de septiembre. El año de referencia 2026 corresponde a esa evidencia contractual, no al inicio de operación.",
         "en": "The request is dated September 17, 2026; the procurement notice was published on September 18. The reference year 2026 corresponds to that procurement evidence, not the start of operations."
       },
       {
-        "es": "El contrato 0432026002600015-00 identifica a VLEX NETWORKS, S.L., USD 6.360 y un plazo de 12 meses. Al corte figura como aprobación de contrato en trámite, no como gasto ejecutado.",
-        "en": "Contract 0432026002600015-00 identifies VLEX NETWORKS, S.L., USD 6,360 and a 12-month term. At the review date, contract approval is pending; this is not evidence of expenditure."
+        "es": "SICOP registra el contrato 0432026002600015-00 con VLEX NETWORKS, S.L., USD 6.360 y 12 meses, en estado Contrato notificado el 15 de octubre de 2026. No se verificó recepción conforme ni gasto ejecutado.",
+        "en": "SICOP records contract 0432026002600015-00 with VLEX NETWORKS, S.L., USD 6,360 and a 12-month term as Contract notified on October 15, 2026. Acceptance and expenditure were not verified."
       }
     ],
     "preguntasAbiertas": [
       {
-        "es": "¿Se aprobó el contrato y se activaron las licencias? ¿Qué técnica, controles y condiciones de tratamiento de datos se aplican al uso institucional?",
-        "en": "Was the contract approved and were the licenses activated? What technique, safeguards and data-processing terms apply to institutional use?"
+        "es": "¿Se activaron las licencias y existe uso efectivo? ¿Qué técnica, controles y condiciones de tratamiento de datos se aplican al uso institucional?",
+        "en": "Were the licenses activated and is there effective use? What technique, safeguards and data-processing terms apply to institutional use?"
       }
     ],
     "relaciones": [

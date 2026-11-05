@@ -1,24 +1,24 @@
 {
-  "releaseId": "2026-10-29-r17",
-  "date": "2026-10-29",
+  "releaseId": "2026-11-05-r18",
+  "date": "2026-11-05",
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "files": [
     {
-      "url": "/api/downloads/observatorio-ia-2026-10-29-r17.json",
+      "url": "/api/downloads/observatorio-ia-2026-11-05-r18.json",
       "format": "json",
-      "bytes": 815044,
-      "sha256": "312f77c1e570bc6c50d98209a1a249e336d0c87e68f99c6795d8d559a7bf2115",
+      "bytes": 824923,
+      "sha256": "65b577634f307a561c2ff6fedde26d16139a8edf3c58a0e732043cb45851c59e",
       "description": {
         "es": "Bundle completo con las envolturas de todos los datasets de la release.",
         "en": "Complete bundle containing every dataset envelope in the release."
       }
     },
     {
-      "url": "/api/downloads/proyectos-2026-10-29-r17.csv",
+      "url": "/api/downloads/proyectos-2026-11-05-r18.csv",
       "format": "csv",
-      "bytes": 13785,
-      "sha256": "dc09533b8ccbc32a7d2b7d8e4b44af034ac40644c867adad1e60dd6d808f1985",
+      "bytes": 13773,
+      "sha256": "f17159d3196382653ba04e632bc05e6af82689ea0b2a54cfe96c1e60a332ff77",
       "rows": 42,
       "description": {
         "es": "Catálogo de iniciativas aplanado para hojas de cálculo.",
@@ -26,7 +26,7 @@
       }
     },
     {
-      "url": "/api/downloads/legislacion-2026-10-29-r17.csv",
+      "url": "/api/downloads/legislacion-2026-11-05-r18.csv",
       "format": "csv",
       "bytes": 11311,
       "sha256": "ba66f0a2fa0d6418524017a70b068796b5aa68459ecc4f5585347f99a82de8b4",
@@ -37,7 +37,7 @@
       }
     },
     {
-      "url": "/api/downloads/enia-intervenciones-2026-10-29-r17.csv",
+      "url": "/api/downloads/enia-intervenciones-2026-11-05-r18.csv",
       "format": "csv",
       "bytes": 96730,
       "sha256": "299f38c67531128cbf3d6c48476228765b5c44262f223477bde53f1e1f69ab11",

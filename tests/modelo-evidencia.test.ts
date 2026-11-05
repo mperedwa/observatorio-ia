@@ -177,12 +177,12 @@ describe('catálogo real migrado', () => {
     }
   });
 
-  it('fija el corte editorial derivado del 29 de octubre de 2026', () => {
+  it('fija el corte editorial derivado del 5 de noviembre de 2026', () => {
     expect(resumirCatalogo(proyectos)).toEqual({
       iniciativasDocumentadas: 42,
-      adopcionVerificada: 10,
-      verificadasCatalogo: 10,
-      seguimiento: 16,
+      adopcionVerificada: 11,
+      verificadasCatalogo: 11,
+      seguimiento: 15,
       ecosistema: 16,
       descartadas: 0,
       pendientesMigracion: 0,
@@ -194,6 +194,7 @@ describe('catálogo real migrado', () => {
       'pj-clasificacion-cobros',
       'pj-ml-presupuestal',
       'pj-nymiz',
+      'pj-chatbot',
       'ccss-lidia',
       'hacienda-anomaly',
       'inamu-ela',

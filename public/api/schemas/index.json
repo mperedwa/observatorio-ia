@@ -1,7 +1,7 @@
 {
   "version": "0.1.0",
-  "releaseId": "2026-10-29-r17",
-  "lastUpdate": "2026-10-29T00:00:00.000Z",
+  "releaseId": "2026-11-05-r18",
+  "lastUpdate": "2026-11-05T00:00:00.000Z",
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "schemas": [
@@ -40,10 +40,10 @@
       "url": "/api/schemas/indicadores.schema.json",
       "dataSchemaUrl": "/api/schemas/indicadores-data.schema.json",
       "draft": "http://json-schema.org/draft-07/schema#",
-      "bytes": 9100,
-      "sha256": "e51dcea46d76ea87b11913f226bfbe2b1627ace70da05eb9d94e87496b671f77",
-      "dataSchemaBytes": 5557,
-      "dataSchemaSha256": "d021dcad686937607704b571d75192382e141e2677f7adf3e5685e9d33b09ec2"
+      "bytes": 9145,
+      "sha256": "44b0e785e50cbf407e5c3982980ebb77de25cb8ff918ca536a8494afb6f67053",
+      "dataSchemaBytes": 5686,
+      "dataSchemaSha256": "92c08307303582b0ea8b0b7d0495f8bdd8fdd68a9e6b0c9bcb525ac943aec72b"
     },
     {
       "datasetId": "brechas",
@@ -70,10 +70,10 @@
       "url": "/api/schemas/monitoreo.schema.json",
       "dataSchemaUrl": "/api/schemas/monitoreo-data.schema.json",
       "draft": "http://json-schema.org/draft-07/schema#",
-      "bytes": 8445,
-      "sha256": "f019599194b3b3ddf542c945ba07620d529c31837f464fadfcdc3488507823b8",
-      "dataSchemaBytes": 5744,
-      "dataSchemaSha256": "3c1b0dda37e513dc52504b13efcb346bd29df1158eb01efbd9bdfaab3f5b5fc8"
+      "bytes": 8591,
+      "sha256": "ab4939ea2501d9df87c0e47e8e715aa260cd430cea0399b62af43a9b1534c772",
+      "dataSchemaBytes": 5826,
+      "dataSchemaSha256": "6639fdc3560844a4ba61f8a397c4d7b062336e7fd0894753964d68132cd27bd9"
     },
     {
       "datasetId": "marco-pais",

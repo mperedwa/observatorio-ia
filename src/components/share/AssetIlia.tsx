@@ -17,8 +17,8 @@ export function AssetIlia({
   const chile = sorted.find((p) => p.pais.es === 'Chile')?.ilia ?? 0;
   const costaRica = sorted.find((p) => p.destacado)?.ilia ?? 0;
   const gap = new Intl.NumberFormat(locale === 'es' ? 'es-CR' : 'en-US', {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
+    minimumFractionDigits: 1,
+    maximumFractionDigits: 1,
   }).format(chile - costaRica);
 
   return (
@@ -54,7 +54,7 @@ export function AssetIlia({
                     className={isCR ? 'font-bold text-institucional-900 tabular-nums' : 'text-slate-700 tabular-nums'}
                     style={{ fontSize: 28 }}
                   >
-                    {p.ilia.toFixed(2)}
+                    {p.ilia.toFixed(1)}
                   </span>
                 </div>
                 <div className="overflow-hidden bg-slate-100" style={{ height: 10 }}>
@@ -70,11 +70,11 @@ export function AssetIlia({
 
         <p className="mt-8 border-l-4 border-editorial-accent pl-5 text-slate-700" style={{ fontSize: 22, maxWidth: 900, lineHeight: 1.4 }}>
           {locale === 'es'
-            ? `La brecha exacta entre Costa Rica y Chile es de ${gap} puntos en el ILIA 2025.`
-            : `The exact gap between Costa Rica and Chile is ${gap} points in ILIA 2025.`}
+            ? `La brecha entre Costa Rica y Chile es de ${gap} puntos en el ILIA 2026.`
+            : `The gap between Costa Rica and Chile is ${gap} points in ILIA 2026.`}
         </p>
         <p className="mt-3 text-slate-500" style={{ fontSize: 16 }}>
-          {locale === 'es' ? 'Fuente: CEPAL · ILIA 2025' : 'Source: ECLAC · ILIA 2025'}
+          {locale === 'es' ? 'Fuente: CENIA y CEPAL · ILIA 2026' : 'Source: CENIA and ECLAC · ILIA 2026'}
         </p>
       </div>
     </AssetFrame>

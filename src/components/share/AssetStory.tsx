@@ -19,7 +19,7 @@ export function AssetStory({
 }) {
   const chile = comparativaRegional.find((p) => p.pais.es === 'Chile')?.ilia ?? 0;
   const costaRica = comparativaRegional.find((p) => p.destacado)?.ilia ?? 0;
-  const roundedGap = Math.round(chile - costaRica);
+  const roundedGap = (chile - costaRica).toLocaleString(locale === 'es' ? 'es-CR' : 'en-US', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
 
   if (variant === 'brecha') {
     return (
@@ -29,7 +29,7 @@ export function AssetStory({
             className="font-semibold uppercase tracking-widest text-institucional-300"
             style={{ fontSize: 24 }}
           >
-            {locale === 'es' ? 'ILIA 2025' : 'ILIA 2025'}
+            {locale === 'es' ? 'ILIA 2026' : 'ILIA 2026'}
           </p>
           <h1
             aria-label={
@@ -50,8 +50,8 @@ export function AssetStory({
             style={{ fontSize: 28, lineHeight: 1.4, maxWidth: 880 }}
           >
             {locale === 'es'
-              ? 'Costa Rica obtuvo 53.83/100 en el Índice Latinoamericano de IA 2025. Chile lidera con 70.56.'
-              : 'Costa Rica scored 53.83/100 in the 2025 Latin American AI Index. Chile leads with 70.56.'}
+              ? `Costa Rica obtuvo ${costaRica.toFixed(1).replace('.', ',')}/100 en el ILIA 2026. Chile lidera con ${chile.toFixed(1).replace('.', ',')}.`
+              : `Costa Rica scored ${costaRica.toFixed(1)}/100 in ILIA 2026. Chile leads with ${chile.toFixed(1)}.`}
           </p>
         </div>
       </AssetFrame>

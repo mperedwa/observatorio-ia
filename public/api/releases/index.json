@@ -1,8 +1,20 @@
 {
-  "latest": "2026-10-29-r17",
+  "latest": "2026-11-05-r18",
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "releases": [
+    {
+      "id": "2026-11-05-r18",
+      "date": "2026-11-05",
+      "title": {
+        "es": "Corte R18 de ILIA 2026 y actualización de evidencia",
+        "en": "R18 ILIA 2026 and evidence update release"
+      },
+      "manifestUrl": "/api/releases/2026-11-05-r18/release.json",
+      "datasets": 11,
+      "bytes": 7528,
+      "sha256": "aa4217b30ce1f051db6bfc577225d41afdf63cafe1bc99b56fc5a913237621d8"
+    },
     {
       "id": "2026-10-29-r17",
       "date": "2026-10-29",

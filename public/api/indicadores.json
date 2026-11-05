@@ -1,7 +1,7 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-10-29T00:00:00.000Z",
-  "count": 6,
+  "lastUpdate": "2026-11-05T00:00:00.000Z",
+  "count": 7,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "data": {
@@ -53,15 +53,63 @@
         "destacado": true
       }
     ],
+    "ilia2026": [
+      {
+        "pais": {
+          "es": "Chile",
+          "en": "Chile"
+        },
+        "ilia": 71.4,
+        "edicion": 2026,
+        "fuenteUrl": "https://indicelatam.cl/wp-content/uploads/2026/10/ilx-svg/ranking-ilia-2026.svg"
+      },
+      {
+        "pais": {
+          "es": "Brasil",
+          "en": "Brazil"
+        },
+        "ilia": 68.4,
+        "edicion": 2026,
+        "fuenteUrl": "https://indicelatam.cl/wp-content/uploads/2026/10/ilx-svg/ranking-ilia-2026.svg"
+      },
+      {
+        "pais": {
+          "es": "Uruguay",
+          "en": "Uruguay"
+        },
+        "ilia": 67,
+        "edicion": 2026,
+        "fuenteUrl": "https://indicelatam.cl/wp-content/uploads/2026/10/ilx-svg/ranking-ilia-2026.svg"
+      },
+      {
+        "pais": {
+          "es": "Colombia",
+          "en": "Colombia"
+        },
+        "ilia": 56.8,
+        "edicion": 2026,
+        "fuenteUrl": "https://indicelatam.cl/wp-content/uploads/2026/10/ilx-svg/ranking-ilia-2026.svg"
+      },
+      {
+        "pais": {
+          "es": "Costa Rica",
+          "en": "Costa Rica"
+        },
+        "ilia": 56,
+        "edicion": 2026,
+        "fuenteUrl": "https://indicelatam.cl/wp-content/uploads/2026/10/ilx-svg/ranking-ilia-2026.svg",
+        "destacado": true
+      }
+    ],
     "comparativaRegional": [
       {
         "pais": {
           "es": "Chile",
           "en": "Chile"
         },
-        "ilia": 70.56,
-        "iliaEdicion": 2025,
-        "iliaFuenteUrl": "https://indicelatam.cl/wp-content/uploads/2025/10/Documento_ILIA_2025.pdf",
+        "ilia": 71.4,
+        "iliaEdicion": 2026,
+        "iliaFuenteUrl": "https://indicelatam.cl/wp-content/uploads/2026/10/ilx-svg/ranking-ilia-2026.svg",
         "inversion": {
           "es": "USD 32M",
           "en": "USD 32M"
@@ -89,9 +137,9 @@
           "es": "Brasil",
           "en": "Brazil"
         },
-        "ilia": 67.39,
-        "iliaEdicion": 2025,
-        "iliaFuenteUrl": "https://indicelatam.cl/wp-content/uploads/2025/10/Documento_ILIA_2025.pdf",
+        "ilia": 68.4,
+        "iliaEdicion": 2026,
+        "iliaFuenteUrl": "https://indicelatam.cl/wp-content/uploads/2026/10/ilx-svg/ranking-ilia-2026.svg",
         "inversion": {
           "es": "USD 4,000M (PBIA)",
           "en": "USD 4,000M (PBIA)"
@@ -119,9 +167,9 @@
           "es": "Uruguay",
           "en": "Uruguay"
         },
-        "ilia": 62.32,
-        "iliaEdicion": 2025,
-        "iliaFuenteUrl": "https://indicelatam.cl/wp-content/uploads/2025/10/Documento_ILIA_2025.pdf",
+        "ilia": 67,
+        "iliaEdicion": 2026,
+        "iliaFuenteUrl": "https://indicelatam.cl/wp-content/uploads/2026/10/ilx-svg/ranking-ilia-2026.svg",
         "inversion": {
           "es": "Agesic con presupuesto operativo desde 2007",
           "en": "Agesic with operating budget since 2007"
@@ -175,9 +223,9 @@
           "es": "Colombia",
           "en": "Colombia"
         },
-        "ilia": 55.84,
-        "iliaEdicion": 2025,
-        "iliaFuenteUrl": "https://indicelatam.cl/wp-content/uploads/2025/10/Documento_ILIA_2025.pdf",
+        "ilia": 56.8,
+        "iliaEdicion": 2026,
+        "iliaFuenteUrl": "https://indicelatam.cl/wp-content/uploads/2026/10/ilx-svg/ranking-ilia-2026.svg",
         "inversion": {
           "es": "Política Nacional de IA aprobada (CONPES)",
           "en": "National AI Policy approved (CONPES)"
@@ -205,9 +253,9 @@
           "es": "Costa Rica",
           "en": "Costa Rica"
         },
-        "ilia": 53.83,
-        "iliaEdicion": 2025,
-        "iliaFuenteUrl": "https://indicelatam.cl/wp-content/uploads/2025/10/Documento_ILIA_2025.pdf",
+        "ilia": 56,
+        "iliaEdicion": 2026,
+        "iliaFuenteUrl": "https://indicelatam.cl/wp-content/uploads/2026/10/ilx-svg/ranking-ilia-2026.svg",
         "inversion": {
           "es": "Sin presupuesto IA explícito en presupuesto nacional",
           "en": "No explicit AI budget in national budget"
@@ -273,8 +321,8 @@
         },
         "valor": "5°",
         "detalle": {
-          "es": "53.83/100, brecha de -17 vs Chile",
-          "en": "53.83/100, -17 gap vs Chile"
+          "es": "56,0/100, brecha de 15,4 vs Chile",
+          "en": "56.0/100, 15.4 gap vs Chile"
         }
       }
     ],

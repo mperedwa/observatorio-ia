@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-10-01T00:00:00.000Z",
+  "lastUpdate": "2026-11-05T00:00:00.000Z",
   "count": 11,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
@@ -782,6 +782,7 @@
         },
         "camposClave": [
           "ilia2025",
+          "ilia2026",
           "comparativaRegional",
           "aila2026",
           "dgi2025",
@@ -789,8 +790,8 @@
           "kpisHero"
         ],
         "notaInterpretacion": {
-          "es": "ILIA 2025 es una comparación regional de 0 a 100; AILA 2026 es un diagnóstico nacional con pilares de 0 a 5. DGI y OURdata usan escalas de 0 a 1. Estas medidas no son intercambiables ni prueban ejecución de proyectos. Cada bloque declara su fuente.",
-          "en": "ILIA 2025 is a regional comparison on a 0–100 scale; AILA 2026 is a national assessment with pillars scored 0–5. DGI and OURdata use 0–1 scales. These measures are not interchangeable and do not prove project implementation. Each group declares its source."
+          "es": "ILIA 2026 es la edición vigente; ilia2025 se conserva como archivo. Se muestran los cinco primeros de 20 países en escala de 0 a 100, con un decimal de la gráfica oficial. Cambios metodológicos impiden comparar directamente 2025 y 2026. AILA usa pilares de 0 a 5; DGI y OURdata, de 0 a 1. No prueban ejecución de proyectos.",
+          "en": "ILIA 2026 is the current edition; ilia2025 is preserved as an archive. The top five of 20 countries are shown on a 0–100 scale, with one decimal from the official chart. Methodological changes preclude direct comparison of 2025 and 2026. AILA uses 0–5 pillars; DGI and OURdata use 0–1 scales. They do not prove project implementation."
         },
         "publicationMode": "release"
       },
@@ -853,8 +854,13 @@
           "fechaCorte",
           "politica",
           "frentes",
-          "revisiones"
+          "revisiones",
+          "revisiones[].alcanceRevision"
         ],
+        "notaInterpretacion": {
+          "es": "Una revisión con alcanceRevision parcial documenta sus límites, pero no renueva fechas del frente ni cierra su issue. La ausencia histórica de este campo conserva el comportamiento anterior.",
+          "en": "A review with alcanceRevision set to parcial records its limits but does not renew front dates or close its issue. Historical absence of this field retains the previous behavior."
+        },
         "publicationMode": "rolling"
       },
       {

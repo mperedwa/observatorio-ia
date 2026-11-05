@@ -20,16 +20,17 @@ const previousEnia = read<{ data: typeof inventarioEnia }>(
   'public/api/releases/2026-10-05-r16/enia-acciones.json',
 ).data;
 const newIds = ['tec-asistente-auditoria-ia', 'cgr-diara', 'tse-chat-votante-informado'];
+const octoberProjects = read<{ data: Proyecto[] }>('public/api/releases/2026-10-29-r17/proyectos.json').data;
 
 describe('sprint editorial del 29 de octubre de 2026', () => {
   it('añade solo tres fichas y conserva exactamente las 39 anteriores', () => {
     expect(previous).toHaveLength(39);
     for (const old of previous) {
-      expect(proyectos.find(({ id }) => id === old.id), old.id).toEqual(old);
+      expect(octoberProjects.find(({ id }) => id === old.id), old.id).toEqual(old);
     }
-    expect(proyectos.filter(({ id }) => !previous.some((old) => old.id === id))
+    expect(octoberProjects.filter(({ id }) => !previous.some((old) => old.id === id))
       .map(({ id }) => id)).toEqual(newIds);
-    expect(resumirCatalogo(proyectos)).toMatchObject({
+    expect(resumirCatalogo(octoberProjects)).toMatchObject({
       iniciativasDocumentadas: 42,
       adopcionVerificada: 10,
       seguimiento: 16,
@@ -115,7 +116,7 @@ describe('sprint editorial del 29 de octubre de 2026', () => {
     expect(recursos.find(({ id }) => id === norma.recursoIds![0])?.tipoFuente)
       .toBe('primaria-oficial');
     expect(instrumentos).toHaveLength(8);
-    expect(recursos).toHaveLength(18);
+    expect(read<{ data: unknown[] }>('public/api/releases/2026-10-29-r17/recursos.json').data).toHaveLength(18);
     expect(expedientes).toHaveLength(7);
     expect(proyectos.some(({ id }) => /45961|cr-t1308|sbd.*juridic/.test(id))).toBe(false);
     expect(proyectos.filter(({ id }) => id === 'ccss-depuracion-listas')).toHaveLength(1);
@@ -125,8 +126,6 @@ describe('sprint editorial del 29 de octubre de 2026', () => {
     const fechas = {
       'legislacion-ia': ['2026-10-01', '2026-10-08'],
       'enia-plan-accion': ['2026-09-15', '2026-10-15'],
-      'catalogo-seguimiento': ['2026-09-15', '2026-10-15'],
-      'indicador-ilia': ['2026-09-16', '2026-10-16'],
     };
     for (const [id, [last, next]] of Object.entries(fechas)) {
       const frente = frentesMonitoreo.find((item) => item.id === id)!;
@@ -134,7 +133,7 @@ describe('sprint editorial del 29 de octubre de 2026', () => {
       expect(frente.fechaProximaRevision).toBe(next);
       expect(calcularEstadoAgenda(frente, '2026-10-29')).toBe('vencida');
     }
-    for (const [id, count] of [['catalogo-seguimiento', 16], ['catalogo-verificado', 10], ['marco-pais', 8]] as const) {
+    for (const [id, count] of [['catalogo-seguimiento', 15], ['catalogo-verificado', 11], ['marco-pais', 8]] as const) {
       expect(frentesMonitoreo.find((item) => item.id === id)?.alcance.cantidad).toBe(count);
     }
     for (const id of newIds) {

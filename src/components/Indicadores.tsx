@@ -1,4 +1,4 @@
-import { ilia2025, dgi2025, ourdata2025, aila2026 } from '@/data/indicadores';
+import { iliaVigente, dgi2025, ourdata2025, aila2026 } from '@/data/indicadores';
 import { ChartILIATabs } from './ChartILIATabs';
 import { IndicadorOecd } from './IndicadorOecd';
 import { EncabezadoSeccionExpediente } from './ExpedienteEditorial';
@@ -15,9 +15,9 @@ export function Indicadores({
   headingLevel?: 'h1' | 'h2';
 }) {
   const Heading = headingLevel;
-  const chile = ilia2025.find((p) => p.pais.es === 'Chile')?.ilia ?? 0;
-  const cr = ilia2025.find((p) => p.destacado)?.ilia ?? 0;
-  const brecha = (chile - cr).toFixed(2);
+  const chile = iliaVigente.find((p) => p.pais.es === 'Chile')?.ilia ?? 0;
+  const cr = iliaVigente.find((p) => p.destacado)?.ilia ?? 0;
+  const brecha = (chile - cr).toLocaleString(locale === 'es' ? 'es-CR' : 'en-US', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
 
   return (
     <section
@@ -40,7 +40,7 @@ export function Indicadores({
         <section className="border-b border-editorial-rule py-12 sm:py-16">
           <EncabezadoSeccionExpediente index="01" title={t.indicadores.cardTitulo} />
           <p className="mt-3 pl-0 text-xs text-slate-500 sm:pl-[4.5rem]">
-            {t.indicadores.fuente}
+            <a href={iliaVigente[0].fuenteUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">{t.indicadores.fuente}</a>
           </p>
           <div className="mt-8 sm:pl-[4.5rem]">
             <ChartILIATabs locale={locale} t={t} />

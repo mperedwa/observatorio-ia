@@ -61,25 +61,25 @@ const KPI_AUTO_BY_LABEL: Record<string, number | undefined> = {
 };
 
 function resolveIliaPosicion(): { valor: string; detalle: Bilingual } | null {
-  const rows = data.ilia2025 as IndicadorRegional[];
+  const rows = data.ilia2026 as IndicadorRegional[];
   if (!Array.isArray(rows) || rows.length === 0) return null;
   const sorted = [...rows].sort((a, b) => b.ilia - a.ilia);
   const cr = sorted.find((p) => p.destacado);
   if (!cr) return null;
   const pos = sorted.indexOf(cr) + 1;
   const top = sorted[0];
-  const brecha = Math.round(top.ilia - cr.ilia);
+  const brecha = (top.ilia - cr.ilia).toFixed(1);
   const isTopCr = pos === 1;
   return {
     valor: `${pos}°`,
     detalle: isTopCr
       ? {
-          es: `${cr.ilia.toFixed(2)}/100, liderando la región`,
-          en: `${cr.ilia.toFixed(2)}/100, leading the region`,
+          es: `${cr.ilia.toFixed(1).replace('.', ',')}/100, liderando la región`,
+          en: `${cr.ilia.toFixed(1)}/100, leading the region`,
         }
       : {
-          es: `${cr.ilia.toFixed(2)}/100, brecha de -${brecha} vs ${top.pais.es}`,
-          en: `${cr.ilia.toFixed(2)}/100, -${brecha} gap vs ${top.pais.en}`,
+          es: `${cr.ilia.toFixed(1).replace('.', ',')}/100, brecha de ${brecha.replace('.', ',')} vs ${top.pais.es}`,
+          en: `${cr.ilia.toFixed(1)}/100, ${brecha} gap vs ${top.pais.en}`,
         },
   };
 }
@@ -104,6 +104,8 @@ function resolveKpi(k: KpiResumen): KpiResumen {
 }
 
 export const ilia2025: IndicadorRegional[] = data.ilia2025 as IndicadorRegional[];
+export const iliaVigente: IndicadorRegional[] = data.ilia2026 as IndicadorRegional[];
+export const edicionIlia = 2026;
 export const comparativaRegional: ComparativaPais[] = data.comparativaRegional as ComparativaPais[];
 export const kpisHero: KpiResumen[] = (data.kpisHero as KpiResumen[]).map(resolveKpi);
 

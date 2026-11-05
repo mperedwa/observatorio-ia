@@ -50,7 +50,7 @@ describe('Hello Brete y corte limitado del 5 de octubre', () => {
   it('conserva las fichas anteriores y el alcance histórico del corte R16', () => {
     expect(previous.data).toHaveLength(38);
     for (const proyecto of previous.data) {
-      expect(proyectos.find(({ id }) => id === proyecto.id), proyecto.id).toEqual(proyecto);
+      expect(helloRelease.data.find(({ id }) => id === proyecto.id), proyecto.id).toEqual(proyecto);
     }
     expect(helloRelease.data).toHaveLength(39);
     expect(helloRelease.data.some(({ institucionId }) => institucionId === 'cgr')).toBe(false);
@@ -79,7 +79,7 @@ describe('Hello Brete y corte limitado del 5 de octubre', () => {
   });
 
   it('no renueva fechas de frentes que no se revisaron íntegramente', () => {
-    for (const id of ['enia-plan-accion', 'catalogo-seguimiento']) {
+    for (const id of ['enia-plan-accion']) {
       const frente = frentesMonitoreo.find((f) => f.id === id)!;
       expect(frente.fechaUltimaRevision).toBe('2026-09-15');
       expect(frente.fechaProximaRevision).toBe('2026-10-15');

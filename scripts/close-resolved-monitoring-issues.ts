@@ -34,7 +34,9 @@ export function parseMonitoringMarkers(body: string | null): MonitoringMarker[] 
 }
 
 function isFinalReview(revision: RevisionMonitoreo): boolean {
-  return revision.resultado === 'sin-cambios' || revision.resultado === 'cambio-publicado';
+  return revision.alcanceRevision !== 'parcial' && (
+    revision.resultado === 'sin-cambios' || revision.resultado === 'cambio-publicado'
+  );
 }
 
 export function isMonitoringIssueResolved(

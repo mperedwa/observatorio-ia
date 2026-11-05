@@ -1,6 +1,7 @@
 /**
  * Registra una revisión editorial en `monitoreo.json` y mueve la próxima
- * fecha según la cadencia del frente. Por seguridad funciona como dry-run;
+ * fecha según la cadencia del frente solo para revisiones integrales.
+ * Las parciales conservan las fechas pendientes. Funciona como dry-run;
  * solo escribe con `--apply` y nunca modifica proyectos, legislación,
  * indicadores ni el crosswalk ENIA.
  *
@@ -97,11 +98,15 @@ export function prepararRevision(
     throw new Error('issueUrl debe apuntar a un issue de mperedwa/observatorio-ia.');
   }
 
-  frente.fechaUltimaRevision = revision.fecha;
-  frente.fechaProximaRevision = calcularProximaRevision(
-    revision.fecha,
-    frente.cadenciaId,
-  );
+  if (revision.alcanceRevision !== 'parcial') {
+    const mes = Number(revision.fecha.slice(5, 7));
+    const vigilanciaIliaSemanal = frente.id === 'indicador-ilia' && mes >= 9 && mes <= 11;
+    frente.fechaUltimaRevision = revision.fecha;
+    frente.fechaProximaRevision = calcularProximaRevision(
+      revision.fecha,
+      vigilanciaIliaSemanal ? 'semanal' : frente.cadenciaId,
+    );
+  }
   copia.fechaCorte = [copia.fechaCorte, revision.fecha].sort().at(-1)!;
   copia.revisiones.push(revision);
   copia.revisiones.sort((a, b) => b.fecha.localeCompare(a.fecha) || b.id.localeCompare(a.id));

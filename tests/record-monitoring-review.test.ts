@@ -20,11 +20,35 @@ function revision(overrides: Partial<RevisionMonitoreo> = {}): RevisionMonitoreo
 }
 
 describe('registro editorial de monitoreo', () => {
+  it('registra una revisión parcial sin renovar ni ocultar las fechas vencidas', () => {
+    const original = structuredClone(monitoreo);
+    const before = original.frentes.find(({ id }) => id === 'enia-plan-accion')!;
+    const result = prepararRevision(original, revision({
+      id: 'revision-parcial-prueba-2026-11-05', fecha: '2026-11-05', alcanceRevision: 'parcial',
+    }));
+    expect(result.frentes.find(({ id }) => id === before.id)).toEqual(before);
+    expect(result.revisiones.some(({ id }) => id === 'revision-parcial-prueba-2026-11-05')).toBe(true);
+  });
   it('calcula fechas semanales y por mes sin desbordar fin de mes', () => {
     expect(calcularProximaRevision('2026-08-21', 'semanal')).toBe('2026-08-28');
     expect(calcularProximaRevision('2026-01-31', 'mensual')).toBe('2026-02-28');
     expect(calcularProximaRevision('2026-08-21', 'trimestral')).toBe('2026-11-21');
     expect(calcularProximaRevision('2026-08-21', 'semestral')).toBe('2027-02-21');
+  });
+
+  it('aplica la vigilancia semanal de ILIA entre septiembre y noviembre, sin cambiar su cadencia base', () => {
+    for (const [fecha, proxima] of [
+      ['2026-09-05', '2026-09-12'],
+      ['2026-11-05', '2026-11-12'],
+      ['2026-12-05', '2027-01-05'],
+    ]) {
+      const result = prepararRevision(structuredClone(monitoreo), revision({
+        id: 'prueba-cadencia-ilia', frenteId: 'indicador-ilia', fecha,
+      }));
+      const frente = result.frentes.find(({ id }) => id === 'indicador-ilia')!;
+      expect(frente.fechaProximaRevision).toBe(proxima);
+      expect(frente.cadenciaId).toBe('mensual');
+    }
   });
 
   it('añade una revisión y mueve solo el frente correspondiente', () => {

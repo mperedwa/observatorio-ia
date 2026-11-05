@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "fechaCorte": "2026-10-29",
+  "fechaCorte": "2026-11-05",
   "politica": {
     "descripcion": {
       "es": "La agenda de revisión separa la vigilancia automática de la decisión editorial. Una alerta abre una revisión; no cambia por sí sola el catálogo, el estado de un expediente ni la evidencia de ejecución.",
@@ -127,10 +127,10 @@
         "en": "Priority search for evidence on execution, AI technique, operational use, results and governance."
       },
       "cadenciaId": "mensual",
-      "fechaUltimaRevision": "2026-09-15",
-      "fechaProximaRevision": "2026-10-15",
+      "fechaUltimaRevision": "2026-11-05",
+      "fechaProximaRevision": "2026-12-05",
       "alcance": {
-        "cantidad": 16,
+        "cantidad": 15,
         "unidad": {
           "es": "iniciativas",
           "en": "initiatives"
@@ -155,8 +155,8 @@
         "es": "La vigilancia aumenta a semanal entre septiembre y noviembre, cuando suelen publicarse nuevas ediciones.",
         "en": "Monitoring increases to weekly from September through November, when new editions are typically released."
       },
-      "fechaUltimaRevision": "2026-09-16",
-      "fechaProximaRevision": "2026-10-16",
+      "fechaUltimaRevision": "2026-11-05",
+      "fechaProximaRevision": "2026-11-12",
       "alcance": {
         "cantidad": 1,
         "unidad": {
@@ -182,7 +182,7 @@
       "fechaUltimaRevision": "2026-09-08",
       "fechaProximaRevision": "2026-12-08",
       "alcance": {
-        "cantidad": 10,
+        "cantidad": 11,
         "unidad": {
           "es": "adopciones",
           "en": "adoptions"
@@ -264,6 +264,109 @@
     }
   ],
   "revisiones": [
+    {
+      "id": "revision-catalogo-seguimiento-2026-11-05",
+      "fecha": "2026-11-05",
+      "frenteId": "catalogo-seguimiento",
+      "resultado": "cambio-publicado",
+      "alcanceRevision": "integral",
+      "resumen": {
+        "es": "Se consultaron las fuentes de las 16 fichas y se buscaron avances. La declaración oficial del Poder Judicial identifica NLP en ChatbotPJ, que pasa a verificado; no se evaluaron sus respuestas. SICOP confirma contrato notificado de Vincent el 15 de octubre, sin activación acreditada. Las otras 14 conservan clasificación; las fuentes inaccesibles de CCSS e INVU territorial limitan la actualización de su evidencia.",
+        "en": "Sources for the 16 records and progress signals were reviewed. The Judicial Branch statement identifies NLP in ChatbotPJ, which moves to verified; its responses were not evaluated. SICOP confirms Vincent contract notification on October 15, without established activation. The other 14 retain their classification; inaccessible CCSS and INVU territorial sources limit evidence updates."
+      },
+      "notaValidacion": {
+        "es": "16 fichas revisadas · límites de acceso documentados",
+        "en": "16 records reviewed · access limits documented"
+      },
+      "fuenteUrl": "https://transparencia.poder-judicial.go.cr/index.php/declaracion-de-uso-de-inteligencia-artificial",
+      "issueUrl": "https://github.com/mperedwa/observatorio-ia/issues/46",
+      "transiciones": [
+        {
+          "objetoTipo": "proyecto",
+          "objetoId": "pj-chatbot",
+          "campo": "estadoCatalogo",
+          "antes": "seguimiento",
+          "despues": "verificado"
+        },
+        {
+          "objetoTipo": "proyecto",
+          "objetoId": "invu-vincent-ai",
+          "campo": "etapaContractual",
+          "antes": "aprobación en trámite",
+          "despues": "contrato notificado, 2026-10-15"
+        }
+      ]
+    },
+    {
+      "id": "revision-indicador-ilia-2026-11-05",
+      "fecha": "2026-11-05",
+      "frenteId": "indicador-ilia",
+      "resultado": "cambio-publicado",
+      "alcanceRevision": "integral",
+      "resumen": {
+        "es": "El portal de CENIA publica ILIA 2026. La gráfica oficial sitúa a Costa Rica quinta de 20 países, con 56,0 puntos; Chile obtiene 71,4. Se incorpora la edición 2026 y se conserva 2025 como archivo. Los cambios metodológicos impiden una comparación temporal directa. No se recuperó el informe completo de CEPAL; el ranking se contrasta con la gráfica primaria. Próximo control semanal durante noviembre.",
+        "en": "CENIA publishes ILIA 2026. Its official chart places Costa Rica fifth of 20 countries with 56.0 points; Chile scores 71.4. The 2026 edition is added and 2025 is archived. Methodological changes preclude a direct time comparison. The complete ECLAC report was not retrieved; ranking values come from the primary chart. Weekly monitoring continues during November."
+      },
+      "notaValidacion": {
+        "es": "Edición 2026 confirmada · informe completo no recuperado",
+        "en": "2026 edition confirmed · full report not retrieved"
+      },
+      "fuenteUrl": "https://indicelatam.cl/wp-content/uploads/2026/10/ilx-svg/ranking-ilia-2026.svg",
+      "issueUrl": "https://github.com/mperedwa/observatorio-ia/issues/47",
+      "transiciones": [
+        {
+          "objetoTipo": "indicador",
+          "objetoId": "ilia",
+          "campo": "edicionVigente",
+          "antes": "2025",
+          "despues": "2026"
+        }
+      ]
+    },
+    {
+      "id": "revision-legislacion-ia-2026-11-05",
+      "fecha": "2026-11-05",
+      "frenteId": "legislacion-ia",
+      "resultado": "cambio-detectado",
+      "alcanceRevision": "parcial",
+      "resumen": {
+        "es": "Se contrastaron los siete expedientes en Delfino. El 25.171 aparece como Rechazado; una nota secundaria describe rechazo de un informe de subcomisión, que no equivale por sí solo al archivo del proyecto. No se recuperó el acto oficial en Asamblea. Se conservan los estados curados y las fechas vencidas hasta validar las discrepancias, incluidas las ya registradas de 23.919 y 25.379.",
+        "en": "The seven bills were checked against Delfino. Bill 25.171 appears as Rejected; a secondary report describes rejection of a subcommittee report, which does not itself establish that the bill was archived. The official Assembly act was not recovered. Curated statuses and overdue dates remain pending verification of discrepancies, including those already recorded for 23.919 and 25.379."
+      },
+      "notaValidacion": {
+        "es": "Revisión parcial · acto oficial pendiente",
+        "en": "Partial review · official act pending"
+      },
+      "fuenteUrl": "https://delfino.cr/asamblea/proyecto/25171",
+      "issueUrl": "https://github.com/mperedwa/observatorio-ia/issues/45",
+      "transiciones": [
+        {
+          "objetoTipo": "expediente",
+          "objetoId": "25171",
+          "campo": "senalSecundaria",
+          "antes": null,
+          "despues": "Delfino: Rechazado; acto oficial pendiente"
+        }
+      ]
+    },
+    {
+      "id": "revision-enia-plan-accion-2026-11-05",
+      "fecha": "2026-11-05",
+      "frenteId": "enia-plan-accion",
+      "resultado": "sin-cambios",
+      "alcanceRevision": "parcial",
+      "resumen": {
+        "es": "Control documental: el portal de MICITT conserva el Plan del 11 de agosto de 2025 y el PDF mantiene la misma huella SHA-256 registrada. Se preservan 129 registros y 120 intervenciones únicas. Las búsquedas prioritarias no acreditan nueva ejecución de ICE/OIJ o AyA. No se revalidó integralmente la ejecución de las 120 intervenciones; la fecha del frente continúa vencida.",
+        "en": "Document control: MICITT retains the August 11, 2025 Plan, with the same recorded PDF SHA-256 fingerprint. The 129 records and 120 unique interventions are preserved. Priority searches do not establish new implementation by ICE/OIJ or AyA. Implementation of all 120 interventions was not comprehensively revalidated; the front remains overdue."
+      },
+      "notaValidacion": {
+        "es": "Control documental · ejecución pendiente",
+        "en": "Document control · implementation review pending"
+      },
+      "fuenteUrl": "https://www.micitt.go.cr/gobierno_digital/inteligencia_artificial",
+      "issueUrl": "https://github.com/mperedwa/observatorio-ia/issues/46",
+      "transiciones": []
+    },
     {
       "id": "revision-legislacion-ia-2026-10-01",
       "notaValidacion": {
