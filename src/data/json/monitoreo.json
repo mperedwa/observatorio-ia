@@ -265,6 +265,65 @@
   ],
   "revisiones": [
     {
+      "id": "revision-legislacion-ia-2026-11-05-seguimiento",
+      "fecha": "2026-11-05",
+      "frenteId": "legislacion-ia",
+      "resultado": "cambio-publicado",
+      "alcanceRevision": "parcial",
+      "resumen": {
+        "es": "La grabación oficial confirma que la comisión rechazó por el fondo el expediente 25.171 el 21 de octubre, por 0 votos a favor y 5 en contra, y asignó la redacción del dictamen. Quedan por verificar la inscripción del dictamen, el trámite posterior y el estado actual de los demás expedientes en la fuente oficial.",
+        "en": "The official recording confirms that the committee voted 0–5 against docket 25.171 on its merits on October 21 and assigned drafting of the report. Filing of the report, subsequent proceedings and the current status of the other dockets remain to be verified in the official source."
+      },
+      "notaValidacion": {
+        "es": "Votación confirmada · trámite posterior por verificar",
+        "en": "Vote confirmed · later proceedings pending verification"
+      },
+      "fuenteUrl": "https://www.youtube.com/watch?v=ebrB4z7IRX8&t=4708",
+      "issueUrl": "https://github.com/mperedwa/observatorio-ia/issues/45",
+      "transiciones": [
+        {
+          "objetoTipo": "expediente",
+          "objetoId": "25171",
+          "campo": "evidenciaEnComision",
+          "antes": "señal secundaria",
+          "despues": "votación por el fondo verificada en la grabación oficial"
+        }
+      ]
+    },
+    {
+      "id": "revision-enia-plan-accion-2026-11-05-seguimiento",
+      "fecha": "2026-11-05",
+      "frenteId": "enia-plan-accion",
+      "resultado": "cambio-publicado",
+      "alcanceRevision": "parcial",
+      "resumen": {
+        "es": "Se acredita ejecución parcial del diseño del sandbox regulatorio y de la formación interinstitucional en IA. Se documenta además la oferta de formación CECI y un pago de la fase de diseño de SNE/Brete. Quedan pendientes la revisión integral de las intervenciones y la validación de sus resultados e indicadores.",
+        "en": "Partial implementation is documented for regulatory sandbox design and interagency AI training. CECI training offerings and a payment for the SNE/Brete design stage are also documented. A comprehensive review of interventions and verification of their outcomes and indicators remain pending."
+      },
+      "notaValidacion": {
+        "es": "Evidencia en cuatro intervenciones · revisión parcial",
+        "en": "Evidence on four interventions · partial review"
+      },
+      "fuenteUrl": "https://www.sicop.go.cr/moduloPcont/pcont/ctract/es/CE_CEJ_ESQ002.jsp?cartelNo=20250901548&cartelSeq=00",
+      "issueUrl": "https://github.com/mperedwa/observatorio-ia/issues/46",
+      "transiciones": [
+        {
+          "objetoTipo": "intervencion-enia",
+          "objetoId": "enia-1-1-1-01",
+          "campo": "estadoEjecucion",
+          "antes": "no-verificado",
+          "despues": "parcialmente-verificado"
+        },
+        {
+          "objetoTipo": "intervencion-enia",
+          "objetoId": "enia-4-1-2-02",
+          "campo": "estadoEjecucion",
+          "antes": "no-verificado",
+          "despues": "parcialmente-verificado"
+        }
+      ]
+    },
+    {
       "id": "revision-catalogo-seguimiento-2026-11-05",
       "fecha": "2026-11-05",
       "frenteId": "catalogo-seguimiento",

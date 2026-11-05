@@ -21,6 +21,9 @@ const previousEnia = read<{ data: typeof inventarioEnia }>(
 ).data;
 const newIds = ['tec-asistente-auditoria-ia', 'cgr-diara', 'tse-chat-votante-informado'];
 const octoberProjects = read<{ data: Proyecto[] }>('public/api/releases/2026-10-29-r17/proyectos.json').data;
+const octoberEnia = read<{ data: typeof inventarioEnia }>(
+  'public/api/releases/2026-10-29-r17/enia-acciones.json',
+).data.resultados.flatMap((result) => result.intervenciones);
 
 describe('sprint editorial del 29 de octubre de 2026', () => {
   it('añade solo tres fichas y conserva exactamente las 39 anteriores', () => {
@@ -98,7 +101,7 @@ describe('sprint editorial del 29 de octubre de 2026', () => {
     expect(recurso.nota?.es).toContain('no una estimación nacional');
     const oldActions = previousEnia.resultados.flatMap((result) => result.intervenciones);
     for (const old of oldActions) {
-      const current = intervencionesEnia.find(({ id }) => id === old.id)!;
+      const current = octoberEnia.find(({ id }) => id === old.id)!;
       if (old.id !== accion.id) expect(current, old.id).toEqual(old);
       else {
         expect(current.indicadores).toEqual(old.indicadores);

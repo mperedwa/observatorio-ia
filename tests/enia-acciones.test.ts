@@ -110,7 +110,13 @@ describe('inventario del Plan de Acción ENIA', () => {
         intervencion.cruceCatalogo.estado === 'no-es-sistema-ia'
       ) {
         expect(intervencion.cruceCatalogo.proyectoIds).toEqual([]);
+      }
+      if (intervencion.cruceCatalogo.estado === 'enia-solamente') {
         expect(intervencion.estadoEjecucion).toBe('no-verificado');
+      }
+      if (intervencion.cruceCatalogo.estado === 'no-es-sistema-ia' &&
+          ['verificado', 'parcialmente-verificado'].includes(intervencion.estadoEjecucion)) {
+        expect(intervencion.evidenciasExternas?.some(({ respalda }) => respalda.includes('ejecucion'))).toBe(true);
       }
 
       if (intervencion.cruceCatalogo.estado === 'nuevo-con-evidencia') {
@@ -238,6 +244,7 @@ describe('inventario del Plan de Acción ENIA', () => {
       'ina-auditoria-sne-ia-2025',
       'micitt-hello-brete-lanzamiento-2026',
       'mtss-brete-sne-ia-2026',
+      'micitt-poa-2025-sne-entregable',
     ]);
     expect(ina?.notasEditoriales?.es).toContain('etapa I de diseño y planificación');
 

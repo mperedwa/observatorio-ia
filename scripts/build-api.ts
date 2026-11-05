@@ -38,11 +38,11 @@ const COUNTERS_TS = join(ROOT, 'src', 'data', 'counters.ts');
 const PKG = JSON.parse(readFileSync(join(ROOT, 'package.json'), 'utf8')) as { version: string };
 
 const DATA_RELEASE = {
-  id: '2026-11-05-r18',
+  id: '2026-11-05-r19',
   date: '2026-11-05',
   title: {
-    es: 'Corte R18 de ILIA 2026 y actualización de evidencia',
-    en: 'R18 ILIA 2026 and evidence update release',
+    es: 'Corte R19 de evidencia legislativa y ejecución ENIA',
+    en: 'R19 legislative and ENIA implementation evidence release',
   },
 } as const;
 const RELEASE_LOCK_PATH = join(RELEASES_OUT_DIR, DATA_RELEASE.id, 'release.lock');
@@ -170,7 +170,7 @@ const DATASETS: Dataset[] = [
     endpoint: '/api/legislacion.json',
     title: { es: 'Legislación', en: 'Legislation' },
     countUnit: { es: 'expedientes', en: 'bills' },
-    lastUpdate: '2026-08-21',
+    lastUpdate: '2026-11-05',
     description:
       'Expedientes de ley relacionados con IA en la Asamblea Legislativa de Costa Rica. Los monitores proponen señales; el estado publicado requiere revisión editorial de una fuente oficial.',
     descriptionEs:
@@ -210,7 +210,7 @@ const DATASETS: Dataset[] = [
     endpoint: '/api/enia-acciones.json',
     title: { es: 'Plan de Acción ENIA', en: 'ENIA Action Plan' },
     countUnit: { es: 'registros fuente', en: 'source records' },
-    lastUpdate: '2026-10-29',
+    lastUpdate: '2026-11-05',
     description:
       'Inventario y crosswalk del Plan de Acción ENIA: 129 registros del documento oficial, 120 intervenciones únicas, clasificación por tipo, evidencia de ejecución y relaciones con el catálogo.',
     descriptionEs:
@@ -441,7 +441,7 @@ const API_INDEX_COPY = {
     infrastructureText:
       'Los schemas públicos, la release sustantiva y las descargas con checksum permiten repetir un análisis. La bitácora de monitoreo se identifica aparte como rodante.',
     schemasTitle: 'Índice de schemas',
-    releaseTitle: 'Release R18',
+    releaseTitle: 'Release R19',
     downloadsTitle: 'Descargas y CSV',
     downloadFilesLabel: 'Archivos directos de la release',
     bundleTitle: 'Bundle JSON completo',
@@ -532,7 +532,7 @@ const API_INDEX_COPY = {
     infrastructureText:
       'Public schemas, the substantive release and checksum-backed downloads support reproducible analysis. The monitoring log is identified separately as rolling.',
     schemasTitle: 'Schema index',
-    releaseTitle: 'R18 release',
+    releaseTitle: 'R19 release',
     downloadsTitle: 'Downloads and CSV',
     downloadFilesLabel: 'Direct release files',
     bundleTitle: 'Complete JSON bundle',

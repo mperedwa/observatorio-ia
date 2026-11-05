@@ -41,9 +41,9 @@ describe('inventario legislativo auditable', () => {
   it('conserva evidencia oficial y fecha de verificación en cada expediente', () => {
     expect(
       expedientes.every(
-        ({ fuenteEstadoUrl, fechaUltimaVerificacion }) =>
+        ({ numero, fuenteEstadoUrl, fechaUltimaVerificacion }) =>
           /^https:\/\//.test(fuenteEstadoUrl) &&
-          fechaUltimaVerificacion === '2026-08-21',
+          fechaUltimaVerificacion === (numero === '25.171' ? '2026-11-05' : '2026-08-21'),
       ),
     ).toBe(true);
   });

@@ -1,21 +1,21 @@
 {
-  "releaseId": "2026-11-05-r18",
+  "releaseId": "2026-11-05-r19",
   "date": "2026-11-05",
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "files": [
     {
-      "url": "/api/downloads/observatorio-ia-2026-11-05-r18.json",
+      "url": "/api/downloads/observatorio-ia-2026-11-05-r19.json",
       "format": "json",
-      "bytes": 824923,
-      "sha256": "65b577634f307a561c2ff6fedde26d16139a8edf3c58a0e732043cb45851c59e",
+      "bytes": 833353,
+      "sha256": "fc7dc1939298e5c0ea6483d9f012dc770358ef72bbc6ca2999d4547f87dd0d4f",
       "description": {
         "es": "Bundle completo con las envolturas de todos los datasets de la release.",
         "en": "Complete bundle containing every dataset envelope in the release."
       }
     },
     {
-      "url": "/api/downloads/proyectos-2026-11-05-r18.csv",
+      "url": "/api/downloads/proyectos-2026-11-05-r19.csv",
       "format": "csv",
       "bytes": 13773,
       "sha256": "f17159d3196382653ba04e632bc05e6af82689ea0b2a54cfe96c1e60a332ff77",
@@ -26,10 +26,10 @@
       }
     },
     {
-      "url": "/api/downloads/legislacion-2026-11-05-r18.csv",
+      "url": "/api/downloads/legislacion-2026-11-05-r19.csv",
       "format": "csv",
-      "bytes": 11311,
-      "sha256": "ba66f0a2fa0d6418524017a70b068796b5aa68459ecc4f5585347f99a82de8b4",
+      "bytes": 11238,
+      "sha256": "0f7b03690b14e8ae2ddb4a47b4c619da5716d3b2136d974e51198fc735132ead",
       "rows": 7,
       "description": {
         "es": "Expedientes legislativos aplanados con fuente de contenido y estado oficial.",
@@ -37,10 +37,10 @@
       }
     },
     {
-      "url": "/api/downloads/enia-intervenciones-2026-11-05-r18.csv",
+      "url": "/api/downloads/enia-intervenciones-2026-11-05-r19.csv",
       "format": "csv",
-      "bytes": 96730,
-      "sha256": "299f38c67531128cbf3d6c48476228765b5c44262f223477bde53f1e1f69ab11",
+      "bytes": 96750,
+      "sha256": "fd8f2fb36534fd668f395073a84a5471b3c6bf80cefb09470d977e5f9a7ebfc4",
       "rows": 129,
       "description": {
         "es": "Los 129 registros del Plan de Acción ENIA aplanados para análisis tabular.",

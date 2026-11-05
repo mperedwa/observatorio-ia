@@ -1,6 +1,26 @@
 [
   {
     "fecha": "2026-11-05",
+    "tipo": "legislacion",
+    "actualizacion": {
+      "es": "Se incorpora la grabación oficial del 21 de octubre al expediente 25.171. La comisión rechazó el expediente por el fondo y asignó la redacción del dictamen. La inscripción del dictamen y el trámite posterior quedan por verificar en la Asamblea.",
+      "en": "The official October 21 recording is added to docket 25.171. The committee rejected the bill on its merits and assigned drafting of the committee report. Filing of the report and subsequent proceedings remain to be verified with the Assembly."
+    },
+    "fuente": { "es": "Asamblea Legislativa, grabación oficial", "en": "Legislative Assembly, official recording" },
+    "fuente_url": "https://www.youtube.com/watch?v=ebrB4z7IRX8&t=4708"
+  },
+  {
+    "fecha": "2026-11-05",
+    "tipo": "recurso",
+    "actualizacion": {
+      "es": "El cruce ENIA incorpora ejecución parcial del diseño del sandbox regulatorio y de la formación interinstitucional en IA. También documenta oferta de cursos CECI y el pago de un entregable de diseño de SNE/Brete. La agenda registra el alcance parcial de la revisión.",
+      "en": "The ENIA crosswalk records partial implementation of regulatory sandbox design and interagency AI training. It also documents CECI course offerings and payment for one SNE/Brete design deliverable. The schedule records the review's partial scope."
+    },
+    "fuente": { "es": "MICITT, CECI y SICOP", "en": "MICITT, CECI and SICOP" },
+    "fuente_url": "https://www.sicop.go.cr/moduloPcont/pcont/ctract/es/CE_CEJ_ESQ002.jsp?cartelNo=20250901548&cartelSeq=00"
+  },
+  {
+    "fecha": "2026-11-05",
     "tipo": "indicador",
     "actualizacion": {
       "es": "ILIA pasa a la edición 2026: Costa Rica ocupa el quinto puesto de 20 países, con 56,0 puntos; Chile obtiene 71,4. Los valores proceden de la gráfica oficial de CENIA y CEPAL, con un decimal. Se conserva 2025 como archivo y no se calcula una mejora temporal por los cambios metodológicos. El informe completo de CEPAL no pudo recuperarse.",

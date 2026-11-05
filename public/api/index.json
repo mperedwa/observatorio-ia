@@ -1,13 +1,13 @@
 {
   "version": "0.1.0",
   "dataRelease": {
-    "id": "2026-11-05-r18",
+    "id": "2026-11-05-r19",
     "date": "2026-11-05",
     "title": {
-      "es": "Corte R18 de ILIA 2026 y actualización de evidencia",
-      "en": "R18 ILIA 2026 and evidence update release"
+      "es": "Corte R19 de evidencia legislativa y ejecución ENIA",
+      "en": "R19 legislative and ENIA implementation evidence release"
     },
-    "manifestUrl": "/api/releases/2026-11-05-r18/release.json"
+    "manifestUrl": "/api/releases/2026-11-05-r19/release.json"
   },
   "lastUpdate": "2026-11-05T00:00:00.000Z",
   "source": "https://observatorioia.org",
@@ -43,7 +43,7 @@
       "schemaUrl": "/api/schemas/proyectos.schema.json",
       "dataSchemaUrl": "/api/schemas/proyectos-data.schema.json",
       "publicationMode": "release",
-      "releaseUrl": "/api/releases/2026-11-05-r18/proyectos.json"
+      "releaseUrl": "/api/releases/2026-11-05-r19/proyectos.json"
     },
     {
       "id": "instituciones",
@@ -62,7 +62,7 @@
       "schemaUrl": "/api/schemas/instituciones.schema.json",
       "dataSchemaUrl": "/api/schemas/instituciones-data.schema.json",
       "publicationMode": "release",
-      "releaseUrl": "/api/releases/2026-11-05-r18/instituciones.json"
+      "releaseUrl": "/api/releases/2026-11-05-r19/instituciones.json"
     },
     {
       "id": "legislacion",
@@ -77,11 +77,11 @@
         "es": "expedientes",
         "en": "bills"
       },
-      "lastUpdate": "2026-08-21T00:00:00.000Z",
+      "lastUpdate": "2026-11-05T00:00:00.000Z",
       "schemaUrl": "/api/schemas/legislacion.schema.json",
       "dataSchemaUrl": "/api/schemas/legislacion-data.schema.json",
       "publicationMode": "release",
-      "releaseUrl": "/api/releases/2026-11-05-r18/legislacion.json"
+      "releaseUrl": "/api/releases/2026-11-05-r19/legislacion.json"
     },
     {
       "id": "indicadores",
@@ -100,7 +100,7 @@
       "schemaUrl": "/api/schemas/indicadores.schema.json",
       "dataSchemaUrl": "/api/schemas/indicadores-data.schema.json",
       "publicationMode": "release",
-      "releaseUrl": "/api/releases/2026-11-05-r18/indicadores.json"
+      "releaseUrl": "/api/releases/2026-11-05-r19/indicadores.json"
     },
     {
       "id": "brechas",
@@ -119,7 +119,7 @@
       "schemaUrl": "/api/schemas/brechas.schema.json",
       "dataSchemaUrl": "/api/schemas/brechas-data.schema.json",
       "publicationMode": "release",
-      "releaseUrl": "/api/releases/2026-11-05-r18/brechas.json"
+      "releaseUrl": "/api/releases/2026-11-05-r19/brechas.json"
     },
     {
       "id": "enia-acciones",
@@ -134,11 +134,11 @@
         "es": "registros fuente",
         "en": "source records"
       },
-      "lastUpdate": "2026-10-29T00:00:00.000Z",
+      "lastUpdate": "2026-11-05T00:00:00.000Z",
       "schemaUrl": "/api/schemas/enia-acciones.schema.json",
       "dataSchemaUrl": "/api/schemas/enia-acciones-data.schema.json",
       "publicationMode": "release",
-      "releaseUrl": "/api/releases/2026-11-05-r18/enia-acciones.json"
+      "releaseUrl": "/api/releases/2026-11-05-r19/enia-acciones.json"
     },
     {
       "id": "monitoreo",
@@ -175,7 +175,7 @@
       "schemaUrl": "/api/schemas/marco-pais.schema.json",
       "dataSchemaUrl": "/api/schemas/marco-pais-data.schema.json",
       "publicationMode": "release",
-      "releaseUrl": "/api/releases/2026-11-05-r18/marco-pais.json"
+      "releaseUrl": "/api/releases/2026-11-05-r19/marco-pais.json"
     },
     {
       "id": "historial",
@@ -185,7 +185,7 @@
         "es": "Bitácora pública y bilingüe de cambios editoriales, con fecha, tipo, fuente y commit cuando está disponible.",
         "en": "Public bilingual log of editorial changes, with date, type, source and commit when available."
       },
-      "count": 63,
+      "count": 65,
       "countUnit": {
         "es": "cambios publicados",
         "en": "published changes"
@@ -194,7 +194,7 @@
       "schemaUrl": "/api/schemas/historial.schema.json",
       "dataSchemaUrl": "/api/schemas/historial-data.schema.json",
       "publicationMode": "release",
-      "releaseUrl": "/api/releases/2026-11-05-r18/historial.json"
+      "releaseUrl": "/api/releases/2026-11-05-r19/historial.json"
     },
     {
       "id": "coyuntura",
@@ -213,7 +213,7 @@
       "schemaUrl": "/api/schemas/coyuntura.schema.json",
       "dataSchemaUrl": "/api/schemas/coyuntura-data.schema.json",
       "publicationMode": "release",
-      "releaseUrl": "/api/releases/2026-11-05-r18/coyuntura.json"
+      "releaseUrl": "/api/releases/2026-11-05-r19/coyuntura.json"
     },
     {
       "id": "recursos",
@@ -232,7 +232,7 @@
       "schemaUrl": "/api/schemas/recursos.schema.json",
       "dataSchemaUrl": "/api/schemas/recursos-data.schema.json",
       "publicationMode": "release",
-      "releaseUrl": "/api/releases/2026-11-05-r18/recursos.json"
+      "releaseUrl": "/api/releases/2026-11-05-r19/recursos.json"
     },
     {
       "id": "codebook",
@@ -251,7 +251,7 @@
       "schemaUrl": "/api/schemas/codebook.schema.json",
       "dataSchemaUrl": "/api/schemas/codebook-data.schema.json",
       "publicationMode": "release",
-      "releaseUrl": "/api/releases/2026-11-05-r18/codebook.json"
+      "releaseUrl": "/api/releases/2026-11-05-r19/codebook.json"
     }
   ]
 }

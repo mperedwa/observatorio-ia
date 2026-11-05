@@ -73,8 +73,8 @@ describe('Hello Brete y corte limitado del 5 de octubre', () => {
     expect(accion.evidenciasExternas).toContainEqual(expect.objectContaining({
       id: 'micitt-hello-brete-lanzamiento-2026', respalda: ['existencia'],
     }));
-    expect(accion.notasEditoriales?.es).toContain('No se suman');
-    expect(accion.fechaUltimaRevision).toBe('2026-10-05');
+    expect(accion.notasEditoriales?.es).toContain('atribución al indicador pendientes de verificar');
+    expect(accion.fechaUltimaRevision).toBe('2026-11-05');
     expect(inventarioEnia.fuente.fechaVersion).toBe('2025-08-11');
   });
 

@@ -1,12 +1,12 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-10-29T00:00:00.000Z",
+  "lastUpdate": "2026-11-05T00:00:00.000Z",
   "count": 129,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "data": {
     "schemaVersion": 2,
-    "fechaCorte": "2026-10-29",
+    "fechaCorte": "2026-11-05",
     "fuente": {
       "titulo": {
         "es": "Plan de Acción de la Estrategia Nacional de Inteligencia Artificial de Costa Rica",
@@ -91,7 +91,7 @@
             "responsableEnFormalizacion": false,
             "aliadosOficiales": null,
             "tipoIntervencion": "politica-gobernanza",
-            "estadoEjecucion": "no-verificado",
+            "estadoEjecucion": "parcialmente-verificado",
             "cruceCatalogo": {
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
@@ -101,7 +101,39 @@
               }
             },
             "recomendacionEditorial": "ecosistema",
-            "fechaUltimaRevision": "2026-08-21"
+            "fechaUltimaRevision": "2026-11-05",
+            "evidenciasExternas": [
+              {
+                "id": "micitt-sandbox-sicop-2025ld-47",
+                "titulo": {
+                  "es": "SICOP: contrato de diseño del sandbox de IA",
+                  "en": "SICOP: AI sandbox design contract"
+                },
+                "url": "https://www.sicop.go.cr/moduloPcont/pcont/ctract/es/CE_CEJ_ESQ002.jsp?cartelNo=20250901548&cartelSeq=00",
+                "publicador": "MICITT / SICOP",
+                "fechaConsulta": "2026-11-05",
+                "respalda": [
+                  "existencia"
+                ]
+              },
+              {
+                "id": "micitt-sandbox-didi-of-000002-2026",
+                "titulo": {
+                  "es": "Oficio MICITT-DIDI-OF-000002-2026, p. 5, adjunto a la modificación",
+                  "en": "MICITT-DIDI-OF-000002-2026, p. 5, attached to the amendment"
+                },
+                "url": "https://www.sicop.go.cr/moduloPcont/pcont/ctract/es/CE_SMJ_LCQ013_C.jsp?contract_no=CE202510001584&contract_mod_seq=01&isPopuop=Y",
+                "publicador": "MICITT-DIDI / SICOP",
+                "fechaConsulta": "2026-11-05",
+                "respalda": [
+                  "ejecucion"
+                ]
+              }
+            ],
+            "notasEditoriales": {
+              "es": "El contrato 0432025001700077-00 con el Consorcio Smart - Kuanta registra ₡62.944.277 y fecha 15 de octubre de 2025. El oficio del 12 de enero de 2026 confirma que estaba en ejecución y solicita ampliar el diseño para incorporar el LINC de San Pablo. La recepción del modelo de gestión y la puesta en marcha del sandbox quedan por verificar.",
+              "en": "Contract 0432025001700077-00 with Consorcio Smart - Kuanta lists CRC 62,944,277 and is dated October 15, 2025. The January 12, 2026 letter confirms work was underway and requests adding the San Pablo community innovation lab to the design scope. Acceptance of the management model and launch of the sandbox remain to be verified."
+            }
           }
         ]
       },
@@ -1938,7 +1970,7 @@
             "responsableEnFormalizacion": false,
             "aliadosOficiales": null,
             "tipoIntervencion": "capacitacion-formacion",
-            "estadoEjecucion": "no-verificado",
+            "estadoEjecucion": "parcialmente-verificado",
             "cruceCatalogo": {
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
@@ -1948,7 +1980,39 @@
               }
             },
             "recomendacionEditorial": "ecosistema",
-            "fechaUltimaRevision": "2026-08-21"
+            "fechaUltimaRevision": "2026-11-05",
+            "evidenciasExternas": [
+              {
+                "id": "micitt-unesco-curso-ia-2025",
+                "titulo": {
+                  "es": "Curso de inteligencia artificial para el sector público impartido con UNESCO",
+                  "en": "AI course for the public sector delivered with UNESCO"
+                },
+                "url": "https://micitt.go.cr/el-sector-informa/costa-rica-realizo-curso-de-alto-nivel-sobre-inteligencia-artificial-para-el",
+                "publicador": "MICITT",
+                "fechaConsulta": "2026-11-05",
+                "respalda": [
+                  "ejecucion"
+                ]
+              },
+              {
+                "id": "micitt-unesco-convocatoria-2025",
+                "titulo": {
+                  "es": "Convocatoria del MICITT del 16 de mayo de 2025",
+                  "en": "MICITT call for applications dated May 16, 2025"
+                },
+                "url": "https://www.munisanisidro.go.cr/images/2025/Acuerdos/3-MICITT-DVCTI-OF-0581-2025_Convocatoria_abierta_al_curso_Inteligencia_Artificial_para_el_sector_pblico_Municipalidad_de_San_Isidro-firmado.pdf",
+                "publicador": "MICITT / Municipalidad de San Isidro",
+                "fechaConsulta": "2026-11-05",
+                "respalda": [
+                  "existencia"
+                ]
+              }
+            ],
+            "notasEditoriales": {
+              "es": "El MICITT reporta que impartió con UNESCO un curso del 7 al 9 de julio de 2025 y lo vincula con la implementación de la ENIA. La convocatoria oficial confirma el año. Queda por verificar el cómputo institucional para la meta anual de tres actividades.",
+              "en": "MICITT reports that it delivered a course with UNESCO on July 7–9, 2025, and links it to ENIA implementation. The official call for applications confirms the year. The institutional count against the annual target of three activities remains to be verified."
+            }
           },
           {
             "id": "enia-4-1-2-03",
@@ -2441,14 +2505,27 @@
                   "existencia",
                   "ejecucion"
                 ]
+              },
+              {
+                "id": "micitt-poa-2025-sne-entregable",
+                "titulo": {
+                  "es": "Informe anual POA 2025, p. 12: pago de un entregable de SNE/Brete",
+                  "en": "2025 annual operating plan report, p. 12: payment for one SNE/Brete deliverable"
+                },
+                "url": "https://www.micitt.go.cr/sites/default/files/datos_abiertos/MICITT-SPIS-INF-000009-2026_Informe%20POA%202025.pdf#page=12",
+                "publicador": "MICITT",
+                "fechaConsulta": "2026-11-05",
+                "respalda": [
+                  "ejecucion"
+                ]
               }
             ],
             "recomendacionEditorial": "investigar-como-seguimiento",
             "notasEditoriales": {
-              "es": "La contratación de SNE/Brete corresponde a la etapa I de diseño y planificación, no a la operación de su motor de IA. Hello Brete se registra por separado en seguimiento: la operación de su servicio educativo no acredita aún el uso específico de IA ni su atribución al indicador. No se suman estas iniciativas a la meta 2026 o 2027 ni se modifica el indicador oficial.",
-              "en": "SNE/Brete's procurement covers stage I design and planning, not operation of its AI engine. Hello Brete is recorded separately under review: operation of its educational service does not yet establish specific AI use or attribution to the indicator. These initiatives are not counted toward the 2026 or 2027 target, and the official indicator is not changed."
+              "es": "El informe anual POA 2025 del MICITT registra el pago de uno de cinco entregables de la etapa I de diseño y planificación de SNE/Brete. La operación del motor de IA y su atribución al indicador del INA quedan por acreditar. Hello Brete es un servicio educativo en seguimiento, con uso específico de IA y atribución al indicador pendientes de verificar.",
+              "en": "MICITT’s 2025 annual operating plan report records payment for one of five stage I SNE/Brete design and planning deliverables. Operation of the AI engine and attribution to INA’s indicator remain to be established. Hello Brete is an education service under review, with specific AI use and attribution to the indicator still to be verified."
             },
-            "fechaUltimaRevision": "2026-10-05"
+            "fechaUltimaRevision": "2026-11-05"
           },
           {
             "id": "enia-4-1-3-02",
@@ -3952,7 +4029,39 @@
               }
             },
             "recomendacionEditorial": "ecosistema",
-            "fechaUltimaRevision": "2026-08-21"
+            "fechaUltimaRevision": "2026-11-05",
+            "evidenciasExternas": [
+              {
+                "id": "micitt-ceci-fundamentos-ia-2026",
+                "titulo": {
+                  "es": "CECI: convocatoria a Fundamentos de Inteligencia Artificial para la Nueva Economía Digital",
+                  "en": "CECI call for applications: AI Fundamentals for the New Digital Economy"
+                },
+                "url": "https://www.ceci.go.cr/noticia/80",
+                "publicador": "MICITT / CECI",
+                "fechaConsulta": "2026-11-05",
+                "respalda": [
+                  "existencia"
+                ]
+              },
+              {
+                "id": "micitt-ceci-fundamentos-ia-ficha-2026",
+                "titulo": {
+                  "es": "CECI: ficha del curso Fundamentos de Inteligencia Artificial",
+                  "en": "CECI course record: AI Fundamentals"
+                },
+                "url": "https://www.ceci.go.cr/index.php/curso/916/2758",
+                "publicador": "MICITT / CECI",
+                "fechaConsulta": "2026-11-05",
+                "respalda": [
+                  "existencia"
+                ]
+              }
+            ],
+            "notasEditoriales": {
+              "es": "El portal CECI publicó oferta de formación introductoria en IA en 2026. Se requieren datos de participación para verificar el indicador de alfabetización en IA.",
+              "en": "The CECI portal listed introductory AI training in 2026. Participation data are needed to verify the AI literacy indicator."
+            }
           }
         ]
       },

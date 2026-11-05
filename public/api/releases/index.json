@@ -1,5 +1,5 @@
 {
-  "latest": "2026-11-05-r18",
+  "latest": "2026-11-05-r19",
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "releases": [
@@ -14,6 +14,18 @@
       "datasets": 11,
       "bytes": 7528,
       "sha256": "aa4217b30ce1f051db6bfc577225d41afdf63cafe1bc99b56fc5a913237621d8"
+    },
+    {
+      "id": "2026-11-05-r19",
+      "date": "2026-11-05",
+      "title": {
+        "es": "Corte R19 de evidencia legislativa y ejecución ENIA",
+        "en": "R19 legislative and ENIA implementation evidence release"
+      },
+      "manifestUrl": "/api/releases/2026-11-05-r19/release.json",
+      "datasets": 11,
+      "bytes": 7543,
+      "sha256": "5ac8b657b6fdfc0fe1e494b4506b271f6a29aeb4a4f31393db7863ba24743d4a"
     },
     {
       "id": "2026-10-29-r17",

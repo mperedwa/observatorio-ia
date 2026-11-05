@@ -10,8 +10,8 @@ const ROOT = process.cwd();
 const API_DIR = join(ROOT, 'public', 'api');
 const SOURCE_SCHEMA_DIR = join(ROOT, 'src', 'data', 'schemas');
 const SOURCE_DATA_DIR = join(ROOT, 'src', 'data', 'json');
-const RELEASE_ID = '2026-11-05-r18';
-const PREVIOUS_RELEASE_ID = '2026-10-29-r17';
+const RELEASE_ID = '2026-11-05-r19';
+const PREVIOUS_RELEASE_ID = '2026-11-05-r18';
 const HISTORICAL_RELEASE_ID = '2026-08-22-r8';
 
 const ORIGINAL_ENDPOINTS = [
@@ -170,7 +170,7 @@ function readIndexHtml(locale: 'es' | 'en') {
   return load(readFileSync(filename, 'utf8'));
 }
 
-describe('API pública estática R18', () => {
+describe('API pública estática R19', () => {
   it('conserva las siete rutas originales y suma cinco rutas complementarias', () => {
     const manifest = readJson<Manifest>('index.json');
     const urls = manifest.endpoints.map(({ url }) => url);
@@ -214,7 +214,7 @@ describe('API pública estática R18', () => {
       'enia-acciones': 129,
       monitoreo: 8,
       'marco-pais': 4,
-      historial: 63,
+      historial: 65,
       coyuntura: 2,
       recursos: 19,
       codebook: 11,
@@ -308,7 +308,7 @@ describe('API pública estática R18', () => {
       `release=${RELEASE_ID}`,
     );
     expect(releaseIndex.latest).toBe(RELEASE_ID);
-    expect(releaseIndex.releases).toHaveLength(11);
+    expect(releaseIndex.releases).toHaveLength(12);
     expect(releaseIndex.releases.find(({ id }) => id === RELEASE_ID)).toMatchObject({
       bytes: byteLength(releaseText),
       sha256: digest(releaseText),
@@ -577,6 +577,6 @@ describe('API pública estática R18', () => {
 
     expect(payload.count).toBe(8);
     expect(payload.data.frentes).toHaveLength(8);
-    expect(payload.data.revisiones).toHaveLength(21);
+    expect(payload.data.revisiones).toHaveLength(23);
   });
 });
