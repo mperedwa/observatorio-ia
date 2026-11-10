@@ -32,7 +32,7 @@ export function AssetMapa({
 
   return (
     <AssetFrame size={size} locale={locale} variant="light">
-      <div className="flex-1 flex flex-col p-14 pb-20">
+      <div className="flex-1 flex flex-col px-12 pt-10 pb-20">
         <p
           className="font-semibold uppercase tracking-widest text-institucional-700"
           style={{ fontSize: 22 }}
@@ -46,36 +46,36 @@ export function AssetMapa({
           {applyCounters(t.comparte.assets.mapaTitulo, COUNTERS)}
         </h1>
 
-        <div className="mt-10 grid flex-1 grid-cols-2 content-start border-y border-editorial-rule">
+        <div className="mt-6 grid grid-cols-3 content-start border-y border-editorial-rule">
           {grupos.map(({ inst, proyectos: ps }) => {
             const resumen = resumirInstitucionCatalogo(ps);
             return (
               <article
                 key={inst.id}
-                className="border-b border-editorial-rule p-5 odd:border-r odd:border-editorial-rule"
+                className="border-b border-r border-editorial-rule px-3 py-2.5 [&:nth-child(3n)]:border-r-0"
               >
-                <header className="flex items-baseline justify-between gap-4">
-                  <span className="font-bold text-slate-900" style={{ fontSize: 22 }}>
+                <header className="flex items-baseline justify-between gap-2">
+                  <span className="font-bold text-slate-900" style={{ fontSize: 16 }}>
                     {inst.nombreCorto[locale]}
                   </span>
-                  <span className="text-slate-500 tabular-nums" style={{ fontSize: 16 }}>
+                  <span className="shrink-0 text-slate-500 tabular-nums" style={{ fontSize: 12 }}>
                     {resumen.total} {resumen.total === 1 ? t.panorama.proyectoLabel : t.instituciones.proyectosLabel}
                   </span>
                 </header>
-                <div className="mt-4 grid grid-cols-3 gap-2">
+                <div className="mt-2 grid grid-cols-3 gap-1.5">
                   {CAPAS_CATALOGO.map((capa) => (
                     <div
                       key={capa}
-                      className="border-l-4 px-3 py-1"
+                      className="border-l-2 px-2 py-0.5"
                       style={{
                         borderColor: capaColor[capa].border,
                         color: capaColor[capa].text,
                       }}
                     >
-                      <div className="font-bold tabular-nums" style={{ fontSize: 24 }}>
+                      <div className="font-bold tabular-nums" style={{ fontSize: 20 }}>
                         {resumen[capa]}
                       </div>
-                      <div className="font-semibold" style={{ fontSize: 12, lineHeight: 1.2 }}>
+                      <div className="font-semibold" style={{ fontSize: 10, lineHeight: 1.2 }}>
                         {t.catalogo.capas[capa].corto}
                       </div>
                     </div>
@@ -86,7 +86,7 @@ export function AssetMapa({
           })}
         </div>
 
-        <div className="mt-8 flex items-center gap-6 text-slate-600" style={{ fontSize: 16 }}>
+        <div className="mt-5 flex items-center gap-6 text-slate-600" style={{ fontSize: 16 }}>
           {CAPAS_CATALOGO.map((capa) => (
             <span key={capa} className="flex items-center gap-2">
               <span className="h-4 w-1" style={{ background: capaColor[capa].border }} />

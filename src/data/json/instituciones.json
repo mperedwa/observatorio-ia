@@ -115,10 +115,10 @@
     },
     "tipo": "ministerio",
     "url": "https://www.micitt.go.cr/",
-    "proyectosActivos": 4,
+    "proyectosActivos": 5,
     "resumen": {
-      "es": "Cuatro iniciativas: el Asistente Virtual como adopción verificada y tres registros de ecosistema y capacidades, LINC, CONECTA y AgroBoost.",
-      "en": "Four initiatives: the Virtual Assistant as a verified adoption and three ecosystem and capability records, LINC, CONECTA and AgroBoost."
+      "es": "Cinco iniciativas: el Asistente Virtual como adopción verificada, GovOS y Agente Nacional en seguimiento, y LINC, CONECTA y AgroBoost en ecosistema y capacidades.",
+      "en": "Five initiatives: the Virtual Assistant as a verified adoption, GovOS and the National Agent under review, and LINC, CONECTA and AgroBoost in ecosystem and capabilities."
     },
     "descripcion": {
       "es": "El asistente tiene política técnica, integración en el portal y respuesta comprobada en una prueba puntual; no una evaluación general de desempeño. LINC documenta formación; CONECTA confirma un diagnóstico con 30 instituciones y una hoja de ruta, no integraciones operativas en esas entidades; AgroBoost documenta transferencia tecnológica sin un sistema específico de IA reproducible.",
@@ -323,14 +323,14 @@
     },
     "tipo": "organo-publico",
     "url": "https://www.sbdcr.com/",
-    "proyectosActivos": 1,
+    "proyectosActivos": 2,
     "resumen": {
-      "es": "Una iniciativa en seguimiento: contratación de servicios especializados y licencias de IA para Auditoría Interna.",
-      "en": "One initiative under review: procurement of specialized AI services and licenses for Internal Audit."
+      "es": "Dos iniciativas en seguimiento: una contratación para Auditoría Interna y otra de consulta jurídica con IA.",
+      "en": "Two initiatives under review: one procurement for Internal Audit and a separate one for AI legal research."
     },
     "descripcion": {
-      "es": "El expediente de contratación documenta contrato notificado y una orden de inicio en septiembre de 2026. No se ha acreditado recepción de la solución, técnica específica ni uso operativo.",
-      "en": "The procurement dossier documents a notified contract and a start order in September 2026. Acceptance of the solution, its specific technique and operational use have not been established."
+      "es": "Ambos expedientes registran contrato notificado y orden de inicio. Quedan por verificar la recepción definitiva y el uso de los componentes de IA.",
+      "en": "Both dossiers record contract notification and a start order. Final acceptance and use of the AI components remain to be verified."
     }
   },
   {
@@ -457,6 +457,60 @@
     "lecciones": {
       "es": "Conservar una experiencia temporal no exige suponer que sigue activa: existencia histórica, técnica y continuidad se verifican por separado.",
       "en": "Preserving a temporary experience does not require assuming it remains active: historical existence, technique and continuity are verified separately."
+    }
+  },
+  {
+    "id": "bid",
+    "nombre": {
+      "es": "Banco Interamericano de Desarrollo",
+      "en": "Inter-American Development Bank"
+    },
+    "nombreCorto": {
+      "es": "BID",
+      "en": "IDB"
+    },
+    "tipo": "organismo-internacional",
+    "url": "https://www.iadb.org/es",
+    "proyectosActivos": 1,
+    "resumen": {
+      "es": "Organismo financiador de la cooperación técnica CR-T1308, aprobada para apoyar la implementación de la ENIA en Costa Rica.",
+      "en": "Funding institution for technical cooperation CR-T1308, approved to support ENIA implementation in Costa Rica."
+    }
+  },
+  {
+    "id": "asamblea-legislativa",
+    "nombre": {
+      "es": "Asamblea Legislativa de Costa Rica",
+      "en": "Legislative Assembly of Costa Rica"
+    },
+    "nombreCorto": {
+      "es": "Asamblea Legislativa",
+      "en": "Legislative Assembly"
+    },
+    "tipo": "asamblea",
+    "url": "https://www.asamblea.go.cr/",
+    "proyectosActivos": 1,
+    "resumen": {
+      "es": "Una iniciativa en seguimiento: suscripción de una plataforma jurídica con IA, con acto final de adjudicación registrado en SICOP.",
+      "en": "One initiative under review: an AI legal research subscription with a final award recorded in SICOP."
+    }
+  },
+  {
+    "id": "municipalidad-moravia",
+    "nombre": {
+      "es": "Municipalidad de Moravia",
+      "en": "Municipality of Moravia"
+    },
+    "nombreCorto": {
+      "es": "Moravia",
+      "en": "Moravia"
+    },
+    "tipo": "municipalidad",
+    "url": "https://www.moravia.go.cr/",
+    "proyectosActivos": 1,
+    "resumen": {
+      "es": "Una iniciativa en seguimiento: contratación de un chatbot con IA para atención y trámites por WhatsApp y WebChat.",
+      "en": "One initiative under review: procurement of an AI chatbot for inquiries and municipal services over WhatsApp and WebChat."
     }
   }
 ]

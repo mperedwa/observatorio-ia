@@ -1,8 +1,20 @@
 {
-  "latest": "2026-11-05-r19",
+  "latest": "2026-11-09-r20",
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "releases": [
+    {
+      "id": "2026-11-09-r20",
+      "date": "2026-11-09",
+      "title": {
+        "es": "Corte R20 de cooperación, contratación y anuncios de IA",
+        "en": "R20 AI cooperation, procurement and announcements release"
+      },
+      "manifestUrl": "/api/releases/2026-11-09-r20/release.json",
+      "datasets": 11,
+      "bytes": 7549,
+      "sha256": "9e6a6de63d0b710370649a6cc3a791541baa84dc759f7e28a500d60edbae3b89"
+    },
     {
       "id": "2026-11-05-r18",
       "date": "2026-11-05",

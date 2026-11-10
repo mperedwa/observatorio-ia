@@ -94,6 +94,7 @@ export interface Dictionary {
       ministerio: string;
       municipalidad: string;
       'organo-publico': string;
+      'organismo-internacional': string;
       judicial: string;
       autonoma: string;
       asamblea: string;
@@ -599,7 +600,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     instituciones: {
       kicker: '01 / Instituciones',
       titulo: 'Dónde aparecen iniciativas de IA en el Estado',
-      sub: '{instituciones} instituciones públicas tienen iniciativas documentadas relacionadas con IA. El catálogo incluye sistemas, pilotos, planes y capacidades.',
+      sub: '{instituciones} instituciones y organismos figuran en el catálogo de IA del sector público costarricense, que también documenta cooperación internacional.',
       proyectosLabel: 'iniciativas',
       conteoDerivadoLabel: 'clasificadas en el catálogo',
       verDetalle: 'Ver detalle',
@@ -610,6 +611,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         ministerio: 'Ministerio',
         municipalidad: 'Municipalidad',
         'organo-publico': 'Órgano público',
+        'organismo-internacional': 'Organismo internacional',
         judicial: 'Poder Judicial',
         autonoma: 'Institución autónoma',
         asamblea: 'Asamblea Legislativa',
@@ -1304,7 +1306,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     instituciones: {
       kicker: '01 / Institutions',
       titulo: 'Where AI initiatives appear across the State',
-      sub: '{instituciones} public institutions have documented AI-related initiatives. The catalog includes systems, pilots, plans and capabilities.',
+      sub: '{instituciones} institutions and organizations appear in the catalog of AI in Costa Rica’s public sector, including international cooperation.',
       proyectosLabel: 'initiatives',
       conteoDerivadoLabel: 'classified in the catalog',
       verDetalle: 'View details',
@@ -1315,6 +1317,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         ministerio: 'Ministry',
         municipalidad: 'Municipality',
         'organo-publico': 'Public body',
+        'organismo-internacional': 'International organization',
         judicial: 'Judicial Branch',
         autonoma: 'Autonomous institution',
         asamblea: 'Legislative Assembly',

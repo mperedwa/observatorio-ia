@@ -15,14 +15,14 @@ export interface Counters {
 }
 
 export const COUNTERS: Counters = {
-  proyectos: 42,
-  iniciativasDocumentadas: 42,
+  proyectos: 47,
+  iniciativasDocumentadas: 47,
   adopcionVerificada: 11,
   verificadasCatalogo: 11,
-  seguimiento: 15,
-  ecosistema: 16,
+  seguimiento: 19,
+  ecosistema: 17,
   descartadas: 0,
   pendientesMigracion: 0,
-  instituciones: 19,
+  instituciones: 22,
   legislacion: 7,
 };

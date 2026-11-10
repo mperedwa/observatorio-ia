@@ -5,6 +5,7 @@ export type Tipo =
   | 'ministerio'
   | 'municipalidad'
   | 'organo-publico'
+  | 'organismo-internacional'
   | 'asamblea'
   | 'judicial'
   | 'autonoma'

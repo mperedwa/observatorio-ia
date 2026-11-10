@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-11-05T00:00:00.000Z",
+  "lastUpdate": "2026-11-09T00:00:00.000Z",
   "count": 4,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
@@ -159,16 +159,16 @@
           "en": "Institutional initiatives"
         },
         "instrumentos": {
-          "es": "42 iniciativas relacionadas con IA en 19 instituciones: 11 adopciones verificadas, 15 en seguimiento y 16 registros de ecosistema y capacidades.",
-          "en": "42 AI-related initiatives across 19 institutions: 11 verified adoptions, 15 under review and 16 ecosystem and capacity records."
+          "es": "47 iniciativas relacionadas con IA en 22 instituciones: 11 adopciones verificadas, 19 en seguimiento y 17 registros de ecosistema y capacidades.",
+          "en": "47 AI-related initiatives across 22 institutions: 11 verified adoptions, 19 under review and 17 ecosystem and capacity records."
         },
         "nota": {
           "es": "Existen instrumentos sectoriales de gobernanza: los Lineamientos Básicos de IA Generativa del Poder Judicial y el Decreto 45961-MSP sobre videoprotección, IA y biometría. Su existencia no acredita ejecución tecnológica ni una regulación común para todo el Estado.",
           "en": "Sectoral governance instruments exist: the Judiciary's Basic Generative AI Guidelines and Decree 45961-MSP on video protection, AI and biometrics. Their existence establishes neither technological implementation nor common regulation across the State."
         },
         "funcion": {
-          "es": "Documenta sistemas, pilotos, planes y capacidades relacionadas con IA dentro del sector público. El inventario actual reúne 42 iniciativas con distinta naturaleza y madurez; solo 11 cumplen la regla de adopción verificada.",
-          "en": "Documents AI-related systems, pilots, plans and capabilities in the public sector. The current inventory includes 42 initiatives of different types and maturity; only 11 meet the verified-adoption rule."
+          "es": "Documenta sistemas, pilotos, planes y capacidades relacionadas con IA dentro del sector público. El inventario actual reúne 47 iniciativas con distinta naturaleza y madurez; solo 11 cumplen la regla de adopción verificada.",
+          "en": "Documents AI-related systems, pilots, plans and capabilities in the public sector. The current inventory includes 47 initiatives of different types and maturity; only 11 meet the verified-adoption rule."
         },
         "alcance": {
           "es": "Institucional y sectorial",

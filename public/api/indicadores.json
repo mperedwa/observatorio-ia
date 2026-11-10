@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-11-05T00:00:00.000Z",
+  "lastUpdate": "2026-11-09T00:00:00.000Z",
   "count": 7,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
@@ -286,7 +286,7 @@
           "es": "Iniciativas relacionadas con IA documentadas",
           "en": "Documented AI-related initiatives"
         },
-        "valor": "42",
+        "valor": "47",
         "detalle": {
           "es": "incluye sistemas, pilotos, planes y capacidades",
           "en": "includes systems, pilots, plans and capabilities"
@@ -297,10 +297,10 @@
           "es": "Instituciones con iniciativas documentadas",
           "en": "Institutions with documented initiatives"
         },
-        "valor": "19",
+        "valor": "22",
         "detalle": {
-          "es": "Poder Judicial, CCSS, Hacienda, MEP, MICITT, CENAT, UCR, INAMU, INS, ARESEP, INVU, INA, SBD, Municipalidad de Cartago, Municipalidad de La Unión, Ministerio de Salud, TEC, CGR y TSE",
-          "en": "Judicial Branch, CCSS, Finance, MEP, MICITT, CENAT, UCR, INAMU, INS, ARESEP, INVU, INA, SBD, Cartago Municipality, La Unión Municipality, Ministry of Health, TEC, CGR and TSE"
+          "es": "Poder Judicial, CCSS, Hacienda, MEP, MICITT, CENAT, UCR, INAMU, INS, ARESEP, INVU, INA, SBD, Cartago, La Unión, Ministerio de Salud, TEC, CGR, TSE, Asamblea Legislativa y Moravia, más el BID como organismo financiador",
+          "en": "Judicial Branch, CCSS, Finance, MEP, MICITT, CENAT, UCR, INAMU, INS, ARESEP, INVU, INA, SBD, Cartago, La Unión, Ministry of Health, TEC, CGR, TSE, Legislative Assembly and Moravia, plus the IDB as a funding institution"
         }
       },
       {

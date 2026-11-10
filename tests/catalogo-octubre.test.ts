@@ -40,6 +40,9 @@ describe('corte editorial del 1 de octubre de 2026', () => {
       }
     }
     expect(instituciones.find((i) => i.id === 'sbd')?.tipo).toBe('organo-publico');
-    expect(instituciones.filter((i) => i.tipo === 'municipalidad')).toHaveLength(2);
+    expect(instituciones.filter((i) => i.tipo === 'municipalidad').map(({ id }) => id).sort()).toEqual([
+      'municipalidad-cartago', 'municipalidad-la-union', 'municipalidad-moravia',
+    ]);
+    expect(instituciones.find((i) => i.id === 'bid')?.tipo).toBe('organismo-internacional');
   });
 });

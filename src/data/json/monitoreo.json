@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "fechaCorte": "2026-11-05",
+  "fechaCorte": "2026-11-09",
   "politica": {
     "descripcion": {
       "es": "La agenda de revisión separa la vigilancia automática de la decisión editorial. Una alerta abre una revisión; no cambia por sí sola el catálogo, el estado de un expediente ni la evidencia de ejecución.",
@@ -130,7 +130,7 @@
       "fechaUltimaRevision": "2026-11-05",
       "fechaProximaRevision": "2026-12-05",
       "alcance": {
-        "cantidad": 15,
+        "cantidad": 19,
         "unidad": {
           "es": "iniciativas",
           "en": "initiatives"
@@ -230,7 +230,7 @@
       "fechaUltimaRevision": "2026-08-21",
       "fechaProximaRevision": "2027-02-21",
       "alcance": {
-        "cantidad": 16,
+        "cantidad": 17,
         "unidad": {
           "es": "iniciativas",
           "en": "initiatives"

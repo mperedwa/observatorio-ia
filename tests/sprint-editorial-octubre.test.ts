@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { proyectos, type Proyecto } from '../src/data/proyectos';
-import { instituciones } from '../src/data/instituciones';
+import type { Institucion } from '../src/data/instituciones';
 import { recursos } from '../src/data/recursos';
 import { instrumentos } from '../src/data/marcoPais';
 import { intervencionesEnia, inventarioEnia } from '../src/data/eniaAcciones';
@@ -20,6 +20,7 @@ const previousEnia = read<{ data: typeof inventarioEnia }>(
   'public/api/releases/2026-10-05-r16/enia-acciones.json',
 ).data;
 const newIds = ['tec-asistente-auditoria-ia', 'cgr-diara', 'tse-chat-votante-informado'];
+const octoberInstitutions = read<{ data: Institucion[] }>('public/api/releases/2026-10-29-r17/instituciones.json').data;
 const octoberProjects = read<{ data: Proyecto[] }>('public/api/releases/2026-10-29-r17/proyectos.json').data;
 const octoberEnia = read<{ data: typeof inventarioEnia }>(
   'public/api/releases/2026-10-29-r17/enia-acciones.json',
@@ -39,10 +40,10 @@ describe('sprint editorial del 29 de octubre de 2026', () => {
       seguimiento: 16,
       ecosistema: 16,
     });
-    expect(instituciones).toHaveLength(19);
+    expect(octoberInstitutions).toHaveLength(19);
     for (const id of ['tec', 'cgr', 'tse']) {
-      expect(instituciones.find((item) => item.id === id)?.proyectosActivos).toBe(1);
-      expect(proyectos.filter(({ institucionId }) => institucionId === id)).toHaveLength(1);
+      expect(octoberInstitutions.find((item) => item.id === id)?.proyectosActivos).toBe(1);
+      expect(octoberProjects.filter(({ institucionId }) => institucionId === id)).toHaveLength(1);
     }
   });
 
@@ -121,7 +122,7 @@ describe('sprint editorial del 29 de octubre de 2026', () => {
     expect(instrumentos).toHaveLength(8);
     expect(read<{ data: unknown[] }>('public/api/releases/2026-10-29-r17/recursos.json').data).toHaveLength(18);
     expect(expedientes).toHaveLength(7);
-    expect(proyectos.some(({ id }) => /45961|cr-t1308|sbd.*juridic/.test(id))).toBe(false);
+    expect(octoberProjects.some(({ id }) => /45961|cr-t1308|sbd.*juridic/.test(id))).toBe(false);
     expect(proyectos.filter(({ id }) => id === 'ccss-depuracion-listas')).toHaveLength(1);
   });
 
@@ -136,7 +137,7 @@ describe('sprint editorial del 29 de octubre de 2026', () => {
       expect(frente.fechaProximaRevision).toBe(next);
       expect(calcularEstadoAgenda(frente, '2026-10-29')).toBe('vencida');
     }
-    for (const [id, count] of [['catalogo-seguimiento', 15], ['catalogo-verificado', 11], ['marco-pais', 8]] as const) {
+    for (const [id, count] of [['catalogo-seguimiento', resumirCatalogo(proyectos).seguimiento], ['catalogo-verificado', resumirCatalogo(proyectos).adopcionVerificada], ['marco-pais', 8]] as const) {
       expect(frentesMonitoreo.find((item) => item.id === id)?.alcance.cantidad).toBe(count);
     }
     for (const id of newIds) {

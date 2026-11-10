@@ -92,7 +92,7 @@ export default async function InstitucionPage({
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-institucional-700">
               {t.institucionDetalle.expedienteLabel}
             </p>
-            <h1 className="mt-3 max-w-4xl font-editorial text-[2.75rem] font-semibold leading-[0.98] tracking-[-0.025em] text-editorial-ink text-balance sm:text-6xl">
+            <h1 className="mt-3 max-w-4xl font-editorial text-4xl font-semibold leading-[0.98] tracking-[-0.025em] text-editorial-ink text-balance [overflow-wrap:anywhere] sm:text-6xl">
               {inst.nombre[lc]}
             </h1>
           </div>

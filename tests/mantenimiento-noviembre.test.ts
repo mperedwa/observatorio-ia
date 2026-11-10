@@ -6,17 +6,18 @@ import { ilia2025, iliaVigente, comparativaRegional, kpisHero } from '../src/dat
 import { frentesMonitoreo, revisionesMonitoreo, calcularEstadoAgenda } from '../src/data/monitoreo';
 import { esAdopcionVerificada } from '../src/data/modelo-evidencia';
 
-const frozen = <T,>(dataset: string): T => JSON.parse(readFileSync(
-  `public/api/releases/2026-10-29-r17/${dataset}.json`, 'utf8',
+const frozen = <T,>(dataset: string, release = '2026-10-29-r17'): T => JSON.parse(readFileSync(
+  `public/api/releases/${release}/${dataset}.json`, 'utf8',
 )).data as T;
 
 describe('mantenimiento editorial del 5 de noviembre', () => {
   it('modifica dos fichas existentes sin altas, duplicados ni cambios ajenos al lote', () => {
     const previous = frozen<Proyecto[]>('proyectos');
-    expect(proyectos.map(({ id }) => id)).toEqual(previous.map(({ id }) => id));
-    expect(proyectos.filter(p => JSON.stringify(p) !== JSON.stringify(previous.find(old => old.id === p.id)))
+    const novemberProjects = frozen<Proyecto[]>('proyectos', '2026-11-05-r18');
+    expect(novemberProjects.map(({ id }) => id)).toEqual(previous.map(({ id }) => id));
+    expect(novemberProjects.filter(p => JSON.stringify(p) !== JSON.stringify(previous.find(old => old.id === p.id)))
       .map(({ id }) => id)).toEqual(['pj-chatbot', 'invu-vincent-ai']);
-    expect(proyectos.some(({ id }) => /govos|simon/.test(id))).toBe(false);
+    expect(novemberProjects.some(({ id }) => /govos|simon/.test(id))).toBe(false);
   });
 
   it('reclasifica ChatbotPJ por técnica primaria y conserva fecha y resultados históricos', () => {

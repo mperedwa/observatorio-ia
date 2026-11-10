@@ -1,7 +1,7 @@
 {
   "version": "0.1.0",
-  "releaseId": "2026-11-05-r19",
-  "lastUpdate": "2026-11-05T00:00:00.000Z",
+  "releaseId": "2026-11-09-r20",
+  "lastUpdate": "2026-11-09T00:00:00.000Z",
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "schemas": [
@@ -20,10 +20,10 @@
       "url": "/api/schemas/instituciones.schema.json",
       "dataSchemaUrl": "/api/schemas/instituciones-data.schema.json",
       "draft": "http://json-schema.org/draft-07/schema#",
-      "bytes": 2789,
-      "sha256": "b90499586b240d293bc13f9bae2b8f9c22fe54e63c97166b46bc3730d57f3aad",
-      "dataSchemaBytes": 1246,
-      "dataSchemaSha256": "e3e76cf7d74722b6f81e99e08d7ed0f524fa594d38c056f5f50318604768f84e"
+      "bytes": 2830,
+      "sha256": "a91dc5328f8b12533370a7cf2f767fe28f0b166bb02e6ac2183d152195c23a59",
+      "dataSchemaBytes": 1273,
+      "dataSchemaSha256": "02f9ab41f2c96b26327cc7f2d7f7e70f73e0921d3e34fbeeb5141da73ca63343"
     },
     {
       "datasetId": "legislacion",

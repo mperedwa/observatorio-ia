@@ -1,10 +1,23 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-11-05T00:00:00.000Z",
-  "count": 65,
+  "lastUpdate": "2026-11-09T00:00:00.000Z",
+  "count": 66,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "data": [
+    {
+      "fecha": "2026-11-09",
+      "tipo": "proyecto",
+      "actualizacion": {
+        "es": "Se documentan cinco iniciativas: CR-T1308 del BID en Ecosistema y capacidades, y las plataformas jurídicas de la Asamblea Legislativa y el SBD, el chatbot de Moravia y GovOS con el Agente Nacional en Seguimiento. Las fuentes distinguen financiamiento aprobado, adjudicación, contrato notificado, cartel y anuncio.",
+        "en": "Five initiatives are documented: IDB project CR-T1308 in Ecosystem and capabilities, and the Legislative Assembly and SBD legal platforms, Moravia chatbot, and GovOS with the National Agent under review. The sources distinguish approved financing, award, notified contract, tender and announcement."
+      },
+      "fuente": {
+        "es": "BID, SICOP y MICITT",
+        "en": "IDB, SICOP and MICITT"
+      },
+      "fuente_url": "https://www.iadb.org/es/proyecto/CR-T1308"
+    },
     {
       "fecha": "2026-11-05",
       "tipo": "legislacion",

@@ -5494,5 +5494,664 @@
         "en": "Does the service remain available, was it archived, or is there an official closure decision?"
       }
     ]
+  },
+  {
+    "id": "bid-cr-t1308",
+    "titulo": {
+      "es": "Cooperación técnica del BID para el despliegue de IA",
+      "en": "IDB technical cooperation for AI deployment"
+    },
+    "institucionId": "bid",
+    "categoria": "infraestructura",
+    "tipoIniciativa": "programa-capacidades",
+    "estadoCatalogo": "ecosistema",
+    "faseImplementacion": "planificado",
+    "estadoIA": "declarada-sin-tecnica",
+    "descripcion": {
+      "es": "Cooperación técnica CR-T1308 para apoyar la Estrategia Nacional de Inteligencia Artificial de Costa Rica. El BID la aprobó el 30 de octubre de 2026 y la registra en etapa de implementación. El programa prevé un acelerador de IA para el sector público, cuya puesta en marcha está por verificar.",
+      "en": "Technical cooperation CR-T1308 supports Costa Rica’s National Artificial Intelligence Strategy. The IDB approved it on October 30, 2026 and lists it in implementation. The program plans a public-sector AI accelerator whose launch remains to be verified."
+    },
+    "fechaPrimeraEvidencia": "2026-07-30",
+    "fechaProximaRevision": "2026-12-09",
+    "objetivoDeclarado": {
+      "es": "Apoyar la ENIA mediante una evaluación de necesidades de cómputo de alto rendimiento, un acelerador para el sector público, formación para emprendimientos y apoyo al kit de IA de la OCDE.",
+      "en": "Support ENIA through a high-performance computing needs assessment, a public-sector accelerator, training for entrepreneurs and support for the OECD AI toolkit."
+    },
+    "datosConocidos": [
+      {
+        "es": "La operación ATN/JF-22906-CR asciende a US$550.000: US$500.000 no reembolsables del Japan Special Fund y US$50.000 de contrapartida nacional.",
+        "en": "Operation ATN/JF-22906-CR totals US$550,000: US$500,000 in nonreimbursable funding from the Japan Special Fund and US$50,000 in national counterpart funding."
+      },
+      {
+        "es": "La ficha del BID lista el documento de cooperación, la matriz de resultados, el plan de adquisiciones y los términos de referencia con fecha del 2 de noviembre de 2026.",
+        "en": "The IDB project page lists the cooperation document, results matrix, procurement plan and terms of reference dated November 2, 2026."
+      }
+    ],
+    "datosNoDeterminados": [
+      {
+        "es": "Fecha de firma, entidad ejecutora, desembolsos y primer piloto del acelerador por verificar. Los montos corresponden al financiamiento aprobado.",
+        "en": "Signing date, executing agency, disbursements and the accelerator’s first pilot remain to be verified. The figures reflect approved financing."
+      }
+    ],
+    "preguntasAbiertas": [
+      {
+        "es": "¿Qué entidad ejecutará el programa y qué entregables, adquisiciones y pilotos se han iniciado?",
+        "en": "Which entity will execute the program, and what deliverables, procurements and pilots have started?"
+      }
+    ],
+    "estado": "planificado",
+    "desde": "2026",
+    "fuenteUrl": "https://www.iadb.org/es/proyecto/CR-T1308",
+    "modeloVersion": 2,
+    "evaluacion": {
+      "existencia": {
+        "estado": "confirmado",
+        "fuenteIds": [
+          "bid-crt1308-ficha"
+        ]
+      },
+      "ejecucion": {
+        "estado": "parcialmente-confirmado",
+        "fuenteIds": [
+          "bid-crt1308-ficha"
+        ]
+      },
+      "tecnicaIA": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      },
+      "usoOperativo": {
+        "estado": "no-aplica",
+        "fuenteIds": []
+      },
+      "resultados": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      },
+      "gobernanza": {
+        "estado": "parcialmente-confirmado",
+        "fuenteIds": [
+          "bid-crt1308-ficha"
+        ]
+      }
+    },
+    "fuentes": [
+      {
+        "id": "bid-crt1308-ficha",
+        "titulo": {
+          "es": "Construcción de un Ecosistema Adecuado para el Desarrollo y Despliegue de IA en Costa Rica",
+          "en": "Building an adequate ecosystem for AI development and deployment in Costa Rica"
+        },
+        "url": "https://www.iadb.org/es/proyecto/CR-T1308",
+        "publicador": "Banco Interamericano de Desarrollo",
+        "tipoFuente": "multilateral",
+        "fechaConsulta": "2026-11-09",
+        "respalda": [
+          "existencia",
+          "ejecucion",
+          "objetivo-declarado",
+          "gobernanza"
+        ],
+        "naturalezaAfirmacion": [
+          "hecho",
+          "objetivo-declarado"
+        ]
+      }
+    ],
+    "fechaUltimaVerificacion": "2026-11-09"
+  },
+  {
+    "id": "asamblea-consulta-juridica-ia",
+    "titulo": {
+      "es": "Plataforma de consulta jurídica con IA de la Asamblea Legislativa",
+      "en": "Legislative Assembly AI legal research platform"
+    },
+    "institucionId": "asamblea-legislativa",
+    "categoria": "judicial",
+    "tipoIniciativa": "componente-ia",
+    "estadoCatalogo": "seguimiento",
+    "faseImplementacion": "planificado",
+    "estadoIA": "declarada-sin-tecnica",
+    "descripcion": {
+      "es": "Suscripción de una plataforma de consulta jurídica para la Asamblea Legislativa. SICOP registra el acto final a favor de Sistemas Maestros de Información S. A. por ₡4.454.460, IVA incluido. La activación y el uso institucional están por verificar.",
+      "en": "Subscription to a legal research platform for the Legislative Assembly. SICOP records the final award to Sistemas Maestros de Información S.A. for CRC 4,454,460 including VAT. Activation and institutional use remain to be verified."
+    },
+    "fechaPrimeraEvidencia": "2026-09-07",
+    "fechaProximaRevision": "2026-12-09",
+    "objetivoDeclarado": {
+      "es": "Facilitar la consulta de normativa, jurisprudencia y otras fuentes jurídicas mediante una plataforma con funciones de IA.",
+      "en": "Facilitate searches of laws, case law and other legal sources through a platform with AI features."
+    },
+    "datosConocidos": [
+      {
+        "es": "Procedimiento 2026LD-000099-0019800001. La solicitud está fechada el 7 de septiembre, el pliego se publicó el 23 de octubre y el acto final 0252026303000146 está fechado el 3 de noviembre de 2026.",
+        "en": "Procedure 2026LD-000099-0019800001. The request is dated September 7, the tender was published October 23 and final award 0252026303000146 is dated November 3, 2026."
+      },
+      {
+        "es": "La descripción de la oferta menciona MasterLex y sus anexos incluyen documentación de Sofía. El acto final identifica el servicio de suscripción jurídica.",
+        "en": "The offer description names MasterLex and its attachments list documentation for Sofía. The final award identifies the legal subscription service."
+      }
+    ],
+    "datosNoDeterminados": [
+      {
+        "es": "Contrato notificado, módulos efectivamente habilitados, técnica del componente de IA, recepción y uso institucional por verificar.",
+        "en": "Contract notification, enabled modules, the AI component’s technique, acceptance and institutional use remain to be verified."
+      }
+    ],
+    "preguntasAbiertas": [
+      {
+        "es": "¿Qué módulos recibirá la Asamblea y qué controles de acceso y tratamiento de datos tendrá su uso?",
+        "en": "Which modules will the Assembly receive, and what access and data-handling controls will apply?"
+      }
+    ],
+    "relaciones": [
+      {
+        "iniciativaId": "invu-vincent-ai",
+        "tipo": "distinto-de",
+        "nota": {
+          "es": "La Asamblea tramita una suscripción propia. El INVU contrató Vincent de vLex en un expediente distinto.",
+          "en": "The Assembly has its own subscription procedure. INVU contracted vLex Vincent in a separate procurement."
+        }
+      }
+    ],
+    "estado": "planificado",
+    "desde": "2026",
+    "fuenteUrl": "https://www.sicop.go.cr/moduloOferta/search/EP_SEJ_COQ623.jsp?cartelNo=20261001693&cartelSeq=00&adjuSeqno=1373587-&isPopUp=Y&isViewExamResult=Y&execTypeEnd=F",
+    "modeloVersion": 2,
+    "evaluacion": {
+      "existencia": {
+        "estado": "confirmado",
+        "fuenteIds": [
+          "asamblea-sicop-expediente"
+        ]
+      },
+      "ejecucion": {
+        "estado": "parcialmente-confirmado",
+        "fuenteIds": [
+          "asamblea-sicop-acto-final"
+        ]
+      },
+      "tecnicaIA": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      },
+      "usoOperativo": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      },
+      "resultados": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      },
+      "gobernanza": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      }
+    },
+    "fuentes": [
+      {
+        "id": "asamblea-sicop-acto-final",
+        "titulo": {
+          "es": "Acto final 0252026303000146",
+          "en": "Final award 0252026303000146"
+        },
+        "url": "https://www.sicop.go.cr/moduloOferta/search/EP_SEJ_COQ623.jsp?cartelNo=20261001693&cartelSeq=00&adjuSeqno=1373587-&isPopUp=Y&isViewExamResult=Y&execTypeEnd=F",
+        "publicador": "Asamblea Legislativa / SICOP",
+        "tipoFuente": "primaria-oficial",
+        "fechaConsulta": "2026-11-09",
+        "respalda": [
+          "existencia",
+          "ejecucion"
+        ],
+        "naturalezaAfirmacion": [
+          "hecho"
+        ]
+      },
+      {
+        "id": "asamblea-sicop-expediente",
+        "titulo": {
+          "es": "Expediente 2026LD-000099-0019800001",
+          "en": "Procurement dossier 2026LD-000099-0019800001"
+        },
+        "url": "https://www.sicop.go.cr/moduloPcont/pcont/ctract/es/CE_CEJ_ESQ002.jsp?cartelNo=20261001693&cartelSeq=00",
+        "publicador": "Asamblea Legislativa / SICOP",
+        "tipoFuente": "primaria-oficial",
+        "fechaConsulta": "2026-11-09",
+        "respalda": [
+          "existencia",
+          "objetivo-declarado"
+        ],
+        "naturalezaAfirmacion": [
+          "hecho",
+          "objetivo-declarado"
+        ]
+      },
+      {
+        "id": "asamblea-sicop-oferta",
+        "titulo": {
+          "es": "Oferta adjudicada, partida 1",
+          "en": "Winning offer, lot 1"
+        },
+        "url": "https://www.sicop.go.cr/moduloOferta/servlet/common/co/EpDecryptOfertaView?biddocUnikey=D20261029115542163717932965423320",
+        "publicador": "Sistemas Maestros de Información S. A. / SICOP",
+        "tipoFuente": "primaria-oficial",
+        "fechaConsulta": "2026-11-09",
+        "respalda": [
+          "existencia",
+          "objetivo-declarado"
+        ],
+        "naturalezaAfirmacion": [
+          "hecho",
+          "objetivo-declarado"
+        ]
+      }
+    ],
+    "fechaUltimaVerificacion": "2026-11-09"
+  },
+  {
+    "id": "sbd-plataforma-juridica-ia",
+    "titulo": {
+      "es": "Plataforma de consulta jurídica con IA del SBD",
+      "en": "SBD AI legal research platform"
+    },
+    "institucionId": "sbd",
+    "categoria": "judicial",
+    "tipoIniciativa": "componente-ia",
+    "estadoCatalogo": "seguimiento",
+    "faseImplementacion": "planificado",
+    "estadoIA": "declarada-sin-tecnica",
+    "descripcion": {
+      "es": "Contratación de una plataforma de consulta jurídica con IA y licencias del portal notarial INDEX. SICOP registra un contrato notificado y una orden de inicio del 8 de octubre de 2026. La recepción definitiva y el uso del componente de IA están por verificar.",
+      "en": "Procurement of an AI legal research platform and licenses for the INDEX notarial portal. SICOP records a notified contract and a start order dated October 8, 2026. Final acceptance and use of the AI component remain to be verified."
+    },
+    "fechaPrimeraEvidencia": "2026-08-12",
+    "fechaProximaRevision": "2026-12-09",
+    "objetivoDeclarado": {
+      "es": "Suscribir servicios para consultar normativa y jurisprudencia mediante herramientas de IA y adquirir acceso al portal notarial INDEX.",
+      "en": "Subscribe to tools for researching laws and case law using AI and obtain access to the INDEX notarial portal."
+    },
+    "datosConocidos": [
+      {
+        "es": "Procedimiento 2026LD-000020-0002000001. Contrato 0432026000200057-00 con Sistemas Maestros de Información S. A. por ₡3.773.522, con vigencia de cuatro años.",
+        "en": "Procedure 2026LD-000020-0002000001. Contract 0432026000200057-00 with Sistemas Maestros de Información S.A. for CRC 3,773,522, with a four-year term."
+      },
+      {
+        "es": "El contrato separa la partida de INDEX, por ₡202.722, de la plataforma jurídica con IA, por ₡3.570.800. El expediente registra una solicitud de recepción del 22 de octubre.",
+        "en": "The contract separates INDEX, at CRC 202,722, from the legal AI platform, at CRC 3,570,800. The dossier records an acceptance request dated October 22."
+      }
+    ],
+    "datosNoDeterminados": [
+      {
+        "es": "Nombre y técnica del módulo de IA entregado, acta de recepción definitiva, acceso institucional y uso efectivo por verificar.",
+        "en": "Name and technique of the delivered AI module, final acceptance, institutional access and actual use remain to be verified."
+      }
+    ],
+    "preguntasAbiertas": [
+      {
+        "es": "¿Qué solución se habilitó en la partida de IA y cuándo quedó disponible para los usuarios del SBD?",
+        "en": "Which solution was enabled under the AI contract line, and when did it become available to SBD users?"
+      }
+    ],
+    "relaciones": [
+      {
+        "iniciativaId": "sbd-ia-auditoria",
+        "tipo": "distinto-de",
+        "nota": {
+          "es": "La contratación de consulta jurídica tiene expediente y finalidad propios. Auditoría Interna se sigue en el procedimiento 2026LD-000022-0002000001.",
+          "en": "The legal research procurement has its own dossier and purpose. Internal Audit is tracked under procedure 2026LD-000022-0002000001."
+        }
+      },
+      {
+        "iniciativaId": "asamblea-consulta-juridica-ia",
+        "tipo": "distinto-de",
+        "nota": {
+          "es": "Ambas compras identifican al mismo proveedor en expedientes de instituciones distintas. El alcance de los módulos se verifica por separado.",
+          "en": "Both purchases identify the same supplier in separate institutions’ dossiers. Module scope is verified separately."
+        }
+      }
+    ],
+    "estado": "planificado",
+    "desde": "2026",
+    "fuenteUrl": "https://www.sicop.go.cr/moduloPcont/pcont/ctract/es/CE_CEJ_ESQ002.jsp?cartelNo=20260802614&cartelSeq=00",
+    "modeloVersion": 2,
+    "evaluacion": {
+      "existencia": {
+        "estado": "confirmado",
+        "fuenteIds": [
+          "sbd-juridico-sicop-expediente"
+        ]
+      },
+      "ejecucion": {
+        "estado": "parcialmente-confirmado",
+        "fuenteIds": [
+          "sbd-juridico-sicop-expediente",
+          "sbd-juridico-sicop-contrato"
+        ]
+      },
+      "tecnicaIA": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      },
+      "usoOperativo": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      },
+      "resultados": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      },
+      "gobernanza": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      }
+    },
+    "fuentes": [
+      {
+        "id": "sbd-juridico-sicop-expediente",
+        "titulo": {
+          "es": "Expediente 2026LD-000020-0002000001, secciones 5 y 10",
+          "en": "Procurement dossier 2026LD-000020-0002000001, sections 5 and 10"
+        },
+        "url": "https://www.sicop.go.cr/moduloPcont/pcont/ctract/es/CE_CEJ_ESQ002.jsp?cartelNo=20260802614&cartelSeq=00",
+        "publicador": "Consejo Rector del SBD / SICOP",
+        "tipoFuente": "primaria-oficial",
+        "fechaConsulta": "2026-11-09",
+        "respalda": [
+          "existencia",
+          "ejecucion",
+          "objetivo-declarado"
+        ],
+        "naturalezaAfirmacion": [
+          "hecho",
+          "objetivo-declarado"
+        ]
+      },
+      {
+        "id": "sbd-juridico-sicop-contrato",
+        "titulo": {
+          "es": "Contrato 0432026000200057-00, partidas 1 y 2",
+          "en": "Contract 0432026000200057-00, lots 1 and 2"
+        },
+        "url": "https://www.sicop.go.cr/moduloPcont/pcont/ctract/es/CE_COJ_COQ038_O.jsp?contract_no=CE202610000311&contract_mod_seq=00&typeExp=Y",
+        "publicador": "Consejo Rector del SBD / SICOP",
+        "tipoFuente": "primaria-oficial",
+        "fechaConsulta": "2026-11-09",
+        "respalda": [
+          "existencia",
+          "ejecucion",
+          "objetivo-declarado"
+        ],
+        "naturalezaAfirmacion": [
+          "hecho",
+          "objetivo-declarado"
+        ]
+      }
+    ],
+    "fechaUltimaVerificacion": "2026-11-09"
+  },
+  {
+    "id": "moravia-chatbot-ia",
+    "titulo": {
+      "es": "Chatbot con IA para atención y trámites de Moravia",
+      "en": "Moravia AI chatbot for municipal services"
+    },
+    "institucionId": "municipalidad-moravia",
+    "categoria": "social",
+    "tipoIniciativa": "sistema-ia",
+    "estadoCatalogo": "seguimiento",
+    "faseImplementacion": "planificado",
+    "estadoIA": "declarada-sin-tecnica",
+    "descripcion": {
+      "es": "La Municipalidad de Moravia tramita una licitación según demanda para un chatbot de atención y gestiones municipales. El anexo técnico exige procesamiento de lenguaje natural, reconocimiento de intenciones y consultas por texto o audio. WhatsApp y WebChat son los canales previstos para la primera etapa.",
+      "en": "The Municipality of Moravia is running an on-demand tender for a chatbot to handle inquiries and municipal services. Its technical annex requires natural language processing, intent recognition and text or audio queries. WhatsApp and WebChat are the planned first-stage channels."
+    },
+    "fechaPrimeraEvidencia": "2026-10-20",
+    "fechaProximaRevision": "2026-11-23",
+    "objetivoDeclarado": {
+      "es": "Facilitar consultas sobre servicios, tributos y requisitos municipales y derivar consultas a operadores cuando se requiera intervención humana.",
+      "en": "Facilitate inquiries about municipal services, taxes and requirements, and route queries to staff when human intervention is needed."
+    },
+    "datosConocidos": [
+      {
+        "es": "Procedimiento 2026LD-000086-0003300001. SICOP registra el pliego original del 2 de noviembre y una versión posterior del 4 de noviembre de 2026.",
+        "en": "Procedure 2026LD-000086-0003300001. SICOP records the original tender notice on November 2 and a subsequent version on November 4, 2026."
+      },
+      {
+        "es": "El archivo «Especificaciones tecnicas chat box IA.docx», adjunto 6 de la solicitud, pide comprensión contextual, aprendizaje automático e integración con sistemas municipales. El diseño y el modelo que ofrecerá un proveedor están por determinar.",
+        "en": "The technical specifications document, attachment 6 to the request, calls for contextual understanding, machine learning and integration with municipal systems. The design and model a supplier will offer remain unknown."
+      },
+      {
+        "es": "La respuesta oficial 0132026000100063 del 4 de noviembre informa que se ampliará el plazo para resolver una objeción. El anexo consigna un tope que difiere entre números y letras.",
+        "en": "Official response 0132026000100063 of November 4 says the deadline will be extended to address an objection. The annex gives different contract caps in figures and in words."
+      }
+    ],
+    "datosNoDeterminados": [
+      {
+        "es": "Tope contractual y fecha de cierre vigentes, acto final, proveedor, técnica implementada y recepción por confirmar.",
+        "en": "The current contract cap and submission deadline, final award, supplier, implemented technique and acceptance remain to be confirmed."
+      }
+    ],
+    "preguntasAbiertas": [
+      {
+        "es": "¿Qué tope y cronograma fija el cartel tras la objeción? ¿Cómo se probarán las respuestas, la protección de datos y la derivación a personal municipal?",
+        "en": "What cap and schedule does the tender set after the objection? How will responses, data protection and escalation to municipal staff be tested?"
+      }
+    ],
+    "relaciones": [
+      {
+        "iniciativaId": "cartago-munibot",
+        "tipo": "distinto-de",
+        "nota": {
+          "es": "Moravia tramita su propia contratación municipal. La relación con la meta de gobiernos locales del IFAM queda por acreditar.",
+          "en": "Moravia is running its own municipal tender. A connection to IFAM’s local-government target remains to be established."
+        }
+      }
+    ],
+    "estado": "planificado",
+    "desde": "2026",
+    "fuenteUrl": "https://www.sicop.go.cr/moduloPcont/pcont/ctract/es/CE_SCJ_GSQ003_C.jsp?isPopup=Y&contract_req_no=SC202610000135",
+    "modeloVersion": 2,
+    "evaluacion": {
+      "existencia": {
+        "estado": "confirmado",
+        "fuenteIds": [
+          "moravia-sicop-solicitud",
+          "moravia-sicop-expediente"
+        ]
+      },
+      "ejecucion": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      },
+      "tecnicaIA": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      },
+      "usoOperativo": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      },
+      "resultados": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      },
+      "gobernanza": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      }
+    },
+    "fuentes": [
+      {
+        "id": "moravia-sicop-solicitud",
+        "titulo": {
+          "es": "Solicitud 0062026001500015 y anexo 6, especificaciones técnicas",
+          "en": "Procurement request 0062026001500015 and attachment 6, technical specifications"
+        },
+        "url": "https://www.sicop.go.cr/moduloPcont/pcont/ctract/es/CE_SCJ_GSQ003_C.jsp?isPopup=Y&contract_req_no=SC202610000135",
+        "publicador": "Municipalidad de Moravia / SICOP",
+        "tipoFuente": "primaria-oficial",
+        "fechaConsulta": "2026-11-09",
+        "respalda": [
+          "existencia",
+          "objetivo-declarado",
+          "tecnica-ia"
+        ],
+        "naturalezaAfirmacion": [
+          "hecho",
+          "objetivo-declarado"
+        ]
+      },
+      {
+        "id": "moravia-sicop-expediente",
+        "titulo": {
+          "es": "Expediente 2026LD-000086-0003300001, secciones 2 a 4",
+          "en": "Procurement dossier 2026LD-000086-0003300001, sections 2 to 4"
+        },
+        "url": "https://www.sicop.go.cr/moduloPcont/pcont/ctract/es/CE_CEJ_ESQ002.jsp?cartelNo=20261003439&cartelSeq=00",
+        "publicador": "Municipalidad de Moravia / SICOP",
+        "tipoFuente": "primaria-oficial",
+        "fechaConsulta": "2026-11-09",
+        "respalda": [
+          "existencia",
+          "objetivo-declarado"
+        ],
+        "naturalezaAfirmacion": [
+          "hecho",
+          "objetivo-declarado"
+        ]
+      },
+      {
+        "id": "moravia-sicop-prorroga",
+        "titulo": {
+          "es": "Respuesta 0132026000100063 a la solicitud de prórroga",
+          "en": "Response 0132026000100063 to the extension request"
+        },
+        "url": "https://www.sicop.go.cr/moduloBid/cartel/EP_CTJ_COQ017.jsp?explainSeqno=186415&cmReqNo=&cmReqSeq=&etapasReqSeqno=",
+        "publicador": "Municipalidad de Moravia / SICOP",
+        "tipoFuente": "primaria-oficial",
+        "fechaPublicacion": "2026-11-04",
+        "fechaConsulta": "2026-11-09",
+        "respalda": [
+          "existencia"
+        ],
+        "naturalezaAfirmacion": [
+          "hecho"
+        ]
+      }
+    ],
+    "fechaUltimaVerificacion": "2026-11-09"
+  },
+  {
+    "id": "micitt-govos-agente-nacional",
+    "titulo": {
+      "es": "GovOS y Agente Nacional para Servicios Públicos",
+      "en": "GovOS and National Agent for Public Services"
+    },
+    "institucionId": "micitt",
+    "categoria": "social",
+    "tipoIniciativa": "sistema-ia",
+    "estadoCatalogo": "seguimiento",
+    "faseImplementacion": "anunciado",
+    "estadoIA": "declarada-sin-tecnica",
+    "descripcion": {
+      "es": "El MICITT anunció un marco de cooperación con el Center for Public Intelligence para explorar GovOS, una plataforma pública de IA de código abierto, y diseñar un agente nacional de voz y chat. El agente se proyecta como punto de acceso a servicios de varias instituciones, con integración prevista a Pura Vida Digital.",
+      "en": "MICITT announced a cooperation framework with the Center for Public Intelligence to explore GovOS, an open-source public AI platform, and design a national voice and chat agent. The agent is envisioned as an access point for services across institutions, with planned integration into Pura Vida Digital."
+    },
+    "fechaPrimeraEvidencia": "2026-10-28",
+    "fechaAnuncio": "2026-10-28",
+    "fechaProximaRevision": "2026-12-09",
+    "objetivoDeclarado": {
+      "es": "Orientar a la ciudadanía y facilitar el acceso a información sobre trámites y servicios públicos priorizados.",
+      "en": "Guide residents and make information about priority public services and procedures easier to access."
+    },
+    "datosConocidos": [
+      {
+        "es": "El comunicado del 28 de octubre describe dos componentes dentro de una sola cooperación y asigna a la Agencia Nacional de Gobierno Digital un papel de articulación técnica e institucional.",
+        "en": "The October 28 statement describes two components in one cooperation framework and gives the National Digital Government Agency a technical and institutional coordination role."
+      },
+      {
+        "es": "El marco prevé una implementación gradual sujeta a condiciones técnicas, jurídicas y de seguridad. No compromete financiamiento ni concede acceso automático a sistemas o datos públicos.",
+        "en": "The framework envisions gradual implementation subject to technical, legal and security conditions. It commits no funding and grants no automatic access to public systems or data."
+      }
+    ],
+    "datosNoDeterminados": [
+      {
+        "es": "Presupuesto, modelo, arquitectura, instituciones del primer piloto, integración efectiva y fecha de puesta en servicio por verificar.",
+        "en": "Budget, model, architecture, first pilot institutions, actual integration and launch date remain to be verified."
+      }
+    ],
+    "preguntasAbiertas": [
+      {
+        "es": "¿Qué servicios entrarán al primer piloto, qué componentes se publicarán como código abierto y quién operará el agente?",
+        "en": "Which services will join the first pilot, which components will be released as open source and who will operate the agent?"
+      }
+    ],
+    "relaciones": [
+      {
+        "iniciativaId": "micitt-asistente-virtual",
+        "tipo": "distinto-de",
+        "nota": {
+          "es": "El agente nacional se propone para servicios de varias instituciones. La ficha del asistente del MICITT documenta un canal de atención del propio ministerio.",
+          "en": "The national agent is proposed for services across institutions. The MICITT assistant record documents a channel for the ministry’s own inquiries."
+        }
+      }
+    ],
+    "estado": "planificado",
+    "desde": "2026",
+    "fuenteUrl": "https://micitt.go.cr/el-sector-informa/costa-rica-fortalece-su-infraestructura-digital-mediante-cooperacion-en",
+    "modeloVersion": 2,
+    "evaluacion": {
+      "existencia": {
+        "estado": "confirmado",
+        "fuenteIds": [
+          "micitt-govos-comunicado"
+        ]
+      },
+      "ejecucion": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      },
+      "tecnicaIA": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      },
+      "usoOperativo": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      },
+      "resultados": {
+        "estado": "no-determinado",
+        "fuenteIds": []
+      },
+      "gobernanza": {
+        "estado": "parcialmente-confirmado",
+        "fuenteIds": [
+          "micitt-govos-comunicado"
+        ]
+      }
+    },
+    "fuentes": [
+      {
+        "id": "micitt-govos-comunicado",
+        "titulo": {
+          "es": "Costa Rica fortalece su infraestructura digital mediante cooperación en inteligencia artificial",
+          "en": "Costa Rica strengthens digital infrastructure through AI cooperation"
+        },
+        "url": "https://micitt.go.cr/el-sector-informa/costa-rica-fortalece-su-infraestructura-digital-mediante-cooperacion-en",
+        "publicador": "MICITT",
+        "tipoFuente": "primaria-oficial",
+        "fechaConsulta": "2026-11-09",
+        "respalda": [
+          "existencia",
+          "objetivo-declarado",
+          "gobernanza"
+        ],
+        "naturalezaAfirmacion": [
+          "hecho",
+          "objetivo-declarado"
+        ]
+      }
+    ],
+    "fechaUltimaVerificacion": "2026-11-09"
   }
 ]
