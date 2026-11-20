@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-11-09T00:00:00.000Z",
+  "lastUpdate": "2026-11-20T00:00:00.000Z",
   "count": 47,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
@@ -6105,28 +6105,32 @@
       },
       "datosConocidos": [
         {
-          "es": "Procedimiento 2026LD-000086-0003300001. SICOP registra el pliego original del 2 de noviembre y una versión posterior del 4 de noviembre de 2026.",
-          "en": "Procedure 2026LD-000086-0003300001. SICOP records the original tender notice on November 2 and a subsequent version on November 4, 2026."
+          "es": "Procedimiento 2026LD-000086-0003300001. Tras las versiones del 2 y 4 de noviembre, SICOP registra un pliego vigente del 10 de noviembre de 2026 que precisa la contratación de una plataforma de chatbot con IA como servicio SaaS, con implementación e integración.",
+          "en": "Procedure 2026LD-000086-0003300001. After versions dated November 2 and 4, SICOP records the current tender notice dated November 10, 2026, specifying an AI chatbot platform as a SaaS service, with implementation and integration."
         },
         {
           "es": "El archivo «Especificaciones tecnicas chat box IA.docx», adjunto 6 de la solicitud, pide comprensión contextual, aprendizaje automático e integración con sistemas municipales. El diseño y el modelo que ofrecerá un proveedor están por determinar.",
           "en": "The technical specifications document, attachment 6 to the request, calls for contextual understanding, machine learning and integration with municipal systems. The design and model a supplier will offer remain unknown."
         },
         {
-          "es": "La respuesta oficial 0132026000100063 del 4 de noviembre informa que se ampliará el plazo para resolver una objeción. El anexo consigna un tope que difiere entre números y letras.",
-          "en": "Official response 0132026000100063 of November 4 says the deadline will be extended to address an objection. The annex gives different contract caps in figures and in words."
+          "es": "La resolución A-PROV-189-11-2026, notificada el 9 de noviembre, declaró parcialmente con lugar la objeción al pliego. Se conserva la advertencia sobre el tope del anexo original, que difiere entre números y letras.",
+          "en": "Resolution A-PROV-189-11-2026, notified on November 9, partially upheld the objection to the tender specifications. The original annex’s conflicting contract caps in figures and words remain flagged."
+        },
+        {
+          "es": "El resultado oficial de apertura, publicado el 16 de noviembre de 2026 a las 08:44, registra apertura finalizada, 22 proveedores participantes y 22 ofertas. El expediente consultado el 20 de noviembre no muestra un acto final de adjudicación.",
+          "en": "The official opening result, published on November 16, 2026 at 8:44 a.m., records completed opening, 22 participating suppliers and 22 bids. The dossier consulted on November 20 shows no final award decision."
         }
       ],
       "datosNoDeterminados": [
         {
-          "es": "Tope contractual y fecha de cierre vigentes, acto final, proveedor, técnica implementada y recepción por confirmar.",
-          "en": "The current contract cap and submission deadline, final award, supplier, implemented technique and acceptance remain to be confirmed."
+          "es": "Tope contractual vigente, acto final, proveedor adjudicado, técnica implementada y recepción de la solución por confirmar. La apertura de ofertas no acredita entrega ni uso operativo.",
+          "en": "The current contract cap, final award decision, awarded supplier, implemented technique and acceptance of the solution remain to be confirmed. Bid opening does not establish delivery or operational use."
         }
       ],
       "preguntasAbiertas": [
         {
-          "es": "¿Qué tope y cronograma fija el cartel tras la objeción? ¿Cómo se probarán las respuestas, la protección de datos y la derivación a personal municipal?",
-          "en": "What cap and schedule does the tender set after the objection? How will responses, data protection and escalation to municipal staff be tested?"
+          "es": "¿Qué tope contractual fija el pliego vigente y cuál será el resultado de la evaluación de ofertas? ¿Cómo se probarán las respuestas, la protección de datos y la derivación a personal municipal?",
+          "en": "What contract cap does the current tender set, and what will the bid evaluation conclude? How will responses, data protection and escalation to municipal staff be tested?"
         }
       ],
       "relaciones": [
@@ -6196,13 +6200,13 @@
         {
           "id": "moravia-sicop-expediente",
           "titulo": {
-            "es": "Expediente 2026LD-000086-0003300001, secciones 2 a 4",
-            "en": "Procurement dossier 2026LD-000086-0003300001, sections 2 to 4"
+            "es": "Expediente 2026LD-000086-0003300001, secciones 2–4 y 8",
+            "en": "Procurement dossier 2026LD-000086-0003300001, sections 2–4 and 8"
           },
           "url": "https://www.sicop.go.cr/moduloPcont/pcont/ctract/es/CE_CEJ_ESQ002.jsp?cartelNo=20261003439&cartelSeq=00",
           "publicador": "Municipalidad de Moravia / SICOP",
           "tipoFuente": "primaria-oficial",
-          "fechaConsulta": "2026-11-09",
+          "fechaConsulta": "2026-11-20",
           "respalda": [
             "existencia",
             "objetivo-declarado"
@@ -6229,9 +6233,45 @@
           "naturalezaAfirmacion": [
             "hecho"
           ]
+        },
+        {
+          "id": "moravia-sicop-resolucion-objecion",
+          "titulo": {
+            "es": "Resolución A-PROV-189-11-2026 sobre la objeción al pliego",
+            "en": "Resolution A-PROV-189-11-2026 on the objection to the tender"
+          },
+          "url": "https://www.sicop.go.cr/moduloOferta/search/EP_SEJ_POQ402.jsp?recursoSeqno=207376&cartelNo=20261003439&cartelSeq=00&cartelCate=&reqNew=1",
+          "publicador": "Municipalidad de Moravia / SICOP",
+          "tipoFuente": "primaria-oficial",
+          "fechaPublicacion": "2026-11-09",
+          "fechaConsulta": "2026-11-20",
+          "respalda": [
+            "existencia"
+          ],
+          "naturalezaAfirmacion": [
+            "hecho"
+          ]
+        },
+        {
+          "id": "moravia-sicop-apertura",
+          "titulo": {
+            "es": "Resultado de apertura de ofertas, publicado el 16 de noviembre de 2026",
+            "en": "Bid-opening result, published November 16, 2026"
+          },
+          "url": "https://www.sicop.go.cr/moduloOferta/servlet/search/EP_SEV_COQ622?isPopup=Y&fromESFlag=Y&cartelNo=20261003439&cartelSeq=00&cartelCate=1&phase=",
+          "publicador": "Municipalidad de Moravia / SICOP",
+          "tipoFuente": "primaria-oficial",
+          "fechaPublicacion": "2026-11-16",
+          "fechaConsulta": "2026-11-20",
+          "respalda": [
+            "existencia"
+          ],
+          "naturalezaAfirmacion": [
+            "hecho"
+          ]
         }
       ],
-      "fechaUltimaVerificacion": "2026-11-09"
+      "fechaUltimaVerificacion": "2026-11-20"
     },
     {
       "id": "micitt-govos-agente-nacional",

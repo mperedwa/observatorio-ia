@@ -10,7 +10,7 @@ const ROOT = process.cwd();
 const API_DIR = join(ROOT, 'public', 'api');
 const SOURCE_SCHEMA_DIR = join(ROOT, 'src', 'data', 'schemas');
 const SOURCE_DATA_DIR = join(ROOT, 'src', 'data', 'json');
-const RELEASE_ID = '2026-11-09-r20';
+const RELEASE_ID = '2026-11-20-r21';
 const PREVIOUS_RELEASE_ID = '2026-11-05-r19';
 const HISTORICAL_RELEASE_ID = '2026-08-22-r8';
 
@@ -170,7 +170,7 @@ function readIndexHtml(locale: 'es' | 'en') {
   return load(readFileSync(filename, 'utf8'));
 }
 
-describe('API pública estática R20', () => {
+describe('API pública estática R21', () => {
   it('conserva las siete rutas originales y suma cinco rutas complementarias', () => {
     const manifest = readJson<Manifest>('index.json');
     const urls = manifest.endpoints.map(({ url }) => url);
@@ -214,7 +214,7 @@ describe('API pública estática R20', () => {
       'enia-acciones': 129,
       monitoreo: 8,
       'marco-pais': 4,
-      historial: 66,
+      historial: 68,
       coyuntura: 2,
       recursos: 19,
       codebook: 11,
@@ -234,7 +234,7 @@ describe('API pública estática R20', () => {
 
     expect(manifest.dataRelease).toMatchObject({
       id: RELEASE_ID,
-      date: '2026-11-09',
+      date: '2026-11-20',
       manifestUrl: `/api/releases/${RELEASE_ID}/release.json`,
     });
     expect(manifest.documentation).toEqual({ es: '/api/', en: '/api/en/' });
@@ -302,13 +302,13 @@ describe('API pública estática R20', () => {
     }>('releases/index.json');
 
     expect(release.id).toBe(RELEASE_ID);
-    expect(release.date).toBe('2026-11-09');
+    expect(release.date).toBe('2026-11-20');
     expect(release.immutable).toBe(true);
     expect(readFileSync(join(API_DIR, 'releases', RELEASE_ID, 'release.lock'), 'utf8')).toContain(
       `release=${RELEASE_ID}`,
     );
     expect(releaseIndex.latest).toBe(RELEASE_ID);
-    expect(releaseIndex.releases).toHaveLength(13);
+    expect(releaseIndex.releases).toHaveLength(14);
     expect(releaseIndex.releases.find(({ id }) => id === RELEASE_ID)).toMatchObject({
       bytes: byteLength(releaseText),
       sha256: digest(releaseText),
@@ -568,7 +568,7 @@ describe('API pública estática R20', () => {
     const endpoint = readJson<ApiEnvelope>('proyectos.json');
 
     expect(endpoint.count).toBe(47);
-    expect(endpoint.lastUpdate).toBe('2026-11-09T00:00:00.000Z');
+    expect(endpoint.lastUpdate).toBe('2026-11-20T00:00:00.000Z');
     expect(endpoint.data).toEqual(source);
   });
 
@@ -577,6 +577,6 @@ describe('API pública estática R20', () => {
 
     expect(payload.count).toBe(8);
     expect(payload.data.frentes).toHaveLength(8);
-    expect(payload.data.revisiones).toHaveLength(23);
+    expect(payload.data.revisiones).toHaveLength(25);
   });
 });

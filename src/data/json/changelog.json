@@ -1,5 +1,25 @@
 [
   {
+    "fecha": "2026-11-20",
+    "tipo": "recurso",
+    "actualizacion": {
+      "es": "Dos intervenciones ENIA de Salud incorporan evidencia documental: se verifica la agenda de investigación con líneas de IA y se acredita formulación parcial del reglamento de diagnóstico clínico. Las 120 intervenciones únicas quedan distribuidas en 4 verificadas, 14 parcialmente verificadas y 102 sin ejecución verificada. La revisión es parcial; siguen pendientes el reporte del indicador por MICITT-DIDI y la promulgación del reglamento. No se añaden sistemas al catálogo.",
+      "en": "Two Health ENIA interventions incorporate documentary evidence: the research agenda with AI priorities is verified, and partial drafting of the clinical diagnosis regulation is established. The 120 unique interventions comprise 4 verified, 14 partially verified and 102 without verified implementation. This is a partial review; MICITT-DIDI’s reporting of the indicator and promulgation of the regulation remain pending. No systems are added to the catalog."
+    },
+    "fuente": { "es": "Ministerio de Salud, agenda e informe de gestión", "en": "Ministry of Health, agenda and management report" },
+    "fuente_url": "https://www.ministeriodesalud.go.cr/index.php/biblioteca-de-archivos-left/documentos-ministerio-de-salud/ministerio-de-salud/informes-institucionales/informes-de-gestion/nivel-central/10322-informe-final-de-gestion-ana-priscilla-herrera-garcia-dits-2026/file"
+  },
+  {
+    "fecha": "2026-11-20",
+    "tipo": "proyecto",
+    "actualizacion": {
+      "es": "La ficha de Moravia incorpora la resolución que declaró parcialmente con lugar la objeción, el pliego del 10 de noviembre y la apertura publicada el 16, con 22 ofertas. Se mantiene en Seguimiento: la apertura no acredita adjudicación, entrega ni uso. El catálogo conserva 47 iniciativas: 11 verificadas, 19 en seguimiento y 17 de ecosistema, en 22 instituciones u organismos.",
+      "en": "Moravia’s record incorporates the resolution partially upholding the objection, the November 10 tender and the opening published on November 16, with 22 bids. It remains under review: opening does not establish award, delivery or use. The catalog retains 47 initiatives: 11 verified, 19 under review and 17 ecosystem initiatives across 22 institutions or organizations."
+    },
+    "fuente": { "es": "Municipalidad de Moravia / SICOP", "en": "Municipality of Moravia / SICOP" },
+    "fuente_url": "https://www.sicop.go.cr/moduloOferta/servlet/search/EP_SEV_COQ622?isPopup=Y&fromESFlag=Y&cartelNo=20261003439&cartelSeq=00&cartelCate=1&phase="
+  },
+  {
     "fecha": "2026-11-09",
     "tipo": "proyecto",
     "actualizacion": {

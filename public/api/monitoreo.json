@@ -1,12 +1,12 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-11-09T00:00:00.000Z",
+  "lastUpdate": "2026-11-20T00:00:00.000Z",
   "count": 8,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "data": {
     "schemaVersion": 1,
-    "fechaCorte": "2026-11-09",
+    "fechaCorte": "2026-11-20",
     "politica": {
       "descripcion": {
         "es": "La agenda de revisión separa la vigilancia automática de la decisión editorial. Una alerta abre una revisión; no cambia por sí sola el catálogo, el estado de un expediente ni la evidencia de ejecución.",
@@ -270,6 +270,63 @@
       }
     ],
     "revisiones": [
+      {
+        "id": "revision-enia-plan-accion-2026-11-20-salud",
+        "fecha": "2026-11-20",
+        "frenteId": "enia-plan-accion",
+        "resultado": "cambio-publicado",
+        "alcanceRevision": "parcial",
+        "resumen": {
+          "es": "Dos intervenciones de Salud incorporan evidencia primaria: se verifica la oficialización de la agenda de investigación con líneas de IA y se registra formulación parcial del reglamento de diagnóstico clínico. La revisión cubre estos dos productos, no las 120 intervenciones. Queda pendiente el reporte del indicador por MICITT-DIDI y la promulgación del reglamento.",
+          "en": "Two Health interventions incorporate primary evidence: official adoption of the research agenda with AI priorities is verified, and partial drafting of the clinical diagnosis regulation is recorded. This review covers these two outputs, not all 120 interventions. MICITT-DIDI’s reporting of the indicator and promulgation of the regulation remain pending."
+        },
+        "notaValidacion": {
+          "es": "Dos intervenciones de Salud · revisión parcial",
+          "en": "Two Health interventions · partial review"
+        },
+        "fuenteUrl": "https://www.ministeriodesalud.go.cr/index.php/biblioteca-de-archivos-left/documentos-ministerio-de-salud/ministerio-de-salud/informes-institucionales/informes-de-gestion/nivel-central/10322-informe-final-de-gestion-ana-priscilla-herrera-garcia-dits-2026/file",
+        "transiciones": [
+          {
+            "objetoTipo": "intervencion-enia",
+            "objetoId": "enia-3-1-1-03",
+            "campo": "estadoEjecucion",
+            "antes": "no-verificado",
+            "despues": "verificado"
+          },
+          {
+            "objetoTipo": "intervencion-enia",
+            "objetoId": "enia-1-1-2-01",
+            "campo": "estadoEjecucion",
+            "antes": "no-verificado",
+            "despues": "parcialmente-verificado"
+          }
+        ]
+      },
+      {
+        "id": "revision-catalogo-seguimiento-2026-11-20-moravia",
+        "fecha": "2026-11-20",
+        "frenteId": "catalogo-seguimiento",
+        "resultado": "cambio-publicado",
+        "alcanceRevision": "parcial",
+        "resumen": {
+          "es": "Moravia incorpora la resolución de la objeción del 9 de noviembre, el pliego revisado del 10 y la apertura de ofertas publicada el 16, con 22 participantes y 22 ofertas. Conserva Seguimiento y fase planificada; no consta adjudicación en el expediente consultado. La revisión se limita a esta ficha.",
+          "en": "Moravia incorporates the November 9 objection resolution, the revised November 10 tender and the bid opening published on November 16, with 22 participants and 22 bids. It remains under review and planned; the consulted dossier shows no award. This review covers this record only."
+        },
+        "notaValidacion": {
+          "es": "Moravia: apertura confirmada · sin adjudicación acreditada",
+          "en": "Moravia: opening confirmed · award not established"
+        },
+        "fuenteUrl": "https://www.sicop.go.cr/moduloOferta/servlet/search/EP_SEV_COQ622?isPopup=Y&fromESFlag=Y&cartelNo=20261003439&cartelSeq=00&cartelCate=1&phase=",
+        "transiciones": [
+          {
+            "objetoTipo": "proyecto",
+            "objetoId": "moravia-chatbot-ia",
+            "campo": "cronologiaContratacion",
+            "antes": "prórroga para resolver objeción",
+            "despues": "objeción parcialmente con lugar, pliego revisado y apertura finalizada con 22 ofertas"
+          }
+        ]
+      },
       {
         "id": "revision-legislacion-ia-2026-11-05-seguimiento",
         "fecha": "2026-11-05",

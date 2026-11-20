@@ -1,12 +1,12 @@
 {
   "version": "0.1.0",
-  "lastUpdate": "2026-11-05T00:00:00.000Z",
+  "lastUpdate": "2026-11-20T00:00:00.000Z",
   "count": 129,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "data": {
     "schemaVersion": 2,
-    "fechaCorte": "2026-11-05",
+    "fechaCorte": "2026-11-20",
     "fuente": {
       "titulo": {
         "es": "Plan de Acción de la Estrategia Nacional de Inteligencia Artificial de Costa Rica",
@@ -175,7 +175,7 @@
             "responsableEnFormalizacion": false,
             "aliadosOficiales": "MICITT-DIDI",
             "tipoIntervencion": "politica-gobernanza",
-            "estadoEjecucion": "no-verificado",
+            "estadoEjecucion": "parcialmente-verificado",
             "cruceCatalogo": {
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
@@ -185,7 +185,29 @@
               }
             },
             "recomendacionEditorial": "ecosistema",
-            "fechaUltimaRevision": "2026-08-21"
+            "fechaUltimaRevision": "2026-11-20",
+            "evidenciasExternas": [
+              {
+                "id": "minsa-dits-informe-2026-reglamento",
+                "titulo": {
+                  "es": "Informe Final de Gestión de la Dirección de Investigación y Tecnologías en Salud, p. 27",
+                  "en": "Final Management Report of the Health Research and Technologies Directorate, p. 27"
+                },
+                "url": "https://www.ministeriodesalud.go.cr/index.php/biblioteca-de-archivos-left/documentos-ministerio-de-salud/ministerio-de-salud/informes-institucionales/informes-de-gestion/nivel-central/10322-informe-final-de-gestion-ana-priscilla-herrera-garcia-dits-2026/file#page=27",
+                "publicador": "Ministerio de Salud, Dirección de Investigación y Tecnologías en Salud",
+                "fechaPublicacion": "2026-05-11",
+                "fechaConsulta": "2026-11-20",
+                "respalda": [
+                  "existencia",
+                  "ejecucion",
+                  "gobernanza"
+                ]
+              }
+            ],
+            "notasEditoriales": {
+              "es": "El informe de gestión de Salud del 11 de mayo de 2026 documenta la propuesta de reglamento para el diagnóstico clínico mediante software con algoritmos e IA y los oficios MS-DVM-ADM-77-2024 y MICITT-DVCTI-OF-226-2024. Al cierre del periodo informado se esperaba respuesta sobre modificaciones y observaciones. Se acredita avance en formulación y coordinación, no la oficialización exigida por la meta. En la búsqueda dirigida de esta revisión no se localizó una promulgación posterior; el estado normativo definitivo sigue por confirmar.",
+              "en": "Health’s May 11, 2026 management report documents the draft regulation for clinical diagnosis using software with algorithms and AI, and official letters MS-DVM-ADM-77-2024 and MICITT-DVCTI-OF-226-2024. At the end of the reporting period, a response on amendments and observations was pending. This establishes progress in drafting and coordination, not the official adoption required by the target. This review’s targeted search did not locate subsequent promulgation; the final regulatory status remains to be confirmed."
+            }
           },
           {
             "id": "enia-1-1-2-02",
@@ -1592,7 +1614,7 @@
             "responsableEnFormalizacion": false,
             "aliadosOficiales": "MINSA",
             "tipoIntervencion": "investigacion-diagnostico",
-            "estadoEjecucion": "no-verificado",
+            "estadoEjecucion": "verificado",
             "cruceCatalogo": {
               "estado": "no-es-sistema-ia",
               "proyectoIds": [],
@@ -1602,7 +1624,59 @@
               }
             },
             "recomendacionEditorial": "ecosistema",
-            "fechaUltimaRevision": "2026-08-21"
+            "fechaUltimaRevision": "2026-11-20",
+            "evidenciasExternas": [
+              {
+                "id": "minsa-agenda-salud-oficializacion",
+                "titulo": {
+                  "es": "Oficialización de la Agenda Nacional de Prioridades de Investigación y Desarrollo Tecnológico en Salud 2025–2030",
+                  "en": "Official adoption of the National Health Research and Technological Development Priorities Agenda 2025–2030"
+                },
+                "url": "https://ministeriodesalud.go.cr/index.php/prensa/62-noticias-2025/2222-salud-presenta-la-agenda-nacional-de-prioridades-de-investigacion-y-desarrollo-tecnologico-en-salud-2025-2030",
+                "publicador": "Ministerio de Salud",
+                "fechaPublicacion": "2025-08-22",
+                "fechaConsulta": "2026-11-20",
+                "respalda": [
+                  "existencia",
+                  "ejecucion",
+                  "gobernanza"
+                ]
+              },
+              {
+                "id": "minsa-agenda-salud-ia",
+                "titulo": {
+                  "es": "Agenda Nacional de Prioridades de Investigación y Desarrollo Tecnológico en Salud 2025–2030, pp. 88–89",
+                  "en": "National Health Research and Technological Development Priorities Agenda 2025–2030, pp. 88–89"
+                },
+                "url": "https://www.ministeriodesalud.go.cr/index.php/biblioteca-de-archivos-left/documentos-ministerio-de-salud/ministerio-de-salud/planes-y-politicas-institucionales/documentos-vinculados-politicas-y-planes/9423-agenda-nacional-de-prioridades-de-investigacion-y-desarrollo-tecnologico-en-salud-2025-2030/file#page=88",
+                "publicador": "Ministerio de Salud",
+                "fechaConsulta": "2026-11-20",
+                "respalda": [
+                  "existencia",
+                  "ejecucion"
+                ]
+              },
+              {
+                "id": "minsa-dits-informe-2026-agenda",
+                "titulo": {
+                  "es": "Informe Final de Gestión de la Dirección de Investigación y Tecnologías en Salud, p. 11",
+                  "en": "Final Management Report of the Health Research and Technologies Directorate, p. 11"
+                },
+                "url": "https://www.ministeriodesalud.go.cr/index.php/biblioteca-de-archivos-left/documentos-ministerio-de-salud/ministerio-de-salud/informes-institucionales/informes-de-gestion/nivel-central/10322-informe-final-de-gestion-ana-priscilla-herrera-garcia-dits-2026/file#page=11",
+                "publicador": "Ministerio de Salud, Dirección de Investigación y Tecnologías en Salud",
+                "fechaPublicacion": "2026-05-11",
+                "fechaConsulta": "2026-11-20",
+                "respalda": [
+                  "ejecucion",
+                  "resultado",
+                  "gobernanza"
+                ]
+              }
+            ],
+            "notasEditoriales": {
+              "es": "Se verifica el producto documental: Salud anunció la oficialización de la agenda el 22 de agosto de 2025, el documento incluye prioridades de IA y el informe de gestión del 11 de mayo de 2026 vincula expresamente su elaboración y oficialización con el resultado ENIA 3.1.1. El alcance corresponde a esta agenda de Salud, no al conjunto de intervenciones del resultado. MICITT-DIDI conserva su condición de responsable oficial y MINSA de aliado, según el Plan. Queda pendiente corroborar cómo MICITT-DIDI contabilizó el indicador de avance del 100%. Esta evidencia no acredita sistemas clínicos de IA en operación.",
+              "en": "The documentary output is verified: Health announced the agenda’s official adoption on August 22, 2025, the document includes AI priorities, and the May 11, 2026 management report explicitly links its preparation and adoption to ENIA outcome 3.1.1. This assessment covers the Health agenda, not all interventions under that outcome. MICITT-DIDI remains the official lead and MINSA the partner, as stated in the Plan. How MICITT-DIDI recorded progress against the 100% indicator remains to be corroborated. This evidence does not establish operational clinical AI systems."
+            }
           },
           {
             "id": "enia-3-1-1-04",

@@ -38,11 +38,11 @@ const COUNTERS_TS = join(ROOT, 'src', 'data', 'counters.ts');
 const PKG = JSON.parse(readFileSync(join(ROOT, 'package.json'), 'utf8')) as { version: string };
 
 const DATA_RELEASE = {
-  id: '2026-11-09-r20',
-  date: '2026-11-09',
+  id: '2026-11-20-r21',
+  date: '2026-11-20',
   title: {
-    es: 'Corte R20 de cooperación, contratación y anuncios de IA',
-    en: 'R20 AI cooperation, procurement and announcements release',
+    es: 'Corte R21 de evidencia ENIA de Salud y contratación de Moravia',
+    en: 'R21 Health ENIA evidence and Moravia procurement release',
   },
 } as const;
 const RELEASE_LOCK_PATH = join(RELEASES_OUT_DIR, DATA_RELEASE.id, 'release.lock');
@@ -144,7 +144,7 @@ const DATASETS: Dataset[] = [
     endpoint: '/api/proyectos.json',
     title: { es: 'Iniciativas', en: 'Initiatives' },
     countUnit: { es: 'iniciativas', en: 'initiatives' },
-    lastUpdate: '2026-11-09',
+    lastUpdate: '2026-11-20',
     description:
       'Catálogo de iniciativas relacionadas con IA en el sector público costarricense. Incluye sistemas, pilotos, planes y capacidades con descripción bilingüe ES/EN y una fuente pública consultada.',
     descriptionEs:
@@ -210,7 +210,7 @@ const DATASETS: Dataset[] = [
     endpoint: '/api/enia-acciones.json',
     title: { es: 'Plan de Acción ENIA', en: 'ENIA Action Plan' },
     countUnit: { es: 'registros fuente', en: 'source records' },
-    lastUpdate: '2026-11-05',
+    lastUpdate: '2026-11-20',
     description:
       'Inventario y crosswalk del Plan de Acción ENIA: 129 registros del documento oficial, 120 intervenciones únicas, clasificación por tipo, evidencia de ejecución y relaciones con el catálogo.',
     descriptionEs:
@@ -228,7 +228,7 @@ const DATASETS: Dataset[] = [
     endpoint: '/api/monitoreo.json',
     title: { es: 'Monitoreo editorial', en: 'Editorial monitoring' },
     countUnit: { es: 'frentes', en: 'monitoring fronts' },
-    lastUpdate: '2026-11-09',
+    lastUpdate: '2026-11-20',
     publicationMode: 'rolling',
     description:
       'Agenda y bitácora editorial: cadencias por frente, próximas revisiones, cambios de estado y revisiones documentadas sin cambios.',
@@ -261,7 +261,7 @@ const DATASETS: Dataset[] = [
     endpoint: '/api/historial.json',
     title: { es: 'Historial editorial', en: 'Editorial history' },
     countUnit: { es: 'cambios publicados', en: 'published changes' },
-    lastUpdate: '2026-11-09',
+    lastUpdate: '2026-11-20',
     description:
       'Bitácora pública y bilingüe de cambios editoriales con fecha, tipo, fuente y commit cuando está disponible.',
     descriptionEs:

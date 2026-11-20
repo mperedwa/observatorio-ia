@@ -1,8 +1,20 @@
 {
-  "latest": "2026-11-09-r20",
+  "latest": "2026-11-20-r21",
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "releases": [
+    {
+      "id": "2026-11-20-r21",
+      "date": "2026-11-20",
+      "title": {
+        "es": "Corte R21 de evidencia ENIA de Salud y contratación de Moravia",
+        "en": "R21 Health ENIA evidence and Moravia procurement release"
+      },
+      "manifestUrl": "/api/releases/2026-11-20-r21/release.json",
+      "datasets": 11,
+      "bytes": 7554,
+      "sha256": "c271f5d3af58fb3139e6013fe7562d169baf604e01e904ede398a4547accdd28"
+    },
     {
       "id": "2026-11-09-r20",
       "date": "2026-11-09",
