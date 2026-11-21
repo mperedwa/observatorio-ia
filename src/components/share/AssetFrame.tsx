@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import type { Locale } from '@/i18n/config';
+import { changelog } from '@/data/changelog';
 
 export interface AssetSize {
   width: number;
@@ -30,6 +31,14 @@ export function AssetFrame({
   variant?: 'light' | 'dark' | 'gradient';
   children: ReactNode;
 }) {
+  const fechaCorte = changelog[0]?.fecha;
+  const fechaEditorial = fechaCorte
+    ? new Intl.DateTimeFormat(locale === 'es' ? 'es-CR' : 'en-US', {
+        month: 'long',
+        year: 'numeric',
+        timeZone: 'UTC',
+      }).format(new Date(`${fechaCorte}T00:00:00Z`))
+    : null;
   const bg =
     variant === 'dark'
       ? 'bg-slate-900 text-white'
@@ -57,7 +66,7 @@ export function AssetFrame({
         style={{ fontSize: 16 }}
       >
         <span className="font-semibold tracking-[0.02em]">observatorioia.org</span>
-        <span>{locale === 'es' ? 'Agosto 2026' : 'August 2026'}</span>
+        {fechaEditorial && <span>{fechaEditorial}</span>}
       </footer>
     </div>
   );

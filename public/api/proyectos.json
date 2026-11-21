@@ -1,7 +1,7 @@
 {
   "version": "0.1.0",
   "lastUpdate": "2026-11-20T00:00:00.000Z",
-  "count": 47,
+  "count": 48,
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "data": [
@@ -1449,6 +1449,14 @@
             "es": "Los modelos se construyen sobre información contenida en EDUS.",
             "en": "The models are built using information held in EDUS."
           }
+        },
+        {
+          "iniciativaId": "ccss-lunit-mamografias",
+          "tipo": "relacion-no-acreditada",
+          "nota": {
+            "es": "La coincidencia en cáncer de mama no demuestra equivalencia entre LIDIA y el piloto CCSS–Roche con Lunit. Su relación queda por esclarecer.",
+            "en": "The shared breast-cancer purpose does not establish equivalence between LIDIA and the CCSS–Roche pilot with Lunit. Their relationship remains to be clarified."
+          }
         }
       ]
     },
@@ -1598,6 +1606,16 @@
         {
           "es": "¿El componente de priorización con IA superó el estudio de validación y se usa en atención?",
           "en": "Did the AI prioritization component complete validation and enter care use?"
+        }
+      ],
+      "relaciones": [
+        {
+          "iniciativaId": "ccss-lunit-mamografias",
+          "tipo": "relacion-no-acreditada",
+          "nota": {
+            "es": "El piloto CCSS–Roche identifica Lunit para mamografías; las fuentes consultadas no acreditan que continúe el componente previo ni que esté integrado a REDIMED.",
+            "en": "The CCSS–Roche pilot identifies Lunit for mammography; the reviewed sources do not establish continuity with the earlier component or integration with REDIMED."
+          }
         }
       ]
     },
@@ -6385,6 +6403,191 @@
         }
       ],
       "fechaUltimaVerificacion": "2026-11-09"
+    },
+    {
+      "id": "ccss-lunit-mamografias",
+      "titulo": {
+        "es": "Lunit INSIGHT MMG: piloto de mamografías",
+        "en": "Lunit INSIGHT MMG: mammography pilot"
+      },
+      "institucionId": "ccss",
+      "categoria": "salud",
+      "tipoIniciativa": "componente-ia",
+      "estadoCatalogo": "seguimiento",
+      "faseImplementacion": "anunciado",
+      "estadoIA": "confirmada",
+      "descripcion": {
+        "es": "Piloto anunciado de la CCSS con Roche, dentro de ImpulSALUD, para apoyar la lectura de mamografías con Lunit INSIGHT MMG en Tibás-Uruca-Merced. La herramienta está identificada; el inicio del uso clínico y sus resultados locales quedan por acreditar.",
+        "en": "CCSS pilot announced with Roche under ImpulSALUD to support mammography reading with Lunit INSIGHT MMG in Tibás-Uruca-Merced. The tool is identified; the start of clinical use and local results remain to be established."
+      },
+      "objetivoDeclarado": {
+        "es": "Apoyar la identificación de hallazgos sospechosos y mejorar la oportunidad de atención, conservando el diagnóstico bajo responsabilidad del radiólogo.",
+        "en": "Support identification of suspicious findings and more timely care, while keeping diagnosis under the radiologist’s responsibility."
+      },
+      "fechaPrimeraEvidencia": "2026-08-21",
+      "fechaUltimaVerificacion": "2026-11-20",
+      "fechaProximaRevision": "2026-12-04",
+      "datosConocidos": [
+        {
+          "es": "MICITT identifica el convenio CCSS–Roche, la herramienta y el área de salud. El comunicado consultado el 20 de noviembre de 2026 describe una implementación prevista.",
+          "en": "MICITT identifies the CCSS–Roche agreement, tool and health area. The announcement consulted on November 20, 2026 describes planned implementation."
+        },
+        {
+          "es": "La documentación técnica K211678 alojada por FDA identifica aprendizaje profundo aplicado a imágenes mamográficas. No determina la versión que utilizará la CCSS.",
+          "en": "Technical documentation K211678 hosted by FDA identifies deep learning applied to mammography images. It does not establish the version CCSS will use."
+        },
+        {
+          "es": "Las 800 mamografías mensuales y 2.400 mujeres en tres meses son metas del piloto, no resultados comprobados.",
+          "en": "The 800 mammograms per month and 2,400 women over three months are pilot targets, not verified results."
+        },
+        {
+          "es": "La primera evidencia corresponde a una nota de Teletica del 21 de agosto de 2026 sobre ImpulSALUD y el convenio CCSS–Roche. Esa nota no identifica Lunit ni confirma uso clínico.",
+          "en": "The earliest evidence is a Teletica report dated August 21, 2026 about ImpulSALUD and the CCSS–Roche agreement. That report does not identify Lunit or confirm clinical use."
+        }
+      ],
+      "datosNoDeterminados": [
+        {
+          "es": "Texto, fecha, duración, financiación y condiciones de licenciamiento del convenio no recuperados. Roche es colaborador declarado; no se acredita una adjudicación a su favor.",
+          "en": "The agreement’s text, date, duration, funding and licensing terms were not retrieved. Roche is a declared collaborator; no procurement award to Roche is established."
+        },
+        {
+          "es": "Primer estudio procesado, fecha de inicio clínico, versión instalada y resultados locales por confirmar.",
+          "en": "The first processed examination, clinical start date, installed version and local results remain to be confirmed."
+        },
+        {
+          "es": "Integración con REDIMED o LIDIA, custodia de imágenes y protocolo local de validación y supervisión por determinar.",
+          "en": "Integration with REDIMED or LIDIA, image custody, and local validation and oversight protocols remain undetermined."
+        }
+      ],
+      "preguntasAbiertas": [
+        {
+          "es": "¿Qué obligaciones, financiación y licencias establece el convenio CCSS–Roche?",
+          "en": "What obligations, funding and licenses does the CCSS–Roche agreement establish?"
+        },
+        {
+          "es": "¿Cuándo se procesó el primer estudio y qué evaluación local documenta la versión instalada?",
+          "en": "When was the first examination processed, and what local evaluation documents the installed version?"
+        },
+        {
+          "es": "¿Lunit complementa o sustituye algún componente previo de REDIMED o LIDIA? ¿Cómo se custodian las imágenes?",
+          "en": "Does Lunit complement or replace any earlier REDIMED or LIDIA component? How are images safeguarded?"
+        }
+      ],
+      "relaciones": [
+        {
+          "iniciativaId": "ccss-redimed",
+          "tipo": "relacion-no-acreditada",
+          "nota": {
+            "es": "REDIMED documenta infraestructura de imágenes y un antecedente de IA mamográfica. Las fuentes consultadas no establecen su correspondencia o integración con este piloto.",
+            "en": "REDIMED documents imaging infrastructure and an earlier mammography AI component. The reviewed sources do not establish correspondence or integration with this pilot."
+          }
+        },
+        {
+          "iniciativaId": "ccss-lidia",
+          "tipo": "relacion-no-acreditada",
+          "nota": {
+            "es": "LIDIA incluye una línea de modelos sobre cáncer de mama. No se acredita que corresponda al producto Lunit ni al convenio CCSS–Roche.",
+            "en": "LIDIA includes a breast-cancer modeling workstream. It has not been established as the Lunit product or the CCSS–Roche agreement."
+          }
+        }
+      ],
+      "estado": "planificado",
+      "desde": "2026",
+      "fuenteUrl": "https://www.micitt.go.cr/el-sector-informa/inteligencia-artificial-apoyara-deteccion-temprana-de-cancer-mama-en-ccss",
+      "modeloVersion": 2,
+      "evaluacion": {
+        "existencia": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "micitt-ccss-lunit-anuncio"
+          ]
+        },
+        "ejecucion": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "tecnicaIA": {
+          "estado": "confirmado",
+          "fuenteIds": [
+            "fda-lunit-k211678"
+          ]
+        },
+        "usoOperativo": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "resultados": {
+          "estado": "no-determinado",
+          "fuenteIds": []
+        },
+        "gobernanza": {
+          "estado": "parcialmente-confirmado",
+          "fuenteIds": [
+            "micitt-ccss-lunit-anuncio"
+          ]
+        }
+      },
+      "fuentes": [
+        {
+          "id": "micitt-ccss-lunit-anuncio",
+          "titulo": {
+            "es": "MICITT: anuncio del piloto CCSS–Roche con Lunit INSIGHT MMG",
+            "en": "MICITT: announcement of the CCSS–Roche pilot with Lunit INSIGHT MMG"
+          },
+          "url": "https://www.micitt.go.cr/el-sector-informa/inteligencia-artificial-apoyara-deteccion-temprana-de-cancer-mama-en-ccss",
+          "publicador": "MICITT",
+          "tipoFuente": "primaria-oficial",
+          "fechaConsulta": "2026-11-20",
+          "respalda": [
+            "existencia",
+            "objetivo-declarado",
+            "meta",
+            "gobernanza"
+          ],
+          "naturalezaAfirmacion": [
+            "hecho",
+            "objetivo-declarado",
+            "meta"
+          ]
+        },
+        {
+          "id": "fda-lunit-k211678",
+          "titulo": {
+            "es": "Lunit INSIGHT MMG: resumen técnico K211678, página física 14",
+            "en": "Lunit INSIGHT MMG: technical summary K211678, PDF page 14"
+          },
+          "url": "https://www.accessdata.fda.gov/cdrh_docs/pdf21/K211678.pdf#page=14",
+          "publicador": "Lunit Inc. / U.S. Food and Drug Administration",
+          "tipoFuente": "primaria-oficial",
+          "fechaConsulta": "2026-11-20",
+          "respalda": [
+            "tecnica-ia"
+          ],
+          "naturalezaAfirmacion": [
+            "hecho"
+          ]
+        },
+        {
+          "id": "teletica-impulsalud-convenio-2026",
+          "titulo": {
+            "es": "Antecedente periodístico del convenio CCSS–Roche e ImpulSALUD",
+            "en": "News report on the CCSS–Roche agreement and ImpulSALUD"
+          },
+          "url": "https://www.teletica.com/amp/nacional/costa-rica-pone-en-marcha-agresiva-estrategia-para-mejorar-diagnostico-de-cancer-de-mama_415850",
+          "publicador": "Teletica",
+          "tipoFuente": "prensa",
+          "fechaPublicacion": "2026-08-21",
+          "fechaConsulta": "2026-11-20",
+          "respalda": [
+            "existencia",
+            "objetivo-declarado"
+          ],
+          "naturalezaAfirmacion": [
+            "hecho",
+            "objetivo-declarado"
+          ]
+        }
+      ]
     }
   ]
 }

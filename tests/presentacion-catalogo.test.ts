@@ -14,9 +14,9 @@ describe('presentación del catálogo', () => {
   it('deriva las tres capas de una institución desde sus fichas', () => {
     const ccss = proyectos.filter((proyecto) => proyecto.institucionId === 'ccss');
     expect(resumirInstitucionCatalogo(ccss)).toEqual({
-      total: 7,
+      total: 8,
       verificado: 1,
-      seguimiento: 3,
+      seguimiento: 4,
       ecosistema: 3,
     });
   });

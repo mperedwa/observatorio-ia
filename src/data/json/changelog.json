@@ -1,6 +1,19 @@
 [
   {
     "fecha": "2026-11-20",
+    "tipo": "proyecto",
+    "actualizacion": {
+      "es": "Se documenta en Seguimiento el piloto CCSS–Roche con Lunit INSIGHT MMG. La técnica del producto está identificada; el primer uso clínico y los resultados locales siguen por acreditar. Se añaden relaciones no acreditadas con REDIMED y LIDIA. El catálogo reúne 48 iniciativas: 11 verificadas, 20 en seguimiento y 17 de ecosistema, en 22 instituciones u organismos.",
+      "en": "The CCSS–Roche pilot with Lunit INSIGHT MMG is documented under review. The product’s technique is identified; first clinical use and local results remain to be established. Unverified relationships with REDIMED and LIDIA are added. The catalog contains 48 initiatives: 11 verified, 20 under review and 17 ecosystem initiatives across 22 institutions or organizations."
+    },
+    "fuente": {
+      "es": "MICITT y documentación técnica alojada por FDA",
+      "en": "MICITT and technical documentation hosted by FDA"
+    },
+    "fuente_url": "https://www.micitt.go.cr/el-sector-informa/inteligencia-artificial-apoyara-deteccion-temprana-de-cancer-mama-en-ccss"
+  },
+  {
+    "fecha": "2026-11-20",
     "tipo": "recurso",
     "actualizacion": {
       "es": "Dos intervenciones ENIA de Salud incorporan evidencia documental: se verifica la agenda de investigación con líneas de IA y se acredita formulación parcial del reglamento de diagnóstico clínico. Las 120 intervenciones únicas quedan distribuidas en 4 verificadas, 14 parcialmente verificadas y 102 sin ejecución verificada. La revisión es parcial; siguen pendientes el reporte del indicador por MICITT-DIDI y la promulgación del reglamento. No se añaden sistemas al catálogo.",

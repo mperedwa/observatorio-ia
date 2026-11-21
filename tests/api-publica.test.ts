@@ -10,7 +10,7 @@ const ROOT = process.cwd();
 const API_DIR = join(ROOT, 'public', 'api');
 const SOURCE_SCHEMA_DIR = join(ROOT, 'src', 'data', 'schemas');
 const SOURCE_DATA_DIR = join(ROOT, 'src', 'data', 'json');
-const RELEASE_ID = '2026-11-20-r21';
+const RELEASE_ID = '2026-11-20-r22';
 const PREVIOUS_RELEASE_ID = '2026-11-05-r19';
 const HISTORICAL_RELEASE_ID = '2026-08-22-r8';
 
@@ -170,7 +170,7 @@ function readIndexHtml(locale: 'es' | 'en') {
   return load(readFileSync(filename, 'utf8'));
 }
 
-describe('API pública estática R21', () => {
+describe('API pública estática R22', () => {
   it('conserva las siete rutas originales y suma cinco rutas complementarias', () => {
     const manifest = readJson<Manifest>('index.json');
     const urls = manifest.endpoints.map(({ url }) => url);
@@ -206,7 +206,7 @@ describe('API pública estática R21', () => {
   it('declara unidades y conteos coherentes para cada colección', () => {
     const manifest = readJson<Manifest>('index.json');
     const expectedCounts: Record<string, number> = {
-      proyectos: 47,
+      proyectos: 48,
       instituciones: 22,
       legislacion: 7,
       indicadores: 7,
@@ -214,7 +214,7 @@ describe('API pública estática R21', () => {
       'enia-acciones': 129,
       monitoreo: 8,
       'marco-pais': 4,
-      historial: 68,
+      historial: 69,
       coyuntura: 2,
       recursos: 19,
       codebook: 11,
@@ -308,7 +308,7 @@ describe('API pública estática R21', () => {
       `release=${RELEASE_ID}`,
     );
     expect(releaseIndex.latest).toBe(RELEASE_ID);
-    expect(releaseIndex.releases).toHaveLength(14);
+    expect(releaseIndex.releases).toHaveLength(15);
     expect(releaseIndex.releases.find(({ id }) => id === RELEASE_ID)).toMatchObject({
       bytes: byteLength(releaseText),
       sha256: digest(releaseText),
@@ -381,7 +381,7 @@ describe('API pública estática R21', () => {
     expect(bundle.release.id).toBe(RELEASE_ID);
     expect(Object.keys(bundle.datasets)).toHaveLength(11);
     expect(bundle.datasets.monitoreo).toBeUndefined();
-    expect(bundle.datasets.proyectos.count).toBe(47);
+    expect(bundle.datasets.proyectos.count).toBe(48);
     expect(bundle.datasets['enia-acciones'].count).toBe(129);
 
     const legislationCsvFile = downloads.files.find(({ url }) =>
@@ -567,7 +567,7 @@ describe('API pública estática R21', () => {
     ) as unknown;
     const endpoint = readJson<ApiEnvelope>('proyectos.json');
 
-    expect(endpoint.count).toBe(47);
+    expect(endpoint.count).toBe(48);
     expect(endpoint.lastUpdate).toBe('2026-11-20T00:00:00.000Z');
     expect(endpoint.data).toEqual(source);
   });
@@ -577,6 +577,6 @@ describe('API pública estática R21', () => {
 
     expect(payload.count).toBe(8);
     expect(payload.data.frentes).toHaveLength(8);
-    expect(payload.data.revisiones).toHaveLength(25);
+    expect(payload.data.revisiones).toHaveLength(26);
   });
 });

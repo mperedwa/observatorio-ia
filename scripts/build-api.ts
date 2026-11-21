@@ -38,11 +38,11 @@ const COUNTERS_TS = join(ROOT, 'src', 'data', 'counters.ts');
 const PKG = JSON.parse(readFileSync(join(ROOT, 'package.json'), 'utf8')) as { version: string };
 
 const DATA_RELEASE = {
-  id: '2026-11-20-r21',
+  id: '2026-11-20-r22',
   date: '2026-11-20',
   title: {
-    es: 'Corte R21 de evidencia ENIA de Salud y contratación de Moravia',
-    en: 'R21 Health ENIA evidence and Moravia procurement release',
+    es: 'Corte R22 del piloto de mamografías con Lunit',
+    en: 'R22 Lunit mammography pilot release',
   },
 } as const;
 const RELEASE_LOCK_PATH = join(RELEASES_OUT_DIR, DATA_RELEASE.id, 'release.lock');
@@ -157,7 +157,7 @@ const DATASETS: Dataset[] = [
     endpoint: '/api/instituciones.json',
     title: { es: 'Instituciones', en: 'Institutions' },
     countUnit: { es: 'instituciones', en: 'institutions' },
-    lastUpdate: '2026-11-09',
+    lastUpdate: '2026-11-20',
     description:
       'Instituciones y organismos con iniciativas relacionadas con IA documentadas en Costa Rica.',
     descriptionEs:
@@ -183,7 +183,7 @@ const DATASETS: Dataset[] = [
     endpoint: '/api/indicadores.json',
     title: { es: 'Indicadores', en: 'Indicators' },
     countUnit: { es: 'bloques', en: 'groups' },
-    lastUpdate: '2026-11-09',
+    lastUpdate: '2026-11-20',
     description:
       'Indicadores cuantitativos y diagnóstico nacional: ILIA 2026 (archivo 2025), AILA 2026, DGI, OURdata y cifras principales del observatorio.',
     descriptionEs:
@@ -247,7 +247,7 @@ const DATASETS: Dataset[] = [
     endpoint: '/api/marco-pais.json',
     title: { es: 'Marco país', en: 'Country framework' },
     countUnit: { es: 'secciones', en: 'sections' },
-    lastUpdate: '2026-11-09',
+    lastUpdate: '2026-11-20',
     description:
       'Arquitectura pública del marco de IA en Costa Rica: capas, hitos, instrumentos y brechas operativas.',
     descriptionEs:

@@ -1,5 +1,5 @@
 {
-  "latest": "2026-11-20-r21",
+  "latest": "2026-11-20-r22",
   "source": "https://observatorioia.org",
   "license": "CC BY 4.0",
   "releases": [
@@ -14,6 +14,18 @@
       "datasets": 11,
       "bytes": 7554,
       "sha256": "c271f5d3af58fb3139e6013fe7562d169baf604e01e904ede398a4547accdd28"
+    },
+    {
+      "id": "2026-11-20-r22",
+      "date": "2026-11-20",
+      "title": {
+        "es": "Corte R22 del piloto de mamografías con Lunit",
+        "en": "R22 Lunit mammography pilot release"
+      },
+      "manifestUrl": "/api/releases/2026-11-20-r22/release.json",
+      "datasets": 11,
+      "bytes": 7516,
+      "sha256": "f7deb5daa450cb0f791b0c8dfe9f325196a8cf5ce22f0b21c3d270a54a27a996"
     },
     {
       "id": "2026-11-09-r20",

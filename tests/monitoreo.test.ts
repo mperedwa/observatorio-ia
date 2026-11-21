@@ -63,7 +63,7 @@ describe('agenda de monitoreo editorial', () => {
     }
 
     expect(resumenMonitoreo.revisionesSinCambios).toBe(8);
-    expect(resumenMonitoreo.cambiosPublicados).toBe(16);
+    expect(resumenMonitoreo.cambiosPublicados).toBe(17);
     expect(resumenMonitoreo.vencidas).toBe(3);
     const legislacion = frentesMonitoreo.find(({ id }) => id === 'legislacion-ia')!;
     expect(legislacion.fechaProximaRevision).toBe('2026-10-08');

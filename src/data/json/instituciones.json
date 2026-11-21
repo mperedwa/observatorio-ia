@@ -37,14 +37,14 @@
     },
     "tipo": "autonoma",
     "url": "https://www.ccss.sa.cr/",
-    "proyectosActivos": 7,
+    "proyectosActivos": 8,
     "resumen": {
-      "es": "Siete iniciativas documentadas: LIDIA como adopción verificada; AIDA, depuración de listas y monitoreo logístico en seguimiento; EDUS, REDIMED y formación TEC-CCSS como ecosistema y capacidades.",
-      "en": "Seven documented initiatives: LIDIA as verified adoption; AIDA, wait-list cleanup and logistics monitoring under review; and EDUS, REDIMED and TEC-CCSS training as ecosystem and capabilities."
+      "es": "Ocho iniciativas documentadas: LIDIA como adopción verificada; AIDA, depuración de listas, monitoreo logístico y el piloto de Lunit en seguimiento; EDUS, REDIMED y formación TEC-CCSS como ecosistema y capacidades.",
+      "en": "Eight documented initiatives: LIDIA as verified adoption; AIDA, wait-list cleanup, logistics monitoring and the Lunit pilot under review; and EDUS, REDIMED and TEC-CCSS training as ecosystem and capabilities."
     },
     "descripcion": {
-      "es": "EDUS funciona como infraestructura digital y LIDIA utiliza sus datos en modelos predictivos con piloto confirmado. AIDA fue anunciada para integrarse a EDUS, pero no se localizó evidencia posterior de inicio de uso. REDIMED mezcla una red parcialmente desplegada con un componente de IA en validación; los otros dos componentes reportados requieren mayor evidencia técnica o primaria.",
-      "en": "EDUS operates as digital infrastructure, and LIDIA uses its data in predictive models with a confirmed pilot. AIDA was announced for integration with EDUS, but no later evidence of use was found. REDIMED combines a partially deployed network with an AI component under validation; the other two reported components require stronger technical or primary evidence."
+      "es": "EDUS funciona como infraestructura digital y LIDIA utiliza sus datos en modelos con piloto documentado. REDIMED combina una red de imágenes con un componente de IA en validación. La ficha de Lunit recoge un piloto anunciado de mamografías; su relación con REDIMED y LIDIA queda por esclarecer. Los registros distinguen infraestructura, formación, anuncios y uso acreditado.",
+      "en": "EDUS operates as digital infrastructure, and LIDIA uses its data in models with a documented pilot. REDIMED combines an imaging network with an AI component under validation. The Lunit record covers an announced mammography pilot; its relationship with REDIMED and LIDIA remains to be clarified. The records distinguish infrastructure, training, announcements and established use."
     },
     "lecciones": {
       "es": "La infraestructura, la formación y un anuncio de despliegue son piezas relevantes, pero no prueban por sí solas que un sistema clínico esté operativo. Las fichas separan cada componente y publican los resultados según la naturaleza de su fuente.",

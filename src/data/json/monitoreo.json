@@ -130,7 +130,7 @@
       "fechaUltimaRevision": "2026-11-05",
       "fechaProximaRevision": "2026-12-05",
       "alcance": {
-        "cantidad": 19,
+        "cantidad": 20,
         "unidad": {
           "es": "iniciativas",
           "en": "initiatives"
@@ -264,6 +264,31 @@
     }
   ],
   "revisiones": [
+    {
+      "id": "revision-catalogo-seguimiento-2026-11-20-lunit",
+      "fecha": "2026-11-20",
+      "frenteId": "catalogo-seguimiento",
+      "resultado": "cambio-publicado",
+      "alcanceRevision": "parcial",
+      "resumen": {
+        "es": "Se prepara la ficha CCSS–Roche con Lunit INSIGHT MMG: producto y técnica identificados, piloto anunciado y uso clínico no acreditado. Se documentan relaciones no acreditadas con REDIMED y LIDIA y un antecedente periodístico del convenio en agosto. Esta revisión no cubre todo el catálogo.",
+        "en": "The CCSS–Roche record with Lunit INSIGHT MMG is prepared: product and technique identified, pilot announced and clinical use not established. Unverified relationships with REDIMED and LIDIA and an August news report on the agreement are documented. This review does not cover the entire catalog."
+      },
+      "notaValidacion": {
+        "es": "Lunit: técnica identificada · uso clínico pendiente",
+        "en": "Lunit: technique identified · clinical use pending"
+      },
+      "fuenteUrl": "https://www.micitt.go.cr/el-sector-informa/inteligencia-artificial-apoyara-deteccion-temprana-de-cancer-mama-en-ccss",
+      "transiciones": [
+        {
+          "objetoTipo": "proyecto",
+          "objetoId": "ccss-lunit-mamografias",
+          "campo": "estadoCatalogo",
+          "antes": null,
+          "despues": "seguimiento"
+        }
+      ]
+    },
     {
       "id": "revision-enia-plan-accion-2026-11-20-salud",
       "fecha": "2026-11-20",
